@@ -63,56 +63,57 @@ class KvStoreServicer(object):
     """
 
     def Scan(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Scans all keys from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Read(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Reads a key from your store and returns the value in raw bytes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReadString(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Reads a key from your store and returns the value in string.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Write(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Writes a key:value data (raw bytes) to your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def WriteString(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Writes a key:value data (string) to your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Updates an existing key:value data (bytes) in your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateString(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Updates an existing key:value data (string) in your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Work-in-progress.
+        """Work-in-progress. Deletes a key from your store. Using a `-` (hyphen) as {key} input
+        translates to all keys to be deleted.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
