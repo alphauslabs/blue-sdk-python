@@ -43,28 +43,28 @@ class KvStoreServicer(object):
     """
 
     def Scan(self, request, context):
-        """WORK-IN-PROGRESS. Scans keys from your store.
+        """Scans keys from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Read(self, request, context):
-        """WORK-IN-PROGRESS. Reads a key from your store.
+        """Reads a key from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Write(self, request, context):
-        """WORK-IN-PROGRESS. Writes a new (or update an existing) key:value data in your store.
+        """Writes a new (or update an existing) key:value data in your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """WORK-IN-PROGRESS. Deletes a key from your store. Using a `-` (hyphen) as {key} input
+        """Deletes a key from your store. Using a `-` (hyphen) as {key} input
         translates to all keys to be deleted.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
