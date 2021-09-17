@@ -48,7 +48,7 @@ class KvStoreServicer(object):
     """
 
     def Scan(self, request, context):
-        """WORK-IN-PROGRESS. Scans all keys from your store.
+        """WORK-IN-PROGRESS. Scans keys from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -69,7 +69,7 @@ class KvStoreServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """WORK-IN-PROGRESS. Updates an existing key:value data in your store.
+        """WORK-IN-PROGRESS. Updates, or inserts if non-existent, a key:value data in your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
