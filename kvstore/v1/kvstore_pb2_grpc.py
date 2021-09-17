@@ -19,7 +19,7 @@ class KvStoreStub(object):
         self.Scan = channel.unary_stream(
                 '/blueapi.kvstore.v1.KvStore/Scan',
                 request_serializer=kvstore_dot_v1_dot_kvstore__pb2.ScanRequest.SerializeToString,
-                response_deserializer=kvstore_dot_v1_dot_kvstore__pb2.ScanResponse.FromString,
+                response_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.FromString,
                 )
         self.Read = channel.unary_unary(
                 '/blueapi.kvstore.v1.KvStore/Read',
@@ -43,14 +43,14 @@ class KvStoreServicer(object):
     """
 
     def Scan(self, request, context):
-        """Scans keys from your store.
+        """Scans key:value data from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Read(self, request, context):
-        """Reads a key from your store.
+        """Reads a key:value data from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -64,8 +64,7 @@ class KvStoreServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Delete(self, request, context):
-        """Deletes a key from your store. Using a `-` (hyphen) as {key} input
-        translates to all keys to be deleted.
+        """Deletes a key:value data from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,7 +76,7 @@ def add_KvStoreServicer_to_server(servicer, server):
             'Scan': grpc.unary_stream_rpc_method_handler(
                     servicer.Scan,
                     request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.ScanRequest.FromString,
-                    response_serializer=kvstore_dot_v1_dot_kvstore__pb2.ScanResponse.SerializeToString,
+                    response_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.SerializeToString,
             ),
             'Read': grpc.unary_unary_rpc_method_handler(
                     servicer.Read,
@@ -118,7 +117,7 @@ class KvStore(object):
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/blueapi.kvstore.v1.KvStore/Scan',
             kvstore_dot_v1_dot_kvstore__pb2.ScanRequest.SerializeToString,
-            kvstore_dot_v1_dot_kvstore__pb2.ScanResponse.FromString,
+            kvstore_dot_v1_dot_kvstore__pb2.KeyValue.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
