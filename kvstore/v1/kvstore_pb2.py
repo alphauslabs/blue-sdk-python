@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.api.kvstoreB\014KvStoreProtoZ&github.com/alphauslabs/blueapi/kvstore',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18kvstore/v1/kvstore.proto\x12\x12\x62lueapi.kvstore.v1\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"&\n\x08KeyValue\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x0c\")\n\x0bKeyValueStr\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x1b\n\x0bScanRequest\x12\x0c\n\x04like\x18\x01 \x01(\t\"\x1b\n\x0cScanResponse\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x1a\n\x0bReadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x1c\n\rDeleteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t2\x83\x07\n\x07KvStore\x12]\n\x04Scan\x12\x1f.blueapi.kvstore.v1.ScanRequest\x1a .blueapi.kvstore.v1.ScanResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/keys0\x01\x12]\n\x04Read\x12\x1f.blueapi.kvstore.v1.ReadRequest\x1a\x1c.blueapi.kvstore.v1.KeyValue\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/keys/{key}\x12j\n\nReadString\x12\x1f.blueapi.kvstore.v1.ReadRequest\x1a\x1f.blueapi.kvstore.v1.KeyValueStr\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/keys/{key}/str\x12M\n\x05Write\x12\x1c.blueapi.kvstore.v1.KeyValue\x1a\x16.google.protobuf.Empty\"\x0e\x82\xd3\xe4\x93\x02\x08\"\x03/v1:\x01*\x12Z\n\x0bWriteString\x12\x1f.blueapi.kvstore.v1.KeyValueStr\x1a\x16.google.protobuf.Empty\"\x12\x82\xd3\xe4\x93\x02\x0c\"\x07/v1/str:\x01*\x12N\n\x06Update\x12\x1c.blueapi.kvstore.v1.KeyValue\x1a\x16.google.protobuf.Empty\"\x0e\x82\xd3\xe4\x93\x02\x08\x1a\x03/v1:\x01*\x12[\n\x0cUpdateString\x12\x1f.blueapi.kvstore.v1.KeyValueStr\x1a\x16.google.protobuf.Empty\"\x12\x82\xd3\xe4\x93\x02\x0c\x1a\x07/v1/str:\x01*\x12[\n\x06\x44\x65lete\x12!.blueapi.kvstore.v1.DeleteRequest\x1a\x16.google.protobuf.Empty\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/keys/{key}\x1a\x98\x01\x92\x41\x94\x01\x12\x41(BETA) KvStore API. Base URL: https://api.alphaus.cloud/m/blue/kv\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/kvstore/BQ\n\x19\x63loud.alphaus.api.kvstoreB\x0cKvStoreProtoZ&github.com/alphauslabs/blueapi/kvstoreb\x06proto3'
+  serialized_pb=b'\n\x18kvstore/v1/kvstore.proto\x12\x12\x62lueapi.kvstore.v1\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"&\n\x08KeyValue\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t\"\x1b\n\x0bScanRequest\x12\x0c\n\x04like\x18\x01 \x01(\t\"\x1b\n\x0cScanResponse\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x1a\n\x0bReadRequest\x12\x0b\n\x03key\x18\x01 \x01(\t\"\x1c\n\rDeleteRequest\x12\x0b\n\x03key\x18\x01 \x01(\t2\xde\x04\n\x07KvStore\x12]\n\x04Scan\x12\x1f.blueapi.kvstore.v1.ScanRequest\x1a .blueapi.kvstore.v1.ScanResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/keys0\x01\x12]\n\x04Read\x12\x1f.blueapi.kvstore.v1.ReadRequest\x1a\x1c.blueapi.kvstore.v1.KeyValue\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/keys/{key}\x12M\n\x05Write\x12\x1c.blueapi.kvstore.v1.KeyValue\x1a\x16.google.protobuf.Empty\"\x0e\x82\xd3\xe4\x93\x02\x08\"\x03/v1:\x01*\x12N\n\x06Update\x12\x1c.blueapi.kvstore.v1.KeyValue\x1a\x16.google.protobuf.Empty\"\x0e\x82\xd3\xe4\x93\x02\x08\x1a\x03/v1:\x01*\x12[\n\x06\x44\x65lete\x12!.blueapi.kvstore.v1.DeleteRequest\x1a\x16.google.protobuf.Empty\"\x16\x82\xd3\xe4\x93\x02\x10*\x0e/v1/keys/{key}\x1a\x98\x01\x92\x41\x94\x01\x12\x41(BETA) KvStore API. Base URL: https://api.alphaus.cloud/m/blue/kv\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/kvstore/BQ\n\x19\x63loud.alphaus.api.kvstoreB\x0cKvStoreProtoZ&github.com/alphauslabs/blueapi/kvstoreb\x06proto3'
   ,
   dependencies=[google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -46,45 +46,6 @@ _KEYVALUE = _descriptor.Descriptor(
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
       name='value', full_name='blueapi.kvstore.v1.KeyValue.value', index=1,
-      number=2, type=12, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"",
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=155,
-  serialized_end=193,
-)
-
-
-_KEYVALUESTR = _descriptor.Descriptor(
-  name='KeyValueStr',
-  full_name='blueapi.kvstore.v1.KeyValueStr',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='blueapi.kvstore.v1.KeyValueStr.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='blueapi.kvstore.v1.KeyValueStr.value', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -102,8 +63,8 @@ _KEYVALUESTR = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=195,
-  serialized_end=236,
+  serialized_start=155,
+  serialized_end=193,
 )
 
 
@@ -134,8 +95,8 @@ _SCANREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=238,
-  serialized_end=265,
+  serialized_start=195,
+  serialized_end=222,
 )
 
 
@@ -166,8 +127,8 @@ _SCANRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=267,
-  serialized_end=294,
+  serialized_start=224,
+  serialized_end=251,
 )
 
 
@@ -198,8 +159,8 @@ _READREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=296,
-  serialized_end=322,
+  serialized_start=253,
+  serialized_end=279,
 )
 
 
@@ -230,12 +191,11 @@ _DELETEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=324,
-  serialized_end=352,
+  serialized_start=281,
+  serialized_end=309,
 )
 
 DESCRIPTOR.message_types_by_name['KeyValue'] = _KEYVALUE
-DESCRIPTOR.message_types_by_name['KeyValueStr'] = _KEYVALUESTR
 DESCRIPTOR.message_types_by_name['ScanRequest'] = _SCANREQUEST
 DESCRIPTOR.message_types_by_name['ScanResponse'] = _SCANRESPONSE
 DESCRIPTOR.message_types_by_name['ReadRequest'] = _READREQUEST
@@ -248,13 +208,6 @@ KeyValue = _reflection.GeneratedProtocolMessageType('KeyValue', (_message.Messag
   # @@protoc_insertion_point(class_scope:blueapi.kvstore.v1.KeyValue)
   })
 _sym_db.RegisterMessage(KeyValue)
-
-KeyValueStr = _reflection.GeneratedProtocolMessageType('KeyValueStr', (_message.Message,), {
-  'DESCRIPTOR' : _KEYVALUESTR,
-  '__module__' : 'kvstore.v1.kvstore_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.kvstore.v1.KeyValueStr)
-  })
-_sym_db.RegisterMessage(KeyValueStr)
 
 ScanRequest = _reflection.GeneratedProtocolMessageType('ScanRequest', (_message.Message,), {
   'DESCRIPTOR' : _SCANREQUEST,
@@ -294,8 +247,8 @@ _KVSTORE = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\224\001\022A(BETA) KvStore API. Base URL: https://api.alphaus.cloud/m/blue/kv\032O\n\022Service definition\0229https://github.com/alphauslabs/blueapi/tree/main/kvstore/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=355,
-  serialized_end=1254,
+  serialized_start=312,
+  serialized_end=918,
   methods=[
   _descriptor.MethodDescriptor(
     name='Scan',
@@ -318,19 +271,9 @@ _KVSTORE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ReadString',
-    full_name='blueapi.kvstore.v1.KvStore.ReadString',
-    index=2,
-    containing_service=None,
-    input_type=_READREQUEST,
-    output_type=_KEYVALUESTR,
-    serialized_options=b'\202\323\344\223\002\024\022\022/v1/keys/{key}/str',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
     name='Write',
     full_name='blueapi.kvstore.v1.KvStore.Write',
-    index=3,
+    index=2,
     containing_service=None,
     input_type=_KEYVALUE,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -338,19 +281,9 @@ _KVSTORE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='WriteString',
-    full_name='blueapi.kvstore.v1.KvStore.WriteString',
-    index=4,
-    containing_service=None,
-    input_type=_KEYVALUESTR,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002\014\"\007/v1/str:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
     name='Update',
     full_name='blueapi.kvstore.v1.KvStore.Update',
-    index=5,
+    index=3,
     containing_service=None,
     input_type=_KEYVALUE,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
@@ -358,19 +291,9 @@ _KVSTORE = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='UpdateString',
-    full_name='blueapi.kvstore.v1.KvStore.UpdateString',
-    index=6,
-    containing_service=None,
-    input_type=_KEYVALUESTR,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002\014\032\007/v1/str:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
     name='Delete',
     full_name='blueapi.kvstore.v1.KvStore.Delete',
-    index=7,
+    index=4,
     containing_service=None,
     input_type=_DELETEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,

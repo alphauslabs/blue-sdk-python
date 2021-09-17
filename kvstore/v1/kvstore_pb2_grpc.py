@@ -26,29 +26,14 @@ class KvStoreStub(object):
                 request_serializer=kvstore_dot_v1_dot_kvstore__pb2.ReadRequest.SerializeToString,
                 response_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.FromString,
                 )
-        self.ReadString = channel.unary_unary(
-                '/blueapi.kvstore.v1.KvStore/ReadString',
-                request_serializer=kvstore_dot_v1_dot_kvstore__pb2.ReadRequest.SerializeToString,
-                response_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.FromString,
-                )
         self.Write = channel.unary_unary(
                 '/blueapi.kvstore.v1.KvStore/Write',
                 request_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.WriteString = channel.unary_unary(
-                '/blueapi.kvstore.v1.KvStore/WriteString',
-                request_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
         self.Update = channel.unary_unary(
                 '/blueapi.kvstore.v1.KvStore/Update',
                 request_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.UpdateString = channel.unary_unary(
-                '/blueapi.kvstore.v1.KvStore/UpdateString',
-                request_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.Delete = channel.unary_unary(
@@ -70,42 +55,21 @@ class KvStoreServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def Read(self, request, context):
-        """WORK-IN-PROGRESS. Reads a key from your store and returns the value in raw bytes.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ReadString(self, request, context):
-        """WORK-IN-PROGRESS. Reads a key from your store and returns the value in string.
+        """WORK-IN-PROGRESS. Reads a key from your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Write(self, request, context):
-        """WORK-IN-PROGRESS. Writes a key:value data (raw bytes) to your store.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def WriteString(self, request, context):
-        """WORK-IN-PROGRESS. Writes a key:value data (string) to your store.
+        """WORK-IN-PROGRESS. Writes a key:value data to your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def Update(self, request, context):
-        """WORK-IN-PROGRESS. Updates an existing key:value data (bytes) in your store.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateString(self, request, context):
-        """WORK-IN-PROGRESS. Updates an existing key:value data (string) in your store.
+        """WORK-IN-PROGRESS. Updates an existing key:value data in your store.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -132,29 +96,14 @@ def add_KvStoreServicer_to_server(servicer, server):
                     request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.ReadRequest.FromString,
                     response_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.SerializeToString,
             ),
-            'ReadString': grpc.unary_unary_rpc_method_handler(
-                    servicer.ReadString,
-                    request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.ReadRequest.FromString,
-                    response_serializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.SerializeToString,
-            ),
             'Write': grpc.unary_unary_rpc_method_handler(
                     servicer.Write,
                     request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'WriteString': grpc.unary_unary_rpc_method_handler(
-                    servicer.WriteString,
-                    request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
             'Update': grpc.unary_unary_rpc_method_handler(
                     servicer.Update,
                     request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValue.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UpdateString': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateString,
-                    request_deserializer=kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'Delete': grpc.unary_unary_rpc_method_handler(
@@ -208,23 +157,6 @@ class KvStore(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ReadString(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.kvstore.v1.KvStore/ReadString',
-            kvstore_dot_v1_dot_kvstore__pb2.ReadRequest.SerializeToString,
-            kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def Write(request,
             target,
             options=(),
@@ -242,23 +174,6 @@ class KvStore(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def WriteString(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.kvstore.v1.KvStore/WriteString',
-            kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def Update(request,
             target,
             options=(),
@@ -271,23 +186,6 @@ class KvStore(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.kvstore.v1.KvStore/Update',
             kvstore_dot_v1_dot_kvstore__pb2.KeyValue.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateString(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.kvstore.v1.KvStore/UpdateString',
-            kvstore_dot_v1_dot_kvstore__pb2.KeyValueStr.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
