@@ -351,7 +351,8 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetRecommendations(self, request, context):
-        """Get cost opmtimization recommendations for Organization ID
+        """WORK-IN-PROGRESS
+        Get cost opmtimization recommendations for Organization ID
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
