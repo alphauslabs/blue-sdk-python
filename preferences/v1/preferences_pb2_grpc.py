@@ -27,7 +27,7 @@ class PreferencesServicer(object):
     """
 
     def GetPreferences(self, request, context):
-        """Gets current preferences.
+        """WORK-IN-PROGRESS: Gets current preferences.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
