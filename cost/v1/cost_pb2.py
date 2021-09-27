@@ -18,6 +18,7 @@ from api import forecast_pb2 as api_dot_forecast__pb2
 from api.aws import cost_pb2 as api_dot_aws_dot_cost__pb2
 from api.aws import calculator_pb2 as api_dot_aws_dot_calculator__pb2
 from api.aws import recommendation_pb2 as api_dot_aws_dot_recommendation__pb2
+from api.aws import reduction_pb2 as api_dot_aws_dot_reduction__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
@@ -29,9 +30,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\026cloud.alphaus.api.costB\tCostProtoZ#github.com/alphauslabs/blueapi/cost\222A\260\002\022\316\001\n\032Alphaus Blue: Cost Service\"R\n\032Alphaus Blue: Cost Service\0224https://alphauslabs.github.io/blueapi/apis/cost.html*W\n\033License: Apache License 2.0\0228https://github.com/alphauslabs/blueapi/blob/main/LICENSE2\0031.0r]\n%More about Alphaus Blue: Cost Service\0224https://alphauslabs.github.io/blueapi/apis/cost.html',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12\x63ost/v1/cost.proto\x12\x0f\x62lueapi.cost.v1\x1a\x11\x61pi/account.proto\x1a\x13\x61pi/operation.proto\x1a\x10\x61pi/budget.proto\x1a\x12\x61pi/forecast.proto\x1a\x12\x61pi/aws/cost.proto\x1a\x18\x61pi/aws/calculator.proto\x1a\x1c\x61pi/aws/recommendation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"*\n\x18ListPayerAccountsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"4\n\x16GetPayerAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"P\n#GetPayerAccountImportHistoryRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\"U\n$GetPayerAccountImportHistoryResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05month\x18\x02 \x01(\t\x12\x12\n\ntimestamps\x18\x03 \x03(\t\"\x88\x01\n#CreatePayerAccountRequestAwsOptions\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nbucketName\x18\x03 \x01(\t\x12\x0e\n\x06prefix\x18\x04 \x01(\t\x12\x12\n\nreportName\x18\x05 \x01(\t\x12\x0f\n\x07roleArn\x18\x06 \x01(\t\"u\n\x19\x43reatePayerAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12H\n\nawsOptions\x18\x02 \x01(\x0b\x32\x34.blueapi.cost.v1.CreatePayerAccountRequestAwsOptions\"7\n\x19\x44\x65letePayerAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"%\n\x13ListAccountsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"/\n\x11GetAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"=\n\x1e\x43reateAccountRequestAwsOptions\x12\x1b\n\x13managementAccountId\x18\x01 \x01(\t\"\x95\x01\n\x14\x43reateAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0e\n\x06parent\x18\x04 \x01(\t\x12\x43\n\nawsOptions\x18\x05 \x01(\x0b\x32/.blueapi.cost.v1.CreateAccountRequestAwsOptions\"2\n\x14\x44\x65leteAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\",\n\x1aGetCalculatorStatusRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"M\n\x1bGetCalculatorStatusResponse\x12.\n\x03\x61ws\x18\x01 \x01(\x0b\x32!.blueapi.api.aws.CalculatorStatus\",\n\x1aGetCalculatorConfigRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"M\n\x1bGetCalculatorConfigResponse\x12.\n\x03\x61ws\x18\x01 \x01(\x0b\x32!.blueapi.api.aws.CalculatorConfig\"6\n\x15ImportCurFilesRequest\x12\r\n\x05month\x18\x01 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\".\n\x08\x43ostItem\x12\"\n\x03\x61ws\x18\x01 \x01(\x0b\x32\x15.blueapi.api.aws.Cost\"X\n\x1f\x43\x61lculateCostsRequestAwsOptions\x12\r\n\x05\x66orce\x18\x01 \x01(\x08\x12\x14\n\x0c\x61\x63\x63ountsOnly\x18\x02 \x01(\x08\x12\x10\n\x08tagsOnly\x18\x03 \x01(\x08\"\x8d\x01\n\x15\x43\x61lculateCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\x12\x44\n\nawsOptions\x18\x04 \x01(\x0b\x32\x30.blueapi.cost.v1.CalculateCostsRequestAwsOptions\"S\n\x1eListCalculationsHistoryRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0c\n\x04\x61sOf\x18\x02 \x01(\t\x12\x13\n\x0b\x65xcludeDone\x18\x03 \x01(\x08\"P\n\"ListCalculationsHistoryAwsResponse\x12*\n\noperations\x18\x01 \x03(\x0b\x32\x16.blueapi.api.Operation\"c\n\x1fListCalculationsHistoryResponse\x12@\n\x03\x61ws\x18\x01 \x01(\x0b\x32\x33.blueapi.cost.v1.ListCalculationsHistoryAwsResponse\"\xae\x01\n!ReadCostsRequestAwsOptionsFilters\x12V\n\nandFilters\x18\x01 \x03(\x0b\x32\x42.blueapi.cost.v1.ReadCostsRequestAwsOptionsFilters.AndFiltersEntry\x1a\x31\n\x0f\x41ndFiltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xec\x01\n\x1aReadCostsRequestAwsOptions\x12\x16\n\x0egroupByColumns\x18\x01 \x01(\t\x12\x14\n\x0cgroupByMonth\x18\x02 \x01(\x08\x12\x43\n\x07\x66ilters\x18\x03 \x03(\x0b\x32\x32.blueapi.cost.v1.ReadCostsRequestAwsOptionsFilters\x12\x13\n\x0bincludeTags\x18\x04 \x01(\x08\x12\x1d\n\x15includeCostCategories\x18\x05 \x01(\x08\x12\x12\n\ntoCurrency\x18\x06 \x01(\t\x12\x13\n\x0b\x66orceLatest\x18\x07 \x01(\x08\"\xab\x01\n\x10ReadCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\taccountId\x18\x03 \x01(\t\x12\x11\n\tstartTime\x18\x04 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x05 \x01(\t\x12?\n\nawsOptions\x18\x06 \x01(\x0b\x32+.blueapi.cost.v1.ReadCostsRequestAwsOptions\"6\n ReadAdjustmentsRequestAwsOptions\x12\x12\n\ntoCurrency\x18\x01 \x01(\t\"\xb7\x01\n\x16ReadAdjustmentsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\taccountId\x18\x03 \x01(\t\x12\x11\n\tstartTime\x18\x04 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x05 \x01(\t\x12\x45\n\nawsOptions\x18\x06 \x01(\x0b\x32\x31.blueapi.cost.v1.ReadAdjustmentsRequestAwsOptions\".\n\x1dReadTagCostsRequestAwsOptions\x12\r\n\x05tagId\x18\x01 \x01(\t\"\xbf\x01\n\x13ReadTagCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x02 \x01(\t\x12\x11\n\tstartTime\x18\x03 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x04 \x01(\t\x12\x15\n\rgroupByMonths\x18\x05 \x01(\x08\x12\x42\n\nawsOptions\x18\x06 \x01(\x0b\x32..blueapi.cost.v1.ReadTagCostsRequestAwsOptions\"~\n\x16ReadNonTagCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x02 \x01(\t\x12\x11\n\tstartTime\x18\x03 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x04 \x01(\t\x12\x15\n\rgroupByMonths\x18\x05 \x01(\x08\"|\n\x13GetForecastsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x11\n\tcompanyId\x18\x02 \x01(\t\x12\x11\n\tfrequency\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\x12\x10\n\x08\x66romDate\x18\x05 \x01(\t\x12\x0e\n\x06toDate\x18\x06 \x01(\t\"G\n\x14GetForecastsResponse\x12/\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.blueapi.api.BillingGroupForecast\"l\n\x1dGetMonthlyCostForecastRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x10\n\x08\x66romDate\x18\x04 \x01(\t\x12\x0e\n\x06toDate\x18\x05 \x01(\t\"o\n\x1eGetMonthlyCostForecastResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32 .blueapi.api.MonthlyCostForecast\x12\x11\n\ttimestamp\x18\x03 \x01(\t\"]\n\"GetMonthOnMonthCostForecastRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\t\"y\n#GetMonthOnMonthCostForecastResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x33\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32%.blueapi.api.MonthOnMonthCostForecast\x12\x11\n\ttimestamp\x18\x03 \x01(\t\"\\\n!GetMonthToDateCostForecastRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\t\"\x87\x01\n\"GetMonthToDateCostForecastResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x62udget\x18\x02 \x01(\x01\x12\x32\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32$.blueapi.api.MonthToDateCostForecast\x12\x11\n\ttimestamp\x18\x04 \x01(\t\"R\n\x17GetAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0c\n\x04year\x18\x04 \x01(\t\"=\n\x18GetAccountBudgetResponse\x12!\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x13.blueapi.api.Budget\"j\n\x1a\x43reateAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12!\n\x04\x64\x61ta\x18\x04 \x01(\x0b\x32\x13.blueapi.api.Budget\"/\n\x1b\x43reateAccountBudgetResponse\x12\x10\n\x08\x62udgetId\x18\x01 \x01(\t\"a\n\x1aUpdateAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x10\n\x08\x62udgetId\x18\x02 \x01(\t\x12!\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x13.blueapi.api.Budget\">\n\x1a\x44\x65leteAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x10\n\x08\x62udgetId\x18\x02 \x01(\t\"\xd6\x01\n#GetRecommendationsRequestAwsOptions\x12\x1a\n\x12recommendationType\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08services\x18\x03 \x03(\t\x12\x0c\n\x04term\x18\x04 \x01(\t\x12\x15\n\rofferingClass\x18\x05 \x01(\t\x12\x15\n\rpaymentOption\x18\x06 \x01(\t\x12\x0f\n\x07tenancy\x18\x07 \x01(\t\x12\x12\n\nriCoverage\x18\x08 \x01(\x01\x12\x12\n\nspCoverage\x18\t \x01(\x01\"\x96\x01\n\x19GetRecommendationsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05orgId\x18\x02 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x03 \x03(\t\x12H\n\nawsOptions\x18\x04 \x01(\x0b\x32\x34.blueapi.cost.v1.GetRecommendationsRequestAwsOptions\"l\n\x1aGetRecommendationsResponse\x12\r\n\x05orgId\x18\x01 \x01(\t\x12?\n\x12\x61wsRecommendations\x18\x02 \x01(\x0b\x32#.blueapi.api.aws.AwsRecommendations2\xd0\x1e\n\x04\x43ost\x12s\n\x11ListPayerAccounts\x12).blueapi.cost.v1.ListPayerAccountsRequest\x1a\x14.blueapi.api.Account\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/{vendor}/payers0\x01\x12r\n\x0fGetPayerAccount\x12\'.blueapi.cost.v1.GetPayerAccountRequest\x1a\x14.blueapi.api.Account\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/{vendor}/payers/{id}\x12\xbd\x01\n\x1cGetPayerAccountImportHistory\x12\x34.blueapi.cost.v1.GetPayerAccountImportHistoryRequest\x1a\x35.blueapi.cost.v1.GetPayerAccountImportHistoryResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/{vendor}/payers/{id}/importhistory0\x01\x12v\n\x12\x43reatePayerAccount\x12*.blueapi.cost.v1.CreatePayerAccountRequest\x1a\x14.blueapi.api.Account\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/{vendor}/payers:\x01*\x12z\n\x12\x44\x65letePayerAccount\x12*.blueapi.cost.v1.DeletePayerAccountRequest\x1a\x16.google.protobuf.Empty\" \x82\xd3\xe4\x93\x02\x1a*\x18/v1/{vendor}/payers/{id}\x12k\n\x0cListAccounts\x12$.blueapi.cost.v1.ListAccountsRequest\x1a\x14.blueapi.api.Account\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/{vendor}/accounts0\x01\x12j\n\nGetAccount\x12\".blueapi.cost.v1.GetAccountRequest\x1a\x14.blueapi.api.Account\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/{vendor}/accounts/{id}\x12n\n\rCreateAccount\x12%.blueapi.cost.v1.CreateAccountRequest\x1a\x14.blueapi.api.Account\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/{vendor}/accounts:\x01*\x12r\n\rDeleteAccount\x12%.blueapi.cost.v1.DeleteAccountRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/{vendor}/accounts/{id}\x12\x98\x01\n\x13GetCalculatorStatus\x12+.blueapi.cost.v1.GetCalculatorStatusRequest\x1a,.blueapi.cost.v1.GetCalculatorStatusResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{vendor}/calculator/status\x12\x98\x01\n\x13GetCalculatorConfig\x12+.blueapi.cost.v1.GetCalculatorConfigRequest\x1a,.blueapi.cost.v1.GetCalculatorConfigResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{vendor}/calculator/config\x12o\n\x0eImportCurFiles\x12&.blueapi.cost.v1.ImportCurFilesRequest\x1a\x16.blueapi.api.Operation\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/aws/cur:import:\x01*\x12y\n\x0e\x43\x61lculateCosts\x12&.blueapi.cost.v1.CalculateCostsRequest\x1a\x16.blueapi.api.Operation\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/{vendor}/costs:calculate:\x01*\x12\xa7\x01\n\x17ListCalculationsHistory\x12/.blueapi.cost.v1.ListCalculationsHistoryRequest\x1a\x30.blueapi.cost.v1.ListCalculationsHistoryResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/{vendor}/calculations/history\x12o\n\tReadCosts\x12!.blueapi.cost.v1.ReadCostsRequest\x1a\x19.blueapi.cost.v1.CostItem\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/{vendor}/costs:read:\x01*0\x01\x12\x81\x01\n\x0fReadAdjustments\x12\'.blueapi.cost.v1.ReadAdjustmentsRequest\x1a\x19.blueapi.cost.v1.CostItem\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/{vendor}/adjustments:read:\x01*0\x01\x12x\n\x0cReadTagCosts\x12$.blueapi.cost.v1.ReadTagCostsRequest\x1a\x19.blueapi.cost.v1.CostItem\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/{vendor}/tagcosts:read:\x01*0\x01\x12\x81\x01\n\x0fReadNonTagCosts\x12\'.blueapi.cost.v1.ReadNonTagCostsRequest\x1a\x19.blueapi.cost.v1.CostItem\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/{vendor}/nontagcosts:read:\x01*0\x01\x12{\n\x0cGetForecasts\x12$.blueapi.cost.v1.GetForecastsRequest\x1a%.blueapi.cost.v1.GetForecastsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/{vendor}/forecasts\x12\xae\x01\n\x16GetMonthlyCostForecast\x12..blueapi.cost.v1.GetMonthlyCostForecastRequest\x1a/.blueapi.cost.v1.GetMonthlyCostForecastResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/{vendor}/forecasts/monthly/{level}/{id}\x12\xc4\x01\n\x1bGetMonthOnMonthCostForecast\x12\x33.blueapi.cost.v1.GetMonthOnMonthCostForecastRequest\x1a\x34.blueapi.cost.v1.GetMonthOnMonthCostForecastResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/v1/{vendor}/forecasts/month-on-month/{level}/{id}\x12\xc0\x01\n\x1aGetMonthToDateCostForecast\x12\x32.blueapi.cost.v1.GetMonthToDateCostForecastRequest\x1a\x33.blueapi.cost.v1.GetMonthToDateCostForecastResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/v1/{vendor}/forecasts/month-to-date/{level}/{id}\x12\x91\x01\n\x10GetAccountBudget\x12(.blueapi.cost.v1.GetAccountBudgetRequest\x1a).blueapi.cost.v1.GetAccountBudgetResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/{vendor}/budget/{level}/{id}\x12\x9d\x01\n\x13\x43reateAccountBudget\x12+.blueapi.cost.v1.CreateAccountBudgetRequest\x1a,.blueapi.cost.v1.CreateAccountBudgetResponse\"+\x82\xd3\xe4\x93\x02%\" /v1/{vendor}/budget/{level}/{id}:\x01*\x12\x85\x01\n\x13UpdateAccountBudget\x12+.blueapi.cost.v1.UpdateAccountBudgetRequest\x1a\x16.google.protobuf.Empty\")\x82\xd3\xe4\x93\x02#\x1a\x1e/v1/{vendor}/budget/{budgetId}:\x01*\x12\x82\x01\n\x13\x44\x65leteAccountBudget\x12+.blueapi.cost.v1.DeleteAccountBudgetRequest\x1a\x16.google.protobuf.Empty\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/{vendor}/budget/{budgetId}\x12\x9e\x01\n\x12GetRecommendations\x12*.blueapi.cost.v1.GetRecommendationsRequest\x1a+.blueapi.cost.v1.GetRecommendationsResponse\"/\x82\xd3\xe4\x93\x02)\"$/v1/{vendor}/recommendations/{orgId}:\x01*\x1a\x94\x01\x92\x41\x90\x01\x12@(BETA) Cost API. Base URL: https://api.alphaus.cloud/m/blue/cost\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/cost/B\xfc\x02\n\x16\x63loud.alphaus.api.costB\tCostProtoZ#github.com/alphauslabs/blueapi/cost\x92\x41\xb0\x02\x12\xce\x01\n\x1a\x41lphaus Blue: Cost Service\"R\n\x1a\x41lphaus Blue: Cost Service\x12\x34https://alphauslabs.github.io/blueapi/apis/cost.html*W\n\x1bLicense: Apache License 2.0\x12\x38https://github.com/alphauslabs/blueapi/blob/main/LICENSE2\x03\x31.0r]\n%More about Alphaus Blue: Cost Service\x12\x34https://alphauslabs.github.io/blueapi/apis/cost.htmlb\x06proto3'
+  serialized_pb=b'\n\x12\x63ost/v1/cost.proto\x12\x0f\x62lueapi.cost.v1\x1a\x11\x61pi/account.proto\x1a\x13\x61pi/operation.proto\x1a\x10\x61pi/budget.proto\x1a\x12\x61pi/forecast.proto\x1a\x12\x61pi/aws/cost.proto\x1a\x18\x61pi/aws/calculator.proto\x1a\x1c\x61pi/aws/recommendation.proto\x1a\x17\x61pi/aws/reduction.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"*\n\x18ListPayerAccountsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"4\n\x16GetPayerAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"P\n#GetPayerAccountImportHistoryRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\"U\n$GetPayerAccountImportHistoryResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05month\x18\x02 \x01(\t\x12\x12\n\ntimestamps\x18\x03 \x03(\t\"\x88\x01\n#CreatePayerAccountRequestAwsOptions\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x12\n\nbucketName\x18\x03 \x01(\t\x12\x0e\n\x06prefix\x18\x04 \x01(\t\x12\x12\n\nreportName\x18\x05 \x01(\t\x12\x0f\n\x07roleArn\x18\x06 \x01(\t\"u\n\x19\x43reatePayerAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12H\n\nawsOptions\x18\x02 \x01(\x0b\x32\x34.blueapi.cost.v1.CreatePayerAccountRequestAwsOptions\"7\n\x19\x44\x65letePayerAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"%\n\x13ListAccountsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"/\n\x11GetAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"=\n\x1e\x43reateAccountRequestAwsOptions\x12\x1b\n\x13managementAccountId\x18\x01 \x01(\t\"\x95\x01\n\x14\x43reateAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0e\n\x06parent\x18\x04 \x01(\t\x12\x43\n\nawsOptions\x18\x05 \x01(\x0b\x32/.blueapi.cost.v1.CreateAccountRequestAwsOptions\"2\n\x14\x44\x65leteAccountRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\",\n\x1aGetCalculatorStatusRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"M\n\x1bGetCalculatorStatusResponse\x12.\n\x03\x61ws\x18\x01 \x01(\x0b\x32!.blueapi.api.aws.CalculatorStatus\",\n\x1aGetCalculatorConfigRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"M\n\x1bGetCalculatorConfigResponse\x12.\n\x03\x61ws\x18\x01 \x01(\x0b\x32!.blueapi.api.aws.CalculatorConfig\"6\n\x15ImportCurFilesRequest\x12\r\n\x05month\x18\x01 \x01(\t\x12\x0e\n\x06\x66ilter\x18\x02 \x01(\t\".\n\x08\x43ostItem\x12\"\n\x03\x61ws\x18\x01 \x01(\x0b\x32\x15.blueapi.api.aws.Cost\"X\n\x1f\x43\x61lculateCostsRequestAwsOptions\x12\r\n\x05\x66orce\x18\x01 \x01(\x08\x12\x14\n\x0c\x61\x63\x63ountsOnly\x18\x02 \x01(\x08\x12\x10\n\x08tagsOnly\x18\x03 \x01(\x08\"\x8d\x01\n\x15\x43\x61lculateCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\x12\x44\n\nawsOptions\x18\x04 \x01(\x0b\x32\x30.blueapi.cost.v1.CalculateCostsRequestAwsOptions\"S\n\x1eListCalculationsHistoryRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0c\n\x04\x61sOf\x18\x02 \x01(\t\x12\x13\n\x0b\x65xcludeDone\x18\x03 \x01(\x08\"P\n\"ListCalculationsHistoryAwsResponse\x12*\n\noperations\x18\x01 \x03(\x0b\x32\x16.blueapi.api.Operation\"c\n\x1fListCalculationsHistoryResponse\x12@\n\x03\x61ws\x18\x01 \x01(\x0b\x32\x33.blueapi.cost.v1.ListCalculationsHistoryAwsResponse\"\xae\x01\n!ReadCostsRequestAwsOptionsFilters\x12V\n\nandFilters\x18\x01 \x03(\x0b\x32\x42.blueapi.cost.v1.ReadCostsRequestAwsOptionsFilters.AndFiltersEntry\x1a\x31\n\x0f\x41ndFiltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xec\x01\n\x1aReadCostsRequestAwsOptions\x12\x16\n\x0egroupByColumns\x18\x01 \x01(\t\x12\x14\n\x0cgroupByMonth\x18\x02 \x01(\x08\x12\x43\n\x07\x66ilters\x18\x03 \x03(\x0b\x32\x32.blueapi.cost.v1.ReadCostsRequestAwsOptionsFilters\x12\x13\n\x0bincludeTags\x18\x04 \x01(\x08\x12\x1d\n\x15includeCostCategories\x18\x05 \x01(\x08\x12\x12\n\ntoCurrency\x18\x06 \x01(\t\x12\x13\n\x0b\x66orceLatest\x18\x07 \x01(\x08\"\xab\x01\n\x10ReadCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\taccountId\x18\x03 \x01(\t\x12\x11\n\tstartTime\x18\x04 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x05 \x01(\t\x12?\n\nawsOptions\x18\x06 \x01(\x0b\x32+.blueapi.cost.v1.ReadCostsRequestAwsOptions\"6\n ReadAdjustmentsRequestAwsOptions\x12\x12\n\ntoCurrency\x18\x01 \x01(\t\"\xb7\x01\n\x16ReadAdjustmentsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\taccountId\x18\x03 \x01(\t\x12\x11\n\tstartTime\x18\x04 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x05 \x01(\t\x12\x45\n\nawsOptions\x18\x06 \x01(\x0b\x32\x31.blueapi.cost.v1.ReadAdjustmentsRequestAwsOptions\".\n\x1dReadTagCostsRequestAwsOptions\x12\r\n\x05tagId\x18\x01 \x01(\t\"\xbf\x01\n\x13ReadTagCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x02 \x01(\t\x12\x11\n\tstartTime\x18\x03 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x04 \x01(\t\x12\x15\n\rgroupByMonths\x18\x05 \x01(\x08\x12\x42\n\nawsOptions\x18\x06 \x01(\x0b\x32..blueapi.cost.v1.ReadTagCostsRequestAwsOptions\"~\n\x16ReadNonTagCostsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x02 \x01(\t\x12\x11\n\tstartTime\x18\x03 \x01(\t\x12\x0f\n\x07\x65ndTime\x18\x04 \x01(\t\x12\x15\n\rgroupByMonths\x18\x05 \x01(\x08\"|\n\x13GetForecastsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x11\n\tcompanyId\x18\x02 \x01(\t\x12\x11\n\tfrequency\x18\x03 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\x12\x10\n\x08\x66romDate\x18\x05 \x01(\t\x12\x0e\n\x06toDate\x18\x06 \x01(\t\"G\n\x14GetForecastsResponse\x12/\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.blueapi.api.BillingGroupForecast\"l\n\x1dGetMonthlyCostForecastRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x10\n\x08\x66romDate\x18\x04 \x01(\t\x12\x0e\n\x06toDate\x18\x05 \x01(\t\"o\n\x1eGetMonthlyCostForecastResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12.\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32 .blueapi.api.MonthlyCostForecast\x12\x11\n\ttimestamp\x18\x03 \x01(\t\"]\n\"GetMonthOnMonthCostForecastRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\t\"y\n#GetMonthOnMonthCostForecastResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x33\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32%.blueapi.api.MonthOnMonthCostForecast\x12\x11\n\ttimestamp\x18\x03 \x01(\t\"\\\n!GetMonthToDateCostForecastRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\t\"\x87\x01\n\"GetMonthToDateCostForecastResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06\x62udget\x18\x02 \x01(\x01\x12\x32\n\x04\x64\x61ta\x18\x03 \x03(\x0b\x32$.blueapi.api.MonthToDateCostForecast\x12\x11\n\ttimestamp\x18\x04 \x01(\t\"R\n\x17GetAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12\x0c\n\x04year\x18\x04 \x01(\t\"=\n\x18GetAccountBudgetResponse\x12!\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32\x13.blueapi.api.Budget\"j\n\x1a\x43reateAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05level\x18\x02 \x01(\t\x12\n\n\x02id\x18\x03 \x01(\t\x12!\n\x04\x64\x61ta\x18\x04 \x01(\x0b\x32\x13.blueapi.api.Budget\"/\n\x1b\x43reateAccountBudgetResponse\x12\x10\n\x08\x62udgetId\x18\x01 \x01(\t\"a\n\x1aUpdateAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x10\n\x08\x62udgetId\x18\x02 \x01(\t\x12!\n\x04\x64\x61ta\x18\x03 \x01(\x0b\x32\x13.blueapi.api.Budget\">\n\x1a\x44\x65leteAccountBudgetRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x10\n\x08\x62udgetId\x18\x02 \x01(\t\"\xd6\x01\n#GetRecommendationsRequestAwsOptions\x12\x1a\n\x12recommendationType\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08services\x18\x03 \x03(\t\x12\x0c\n\x04term\x18\x04 \x01(\t\x12\x15\n\rofferingClass\x18\x05 \x01(\t\x12\x15\n\rpaymentOption\x18\x06 \x01(\t\x12\x0f\n\x07tenancy\x18\x07 \x01(\t\x12\x12\n\nriCoverage\x18\x08 \x01(\x01\x12\x12\n\nspCoverage\x18\t \x01(\x01\"\x96\x01\n\x19GetRecommendationsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05orgId\x18\x02 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x03 \x03(\t\x12H\n\nawsOptions\x18\x04 \x01(\x0b\x32\x34.blueapi.cost.v1.GetRecommendationsRequestAwsOptions\"l\n\x1aGetRecommendationsResponse\x12\r\n\x05orgId\x18\x01 \x01(\t\x12?\n\x12\x61wsRecommendations\x18\x02 \x01(\x0b\x32#.blueapi.api.aws.AwsRecommendations\"\xa8\x01\n\x17GetCostReductionRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\r\n\x05orgId\x18\x02 \x01(\t\x12\x18\n\x10reductionDisplay\x18\x03 \x01(\t\x12\x0e\n\x06period\x18\x04 \x01(\t\x12\x0f\n\x07payerId\x18\x05 \x01(\t\x12\x0f\n\x07groupId\x18\x06 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x07 \x03(\t\x12\x10\n\x08services\x18\x08 \x03(\t\"h\n\x18GetCostReductionResponse\x12\r\n\x05orgId\x18\x01 \x01(\t\x12=\n\x11\x61wsCostReductions\x18\x02 \x01(\x0b\x32\".blueapi.api.aws.AwsCostReductions2\xe5\x1f\n\x04\x43ost\x12s\n\x11ListPayerAccounts\x12).blueapi.cost.v1.ListPayerAccountsRequest\x1a\x14.blueapi.api.Account\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/{vendor}/payers0\x01\x12r\n\x0fGetPayerAccount\x12\'.blueapi.cost.v1.GetPayerAccountRequest\x1a\x14.blueapi.api.Account\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/v1/{vendor}/payers/{id}\x12\xbd\x01\n\x1cGetPayerAccountImportHistory\x12\x34.blueapi.cost.v1.GetPayerAccountImportHistoryRequest\x1a\x35.blueapi.cost.v1.GetPayerAccountImportHistoryResponse\".\x82\xd3\xe4\x93\x02(\x12&/v1/{vendor}/payers/{id}/importhistory0\x01\x12v\n\x12\x43reatePayerAccount\x12*.blueapi.cost.v1.CreatePayerAccountRequest\x1a\x14.blueapi.api.Account\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/{vendor}/payers:\x01*\x12z\n\x12\x44\x65letePayerAccount\x12*.blueapi.cost.v1.DeletePayerAccountRequest\x1a\x16.google.protobuf.Empty\" \x82\xd3\xe4\x93\x02\x1a*\x18/v1/{vendor}/payers/{id}\x12k\n\x0cListAccounts\x12$.blueapi.cost.v1.ListAccountsRequest\x1a\x14.blueapi.api.Account\"\x1d\x82\xd3\xe4\x93\x02\x17\x12\x15/v1/{vendor}/accounts0\x01\x12j\n\nGetAccount\x12\".blueapi.cost.v1.GetAccountRequest\x1a\x14.blueapi.api.Account\"\"\x82\xd3\xe4\x93\x02\x1c\x12\x1a/v1/{vendor}/accounts/{id}\x12n\n\rCreateAccount\x12%.blueapi.cost.v1.CreateAccountRequest\x1a\x14.blueapi.api.Account\" \x82\xd3\xe4\x93\x02\x1a\"\x15/v1/{vendor}/accounts:\x01*\x12r\n\rDeleteAccount\x12%.blueapi.cost.v1.DeleteAccountRequest\x1a\x16.google.protobuf.Empty\"\"\x82\xd3\xe4\x93\x02\x1c*\x1a/v1/{vendor}/accounts/{id}\x12\x98\x01\n\x13GetCalculatorStatus\x12+.blueapi.cost.v1.GetCalculatorStatusRequest\x1a,.blueapi.cost.v1.GetCalculatorStatusResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{vendor}/calculator/status\x12\x98\x01\n\x13GetCalculatorConfig\x12+.blueapi.cost.v1.GetCalculatorConfigRequest\x1a,.blueapi.cost.v1.GetCalculatorConfigResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/{vendor}/calculator/config\x12o\n\x0eImportCurFiles\x12&.blueapi.cost.v1.ImportCurFilesRequest\x1a\x16.blueapi.api.Operation\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/aws/cur:import:\x01*\x12y\n\x0e\x43\x61lculateCosts\x12&.blueapi.cost.v1.CalculateCostsRequest\x1a\x16.blueapi.api.Operation\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/{vendor}/costs:calculate:\x01*\x12\xa7\x01\n\x17ListCalculationsHistory\x12/.blueapi.cost.v1.ListCalculationsHistoryRequest\x1a\x30.blueapi.cost.v1.ListCalculationsHistoryResponse\")\x82\xd3\xe4\x93\x02#\x12!/v1/{vendor}/calculations/history\x12o\n\tReadCosts\x12!.blueapi.cost.v1.ReadCostsRequest\x1a\x19.blueapi.cost.v1.CostItem\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/{vendor}/costs:read:\x01*0\x01\x12\x81\x01\n\x0fReadAdjustments\x12\'.blueapi.cost.v1.ReadAdjustmentsRequest\x1a\x19.blueapi.cost.v1.CostItem\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/{vendor}/adjustments:read:\x01*0\x01\x12x\n\x0cReadTagCosts\x12$.blueapi.cost.v1.ReadTagCostsRequest\x1a\x19.blueapi.cost.v1.CostItem\"%\x82\xd3\xe4\x93\x02\x1f\"\x1a/v1/{vendor}/tagcosts:read:\x01*0\x01\x12\x81\x01\n\x0fReadNonTagCosts\x12\'.blueapi.cost.v1.ReadNonTagCostsRequest\x1a\x19.blueapi.cost.v1.CostItem\"(\x82\xd3\xe4\x93\x02\"\"\x1d/v1/{vendor}/nontagcosts:read:\x01*0\x01\x12{\n\x0cGetForecasts\x12$.blueapi.cost.v1.GetForecastsRequest\x1a%.blueapi.cost.v1.GetForecastsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/v1/{vendor}/forecasts\x12\xae\x01\n\x16GetMonthlyCostForecast\x12..blueapi.cost.v1.GetMonthlyCostForecastRequest\x1a/.blueapi.cost.v1.GetMonthlyCostForecastResponse\"3\x82\xd3\xe4\x93\x02-\x12+/v1/{vendor}/forecasts/monthly/{level}/{id}\x12\xc4\x01\n\x1bGetMonthOnMonthCostForecast\x12\x33.blueapi.cost.v1.GetMonthOnMonthCostForecastRequest\x1a\x34.blueapi.cost.v1.GetMonthOnMonthCostForecastResponse\":\x82\xd3\xe4\x93\x02\x34\x12\x32/v1/{vendor}/forecasts/month-on-month/{level}/{id}\x12\xc0\x01\n\x1aGetMonthToDateCostForecast\x12\x32.blueapi.cost.v1.GetMonthToDateCostForecastRequest\x1a\x33.blueapi.cost.v1.GetMonthToDateCostForecastResponse\"9\x82\xd3\xe4\x93\x02\x33\x12\x31/v1/{vendor}/forecasts/month-to-date/{level}/{id}\x12\x91\x01\n\x10GetAccountBudget\x12(.blueapi.cost.v1.GetAccountBudgetRequest\x1a).blueapi.cost.v1.GetAccountBudgetResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/{vendor}/budget/{level}/{id}\x12\x9d\x01\n\x13\x43reateAccountBudget\x12+.blueapi.cost.v1.CreateAccountBudgetRequest\x1a,.blueapi.cost.v1.CreateAccountBudgetResponse\"+\x82\xd3\xe4\x93\x02%\" /v1/{vendor}/budget/{level}/{id}:\x01*\x12\x85\x01\n\x13UpdateAccountBudget\x12+.blueapi.cost.v1.UpdateAccountBudgetRequest\x1a\x16.google.protobuf.Empty\")\x82\xd3\xe4\x93\x02#\x1a\x1e/v1/{vendor}/budget/{budgetId}:\x01*\x12\x82\x01\n\x13\x44\x65leteAccountBudget\x12+.blueapi.cost.v1.DeleteAccountBudgetRequest\x1a\x16.google.protobuf.Empty\"&\x82\xd3\xe4\x93\x02 *\x1e/v1/{vendor}/budget/{budgetId}\x12\x9e\x01\n\x12GetRecommendations\x12*.blueapi.cost.v1.GetRecommendationsRequest\x1a+.blueapi.cost.v1.GetRecommendationsResponse\"/\x82\xd3\xe4\x93\x02)\"$/v1/{vendor}/recommendations/{orgId}:\x01*\x12\x92\x01\n\x10GetCostReduction\x12(.blueapi.cost.v1.GetCostReductionRequest\x1a).blueapi.cost.v1.GetCostReductionResponse\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/{vendor}/reduction/{orgId}:\x01*\x1a\x94\x01\x92\x41\x90\x01\x12@(BETA) Cost API. Base URL: https://api.alphaus.cloud/m/blue/cost\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/cost/B\xfc\x02\n\x16\x63loud.alphaus.api.costB\tCostProtoZ#github.com/alphauslabs/blueapi/cost\x92\x41\xb0\x02\x12\xce\x01\n\x1a\x41lphaus Blue: Cost Service\"R\n\x1a\x41lphaus Blue: Cost Service\x12\x34https://alphauslabs.github.io/blueapi/apis/cost.html*W\n\x1bLicense: Apache License 2.0\x12\x38https://github.com/alphauslabs/blueapi/blob/main/LICENSE2\x03\x31.0r]\n%More about Alphaus Blue: Cost Service\x12\x34https://alphauslabs.github.io/blueapi/apis/cost.htmlb\x06proto3'
   ,
-  dependencies=[api_dot_account__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,api_dot_budget__pb2.DESCRIPTOR,api_dot_forecast__pb2.DESCRIPTOR,api_dot_aws_dot_cost__pb2.DESCRIPTOR,api_dot_aws_dot_calculator__pb2.DESCRIPTOR,api_dot_aws_dot_recommendation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[api_dot_account__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,api_dot_budget__pb2.DESCRIPTOR,api_dot_forecast__pb2.DESCRIPTOR,api_dot_aws_dot_cost__pb2.DESCRIPTOR,api_dot_aws_dot_calculator__pb2.DESCRIPTOR,api_dot_aws_dot_recommendation__pb2.DESCRIPTOR,api_dot_aws_dot_reduction__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -63,8 +64,8 @@ _LISTPAYERACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=300,
-  serialized_end=342,
+  serialized_start=325,
+  serialized_end=367,
 )
 
 
@@ -102,8 +103,8 @@ _GETPAYERACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=344,
-  serialized_end=396,
+  serialized_start=369,
+  serialized_end=421,
 )
 
 
@@ -148,8 +149,8 @@ _GETPAYERACCOUNTIMPORTHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=398,
-  serialized_end=478,
+  serialized_start=423,
+  serialized_end=503,
 )
 
 
@@ -194,8 +195,8 @@ _GETPAYERACCOUNTIMPORTHISTORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=480,
-  serialized_end=565,
+  serialized_start=505,
+  serialized_end=590,
 )
 
 
@@ -261,8 +262,8 @@ _CREATEPAYERACCOUNTREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=568,
-  serialized_end=704,
+  serialized_start=593,
+  serialized_end=729,
 )
 
 
@@ -300,8 +301,8 @@ _CREATEPAYERACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=706,
-  serialized_end=823,
+  serialized_start=731,
+  serialized_end=848,
 )
 
 
@@ -339,8 +340,8 @@ _DELETEPAYERACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=825,
-  serialized_end=880,
+  serialized_start=850,
+  serialized_end=905,
 )
 
 
@@ -371,8 +372,8 @@ _LISTACCOUNTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=882,
-  serialized_end=919,
+  serialized_start=907,
+  serialized_end=944,
 )
 
 
@@ -410,8 +411,8 @@ _GETACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=921,
-  serialized_end=968,
+  serialized_start=946,
+  serialized_end=993,
 )
 
 
@@ -442,8 +443,8 @@ _CREATEACCOUNTREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=970,
-  serialized_end=1031,
+  serialized_start=995,
+  serialized_end=1056,
 )
 
 
@@ -502,8 +503,8 @@ _CREATEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1034,
-  serialized_end=1183,
+  serialized_start=1059,
+  serialized_end=1208,
 )
 
 
@@ -541,8 +542,8 @@ _DELETEACCOUNTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1185,
-  serialized_end=1235,
+  serialized_start=1210,
+  serialized_end=1260,
 )
 
 
@@ -573,8 +574,8 @@ _GETCALCULATORSTATUSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1237,
-  serialized_end=1281,
+  serialized_start=1262,
+  serialized_end=1306,
 )
 
 
@@ -605,8 +606,8 @@ _GETCALCULATORSTATUSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1283,
-  serialized_end=1360,
+  serialized_start=1308,
+  serialized_end=1385,
 )
 
 
@@ -637,8 +638,8 @@ _GETCALCULATORCONFIGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1362,
-  serialized_end=1406,
+  serialized_start=1387,
+  serialized_end=1431,
 )
 
 
@@ -669,8 +670,8 @@ _GETCALCULATORCONFIGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1408,
-  serialized_end=1485,
+  serialized_start=1433,
+  serialized_end=1510,
 )
 
 
@@ -708,8 +709,8 @@ _IMPORTCURFILESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1487,
-  serialized_end=1541,
+  serialized_start=1512,
+  serialized_end=1566,
 )
 
 
@@ -740,8 +741,8 @@ _COSTITEM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1543,
-  serialized_end=1589,
+  serialized_start=1568,
+  serialized_end=1614,
 )
 
 
@@ -786,8 +787,8 @@ _CALCULATECOSTSREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1591,
-  serialized_end=1679,
+  serialized_start=1616,
+  serialized_end=1704,
 )
 
 
@@ -839,8 +840,8 @@ _CALCULATECOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1682,
-  serialized_end=1823,
+  serialized_start=1707,
+  serialized_end=1848,
 )
 
 
@@ -885,8 +886,8 @@ _LISTCALCULATIONSHISTORYREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1825,
-  serialized_end=1908,
+  serialized_start=1850,
+  serialized_end=1933,
 )
 
 
@@ -917,8 +918,8 @@ _LISTCALCULATIONSHISTORYAWSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1910,
-  serialized_end=1990,
+  serialized_start=1935,
+  serialized_end=2015,
 )
 
 
@@ -949,8 +950,8 @@ _LISTCALCULATIONSHISTORYRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1992,
-  serialized_end=2091,
+  serialized_start=2017,
+  serialized_end=2116,
 )
 
 
@@ -988,8 +989,8 @@ _READCOSTSREQUESTAWSOPTIONSFILTERS_ANDFILTERSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2219,
-  serialized_end=2268,
+  serialized_start=2244,
+  serialized_end=2293,
 )
 
 _READCOSTSREQUESTAWSOPTIONSFILTERS = _descriptor.Descriptor(
@@ -1019,8 +1020,8 @@ _READCOSTSREQUESTAWSOPTIONSFILTERS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2094,
-  serialized_end=2268,
+  serialized_start=2119,
+  serialized_end=2293,
 )
 
 
@@ -1093,8 +1094,8 @@ _READCOSTSREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2271,
-  serialized_end=2507,
+  serialized_start=2296,
+  serialized_end=2532,
 )
 
 
@@ -1160,8 +1161,8 @@ _READCOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2510,
-  serialized_end=2681,
+  serialized_start=2535,
+  serialized_end=2706,
 )
 
 
@@ -1192,8 +1193,8 @@ _READADJUSTMENTSREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2683,
-  serialized_end=2737,
+  serialized_start=2708,
+  serialized_end=2762,
 )
 
 
@@ -1259,8 +1260,8 @@ _READADJUSTMENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2740,
-  serialized_end=2923,
+  serialized_start=2765,
+  serialized_end=2948,
 )
 
 
@@ -1291,8 +1292,8 @@ _READTAGCOSTSREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2925,
-  serialized_end=2971,
+  serialized_start=2950,
+  serialized_end=2996,
 )
 
 
@@ -1358,8 +1359,8 @@ _READTAGCOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2974,
-  serialized_end=3165,
+  serialized_start=2999,
+  serialized_end=3190,
 )
 
 
@@ -1418,8 +1419,8 @@ _READNONTAGCOSTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3167,
-  serialized_end=3293,
+  serialized_start=3192,
+  serialized_end=3318,
 )
 
 
@@ -1485,8 +1486,8 @@ _GETFORECASTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3295,
-  serialized_end=3419,
+  serialized_start=3320,
+  serialized_end=3444,
 )
 
 
@@ -1517,8 +1518,8 @@ _GETFORECASTSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3421,
-  serialized_end=3492,
+  serialized_start=3446,
+  serialized_end=3517,
 )
 
 
@@ -1577,8 +1578,8 @@ _GETMONTHLYCOSTFORECASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3494,
-  serialized_end=3602,
+  serialized_start=3519,
+  serialized_end=3627,
 )
 
 
@@ -1623,8 +1624,8 @@ _GETMONTHLYCOSTFORECASTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3604,
-  serialized_end=3715,
+  serialized_start=3629,
+  serialized_end=3740,
 )
 
 
@@ -1676,8 +1677,8 @@ _GETMONTHONMONTHCOSTFORECASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3717,
-  serialized_end=3810,
+  serialized_start=3742,
+  serialized_end=3835,
 )
 
 
@@ -1722,8 +1723,8 @@ _GETMONTHONMONTHCOSTFORECASTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3812,
-  serialized_end=3933,
+  serialized_start=3837,
+  serialized_end=3958,
 )
 
 
@@ -1775,8 +1776,8 @@ _GETMONTHTODATECOSTFORECASTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=3935,
-  serialized_end=4027,
+  serialized_start=3960,
+  serialized_end=4052,
 )
 
 
@@ -1828,8 +1829,8 @@ _GETMONTHTODATECOSTFORECASTRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4030,
-  serialized_end=4165,
+  serialized_start=4055,
+  serialized_end=4190,
 )
 
 
@@ -1881,8 +1882,8 @@ _GETACCOUNTBUDGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4167,
-  serialized_end=4249,
+  serialized_start=4192,
+  serialized_end=4274,
 )
 
 
@@ -1913,8 +1914,8 @@ _GETACCOUNTBUDGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4251,
-  serialized_end=4312,
+  serialized_start=4276,
+  serialized_end=4337,
 )
 
 
@@ -1966,8 +1967,8 @@ _CREATEACCOUNTBUDGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4314,
-  serialized_end=4420,
+  serialized_start=4339,
+  serialized_end=4445,
 )
 
 
@@ -1998,8 +1999,8 @@ _CREATEACCOUNTBUDGETRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4422,
-  serialized_end=4469,
+  serialized_start=4447,
+  serialized_end=4494,
 )
 
 
@@ -2044,8 +2045,8 @@ _UPDATEACCOUNTBUDGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4471,
-  serialized_end=4568,
+  serialized_start=4496,
+  serialized_end=4593,
 )
 
 
@@ -2083,8 +2084,8 @@ _DELETEACCOUNTBUDGETREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4570,
-  serialized_end=4632,
+  serialized_start=4595,
+  serialized_end=4657,
 )
 
 
@@ -2171,8 +2172,8 @@ _GETRECOMMENDATIONSREQUESTAWSOPTIONS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4635,
-  serialized_end=4849,
+  serialized_start=4660,
+  serialized_end=4874,
 )
 
 
@@ -2224,8 +2225,8 @@ _GETRECOMMENDATIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=4852,
-  serialized_end=5002,
+  serialized_start=4877,
+  serialized_end=5027,
 )
 
 
@@ -2263,8 +2264,128 @@ _GETRECOMMENDATIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=5004,
-  serialized_end=5112,
+  serialized_start=5029,
+  serialized_end=5137,
+)
+
+
+_GETCOSTREDUCTIONREQUEST = _descriptor.Descriptor(
+  name='GetCostReductionRequest',
+  full_name='blueapi.cost.v1.GetCostReductionRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='vendor', full_name='blueapi.cost.v1.GetCostReductionRequest.vendor', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='orgId', full_name='blueapi.cost.v1.GetCostReductionRequest.orgId', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reductionDisplay', full_name='blueapi.cost.v1.GetCostReductionRequest.reductionDisplay', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='period', full_name='blueapi.cost.v1.GetCostReductionRequest.period', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='payerId', full_name='blueapi.cost.v1.GetCostReductionRequest.payerId', index=4,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='groupId', full_name='blueapi.cost.v1.GetCostReductionRequest.groupId', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='accounts', full_name='blueapi.cost.v1.GetCostReductionRequest.accounts', index=6,
+      number=7, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='services', full_name='blueapi.cost.v1.GetCostReductionRequest.services', index=7,
+      number=8, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5140,
+  serialized_end=5308,
+)
+
+
+_GETCOSTREDUCTIONRESPONSE = _descriptor.Descriptor(
+  name='GetCostReductionResponse',
+  full_name='blueapi.cost.v1.GetCostReductionResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='orgId', full_name='blueapi.cost.v1.GetCostReductionResponse.orgId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='awsCostReductions', full_name='blueapi.cost.v1.GetCostReductionResponse.awsCostReductions', index=1,
+      number=2, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=5310,
+  serialized_end=5414,
 )
 
 _CREATEPAYERACCOUNTREQUEST.fields_by_name['awsOptions'].message_type = _CREATEPAYERACCOUNTREQUESTAWSOPTIONS
@@ -2290,6 +2411,7 @@ _CREATEACCOUNTBUDGETREQUEST.fields_by_name['data'].message_type = api_dot_budget
 _UPDATEACCOUNTBUDGETREQUEST.fields_by_name['data'].message_type = api_dot_budget__pb2._BUDGET
 _GETRECOMMENDATIONSREQUEST.fields_by_name['awsOptions'].message_type = _GETRECOMMENDATIONSREQUESTAWSOPTIONS
 _GETRECOMMENDATIONSRESPONSE.fields_by_name['awsRecommendations'].message_type = api_dot_aws_dot_recommendation__pb2._AWSRECOMMENDATIONS
+_GETCOSTREDUCTIONRESPONSE.fields_by_name['awsCostReductions'].message_type = api_dot_aws_dot_reduction__pb2._AWSCOSTREDUCTIONS
 DESCRIPTOR.message_types_by_name['ListPayerAccountsRequest'] = _LISTPAYERACCOUNTSREQUEST
 DESCRIPTOR.message_types_by_name['GetPayerAccountRequest'] = _GETPAYERACCOUNTREQUEST
 DESCRIPTOR.message_types_by_name['GetPayerAccountImportHistoryRequest'] = _GETPAYERACCOUNTIMPORTHISTORYREQUEST
@@ -2338,6 +2460,8 @@ DESCRIPTOR.message_types_by_name['DeleteAccountBudgetRequest'] = _DELETEACCOUNTB
 DESCRIPTOR.message_types_by_name['GetRecommendationsRequestAwsOptions'] = _GETRECOMMENDATIONSREQUESTAWSOPTIONS
 DESCRIPTOR.message_types_by_name['GetRecommendationsRequest'] = _GETRECOMMENDATIONSREQUEST
 DESCRIPTOR.message_types_by_name['GetRecommendationsResponse'] = _GETRECOMMENDATIONSRESPONSE
+DESCRIPTOR.message_types_by_name['GetCostReductionRequest'] = _GETCOSTREDUCTIONREQUEST
+DESCRIPTOR.message_types_by_name['GetCostReductionResponse'] = _GETCOSTREDUCTIONRESPONSE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListPayerAccountsRequest = _reflection.GeneratedProtocolMessageType('ListPayerAccountsRequest', (_message.Message,), {
@@ -2684,6 +2808,20 @@ GetRecommendationsResponse = _reflection.GeneratedProtocolMessageType('GetRecomm
   })
 _sym_db.RegisterMessage(GetRecommendationsResponse)
 
+GetCostReductionRequest = _reflection.GeneratedProtocolMessageType('GetCostReductionRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETCOSTREDUCTIONREQUEST,
+  '__module__' : 'cost.v1.cost_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.cost.v1.GetCostReductionRequest)
+  })
+_sym_db.RegisterMessage(GetCostReductionRequest)
+
+GetCostReductionResponse = _reflection.GeneratedProtocolMessageType('GetCostReductionResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETCOSTREDUCTIONRESPONSE,
+  '__module__' : 'cost.v1.cost_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.cost.v1.GetCostReductionResponse)
+  })
+_sym_db.RegisterMessage(GetCostReductionResponse)
+
 
 DESCRIPTOR._options = None
 _READCOSTSREQUESTAWSOPTIONSFILTERS_ANDFILTERSENTRY._options = None
@@ -2695,8 +2833,8 @@ _COST = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\220\001\022@(BETA) Cost API. Base URL: https://api.alphaus.cloud/m/blue/cost\032L\n\022Service definition\0226https://github.com/alphauslabs/blueapi/tree/main/cost/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=5115,
-  serialized_end=9035,
+  serialized_start=5417,
+  serialized_end=9486,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListPayerAccounts',
@@ -2966,6 +3104,16 @@ _COST = _descriptor.ServiceDescriptor(
     input_type=_GETRECOMMENDATIONSREQUEST,
     output_type=_GETRECOMMENDATIONSRESPONSE,
     serialized_options=b'\202\323\344\223\002)\"$/v1/{vendor}/recommendations/{orgId}:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetCostReduction',
+    full_name='blueapi.cost.v1.Cost.GetCostReduction',
+    index=27,
+    containing_service=None,
+    input_type=_GETCOSTREDUCTIONREQUEST,
+    output_type=_GETCOSTREDUCTIONRESPONSE,
+    serialized_options=b'\202\323\344\223\002#\"\036/v1/{vendor}/reduction/{orgId}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])
