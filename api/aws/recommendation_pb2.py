@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035cloud.alphaus.blueapi.api.awsB\031ApiAwsRecommendationProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1c\x61pi/aws/recommendation.proto\x12\x0f\x62lueapi.api.aws\"\xd4\x01\n\x12\x41wsRecommendations\x12\x42\n\x07summary\x18\x01 \x01(\x0b\x32\x31.blueapi.api.aws.ReservationRecommendationSummary\x12<\n\x11riRecommendations\x18\x02 \x03(\x0b\x32!.blueapi.api.aws.RiRecommendation\x12<\n\x11spRecommendations\x18\x03 \x03(\x0b\x32!.blueapi.api.aws.SpRecommendation\"\x8b\x03\n\x10RiRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x14\n\x0cinstanceType\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\x03\x12\x16\n\x0enormalizedUnit\x18\x06 \x01(\x01\x12\x17\n\x0foperatingSystem\x18\x07 \x01(\t\x12\x16\n\x0epreInstalledSW\x18\x08 \x01(\t\x12\x0f\n\x07tenancy\x18\t \x01(\t\x12\x14\n\x0condemandCost\x18\n \x01(\x01\x12\x14\n\x0condemandrate\x18\x0b \x01(\x01\x12\x0e\n\x06riRate\x18\x0c \x01(\x01\x12\x13\n\x0bupfrontCost\x18\r \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x0e \x01(\x01\x12\x1d\n\x15monthlyDiscountedCost\x18\x0f \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\x10 \x01(\x01\x12\x15\n\rreductionRate\x18\x11 \x01(\x01\"\x96\x02\n\x10SpRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fspProductFamily\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x16\n\x0einstanceFamily\x18\x04 \x01(\t\x12\x14\n\x0condemandCost\x18\x05 \x01(\x01\x12\x12\n\ncommitment\x18\x06 \x01(\x01\x12\x16\n\x0enormalizedUnit\x18\x07 \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x08 \x01(\x01\x12\x1d\n\x15monthlyDiscountedCost\x18\t \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\n \x01(\x01\x12\x15\n\rreductionRate\x18\x0b \x01(\x01\"\xd5\x01\n ReservationRecommendationSummary\x12\x1b\n\x13totalNormalizedUnit\x18\x01 \x01(\x01\x12\x19\n\x11totalOnDemandCost\x18\x02 \x01(\x01\x12\x1b\n\x13totalDiscountedCost\x18\x03 \x01(\x01\x12\"\n\x1atotalDiscountedMonthlyCost\x18\x04 \x01(\x01\x12!\n\x19totalDiscountedYearlyCost\x18\x05 \x01(\x01\x12\x15\n\rreductionRate\x18\x06 \x01(\x01\x42\x66\n\x1d\x63loud.alphaus.blueapi.api.awsB\x19\x41piAwsRecommendationProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
+  serialized_pb=b'\n\x1c\x61pi/aws/recommendation.proto\x12\x0f\x62lueapi.api.aws\"\xd4\x01\n\x12\x41wsRecommendations\x12\x42\n\x07summary\x18\x01 \x01(\x0b\x32\x31.blueapi.api.aws.ReservationRecommendationSummary\x12<\n\x11riRecommendations\x18\x02 \x03(\x0b\x32!.blueapi.api.aws.RiRecommendation\x12<\n\x11spRecommendations\x18\x03 \x03(\x0b\x32!.blueapi.api.aws.SpRecommendation\"\xc9\x03\n\x10RiRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x14\n\x0cinstanceType\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\x03\x12\x16\n\x0enormalizedUnit\x18\x06 \x01(\x01\x12\x17\n\x0foperatingSystem\x18\x07 \x01(\t\x12\x16\n\x0epreInstalledSW\x18\x08 \x01(\t\x12\x0f\n\x07tenancy\x18\t \x01(\t\x12\x14\n\x0condemandCost\x18\n \x01(\x01\x12\x14\n\x0condemandrate\x18\x0b \x01(\x01\x12\x0e\n\x06riRate\x18\x0c \x01(\x01\x12\x13\n\x0bupfrontCost\x18\r \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x0e \x01(\x01\x12\x1c\n\x14monthlyAmortizedCost\x18\x0f \x01(\x01\x12\x1c\n\x14monthlyRecurringCost\x18\x10 \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\x11 \x01(\x01\x12\x15\n\rreductionRate\x18\x12 \x01(\x01\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\x13 \x01(\x01\"\xb7\x02\n\x10SpRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fspProductFamily\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x16\n\x0einstanceFamily\x18\x04 \x01(\t\x12\x14\n\x0condemandCost\x18\x05 \x01(\x01\x12\x12\n\ncommitment\x18\x06 \x01(\x01\x12\x16\n\x0enormalizedUnit\x18\x07 \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x08 \x01(\x01\x12\x1d\n\x15monthlyDiscountedCost\x18\t \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\n \x01(\x01\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\x0b \x01(\x01\x12\x15\n\rreductionRate\x18\x0c \x01(\x01\"\xd5\x01\n ReservationRecommendationSummary\x12\x1b\n\x13totalNormalizedUnit\x18\x01 \x01(\x01\x12\x19\n\x11totalOnDemandCost\x18\x02 \x01(\x01\x12\x1b\n\x13totalDiscountedCost\x18\x03 \x01(\x01\x12\"\n\x1atotalDiscountedMonthlyCost\x18\x04 \x01(\x01\x12!\n\x19totalDiscountedYearlyCost\x18\x05 \x01(\x01\x12\x15\n\rreductionRate\x18\x06 \x01(\x01\x42\x66\n\x1d\x63loud.alphaus.blueapi.api.awsB\x19\x41piAwsRecommendationProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
 )
 
 
@@ -178,22 +178,36 @@ _RIRECOMMENDATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='monthlyDiscountedCost', full_name='blueapi.api.aws.RiRecommendation.monthlyDiscountedCost', index=14,
+      name='monthlyAmortizedCost', full_name='blueapi.api.aws.RiRecommendation.monthlyAmortizedCost', index=14,
       number=15, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='yearlyDiscountedCost', full_name='blueapi.api.aws.RiRecommendation.yearlyDiscountedCost', index=15,
+      name='monthlyRecurringCost', full_name='blueapi.api.aws.RiRecommendation.monthlyRecurringCost', index=15,
       number=16, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reductionRate', full_name='blueapi.api.aws.RiRecommendation.reductionRate', index=16,
+      name='yearlyDiscountedCost', full_name='blueapi.api.aws.RiRecommendation.yearlyDiscountedCost', index=16,
       number=17, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reductionRate', full_name='blueapi.api.aws.RiRecommendation.reductionRate', index=17,
+      number=18, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='estimatedMonthlySavings', full_name='blueapi.api.aws.RiRecommendation.estimatedMonthlySavings', index=18,
+      number=19, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -211,7 +225,7 @@ _RIRECOMMENDATION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=265,
-  serialized_end=660,
+  serialized_end=722,
 )
 
 
@@ -294,8 +308,15 @@ _SPRECOMMENDATION = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='reductionRate', full_name='blueapi.api.aws.SpRecommendation.reductionRate', index=10,
+      name='estimatedMonthlySavings', full_name='blueapi.api.aws.SpRecommendation.estimatedMonthlySavings', index=10,
       number=11, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='reductionRate', full_name='blueapi.api.aws.SpRecommendation.reductionRate', index=11,
+      number=12, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -312,8 +333,8 @@ _SPRECOMMENDATION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=663,
-  serialized_end=941,
+  serialized_start=725,
+  serialized_end=1036,
 )
 
 
@@ -379,8 +400,8 @@ _RESERVATIONRECOMMENDATIONSUMMARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=944,
-  serialized_end=1157,
+  serialized_start=1039,
+  serialized_end=1252,
 )
 
 _AWSRECOMMENDATIONS.fields_by_name['summary'].message_type = _RESERVATIONRECOMMENDATIONSUMMARY
