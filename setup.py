@@ -1,11 +1,12 @@
-from setuptools import setup
+from setuptools import find_packages, setup
 
 setup(
-    name = "Blue Python API",
+    name = "alphausblue",
     author = "Alphaus KK",
     description = "Alphaus KK's Blue API for Python",
     url = "https://github.com/alphauslabs/blue-sdk-python",
-    packages = ["package"],
+    version = "0.0.2",
+    packages = find_packages(),
     options = {
         "bdist_wheel": {
             "universal": True
