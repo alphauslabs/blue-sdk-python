@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
+from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
 
 
 class AdminStub(object):

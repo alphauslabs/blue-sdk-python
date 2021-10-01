@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
+from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 
 
 class BillingStub(object):

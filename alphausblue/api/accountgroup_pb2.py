@@ -11,8 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from api import keyvalue_pb2 as api_dot_keyvalue__pb2
-from api import account_pb2 as api_dot_account__pb2
+from alphausblue.api import keyvalue_pb2 as api_dot_keyvalue__pb2
+from alphausblue.api import account_pb2 as api_dot_account__pb2
 
 
 DESCRIPTOR = _descriptor.FileDescriptor(

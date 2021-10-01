@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from preferences.v1 import preferences_pb2 as preferences_dot_v1_dot_preferences__pb2
+from alphausblue.preferences.v1 import preferences_pb2 as preferences_dot_v1_dot_preferences__pb2
 
 
 class PreferencesStub(object):

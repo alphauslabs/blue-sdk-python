@@ -3,7 +3,7 @@
 import grpc
 
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
-from kvstore.v1 import kvstore_pb2 as kvstore_dot_v1_dot_kvstore__pb2
+from alphausblue.kvstore.v1 import kvstore_pb2 as kvstore_dot_v1_dot_kvstore__pb2
 
 
 class KvStoreStub(object):
