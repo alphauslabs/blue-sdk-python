@@ -114,7 +114,7 @@ class Session(object):
         else:
             self.GrantType = grant_type
 
-    def AccessToken(self) -> str:
+    def access_token(self) -> str:
         """
         Authenticates the user with the Blue API using the credentials provided.
         @returns: An access token that can be used with secured GRPC requests or
