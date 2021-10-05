@@ -1,17 +1,7 @@
 from collections import namedtuple
-from grpc import ClientCallDetails
+from grpc.aio import ClientCallDetails
 
 from .interceptor import create
-
-class _ClientCallDetails(
-        namedtuple(
-            '_ClientCallDetails',
-            ('method', 'timeout', 'metadata', 'credentials')),
-        ClientCallDetails):
-    """
-    Implements the client details with the method, timeout, metadata and credentials fields
-    """
-    pass
 
 def _header_adder_interceptor(header, value):
     """
@@ -36,9 +26,9 @@ def _header_adder_interceptor(header, value):
 
         # Now, create a new client call details from the existing client call details and
         # return it, along with the request iterator and a (None) post-processor
-        client_call_details = _ClientCallDetails(
+        client_call_details = ClientCallDetails(
             client_call_details.method, client_call_details.timeout, metadata,
-            client_call_details.credentials)
+            client_call_details.credentials, client_call_details.wait_for_ready)
         return client_call_details, request_iterator, None
 
     # Create the interceptor with the function and return it

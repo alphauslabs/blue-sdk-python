@@ -1,10 +1,11 @@
 from grpc import (
-    Channel, 
     composite_channel_credentials,
     ssl_channel_credentials,
-    access_token_call_credentials, 
-    secure_channel, 
-    intercept_channel)
+    access_token_call_credentials)
+
+from grpc.aio import (
+    Channel,
+    secure_channel)
 
 from .header_interceptor import _header_adder_interceptor
 from .session import Session
@@ -67,14 +68,15 @@ class GrpcClientConn(object):
                 access_token_call_credentials(token))
 
             # Next, create a secure channel from the target and credentials
-            self.conn = secure_channel(target = self.target, credentials = credentials)
-
-            # Finally, if the service is not empty then add interceptors that will
-            # add the service name and x-agent headers to the request
             if self.service:
-                self.conn = intercept_channel(self.conn,
-                    _header_adder_interceptor("service-name", self.service),
-                    _header_adder_interceptor("x-agent", "blue-sdk-go"))
+                self.conn = secure_channel(
+                    target = self.target, 
+                    credentials = credentials, 
+                    interceptors = [
+                        _header_adder_interceptor("service-name", self.service),
+                        _header_adder_interceptor("x-agent", "blue-sdk-go")])
+            else:
+                self.conn = secure_channel(target = self.target, credentials = credentials)
         
         # Return the connection
         return self.conn

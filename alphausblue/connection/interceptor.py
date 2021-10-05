@@ -1,4 +1,4 @@
-from grpc import (
+from grpc.aio import (
     UnaryUnaryClientInterceptor,
     UnaryStreamClientInterceptor,
     StreamUnaryClientInterceptor,
