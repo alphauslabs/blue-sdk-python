@@ -34,7 +34,7 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         @param request: The request that will be sent to the GRCP endpoint
         @returns: The response from the GRPC endpoint
         """
-        return self._inercept_inner(continuation, client_call_details, iter((request),), False, False)
+        return self._inercept_inner(continuation, client_call_details, iter((request,)), False, False)
 
     def intercept_unary_stream(self, continuation, client_call_details, request):
         """
@@ -47,7 +47,7 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         @param request: The request that will be sent to the GRCP endpoint
         @returns: The response from the GRPC endpoint
         """
-        return self._inercept_inner(continuation, client_call_details, iter((request),), False, True)
+        return self._inercept_inner(continuation, client_call_details, iter((request,)), False, True)
 
     def intercept_stream_unary(self, continuation, client_call_details, request_iterator):
         """
