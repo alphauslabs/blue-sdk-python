@@ -23,7 +23,7 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         """
         self._fn = interceptor_function
 
-    def intercept_unary_unary(self, continuation, client_call_details, request):
+    async def intercept_unary_unary(self, continuation, client_call_details, request):
         """
         Intercepts requests that take a unary request and return a unary response and
         runs the function on them
@@ -34,9 +34,9 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         @param request: The request that will be sent to the GRCP endpoint
         @returns: The response from the GRPC endpoint
         """
-        return self._inercept_inner(continuation, client_call_details, iter((request,)), False, False)
+        return await self._inercept_inner(continuation, client_call_details, iter((request,)), False, False)
 
-    def intercept_unary_stream(self, continuation, client_call_details, request):
+    async def intercept_unary_stream(self, continuation, client_call_details, request):
         """
         Intercepts requests that take a unary request and return a stream response and
         runs the function on them
@@ -47,9 +47,9 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         @param request: The request that will be sent to the GRCP endpoint
         @returns: The response from the GRPC endpoint
         """
-        return self._inercept_inner(continuation, client_call_details, iter((request,)), False, True)
+        return await self._inercept_inner(continuation, client_call_details, iter((request,)), False, True)
 
-    def intercept_stream_unary(self, continuation, client_call_details, request_iterator):
+    async def intercept_stream_unary(self, continuation, client_call_details, request_iterator):
         """
         Intercepts requests that take a stream request and return a unary response and
         runs the function on them
@@ -60,9 +60,9 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         @param request: The request that will be sent to the GRCP endpoint
         @returns: The response from the GRPC endpoint
         """
-        return self._inercept_inner(continuation, client_call_details, request_iterator, True, False)
+        return await self._inercept_inner(continuation, client_call_details, request_iterator, True, False)
 
-    def intercept_stream_stream(self, continuation, client_call_details, request_iterator):
+    async def intercept_stream_stream(self, continuation, client_call_details, request_iterator):
         """
         Intercepts requests that take a stream request and return a stream request and
         runs the function on them
@@ -73,10 +73,10 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
         @param request: The request that will be sent to the GRCP endpoint
         @returns: The response from the GRPC endpoint
         """
-        return self._inercept_inner(continuation, client_call_details, request_iterator, True, True)
+        return await self._inercept_inner(continuation, client_call_details, request_iterator, True, True)
     
     # Helper function that operates the interceptor based on common data between all interceptor functions
-    def _inercept_inner(self, continuation, client_call_details, request_iterator, 
+    async def _inercept_inner(self, continuation, client_call_details, request_iterator, 
         request_streaming, response_streaming):
     
         # First, get the new client call details, the new request iterator and the
@@ -86,7 +86,7 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
 
         # Call the next function in the chain with the client call details and the
         # request iterator to get a response
-        response_it = continuation(new_details, new_request_iterator if request_streaming else next(new_request_iterator))
+        response_it = await continuation(new_details, new_request_iterator if request_streaming else next(new_request_iterator))
         
         # Inject the response into the post-response object if we have a post-process
         # function; otherwise, return the response
