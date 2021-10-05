@@ -1,5 +1,5 @@
 from alphausblue.api.ripple.org_pb2 import Org
-from alphausblue.connection.conn import GrpcClientConn
+from alphausblue.connection.conn import grpc_client_connection
 from alphausblue.connection.session import Session
 from alphausblue.org.v1.org_pb2 import CreateOrgRequest
 from alphausblue.org.v1.org_pb2_grpc import OrganizationStub
@@ -7,10 +7,10 @@ from alphausblue.org.v1.org_pb2_grpc import OrganizationStub
 def main():
 
     # First, create the connection from a session
-    conn = GrpcClientConn(session = Session())
+    conn = grpc_client_connection(session = Session())
 
     # Next, connect to the organization service with the connection
-    stub = OrganizationStub(conn.connection())
+    stub = OrganizationStub(conn)
 
     # Finally, create an organization
     stub.CreateOrg(CreateOrgRequest(

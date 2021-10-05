@@ -1,5 +1,6 @@
-from collections import namedtuple
-from grpc.aio import ClientCallDetails
+from grpc.aio import (
+    ClientCallDetails,
+    Metadata)
 
 from .interceptor import create
 
@@ -17,12 +18,12 @@ def _header_adder_interceptor(header, value):
 
         # First, create the list of metadata. If we have metadata on the client call
         # details then get those values and convert them to a list
-        metadata = []
-        if client_call_details.metadata is not None:
-            metadata = list(client_call_details.metadata)
+        metadata = client_call_details.metadata
+        if not metadata:
+            metadata = Metadata()
 
         # Next, create a new tuple from the header and value and add it to the metadata
-        metadata.append((header, value,))
+        metadata[header] = value
 
         # Now, create a new client call details from the existing client call details and
         # return it, along with the request iterator and a (None) post-processor
