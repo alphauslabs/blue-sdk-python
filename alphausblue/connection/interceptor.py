@@ -86,7 +86,7 @@ class _GenericClientInterceptor(UnaryUnaryClientInterceptor,
 
         # Call the next function in the chain with the client call details and the
         # request iterator to get a response
-        response_it = continuation(new_details, next(new_request_iterator) if request_streaming else new_request_iterator)
+        response_it = continuation(new_details, new_request_iterator if request_streaming else next(new_request_iterator))
         
         # Inject the response into the post-response object if we have a post-process
         # function; otherwise, return the response
