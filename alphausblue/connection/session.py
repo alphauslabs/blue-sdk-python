@@ -75,7 +75,7 @@ class Session(object):
         def _update_auth_details(client_id_key: str, client_secret_key: str, username_key: str, password_key: str, url: str) -> None:
 
             # If the client ID and secret are both present then there's nothing to do here so return
-            if self.ClientId is None or self.ClientSecret is None:
+            if not (self.ClientId and self.ClientSecret):
 
                 # The client ID and secret were not provided so attempt to retrieve them from the
                 # associated environment variables that were provided
@@ -84,7 +84,7 @@ class Session(object):
 
                 # If we found the client credentials then also attempt to get the username and
                 # password from the associated environment variables. Also, set the URL
-                if not (self.ClientId is None or self.ClientSecret is None):
+                if self.ClientId and self.ClientSecret:
                     self.Username = getenv(username_key)
                     self.Password = getenv(password_key)
                     self.LoginUrl = url
@@ -107,7 +107,7 @@ class Session(object):
 
         # Finally, update the grant type if it was not provided
         if grant_type is None:
-            if not (self.Username is None or self.Password is None):
+            if self.Username and self.Password:
                 self.GrantType = "password"
             else:
                 self.GrantType = "client_credentials"
@@ -131,7 +131,7 @@ class Session(object):
 
         # Next, if the grant type is password then add the username and password
         # to the form data as well
-        if self.GrantType is "password":
+        if self.GrantType == "password":
             form.extend(("username", self.Username), ("pass"))
         
         # Now, attempt to post the form request with a timeout of 60s. If the response
