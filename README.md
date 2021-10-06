@@ -1,6 +1,16 @@
-This SDK is now available from PyPI. Simply run `pip install alphausblue` to download the file and all its dependencies. The SDK can be used like so:
+This repository contains the Blue Python SDK source code, which allows clients to communicate with the Blue API from a Python client using gRPC. Documentation on the functionality of the API and documentation can be found [here](https://alphauslabs.github.io/blueapi/).
 
-```python
+# Installation
+Our installation is available on PyPI so isntallation is simple. Simply run:
+```
+pip install alphausblue
+```
+to download the SDK and all its dependencies.
+
+# Usage
+The basic flow for the SDK works like so. The `grpc_client_connection` authenticates the user with the Blue API via a `Session`, generating an access token that is then injected into the gRPC connection. A note here: the service name should always be included so that our system can direct requests to the proper endpoint.
+
+```
 from alphausblue.connection.conn import grpc_client_connection, BLUE
 from alphausblue.iam.v1.iam_pb2_grpc import IamStub
 from alphausblue.iam.v1.iam_pb2 import WhoAmIRequest
@@ -21,7 +31,7 @@ async def get_who_am_i():
 
 As you can see, all requests are async-compatible. This functionality can also be acheived using the with-pattern:
 
-```python
+```
 from alphausblue.connection.conn import grpc_client_connection, BLUE
 from alphausblue.iam.v1.iam_pb2_grpc import IamStub
 from alphausblue.iam.v1.iam_pb2 import WhoAmIRequest
