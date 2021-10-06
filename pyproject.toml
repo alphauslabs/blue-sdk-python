@@ -1,13 +1,4 @@
 [build-system]
-requires = [
-    "google-api-core>=2.0.1",
-    "google-api-python-client",
-    "google-auth>=2.2.0",
-    "google-auth-httplib2",
-    "googleapis-common-protos",
-    "grpc-gateway-protoc-gen-openapiv2>=0.1.0",
-    "grpcio>=1.41.0",
-    "httplib2",
-    "protobuf>=3.18.0",
-    "requests"]
+requires = ["setuptools", "wheel"]
+
 build-backend = "setuptools.build_meta"
