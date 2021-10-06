@@ -39,5 +39,5 @@ requires = [
     "urllib3",
     "win-inet-pton",
     "wincertstore>=0.2",
-    "yarl"
-]
+    "yarl"]
+build-backend = "setuptools.build_meta"
