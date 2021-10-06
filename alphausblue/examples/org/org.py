@@ -7,7 +7,7 @@ from alphausblue.org.v1.org_pb2_grpc import OrganizationStub
 async def main():
 
     # First, create the connection from a session
-    conn = grpc_client_connection()
+    conn = grpc_client_connection(svc = "blue")
 
     # Next, connect to the organization service with the connection
     stub = OrganizationStub(conn)
