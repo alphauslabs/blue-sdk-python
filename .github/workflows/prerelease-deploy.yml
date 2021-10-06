@@ -40,9 +40,8 @@ jobs:
         pytest
     - name: Deploy to PyPI
       run: |
-        tagName=${{ github.event.release.tag_name }}
-        tagName="${tagName:1}"
-        sed -i -E 's/version = "[ab]\d+\.\d+\.\d+"/version = "${tagName}/g' setup.py
+        tagName=${GITHUB_REF##*/}
+        sed -i -E 's/version = "[ab]\d+\.\d+\.\d+"/version = "${tagName}"/g' setup.py
         pip install wheel twine --upgrade pip
         python setup.py sdist
         pip wheel . -w .\dist\
