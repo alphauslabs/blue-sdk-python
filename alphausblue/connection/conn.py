@@ -40,9 +40,10 @@ def grpc_client_connection(svc: str = None, target: str = None, session: Session
         conn = secure_channel(
             target = target, 
             credentials = credentials, 
+            options = (('grpc.enable_http_proxy', 0),),
             interceptors = [
                 _header_adder_interceptor("service-name", svc),
-                _header_adder_interceptor("x-agent", "blue-sdk-go")])
+                _header_adder_interceptor("x-agent", "blue-sdk-python")])
     else:
         conn = secure_channel(target = target, credentials = credentials)
     
