@@ -38,10 +38,14 @@ jobs:
     - name: Test with pytest
       run: |
         pytest
-    - name: Deploy to PyPI
+    - name: Create Python Distribution
       run: |
         echo "Python package version: ${{ steps.get_version.outputs.VERSION }}"
         sed -i -E -r "s/version = \"(.*)\"/version = \"${{ steps.get_version.outputs.VERSION }}\"/g" setup.py
-        pip install wheel twine --upgrade wheel twine
-        python setup.py -q sdist bdist_wheel
-        twine upload --repository-url https://test.pypi.org/legacy/ .\dist\*
+        python -m build --sdist --wheel --outdir dist/
+    - name: Deploy Distribution to Test PyPI
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: ${{ secrets.TWINE_USERNAME_TEST }}
+        password: ${{ secrets.TWINE_PASSWORD_TEST }}
+        repository_url: https://test.pypi.org/legacy/
