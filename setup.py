@@ -5,8 +5,9 @@ setup(
     author = "Alphaus KK",
     description = "Alphaus KK's Blue API for Python",
     url = "https://github.com/alphauslabs/blue-sdk-python",
-    version = "0.5.11",
+    version = "",
     packages = find_namespace_packages(),
+    python_requires = ">=3.6",
     options = {
         "bdist_wheel": {
             "universal": True
