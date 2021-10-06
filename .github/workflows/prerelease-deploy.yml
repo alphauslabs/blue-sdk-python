@@ -4,9 +4,6 @@
 name: Python application
 
 on:
-  push:
-    tags:
-      - '[ab]*'
   release:
     types: [prereleased]
 
@@ -20,6 +17,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Get tag version
+      id: get_version
+      run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
     - name: Set up Python 3.9
       uses: actions/setup-python@v2
       with:
@@ -40,9 +40,9 @@ jobs:
         pytest
     - name: Deploy to PyPI
       run: |
-        tagName=${GITHUB_REF##*/}
-        sed -i -E 's/version = "[ab]\d+\.\d+\.\d+"/version = "${tagName}"/g' setup.py
+        echo "Python package version: ${{ steps.get_version.outputs.VERSION }}"
+        sed -i -E 's/version = "[ab]\d+\.\d+\.\d+"/version = "${{ steps.get_version.outputs.VERSION }}"/g' setup.py
         pip install wheel twine --upgrade pip
         python setup.py sdist
         pip wheel . -w .\dist\
-        twine upload --sign-with --repository-url https://test.pypi.org/legacy/ .\dist\*
+        twine upload --sign --repository-url https://test.pypi.org/legacy/ .\dist\*
