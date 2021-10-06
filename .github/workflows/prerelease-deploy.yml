@@ -44,7 +44,7 @@ jobs:
     - name: Deploy to PyPI
       run: |
         echo "Python package version: ${{ steps.get_version.outputs.VERSION }}"
-        sed -i -E 's/version = "[ab]\d+\.\d+\.\d+"/version = "${{ steps.get_version.outputs.VERSION }}"/g' setup.py
+        sed -i -E -r "s/version = \"(.+)\"/version = \"${{ steps.get_version.outputs.VERSION }}\"/g" setup.py
         pip install wheel twine --upgrade pip
         python setup.py sdist
         pip wheel . -w .\dist\
