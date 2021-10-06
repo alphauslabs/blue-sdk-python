@@ -1,6 +1,6 @@
 This SDK is now available from PyPI. Simply run `pip install alphausblue` to download the file and all its dependencies. The SDK can be used like so:
 
-```
+```python
 from alphausblue.connection.conn import grpc_client_connection, BLUE
 from alphausblue.iam.v1.iam_pb2_grpc import IamStub
 from alphausblue.iam.v1.iam_pb2 import WhoAmIRequest
@@ -21,7 +21,7 @@ async def get_who_am_i():
 
 As you can see, all requests are async-compatible. This functionality can also be acheived using the with-pattern:
 
-```
+```python
 from alphausblue.connection.conn import grpc_client_connection, BLUE
 from alphausblue.iam.v1.iam_pb2_grpc import IamStub
 from alphausblue.iam.v1.iam_pb2 import WhoAmIRequest
