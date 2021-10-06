@@ -42,6 +42,7 @@ jobs:
       run: |
         echo "Python package version: ${{ steps.get_version.outputs.VERSION }}"
         sed -i -E -r "s/version = \"(.*)\"/version = \"${{ steps.get_version.outputs.VERSION }}\"/g" setup.py
+        python -m pip install -U pip wheel setuptools
         python -m build --sdist --wheel --outdir dist/
     - name: Deploy Distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
