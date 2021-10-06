@@ -5,7 +5,7 @@ name: Python application
 
 on:
   release:
-    types: [prereleased]
+    types: [prereleased, released]
 
 jobs:
   build:
@@ -44,8 +44,15 @@ jobs:
         sed -i -E -r "s/version = \"(.*)\"/version = \"${{ steps.get_version.outputs.VERSION }}\"/g" setup.py
         python setup.py sdist bdist_wheel
     - name: Deploy Distribution to Test PyPI
+      if: github.event.release.prerelease
       uses: pypa/gh-action-pypi-publish@master
       with:
         user: ${{ secrets.TWINE_USERNAME_TEST }}
         password: ${{ secrets.TWINE_PASSWORD_TEST }}
         repository_url: https://test.pypi.org/legacy/
+    - name: Deploy Distribution to PyPI
+      if: github.event.release.release
+      uses: pypa/gh-action-pypi-publish@master
+      with:
+        user: ${{ secrets.TWINE_USERNAME_PROD }}
+        password: ${{ secrets.TWINE_PASSWORD_PROD }}
