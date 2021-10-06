@@ -42,7 +42,7 @@ jobs:
       run: |
         echo "Python package version: ${{ steps.get_version.outputs.VERSION }}"
         sed -i -E -r "s/version = \"(.*)\"/version = \"${{ steps.get_version.outputs.VERSION }}\"/g" setup.py
-        pip install wheel twine --upgrade pip
+        pip install wheel twine --upgrade wheel twine
         python setup.py sdist
         pip wheel . -w .\dist\
         twine upload --repository-url https://test.pypi.org/legacy/ .\dist\*
