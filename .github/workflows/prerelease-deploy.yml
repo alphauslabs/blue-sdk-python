@@ -20,14 +20,14 @@ jobs:
     - name: Get tag version
       id: get_version
       run: echo ::set-output name=VERSION::$(echo $GITHUB_REF | cut -d / -f 3)
-    - name: Set up Python 3.9
+    - name: Set up Python 3.8
       uses: actions/setup-python@v2
       with:
-        python-version: 3.9
+        python-version: 3.8
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install flake8 pytest
+        pip install flake8 pytest setuptools wheel twine
         if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
     - name: Lint with flake8
       run: |
@@ -42,8 +42,7 @@ jobs:
       run: |
         echo "Python package version: ${{ steps.get_version.outputs.VERSION }}"
         sed -i -E -r "s/version = \"(.*)\"/version = \"${{ steps.get_version.outputs.VERSION }}\"/g" setup.py
-        python -m pip install -U pip wheel setuptools
-        python -m build --sdist --wheel --outdir dist/
+        python setup.py sdist bdist_wheel
     - name: Deploy Distribution to Test PyPI
       uses: pypa/gh-action-pypi-publish@master
       with:
