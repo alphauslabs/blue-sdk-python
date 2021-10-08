@@ -11,6 +11,9 @@ from .header_interceptor import _header_adder_interceptor
 from .session import Session
 
 BLUE = "blue"
+COST = "cost"
+BILLING = "billing"
+
 BLUE_ENDPOINT = "blue.alphaus.cloud:8443"
 BLUE_ENDPOINT_NEXT = "bluenext.alphaus.cloud:8443"
 
