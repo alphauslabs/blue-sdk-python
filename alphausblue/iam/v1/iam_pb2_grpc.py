@@ -243,7 +243,7 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListIpFilters(self, request, context):
-        """Lists all IP filters. At the moment, this API is only available for root users.
+        """Lists all IP filters. At the moment, this API is only available to root users.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -251,14 +251,14 @@ class IamServicer(object):
 
     def CreateIpFilter(self, request, context):
         """Creates an IP filter item for IP blacklisting or whitelisting. At the moment,
-        this API is only available for root users.
+        this API is only available to root users.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteIpFilter(self, request, context):
-        """Deletes an IP filter item. At the moment, this API is only available for root users.
+        """Deletes an IP filter item. At the moment, this API is only available to root users.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
