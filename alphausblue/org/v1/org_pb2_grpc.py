@@ -25,12 +25,12 @@ class OrganizationStub(object):
         self.SendVerification = channel.unary_unary(
                 '/blueapi.org.v1.Organization/SendVerification',
                 request_serializer=org_dot_v1_dot_org__pb2.SendVerificationRequest.SerializeToString,
-                response_deserializer=api_dot_ripple_dot_org__pb2.Org.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.VerifyOrg = channel.unary_unary(
                 '/blueapi.org.v1.Organization/VerifyOrg',
                 request_serializer=org_dot_v1_dot_org__pb2.VerifyOrgRequest.SerializeToString,
-                response_deserializer=api_dot_ripple_dot_org__pb2.Org.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.GetOrg = channel.unary_unary(
                 '/blueapi.org.v1.Organization/GetOrg',
@@ -66,7 +66,7 @@ class OrganizationServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SendVerification(self, request, context):
-        """Sends (or resends) the verification email. Only valid for unverified
+        """WORK-IN-PROGRESS: Sends (or resends) the verification email. Only valid for unverified
         organizations. The verification key will be valid for a day.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -74,7 +74,7 @@ class OrganizationServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def VerifyOrg(self, request, context):
-        """Verifies an organization using the key received from the verification email.
+        """WORK-IN-PROGRESS: Verifies an organization using the key received from the verification email.
         The verification key is only valid for a day.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -89,7 +89,7 @@ class OrganizationServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateMetadata(self, request, context):
-        """Updates organization metadata. See [https://alphauslabs.github.io/blueapi/]
+        """WORK-IN-PROGRESS: Updates organization metadata. See [https://alphauslabs.github.io/blueapi/]
         for the list of supported attributes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -97,14 +97,14 @@ class OrganizationServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdatePassword(self, request, context):
-        """Updates the organization password.
+        """WORK-IN-PROGRESS: Updates the organization password.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteOrg(self, request, context):
-        """Deletes the organization.
+        """WORK-IN-PROGRESS: Deletes the organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -121,12 +121,12 @@ def add_OrganizationServicer_to_server(servicer, server):
             'SendVerification': grpc.unary_unary_rpc_method_handler(
                     servicer.SendVerification,
                     request_deserializer=org_dot_v1_dot_org__pb2.SendVerificationRequest.FromString,
-                    response_serializer=api_dot_ripple_dot_org__pb2.Org.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'VerifyOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.VerifyOrg,
                     request_deserializer=org_dot_v1_dot_org__pb2.VerifyOrgRequest.FromString,
-                    response_serializer=api_dot_ripple_dot_org__pb2.Org.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.GetOrg,
@@ -189,7 +189,7 @@ class Organization(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.org.v1.Organization/SendVerification',
             org_dot_v1_dot_org__pb2.SendVerificationRequest.SerializeToString,
-            api_dot_ripple_dot_org__pb2.Org.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -206,7 +206,7 @@ class Organization(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.org.v1.Organization/VerifyOrg',
             org_dot_v1_dot_org__pb2.VerifyOrgRequest.SerializeToString,
-            api_dot_ripple_dot_org__pb2.Org.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
