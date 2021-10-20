@@ -21,7 +21,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n cloud.alphaus.blueapi.api.rippleB\023ApiRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x61pi/ripple/payer.proto\x12\x12\x62lueapi.api.ripple\x1a\x11\x61pi/account.proto\x1a\x12\x61pi/keyvalue.proto\"s\n\x05Payer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValue\x12\'\n\tcustomers\x18\x04 \x03(\x0b\x32\x14.blueapi.api.AccountBf\n cloud.alphaus.blueapi.api.rippleB\x13\x41piRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/rippleb\x06proto3'
+  serialized_pb=b'\n\x16\x61pi/ripple/payer.proto\x12\x12\x62lueapi.api.ripple\x1a\x11\x61pi/account.proto\x1a\x12\x61pi/keyvalue.proto\"q\n\x05Payer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValue\x12%\n\x07members\x18\x04 \x03(\x0b\x32\x14.blueapi.api.AccountBf\n cloud.alphaus.blueapi.api.rippleB\x13\x41piRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/rippleb\x06proto3'
   ,
   dependencies=[api_dot_account__pb2.DESCRIPTOR,api_dot_keyvalue__pb2.DESCRIPTOR,])
 
@@ -58,7 +58,7 @@ _PAYER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='customers', full_name='blueapi.api.ripple.Payer.customers', index=3,
+      name='members', full_name='blueapi.api.ripple.Payer.members', index=3,
       number=4, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -77,11 +77,11 @@ _PAYER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=85,
-  serialized_end=200,
+  serialized_end=198,
 )
 
 _PAYER.fields_by_name['metadata'].message_type = api_dot_keyvalue__pb2._KEYVALUE
-_PAYER.fields_by_name['customers'].message_type = api_dot_account__pb2._ACCOUNT
+_PAYER.fields_by_name['members'].message_type = api_dot_account__pb2._ACCOUNT
 DESCRIPTOR.message_types_by_name['Payer'] = _PAYER
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
