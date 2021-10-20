@@ -4,6 +4,7 @@ import grpc
 
 from alphausblue.api import account_pb2 as api_dot_account__pb2
 from alphausblue.api import operation_pb2 as api_dot_operation__pb2
+from alphausblue.api.ripple import payer_pb2 as api_dot_ripple_dot_payer__pb2
 from alphausblue.cost.v1 import cost_pb2 as cost_dot_v1_dot_cost__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
@@ -26,7 +27,7 @@ class CostStub(object):
         self.GetPayerAccount = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetPayerAccount',
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.SerializeToString,
-                response_deserializer=api_dot_account__pb2.Account.FromString,
+                response_deserializer=api_dot_ripple_dot_payer__pb2.Payer.FromString,
                 )
         self.GetPayerAccountImportHistory = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/GetPayerAccountImportHistory',
@@ -392,7 +393,7 @@ def add_CostServicer_to_server(servicer, server):
             'GetPayerAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPayerAccount,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.FromString,
-                    response_serializer=api_dot_account__pb2.Account.SerializeToString,
+                    response_serializer=api_dot_ripple_dot_payer__pb2.Payer.SerializeToString,
             ),
             'GetPayerAccountImportHistory': grpc.unary_stream_rpc_method_handler(
                     servicer.GetPayerAccountImportHistory,
@@ -565,7 +566,7 @@ class Cost(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetPayerAccount',
             cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.SerializeToString,
-            api_dot_account__pb2.Account.FromString,
+            api_dot_ripple_dot_payer__pb2.Payer.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
