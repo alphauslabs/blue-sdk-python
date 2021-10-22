@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\025ApiGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x61pi/grouprootuser.proto\x12\x0b\x62lueapi.api\"\xe1\x02\n\rGroupRootUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupName\x18\x04 \x01(\t\x12\x11\n\tgroupType\x18\x05 \x01(\t\x12+\n\x08waveMeta\x18\x06 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12+\n\x08\x61quaMeta\x18\x07 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x1a\n\x12passwordUpdateTime\x18\x08 \x01(\t\x12\x12\n\nupdateTime\x18\t \x01(\t\x12\x14\n\x0cuserAccessId\x18\n \x01(\t\x12\x0e\n\x06userId\x18\x0b \x01(\t\x12\x1c\n\x14waveAvailabilityDays\x18\x0c \x01(\x05\x12\x16\n\x0ewaveRegistered\x18\r \x01(\t\x12\x12\n\nwaveStatus\x18\x0e \x01(\t\"\x7f\n\x0c\x46\x65\x61tureFlags\x12\x0f\n\x07product\x18\x01 \x01(\t\x12\x31\n\x04meta\x18\x02 \x03(\x0b\x32#.blueapi.api.FeatureFlags.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42Z\n\x19\x63loud.alphaus.blueapi.apiB\x15\x41piGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x17\x61pi/grouprootuser.proto\x12\x0b\x62lueapi.api\"\xb0\x02\n\rGroupRootUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupName\x18\x04 \x01(\t\x12\x11\n\tgroupType\x18\x05 \x01(\t\x12\'\n\x04meta\x18\x06 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x1a\n\x12passwordUpdateTime\x18\x07 \x01(\t\x12\x12\n\nupdateTime\x18\x08 \x01(\t\x12\x14\n\x0cuserAccessId\x18\t \x01(\t\x12\x0e\n\x06userId\x18\n \x01(\t\x12\x1c\n\x14waveAvailabilityDays\x18\x0b \x01(\x05\x12\x16\n\x0ewaveRegistered\x18\x0c \x01(\t\x12\x12\n\nwaveStatus\x18\r \x01(\t\"n\n\x0c\x46\x65\x61tureFlags\x12\x31\n\x04meta\x18\x01 \x03(\x0b\x32#.blueapi.api.FeatureFlags.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42Z\n\x19\x63loud.alphaus.blueapi.apiB\x15\x41piGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -69,64 +69,57 @@ _GROUPROOTUSER = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='waveMeta', full_name='blueapi.api.GroupRootUser.waveMeta', index=5,
+      name='meta', full_name='blueapi.api.GroupRootUser.meta', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aquaMeta', full_name='blueapi.api.GroupRootUser.aquaMeta', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
+      name='passwordUpdateTime', full_name='blueapi.api.GroupRootUser.passwordUpdateTime', index=6,
+      number=7, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='passwordUpdateTime', full_name='blueapi.api.GroupRootUser.passwordUpdateTime', index=7,
+      name='updateTime', full_name='blueapi.api.GroupRootUser.updateTime', index=7,
       number=8, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='updateTime', full_name='blueapi.api.GroupRootUser.updateTime', index=8,
+      name='userAccessId', full_name='blueapi.api.GroupRootUser.userAccessId', index=8,
       number=9, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='userAccessId', full_name='blueapi.api.GroupRootUser.userAccessId', index=9,
+      name='userId', full_name='blueapi.api.GroupRootUser.userId', index=9,
       number=10, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='userId', full_name='blueapi.api.GroupRootUser.userId', index=10,
-      number=11, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='waveAvailabilityDays', full_name='blueapi.api.GroupRootUser.waveAvailabilityDays', index=11,
-      number=12, type=5, cpp_type=1, label=1,
+      name='waveAvailabilityDays', full_name='blueapi.api.GroupRootUser.waveAvailabilityDays', index=10,
+      number=11, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='waveRegistered', full_name='blueapi.api.GroupRootUser.waveRegistered', index=12,
-      number=13, type=9, cpp_type=9, label=1,
+      name='waveRegistered', full_name='blueapi.api.GroupRootUser.waveRegistered', index=11,
+      number=12, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='waveStatus', full_name='blueapi.api.GroupRootUser.waveStatus', index=13,
-      number=14, type=9, cpp_type=9, label=1,
+      name='waveStatus', full_name='blueapi.api.GroupRootUser.waveStatus', index=12,
+      number=13, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -144,7 +137,7 @@ _GROUPROOTUSER = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=41,
-  serialized_end=394,
+  serialized_end=345,
 )
 
 
@@ -182,8 +175,8 @@ _FEATUREFLAGS_METAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=480,
-  serialized_end=523,
+  serialized_start=414,
+  serialized_end=457,
 )
 
 _FEATUREFLAGS = _descriptor.Descriptor(
@@ -195,15 +188,8 @@ _FEATUREFLAGS = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='product', full_name='blueapi.api.FeatureFlags.product', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='blueapi.api.FeatureFlags.meta', index=1,
-      number=2, type=11, cpp_type=10, label=3,
+      name='meta', full_name='blueapi.api.FeatureFlags.meta', index=0,
+      number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -220,12 +206,11 @@ _FEATUREFLAGS = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=396,
-  serialized_end=523,
+  serialized_start=347,
+  serialized_end=457,
 )
 
-_GROUPROOTUSER.fields_by_name['waveMeta'].message_type = _FEATUREFLAGS
-_GROUPROOTUSER.fields_by_name['aquaMeta'].message_type = _FEATUREFLAGS
+_GROUPROOTUSER.fields_by_name['meta'].message_type = _FEATUREFLAGS
 _FEATUREFLAGS_METAENTRY.containing_type = _FEATUREFLAGS
 _FEATUREFLAGS.fields_by_name['meta'].message_type = _FEATUREFLAGS_METAENTRY
 DESCRIPTOR.message_types_by_name['GroupRootUser'] = _GROUPROOTUSER
