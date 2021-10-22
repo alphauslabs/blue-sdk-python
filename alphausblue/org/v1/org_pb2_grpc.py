@@ -40,12 +40,12 @@ class OrganizationStub(object):
         self.UpdateMetadata = channel.unary_unary(
                 '/blueapi.org.v1.Organization/UpdateMetadata',
                 request_serializer=org_dot_v1_dot_org__pb2.UpdateMetadataRequest.SerializeToString,
-                response_deserializer=api_dot_ripple_dot_org__pb2.Org.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.UpdatePassword = channel.unary_unary(
                 '/blueapi.org.v1.Organization/UpdatePassword',
                 request_serializer=org_dot_v1_dot_org__pb2.UpdatePasswordRequest.SerializeToString,
-                response_deserializer=api_dot_ripple_dot_org__pb2.Org.FromString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.DeleteOrg = channel.unary_unary(
                 '/blueapi.org.v1.Organization/DeleteOrg',
@@ -136,12 +136,12 @@ def add_OrganizationServicer_to_server(servicer, server):
             'UpdateMetadata': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateMetadata,
                     request_deserializer=org_dot_v1_dot_org__pb2.UpdateMetadataRequest.FromString,
-                    response_serializer=api_dot_ripple_dot_org__pb2.Org.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'UpdatePassword': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdatePassword,
                     request_deserializer=org_dot_v1_dot_org__pb2.UpdatePasswordRequest.FromString,
-                    response_serializer=api_dot_ripple_dot_org__pb2.Org.SerializeToString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'DeleteOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteOrg,
@@ -240,7 +240,7 @@ class Organization(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.org.v1.Organization/UpdateMetadata',
             org_dot_v1_dot_org__pb2.UpdateMetadataRequest.SerializeToString,
-            api_dot_ripple_dot_org__pb2.Org.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -257,7 +257,7 @@ class Organization(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.org.v1.Organization/UpdatePassword',
             org_dot_v1_dot_org__pb2.UpdatePasswordRequest.SerializeToString,
-            api_dot_ripple_dot_org__pb2.Org.FromString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
