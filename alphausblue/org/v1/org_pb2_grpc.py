@@ -97,7 +97,7 @@ class OrganizationServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdatePassword(self, request, context):
-        """WORK-IN-PROGRESS: Updates the organization password.
+        """Updates the organization password.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
