@@ -3,6 +3,8 @@
 import grpc
 
 from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
+from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
+from alphausblue.api import user_pb2 as api_dot_user__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
@@ -26,10 +28,35 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.FromString,
                 )
+        self.CreateResellerAccount = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateResellerAccount',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateResellerRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.ListResellerAccounts = channel.unary_stream(
+                '/blueapi.admin.v1.Admin/ListResellerAccounts',
+                request_serializer=admin_dot_v1_dot_admin__pb2.ListResellersRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.GetResellerAccount = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetResellerAccount',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetResellerRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.DeleteResellerAccount = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/DeleteResellerAccount',
+                request_serializer=admin_dot_v1_dot_admin__pb2.DeleteResellerRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetFeatureFlags = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetFeatureFlags',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetFeatureFlagsRequest.SerializeToString,
+                response_deserializer=api_dot_user__pb2.FeatureFlags.FromString,
+                )
         self.UpdateFeatureFlags = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/UpdateFeatureFlags',
                 request_serializer=admin_dot_v1_dot_admin__pb2.UpdateFeatureFlagsRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=api_dot_user__pb2.FeatureFlags.FromString,
                 )
 
 
@@ -51,8 +78,52 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateResellerAccount(self, request, context):
+        """WORK IN PROGRESS:
+        Create a new Wave root account (also referred to as a reseller)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListResellerAccounts(self, request, context):
+        """WORK IN PROGRESS
+        Retrieve all the existing Wave root accounts (also referred to as resellers)
+        asscoiated with the organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetResellerAccount(self, request, context):
+        """WORK IN PROGRESS:
+        Retrieve an existing Wave root account (also referred to as a reseller)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteResellerAccount(self, request, context):
+        """WORK IN PROGRESS
+        Delete an existing Wave root account (also referred to as a reseller)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFeatureFlags(self, request, context):
+        """WORK IN PROGRESS:
+        Retrieve the features available to a user on an Alphaus product. Currently,
+        only values of "wave" and "aqua" are supported for {product}. For a list of
+        valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/admin.html.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateFeatureFlags(self, request, context):
-        """Update the features available to a user on an Alphaus product. Currently,
+        """WORK IN PROGRESS:
+        Update the features available to a user on an Alphaus product. Currently,
         only values of "wave" and "aqua" are supported for {product}. For a list of
         valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/admin.html.
         """
@@ -73,10 +144,35 @@ def add_AdminServicer_to_server(servicer, server):
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.SerializeToString,
             ),
+            'CreateResellerAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateResellerAccount,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateResellerRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'ListResellerAccounts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListResellerAccounts,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.ListResellersRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'GetResellerAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetResellerAccount,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetResellerRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'DeleteResellerAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteResellerAccount,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteResellerRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetFeatureFlags': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFeatureFlags,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetFeatureFlagsRequest.FromString,
+                    response_serializer=api_dot_user__pb2.FeatureFlags.SerializeToString,
+            ),
             'UpdateFeatureFlags': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeatureFlags,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateFeatureFlagsRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=api_dot_user__pb2.FeatureFlags.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -124,6 +220,91 @@ class Admin(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def CreateResellerAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateResellerAccount',
+            admin_dot_v1_dot_admin__pb2.CreateResellerRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListResellerAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.admin.v1.Admin/ListResellerAccounts',
+            admin_dot_v1_dot_admin__pb2.ListResellersRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetResellerAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetResellerAccount',
+            admin_dot_v1_dot_admin__pb2.GetResellerRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteResellerAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteResellerAccount',
+            admin_dot_v1_dot_admin__pb2.DeleteResellerRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetFeatureFlags(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetFeatureFlags',
+            admin_dot_v1_dot_admin__pb2.GetFeatureFlagsRequest.SerializeToString,
+            api_dot_user__pb2.FeatureFlags.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def UpdateFeatureFlags(request,
             target,
             options=(),
@@ -136,6 +317,6 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/UpdateFeatureFlags',
             admin_dot_v1_dot_admin__pb2.UpdateFeatureFlagsRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            api_dot_user__pb2.FeatureFlags.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
