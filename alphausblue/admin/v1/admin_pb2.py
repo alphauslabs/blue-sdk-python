@@ -11,11 +11,8 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.api import accountgroup_pb2 as api_dot_accountgroup__pb2
-from alphausblue.api import user_pb2 as api_dot_user__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
@@ -25,9 +22,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x19\x61pi/ripple/reseller.proto\x1a\x16\x61pi/accountgroup.proto\x1a\x0e\x61pi/user.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"\xf0\x01\n\x15\x43reateResellerRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\tgroupType\x18\x03 \x01(\t\x12\x11\n\tinputType\x18\x04 \x01(\t\x12\x0c\n\x04plan\x18\x05 \x01(\t\x12\x19\n\x11\x65mailNotification\x18\x06 \x01(\x08\x12\x33\n\x10waveFeatureFlags\x18\x07 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x33\n\x10\x61quaFeatureFlags\x18\x08 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\" \n\x12GetResellerRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x16\n\x14ListResellersRequest\"#\n\x15\x44\x65leteResellerRequest\x12\n\n\x02id\x18\x01 \x01(\t\"5\n\x16GetFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07product\x18\x02 \x01(\t\"\xc2\x01\n\x19UpdateFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07product\x18\x02 \x01(\t\x12S\n\x0c\x66\x65\x61tureFlags\x18\x03 \x03(\x0b\x32=.blueapi.admin.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry\x1a\x33\n\x11\x46\x65\x61tureFlagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x32\xcf\t\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12}\n\x15\x43reateResellerAccount\x12\'.blueapi.admin.v1.CreateResellerRequest\x1a\x1c.blueapi.api.ripple.Reseller\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/admin/v1/resllers:\x01*\x12{\n\x14ListResellerAccounts\x12&.blueapi.admin.v1.ListResellersRequest\x1a\x1c.blueapi.api.ripple.Reseller\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/admin/v1/resellers0\x01\x12z\n\x12GetResellerAccount\x12$.blueapi.admin.v1.GetResellerRequest\x1a\x1c.blueapi.api.ripple.Reseller\" \x82\xd3\xe4\x93\x02\x1a\x12\x18/admin/v1/resellers/{id}\x12z\n\x15\x44\x65leteResellerAccount\x12\'.blueapi.admin.v1.DeleteResellerRequest\x1a\x16.google.protobuf.Empty\" \x82\xd3\xe4\x93\x02\x1a*\x18/admin/v1/resellers/{id}\x12\x8b\x01\n\x0fGetFeatureFlags\x12(.blueapi.admin.v1.GetFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\"3\x82\xd3\xe4\x93\x02-\x12+/admin/v1/resellers/{id}/features/{product}\x12\x94\x01\n\x12UpdateFeatureFlags\x12+.blueapi.admin.v1.UpdateFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\"6\x82\xd3\xe4\x93\x02\x30\x1a+/admin/v1/resellers/{id}/features/{product}:\x01*\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
+  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup2\xb6\x03\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
   ,
-  dependencies=[api_dot_ripple_dot_reseller__pb2.DESCRIPTOR,api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_user__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -52,8 +49,8 @@ _LISTACCOUNTGROUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=216,
-  serialized_end=242,
+  serialized_start=144,
+  serialized_end=170,
 )
 
 
@@ -84,8 +81,8 @@ _LISTACCOUNTGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=244,
-  serialized_end=321,
+  serialized_start=172,
+  serialized_end=249,
 )
 
 
@@ -116,8 +113,8 @@ _GETACCOUNTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=323,
-  serialized_end=359,
+  serialized_start=251,
+  serialized_end=287,
 )
 
 
@@ -148,319 +145,16 @@ _GETACCOUNTGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=361,
-  serialized_end=432,
-)
-
-
-_CREATERESELLERREQUEST = _descriptor.Descriptor(
-  name='CreateResellerRequest',
-  full_name='blueapi.admin.v1.CreateResellerRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='email', full_name='blueapi.admin.v1.CreateResellerRequest.email', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='groupId', full_name='blueapi.admin.v1.CreateResellerRequest.groupId', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='groupType', full_name='blueapi.admin.v1.CreateResellerRequest.groupType', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='inputType', full_name='blueapi.admin.v1.CreateResellerRequest.inputType', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='plan', full_name='blueapi.admin.v1.CreateResellerRequest.plan', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='emailNotification', full_name='blueapi.admin.v1.CreateResellerRequest.emailNotification', index=5,
-      number=6, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='waveFeatureFlags', full_name='blueapi.admin.v1.CreateResellerRequest.waveFeatureFlags', index=6,
-      number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='aquaFeatureFlags', full_name='blueapi.admin.v1.CreateResellerRequest.aquaFeatureFlags', index=7,
-      number=8, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=435,
-  serialized_end=675,
-)
-
-
-_GETRESELLERREQUEST = _descriptor.Descriptor(
-  name='GetResellerRequest',
-  full_name='blueapi.admin.v1.GetResellerRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.GetResellerRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=677,
-  serialized_end=709,
-)
-
-
-_LISTRESELLERSREQUEST = _descriptor.Descriptor(
-  name='ListResellersRequest',
-  full_name='blueapi.admin.v1.ListResellersRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=711,
-  serialized_end=733,
-)
-
-
-_DELETERESELLERREQUEST = _descriptor.Descriptor(
-  name='DeleteResellerRequest',
-  full_name='blueapi.admin.v1.DeleteResellerRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.DeleteResellerRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=735,
-  serialized_end=770,
-)
-
-
-_GETFEATUREFLAGSREQUEST = _descriptor.Descriptor(
-  name='GetFeatureFlagsRequest',
-  full_name='blueapi.admin.v1.GetFeatureFlagsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.GetFeatureFlagsRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='product', full_name='blueapi.admin.v1.GetFeatureFlagsRequest.product', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=772,
-  serialized_end=825,
-)
-
-
-_UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY = _descriptor.Descriptor(
-  name='FeatureFlagsEntry',
-  full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry.value', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=971,
-  serialized_end=1022,
-)
-
-_UPDATEFEATUREFLAGSREQUEST = _descriptor.Descriptor(
-  name='UpdateFeatureFlagsRequest',
-  full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='product', full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest.product', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='featureFlags', full_name='blueapi.admin.v1.UpdateFeatureFlagsRequest.featureFlags', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=828,
-  serialized_end=1022,
+  serialized_start=289,
+  serialized_end=360,
 )
 
 _LISTACCOUNTGROUPSRESPONSE.fields_by_name['accountGroups'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
 _GETACCOUNTGROUPRESPONSE.fields_by_name['acctGroup'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
-_CREATERESELLERREQUEST.fields_by_name['waveFeatureFlags'].message_type = api_dot_user__pb2._FEATUREFLAGS
-_CREATERESELLERREQUEST.fields_by_name['aquaFeatureFlags'].message_type = api_dot_user__pb2._FEATUREFLAGS
-_UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY.containing_type = _UPDATEFEATUREFLAGSREQUEST
-_UPDATEFEATUREFLAGSREQUEST.fields_by_name['featureFlags'].message_type = _UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY
 DESCRIPTOR.message_types_by_name['ListAccountGroupsRequest'] = _LISTACCOUNTGROUPSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountGroupsResponse'] = _LISTACCOUNTGROUPSRESPONSE
 DESCRIPTOR.message_types_by_name['GetAccountGroupRequest'] = _GETACCOUNTGROUPREQUEST
 DESCRIPTOR.message_types_by_name['GetAccountGroupResponse'] = _GETACCOUNTGROUPRESPONSE
-DESCRIPTOR.message_types_by_name['CreateResellerRequest'] = _CREATERESELLERREQUEST
-DESCRIPTOR.message_types_by_name['GetResellerRequest'] = _GETRESELLERREQUEST
-DESCRIPTOR.message_types_by_name['ListResellersRequest'] = _LISTRESELLERSREQUEST
-DESCRIPTOR.message_types_by_name['DeleteResellerRequest'] = _DELETERESELLERREQUEST
-DESCRIPTOR.message_types_by_name['GetFeatureFlagsRequest'] = _GETFEATUREFLAGSREQUEST
-DESCRIPTOR.message_types_by_name['UpdateFeatureFlagsRequest'] = _UPDATEFEATUREFLAGSREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAccountGroupsRequest = _reflection.GeneratedProtocolMessageType('ListAccountGroupsRequest', (_message.Message,), {
@@ -491,59 +185,8 @@ GetAccountGroupResponse = _reflection.GeneratedProtocolMessageType('GetAccountGr
   })
 _sym_db.RegisterMessage(GetAccountGroupResponse)
 
-CreateResellerRequest = _reflection.GeneratedProtocolMessageType('CreateResellerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATERESELLERREQUEST,
-  '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.CreateResellerRequest)
-  })
-_sym_db.RegisterMessage(CreateResellerRequest)
-
-GetResellerRequest = _reflection.GeneratedProtocolMessageType('GetResellerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETRESELLERREQUEST,
-  '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetResellerRequest)
-  })
-_sym_db.RegisterMessage(GetResellerRequest)
-
-ListResellersRequest = _reflection.GeneratedProtocolMessageType('ListResellersRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTRESELLERSREQUEST,
-  '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.ListResellersRequest)
-  })
-_sym_db.RegisterMessage(ListResellersRequest)
-
-DeleteResellerRequest = _reflection.GeneratedProtocolMessageType('DeleteResellerRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETERESELLERREQUEST,
-  '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DeleteResellerRequest)
-  })
-_sym_db.RegisterMessage(DeleteResellerRequest)
-
-GetFeatureFlagsRequest = _reflection.GeneratedProtocolMessageType('GetFeatureFlagsRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETFEATUREFLAGSREQUEST,
-  '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetFeatureFlagsRequest)
-  })
-_sym_db.RegisterMessage(GetFeatureFlagsRequest)
-
-UpdateFeatureFlagsRequest = _reflection.GeneratedProtocolMessageType('UpdateFeatureFlagsRequest', (_message.Message,), {
-
-  'FeatureFlagsEntry' : _reflection.GeneratedProtocolMessageType('FeatureFlagsEntry', (_message.Message,), {
-    'DESCRIPTOR' : _UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY,
-    '__module__' : 'admin.v1.admin_pb2'
-    # @@protoc_insertion_point(class_scope:blueapi.admin.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry)
-    })
-  ,
-  'DESCRIPTOR' : _UPDATEFEATUREFLAGSREQUEST,
-  '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.UpdateFeatureFlagsRequest)
-  })
-_sym_db.RegisterMessage(UpdateFeatureFlagsRequest)
-_sym_db.RegisterMessage(UpdateFeatureFlagsRequest.FeatureFlagsEntry)
-
 
 DESCRIPTOR._options = None
-_UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY._options = None
 
 _ADMIN = _descriptor.ServiceDescriptor(
   name='Admin',
@@ -552,8 +195,8 @@ _ADMIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1025,
-  serialized_end=2256,
+  serialized_start=363,
+  serialized_end=801,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccountGroups',
@@ -573,66 +216,6 @@ _ADMIN = _descriptor.ServiceDescriptor(
     input_type=_GETACCOUNTGROUPREQUEST,
     output_type=_GETACCOUNTGROUPRESPONSE,
     serialized_options=b'\202\323\344\223\002\033\022\031/admin/v1/acctgroups/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateResellerAccount',
-    full_name='blueapi.admin.v1.Admin.CreateResellerAccount',
-    index=2,
-    containing_service=None,
-    input_type=_CREATERESELLERREQUEST,
-    output_type=api_dot_ripple_dot_reseller__pb2._RESELLER,
-    serialized_options=b'\202\323\344\223\002\027\"\022/admin/v1/resllers:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListResellerAccounts',
-    full_name='blueapi.admin.v1.Admin.ListResellerAccounts',
-    index=3,
-    containing_service=None,
-    input_type=_LISTRESELLERSREQUEST,
-    output_type=api_dot_ripple_dot_reseller__pb2._RESELLER,
-    serialized_options=b'\202\323\344\223\002\025\022\023/admin/v1/resellers',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetResellerAccount',
-    full_name='blueapi.admin.v1.Admin.GetResellerAccount',
-    index=4,
-    containing_service=None,
-    input_type=_GETRESELLERREQUEST,
-    output_type=api_dot_ripple_dot_reseller__pb2._RESELLER,
-    serialized_options=b'\202\323\344\223\002\032\022\030/admin/v1/resellers/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteResellerAccount',
-    full_name='blueapi.admin.v1.Admin.DeleteResellerAccount',
-    index=5,
-    containing_service=None,
-    input_type=_DELETERESELLERREQUEST,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002\032*\030/admin/v1/resellers/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetFeatureFlags',
-    full_name='blueapi.admin.v1.Admin.GetFeatureFlags',
-    index=6,
-    containing_service=None,
-    input_type=_GETFEATUREFLAGSREQUEST,
-    output_type=api_dot_user__pb2._FEATUREFLAGS,
-    serialized_options=b'\202\323\344\223\002-\022+/admin/v1/resellers/{id}/features/{product}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateFeatureFlags',
-    full_name='blueapi.admin.v1.Admin.UpdateFeatureFlags',
-    index=7,
-    containing_service=None,
-    input_type=_UPDATEFEATUREFLAGSREQUEST,
-    output_type=api_dot_user__pb2._FEATUREFLAGS,
-    serialized_options=b'\202\323\344\223\0020\032+/admin/v1/resellers/{id}/features/{product}:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])

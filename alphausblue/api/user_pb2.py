@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\014ApiUserProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x0e\x61pi/user.proto\x12\x0b\x62lueapi.api\"\x86\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06parent\x18\x02 \x01(\t\x12\x31\n\x08metadata\x18\x03 \x03(\x0b\x32\x1f.blueapi.api.User.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\x7f\n\x0c\x46\x65\x61tureFlags\x12\x0f\n\x07product\x18\x01 \x01(\t\x12\x31\n\x04meta\x18\x02 \x03(\x0b\x32#.blueapi.api.FeatureFlags.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42Q\n\x19\x63loud.alphaus.blueapi.apiB\x0c\x41piUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x0e\x61pi/user.proto\x12\x0b\x62lueapi.api\"\x86\x01\n\x04User\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0e\n\x06parent\x18\x02 \x01(\t\x12\x31\n\x08metadata\x18\x03 \x03(\x0b\x32\x1f.blueapi.api.User.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42Q\n\x19\x63loud.alphaus.blueapi.apiB\x0c\x41piUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -108,89 +108,9 @@ _USER = _descriptor.Descriptor(
   serialized_end=166,
 )
 
-
-_FEATUREFLAGS_METAENTRY = _descriptor.Descriptor(
-  name='MetaEntry',
-  full_name='blueapi.api.FeatureFlags.MetaEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='blueapi.api.FeatureFlags.MetaEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='blueapi.api.FeatureFlags.MetaEntry.value', index=1,
-      number=2, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=252,
-  serialized_end=295,
-)
-
-_FEATUREFLAGS = _descriptor.Descriptor(
-  name='FeatureFlags',
-  full_name='blueapi.api.FeatureFlags',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='product', full_name='blueapi.api.FeatureFlags.product', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='blueapi.api.FeatureFlags.meta', index=1,
-      number=2, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_FEATUREFLAGS_METAENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=168,
-  serialized_end=295,
-)
-
 _USER_METADATAENTRY.containing_type = _USER
 _USER.fields_by_name['metadata'].message_type = _USER_METADATAENTRY
-_FEATUREFLAGS_METAENTRY.containing_type = _FEATUREFLAGS
-_FEATUREFLAGS.fields_by_name['meta'].message_type = _FEATUREFLAGS_METAENTRY
 DESCRIPTOR.message_types_by_name['User'] = _USER
-DESCRIPTOR.message_types_by_name['FeatureFlags'] = _FEATUREFLAGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
@@ -208,23 +128,7 @@ User = _reflection.GeneratedProtocolMessageType('User', (_message.Message,), {
 _sym_db.RegisterMessage(User)
 _sym_db.RegisterMessage(User.MetadataEntry)
 
-FeatureFlags = _reflection.GeneratedProtocolMessageType('FeatureFlags', (_message.Message,), {
-
-  'MetaEntry' : _reflection.GeneratedProtocolMessageType('MetaEntry', (_message.Message,), {
-    'DESCRIPTOR' : _FEATUREFLAGS_METAENTRY,
-    '__module__' : 'api.user_pb2'
-    # @@protoc_insertion_point(class_scope:blueapi.api.FeatureFlags.MetaEntry)
-    })
-  ,
-  'DESCRIPTOR' : _FEATUREFLAGS,
-  '__module__' : 'api.user_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.api.FeatureFlags)
-  })
-_sym_db.RegisterMessage(FeatureFlags)
-_sym_db.RegisterMessage(FeatureFlags.MetaEntry)
-
 
 DESCRIPTOR._options = None
 _USER_METADATAENTRY._options = None
-_FEATUREFLAGS_METAENTRY._options = None
 # @@protoc_insertion_point(module_scope)

@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.api import apiclient_pb2 as api_dot_apiclient__pb2
+from alphausblue.api import grouprootuser_pb2 as api_dot_grouprootuser__pb2
 from alphausblue.api import rbac_pb2 as api_dot_rbac__pb2
 from alphausblue.api import user_pb2 as api_dot_user__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -43,6 +44,36 @@ class IamStub(object):
                 '/blueapi.iam.v1.Iam/DeleteUser',
                 request_serializer=iam_dot_v1_dot_iam__pb2.DeleteUserRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateGroupRootUser = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/CreateGroupRootUser',
+                request_serializer=iam_dot_v1_dot_iam__pb2.CreateGroupRootUserRequest.SerializeToString,
+                response_deserializer=api_dot_grouprootuser__pb2.GroupRootUser.FromString,
+                )
+        self.ListGroupRootUsers = channel.unary_stream(
+                '/blueapi.iam.v1.Iam/ListGroupRootUsers',
+                request_serializer=iam_dot_v1_dot_iam__pb2.ListGroupRootUsersRequest.SerializeToString,
+                response_deserializer=api_dot_grouprootuser__pb2.GroupRootUser.FromString,
+                )
+        self.GetGroupRootUser = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/GetGroupRootUser',
+                request_serializer=iam_dot_v1_dot_iam__pb2.GetGroupRootRequest.SerializeToString,
+                response_deserializer=api_dot_grouprootuser__pb2.GroupRootUser.FromString,
+                )
+        self.DeleteGroupRootUser = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/DeleteGroupRootUser',
+                request_serializer=iam_dot_v1_dot_iam__pb2.DeleteGroupRootUserRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetFeatureFlags = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/GetFeatureFlags',
+                request_serializer=iam_dot_v1_dot_iam__pb2.GetFeatureFlagsRequest.SerializeToString,
+                response_deserializer=api_dot_grouprootuser__pb2.FeatureFlags.FromString,
+                )
+        self.UpdateFeatureFlags = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/UpdateFeatureFlags',
+                request_serializer=iam_dot_v1_dot_iam__pb2.UpdateFeatureFlagsRequest.SerializeToString,
+                response_deserializer=api_dot_grouprootuser__pb2.FeatureFlags.FromString,
                 )
         self.ListApiClients = channel.unary_stream(
                 '/blueapi.iam.v1.Iam/ListApiClients',
@@ -154,6 +185,58 @@ class IamServicer(object):
 
     def DeleteUser(self, request, context):
         """Deletes a subuser.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateGroupRootUser(self, request, context):
+        """WORK IN PROGRESS:
+        Creates a new root user for a billing group or access group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListGroupRootUsers(self, request, context):
+        """WORK IN PROGRESS
+        Retrieves all the existing group root users asscoiated with the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGroupRootUser(self, request, context):
+        """WORK IN PROGRESS:
+        Retrieves an group root user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteGroupRootUser(self, request, context):
+        """WORK IN PROGRESS
+        Deletes an existing group root user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFeatureFlags(self, request, context):
+        """WORK IN PROGRESS:
+        Retrieves the features available to a user on an Alphaus product. Currently,
+        only values of "wave" and "aqua" are supported for {product}. For a list of
+        valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFeatureFlags(self, request, context):
+        """WORK IN PROGRESS:
+        Updates the features available to a user on an Alphaus product. Currently,
+        only values of "wave" and "aqua" are supported for {product}. For a list of
+        valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -291,6 +374,36 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.DeleteUser,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.DeleteUserRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateGroupRootUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateGroupRootUser,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.CreateGroupRootUserRequest.FromString,
+                    response_serializer=api_dot_grouprootuser__pb2.GroupRootUser.SerializeToString,
+            ),
+            'ListGroupRootUsers': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListGroupRootUsers,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.ListGroupRootUsersRequest.FromString,
+                    response_serializer=api_dot_grouprootuser__pb2.GroupRootUser.SerializeToString,
+            ),
+            'GetGroupRootUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGroupRootUser,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.GetGroupRootRequest.FromString,
+                    response_serializer=api_dot_grouprootuser__pb2.GroupRootUser.SerializeToString,
+            ),
+            'DeleteGroupRootUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteGroupRootUser,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.DeleteGroupRootUserRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetFeatureFlags': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFeatureFlags,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.GetFeatureFlagsRequest.FromString,
+                    response_serializer=api_dot_grouprootuser__pb2.FeatureFlags.SerializeToString,
+            ),
+            'UpdateFeatureFlags': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFeatureFlags,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpdateFeatureFlagsRequest.FromString,
+                    response_serializer=api_dot_grouprootuser__pb2.FeatureFlags.SerializeToString,
             ),
             'ListApiClients': grpc.unary_stream_rpc_method_handler(
                     servicer.ListApiClients,
@@ -455,6 +568,108 @@ class Iam(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/DeleteUser',
             iam_dot_v1_dot_iam__pb2.DeleteUserRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateGroupRootUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/CreateGroupRootUser',
+            iam_dot_v1_dot_iam__pb2.CreateGroupRootUserRequest.SerializeToString,
+            api_dot_grouprootuser__pb2.GroupRootUser.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListGroupRootUsers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.iam.v1.Iam/ListGroupRootUsers',
+            iam_dot_v1_dot_iam__pb2.ListGroupRootUsersRequest.SerializeToString,
+            api_dot_grouprootuser__pb2.GroupRootUser.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetGroupRootUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/GetGroupRootUser',
+            iam_dot_v1_dot_iam__pb2.GetGroupRootRequest.SerializeToString,
+            api_dot_grouprootuser__pb2.GroupRootUser.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteGroupRootUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/DeleteGroupRootUser',
+            iam_dot_v1_dot_iam__pb2.DeleteGroupRootUserRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetFeatureFlags(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/GetFeatureFlags',
+            iam_dot_v1_dot_iam__pb2.GetFeatureFlagsRequest.SerializeToString,
+            api_dot_grouprootuser__pb2.FeatureFlags.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateFeatureFlags(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/UpdateFeatureFlags',
+            iam_dot_v1_dot_iam__pb2.UpdateFeatureFlagsRequest.SerializeToString,
+            api_dot_grouprootuser__pb2.FeatureFlags.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
