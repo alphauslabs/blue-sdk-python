@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\025cloud.alphaus.api.iamB\010IamProtoZ\"github.com/alphauslabs/blueapi/iam',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10iam/v1/iam.proto\x12\x0e\x62lueapi.iam.v1\x1a\x0e\x61pi/user.proto\x1a\x17\x61pi/grouprootuser.proto\x1a\x13\x61pi/apiclient.proto\x1a\x0e\x61pi/rbac.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x0f\n\rWhoAmIRequest\"\x12\n\x10ListUsersRequest\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"T\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x10\n\x08nickName\x18\x04 \x01(\t\"\x1f\n\x11\x44\x65leteUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xfc\x01\n\x1a\x43reateGroupRootUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\tgroupType\x18\x03 \x01(\t\x12\x11\n\tinputType\x18\x04 \x01(\t\x12\x0c\n\x04plan\x18\x05 \x01(\t\x12\x19\n\x11\x65mailNotification\x18\x06 \x01(\x08\x12\x42\n\x04meta\x18\x07 \x03(\x0b\x32\x34.blueapi.iam.v1.CreateGroupRootUserRequest.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"\x1b\n\x19ListGroupRootUsersRequest\"!\n\x13GetGroupRootRequest\x12\n\n\x02id\x18\x01 \x01(\t\"(\n\x1a\x44\x65leteGroupRootUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"$\n\x16GetFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xaf\x01\n\x19UpdateFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12Q\n\x0c\x66\x65\x61tureFlags\x18\x02 \x03(\x0b\x32;.blueapi.iam.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry\x1a\x33\n\x11\x46\x65\x61tureFlagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"\x17\n\x15ListApiClientsRequest\"&\n\x16\x43reateApiClientRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\x16\x44\x65leteApiClientRequest\x12\n\n\x02id\x18\x01 \x01(\t\")\n\x16ListPermissionsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"G\n\x17ListPermissionsResponse\x12,\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x17.blueapi.api.Permission\"%\n\x10ListRolesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\"5\n\x11ListRolesResponse\x12 \n\x05roles\x18\x01 \x03(\x0b\x32\x11.blueapi.api.Role\"I\n\x11\x43reateRoleRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x13\n\x0bpermissions\x18\x03 \x03(\t\"Z\n\x11UpdateRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07newName\x18\x03 \x01(\t\x12\x13\n\x0bpermissions\x18\x04 \x03(\t\"4\n\x11\x44\x65leteRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\".\n\x1bListUserRoleMappingsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"V\n\x1cListUserRoleMappingsResponse\x12\x36\n\x10userRoleMappings\x18\x01 \x03(\x0b\x32\x1c.blueapi.api.UserRoleMapping\"*\n\x07MapRole\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"W\n\x1c\x43reateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1d\x43reateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"W\n\x1cUpdateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1dUpdateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"R\n\x08IpFilter\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\t\"\x16\n\x14ListIpFiltersRequest\"W\n\x15\x43reateIpFilterRequest\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08rootUser\x18\x03 \x01(\t\x12\x0f\n\x07subUser\x18\x04 \x01(\t\"#\n\x15\x44\x65leteIpFilterRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xfa\x17\n\x03Iam\x12R\n\x06WhoAmI\x12\x1d.blueapi.iam.v1.WhoAmIRequest\x1a\x11.blueapi.api.User\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/iam/v1/whoami\x12Y\n\tListUsers\x12 .blueapi.iam.v1.ListUsersRequest\x1a\x11.blueapi.api.User\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/users0\x01\x12X\n\x07GetUser\x12\x1e.blueapi.iam.v1.GetUserRequest\x1a\x11.blueapi.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/users/{id}\x12\\\n\nCreateUser\x12!.blueapi.iam.v1.CreateUserRequest\x1a\x11.blueapi.api.User\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/users:\x01*\x12\x63\n\nDeleteUser\x12!.blueapi.iam.v1.DeleteUserRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/iam/v1/users/{id}\x12\x80\x01\n\x13\x43reateGroupRootUser\x12*.blueapi.iam.v1.CreateGroupRootUserRequest\x1a\x1a.blueapi.api.GroupRootUser\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/iam/v1/grouprootusers:\x01*\x12}\n\x12ListGroupRootUsers\x12).blueapi.iam.v1.ListGroupRootUsersRequest\x1a\x1a.blueapi.api.GroupRootUser\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/iam/v1/grouprootusers0\x01\x12x\n\x10GetGroupRootUser\x12#.blueapi.iam.v1.GetGroupRootRequest\x1a\x1a.blueapi.api.GroupRootUser\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/iam/v1/grouprootusers/{id}\x12~\n\x13\x44\x65leteGroupRootUser\x12*.blueapi.iam.v1.DeleteGroupRootUserRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/iam/v1/grouprootusers/{id}\x12\x82\x01\n\x0fGetFeatureFlags\x12&.blueapi.iam.v1.GetFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\",\x82\xd3\xe4\x93\x02&\x12$/iam/v1/grouprootusers/{id}/features\x12\x8b\x01\n\x12UpdateFeatureFlags\x12).blueapi.iam.v1.UpdateFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\"/\x82\xd3\xe4\x93\x02)\x1a$/iam/v1/grouprootusers/{id}/features:\x01*\x12m\n\x0eListApiClients\x12%.blueapi.iam.v1.ListApiClientsRequest\x1a\x16.blueapi.api.ApiClient\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/apiclients0\x01\x12p\n\x0f\x43reateApiClient\x12&.blueapi.iam.v1.CreateApiClientRequest\x1a\x16.blueapi.api.ApiClient\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/iam/v1/apiclients:\x01*\x12r\n\x0f\x44\x65leteApiClient\x12&.blueapi.iam.v1.DeleteApiClientRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/iam/v1/apiclients/{id}\x12\x7f\n\x0fListPermissions\x12&.blueapi.iam.v1.ListPermissionsRequest\x1a\'.blueapi.iam.v1.ListPermissionsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/iam/v1/permissions\x12g\n\tListRoles\x12 .blueapi.iam.v1.ListRolesRequest\x1a!.blueapi.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/roles\x12\\\n\nCreateRole\x12!.blueapi.iam.v1.CreateRoleRequest\x1a\x11.blueapi.api.Role\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/roles:\x01*\x12o\n\nUpdateRole\x12!.blueapi.iam.v1.UpdateRoleRequest\x1a\x11.blueapi.api.Role\"+\x82\xd3\xe4\x93\x02%\x1a /iam/v1/roles/{namespace}/{name}:\x01*\x12q\n\nDeleteRole\x12!.blueapi.iam.v1.DeleteRoleRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /iam/v1/roles/{namespace}/{name}\x12\x8c\x01\n\x14ListUserRoleMappings\x12+.blueapi.iam.v1.ListUserRoleMappingsRequest\x1a,.blueapi.iam.v1.ListUserRoleMappingsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/userroles\x12\x92\x01\n\x15\x43reateUserRoleMapping\x12,.blueapi.iam.v1.CreateUserRoleMappingRequest\x1a-.blueapi.iam.v1.CreateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/userroles:\x01*\x12\x92\x01\n\x15UpdateUserRoleMapping\x12,.blueapi.iam.v1.UpdateUserRoleMappingRequest\x1a-.blueapi.iam.v1.UpdateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/iam/v1/userroles:\x01*\x12l\n\rListIpFilters\x12$.blueapi.iam.v1.ListIpFiltersRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/ipfilters0\x01\x12o\n\x0e\x43reateIpFilter\x12%.blueapi.iam.v1.CreateIpFilterRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/ipfilters:\x01*\x12o\n\x0e\x44\x65leteIpFilter\x12%.blueapi.iam.v1.DeleteIpFilterRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/iam/v1/ipfilters/{id}\x1a\x8d\x01\x92\x41\x89\x01\x12:(BETA) IAM API. Base URL: https://api.alphaus.cloud/m/blue\x1aK\n\x12Service definition\x12\x35https://github.com/alphauslabs/blueapi/tree/main/iam/BE\n\x15\x63loud.alphaus.api.iamB\x08IamProtoZ\"github.com/alphauslabs/blueapi/iamb\x06proto3'
+  serialized_pb=b'\n\x10iam/v1/iam.proto\x12\x0e\x62lueapi.iam.v1\x1a\x0e\x61pi/user.proto\x1a\x17\x61pi/grouprootuser.proto\x1a\x13\x61pi/apiclient.proto\x1a\x0e\x61pi/rbac.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x0f\n\rWhoAmIRequest\"\x12\n\x10ListUsersRequest\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"T\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x10\n\x08nickName\x18\x04 \x01(\t\"\x1f\n\x11\x44\x65leteUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x8e\x02\n\x1a\x43reateGroupRootUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupType\x18\x04 \x01(\t\x12\x11\n\tinputType\x18\x05 \x01(\t\x12\x0c\n\x04plan\x18\x06 \x01(\t\x12\x19\n\x11\x65mailNotification\x18\x07 \x01(\x08\x12\x42\n\x04meta\x18\x08 \x03(\x0b\x32\x34.blueapi.iam.v1.CreateGroupRootUserRequest.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"\x1b\n\x19ListGroupRootUsersRequest\"!\n\x13GetGroupRootRequest\x12\n\n\x02id\x18\x01 \x01(\t\"(\n\x1a\x44\x65leteGroupRootUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"$\n\x16GetFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xaf\x01\n\x19UpdateFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12Q\n\x0c\x66\x65\x61tureFlags\x18\x02 \x03(\x0b\x32;.blueapi.iam.v1.UpdateFeatureFlagsRequest.FeatureFlagsEntry\x1a\x33\n\x11\x46\x65\x61tureFlagsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\"\x17\n\x15ListApiClientsRequest\"&\n\x16\x43reateApiClientRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\x16\x44\x65leteApiClientRequest\x12\n\n\x02id\x18\x01 \x01(\t\")\n\x16ListPermissionsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"G\n\x17ListPermissionsResponse\x12,\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x17.blueapi.api.Permission\"%\n\x10ListRolesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\"5\n\x11ListRolesResponse\x12 \n\x05roles\x18\x01 \x03(\x0b\x32\x11.blueapi.api.Role\"I\n\x11\x43reateRoleRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x13\n\x0bpermissions\x18\x03 \x03(\t\"Z\n\x11UpdateRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07newName\x18\x03 \x01(\t\x12\x13\n\x0bpermissions\x18\x04 \x03(\t\"4\n\x11\x44\x65leteRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\".\n\x1bListUserRoleMappingsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"V\n\x1cListUserRoleMappingsResponse\x12\x36\n\x10userRoleMappings\x18\x01 \x03(\x0b\x32\x1c.blueapi.api.UserRoleMapping\"*\n\x07MapRole\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"W\n\x1c\x43reateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1d\x43reateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"W\n\x1cUpdateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1dUpdateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"R\n\x08IpFilter\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\t\"\x16\n\x14ListIpFiltersRequest\"W\n\x15\x43reateIpFilterRequest\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08rootUser\x18\x03 \x01(\t\x12\x0f\n\x07subUser\x18\x04 \x01(\t\"#\n\x15\x44\x65leteIpFilterRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xfa\x17\n\x03Iam\x12R\n\x06WhoAmI\x12\x1d.blueapi.iam.v1.WhoAmIRequest\x1a\x11.blueapi.api.User\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/iam/v1/whoami\x12Y\n\tListUsers\x12 .blueapi.iam.v1.ListUsersRequest\x1a\x11.blueapi.api.User\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/users0\x01\x12X\n\x07GetUser\x12\x1e.blueapi.iam.v1.GetUserRequest\x1a\x11.blueapi.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/users/{id}\x12\\\n\nCreateUser\x12!.blueapi.iam.v1.CreateUserRequest\x1a\x11.blueapi.api.User\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/users:\x01*\x12\x63\n\nDeleteUser\x12!.blueapi.iam.v1.DeleteUserRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/iam/v1/users/{id}\x12\x80\x01\n\x13\x43reateGroupRootUser\x12*.blueapi.iam.v1.CreateGroupRootUserRequest\x1a\x1a.blueapi.api.GroupRootUser\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/iam/v1/grouprootusers:\x01*\x12}\n\x12ListGroupRootUsers\x12).blueapi.iam.v1.ListGroupRootUsersRequest\x1a\x1a.blueapi.api.GroupRootUser\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/iam/v1/grouprootusers0\x01\x12x\n\x10GetGroupRootUser\x12#.blueapi.iam.v1.GetGroupRootRequest\x1a\x1a.blueapi.api.GroupRootUser\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/iam/v1/grouprootusers/{id}\x12~\n\x13\x44\x65leteGroupRootUser\x12*.blueapi.iam.v1.DeleteGroupRootUserRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/iam/v1/grouprootusers/{id}\x12\x82\x01\n\x0fGetFeatureFlags\x12&.blueapi.iam.v1.GetFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\",\x82\xd3\xe4\x93\x02&\x12$/iam/v1/grouprootusers/{id}/features\x12\x8b\x01\n\x12UpdateFeatureFlags\x12).blueapi.iam.v1.UpdateFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\"/\x82\xd3\xe4\x93\x02)\x1a$/iam/v1/grouprootusers/{id}/features:\x01*\x12m\n\x0eListApiClients\x12%.blueapi.iam.v1.ListApiClientsRequest\x1a\x16.blueapi.api.ApiClient\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/apiclients0\x01\x12p\n\x0f\x43reateApiClient\x12&.blueapi.iam.v1.CreateApiClientRequest\x1a\x16.blueapi.api.ApiClient\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/iam/v1/apiclients:\x01*\x12r\n\x0f\x44\x65leteApiClient\x12&.blueapi.iam.v1.DeleteApiClientRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/iam/v1/apiclients/{id}\x12\x7f\n\x0fListPermissions\x12&.blueapi.iam.v1.ListPermissionsRequest\x1a\'.blueapi.iam.v1.ListPermissionsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/iam/v1/permissions\x12g\n\tListRoles\x12 .blueapi.iam.v1.ListRolesRequest\x1a!.blueapi.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/roles\x12\\\n\nCreateRole\x12!.blueapi.iam.v1.CreateRoleRequest\x1a\x11.blueapi.api.Role\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/roles:\x01*\x12o\n\nUpdateRole\x12!.blueapi.iam.v1.UpdateRoleRequest\x1a\x11.blueapi.api.Role\"+\x82\xd3\xe4\x93\x02%\x1a /iam/v1/roles/{namespace}/{name}:\x01*\x12q\n\nDeleteRole\x12!.blueapi.iam.v1.DeleteRoleRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /iam/v1/roles/{namespace}/{name}\x12\x8c\x01\n\x14ListUserRoleMappings\x12+.blueapi.iam.v1.ListUserRoleMappingsRequest\x1a,.blueapi.iam.v1.ListUserRoleMappingsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/userroles\x12\x92\x01\n\x15\x43reateUserRoleMapping\x12,.blueapi.iam.v1.CreateUserRoleMappingRequest\x1a-.blueapi.iam.v1.CreateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/userroles:\x01*\x12\x92\x01\n\x15UpdateUserRoleMapping\x12,.blueapi.iam.v1.UpdateUserRoleMappingRequest\x1a-.blueapi.iam.v1.UpdateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/iam/v1/userroles:\x01*\x12l\n\rListIpFilters\x12$.blueapi.iam.v1.ListIpFiltersRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/ipfilters0\x01\x12o\n\x0e\x43reateIpFilter\x12%.blueapi.iam.v1.CreateIpFilterRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/ipfilters:\x01*\x12o\n\x0e\x44\x65leteIpFilter\x12%.blueapi.iam.v1.DeleteIpFilterRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/iam/v1/ipfilters/{id}\x1a\x8d\x01\x92\x41\x89\x01\x12:(BETA) IAM API. Base URL: https://api.alphaus.cloud/m/blue\x1aK\n\x12Service definition\x12\x35https://github.com/alphauslabs/blueapi/tree/main/iam/BE\n\x15\x63loud.alphaus.api.iamB\x08IamProtoZ\"github.com/alphauslabs/blueapi/iamb\x06proto3'
   ,
   dependencies=[api_dot_user__pb2.DESCRIPTOR,api_dot_grouprootuser__pb2.DESCRIPTOR,api_dot_apiclient__pb2.DESCRIPTOR,api_dot_rbac__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -234,8 +234,8 @@ _CREATEGROUPROOTUSERREQUEST_METAENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=617,
-  serialized_end=660,
+  serialized_start=635,
+  serialized_end=678,
 )
 
 _CREATEGROUPROOTUSERREQUEST = _descriptor.Descriptor(
@@ -254,43 +254,50 @@ _CREATEGROUPROOTUSERREQUEST = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='groupId', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.groupId', index=1,
+      name='password', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.password', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='groupType', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.groupType', index=2,
+      name='groupId', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.groupId', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='inputType', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.inputType', index=3,
+      name='groupType', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.groupType', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='plan', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.plan', index=4,
+      name='inputType', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.inputType', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='emailNotification', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.emailNotification', index=5,
-      number=6, type=8, cpp_type=7, label=1,
+      name='plan', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.plan', index=5,
+      number=6, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='emailNotification', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.emailNotification', index=6,
+      number=7, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='meta', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.meta', index=6,
-      number=7, type=11, cpp_type=10, label=3,
+      name='meta', full_name='blueapi.iam.v1.CreateGroupRootUserRequest.meta', index=7,
+      number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -308,7 +315,7 @@ _CREATEGROUPROOTUSERREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=408,
-  serialized_end=660,
+  serialized_end=678,
 )
 
 
@@ -332,8 +339,8 @@ _LISTGROUPROOTUSERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=662,
-  serialized_end=689,
+  serialized_start=680,
+  serialized_end=707,
 )
 
 
@@ -364,8 +371,8 @@ _GETGROUPROOTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=691,
-  serialized_end=724,
+  serialized_start=709,
+  serialized_end=742,
 )
 
 
@@ -396,8 +403,8 @@ _DELETEGROUPROOTUSERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=726,
-  serialized_end=766,
+  serialized_start=744,
+  serialized_end=784,
 )
 
 
@@ -428,8 +435,8 @@ _GETFEATUREFLAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=768,
-  serialized_end=804,
+  serialized_start=786,
+  serialized_end=822,
 )
 
 
@@ -467,8 +474,8 @@ _UPDATEFEATUREFLAGSREQUEST_FEATUREFLAGSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=931,
-  serialized_end=982,
+  serialized_start=949,
+  serialized_end=1000,
 )
 
 _UPDATEFEATUREFLAGSREQUEST = _descriptor.Descriptor(
@@ -505,8 +512,8 @@ _UPDATEFEATUREFLAGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=807,
-  serialized_end=982,
+  serialized_start=825,
+  serialized_end=1000,
 )
 
 
@@ -530,8 +537,8 @@ _LISTAPICLIENTSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=984,
-  serialized_end=1007,
+  serialized_start=1002,
+  serialized_end=1025,
 )
 
 
@@ -562,8 +569,8 @@ _CREATEAPICLIENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1009,
-  serialized_end=1047,
+  serialized_start=1027,
+  serialized_end=1065,
 )
 
 
@@ -594,8 +601,8 @@ _DELETEAPICLIENTREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1049,
-  serialized_end=1085,
+  serialized_start=1067,
+  serialized_end=1103,
 )
 
 
@@ -626,8 +633,8 @@ _LISTPERMISSIONSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1087,
-  serialized_end=1128,
+  serialized_start=1105,
+  serialized_end=1146,
 )
 
 
@@ -658,8 +665,8 @@ _LISTPERMISSIONSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1130,
-  serialized_end=1201,
+  serialized_start=1148,
+  serialized_end=1219,
 )
 
 
@@ -690,8 +697,8 @@ _LISTROLESREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1203,
-  serialized_end=1240,
+  serialized_start=1221,
+  serialized_end=1258,
 )
 
 
@@ -722,8 +729,8 @@ _LISTROLESRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1242,
-  serialized_end=1295,
+  serialized_start=1260,
+  serialized_end=1313,
 )
 
 
@@ -768,8 +775,8 @@ _CREATEROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1297,
-  serialized_end=1370,
+  serialized_start=1315,
+  serialized_end=1388,
 )
 
 
@@ -821,8 +828,8 @@ _UPDATEROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1372,
-  serialized_end=1462,
+  serialized_start=1390,
+  serialized_end=1480,
 )
 
 
@@ -860,8 +867,8 @@ _DELETEROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1464,
-  serialized_end=1516,
+  serialized_start=1482,
+  serialized_end=1534,
 )
 
 
@@ -892,8 +899,8 @@ _LISTUSERROLEMAPPINGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1518,
-  serialized_end=1564,
+  serialized_start=1536,
+  serialized_end=1582,
 )
 
 
@@ -924,8 +931,8 @@ _LISTUSERROLEMAPPINGSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1566,
-  serialized_end=1652,
+  serialized_start=1584,
+  serialized_end=1670,
 )
 
 
@@ -963,8 +970,8 @@ _MAPROLE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1654,
-  serialized_end=1696,
+  serialized_start=1672,
+  serialized_end=1714,
 )
 
 
@@ -1002,8 +1009,8 @@ _CREATEUSERROLEMAPPINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1698,
-  serialized_end=1785,
+  serialized_start=1716,
+  serialized_end=1803,
 )
 
 
@@ -1048,8 +1055,8 @@ _CREATEUSERROLEMAPPINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1787,
-  serialized_end=1868,
+  serialized_start=1805,
+  serialized_end=1886,
 )
 
 
@@ -1087,8 +1094,8 @@ _UPDATEUSERROLEMAPPINGREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1870,
-  serialized_end=1957,
+  serialized_start=1888,
+  serialized_end=1975,
 )
 
 
@@ -1133,8 +1140,8 @@ _UPDATEUSERROLEMAPPINGRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1959,
-  serialized_end=2040,
+  serialized_start=1977,
+  serialized_end=2058,
 )
 
 
@@ -1193,8 +1200,8 @@ _IPFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2042,
-  serialized_end=2124,
+  serialized_start=2060,
+  serialized_end=2142,
 )
 
 
@@ -1218,8 +1225,8 @@ _LISTIPFILTERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2126,
-  serialized_end=2148,
+  serialized_start=2144,
+  serialized_end=2166,
 )
 
 
@@ -1271,8 +1278,8 @@ _CREATEIPFILTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2150,
-  serialized_end=2237,
+  serialized_start=2168,
+  serialized_end=2255,
 )
 
 
@@ -1303,8 +1310,8 @@ _DELETEIPFILTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2239,
-  serialized_end=2274,
+  serialized_start=2257,
+  serialized_end=2292,
 )
 
 _CREATEGROUPROOTUSERREQUEST_METAENTRY.containing_type = _CREATEGROUPROOTUSERREQUEST
@@ -1602,8 +1609,8 @@ _IAM = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\211\001\022:(BETA) IAM API. Base URL: https://api.alphaus.cloud/m/blue\032K\n\022Service definition\0225https://github.com/alphauslabs/blueapi/tree/main/iam/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=2277,
-  serialized_end=5343,
+  serialized_start=2295,
+  serialized_end=5361,
   methods=[
   _descriptor.MethodDescriptor(
     name='WhoAmI',
