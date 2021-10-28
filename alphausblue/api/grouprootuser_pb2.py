@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\025ApiGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x61pi/grouprootuser.proto\x12\x0b\x62lueapi.api\"\xb0\x02\n\rGroupRootUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupName\x18\x04 \x01(\t\x12\x11\n\tgroupType\x18\x05 \x01(\t\x12\'\n\x04meta\x18\x06 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x1a\n\x12passwordUpdateTime\x18\x07 \x01(\t\x12\x12\n\nupdateTime\x18\x08 \x01(\t\x12\x14\n\x0cuserAccessId\x18\t \x01(\t\x12\x0e\n\x06userId\x18\n \x01(\t\x12\x1c\n\x14waveAvailabilityDays\x18\x0b \x01(\x05\x12\x16\n\x0ewaveRegistered\x18\x0c \x01(\t\x12\x12\n\nwaveStatus\x18\r \x01(\t\"n\n\x0c\x46\x65\x61tureFlags\x12\x31\n\x04meta\x18\x01 \x03(\x0b\x32#.blueapi.api.FeatureFlags.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08:\x02\x38\x01\x42Z\n\x19\x63loud.alphaus.blueapi.apiB\x15\x41piGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x17\x61pi/grouprootuser.proto\x12\x0b\x62lueapi.api\"\xb0\x02\n\rGroupRootUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupName\x18\x04 \x01(\t\x12\x11\n\tgroupType\x18\x05 \x01(\t\x12\'\n\x04meta\x18\x06 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x1a\n\x12passwordUpdateTime\x18\x07 \x01(\t\x12\x12\n\nupdateTime\x18\x08 \x01(\t\x12\x14\n\x0cuserAccessId\x18\t \x01(\t\x12\x0e\n\x06userId\x18\n \x01(\t\x12\x1c\n\x14waveAvailabilityDays\x18\x0b \x01(\x05\x12\x16\n\x0ewaveRegistered\x18\x0c \x01(\t\x12\x12\n\nwaveStatus\x18\r \x01(\t\"\xba\x07\n\x0c\x46\x65\x61tureFlags\x12\x17\n\x0f\x64\x61shboard_graph\x18\x01 \x01(\x08\x12\x15\n\rusage_account\x18\x02 \x01(\x08\x12\x1b\n\x13usage_account_graph\x18\x03 \x01(\x08\x12\'\n\x1fusage_account_menu_account_edit\x18\x04 \x01(\x08\x12!\n\x19usage_account_menu_budget\x18\x05 \x01(\x08\x12&\n\x1eusage_account_menu_budget_edit\x18\x06 \x01(\x08\x12#\n\x1busage_account_menu_fees_fee\x18\x07 \x01(\x08\x12&\n\x1eusage_account_menu_fees_credit\x18\x08 \x01(\x08\x12&\n\x1eusage_account_menu_fees_refund\x18\t \x01(\x08\x12*\n\"usage_account_menu_fees_other_fees\x18\n \x01(\x08\x12\x1d\n\x15usage_report_download\x18\x0b \x01(\x08\x12\x13\n\x0busage_group\x18\x0c \x01(\x08\x12\x19\n\x11usage_group_graph\x18\r \x01(\x08\x12\x11\n\tusage_tag\x18\x0e \x01(\x08\x12\x17\n\x0fusage_tag_graph\x18\x0f \x01(\x08\x12\x16\n\x0eusage_crosstag\x18\x10 \x01(\x08\x12\x1c\n\x14usage_crosstag_graph\x18\x11 \x01(\x08\x12\x14\n\x0cri_purchased\x18\x12 \x01(\x08\x12\x16\n\x0eri_utilization\x18\x13 \x01(\x08\x12\x19\n\x11ri_recommendation\x18\x14 \x01(\x08\x12\x14\n\x0csp_purchased\x18\x15 \x01(\x08\x12\x0f\n\x07invoice\x18\x16 \x01(\x08\x12%\n\x1dinvoice_download_csv_discount\x18\x17 \x01(\x08\x12#\n\x1binvoice_download_csv_merged\x18\x18 \x01(\x08\x12\x10\n\x08open_api\x18\x19 \x01(\x08\x12\x18\n\x10users_management\x18\x1a \x01(\x08\x12\x14\n\x0c\x61q_dashboard\x18\x1b \x01(\x08\x12\x19\n\x11\x61q_coverage_ratio\x18\x1c \x01(\x08\x12\x18\n\x10\x61q_ri_management\x18\x1d \x01(\x08\x12\x18\n\x10\x61q_sp_management\x18\x1e \x01(\x08\x12\x1a\n\x12\x61q_ri_sp_instances\x18\x1f \x01(\x08\x12\x17\n\x0f\x61q_right_sizing\x18  \x01(\x08\x12\x15\n\raq_scheduling\x18! \x01(\x08\x42Z\n\x19\x63loud.alphaus.blueapi.apiB\x15\x41piGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -141,24 +141,241 @@ _GROUPROOTUSER = _descriptor.Descriptor(
 )
 
 
-_FEATUREFLAGS_METAENTRY = _descriptor.Descriptor(
-  name='MetaEntry',
-  full_name='blueapi.api.FeatureFlags.MetaEntry',
+_FEATUREFLAGS = _descriptor.Descriptor(
+  name='FeatureFlags',
+  full_name='blueapi.api.FeatureFlags',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='key', full_name='blueapi.api.FeatureFlags.MetaEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='dashboard_graph', full_name='blueapi.api.FeatureFlags.dashboard_graph', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='value', full_name='blueapi.api.FeatureFlags.MetaEntry.value', index=1,
+      name='usage_account', full_name='blueapi.api.FeatureFlags.usage_account', index=1,
       number=2, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_graph', full_name='blueapi.api.FeatureFlags.usage_account_graph', index=2,
+      number=3, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_account_edit', full_name='blueapi.api.FeatureFlags.usage_account_menu_account_edit', index=3,
+      number=4, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_budget', full_name='blueapi.api.FeatureFlags.usage_account_menu_budget', index=4,
+      number=5, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_budget_edit', full_name='blueapi.api.FeatureFlags.usage_account_menu_budget_edit', index=5,
+      number=6, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_fees_fee', full_name='blueapi.api.FeatureFlags.usage_account_menu_fees_fee', index=6,
+      number=7, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_fees_credit', full_name='blueapi.api.FeatureFlags.usage_account_menu_fees_credit', index=7,
+      number=8, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_fees_refund', full_name='blueapi.api.FeatureFlags.usage_account_menu_fees_refund', index=8,
+      number=9, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_account_menu_fees_other_fees', full_name='blueapi.api.FeatureFlags.usage_account_menu_fees_other_fees', index=9,
+      number=10, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_report_download', full_name='blueapi.api.FeatureFlags.usage_report_download', index=10,
+      number=11, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_group', full_name='blueapi.api.FeatureFlags.usage_group', index=11,
+      number=12, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_group_graph', full_name='blueapi.api.FeatureFlags.usage_group_graph', index=12,
+      number=13, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_tag', full_name='blueapi.api.FeatureFlags.usage_tag', index=13,
+      number=14, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_tag_graph', full_name='blueapi.api.FeatureFlags.usage_tag_graph', index=14,
+      number=15, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_crosstag', full_name='blueapi.api.FeatureFlags.usage_crosstag', index=15,
+      number=16, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='usage_crosstag_graph', full_name='blueapi.api.FeatureFlags.usage_crosstag_graph', index=16,
+      number=17, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ri_purchased', full_name='blueapi.api.FeatureFlags.ri_purchased', index=17,
+      number=18, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ri_utilization', full_name='blueapi.api.FeatureFlags.ri_utilization', index=18,
+      number=19, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ri_recommendation', full_name='blueapi.api.FeatureFlags.ri_recommendation', index=19,
+      number=20, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='sp_purchased', full_name='blueapi.api.FeatureFlags.sp_purchased', index=20,
+      number=21, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invoice', full_name='blueapi.api.FeatureFlags.invoice', index=21,
+      number=22, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invoice_download_csv_discount', full_name='blueapi.api.FeatureFlags.invoice_download_csv_discount', index=22,
+      number=23, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='invoice_download_csv_merged', full_name='blueapi.api.FeatureFlags.invoice_download_csv_merged', index=23,
+      number=24, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='open_api', full_name='blueapi.api.FeatureFlags.open_api', index=24,
+      number=25, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='users_management', full_name='blueapi.api.FeatureFlags.users_management', index=25,
+      number=26, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_dashboard', full_name='blueapi.api.FeatureFlags.aq_dashboard', index=26,
+      number=27, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_coverage_ratio', full_name='blueapi.api.FeatureFlags.aq_coverage_ratio', index=27,
+      number=28, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_ri_management', full_name='blueapi.api.FeatureFlags.aq_ri_management', index=28,
+      number=29, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_sp_management', full_name='blueapi.api.FeatureFlags.aq_sp_management', index=29,
+      number=30, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_ri_sp_instances', full_name='blueapi.api.FeatureFlags.aq_ri_sp_instances', index=30,
+      number=31, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_right_sizing', full_name='blueapi.api.FeatureFlags.aq_right_sizing', index=31,
+      number=32, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='aq_scheduling', full_name='blueapi.api.FeatureFlags.aq_scheduling', index=32,
+      number=33, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -169,50 +386,17 @@ _FEATUREFLAGS_METAENTRY = _descriptor.Descriptor(
   nested_types=[],
   enum_types=[
   ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=414,
-  serialized_end=457,
-)
-
-_FEATUREFLAGS = _descriptor.Descriptor(
-  name='FeatureFlags',
-  full_name='blueapi.api.FeatureFlags',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='meta', full_name='blueapi.api.FeatureFlags.meta', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_FEATUREFLAGS_METAENTRY, ],
-  enum_types=[
-  ],
   serialized_options=None,
   is_extendable=False,
   syntax='proto3',
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=347,
-  serialized_end=457,
+  serialized_start=348,
+  serialized_end=1302,
 )
 
 _GROUPROOTUSER.fields_by_name['meta'].message_type = _FEATUREFLAGS
-_FEATUREFLAGS_METAENTRY.containing_type = _FEATUREFLAGS
-_FEATUREFLAGS.fields_by_name['meta'].message_type = _FEATUREFLAGS_METAENTRY
 DESCRIPTOR.message_types_by_name['GroupRootUser'] = _GROUPROOTUSER
 DESCRIPTOR.message_types_by_name['FeatureFlags'] = _FEATUREFLAGS
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -225,21 +409,12 @@ GroupRootUser = _reflection.GeneratedProtocolMessageType('GroupRootUser', (_mess
 _sym_db.RegisterMessage(GroupRootUser)
 
 FeatureFlags = _reflection.GeneratedProtocolMessageType('FeatureFlags', (_message.Message,), {
-
-  'MetaEntry' : _reflection.GeneratedProtocolMessageType('MetaEntry', (_message.Message,), {
-    'DESCRIPTOR' : _FEATUREFLAGS_METAENTRY,
-    '__module__' : 'api.grouprootuser_pb2'
-    # @@protoc_insertion_point(class_scope:blueapi.api.FeatureFlags.MetaEntry)
-    })
-  ,
   'DESCRIPTOR' : _FEATUREFLAGS,
   '__module__' : 'api.grouprootuser_pb2'
   # @@protoc_insertion_point(class_scope:blueapi.api.FeatureFlags)
   })
 _sym_db.RegisterMessage(FeatureFlags)
-_sym_db.RegisterMessage(FeatureFlags.MetaEntry)
 
 
 DESCRIPTOR._options = None
-_FEATUREFLAGS_METAENTRY._options = None
 # @@protoc_insertion_point(module_scope)

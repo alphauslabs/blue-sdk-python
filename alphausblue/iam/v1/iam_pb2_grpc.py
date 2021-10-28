@@ -224,8 +224,7 @@ class IamServicer(object):
 
     def GetFeatureFlags(self, request, context):
         """WORK IN PROGRESS:
-        Retrieves the features available to a user on an Alphaus product. Currently,
-        only values of "wave" and "aqua" are supported for {product}. For a list of
+        Retrieves the features available to a user on an Alphaus product. For a list of
         valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -234,8 +233,7 @@ class IamServicer(object):
 
     def UpdateFeatureFlags(self, request, context):
         """WORK IN PROGRESS:
-        Updates the features available to a user on an Alphaus product. Currently,
-        only values of "wave" and "aqua" are supported for {product}. For a list of
+        Updates the features available to a user on an Alphaus product. For a list of
         valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
