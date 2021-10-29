@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\025ApiGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x61pi/grouprootuser.proto\x12\x0b\x62lueapi.api\"\xb0\x02\n\rGroupRootUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupName\x18\x04 \x01(\t\x12\x11\n\tgroupType\x18\x05 \x01(\t\x12\'\n\x04meta\x18\x06 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x1a\n\x12passwordUpdateTime\x18\x07 \x01(\t\x12\x12\n\nupdateTime\x18\x08 \x01(\t\x12\x14\n\x0cuserAccessId\x18\t \x01(\t\x12\x0e\n\x06userId\x18\n \x01(\t\x12\x1c\n\x14waveAvailabilityDays\x18\x0b \x01(\x05\x12\x16\n\x0ewaveRegistered\x18\x0c \x01(\t\x12\x12\n\nwaveStatus\x18\r \x01(\t\"\xd2\x07\n\x0c\x46\x65\x61tureFlags\x12\x17\n\x0f\x64\x61shboard_graph\x18\x01 \x01(\x08\x12\x15\n\rusage_account\x18\x02 \x01(\x08\x12\x1b\n\x13usage_account_graph\x18\x03 \x01(\x08\x12\'\n\x1fusage_account_menu_account_edit\x18\x04 \x01(\x08\x12!\n\x19usage_account_menu_budget\x18\x05 \x01(\x08\x12&\n\x1eusage_account_menu_budget_edit\x18\x06 \x01(\x08\x12#\n\x1busage_account_menu_fees_fee\x18\x07 \x01(\x08\x12&\n\x1eusage_account_menu_fees_credit\x18\x08 \x01(\x08\x12&\n\x1eusage_account_menu_fees_refund\x18\t \x01(\x08\x12*\n\"usage_account_menu_fees_other_fees\x18\n \x01(\x08\x12\x1d\n\x15usage_report_download\x18\x0b \x01(\x08\x12\x13\n\x0busage_group\x18\x0c \x01(\x08\x12\x19\n\x11usage_group_graph\x18\r \x01(\x08\x12\x11\n\tusage_tag\x18\x0e \x01(\x08\x12\x17\n\x0fusage_tag_graph\x18\x0f \x01(\x08\x12\x16\n\x0eusage_crosstag\x18\x10 \x01(\x08\x12\x1c\n\x14usage_crosstag_graph\x18\x11 \x01(\x08\x12\x14\n\x0cri_purchased\x18\x12 \x01(\x08\x12\x16\n\x0eri_utilization\x18\x13 \x01(\x08\x12\x19\n\x11ri_recommendation\x18\x14 \x01(\x08\x12\x14\n\x0csp_purchased\x18\x15 \x01(\x08\x12\x0f\n\x07invoice\x18\x16 \x01(\x08\x12%\n\x1dinvoice_download_csv_discount\x18\x17 \x01(\x08\x12#\n\x1binvoice_download_csv_merged\x18\x18 \x01(\x08\x12\x10\n\x08open_api\x18\x19 \x01(\x08\x12\x18\n\x10users_management\x18\x1a \x01(\x08\x12\x14\n\x0c\x61q_dashboard\x18\x1b \x01(\x08\x12\x19\n\x11\x61q_coverage_ratio\x18\x1c \x01(\x08\x12\x18\n\x10\x61q_ri_management\x18\x1d \x01(\x08\x12\x18\n\x10\x61q_sp_management\x18\x1e \x01(\x08\x12\x1a\n\x12\x61q_ri_sp_instances\x18\x1f \x01(\x08\x12\x17\n\x0f\x61q_right_sizing\x18  \x01(\x08\x12\x15\n\raq_scheduling\x18! \x01(\x08\x12\x16\n\x0ereport_filters\x18\" \x01(\x08\x42Z\n\x19\x63loud.alphaus.blueapi.apiB\x15\x41piGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x17\x61pi/grouprootuser.proto\x12\x0b\x62lueapi.api\"\xb0\x02\n\rGroupRootUser\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupName\x18\x04 \x01(\t\x12\x11\n\tgroupType\x18\x05 \x01(\t\x12\'\n\x04meta\x18\x06 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\x12\x1a\n\x12passwordUpdateTime\x18\x07 \x01(\t\x12\x12\n\nupdateTime\x18\x08 \x01(\t\x12\x14\n\x0cuserAccessId\x18\t \x01(\t\x12\x0e\n\x06userId\x18\n \x01(\t\x12\x1c\n\x14waveAvailabilityDays\x18\x0b \x01(\x05\x12\x16\n\x0ewaveRegistered\x18\x0c \x01(\t\x12\x12\n\nwaveStatus\x18\r \x01(\t\"\xbc\x07\n\x0c\x46\x65\x61tureFlags\x12\x17\n\x0f\x64\x61shboard_graph\x18\x01 \x01(\x08\x12\x15\n\rusage_account\x18\x02 \x01(\x08\x12\x1b\n\x13usage_account_graph\x18\x03 \x01(\x08\x12\'\n\x1fusage_account_menu_account_edit\x18\x04 \x01(\x08\x12!\n\x19usage_account_menu_budget\x18\x05 \x01(\x08\x12&\n\x1eusage_account_menu_budget_edit\x18\x06 \x01(\x08\x12#\n\x1busage_account_menu_fees_fee\x18\x07 \x01(\x08\x12&\n\x1eusage_account_menu_fees_credit\x18\x08 \x01(\x08\x12&\n\x1eusage_account_menu_fees_refund\x18\t \x01(\x08\x12*\n\"usage_account_menu_fees_other_fees\x18\n \x01(\x08\x12\x1d\n\x15usage_report_download\x18\x0b \x01(\x08\x12\x13\n\x0busage_group\x18\x0c \x01(\x08\x12\x19\n\x11usage_group_graph\x18\r \x01(\x08\x12\x11\n\tusage_tag\x18\x0e \x01(\x08\x12\x17\n\x0fusage_tag_graph\x18\x0f \x01(\x08\x12\x16\n\x0eusage_crosstag\x18\x10 \x01(\x08\x12\x1c\n\x14usage_crosstag_graph\x18\x11 \x01(\x08\x12\x14\n\x0cri_purchased\x18\x12 \x01(\x08\x12\x16\n\x0eri_utilization\x18\x13 \x01(\x08\x12\x19\n\x11ri_recommendation\x18\x14 \x01(\x08\x12\x14\n\x0csp_purchased\x18\x15 \x01(\x08\x12\x0f\n\x07invoice\x18\x16 \x01(\x08\x12%\n\x1dinvoice_download_csv_discount\x18\x17 \x01(\x08\x12#\n\x1binvoice_download_csv_merged\x18\x18 \x01(\x08\x12\x10\n\x08open_api\x18\x19 \x01(\x08\x12\x18\n\x10users_management\x18\x1a \x01(\x08\x12\x19\n\x11\x61q_coverage_ratio\x18\x1b \x01(\x08\x12\x18\n\x10\x61q_ri_management\x18\x1c \x01(\x08\x12\x18\n\x10\x61q_sp_management\x18\x1d \x01(\x08\x12\x1a\n\x12\x61q_ri_sp_instances\x18\x1e \x01(\x08\x12\x17\n\x0f\x61q_right_sizing\x18\x1f \x01(\x08\x12\x15\n\raq_scheduling\x18  \x01(\x08\x12\x16\n\x0ereport_filters\x18! \x01(\x08\x42Z\n\x19\x63loud.alphaus.blueapi.apiB\x15\x41piGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -332,57 +332,50 @@ _FEATUREFLAGS = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_dashboard', full_name='blueapi.api.FeatureFlags.aq_dashboard', index=26,
+      name='aq_coverage_ratio', full_name='blueapi.api.FeatureFlags.aq_coverage_ratio', index=26,
       number=27, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_coverage_ratio', full_name='blueapi.api.FeatureFlags.aq_coverage_ratio', index=27,
+      name='aq_ri_management', full_name='blueapi.api.FeatureFlags.aq_ri_management', index=27,
       number=28, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_ri_management', full_name='blueapi.api.FeatureFlags.aq_ri_management', index=28,
+      name='aq_sp_management', full_name='blueapi.api.FeatureFlags.aq_sp_management', index=28,
       number=29, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_sp_management', full_name='blueapi.api.FeatureFlags.aq_sp_management', index=29,
+      name='aq_ri_sp_instances', full_name='blueapi.api.FeatureFlags.aq_ri_sp_instances', index=29,
       number=30, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_ri_sp_instances', full_name='blueapi.api.FeatureFlags.aq_ri_sp_instances', index=30,
+      name='aq_right_sizing', full_name='blueapi.api.FeatureFlags.aq_right_sizing', index=30,
       number=31, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_right_sizing', full_name='blueapi.api.FeatureFlags.aq_right_sizing', index=31,
+      name='aq_scheduling', full_name='blueapi.api.FeatureFlags.aq_scheduling', index=31,
       number=32, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='aq_scheduling', full_name='blueapi.api.FeatureFlags.aq_scheduling', index=32,
+      name='report_filters', full_name='blueapi.api.FeatureFlags.report_filters', index=32,
       number=33, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='report_filters', full_name='blueapi.api.FeatureFlags.report_filters', index=33,
-      number=34, type=8, cpp_type=7, label=1,
       has_default_value=False, default_value=False,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -400,7 +393,7 @@ _FEATUREFLAGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=348,
-  serialized_end=1326,
+  serialized_end=1304,
 )
 
 _GROUPROOTUSER.fields_by_name['meta'].message_type = _FEATUREFLAGS
