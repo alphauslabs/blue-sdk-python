@@ -159,6 +159,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetCostReductionRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetCostReductionResponse.FromString,
                 )
+        self.GetUtilization = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetUtilization',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetUtilizationResponse.FromString,
+                )
 
 
 class CostServicer(object):
@@ -382,6 +387,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetUtilization(self, request, context):
+        """WORK-IN-PROGRESS: Get the utilization details for an organization (or MSP).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -524,6 +536,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetCostReduction,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetCostReductionRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetCostReductionResponse.SerializeToString,
+            ),
+            'GetUtilization': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUtilization,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetUtilizationResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1009,5 +1026,22 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCostReduction',
             cost_dot_v1_dot_cost__pb2.GetCostReductionRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetCostReductionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetUtilization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetUtilization',
+            cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetUtilizationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
