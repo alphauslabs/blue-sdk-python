@@ -135,6 +135,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.ListIdentityProvidersRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.ListIdentityProvidersResponse.FromString,
                 )
+        self.CreateIdentityProvider = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/CreateIdentityProvider',
+                request_serializer=iam_dot_v1_dot_iam__pb2.CreateIdentityProviderRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ListIpFilters = channel.unary_stream(
                 '/blueapi.iam.v1.Iam/ListIpFilters',
                 request_serializer=iam_dot_v1_dot_iam__pb2.ListIpFiltersRequest.SerializeToString,
@@ -335,6 +340,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateIdentityProvider(self, request, context):
+        """WORK-IN-PROGRESS: Register an SSO Identity Provider (IdP).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListIpFilters(self, request, context):
         """Lists all IP filters. At the moment, this API is only available to root users.
         """
@@ -474,6 +486,11 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.ListIdentityProviders,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.ListIdentityProvidersRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.ListIdentityProvidersResponse.SerializeToString,
+            ),
+            'CreateIdentityProvider': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateIdentityProvider,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.CreateIdentityProviderRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListIpFilters': grpc.unary_stream_rpc_method_handler(
                     servicer.ListIpFilters,
@@ -889,6 +906,23 @@ class Iam(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/ListIdentityProviders',
             iam_dot_v1_dot_iam__pb2.ListIdentityProvidersRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.ListIdentityProvidersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateIdentityProvider(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/CreateIdentityProvider',
+            iam_dot_v1_dot_iam__pb2.CreateIdentityProviderRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
