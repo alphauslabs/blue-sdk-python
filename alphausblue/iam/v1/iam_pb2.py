@@ -26,7 +26,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\025cloud.alphaus.api.iamB\010IamProtoZ\"github.com/alphauslabs/blueapi/iam',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x10iam/v1/iam.proto\x12\x0e\x62lueapi.iam.v1\x1a\x0e\x61pi/user.proto\x1a\x17\x61pi/grouprootuser.proto\x1a\x13\x61pi/apiclient.proto\x1a\x0e\x61pi/rbac.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x0f\n\rWhoAmIRequest\"\x12\n\x10ListUsersRequest\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"T\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x10\n\x08nickName\x18\x04 \x01(\t\"\x1f\n\x11\x44\x65leteUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc6\x01\n\x1a\x43reateGroupRootUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupType\x18\x04 \x01(\t\x12\x11\n\tinputType\x18\x05 \x01(\t\x12\x0c\n\x04plan\x18\x06 \x01(\t\x12\x19\n\x11\x65mailNotification\x18\x07 \x01(\x08\x12\'\n\x04meta\x18\x08 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\"\x1b\n\x19ListGroupRootUsersRequest\"!\n\x13GetGroupRootRequest\x12\n\n\x02id\x18\x01 \x01(\t\"(\n\x1a\x44\x65leteGroupRootUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"$\n\x16GetFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\"X\n\x19UpdateFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x0c\x66\x65\x61tureFlags\x18\x02 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\"\x17\n\x15ListApiClientsRequest\"&\n\x16\x43reateApiClientRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\x16\x44\x65leteApiClientRequest\x12\n\n\x02id\x18\x01 \x01(\t\")\n\x16ListPermissionsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"G\n\x17ListPermissionsResponse\x12,\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x17.blueapi.api.Permission\"%\n\x10ListRolesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\"5\n\x11ListRolesResponse\x12 \n\x05roles\x18\x01 \x03(\x0b\x32\x11.blueapi.api.Role\"I\n\x11\x43reateRoleRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x13\n\x0bpermissions\x18\x03 \x03(\t\"Z\n\x11UpdateRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07newName\x18\x03 \x01(\t\x12\x13\n\x0bpermissions\x18\x04 \x03(\t\"4\n\x11\x44\x65leteRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\".\n\x1bListUserRoleMappingsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"V\n\x1cListUserRoleMappingsResponse\x12\x36\n\x10userRoleMappings\x18\x01 \x03(\x0b\x32\x1c.blueapi.api.UserRoleMapping\"*\n\x07MapRole\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"W\n\x1c\x43reateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1d\x43reateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"W\n\x1cUpdateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1dUpdateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"\x1e\n\x1cListIdentityProvidersRequest\"\x9f\x02\n\x1dListIdentityProvidersResponse\x12L\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32>.blueapi.iam.v1.ListIdentityProvidersResponse.IdentityProvider\x1a\xaf\x01\n\x10IdentityProvider\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12U\n\x04saml\x18\x04 \x01(\x0b\x32G.blueapi.iam.v1.ListIdentityProvidersResponse.IdentityProvider.samlInfo\x1a\x1c\n\x08samlInfo\x12\x10\n\x08metadata\x18\x01 \x01(\t\"M\n\x1d\x43reateIdentityProviderRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08metadata\x18\x03 \x01(\t\"R\n\x08IpFilter\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\t\"\x16\n\x14ListIpFiltersRequest\"W\n\x15\x43reateIpFilterRequest\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08rootUser\x18\x03 \x01(\t\x12\x0f\n\x07subUser\x18\x04 \x01(\t\"#\n\x15\x44\x65leteIpFilterRequest\x12\n\n\x02id\x18\x01 \x01(\t2\x81\x1a\n\x03Iam\x12R\n\x06WhoAmI\x12\x1d.blueapi.iam.v1.WhoAmIRequest\x1a\x11.blueapi.api.User\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/iam/v1/whoami\x12Y\n\tListUsers\x12 .blueapi.iam.v1.ListUsersRequest\x1a\x11.blueapi.api.User\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/users0\x01\x12X\n\x07GetUser\x12\x1e.blueapi.iam.v1.GetUserRequest\x1a\x11.blueapi.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/users/{id}\x12\\\n\nCreateUser\x12!.blueapi.iam.v1.CreateUserRequest\x1a\x11.blueapi.api.User\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/users:\x01*\x12\x63\n\nDeleteUser\x12!.blueapi.iam.v1.DeleteUserRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/iam/v1/users/{id}\x12\x80\x01\n\x13\x43reateGroupRootUser\x12*.blueapi.iam.v1.CreateGroupRootUserRequest\x1a\x1a.blueapi.api.GroupRootUser\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/iam/v1/grouprootusers:\x01*\x12}\n\x12ListGroupRootUsers\x12).blueapi.iam.v1.ListGroupRootUsersRequest\x1a\x1a.blueapi.api.GroupRootUser\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/iam/v1/grouprootusers0\x01\x12x\n\x10GetGroupRootUser\x12#.blueapi.iam.v1.GetGroupRootRequest\x1a\x1a.blueapi.api.GroupRootUser\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/iam/v1/grouprootusers/{id}\x12~\n\x13\x44\x65leteGroupRootUser\x12*.blueapi.iam.v1.DeleteGroupRootUserRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/iam/v1/grouprootusers/{id}\x12\x82\x01\n\x0fGetFeatureFlags\x12&.blueapi.iam.v1.GetFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\",\x82\xd3\xe4\x93\x02&\x12$/iam/v1/grouprootusers/{id}/features\x12\x8b\x01\n\x12UpdateFeatureFlags\x12).blueapi.iam.v1.UpdateFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\"/\x82\xd3\xe4\x93\x02)\x1a$/iam/v1/grouprootusers/{id}/features:\x01*\x12m\n\x0eListApiClients\x12%.blueapi.iam.v1.ListApiClientsRequest\x1a\x16.blueapi.api.ApiClient\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/apiclients0\x01\x12p\n\x0f\x43reateApiClient\x12&.blueapi.iam.v1.CreateApiClientRequest\x1a\x16.blueapi.api.ApiClient\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/iam/v1/apiclients:\x01*\x12r\n\x0f\x44\x65leteApiClient\x12&.blueapi.iam.v1.DeleteApiClientRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/iam/v1/apiclients/{id}\x12\x7f\n\x0fListPermissions\x12&.blueapi.iam.v1.ListPermissionsRequest\x1a\'.blueapi.iam.v1.ListPermissionsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/iam/v1/permissions\x12g\n\tListRoles\x12 .blueapi.iam.v1.ListRolesRequest\x1a!.blueapi.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/roles\x12\\\n\nCreateRole\x12!.blueapi.iam.v1.CreateRoleRequest\x1a\x11.blueapi.api.Role\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/roles:\x01*\x12o\n\nUpdateRole\x12!.blueapi.iam.v1.UpdateRoleRequest\x1a\x11.blueapi.api.Role\"+\x82\xd3\xe4\x93\x02%\x1a /iam/v1/roles/{namespace}/{name}:\x01*\x12q\n\nDeleteRole\x12!.blueapi.iam.v1.DeleteRoleRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /iam/v1/roles/{namespace}/{name}\x12\x8c\x01\n\x14ListUserRoleMappings\x12+.blueapi.iam.v1.ListUserRoleMappingsRequest\x1a,.blueapi.iam.v1.ListUserRoleMappingsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/userroles\x12\x92\x01\n\x15\x43reateUserRoleMapping\x12,.blueapi.iam.v1.CreateUserRoleMappingRequest\x1a-.blueapi.iam.v1.CreateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/userroles:\x01*\x12\x92\x01\n\x15UpdateUserRoleMapping\x12,.blueapi.iam.v1.UpdateUserRoleMappingRequest\x1a-.blueapi.iam.v1.UpdateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/iam/v1/userroles:\x01*\x12\x8a\x01\n\x15ListIdentityProviders\x12,.blueapi.iam.v1.ListIdentityProvidersRequest\x1a-.blueapi.iam.v1.ListIdentityProvidersResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/iam/v1/idps\x12x\n\x16\x43reateIdentityProvider\x12-.blueapi.iam.v1.CreateIdentityProviderRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/iam/v1/idps:\x01*\x12l\n\rListIpFilters\x12$.blueapi.iam.v1.ListIpFiltersRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/ipfilters0\x01\x12o\n\x0e\x43reateIpFilter\x12%.blueapi.iam.v1.CreateIpFilterRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/ipfilters:\x01*\x12o\n\x0e\x44\x65leteIpFilter\x12%.blueapi.iam.v1.DeleteIpFilterRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/iam/v1/ipfilters/{id}\x1a\x8d\x01\x92\x41\x89\x01\x12:(BETA) IAM API. Base URL: https://api.alphaus.cloud/m/blue\x1aK\n\x12Service definition\x12\x35https://github.com/alphauslabs/blueapi/tree/main/iam/BE\n\x15\x63loud.alphaus.api.iamB\x08IamProtoZ\"github.com/alphauslabs/blueapi/iamb\x06proto3'
+  serialized_pb=b'\n\x10iam/v1/iam.proto\x12\x0e\x62lueapi.iam.v1\x1a\x0e\x61pi/user.proto\x1a\x17\x61pi/grouprootuser.proto\x1a\x13\x61pi/apiclient.proto\x1a\x0e\x61pi/rbac.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\"\x0f\n\rWhoAmIRequest\"\x12\n\x10ListUsersRequest\"\x1c\n\x0eGetUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"T\n\x11\x43reateUserRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\x12\x10\n\x08nickName\x18\x04 \x01(\t\"\x1f\n\x11\x44\x65leteUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc6\x01\n\x1a\x43reateGroupRootUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0f\n\x07groupId\x18\x03 \x01(\t\x12\x11\n\tgroupType\x18\x04 \x01(\t\x12\x11\n\tinputType\x18\x05 \x01(\t\x12\x0c\n\x04plan\x18\x06 \x01(\t\x12\x19\n\x11\x65mailNotification\x18\x07 \x01(\x08\x12\'\n\x04meta\x18\x08 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\"\x1b\n\x19ListGroupRootUsersRequest\"!\n\x13GetGroupRootRequest\x12\n\n\x02id\x18\x01 \x01(\t\"(\n\x1a\x44\x65leteGroupRootUserRequest\x12\n\n\x02id\x18\x01 \x01(\t\"$\n\x16GetFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\"X\n\x19UpdateFeatureFlagsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x0c\x66\x65\x61tureFlags\x18\x02 \x01(\x0b\x32\x19.blueapi.api.FeatureFlags\"\x17\n\x15ListApiClientsRequest\"&\n\x16\x43reateApiClientRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"$\n\x16\x44\x65leteApiClientRequest\x12\n\n\x02id\x18\x01 \x01(\t\")\n\x16ListPermissionsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"G\n\x17ListPermissionsResponse\x12,\n\x0bpermissions\x18\x01 \x03(\x0b\x32\x17.blueapi.api.Permission\"%\n\x10ListRolesRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\"5\n\x11ListRolesResponse\x12 \n\x05roles\x18\x01 \x03(\x0b\x32\x11.blueapi.api.Role\"I\n\x11\x43reateRoleRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x11\n\tnamespace\x18\x02 \x01(\t\x12\x13\n\x0bpermissions\x18\x03 \x03(\t\"Z\n\x11UpdateRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07newName\x18\x03 \x01(\t\x12\x13\n\x0bpermissions\x18\x04 \x03(\t\"4\n\x11\x44\x65leteRoleRequest\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\".\n\x1bListUserRoleMappingsRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\"V\n\x1cListUserRoleMappingsResponse\x12\x36\n\x10userRoleMappings\x18\x01 \x03(\x0b\x32\x1c.blueapi.api.UserRoleMapping\"*\n\x07MapRole\x12\x11\n\tnamespace\x18\x01 \x01(\t\x12\x0c\n\x04role\x18\x02 \x01(\t\"W\n\x1c\x43reateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1d\x43reateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"W\n\x1cUpdateUserRoleMappingRequest\x12\x0f\n\x07subUser\x18\x01 \x01(\t\x12&\n\x05roles\x18\x02 \x03(\x0b\x32\x17.blueapi.iam.v1.MapRole\"Q\n\x1dUpdateUserRoleMappingResponse\x12\x0f\n\x07success\x18\x01 \x03(\t\x12\x0e\n\x06\x66\x61iled\x18\x02 \x03(\t\x12\x0f\n\x07\x66ilters\x18\x03 \x03(\t\"\x1e\n\x1cListIdentityProvidersRequest\"\x9f\x02\n\x1dListIdentityProvidersResponse\x12L\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32>.blueapi.iam.v1.ListIdentityProvidersResponse.IdentityProvider\x1a\xaf\x01\n\x10IdentityProvider\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12U\n\x04saml\x18\x04 \x01(\x0b\x32G.blueapi.iam.v1.ListIdentityProvidersResponse.IdentityProvider.samlInfo\x1a\x1c\n\x08samlInfo\x12\x10\n\x08metadata\x18\x01 \x01(\t\"M\n\x1d\x43reateIdentityProviderRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08metadata\x18\x03 \x01(\t\"Y\n\x1dUpdateIdentityProviderRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12\x10\n\x08metadata\x18\x04 \x01(\t\"+\n\x1d\x44\x65leteIdentityProviderRequest\x12\n\n\x02id\x18\x01 \x01(\t\"R\n\x08IpFilter\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05scope\x18\x02 \x01(\t\x12\x0e\n\x06target\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12\r\n\x05value\x18\x05 \x01(\t\"\x16\n\x14ListIpFiltersRequest\"W\n\x15\x43reateIpFilterRequest\x12\r\n\x05value\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12\x10\n\x08rootUser\x18\x03 \x01(\t\x12\x0f\n\x07subUser\x18\x04 \x01(\t\"#\n\x15\x44\x65leteIpFilterRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xfc\x1b\n\x03Iam\x12R\n\x06WhoAmI\x12\x1d.blueapi.iam.v1.WhoAmIRequest\x1a\x11.blueapi.api.User\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/iam/v1/whoami\x12Y\n\tListUsers\x12 .blueapi.iam.v1.ListUsersRequest\x1a\x11.blueapi.api.User\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/users0\x01\x12X\n\x07GetUser\x12\x1e.blueapi.iam.v1.GetUserRequest\x1a\x11.blueapi.api.User\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/users/{id}\x12\\\n\nCreateUser\x12!.blueapi.iam.v1.CreateUserRequest\x1a\x11.blueapi.api.User\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/users:\x01*\x12\x63\n\nDeleteUser\x12!.blueapi.iam.v1.DeleteUserRequest\x1a\x16.google.protobuf.Empty\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/iam/v1/users/{id}\x12\x80\x01\n\x13\x43reateGroupRootUser\x12*.blueapi.iam.v1.CreateGroupRootUserRequest\x1a\x1a.blueapi.api.GroupRootUser\"!\x82\xd3\xe4\x93\x02\x1b\"\x16/iam/v1/grouprootusers:\x01*\x12}\n\x12ListGroupRootUsers\x12).blueapi.iam.v1.ListGroupRootUsersRequest\x1a\x1a.blueapi.api.GroupRootUser\"\x1e\x82\xd3\xe4\x93\x02\x18\x12\x16/iam/v1/grouprootusers0\x01\x12x\n\x10GetGroupRootUser\x12#.blueapi.iam.v1.GetGroupRootRequest\x1a\x1a.blueapi.api.GroupRootUser\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/iam/v1/grouprootusers/{id}\x12~\n\x13\x44\x65leteGroupRootUser\x12*.blueapi.iam.v1.DeleteGroupRootUserRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/iam/v1/grouprootusers/{id}\x12\x82\x01\n\x0fGetFeatureFlags\x12&.blueapi.iam.v1.GetFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\",\x82\xd3\xe4\x93\x02&\x12$/iam/v1/grouprootusers/{id}/features\x12\x8b\x01\n\x12UpdateFeatureFlags\x12).blueapi.iam.v1.UpdateFeatureFlagsRequest\x1a\x19.blueapi.api.FeatureFlags\"/\x82\xd3\xe4\x93\x02)\x1a$/iam/v1/grouprootusers/{id}/features:\x01*\x12m\n\x0eListApiClients\x12%.blueapi.iam.v1.ListApiClientsRequest\x1a\x16.blueapi.api.ApiClient\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/iam/v1/apiclients0\x01\x12p\n\x0f\x43reateApiClient\x12&.blueapi.iam.v1.CreateApiClientRequest\x1a\x16.blueapi.api.ApiClient\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/iam/v1/apiclients:\x01*\x12r\n\x0f\x44\x65leteApiClient\x12&.blueapi.iam.v1.DeleteApiClientRequest\x1a\x16.google.protobuf.Empty\"\x1f\x82\xd3\xe4\x93\x02\x19*\x17/iam/v1/apiclients/{id}\x12\x7f\n\x0fListPermissions\x12&.blueapi.iam.v1.ListPermissionsRequest\x1a\'.blueapi.iam.v1.ListPermissionsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/iam/v1/permissions\x12g\n\tListRoles\x12 .blueapi.iam.v1.ListRolesRequest\x1a!.blueapi.iam.v1.ListRolesResponse\"\x15\x82\xd3\xe4\x93\x02\x0f\x12\r/iam/v1/roles\x12\\\n\nCreateRole\x12!.blueapi.iam.v1.CreateRoleRequest\x1a\x11.blueapi.api.Role\"\x18\x82\xd3\xe4\x93\x02\x12\"\r/iam/v1/roles:\x01*\x12o\n\nUpdateRole\x12!.blueapi.iam.v1.UpdateRoleRequest\x1a\x11.blueapi.api.Role\"+\x82\xd3\xe4\x93\x02%\x1a /iam/v1/roles/{namespace}/{name}:\x01*\x12q\n\nDeleteRole\x12!.blueapi.iam.v1.DeleteRoleRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /iam/v1/roles/{namespace}/{name}\x12\x8c\x01\n\x14ListUserRoleMappings\x12+.blueapi.iam.v1.ListUserRoleMappingsRequest\x1a,.blueapi.iam.v1.ListUserRoleMappingsResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/userroles\x12\x92\x01\n\x15\x43reateUserRoleMapping\x12,.blueapi.iam.v1.CreateUserRoleMappingRequest\x1a-.blueapi.iam.v1.CreateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/userroles:\x01*\x12\x92\x01\n\x15UpdateUserRoleMapping\x12,.blueapi.iam.v1.UpdateUserRoleMappingRequest\x1a-.blueapi.iam.v1.UpdateUserRoleMappingResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/iam/v1/userroles:\x01*\x12\x8a\x01\n\x15ListIdentityProviders\x12,.blueapi.iam.v1.ListIdentityProvidersRequest\x1a-.blueapi.iam.v1.ListIdentityProvidersResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/iam/v1/idps\x12x\n\x16\x43reateIdentityProvider\x12-.blueapi.iam.v1.CreateIdentityProviderRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/iam/v1/idps:\x01*\x12}\n\x16UpdateIdentityProvider\x12-.blueapi.iam.v1.UpdateIdentityProviderRequest\x1a\x16.google.protobuf.Empty\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/iam/v1/idps/{id}:\x01*\x12z\n\x16\x44\x65leteIdentityProvider\x12-.blueapi.iam.v1.DeleteIdentityProviderRequest\x1a\x16.google.protobuf.Empty\"\x19\x82\xd3\xe4\x93\x02\x13*\x11/iam/v1/idps/{id}\x12l\n\rListIpFilters\x12$.blueapi.iam.v1.ListIpFiltersRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/iam/v1/ipfilters0\x01\x12o\n\x0e\x43reateIpFilter\x12%.blueapi.iam.v1.CreateIpFilterRequest\x1a\x18.blueapi.iam.v1.IpFilter\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/iam/v1/ipfilters:\x01*\x12o\n\x0e\x44\x65leteIpFilter\x12%.blueapi.iam.v1.DeleteIpFilterRequest\x1a\x16.google.protobuf.Empty\"\x1e\x82\xd3\xe4\x93\x02\x18*\x16/iam/v1/ipfilters/{id}\x1a\x8d\x01\x92\x41\x89\x01\x12:(BETA) IAM API. Base URL: https://api.alphaus.cloud/m/blue\x1aK\n\x12Service definition\x12\x35https://github.com/alphauslabs/blueapi/tree/main/iam/BE\n\x15\x63loud.alphaus.api.iamB\x08IamProtoZ\"github.com/alphauslabs/blueapi/iamb\x06proto3'
   ,
   dependencies=[api_dot_user__pb2.DESCRIPTOR,api_dot_grouprootuser__pb2.DESCRIPTOR,api_dot_apiclient__pb2.DESCRIPTOR,api_dot_rbac__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,])
 
@@ -1255,6 +1255,91 @@ _CREATEIDENTITYPROVIDERREQUEST = _descriptor.Descriptor(
 )
 
 
+_UPDATEIDENTITYPROVIDERREQUEST = _descriptor.Descriptor(
+  name='UpdateIdentityProviderRequest',
+  full_name='blueapi.iam.v1.UpdateIdentityProviderRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blueapi.iam.v1.UpdateIdentityProviderRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='blueapi.iam.v1.UpdateIdentityProviderRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='blueapi.iam.v1.UpdateIdentityProviderRequest.type', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='blueapi.iam.v1.UpdateIdentityProviderRequest.metadata', index=3,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2301,
+  serialized_end=2390,
+)
+
+
+_DELETEIDENTITYPROVIDERREQUEST = _descriptor.Descriptor(
+  name='DeleteIdentityProviderRequest',
+  full_name='blueapi.iam.v1.DeleteIdentityProviderRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blueapi.iam.v1.DeleteIdentityProviderRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2392,
+  serialized_end=2435,
+)
+
+
 _IPFILTER = _descriptor.Descriptor(
   name='IpFilter',
   full_name='blueapi.iam.v1.IpFilter',
@@ -1310,8 +1395,8 @@ _IPFILTER = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2301,
-  serialized_end=2383,
+  serialized_start=2437,
+  serialized_end=2519,
 )
 
 
@@ -1335,8 +1420,8 @@ _LISTIPFILTERSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2385,
-  serialized_end=2407,
+  serialized_start=2521,
+  serialized_end=2543,
 )
 
 
@@ -1388,8 +1473,8 @@ _CREATEIPFILTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2409,
-  serialized_end=2496,
+  serialized_start=2545,
+  serialized_end=2632,
 )
 
 
@@ -1420,8 +1505,8 @@ _DELETEIPFILTERREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=2498,
-  serialized_end=2533,
+  serialized_start=2634,
+  serialized_end=2669,
 )
 
 _CREATEGROUPROOTUSERREQUEST.fields_by_name['meta'].message_type = api_dot_grouprootuser__pb2._FEATUREFLAGS
@@ -1466,6 +1551,8 @@ DESCRIPTOR.message_types_by_name['UpdateUserRoleMappingResponse'] = _UPDATEUSERR
 DESCRIPTOR.message_types_by_name['ListIdentityProvidersRequest'] = _LISTIDENTITYPROVIDERSREQUEST
 DESCRIPTOR.message_types_by_name['ListIdentityProvidersResponse'] = _LISTIDENTITYPROVIDERSRESPONSE
 DESCRIPTOR.message_types_by_name['CreateIdentityProviderRequest'] = _CREATEIDENTITYPROVIDERREQUEST
+DESCRIPTOR.message_types_by_name['UpdateIdentityProviderRequest'] = _UPDATEIDENTITYPROVIDERREQUEST
+DESCRIPTOR.message_types_by_name['DeleteIdentityProviderRequest'] = _DELETEIDENTITYPROVIDERREQUEST
 DESCRIPTOR.message_types_by_name['IpFilter'] = _IPFILTER
 DESCRIPTOR.message_types_by_name['ListIpFiltersRequest'] = _LISTIPFILTERSREQUEST
 DESCRIPTOR.message_types_by_name['CreateIpFilterRequest'] = _CREATEIPFILTERREQUEST
@@ -1705,6 +1792,20 @@ CreateIdentityProviderRequest = _reflection.GeneratedProtocolMessageType('Create
   })
 _sym_db.RegisterMessage(CreateIdentityProviderRequest)
 
+UpdateIdentityProviderRequest = _reflection.GeneratedProtocolMessageType('UpdateIdentityProviderRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEIDENTITYPROVIDERREQUEST,
+  '__module__' : 'iam.v1.iam_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.iam.v1.UpdateIdentityProviderRequest)
+  })
+_sym_db.RegisterMessage(UpdateIdentityProviderRequest)
+
+DeleteIdentityProviderRequest = _reflection.GeneratedProtocolMessageType('DeleteIdentityProviderRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEIDENTITYPROVIDERREQUEST,
+  '__module__' : 'iam.v1.iam_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.iam.v1.DeleteIdentityProviderRequest)
+  })
+_sym_db.RegisterMessage(DeleteIdentityProviderRequest)
+
 IpFilter = _reflection.GeneratedProtocolMessageType('IpFilter', (_message.Message,), {
   'DESCRIPTOR' : _IPFILTER,
   '__module__' : 'iam.v1.iam_pb2'
@@ -1743,8 +1844,8 @@ _IAM = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\211\001\022:(BETA) IAM API. Base URL: https://api.alphaus.cloud/m/blue\032K\n\022Service definition\0225https://github.com/alphauslabs/blueapi/tree/main/iam/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=2536,
-  serialized_end=5865,
+  serialized_start=2672,
+  serialized_end=6252,
   methods=[
   _descriptor.MethodDescriptor(
     name='WhoAmI',
@@ -1987,9 +2088,29 @@ _IAM = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='UpdateIdentityProvider',
+    full_name='blueapi.iam.v1.Iam.UpdateIdentityProvider',
+    index=24,
+    containing_service=None,
+    input_type=_UPDATEIDENTITYPROVIDERREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=b'\202\323\344\223\002\026\032\021/iam/v1/idps/{id}:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteIdentityProvider',
+    full_name='blueapi.iam.v1.Iam.DeleteIdentityProvider',
+    index=25,
+    containing_service=None,
+    input_type=_DELETEIDENTITYPROVIDERREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=b'\202\323\344\223\002\023*\021/iam/v1/idps/{id}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='ListIpFilters',
     full_name='blueapi.iam.v1.Iam.ListIpFilters',
-    index=24,
+    index=26,
     containing_service=None,
     input_type=_LISTIPFILTERSREQUEST,
     output_type=_IPFILTER,
@@ -1999,7 +2120,7 @@ _IAM = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='CreateIpFilter',
     full_name='blueapi.iam.v1.Iam.CreateIpFilter',
-    index=25,
+    index=27,
     containing_service=None,
     input_type=_CREATEIPFILTERREQUEST,
     output_type=_IPFILTER,
@@ -2009,7 +2130,7 @@ _IAM = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteIpFilter',
     full_name='blueapi.iam.v1.Iam.DeleteIpFilter',
-    index=26,
+    index=28,
     containing_service=None,
     input_type=_DELETEIPFILTERREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
