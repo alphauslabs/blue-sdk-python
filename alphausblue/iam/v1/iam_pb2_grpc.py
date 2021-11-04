@@ -140,11 +140,6 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.CreateIdentityProviderRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.UpdateIdentityProvider = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/UpdateIdentityProvider',
-                request_serializer=iam_dot_v1_dot_iam__pb2.UpdateIdentityProviderRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
         self.DeleteIdentityProvider = channel.unary_unary(
                 '/blueapi.iam.v1.Iam/DeleteIdentityProvider',
                 request_serializer=iam_dot_v1_dot_iam__pb2.DeleteIdentityProviderRequest.SerializeToString,
@@ -344,28 +339,21 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListIdentityProviders(self, request, context):
-        """WORK-IN-PROGRESS: Lists all SSO Identity Providers (IdP).
+        """Lists all SSO Identity Providers (IdP).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateIdentityProvider(self, request, context):
-        """WORK-IN-PROGRESS: Registers an SSO Identity Provider (IdP).
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdateIdentityProvider(self, request, context):
-        """WORK-IN-PROGRESS: Updates an SSO Identity Provider (IdP).
+        """Registers an SSO Identity Provider (IdP).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteIdentityProvider(self, request, context):
-        """WORK-IN-PROGRESS: Deletes an SSO Identity Provider (IdP).
+        """Deletes an SSO Identity Provider (IdP).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -514,11 +502,6 @@ def add_IamServicer_to_server(servicer, server):
             'CreateIdentityProvider': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateIdentityProvider,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.CreateIdentityProviderRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UpdateIdentityProvider': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateIdentityProvider,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpdateIdentityProviderRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'DeleteIdentityProvider': grpc.unary_unary_rpc_method_handler(
@@ -956,23 +939,6 @@ class Iam(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/CreateIdentityProvider',
             iam_dot_v1_dot_iam__pb2.CreateIdentityProviderRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateIdentityProvider(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/UpdateIdentityProvider',
-            iam_dot_v1_dot_iam__pb2.UpdateIdentityProviderRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
