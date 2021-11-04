@@ -19,61 +19,29 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\023ApiUtilizationProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15\x61pi/utilization.proto\x12\x0b\x62lueapi.api\"/\n\x0cUtilizations\x12\x1f\n\x04\x64\x61ta\x18\x01 \x03(\x0b\x32\x11.blueapi.api.Data\"=\n\x04\x44\x61ta\x12\n\n\x02id\x18\x01 \x01(\t\x12)\n\tchartData\x18\x02 \x03(\x0b\x32\x16.blueapi.api.ChartData\"L\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x01\x12\x0e\n\x06profit\x18\x03 \x01(\x01\x12\x13\n\x0butilization\x18\x04 \x01(\x01\x42X\n\x19\x63loud.alphaus.blueapi.apiB\x13\x41piUtilizationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x15\x61pi/utilization.proto\x12\x0b\x62lueapi.api\"H\n\x0fUtilizationData\x12\n\n\x02id\x18\x01 \x01(\t\x12)\n\tchartData\x18\x02 \x03(\x0b\x32\x16.blueapi.api.ChartData\"`\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x01\x12\x0e\n\x06profit\x18\x03 \x01(\x01\x12\x13\n\x0butilization\x18\x04 \x01(\x01\x12\x12\n\ncommitment\x18\x05 \x01(\x01\x42X\n\x19\x63loud.alphaus.blueapi.apiB\x13\x41piUtilizationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
 
 
-_UTILIZATIONS = _descriptor.Descriptor(
-  name='Utilizations',
-  full_name='blueapi.api.Utilizations',
+_UTILIZATIONDATA = _descriptor.Descriptor(
+  name='UtilizationData',
+  full_name='blueapi.api.UtilizationData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='data', full_name='blueapi.api.Utilizations.data', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=38,
-  serialized_end=85,
-)
-
-
-_DATA = _descriptor.Descriptor(
-  name='Data',
-  full_name='blueapi.api.Data',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.api.Data.id', index=0,
+      name='id', full_name='blueapi.api.UtilizationData.id', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chartData', full_name='blueapi.api.Data.chartData', index=1,
+      name='chartData', full_name='blueapi.api.UtilizationData.chartData', index=1,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -91,8 +59,8 @@ _DATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=87,
-  serialized_end=148,
+  serialized_start=38,
+  serialized_end=110,
 )
 
 
@@ -132,6 +100,13 @@ _CHARTDATA = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='commitment', full_name='blueapi.api.ChartData.commitment', index=4,
+      number=5, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -144,30 +119,21 @@ _CHARTDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=150,
-  serialized_end=226,
+  serialized_start=112,
+  serialized_end=208,
 )
 
-_UTILIZATIONS.fields_by_name['data'].message_type = _DATA
-_DATA.fields_by_name['chartData'].message_type = _CHARTDATA
-DESCRIPTOR.message_types_by_name['Utilizations'] = _UTILIZATIONS
-DESCRIPTOR.message_types_by_name['Data'] = _DATA
+_UTILIZATIONDATA.fields_by_name['chartData'].message_type = _CHARTDATA
+DESCRIPTOR.message_types_by_name['UtilizationData'] = _UTILIZATIONDATA
 DESCRIPTOR.message_types_by_name['ChartData'] = _CHARTDATA
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
-Utilizations = _reflection.GeneratedProtocolMessageType('Utilizations', (_message.Message,), {
-  'DESCRIPTOR' : _UTILIZATIONS,
+UtilizationData = _reflection.GeneratedProtocolMessageType('UtilizationData', (_message.Message,), {
+  'DESCRIPTOR' : _UTILIZATIONDATA,
   '__module__' : 'api.utilization_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.api.Utilizations)
+  # @@protoc_insertion_point(class_scope:blueapi.api.UtilizationData)
   })
-_sym_db.RegisterMessage(Utilizations)
-
-Data = _reflection.GeneratedProtocolMessageType('Data', (_message.Message,), {
-  'DESCRIPTOR' : _DATA,
-  '__module__' : 'api.utilization_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.api.Data)
-  })
-_sym_db.RegisterMessage(Data)
+_sym_db.RegisterMessage(UtilizationData)
 
 ChartData = _reflection.GeneratedProtocolMessageType('ChartData', (_message.Message,), {
   'DESCRIPTOR' : _CHARTDATA,
