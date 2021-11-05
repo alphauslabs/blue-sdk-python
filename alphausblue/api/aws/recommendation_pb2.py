@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035cloud.alphaus.blueapi.api.awsB\031ApiAwsRecommendationProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x1c\x61pi/aws/recommendation.proto\x12\x0f\x62lueapi.api.aws\"\x9e\x02\n\x12\x41wsRecommendations\x12\x42\n\x07summary\x18\x01 \x01(\x0b\x32\x31.blueapi.api.aws.ReservationRecommendationSummary\x12<\n\x11riRecommendations\x18\x02 \x03(\x0b\x32!.blueapi.api.aws.RiRecommendation\x12<\n\x11spRecommendations\x18\x03 \x03(\x0b\x32!.blueapi.api.aws.SpRecommendation\x12H\n\x11\x65stimatedCoverage\x18\x04 \x03(\x0b\x32-.blueapi.api.aws.ReservationEstimatedCoverage\"\xc9\x03\n\x10RiRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x14\n\x0cinstanceType\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\x03\x12\x16\n\x0enormalizedUnit\x18\x06 \x01(\x01\x12\x17\n\x0foperatingSystem\x18\x07 \x01(\t\x12\x16\n\x0epreInstalledSW\x18\x08 \x01(\t\x12\x0f\n\x07tenancy\x18\t \x01(\t\x12\x14\n\x0condemandCost\x18\n \x01(\x01\x12\x14\n\x0condemandrate\x18\x0b \x01(\x01\x12\x0e\n\x06riRate\x18\x0c \x01(\x01\x12\x13\n\x0bupfrontCost\x18\r \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x0e \x01(\x01\x12\x1c\n\x14monthlyAmortizedCost\x18\x0f \x01(\x01\x12\x1c\n\x14monthlyRecurringCost\x18\x10 \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\x11 \x01(\x01\x12\x15\n\rreductionRate\x18\x12 \x01(\x01\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\x13 \x01(\x01\"\xb7\x02\n\x10SpRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fspProductFamily\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x16\n\x0einstanceFamily\x18\x04 \x01(\t\x12\x14\n\x0condemandCost\x18\x05 \x01(\x01\x12\x12\n\ncommitment\x18\x06 \x01(\x01\x12\x16\n\x0enormalizedUnit\x18\x07 \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x08 \x01(\x01\x12\x1d\n\x15monthlyDiscountedCost\x18\t \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\n \x01(\x01\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\x0b \x01(\x01\x12\x15\n\rreductionRate\x18\x0c \x01(\x01\"\xde\x01\n ReservationRecommendationSummary\x12\x19\n\x11totalOnDemandCost\x18\x01 \x01(\x01\x12\x1b\n\x13totalDiscountedCost\x18\x02 \x01(\x01\x12\"\n\x1atotalDiscountedMonthlyCost\x18\x03 \x01(\x01\x12!\n\x19totalDiscountedYearlyCost\x18\x04 \x01(\x01\x12\x15\n\rreductionRate\x18\x05 \x01(\x01\x12$\n\x1ctotalEstimatedMonthlySavings\x18\x06 \x01(\x01\"\x8c\x01\n\x1cReservationEstimatedCoverage\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x12\n\nriCoverage\x18\x03 \x01(\x01\x12\x15\n\rec2SpCoverage\x18\x04 \x01(\x01\x12\x19\n\x11\x63omputeSpCoverage\x18\x05 \x01(\x01\x42\x66\n\x1d\x63loud.alphaus.blueapi.api.awsB\x19\x41piAwsRecommendationProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
+  serialized_pb=b'\n\x1c\x61pi/aws/recommendation.proto\x12\x0f\x62lueapi.api.aws\"\x9e\x02\n\x12\x41wsRecommendations\x12\x42\n\x07summary\x18\x01 \x01(\x0b\x32\x31.blueapi.api.aws.ReservationRecommendationSummary\x12<\n\x11riRecommendations\x18\x02 \x03(\x0b\x32!.blueapi.api.aws.RiRecommendation\x12<\n\x11spRecommendations\x18\x03 \x03(\x0b\x32!.blueapi.api.aws.SpRecommendation\x12H\n\x11\x65stimatedCoverage\x18\x04 \x03(\x0b\x32-.blueapi.api.aws.ReservationEstimatedCoverage\"\xc9\x03\n\x10RiRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x14\n\x0cinstanceType\x18\x04 \x01(\t\x12\x10\n\x08quantity\x18\x05 \x01(\x03\x12\x16\n\x0enormalizedUnit\x18\x06 \x01(\x01\x12\x17\n\x0foperatingSystem\x18\x07 \x01(\t\x12\x16\n\x0epreInstalledSW\x18\x08 \x01(\t\x12\x0f\n\x07tenancy\x18\t \x01(\t\x12\x14\n\x0condemandCost\x18\n \x01(\x01\x12\x14\n\x0condemandrate\x18\x0b \x01(\x01\x12\x0e\n\x06riRate\x18\x0c \x01(\x01\x12\x13\n\x0bupfrontCost\x18\r \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x0e \x01(\x01\x12\x1c\n\x14monthlyAmortizedCost\x18\x0f \x01(\x01\x12\x1c\n\x14monthlyRecurringCost\x18\x10 \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\x11 \x01(\x01\x12\x15\n\rreductionRate\x18\x12 \x01(\x01\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\x13 \x01(\x01\"\xb7\x02\n\x10SpRecommendation\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fspProductFamily\x18\x02 \x01(\t\x12\x10\n\x08location\x18\x03 \x01(\t\x12\x16\n\x0einstanceFamily\x18\x04 \x01(\t\x12\x14\n\x0condemandCost\x18\x05 \x01(\x01\x12\x12\n\ncommitment\x18\x06 \x01(\x01\x12\x16\n\x0enormalizedUnit\x18\x07 \x01(\x01\x12\x16\n\x0e\x64iscountedCost\x18\x08 \x01(\x01\x12\x1d\n\x15monthlyDiscountedCost\x18\t \x01(\x01\x12\x1c\n\x14yearlyDiscountedCost\x18\n \x01(\x01\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\x0b \x01(\x01\x12\x15\n\rreductionRate\x18\x0c \x01(\x01\"\xde\x01\n ReservationRecommendationSummary\x12\x19\n\x11totalOnDemandCost\x18\x01 \x01(\x01\x12\x1b\n\x13totalDiscountedCost\x18\x02 \x01(\x01\x12\"\n\x1atotalDiscountedMonthlyCost\x18\x03 \x01(\x01\x12!\n\x19totalDiscountedYearlyCost\x18\x04 \x01(\x01\x12\x15\n\rreductionRate\x18\x05 \x01(\x01\x12$\n\x1ctotalEstimatedMonthlySavings\x18\x06 \x01(\x01\"\xb2\x01\n\x1cReservationEstimatedCoverage\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x16\n\x0einstanceFamily\x18\x03 \x01(\t\x12\x17\n\x0friUsageCoverage\x18\x04 \x01(\x01\x12\x1a\n\x12\x65\x63\x32SpUsageCoverage\x18\x05 \x01(\x01\x12\x1d\n\x15\x63omputeSpCostCoverage\x18\x06 \x01(\x01\x42\x66\n\x1d\x63loud.alphaus.blueapi.api.awsB\x19\x41piAwsRecommendationProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
 )
 
 
@@ -435,22 +435,29 @@ _RESERVATIONESTIMATEDCOVERAGE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='riCoverage', full_name='blueapi.api.aws.ReservationEstimatedCoverage.riCoverage', index=2,
-      number=3, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
+      name='instanceFamily', full_name='blueapi.api.aws.ReservationEstimatedCoverage.instanceFamily', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ec2SpCoverage', full_name='blueapi.api.aws.ReservationEstimatedCoverage.ec2SpCoverage', index=3,
+      name='riUsageCoverage', full_name='blueapi.api.aws.ReservationEstimatedCoverage.riUsageCoverage', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='computeSpCoverage', full_name='blueapi.api.aws.ReservationEstimatedCoverage.computeSpCoverage', index=4,
+      name='ec2SpUsageCoverage', full_name='blueapi.api.aws.ReservationEstimatedCoverage.ec2SpUsageCoverage', index=4,
       number=5, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='computeSpCostCoverage', full_name='blueapi.api.aws.ReservationEstimatedCoverage.computeSpCostCoverage', index=5,
+      number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -468,7 +475,7 @@ _RESERVATIONESTIMATEDCOVERAGE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=1338,
-  serialized_end=1478,
+  serialized_end=1516,
 )
 
 _AWSRECOMMENDATIONS.fields_by_name['summary'].message_type = _RESERVATIONRECOMMENDATIONSUMMARY
