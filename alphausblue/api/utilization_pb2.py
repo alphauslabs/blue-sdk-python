@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\023ApiUtilizationProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x15\x61pi/utilization.proto\x12\x0b\x62lueapi.api\"H\n\x0fUtilizationData\x12\n\n\x02id\x18\x01 \x01(\t\x12)\n\tchartData\x18\x02 \x03(\x0b\x32\x16.blueapi.api.ChartData\"`\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0c\n\x04\x63ost\x18\x02 \x01(\x01\x12\x0e\n\x06profit\x18\x03 \x01(\x01\x12\x13\n\x0butilization\x18\x04 \x01(\x01\x12\x12\n\ncommitment\x18\x05 \x01(\x01\x42X\n\x19\x63loud.alphaus.blueapi.apiB\x13\x41piUtilizationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x15\x61pi/utilization.proto\x12\x0b\x62lueapi.api\"H\n\x0fUtilizationData\x12\n\n\x02id\x18\x01 \x01(\t\x12)\n\tchartData\x18\x02 \x03(\x0b\x32\x16.blueapi.api.ChartData\"q\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x0c\n\x04\x63ost\x18\x03 \x01(\x01\x12\x0e\n\x06profit\x18\x04 \x01(\x01\x12\x13\n\x0butilization\x18\x05 \x01(\x01\x12\x12\n\ncommitment\x18\x06 \x01(\x01\x42X\n\x19\x63loud.alphaus.blueapi.apiB\x13\x41piUtilizationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -80,29 +80,36 @@ _CHARTDATA = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='cost', full_name='blueapi.api.ChartData.cost', index=1,
-      number=2, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
+      name='service', full_name='blueapi.api.ChartData.service', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='profit', full_name='blueapi.api.ChartData.profit', index=2,
+      name='cost', full_name='blueapi.api.ChartData.cost', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='utilization', full_name='blueapi.api.ChartData.utilization', index=3,
+      name='profit', full_name='blueapi.api.ChartData.profit', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='commitment', full_name='blueapi.api.ChartData.commitment', index=4,
+      name='utilization', full_name='blueapi.api.ChartData.utilization', index=4,
       number=5, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='commitment', full_name='blueapi.api.ChartData.commitment', index=5,
+      number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -120,7 +127,7 @@ _CHARTDATA = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=112,
-  serialized_end=208,
+  serialized_end=225,
 )
 
 _UTILIZATIONDATA.fields_by_name['chartData'].message_type = _CHARTDATA
