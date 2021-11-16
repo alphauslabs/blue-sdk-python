@@ -164,6 +164,16 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetUtilizationResponse.FromString,
                 )
+        self.GetCoverageOptions = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetCoverageOptions',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetCoverageOptionsRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetCoverageOptionsResponse.FromString,
+                )
+        self.GetCoverageOndemand = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetCoverageOndemand',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandResponse.FromString,
+                )
 
 
 class CostServicer(object):
@@ -394,6 +404,20 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetCoverageOptions(self, request, context):
+        """WORK-IN-PROGRESS: Get coverage options details for an organization (or MSP).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCoverageOndemand(self, request, context):
+        """WORK-IN-PROGRESS: Get ondemand cost details for an organization (or MSP).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -541,6 +565,16 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetUtilization,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetUtilizationResponse.SerializeToString,
+            ),
+            'GetCoverageOptions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCoverageOptions,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCoverageOptionsRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetCoverageOptionsResponse.SerializeToString,
+            ),
+            'GetCoverageOndemand': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCoverageOndemand,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1043,5 +1077,39 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetUtilization',
             cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetUtilizationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCoverageOptions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCoverageOptions',
+            cost_dot_v1_dot_cost__pb2.GetCoverageOptionsRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetCoverageOptionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCoverageOndemand(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCoverageOndemand',
+            cost_dot_v1_dot_cost__pb2.GetCoverageOndemandRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetCoverageOndemandResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
