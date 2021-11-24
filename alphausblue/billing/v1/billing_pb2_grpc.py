@@ -63,7 +63,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAccessGroup(self, request, context):
-        """Gets an access group.
+        """WORK-IN-PROGRESS: Gets an access group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
