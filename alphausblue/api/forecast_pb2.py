@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\020ApiForecastProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x12\x61pi/forecast.proto\x12\x0b\x62lueapi.api\"\xc8\x01\n\x0c\x46orecastData\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fproductCategory\x18\x02 \x01(\t\x12\x13\n\x0bproductCode\x18\x03 \x01(\t\x12\x11\n\tfrequency\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x05 \x01(\t\x12\x16\n\x0ehistoricalCost\x18\x06 \x01(\x01\x12\x16\n\x0e\x66orecastedCost\x18\x07 \x01(\x01\x12\x12\n\nupperBound\x18\x08 \x01(\x01\x12\x12\n\nlowerBound\x18\t \x01(\x01\"P\n\x14\x41\x63\x63ountGroupForecast\x12\x0f\n\x07groupId\x18\x01 \x01(\t\x12\'\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x19.blueapi.api.ForecastData\"R\n\x14\x42illingGroupForecast\x12\x11\n\tcompanyId\x18\x01 \x01(\t\x12\'\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x19.blueapi.api.ForecastData\"M\n\x0bOrgForecast\x12\r\n\x05orgId\x18\x01 \x01(\t\x12/\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32!.blueapi.api.BillingGroupForecast\"\xa7\x01\n\x17MonthToDateForecastData\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fproductCategory\x18\x02 \x01(\t\x12\x13\n\x0bproductCode\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\t\x12\x17\n\x0f\x61\x63\x63umulatedCost\x18\x05 \x01(\x01\x12\x14\n\x0c\x66orecastCost\x18\x06 \x01(\x01\x12\x0e\n\x06\x62udget\x18\x07 \x01(\x01\"h\n\x1f\x42illingGroupMonthToDateForecast\x12\x11\n\tcompanyId\x18\x01 \x01(\t\x12\x32\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32$.blueapi.api.MonthToDateForecastData\"c\n\x16OrgMonthToDateForecast\x12\r\n\x05orgId\x18\x01 \x01(\t\x12:\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32,.blueapi.api.BillingGroupMonthToDateForecast\"\x85\x01\n\x13MonthlyCostForecast\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x12\n\ncostActual\x18\x02 \x01(\x01\x12\x14\n\x0c\x63ostForecast\x18\x03 \x01(\x01\x12\x0e\n\x06\x62udget\x18\x04 \x01(\x01\x12\x12\n\nupperBound\x18\x05 \x01(\x01\x12\x12\n\nlowerBound\x18\x06 \x01(\x01\"i\n\x18MonthOnMonthCostForecast\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\x13\n\x0b\x63ostCurrent\x18\x02 \x01(\x01\x12\x10\n\x08\x63ostPrev\x18\x03 \x01(\x01\x12\x14\n\x0c\x63ostForecast\x18\x04 \x01(\x01\"\x90\x01\n\x17MonthToDateCostForecast\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x10\n\x08\x63ostPrev\x18\x02 \x01(\x01\x12\x17\n\x0f\x63ostAccumulated\x18\x03 \x01(\x01\x12\x14\n\x0c\x63ostForecast\x18\x04 \x01(\x01\x12\x12\n\nupperBound\x18\x05 \x01(\x01\x12\x12\n\nlowerBound\x18\x06 \x01(\x01\x42U\n\x19\x63loud.alphaus.blueapi.apiB\x10\x41piForecastProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x12\x61pi/forecast.proto\x12\x0b\x62lueapi.api\"\xc8\x01\n\x0c\x46orecastData\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fproductCategory\x18\x02 \x01(\t\x12\x13\n\x0bproductCode\x18\x03 \x01(\t\x12\x11\n\tfrequency\x18\x04 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x05 \x01(\t\x12\x16\n\x0ehistoricalCost\x18\x06 \x01(\x01\x12\x16\n\x0e\x66orecastedCost\x18\x07 \x01(\x01\x12\x12\n\nupperBound\x18\x08 \x01(\x01\x12\x12\n\nlowerBound\x18\t \x01(\x01\"P\n\x14\x41\x63\x63ountGroupForecast\x12\x0f\n\x07groupId\x18\x01 \x01(\t\x12\'\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x19.blueapi.api.ForecastData\"Z\n\x14\x42illingGroupForecast\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\'\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32\x19.blueapi.api.ForecastData\"M\n\x0bOrgForecast\x12\r\n\x05orgId\x18\x01 \x01(\t\x12/\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32!.blueapi.api.BillingGroupForecast\"\xa7\x01\n\x17MonthToDateForecastData\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x17\n\x0fproductCategory\x18\x02 \x01(\t\x12\x13\n\x0bproductCode\x18\x03 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x04 \x01(\t\x12\x17\n\x0f\x61\x63\x63umulatedCost\x18\x05 \x01(\x01\x12\x14\n\x0c\x66orecastCost\x18\x06 \x01(\x01\x12\x0e\n\x06\x62udget\x18\x07 \x01(\x01\"p\n\x1f\x42illingGroupMonthToDateForecast\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x32\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32$.blueapi.api.MonthToDateForecastData\"c\n\x16OrgMonthToDateForecast\x12\r\n\x05orgId\x18\x01 \x01(\t\x12:\n\x04\x64\x61ta\x18\x02 \x03(\x0b\x32,.blueapi.api.BillingGroupMonthToDateForecast\"\x85\x01\n\x13MonthlyCostForecast\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x12\n\ncostActual\x18\x02 \x01(\x01\x12\x14\n\x0c\x63ostForecast\x18\x03 \x01(\x01\x12\x0e\n\x06\x62udget\x18\x04 \x01(\x01\x12\x12\n\nupperBound\x18\x05 \x01(\x01\x12\x12\n\nlowerBound\x18\x06 \x01(\x01\"i\n\x18MonthOnMonthCostForecast\x12\x10\n\x08\x63\x61tegory\x18\x01 \x01(\t\x12\x13\n\x0b\x63ostCurrent\x18\x02 \x01(\x01\x12\x10\n\x08\x63ostPrev\x18\x03 \x01(\x01\x12\x14\n\x0c\x63ostForecast\x18\x04 \x01(\x01\"\x90\x01\n\x17MonthToDateCostForecast\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x10\n\x08\x63ostPrev\x18\x02 \x01(\x01\x12\x17\n\x0f\x63ostAccumulated\x18\x03 \x01(\x01\x12\x14\n\x0c\x63ostForecast\x18\x04 \x01(\x01\x12\x12\n\nupperBound\x18\x05 \x01(\x01\x12\x12\n\nlowerBound\x18\x06 \x01(\x01\x42U\n\x19\x63loud.alphaus.blueapi.apiB\x10\x41piForecastProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -161,7 +161,7 @@ _BILLINGGROUPFORECAST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='companyId', full_name='blueapi.api.BillingGroupForecast.companyId', index=0,
+      name='billingInternalId', full_name='blueapi.api.BillingGroupForecast.billingInternalId', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -187,7 +187,7 @@ _BILLINGGROUPFORECAST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=320,
-  serialized_end=402,
+  serialized_end=410,
 )
 
 
@@ -225,8 +225,8 @@ _ORGFORECAST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=404,
-  serialized_end=481,
+  serialized_start=412,
+  serialized_end=489,
 )
 
 
@@ -299,8 +299,8 @@ _MONTHTODATEFORECASTDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=484,
-  serialized_end=651,
+  serialized_start=492,
+  serialized_end=659,
 )
 
 
@@ -313,7 +313,7 @@ _BILLINGGROUPMONTHTODATEFORECAST = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='companyId', full_name='blueapi.api.BillingGroupMonthToDateForecast.companyId', index=0,
+      name='billingInternalId', full_name='blueapi.api.BillingGroupMonthToDateForecast.billingInternalId', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -338,8 +338,8 @@ _BILLINGGROUPMONTHTODATEFORECAST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=653,
-  serialized_end=757,
+  serialized_start=661,
+  serialized_end=773,
 )
 
 
@@ -377,8 +377,8 @@ _ORGMONTHTODATEFORECAST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=759,
-  serialized_end=858,
+  serialized_start=775,
+  serialized_end=874,
 )
 
 
@@ -444,8 +444,8 @@ _MONTHLYCOSTFORECAST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=861,
-  serialized_end=994,
+  serialized_start=877,
+  serialized_end=1010,
 )
 
 
@@ -497,8 +497,8 @@ _MONTHONMONTHCOSTFORECAST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=996,
-  serialized_end=1101,
+  serialized_start=1012,
+  serialized_end=1117,
 )
 
 
@@ -564,8 +564,8 @@ _MONTHTODATECOSTFORECAST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1104,
-  serialized_end=1248,
+  serialized_start=1120,
+  serialized_end=1264,
 )
 
 _ACCOUNTGROUPFORECAST.fields_by_name['data'].message_type = _FORECASTDATA
