@@ -30,6 +30,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupResponse.FromString,
                 )
+        self.GetAccessGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetAccessGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -57,6 +62,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAccessGroup(self, request, context):
+        """Gets an access group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -74,6 +86,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupResponse.SerializeToString,
+            ),
+            'GetAccessGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAccessGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -134,5 +151,22 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetBillingGroup',
             billing_dot_v1_dot_billing__pb2.GetBillingGroupRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.GetBillingGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAccessGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetAccessGroup',
+            billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
