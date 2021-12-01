@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035cloud.alphaus.blueapi.api.awsB\024ApiAwsReductionProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x61pi/aws/reduction.proto\x12\x0f\x62lueapi.api.aws\"\xc3\x01\n\x11\x41wsCostReductions\x12\x36\n\x07summary\x18\x01 \x01(\x0b\x32%.blueapi.api.aws.CostReductionSummary\x12:\n\x10riCostReductions\x18\x02 \x03(\x0b\x32 .blueapi.api.aws.RiCostReduction\x12:\n\x10spCostReductions\x18\x03 \x03(\x0b\x32 .blueapi.api.aws.SpCostReduction\"\x94\x05\n\x0fRiCostReduction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03\x61rn\x18\x02 \x01(\t\x12\x12\n\ncustomerId\x18\x03 \x01(\t\x12\x14\n\x0c\x63ustomerName\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x06 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x07 \x01(\t\x12\x16\n\x0e\x64\x65stCustomerId\x18\x08 \x01(\t\x12\r\n\x05start\x18\t \x01(\t\x12\x0b\n\x03\x65nd\x18\n \x01(\t\x12\x0f\n\x07service\x18\x0b \x01(\t\x12\x14\n\x0cinstanceType\x18\x0c \x01(\t\x12\x1a\n\x12modificationStatus\x18\r \x01(\t\x12\x0e\n\x06number\x18\x0e \x01(\x03\x12\x12\n\nofferClass\x18\x0f \x01(\t\x12\x0e\n\x06paidBy\x18\x10 \x01(\t\x12\x15\n\rpaymentOption\x18\x11 \x01(\t\x12\x10\n\x08platform\x18\x12 \x01(\t\x12\x0e\n\x06region\x18\x13 \x01(\t\x12\x0e\n\x06remove\x18\x14 \x01(\x08\x12\r\n\x05scope\x18\x15 \x01(\t\x12\x0f\n\x07tenancy\x18\x16 \x01(\t\x12\x12\n\ntermLength\x18\x17 \x01(\t\x12\x11\n\tusageType\x18\x18 \x01(\t\x12\x0e\n\x06vendor\x18\x19 \x01(\t\x12\x0c\n\x04zone\x18\x1a \x01(\t\x12\x10\n\x08\x64isabled\x18\x1b \x01(\x08\x12\x1b\n\x13normalizationFactor\x18\x1c \x01(\x01\x12\x15\n\runblendedRate\x18\x1d \x01(\x01\x12\x14\n\x0cupfrontValue\x18\x1e \x01(\x01\x12\x14\n\x0condemandCost\x18\x1f \x01(\x01\x12\x15\n\reffectiveCost\x18  \x01(\x01\x12\x0f\n\x07savings\x18! \x01(\x01\"\xa9\x03\n\x0fSpCostReduction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03\x61rn\x18\x02 \x01(\t\x12\x12\n\ncustomerId\x18\x03 \x01(\t\x12\x14\n\x0c\x63ustomerName\x18\x04 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x05 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x06 \x01(\t\x12\x10\n\x08\x63urrency\x18\x07 \x01(\t\x12\x0f\n\x07service\x18\x08 \x01(\t\x12\x13\n\x0bsavingsPlan\x18\t \x01(\t\x12\r\n\x05start\x18\n \x01(\t\x12\x0b\n\x03\x65nd\x18\x0b \x01(\t\x12\x0e\n\x06region\x18\x0c \x01(\t\x12\x16\n\x0einstanceFamily\x18\r \x01(\t\x12\x12\n\ntermLength\x18\x0e \x01(\t\x12\x15\n\rpaymentOption\x18\x0f \x01(\t\x12\x12\n\ncommitment\x18\x10 \x01(\x01\x12\x12\n\nupfrontFee\x18\x11 \x01(\x01\x12\x14\n\x0crecurringFee\x18\x12 \x01(\x01\x12\x14\n\x0condemandCost\x18\x13 \x01(\x01\x12\x15\n\reffectiveCost\x18\x14 \x01(\x01\x12\x0f\n\x07savings\x18\x15 \x01(\x01\"\x89\x02\n\x14\x43ostReductionSummary\x12\x19\n\x11totalOnDemandCost\x18\x01 \x01(\x01\x12\x1a\n\x12totalEffectiveCost\x18\x02 \x01(\x01\x12\x14\n\x0ctotalSavings\x18\x03 \x01(\x01\x12\x1b\n\x13totalRiOnDemandCost\x18\x04 \x01(\x01\x12\x1c\n\x14totalRiEffectiveCost\x18\x05 \x01(\x01\x12\x16\n\x0etotalRiSavings\x18\x06 \x01(\x01\x12\x1b\n\x13totalSpOnDemandCost\x18\x07 \x01(\x01\x12\x1c\n\x14totalSpEffectiveCost\x18\x08 \x01(\x01\x12\x16\n\x0etotalSpSavings\x18\t \x01(\x01\x42\x61\n\x1d\x63loud.alphaus.blueapi.api.awsB\x14\x41piAwsReductionProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
+  serialized_pb=b'\n\x17\x61pi/aws/reduction.proto\x12\x0f\x62lueapi.api.aws\"\xc3\x01\n\x11\x41wsCostReductions\x12\x36\n\x07summary\x18\x01 \x01(\x0b\x32%.blueapi.api.aws.CostReductionSummary\x12:\n\x10riCostReductions\x18\x02 \x03(\x0b\x32 .blueapi.api.aws.RiCostReduction\x12:\n\x10spCostReductions\x18\x03 \x03(\x0b\x32 .blueapi.api.aws.SpCostReduction\"\xa7\x05\n\x0fRiCostReduction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03\x61rn\x18\x02 \x01(\t\x12\x12\n\ncustomerId\x18\x03 \x01(\t\x12\x14\n\x0c\x63ustomerName\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x06 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x07 \x01(\t\x12\x16\n\x0e\x64\x65stCustomerId\x18\x08 \x01(\t\x12\r\n\x05start\x18\t \x01(\t\x12\x0b\n\x03\x65nd\x18\n \x01(\t\x12\x0f\n\x07service\x18\x0b \x01(\t\x12\x14\n\x0cinstanceType\x18\x0c \x01(\t\x12\x1a\n\x12modificationStatus\x18\r \x01(\t\x12\x0e\n\x06number\x18\x0e \x01(\x03\x12\x12\n\nofferClass\x18\x0f \x01(\t\x12\x0e\n\x06paidBy\x18\x10 \x01(\t\x12\x15\n\rpaymentOption\x18\x11 \x01(\t\x12\x10\n\x08platform\x18\x12 \x01(\t\x12\x0e\n\x06region\x18\x13 \x01(\t\x12\x0e\n\x06remove\x18\x14 \x01(\x08\x12\r\n\x05scope\x18\x15 \x01(\t\x12\x0f\n\x07tenancy\x18\x16 \x01(\t\x12\x12\n\ntermLength\x18\x17 \x01(\t\x12\x11\n\tusageType\x18\x18 \x01(\t\x12\x0e\n\x06vendor\x18\x19 \x01(\t\x12\x0c\n\x04zone\x18\x1a \x01(\t\x12\x10\n\x08\x64isabled\x18\x1b \x01(\x08\x12\x1b\n\x13normalizationFactor\x18\x1c \x01(\x01\x12\x15\n\runblendedRate\x18\x1d \x01(\x01\x12\x14\n\x0cupfrontValue\x18\x1e \x01(\x01\x12\x14\n\x0condemandCost\x18\x1f \x01(\x01\x12\x15\n\reffectiveCost\x18  \x01(\x01\x12\x0f\n\x07savings\x18! \x01(\x01\x12\x11\n\tbreakEven\x18\" \x01(\t\"\xbc\x03\n\x0fSpCostReduction\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0b\n\x03\x61rn\x18\x02 \x01(\t\x12\x12\n\ncustomerId\x18\x03 \x01(\t\x12\x14\n\x0c\x63ustomerName\x18\x04 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x05 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x06 \x01(\t\x12\x10\n\x08\x63urrency\x18\x07 \x01(\t\x12\x0f\n\x07service\x18\x08 \x01(\t\x12\x13\n\x0bsavingsPlan\x18\t \x01(\t\x12\r\n\x05start\x18\n \x01(\t\x12\x0b\n\x03\x65nd\x18\x0b \x01(\t\x12\x0e\n\x06region\x18\x0c \x01(\t\x12\x16\n\x0einstanceFamily\x18\r \x01(\t\x12\x12\n\ntermLength\x18\x0e \x01(\t\x12\x15\n\rpaymentOption\x18\x0f \x01(\t\x12\x12\n\ncommitment\x18\x10 \x01(\x01\x12\x12\n\nupfrontFee\x18\x11 \x01(\x01\x12\x14\n\x0crecurringFee\x18\x12 \x01(\x01\x12\x14\n\x0condemandCost\x18\x13 \x01(\x01\x12\x15\n\reffectiveCost\x18\x14 \x01(\x01\x12\x0f\n\x07savings\x18\x15 \x01(\x01\x12\x11\n\tbreakEven\x18\x16 \x01(\t\"\x89\x02\n\x14\x43ostReductionSummary\x12\x19\n\x11totalOnDemandCost\x18\x01 \x01(\x01\x12\x1a\n\x12totalEffectiveCost\x18\x02 \x01(\x01\x12\x14\n\x0ctotalSavings\x18\x03 \x01(\x01\x12\x1b\n\x13totalRiOnDemandCost\x18\x04 \x01(\x01\x12\x1c\n\x14totalRiEffectiveCost\x18\x05 \x01(\x01\x12\x16\n\x0etotalRiSavings\x18\x06 \x01(\x01\x12\x1b\n\x13totalSpOnDemandCost\x18\x07 \x01(\x01\x12\x1c\n\x14totalSpEffectiveCost\x18\x08 \x01(\x01\x12\x16\n\x0etotalSpSavings\x18\t \x01(\x01\x42\x61\n\x1d\x63loud.alphaus.blueapi.api.awsB\x14\x41piAwsReductionProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
 )
 
 
@@ -310,6 +310,13 @@ _RICOSTREDUCTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='breakEven', full_name='blueapi.api.aws.RiCostReduction.breakEven', index=33,
+      number=34, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -323,7 +330,7 @@ _RICOSTREDUCTION = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=243,
-  serialized_end=903,
+  serialized_end=922,
 )
 
 
@@ -482,6 +489,13 @@ _SPCOSTREDUCTION = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='breakEven', full_name='blueapi.api.aws.SpCostReduction.breakEven', index=21,
+      number=22, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -494,8 +508,8 @@ _SPCOSTREDUCTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=906,
-  serialized_end=1331,
+  serialized_start=925,
+  serialized_end=1369,
 )
 
 
@@ -582,8 +596,8 @@ _COSTREDUCTIONSUMMARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1334,
-  serialized_end=1599,
+  serialized_start=1372,
+  serialized_end=1637,
 )
 
 _AWSCOSTREDUCTIONS.fields_by_name['summary'].message_type = _COSTREDUCTIONSUMMARY
