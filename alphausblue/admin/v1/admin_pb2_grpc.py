@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
+from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 
 
 class AdminStub(object):
@@ -30,6 +31,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.FromString,
                 )
+        self.CreateDefaultBillingInfoRole = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateDefaultBillingInfoRole',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.SerializeToString,
+                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                )
 
 
 class AdminServicer(object):
@@ -51,7 +57,16 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultBillingInfoTemplateUrl(self, request, context):
-        """WORK-IN-PROGRESS: Gets a CloudFormation launch url for enabling cross account access to your account's billing information.
+        """WORK-IN-PROGRESS: Gets a CloudFormation launch url for enabling cross-account access to your account's billing information.
+        Upon successful deployment, you need to validate the access by calling 'POST /admin/v1/aws/crossacctaccess/default'.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDefaultBillingInfoRole(self, request, context):
+        """WORK-IN-PROGRESS: Starts validation of a cross-account access stack deployment. If successful, the new IAM role will be
+        added/registered to the target account's records.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -74,6 +89,11 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.GetDefaultBillingInfoTemplateUrl,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.SerializeToString,
+            ),
+            'CreateDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDefaultBillingInfoRole,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.FromString,
+                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -134,5 +154,22 @@ class Admin(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultBillingInfoTemplateUrl',
             admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDefaultBillingInfoRole(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateDefaultBillingInfoRole',
+            admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.SerializeToString,
+            api_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
