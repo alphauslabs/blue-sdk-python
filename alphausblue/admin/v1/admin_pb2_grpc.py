@@ -35,12 +35,12 @@ class AdminStub(object):
         self.GetDefaultBillingInfo = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/GetDefaultBillingInfo',
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.SerializeToString,
-                response_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoResponse.FromString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
                 )
         self.CreateDefaultBillingInfoRole = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/CreateDefaultBillingInfoRole',
                 request_serializer=admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
                 )
         self.UpdateDefaultBillingInfoRole = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/UpdateDefaultBillingInfoRole',
@@ -131,12 +131,12 @@ def add_AdminServicer_to_server(servicer, server):
             'GetDefaultBillingInfo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDefaultBillingInfo,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.FromString,
-                    response_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoResponse.SerializeToString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.SerializeToString,
             ),
             'CreateDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateDefaultBillingInfoRole,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.SerializeToString,
             ),
             'UpdateDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDefaultBillingInfoRole,
@@ -223,7 +223,7 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultBillingInfo',
             admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.SerializeToString,
-            admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoResponse.FromString,
+            admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -240,7 +240,7 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateDefaultBillingInfoRole',
             admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

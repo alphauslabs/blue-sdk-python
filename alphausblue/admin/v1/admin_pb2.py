@@ -24,7 +24,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"9\n\'GetDefaultBillingInfoTemplateUrlRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\"x\n(GetDefaultBillingInfoTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\".\n\x1cGetDefaultBillingInfoRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"f\n\x1dGetDefaultBillingInfoResponse\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x0f\n\x07stackId\x18\x03 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x04 \x01(\t\"5\n#CreateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#UpdateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#DeleteDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t2\xa6\n\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xc8\x01\n GetDefaultBillingInfoTemplateUrl\x12\x39.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest\x1a:.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/admin/v1/aws/crossacctaccess/default\x12\xb0\x01\n\x15GetDefaultBillingInfo\x12..blueapi.admin.v1.GetDefaultBillingInfoRequest\x1a/.blueapi.admin.v1.GetDefaultBillingInfoResponse\"6\x82\xd3\xe4\x93\x02\x30\x12./admin/v1/aws/crossacctaccess/default/{target}\x12\x9f\x01\n\x1c\x43reateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest\x1a\x16.blueapi.api.Operation\"0\x82\xd3\xe4\x93\x02*\"%/admin/v1/aws/crossacctaccess/default:\x01*\x12\xa5\x01\n\x1cUpdateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest\x1a\x16.blueapi.api.Operation\"6\x82\xd3\xe4\x93\x02\x30\x1a./admin/v1/aws/crossacctaccess/default/{target}\x12\xa5\x01\n\x1c\x44\x65leteDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest\x1a\x16.google.protobuf.Empty\"6\x82\xd3\xe4\x93\x02\x30*./admin/v1/aws/crossacctaccess/default/{target}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
+  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"9\n\'GetDefaultBillingInfoTemplateUrlRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\"x\n(GetDefaultBillingInfoTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\".\n\x1cGetDefaultBillingInfoRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"[\n\x12\x44\x65\x66\x61ultBillingInfo\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x0f\n\x07stackId\x18\x03 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x04 \x01(\t\"5\n#CreateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#UpdateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#DeleteDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t2\xa9\n\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xc8\x01\n GetDefaultBillingInfoTemplateUrl\x12\x39.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest\x1a:.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/admin/v1/aws/crossacctaccess/default\x12\xa5\x01\n\x15GetDefaultBillingInfo\x12..blueapi.admin.v1.GetDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\"6\x82\xd3\xe4\x93\x02\x30\x12./admin/v1/aws/crossacctaccess/default/{target}\x12\xad\x01\n\x1c\x43reateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\"0\x82\xd3\xe4\x93\x02*\"%/admin/v1/aws/crossacctaccess/default:\x01*\x12\xa5\x01\n\x1cUpdateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest\x1a\x16.blueapi.api.Operation\"6\x82\xd3\xe4\x93\x02\x30\x1a./admin/v1/aws/crossacctaccess/default/{target}\x12\xa5\x01\n\x1c\x44\x65leteDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest\x1a\x16.google.protobuf.Empty\"6\x82\xd3\xe4\x93\x02\x30*./admin/v1/aws/crossacctaccess/default/{target}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
   ,
   dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -269,37 +269,37 @@ _GETDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
 )
 
 
-_GETDEFAULTBILLINGINFORESPONSE = _descriptor.Descriptor(
-  name='GetDefaultBillingInfoResponse',
-  full_name='blueapi.admin.v1.GetDefaultBillingInfoResponse',
+_DEFAULTBILLINGINFO = _descriptor.Descriptor(
+  name='DefaultBillingInfo',
+  full_name='blueapi.admin.v1.DefaultBillingInfo',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.GetDefaultBillingInfoResponse.target', index=0,
+      name='target', full_name='blueapi.admin.v1.DefaultBillingInfo.target', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='roleArn', full_name='blueapi.admin.v1.GetDefaultBillingInfoResponse.roleArn', index=1,
+      name='roleArn', full_name='blueapi.admin.v1.DefaultBillingInfo.roleArn', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='stackId', full_name='blueapi.admin.v1.GetDefaultBillingInfoResponse.stackId', index=2,
+      name='stackId', full_name='blueapi.admin.v1.DefaultBillingInfo.stackId', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='templateUrl', full_name='blueapi.admin.v1.GetDefaultBillingInfoResponse.templateUrl', index=3,
+      name='templateUrl', full_name='blueapi.admin.v1.DefaultBillingInfo.templateUrl', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -318,7 +318,7 @@ _GETDEFAULTBILLINGINFORESPONSE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=641,
-  serialized_end=743,
+  serialized_end=732,
 )
 
 
@@ -349,8 +349,8 @@ _CREATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=745,
-  serialized_end=798,
+  serialized_start=734,
+  serialized_end=787,
 )
 
 
@@ -381,8 +381,8 @@ _UPDATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=800,
-  serialized_end=853,
+  serialized_start=789,
+  serialized_end=842,
 )
 
 
@@ -413,8 +413,8 @@ _DELETEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=855,
-  serialized_end=908,
+  serialized_start=844,
+  serialized_end=897,
 )
 
 _LISTACCOUNTGROUPSRESPONSE.fields_by_name['accountGroups'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
@@ -426,7 +426,7 @@ DESCRIPTOR.message_types_by_name['GetAccountGroupResponse'] = _GETACCOUNTGROUPRE
 DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoTemplateUrlRequest'] = _GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST
 DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoTemplateUrlResponse'] = _GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE
 DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoRequest'] = _GETDEFAULTBILLINGINFOREQUEST
-DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoResponse'] = _GETDEFAULTBILLINGINFORESPONSE
+DESCRIPTOR.message_types_by_name['DefaultBillingInfo'] = _DEFAULTBILLINGINFO
 DESCRIPTOR.message_types_by_name['CreateDefaultBillingInfoRoleRequest'] = _CREATEDEFAULTBILLINGINFOROLEREQUEST
 DESCRIPTOR.message_types_by_name['UpdateDefaultBillingInfoRoleRequest'] = _UPDATEDEFAULTBILLINGINFOROLEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteDefaultBillingInfoRoleRequest'] = _DELETEDEFAULTBILLINGINFOROLEREQUEST
@@ -481,12 +481,12 @@ GetDefaultBillingInfoRequest = _reflection.GeneratedProtocolMessageType('GetDefa
   })
 _sym_db.RegisterMessage(GetDefaultBillingInfoRequest)
 
-GetDefaultBillingInfoResponse = _reflection.GeneratedProtocolMessageType('GetDefaultBillingInfoResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETDEFAULTBILLINGINFORESPONSE,
+DefaultBillingInfo = _reflection.GeneratedProtocolMessageType('DefaultBillingInfo', (_message.Message,), {
+  'DESCRIPTOR' : _DEFAULTBILLINGINFO,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultBillingInfoResponse)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DefaultBillingInfo)
   })
-_sym_db.RegisterMessage(GetDefaultBillingInfoResponse)
+_sym_db.RegisterMessage(DefaultBillingInfo)
 
 CreateDefaultBillingInfoRoleRequest = _reflection.GeneratedProtocolMessageType('CreateDefaultBillingInfoRoleRequest', (_message.Message,), {
   'DESCRIPTOR' : _CREATEDEFAULTBILLINGINFOROLEREQUEST,
@@ -519,8 +519,8 @@ _ADMIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=911,
-  serialized_end=2229,
+  serialized_start=900,
+  serialized_end=2221,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccountGroups',
@@ -558,7 +558,7 @@ _ADMIN = _descriptor.ServiceDescriptor(
     index=3,
     containing_service=None,
     input_type=_GETDEFAULTBILLINGINFOREQUEST,
-    output_type=_GETDEFAULTBILLINGINFORESPONSE,
+    output_type=_DEFAULTBILLINGINFO,
     serialized_options=b'\202\323\344\223\0020\022./admin/v1/aws/crossacctaccess/default/{target}',
     create_key=_descriptor._internal_create_key,
   ),
@@ -568,7 +568,7 @@ _ADMIN = _descriptor.ServiceDescriptor(
     index=4,
     containing_service=None,
     input_type=_CREATEDEFAULTBILLINGINFOROLEREQUEST,
-    output_type=api_dot_operation__pb2._OPERATION,
+    output_type=_DEFAULTBILLINGINFO,
     serialized_options=b'\202\323\344\223\002*\"%/admin/v1/aws/crossacctaccess/default:\001*',
     create_key=_descriptor._internal_create_key,
   ),
