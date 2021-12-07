@@ -174,6 +174,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandResponse.FromString,
                 )
+        self.GetBreakevenPoint = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetBreakevenPoint',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.FromString,
+                )
 
 
 class CostServicer(object):
@@ -418,6 +423,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetBreakevenPoint(self, request, context):
+        """WORK-IN-PROGRESS: Get the breakeven point details for the RI or SP.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -575,6 +587,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetCoverageOndemand,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetCoverageOndemandResponse.SerializeToString,
+            ),
+            'GetBreakevenPoint': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBreakevenPoint,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1111,5 +1128,22 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCoverageOndemand',
             cost_dot_v1_dot_cost__pb2.GetCoverageOndemandRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetCoverageOndemandResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetBreakevenPoint(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetBreakevenPoint',
+            cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
