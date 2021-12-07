@@ -73,7 +73,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultBillingInfoTemplateUrl(self, request, context):
-        """WORK-IN-PROGRESS: Gets a CloudFormation launch url for enabling cross-account access to your account's billing information.
+        """Gets a CloudFormation launch url for enabling cross-account access to your account's billing information.
         Upon successful deployment, you need to validate the access by calling 'POST /admin/v1/aws/crossacctaccess/default'.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -81,14 +81,14 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultBillingInfo(self, request, context):
-        """WORK-IN-PROGRESS: Gets the current role attached to input account.
+        """Gets the current role attached to input account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateDefaultBillingInfoRole(self, request, context):
-        """WORK-IN-PROGRESS: Starts validation of a cross-account access stack deployment. If successful,
+        """Starts validation of a cross-account access stack deployment. If successful,
         the new IAM role will be registered to the target account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -96,7 +96,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateDefaultBillingInfoRole(self, request, context):
-        """WORK-IN-PROGRESS: Starts an update to an existing CloudFormation for template changes, if any.
+        """Starts an update to an existing CloudFormation for template changes, if any.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
