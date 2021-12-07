@@ -103,7 +103,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteDefaultBillingInfoRole(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the current role attached to this target account. This does not delete the
+        """Deletes the current role attached to this target account. This does not delete the
         CloudFormation deployment in your account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
