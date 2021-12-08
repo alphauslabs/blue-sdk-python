@@ -78,7 +78,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultBillingInfoTemplateUrl(self, request, context):
-        """Gets a CloudFormation launch url for enabling cross-account access to your account's billing information.
+        """Gets a CloudFormation launch URL for enabling cross-account access to your account's billing information.
         Upon successful deployment, you need to validate the access by calling 'POST /admin/v1/aws/xacct/default'.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
