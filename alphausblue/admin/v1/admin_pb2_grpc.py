@@ -32,6 +32,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.FromString,
                 )
+        self.ListDefaultBillingInfo = channel.unary_stream(
+                '/blueapi.admin.v1.Admin/ListDefaultBillingInfo',
+                request_serializer=admin_dot_v1_dot_admin__pb2.ListDefaultBillingInfoRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+                )
         self.GetDefaultBillingInfo = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/GetDefaultBillingInfo',
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.SerializeToString,
@@ -75,6 +80,13 @@ class AdminServicer(object):
     def GetDefaultBillingInfoTemplateUrl(self, request, context):
         """Gets a CloudFormation launch url for enabling cross-account access to your account's billing information.
         Upon successful deployment, you need to validate the access by calling 'POST /admin/v1/aws/xacct/default'.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDefaultBillingInfo(self, request, context):
+        """WORK-IN-PROGRESS: Lists the current role attached to accounts under caller.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -127,6 +139,11 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.GetDefaultBillingInfoTemplateUrl,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.SerializeToString,
+            ),
+            'ListDefaultBillingInfo': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListDefaultBillingInfo,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.ListDefaultBillingInfoRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.SerializeToString,
             ),
             'GetDefaultBillingInfo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDefaultBillingInfo,
@@ -207,6 +224,23 @@ class Admin(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultBillingInfoTemplateUrl',
             admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListDefaultBillingInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.admin.v1.Admin/ListDefaultBillingInfo',
+            admin_dot_v1_dot_admin__pb2.ListDefaultBillingInfoRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
