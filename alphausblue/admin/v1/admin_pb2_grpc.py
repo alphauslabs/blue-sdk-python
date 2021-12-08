@@ -86,7 +86,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListDefaultBillingInfo(self, request, context):
-        """WORK-IN-PROGRESS: Lists the current role attached to accounts under caller.
+        """Lists the default cross-account role(s) attached to accounts under caller.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
