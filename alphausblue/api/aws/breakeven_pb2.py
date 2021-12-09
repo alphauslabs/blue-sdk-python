@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\035cloud.alphaus.blueapi.api.awsB\024ApiAwsBreakevenProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x17\x61pi/aws/breakeven.proto\x12\x0f\x62lueapi.api.aws\"\x9a\x01\n\x10\x41wsCostBreakeven\x12\x0b\n\x03\x61rn\x18\x01 \x01(\t\x12\x11\n\tstartDate\x18\x02 \x01(\t\x12\x0f\n\x07\x65ndDate\x18\x03 \x01(\t\x12\x16\n\x0e\x62reakEvenPoint\x18\x04 \x01(\t\x12\x0e\n\x06riCost\x18\x05 \x01(\x01\x12-\n\tchartData\x18\x06 \x03(\x0b\x32\x1a.blueapi.api.aws.ChartData\"\x89\x01\n\tChartData\x12\x16\n\x0epublicOndemand\x18\x01 \x01(\x01\x12\x16\n\x0e\x61\x63tualOndemand\x18\x02 \x01(\x01\x12\x0f\n\x07riUsage\x18\x03 \x01(\x01\x12\x13\n\x0butilization\x18\x04 \x01(\x01\x12\x12\n\nupperRatio\x18\x05 \x01(\x01\x12\x12\n\nlowerRatio\x18\x06 \x01(\x01\x42\x61\n\x1d\x63loud.alphaus.blueapi.api.awsB\x14\x41piAwsBreakevenProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
+  serialized_pb=b'\n\x17\x61pi/aws/breakeven.proto\x12\x0f\x62lueapi.api.aws\"\xc2\x01\n\x10\x41wsCostBreakeven\x12\x0b\n\x03\x61rn\x18\x01 \x01(\t\x12\x11\n\tstartDate\x18\x02 \x01(\t\x12\x0f\n\x07\x65ndDate\x18\x03 \x01(\t\x12\x16\n\x0e\x62reakEvenPoint\x18\x04 \x01(\t\x12\x0e\n\x06riCost\x18\x05 \x01(\x01\x12\x12\n\nupperRatio\x18\x06 \x01(\x01\x12\x12\n\nlowerRatio\x18\x07 \x01(\x01\x12-\n\tchartData\x18\x08 \x03(\x0b\x32\x1a.blueapi.api.aws.ChartData\"o\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x16\n\x0epublicOndemand\x18\x02 \x01(\x01\x12\x16\n\x0e\x61\x63tualOndemand\x18\x03 \x01(\x01\x12\x0f\n\x07riUsage\x18\x04 \x01(\x01\x12\x13\n\x0butilization\x18\x05 \x01(\x01\x42\x61\n\x1d\x63loud.alphaus.blueapi.api.awsB\x14\x41piAwsBreakevenProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3'
 )
 
 
@@ -69,8 +69,22 @@ _AWSCOSTBREAKEVEN = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='chartData', full_name='blueapi.api.aws.AwsCostBreakeven.chartData', index=5,
-      number=6, type=11, cpp_type=10, label=3,
+      name='upperRatio', full_name='blueapi.api.aws.AwsCostBreakeven.upperRatio', index=5,
+      number=6, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='lowerRatio', full_name='blueapi.api.aws.AwsCostBreakeven.lowerRatio', index=6,
+      number=7, type=1, cpp_type=5, label=1,
+      has_default_value=False, default_value=float(0),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='chartData', full_name='blueapi.api.aws.AwsCostBreakeven.chartData', index=7,
+      number=8, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -88,7 +102,7 @@ _AWSCOSTBREAKEVEN = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=45,
-  serialized_end=199,
+  serialized_end=239,
 )
 
 
@@ -101,43 +115,36 @@ _CHARTDATA = _descriptor.Descriptor(
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='publicOndemand', full_name='blueapi.api.aws.ChartData.publicOndemand', index=0,
-      number=1, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
+      name='date', full_name='blueapi.api.aws.ChartData.date', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='actualOndemand', full_name='blueapi.api.aws.ChartData.actualOndemand', index=1,
+      name='publicOndemand', full_name='blueapi.api.aws.ChartData.publicOndemand', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='riUsage', full_name='blueapi.api.aws.ChartData.riUsage', index=2,
+      name='actualOndemand', full_name='blueapi.api.aws.ChartData.actualOndemand', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='utilization', full_name='blueapi.api.aws.ChartData.utilization', index=3,
+      name='riUsage', full_name='blueapi.api.aws.ChartData.riUsage', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='upperRatio', full_name='blueapi.api.aws.ChartData.upperRatio', index=4,
+      name='utilization', full_name='blueapi.api.aws.ChartData.utilization', index=4,
       number=5, type=1, cpp_type=5, label=1,
-      has_default_value=False, default_value=float(0),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='lowerRatio', full_name='blueapi.api.aws.ChartData.lowerRatio', index=5,
-      number=6, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -154,8 +161,8 @@ _CHARTDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=202,
-  serialized_end=339,
+  serialized_start=241,
+  serialized_end=352,
 )
 
 _AWSCOSTBREAKEVEN.fields_by_name['chartData'].message_type = _CHARTDATA
