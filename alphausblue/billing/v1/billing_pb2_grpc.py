@@ -35,6 +35,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.FromString,
                 )
+        self.ListAwsCalculationHistory = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListAwsCalculationHistory',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -69,6 +74,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAwsCalculationHistory(self, request, context):
+        """WORK-IN-PROGRESS: Reads the calculation history of each accounts in your billing groups. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -91,6 +103,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetAccessGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.SerializeToString,
+            ),
+            'ListAwsCalculationHistory': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAwsCalculationHistory,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -168,5 +185,22 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetAccessGroup',
             billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAwsCalculationHistory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAwsCalculationHistory',
+            billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.api.billingB\014BillingProtoZ&github.com/alphauslabs/blueapi/billing',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x18\x62illing/v1/billing.proto\x12\x12\x62lueapi.billing.v1\x1a\x11\x61pi/account.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x83\x01\n\x0c\x42illingGroup\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x03 \x01(\t\x12&\n\x08\x61\x63\x63ounts\x18\x04 \x03(\x0b\x32\x14.blueapi.api.Account\"\x1a\n\x18ListBillingGroupsRequest\"\xf1\x02\n\x19\x43reateBillingGroupRequest\x12\x16\n\x0e\x62illingGroupId\x18\x01 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x02 \x01(\t\x12\x13\n\x0b\x63ompanyName\x18\x03 \x01(\t\x12\x14\n\x0c\x62illingTitle\x18\x04 \x01(\t\x12\x13\n\x0bphoneNumber\x18\x05 \x01(\t\x12\x12\n\npostalCode\x18\x06 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x07 \x01(\t\x12\x10\n\x08personal\x18\x08 \x01(\t\x12\x0f\n\x07remarks\x18\t \x01(\t\x12\x11\n\tprojectId\x18\n \x01(\t\x12\x10\n\x08language\x18\x0b \x01(\t\x12\x13\n\x0b\x64isplayCost\x18\x0c \x01(\t\x12\x18\n\x10\x65xchangeRateType\x18\r \x01(\t\x12\x46\n\x08invoices\x18\x0e \x01(\x0b\x32\x34.blueapi.billing.v1.CreateBillingGroupRequestInvoice\"\xff\x01\n CreateBillingGroupRequestInvoice\x12G\n\x03\x61ws\x18\x01 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12I\n\x05\x61zure\x18\x02 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12G\n\x03gcp\x18\x03 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\"\xd7\x03\n&CreateBillingGroupRequestInvoiceVendor\x12\x10\n\x08\x63\x61lcType\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscountRate\x18\x02 \x01(\x01\x12\x17\n\x0fsubstitutionFee\x18\x03 \x01(\t\x12\x17\n\x0fsubstitutionFix\x18\x04 \x01(\x01\x12\x18\n\x10substitutionRate\x18\x05 \x01(\x01\x12\x12\n\nsupportFee\x18\x06 \x01(\t\x12\x13\n\x0bsupportRate\x18\x07 \x01(\x01\x12\x12\n\nsupportFix\x18\x08 \x01(\x01\x12\x0f\n\x07taxRate\x18\t \x01(\x01\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x1b\n\x13\x64iscountTargetUsage\x18\x0b \x01(\t\x12\"\n\x1asubstitutionFeeTargetUsage\x18\x0c \x01(\t\x12\x19\n\x11\x64iscountCalcLogic\x18\r \x01(\t\x12!\n\x19substitutionFeeCalcTarget\x18\x0e \x01(\t\x12\x1f\n\x17substitutionFeeCalcType\x18\x0f \x01(\t\x12\x1b\n\x13supportAmountTarget\x18\x10 \x01(\t\x12\x1c\n\x14supportFeeCalcTarget\x18\x11 \x01(\t\"3\n\x16GetBillingGroupRequest\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\"Q\n\x17GetBillingGroupResponse\x12\x36\n\x0c\x62illingGroup\x18\x01 \x01(\x0b\x32 .blueapi.billing.v1.BillingGroup\"\x96\x01\n\x0b\x41\x63\x63\x65ssGroup\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\x12\x17\n\x0f\x61\x63\x63\x65ssGroupName\x18\x02 \x01(\t\x12\x1e\n\x16\x61\x63\x63\x65ssGroupDescription\x18\x03 \x01(\t\x12\x37\n\rbillingGroups\x18\x04 \x03(\x0b\x32 .blueapi.billing.v1.BillingGroup\".\n\x15GetAccessGroupRequest\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\"N\n\x16GetAccessGroupResponse\x12\x34\n\x0b\x61\x63\x63\x65ssGroup\x18\x01 \x01(\x0b\x32\x1f.blueapi.billing.v1.AccessGroup2\xe2\x05\n\x07\x42illing\x12\x80\x01\n\x11ListBillingGroups\x12,.blueapi.billing.v1.ListBillingGroupsRequest\x1a .blueapi.billing.v1.BillingGroup\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/billinggroups0\x01\x12\x83\x01\n\x12\x43reateBillingGroup\x12-.blueapi.billing.v1.CreateBillingGroupRequest\x1a .blueapi.billing.v1.BillingGroup\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/billinggroups:\x01*\x12\x99\x01\n\x0fGetBillingGroup\x12*.blueapi.billing.v1.GetBillingGroupRequest\x1a+.blueapi.billing.v1.GetBillingGroupResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/billinggroups/{billingInternalId}\x12\x91\x01\n\x0eGetAccessGroup\x12).blueapi.billing.v1.GetAccessGroupRequest\x1a*.blueapi.billing.v1.GetAccessGroupResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/accessgroups/{accessGroupId}\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Billing API. Base URL: https://api.alphaus.cloud/m/blue/billing\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/billing/BQ\n\x19\x63loud.alphaus.api.billingB\x0c\x42illingProtoZ&github.com/alphauslabs/blueapi/billingb\x06proto3'
+  serialized_pb=b'\n\x18\x62illing/v1/billing.proto\x12\x12\x62lueapi.billing.v1\x1a\x11\x61pi/account.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x83\x01\n\x0c\x42illingGroup\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x03 \x01(\t\x12&\n\x08\x61\x63\x63ounts\x18\x04 \x03(\x0b\x32\x14.blueapi.api.Account\"\x1a\n\x18ListBillingGroupsRequest\"\xf1\x02\n\x19\x43reateBillingGroupRequest\x12\x16\n\x0e\x62illingGroupId\x18\x01 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x02 \x01(\t\x12\x13\n\x0b\x63ompanyName\x18\x03 \x01(\t\x12\x14\n\x0c\x62illingTitle\x18\x04 \x01(\t\x12\x13\n\x0bphoneNumber\x18\x05 \x01(\t\x12\x12\n\npostalCode\x18\x06 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x07 \x01(\t\x12\x10\n\x08personal\x18\x08 \x01(\t\x12\x0f\n\x07remarks\x18\t \x01(\t\x12\x11\n\tprojectId\x18\n \x01(\t\x12\x10\n\x08language\x18\x0b \x01(\t\x12\x13\n\x0b\x64isplayCost\x18\x0c \x01(\t\x12\x18\n\x10\x65xchangeRateType\x18\r \x01(\t\x12\x46\n\x08invoices\x18\x0e \x01(\x0b\x32\x34.blueapi.billing.v1.CreateBillingGroupRequestInvoice\"\xff\x01\n CreateBillingGroupRequestInvoice\x12G\n\x03\x61ws\x18\x01 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12I\n\x05\x61zure\x18\x02 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12G\n\x03gcp\x18\x03 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\"\xd7\x03\n&CreateBillingGroupRequestInvoiceVendor\x12\x10\n\x08\x63\x61lcType\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscountRate\x18\x02 \x01(\x01\x12\x17\n\x0fsubstitutionFee\x18\x03 \x01(\t\x12\x17\n\x0fsubstitutionFix\x18\x04 \x01(\x01\x12\x18\n\x10substitutionRate\x18\x05 \x01(\x01\x12\x12\n\nsupportFee\x18\x06 \x01(\t\x12\x13\n\x0bsupportRate\x18\x07 \x01(\x01\x12\x12\n\nsupportFix\x18\x08 \x01(\x01\x12\x0f\n\x07taxRate\x18\t \x01(\x01\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x1b\n\x13\x64iscountTargetUsage\x18\x0b \x01(\t\x12\"\n\x1asubstitutionFeeTargetUsage\x18\x0c \x01(\t\x12\x19\n\x11\x64iscountCalcLogic\x18\r \x01(\t\x12!\n\x19substitutionFeeCalcTarget\x18\x0e \x01(\t\x12\x1f\n\x17substitutionFeeCalcType\x18\x0f \x01(\t\x12\x1b\n\x13supportAmountTarget\x18\x10 \x01(\t\x12\x1c\n\x14supportFeeCalcTarget\x18\x11 \x01(\t\"3\n\x16GetBillingGroupRequest\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\"Q\n\x17GetBillingGroupResponse\x12\x36\n\x0c\x62illingGroup\x18\x01 \x01(\x0b\x32 .blueapi.billing.v1.BillingGroup\"\x96\x01\n\x0b\x41\x63\x63\x65ssGroup\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\x12\x17\n\x0f\x61\x63\x63\x65ssGroupName\x18\x02 \x01(\t\x12\x1e\n\x16\x61\x63\x63\x65ssGroupDescription\x18\x03 \x01(\t\x12\x37\n\rbillingGroups\x18\x04 \x03(\x0b\x32 .blueapi.billing.v1.BillingGroup\".\n\x15GetAccessGroupRequest\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\"N\n\x16GetAccessGroupResponse\x12\x34\n\x0b\x61\x63\x63\x65ssGroup\x18\x01 \x01(\x0b\x32\x1f.blueapi.billing.v1.AccessGroup\"\xa0\x02\n\x15\x41wsCalculationHistory\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\r\n\x05month\x18\x02 \x01(\t\x12\x43\n\x08\x61\x63\x63ounts\x18\x03 \x03(\x0b\x32\x31.blueapi.billing.v1.AwsCalculationHistory.Account\x1a\x97\x01\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12J\n\x07history\x18\x02 \x03(\x0b\x32\x39.blueapi.billing.v1.AwsCalculationHistory.Account.History\x1a-\n\x07History\x12\x11\n\ttimestamp\x18\x01 \x01(\t\x12\x0f\n\x07trigger\x18\x02 \x01(\t\"1\n ListAwsCalculationHistoryRequest\x12\r\n\x05month\x18\x01 \x01(\t2\x88\x07\n\x07\x42illing\x12\x80\x01\n\x11ListBillingGroups\x12,.blueapi.billing.v1.ListBillingGroupsRequest\x1a .blueapi.billing.v1.BillingGroup\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/billinggroups0\x01\x12\x83\x01\n\x12\x43reateBillingGroup\x12-.blueapi.billing.v1.CreateBillingGroupRequest\x1a .blueapi.billing.v1.BillingGroup\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/billinggroups:\x01*\x12\x99\x01\n\x0fGetBillingGroup\x12*.blueapi.billing.v1.GetBillingGroupRequest\x1a+.blueapi.billing.v1.GetBillingGroupResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/billinggroups/{billingInternalId}\x12\x91\x01\n\x0eGetAccessGroup\x12).blueapi.billing.v1.GetAccessGroupRequest\x1a*.blueapi.billing.v1.GetAccessGroupResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/accessgroups/{accessGroupId}\x12\xa3\x01\n\x19ListAwsCalculationHistory\x12\x34.blueapi.billing.v1.ListAwsCalculationHistoryRequest\x1a).blueapi.billing.v1.AwsCalculationHistory\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/aws/calchistory:read:\x01*0\x01\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Billing API. Base URL: https://api.alphaus.cloud/m/blue/billing\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/billing/BQ\n\x19\x63loud.alphaus.api.billingB\x0c\x42illingProtoZ&github.com/alphauslabs/blueapi/billingb\x06proto3'
   ,
   dependencies=[api_dot_account__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -600,6 +600,160 @@ _GETACCESSGROUPRESPONSE = _descriptor.Descriptor(
   serialized_end=1826,
 )
 
+
+_AWSCALCULATIONHISTORY_ACCOUNT_HISTORY = _descriptor.Descriptor(
+  name='History',
+  full_name='blueapi.billing.v1.AwsCalculationHistory.Account.History',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='timestamp', full_name='blueapi.billing.v1.AwsCalculationHistory.Account.History.timestamp', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='trigger', full_name='blueapi.billing.v1.AwsCalculationHistory.Account.History.trigger', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2072,
+  serialized_end=2117,
+)
+
+_AWSCALCULATIONHISTORY_ACCOUNT = _descriptor.Descriptor(
+  name='Account',
+  full_name='blueapi.billing.v1.AwsCalculationHistory.Account',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='accountId', full_name='blueapi.billing.v1.AwsCalculationHistory.Account.accountId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='history', full_name='blueapi.billing.v1.AwsCalculationHistory.Account.history', index=1,
+      number=2, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_AWSCALCULATIONHISTORY_ACCOUNT_HISTORY, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1966,
+  serialized_end=2117,
+)
+
+_AWSCALCULATIONHISTORY = _descriptor.Descriptor(
+  name='AwsCalculationHistory',
+  full_name='blueapi.billing.v1.AwsCalculationHistory',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='billingInternalId', full_name='blueapi.billing.v1.AwsCalculationHistory.billingInternalId', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='month', full_name='blueapi.billing.v1.AwsCalculationHistory.month', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='accounts', full_name='blueapi.billing.v1.AwsCalculationHistory.accounts', index=2,
+      number=3, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[_AWSCALCULATIONHISTORY_ACCOUNT, ],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1829,
+  serialized_end=2117,
+)
+
+
+_LISTAWSCALCULATIONHISTORYREQUEST = _descriptor.Descriptor(
+  name='ListAwsCalculationHistoryRequest',
+  full_name='blueapi.billing.v1.ListAwsCalculationHistoryRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='month', full_name='blueapi.billing.v1.ListAwsCalculationHistoryRequest.month', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=2119,
+  serialized_end=2168,
+)
+
 _BILLINGGROUP.fields_by_name['accounts'].message_type = api_dot_account__pb2._ACCOUNT
 _CREATEBILLINGGROUPREQUEST.fields_by_name['invoices'].message_type = _CREATEBILLINGGROUPREQUESTINVOICE
 _CREATEBILLINGGROUPREQUESTINVOICE.fields_by_name['aws'].message_type = _CREATEBILLINGGROUPREQUESTINVOICEVENDOR
@@ -608,6 +762,10 @@ _CREATEBILLINGGROUPREQUESTINVOICE.fields_by_name['gcp'].message_type = _CREATEBI
 _GETBILLINGGROUPRESPONSE.fields_by_name['billingGroup'].message_type = _BILLINGGROUP
 _ACCESSGROUP.fields_by_name['billingGroups'].message_type = _BILLINGGROUP
 _GETACCESSGROUPRESPONSE.fields_by_name['accessGroup'].message_type = _ACCESSGROUP
+_AWSCALCULATIONHISTORY_ACCOUNT_HISTORY.containing_type = _AWSCALCULATIONHISTORY_ACCOUNT
+_AWSCALCULATIONHISTORY_ACCOUNT.fields_by_name['history'].message_type = _AWSCALCULATIONHISTORY_ACCOUNT_HISTORY
+_AWSCALCULATIONHISTORY_ACCOUNT.containing_type = _AWSCALCULATIONHISTORY
+_AWSCALCULATIONHISTORY.fields_by_name['accounts'].message_type = _AWSCALCULATIONHISTORY_ACCOUNT
 DESCRIPTOR.message_types_by_name['BillingGroup'] = _BILLINGGROUP
 DESCRIPTOR.message_types_by_name['ListBillingGroupsRequest'] = _LISTBILLINGGROUPSREQUEST
 DESCRIPTOR.message_types_by_name['CreateBillingGroupRequest'] = _CREATEBILLINGGROUPREQUEST
@@ -618,6 +776,8 @@ DESCRIPTOR.message_types_by_name['GetBillingGroupResponse'] = _GETBILLINGGROUPRE
 DESCRIPTOR.message_types_by_name['AccessGroup'] = _ACCESSGROUP
 DESCRIPTOR.message_types_by_name['GetAccessGroupRequest'] = _GETACCESSGROUPREQUEST
 DESCRIPTOR.message_types_by_name['GetAccessGroupResponse'] = _GETACCESSGROUPRESPONSE
+DESCRIPTOR.message_types_by_name['AwsCalculationHistory'] = _AWSCALCULATIONHISTORY
+DESCRIPTOR.message_types_by_name['ListAwsCalculationHistoryRequest'] = _LISTAWSCALCULATIONHISTORYREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 BillingGroup = _reflection.GeneratedProtocolMessageType('BillingGroup', (_message.Message,), {
@@ -690,6 +850,36 @@ GetAccessGroupResponse = _reflection.GeneratedProtocolMessageType('GetAccessGrou
   })
 _sym_db.RegisterMessage(GetAccessGroupResponse)
 
+AwsCalculationHistory = _reflection.GeneratedProtocolMessageType('AwsCalculationHistory', (_message.Message,), {
+
+  'Account' : _reflection.GeneratedProtocolMessageType('Account', (_message.Message,), {
+
+    'History' : _reflection.GeneratedProtocolMessageType('History', (_message.Message,), {
+      'DESCRIPTOR' : _AWSCALCULATIONHISTORY_ACCOUNT_HISTORY,
+      '__module__' : 'billing.v1.billing_pb2'
+      # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsCalculationHistory.Account.History)
+      })
+    ,
+    'DESCRIPTOR' : _AWSCALCULATIONHISTORY_ACCOUNT,
+    '__module__' : 'billing.v1.billing_pb2'
+    # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsCalculationHistory.Account)
+    })
+  ,
+  'DESCRIPTOR' : _AWSCALCULATIONHISTORY,
+  '__module__' : 'billing.v1.billing_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsCalculationHistory)
+  })
+_sym_db.RegisterMessage(AwsCalculationHistory)
+_sym_db.RegisterMessage(AwsCalculationHistory.Account)
+_sym_db.RegisterMessage(AwsCalculationHistory.Account.History)
+
+ListAwsCalculationHistoryRequest = _reflection.GeneratedProtocolMessageType('ListAwsCalculationHistoryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAWSCALCULATIONHISTORYREQUEST,
+  '__module__' : 'billing.v1.billing_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.billing.v1.ListAwsCalculationHistoryRequest)
+  })
+_sym_db.RegisterMessage(ListAwsCalculationHistoryRequest)
+
 
 DESCRIPTOR._options = None
 
@@ -700,8 +890,8 @@ _BILLING = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\231\001\022F(BETA) Billing API. Base URL: https://api.alphaus.cloud/m/blue/billing\032O\n\022Service definition\0229https://github.com/alphauslabs/blueapi/tree/main/billing/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1829,
-  serialized_end=2567,
+  serialized_start=2171,
+  serialized_end=3075,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListBillingGroups',
@@ -741,6 +931,16 @@ _BILLING = _descriptor.ServiceDescriptor(
     input_type=_GETACCESSGROUPREQUEST,
     output_type=_GETACCESSGROUPRESPONSE,
     serialized_options=b'\202\323\344\223\002\"\022 /v1/accessgroups/{accessGroupId}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListAwsCalculationHistory',
+    full_name='blueapi.billing.v1.Billing.ListAwsCalculationHistory',
+    index=4,
+    containing_service=None,
+    input_type=_LISTAWSCALCULATIONHISTORYREQUEST,
+    output_type=_AWSCALCULATIONHISTORY,
+    serialized_options=b'\202\323\344\223\002\035\"\030/v1/aws/calchistory:read:\001*',
     create_key=_descriptor._internal_create_key,
   ),
 ])
