@@ -159,49 +159,49 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetNotificationSettings(self, request, context):
-        """WORK-IN-PROGRESS: Get notification settings for login user's organization or group
+        """WORK-IN-PROGRESS: Get notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SaveNotificationSettings(self, request, context):
-        """WORK-IN-PROGRESS: Create or update notification settings for login user's organization or group
+        """WORK-IN-PROGRESS: Creates or updates notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListNotificationChannels(self, request, context):
-        """WORK-IN-PROGRESS: List all notification channels for login user's organization or group
+        """WORK-IN-PROGRESS: Lists all notification channels for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Get notification channel for login user's organization or group
+        """WORK-IN-PROGRESS: Gets notification channel for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Create notification settings for login user's organization or group
+        """WORK-IN-PROGRESS: Creates notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Update notification settings for login user's organization or group
+        """WORK-IN-PROGRESS: Updates notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Delete notification settings for login user's organization or group
+        """WORK-IN-PROGRESS: Deletes notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
