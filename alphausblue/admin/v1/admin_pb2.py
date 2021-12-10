@@ -12,6 +12,7 @@ _sym_db = _symbol_database.Default()
 
 
 from alphausblue.api import accountgroup_pb2 as api_dot_accountgroup__pb2
+from alphausblue.api import notification_pb2 as api_dot_notification__pb2
 from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -24,9 +25,9 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"9\n\'GetDefaultBillingInfoTemplateUrlRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\"x\n(GetDefaultBillingInfoTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\"\x1f\n\x1dListDefaultBillingInfoRequest\".\n\x1cGetDefaultBillingInfoRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\x95\x01\n\x12\x44\x65\x66\x61ultBillingInfo\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x0f\n\x07stackId\x18\x03 \x01(\t\x12\x13\n\x0bstackRegion\x18\x04 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x13\n\x0blastUpdated\x18\x07 \x01(\t\"5\n#CreateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#UpdateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#DeleteDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t2\x99\x0b\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xbe\x01\n GetDefaultBillingInfoTemplateUrl\x12\x39.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest\x1a:.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/admin/v1/aws/xacct/default\x12\x9f\x01\n\x16ListDefaultBillingInfo\x12/.blueapi.admin.v1.ListDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\",\x82\xd3\xe4\x93\x02&\"$/admin/v1/aws/xacct/default/all:read0\x01\x12\x9b\x01\n\x15GetDefaultBillingInfo\x12..blueapi.admin.v1.GetDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/aws/xacct/default/{target}\x12\xa3\x01\n\x1c\x43reateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\"&\x82\xd3\xe4\x93\x02 \"\x1b/admin/v1/aws/xacct/default:\x01*\x12\x9b\x01\n\x1cUpdateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest\x1a\x16.blueapi.api.Operation\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/aws/xacct/default/{target}\x12\x9b\x01\n\x1c\x44\x65leteDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/aws/xacct/default/{target}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
+  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"9\n\'GetDefaultBillingInfoTemplateUrlRequest\x12\x0e\n\x06region\x18\x01 \x01(\t\"x\n(GetDefaultBillingInfoTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\"\x1f\n\x1dListDefaultBillingInfoRequest\".\n\x1cGetDefaultBillingInfoRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\x95\x01\n\x12\x44\x65\x66\x61ultBillingInfo\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x0f\n\x07stackId\x18\x03 \x01(\t\x12\x13\n\x0bstackRegion\x18\x04 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x13\n\x0blastUpdated\x18\x07 \x01(\t\"5\n#CreateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#UpdateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#DeleteDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"4\n\x1fSaveNotificationSettingsRequest\x12\x11\n\tisEnabled\x18\x01 \x01(\x08\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xf5\x13\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xbe\x01\n GetDefaultBillingInfoTemplateUrl\x12\x39.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest\x1a:.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/admin/v1/aws/xacct/default\x12\x9f\x01\n\x16ListDefaultBillingInfo\x12/.blueapi.admin.v1.ListDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\",\x82\xd3\xe4\x93\x02&\"$/admin/v1/aws/xacct/default/all:read0\x01\x12\x9b\x01\n\x15GetDefaultBillingInfo\x12..blueapi.admin.v1.GetDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/aws/xacct/default/{target}\x12\xa3\x01\n\x1c\x43reateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\"&\x82\xd3\xe4\x93\x02 \"\x1b/admin/v1/aws/xacct/default:\x01*\x12\x9b\x01\n\x1cUpdateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest\x1a\x16.blueapi.api.Operation\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/aws/xacct/default/{target}\x12\x9b\x01\n\x1c\x44\x65leteDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/aws/xacct/default/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
   ,
-  dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
+  dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_notification__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
 
 
@@ -51,8 +52,8 @@ _LISTACCOUNTGROUPSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=194,
-  serialized_end=220,
+  serialized_start=218,
+  serialized_end=244,
 )
 
 
@@ -83,8 +84,8 @@ _LISTACCOUNTGROUPSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=222,
-  serialized_end=299,
+  serialized_start=246,
+  serialized_end=323,
 )
 
 
@@ -115,8 +116,8 @@ _GETACCOUNTGROUPREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=301,
-  serialized_end=337,
+  serialized_start=325,
+  serialized_end=361,
 )
 
 
@@ -147,8 +148,8 @@ _GETACCOUNTGROUPRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=339,
-  serialized_end=410,
+  serialized_start=363,
+  serialized_end=434,
 )
 
 
@@ -179,8 +180,8 @@ _GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=412,
-  serialized_end=469,
+  serialized_start=436,
+  serialized_end=493,
 )
 
 
@@ -232,8 +233,8 @@ _GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=471,
-  serialized_end=591,
+  serialized_start=495,
+  serialized_end=615,
 )
 
 
@@ -257,8 +258,8 @@ _LISTDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=593,
-  serialized_end=624,
+  serialized_start=617,
+  serialized_end=648,
 )
 
 
@@ -289,8 +290,8 @@ _GETDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=626,
-  serialized_end=672,
+  serialized_start=650,
+  serialized_end=696,
 )
 
 
@@ -363,8 +364,8 @@ _DEFAULTBILLINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=675,
-  serialized_end=824,
+  serialized_start=699,
+  serialized_end=848,
 )
 
 
@@ -395,8 +396,8 @@ _CREATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=826,
-  serialized_end=879,
+  serialized_start=850,
+  serialized_end=903,
 )
 
 
@@ -427,8 +428,8 @@ _UPDATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=881,
-  serialized_end=934,
+  serialized_start=905,
+  serialized_end=958,
 )
 
 
@@ -459,12 +460,324 @@ _DELETEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=936,
-  serialized_end=989,
+  serialized_start=960,
+  serialized_end=1013,
+)
+
+
+_GETNOTIFICATIONSETTINGSREQUEST = _descriptor.Descriptor(
+  name='GetNotificationSettingsRequest',
+  full_name='blueapi.admin.v1.GetNotificationSettingsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1015,
+  serialized_end=1047,
+)
+
+
+_SAVENOTIFICATIONSETTINGSREQUEST = _descriptor.Descriptor(
+  name='SaveNotificationSettingsRequest',
+  full_name='blueapi.admin.v1.SaveNotificationSettingsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='isEnabled', full_name='blueapi.admin.v1.SaveNotificationSettingsRequest.isEnabled', index=0,
+      number=1, type=8, cpp_type=7, label=1,
+      has_default_value=False, default_value=False,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1049,
+  serialized_end=1101,
+)
+
+
+_LISTNOTIFICATIONCHANNELSREQUEST = _descriptor.Descriptor(
+  name='ListNotificationChannelsRequest',
+  full_name='blueapi.admin.v1.ListNotificationChannelsRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1103,
+  serialized_end=1136,
+)
+
+
+_LISTNOTIFICATIONCHANNELSRESPONSE = _descriptor.Descriptor(
+  name='ListNotificationChannelsResponse',
+  full_name='blueapi.admin.v1.ListNotificationChannelsResponse',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='channels', full_name='blueapi.admin.v1.ListNotificationChannelsResponse.channels', index=0,
+      number=1, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1138,
+  serialized_end=1224,
+)
+
+
+_GETNOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
+  name='GetNotificationChannelRequest',
+  full_name='blueapi.admin.v1.GetNotificationChannelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blueapi.admin.v1.GetNotificationChannelRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1226,
+  serialized_end=1269,
+)
+
+
+_CREATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
+  name='CreateNotificationChannelRequest',
+  full_name='blueapi.admin.v1.CreateNotificationChannelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='name', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.name', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.type', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.email', index=2,
+      number=3, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='slack', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.slack', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msteams', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.msteams', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1272,
+  serialized_end=1464,
+)
+
+
+_UPDATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
+  name='UpdateNotificationChannelRequest',
+  full_name='blueapi.admin.v1.UpdateNotificationChannelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='name', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.name', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='type', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.type', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='email', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.email', index=3,
+      number=4, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='slack', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.slack', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='msteams', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.msteams', index=5,
+      number=6, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1467,
+  serialized_end=1671,
+)
+
+
+_DELETENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
+  name='DeleteNotificationChannelRequest',
+  full_name='blueapi.admin.v1.DeleteNotificationChannelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='id', full_name='blueapi.admin.v1.DeleteNotificationChannelRequest.id', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1673,
+  serialized_end=1719,
 )
 
 _LISTACCOUNTGROUPSRESPONSE.fields_by_name['accountGroups'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
 _GETACCOUNTGROUPRESPONSE.fields_by_name['acctGroup'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
+_LISTNOTIFICATIONCHANNELSRESPONSE.fields_by_name['channels'].message_type = api_dot_notification__pb2._NOTIFICATIONCHANNEL
+_CREATENOTIFICATIONCHANNELREQUEST.fields_by_name['email'].message_type = api_dot_notification__pb2._EMAILCHANNEL
+_CREATENOTIFICATIONCHANNELREQUEST.fields_by_name['slack'].message_type = api_dot_notification__pb2._SLACKCHANNEL
+_CREATENOTIFICATIONCHANNELREQUEST.fields_by_name['msteams'].message_type = api_dot_notification__pb2._MSTEAMSCHANNEL
+_UPDATENOTIFICATIONCHANNELREQUEST.fields_by_name['email'].message_type = api_dot_notification__pb2._EMAILCHANNEL
+_UPDATENOTIFICATIONCHANNELREQUEST.fields_by_name['slack'].message_type = api_dot_notification__pb2._SLACKCHANNEL
+_UPDATENOTIFICATIONCHANNELREQUEST.fields_by_name['msteams'].message_type = api_dot_notification__pb2._MSTEAMSCHANNEL
 DESCRIPTOR.message_types_by_name['ListAccountGroupsRequest'] = _LISTACCOUNTGROUPSREQUEST
 DESCRIPTOR.message_types_by_name['ListAccountGroupsResponse'] = _LISTACCOUNTGROUPSRESPONSE
 DESCRIPTOR.message_types_by_name['GetAccountGroupRequest'] = _GETACCOUNTGROUPREQUEST
@@ -477,6 +790,14 @@ DESCRIPTOR.message_types_by_name['DefaultBillingInfo'] = _DEFAULTBILLINGINFO
 DESCRIPTOR.message_types_by_name['CreateDefaultBillingInfoRoleRequest'] = _CREATEDEFAULTBILLINGINFOROLEREQUEST
 DESCRIPTOR.message_types_by_name['UpdateDefaultBillingInfoRoleRequest'] = _UPDATEDEFAULTBILLINGINFOROLEREQUEST
 DESCRIPTOR.message_types_by_name['DeleteDefaultBillingInfoRoleRequest'] = _DELETEDEFAULTBILLINGINFOROLEREQUEST
+DESCRIPTOR.message_types_by_name['GetNotificationSettingsRequest'] = _GETNOTIFICATIONSETTINGSREQUEST
+DESCRIPTOR.message_types_by_name['SaveNotificationSettingsRequest'] = _SAVENOTIFICATIONSETTINGSREQUEST
+DESCRIPTOR.message_types_by_name['ListNotificationChannelsRequest'] = _LISTNOTIFICATIONCHANNELSREQUEST
+DESCRIPTOR.message_types_by_name['ListNotificationChannelsResponse'] = _LISTNOTIFICATIONCHANNELSRESPONSE
+DESCRIPTOR.message_types_by_name['GetNotificationChannelRequest'] = _GETNOTIFICATIONCHANNELREQUEST
+DESCRIPTOR.message_types_by_name['CreateNotificationChannelRequest'] = _CREATENOTIFICATIONCHANNELREQUEST
+DESCRIPTOR.message_types_by_name['UpdateNotificationChannelRequest'] = _UPDATENOTIFICATIONCHANNELREQUEST
+DESCRIPTOR.message_types_by_name['DeleteNotificationChannelRequest'] = _DELETENOTIFICATIONCHANNELREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 ListAccountGroupsRequest = _reflection.GeneratedProtocolMessageType('ListAccountGroupsRequest', (_message.Message,), {
@@ -563,6 +884,62 @@ DeleteDefaultBillingInfoRoleRequest = _reflection.GeneratedProtocolMessageType('
   })
 _sym_db.RegisterMessage(DeleteDefaultBillingInfoRoleRequest)
 
+GetNotificationSettingsRequest = _reflection.GeneratedProtocolMessageType('GetNotificationSettingsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETNOTIFICATIONSETTINGSREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetNotificationSettingsRequest)
+  })
+_sym_db.RegisterMessage(GetNotificationSettingsRequest)
+
+SaveNotificationSettingsRequest = _reflection.GeneratedProtocolMessageType('SaveNotificationSettingsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _SAVENOTIFICATIONSETTINGSREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.SaveNotificationSettingsRequest)
+  })
+_sym_db.RegisterMessage(SaveNotificationSettingsRequest)
+
+ListNotificationChannelsRequest = _reflection.GeneratedProtocolMessageType('ListNotificationChannelsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNOTIFICATIONCHANNELSREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.ListNotificationChannelsRequest)
+  })
+_sym_db.RegisterMessage(ListNotificationChannelsRequest)
+
+ListNotificationChannelsResponse = _reflection.GeneratedProtocolMessageType('ListNotificationChannelsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTNOTIFICATIONCHANNELSRESPONSE,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.ListNotificationChannelsResponse)
+  })
+_sym_db.RegisterMessage(ListNotificationChannelsResponse)
+
+GetNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('GetNotificationChannelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETNOTIFICATIONCHANNELREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetNotificationChannelRequest)
+  })
+_sym_db.RegisterMessage(GetNotificationChannelRequest)
+
+CreateNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('CreateNotificationChannelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATENOTIFICATIONCHANNELREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.CreateNotificationChannelRequest)
+  })
+_sym_db.RegisterMessage(CreateNotificationChannelRequest)
+
+UpdateNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('UpdateNotificationChannelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATENOTIFICATIONCHANNELREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.UpdateNotificationChannelRequest)
+  })
+_sym_db.RegisterMessage(UpdateNotificationChannelRequest)
+
+DeleteNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('DeleteNotificationChannelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETENOTIFICATIONCHANNELREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DeleteNotificationChannelRequest)
+  })
+_sym_db.RegisterMessage(DeleteNotificationChannelRequest)
+
 
 DESCRIPTOR._options = None
 
@@ -573,8 +950,8 @@ _ADMIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=992,
-  serialized_end=2425,
+  serialized_start=1722,
+  serialized_end=4271,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccountGroups',
@@ -654,6 +1031,76 @@ _ADMIN = _descriptor.ServiceDescriptor(
     input_type=_DELETEDEFAULTBILLINGINFOROLEREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
     serialized_options=b'\202\323\344\223\002&*$/admin/v1/aws/xacct/default/{target}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetNotificationSettings',
+    full_name='blueapi.admin.v1.Admin.GetNotificationSettings',
+    index=8,
+    containing_service=None,
+    input_type=_GETNOTIFICATIONSETTINGSREQUEST,
+    output_type=api_dot_notification__pb2._NOTIFICATIONSETTINGS,
+    serialized_options=b'\202\323\344\223\002!\022\037/admin/v1/notification/settings',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='SaveNotificationSettings',
+    full_name='blueapi.admin.v1.Admin.SaveNotificationSettings',
+    index=9,
+    containing_service=None,
+    input_type=_SAVENOTIFICATIONSETTINGSREQUEST,
+    output_type=api_dot_notification__pb2._NOTIFICATIONSETTINGS,
+    serialized_options=b'\202\323\344\223\002$\"\037/admin/v1/notification/settings:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='ListNotificationChannels',
+    full_name='blueapi.admin.v1.Admin.ListNotificationChannels',
+    index=10,
+    containing_service=None,
+    input_type=_LISTNOTIFICATIONCHANNELSREQUEST,
+    output_type=_LISTNOTIFICATIONCHANNELSRESPONSE,
+    serialized_options=b'\202\323\344\223\002!\022\037/admin/v1/notification/channels',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='GetNotificationChannel',
+    full_name='blueapi.admin.v1.Admin.GetNotificationChannel',
+    index=11,
+    containing_service=None,
+    input_type=_GETNOTIFICATIONCHANNELREQUEST,
+    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
+    serialized_options=b'\202\323\344\223\002&\022$/admin/v1/notification/channels/{id}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='CreateNotificationChannel',
+    full_name='blueapi.admin.v1.Admin.CreateNotificationChannel',
+    index=12,
+    containing_service=None,
+    input_type=_CREATENOTIFICATIONCHANNELREQUEST,
+    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
+    serialized_options=b'\202\323\344\223\002$\"\037/admin/v1/notification/channels:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='UpdateNotificationChannel',
+    full_name='blueapi.admin.v1.Admin.UpdateNotificationChannel',
+    index=13,
+    containing_service=None,
+    input_type=_UPDATENOTIFICATIONCHANNELREQUEST,
+    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
+    serialized_options=b'\202\323\344\223\002&\032$/admin/v1/notification/channels/{id}',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
+    name='DeleteNotificationChannel',
+    full_name='blueapi.admin.v1.Admin.DeleteNotificationChannel',
+    index=14,
+    containing_service=None,
+    input_type=_DELETENOTIFICATIONCHANNELREQUEST,
+    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
+    serialized_options=b'\202\323\344\223\002&*$/admin/v1/notification/channels/{id}',
     create_key=_descriptor._internal_create_key,
   ),
 ])

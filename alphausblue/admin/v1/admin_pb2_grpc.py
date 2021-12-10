@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
+from alphausblue.api import notification_pb2 as api_dot_notification__pb2
 from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
@@ -55,6 +56,41 @@ class AdminStub(object):
         self.DeleteDefaultBillingInfoRole = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/DeleteDefaultBillingInfoRole',
                 request_serializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultBillingInfoRoleRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.GetNotificationSettings = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetNotificationSettings',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetNotificationSettingsRequest.SerializeToString,
+                response_deserializer=api_dot_notification__pb2.NotificationSettings.FromString,
+                )
+        self.SaveNotificationSettings = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/SaveNotificationSettings',
+                request_serializer=admin_dot_v1_dot_admin__pb2.SaveNotificationSettingsRequest.SerializeToString,
+                response_deserializer=api_dot_notification__pb2.NotificationSettings.FromString,
+                )
+        self.ListNotificationChannels = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/ListNotificationChannels',
+                request_serializer=admin_dot_v1_dot_admin__pb2.ListNotificationChannelsRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.ListNotificationChannelsResponse.FromString,
+                )
+        self.GetNotificationChannel = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetNotificationChannel',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetNotificationChannelRequest.SerializeToString,
+                response_deserializer=api_dot_notification__pb2.NotificationChannel.FromString,
+                )
+        self.CreateNotificationChannel = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateNotificationChannel',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateNotificationChannelRequest.SerializeToString,
+                response_deserializer=api_dot_notification__pb2.NotificationChannel.FromString,
+                )
+        self.UpdateNotificationChannel = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/UpdateNotificationChannel',
+                request_serializer=admin_dot_v1_dot_admin__pb2.UpdateNotificationChannelRequest.SerializeToString,
+                response_deserializer=api_dot_notification__pb2.NotificationChannel.FromString,
+                )
+        self.DeleteNotificationChannel = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/DeleteNotificationChannel',
+                request_serializer=admin_dot_v1_dot_admin__pb2.DeleteNotificationChannelRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
@@ -122,6 +158,55 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetNotificationSettings(self, request, context):
+        """WORK-IN-PROGRESS: Get notification settings for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SaveNotificationSettings(self, request, context):
+        """WORK-IN-PROGRESS: Create or update notification settings for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListNotificationChannels(self, request, context):
+        """WORK-IN-PROGRESS: List all notification channels for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetNotificationChannel(self, request, context):
+        """WORK-IN-PROGRESS: Get notification channel for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateNotificationChannel(self, request, context):
+        """WORK-IN-PROGRESS: Create notification settings for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateNotificationChannel(self, request, context):
+        """WORK-IN-PROGRESS: Update notification settings for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteNotificationChannel(self, request, context):
+        """WORK-IN-PROGRESS: Delete notification settings for login user's organization or group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -163,6 +248,41 @@ def add_AdminServicer_to_server(servicer, server):
             'DeleteDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDefaultBillingInfoRole,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultBillingInfoRoleRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetNotificationSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNotificationSettings,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetNotificationSettingsRequest.FromString,
+                    response_serializer=api_dot_notification__pb2.NotificationSettings.SerializeToString,
+            ),
+            'SaveNotificationSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.SaveNotificationSettings,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.SaveNotificationSettingsRequest.FromString,
+                    response_serializer=api_dot_notification__pb2.NotificationSettings.SerializeToString,
+            ),
+            'ListNotificationChannels': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNotificationChannels,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.ListNotificationChannelsRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.ListNotificationChannelsResponse.SerializeToString,
+            ),
+            'GetNotificationChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetNotificationChannel,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetNotificationChannelRequest.FromString,
+                    response_serializer=api_dot_notification__pb2.NotificationChannel.SerializeToString,
+            ),
+            'CreateNotificationChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateNotificationChannel,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateNotificationChannelRequest.FromString,
+                    response_serializer=api_dot_notification__pb2.NotificationChannel.SerializeToString,
+            ),
+            'UpdateNotificationChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateNotificationChannel,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateNotificationChannelRequest.FromString,
+                    response_serializer=api_dot_notification__pb2.NotificationChannel.SerializeToString,
+            ),
+            'DeleteNotificationChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteNotificationChannel,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteNotificationChannelRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -308,6 +428,125 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteDefaultBillingInfoRole',
             admin_dot_v1_dot_admin__pb2.DeleteDefaultBillingInfoRoleRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNotificationSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetNotificationSettings',
+            admin_dot_v1_dot_admin__pb2.GetNotificationSettingsRequest.SerializeToString,
+            api_dot_notification__pb2.NotificationSettings.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SaveNotificationSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/SaveNotificationSettings',
+            admin_dot_v1_dot_admin__pb2.SaveNotificationSettingsRequest.SerializeToString,
+            api_dot_notification__pb2.NotificationSettings.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListNotificationChannels(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/ListNotificationChannels',
+            admin_dot_v1_dot_admin__pb2.ListNotificationChannelsRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.ListNotificationChannelsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetNotificationChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetNotificationChannel',
+            admin_dot_v1_dot_admin__pb2.GetNotificationChannelRequest.SerializeToString,
+            api_dot_notification__pb2.NotificationChannel.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateNotificationChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateNotificationChannel',
+            admin_dot_v1_dot_admin__pb2.CreateNotificationChannelRequest.SerializeToString,
+            api_dot_notification__pb2.NotificationChannel.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateNotificationChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/UpdateNotificationChannel',
+            admin_dot_v1_dot_admin__pb2.UpdateNotificationChannelRequest.SerializeToString,
+            api_dot_notification__pb2.NotificationChannel.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteNotificationChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteNotificationChannel',
+            admin_dot_v1_dot_admin__pb2.DeleteNotificationChannelRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
