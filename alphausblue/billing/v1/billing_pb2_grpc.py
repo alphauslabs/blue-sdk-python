@@ -75,7 +75,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAwsCalculationHistory(self, request, context):
-        """WORK-IN-PROGRESS: Reads the calculation history of all accounts in your billing groups. Only available in Ripple.
+        """Reads the calculation history of all accounts in your billing groups. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
