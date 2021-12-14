@@ -114,45 +114,44 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultCostAccessTemplateUrl(self, request, context):
-        """WORK-IN-PROGRESS: Gets a CloudFormation launch URL for enabling various cross-account access to your
-        account's cost information based on type.
+        """WORK-IN-PROGRESS: Gets a CloudFormation launch URL for enabling the default cross-account access to your account's cost information based on type.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDefaultCostAccess(self, request, context):
-        """WORK-IN-PROGRESS: Lists the default cross-account role(s) attached to accounts under caller.
+        """WORK-IN-PROGRESS: Lists the default cross-account access role(s) attached to accounts under caller.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultCostAccess(self, request, context):
-        """WORK-IN-PROGRESS: Gets the current role attached to input account.
+        """WORK-IN-PROGRESS: Gets the current default cross-account role attached to input account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateDefaultCostAccess(self, request, context):
-        """WORK-IN-PROGRESS: Starts validation of a cross-account access stack deployment. If successful,
-        the new IAM role will be registered to the target account.
+        """WORK-IN-PROGRESS: Starts validation of a default cross-account access stack deployment.
+        If successful, the new IAM role will be registered to the target account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateDefaultCostAccess(self, request, context):
-        """WORK-IN-PROGRESS: Starts an update to an existing CloudFormation for template changes, if any.
+        """WORK-IN-PROGRESS: Starts an update to an existing default cross-account access CloudFormation for template changes, if any.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteDefaultCostAccess(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the current role attached to this target account. This does not delete the
-        CloudFormation deployment in your account.
+        """WORK-IN-PROGRESS: Deletes the current default cross-account access role attached to this target account.
+        This does not delete the CloudFormation deployment in your account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
