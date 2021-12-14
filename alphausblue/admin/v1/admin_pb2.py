@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"G\n\'GetDefaultBillingInfoTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\"x\n(GetDefaultBillingInfoTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\"\x1f\n\x1dListDefaultBillingInfoRequest\".\n\x1cGetDefaultBillingInfoRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\x95\x01\n\x12\x44\x65\x66\x61ultBillingInfo\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x0f\n\x07stackId\x18\x03 \x01(\t\x12\x13\n\x0bstackRegion\x18\x04 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x13\n\x0blastUpdated\x18\x07 \x01(\t\"5\n#CreateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#UpdateDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"5\n#DeleteDefaultBillingInfoRoleRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"4\n\x1fSaveNotificationSettingsRequest\x12\x11\n\tisEnabled\x18\x01 \x01(\x08\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xf5\x13\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xbe\x01\n GetDefaultBillingInfoTemplateUrl\x12\x39.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest\x1a:.blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/admin/v1/aws/xacct/default\x12\x9f\x01\n\x16ListDefaultBillingInfo\x12/.blueapi.admin.v1.ListDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\",\x82\xd3\xe4\x93\x02&\"$/admin/v1/aws/xacct/default/all:read0\x01\x12\x9b\x01\n\x15GetDefaultBillingInfo\x12..blueapi.admin.v1.GetDefaultBillingInfoRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/aws/xacct/default/{target}\x12\xa3\x01\n\x1c\x43reateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest\x1a$.blueapi.admin.v1.DefaultBillingInfo\"&\x82\xd3\xe4\x93\x02 \"\x1b/admin/v1/aws/xacct/default:\x01*\x12\x9b\x01\n\x1cUpdateDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest\x1a\x16.blueapi.api.Operation\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/aws/xacct/default/{target}\x12\x9b\x01\n\x1c\x44\x65leteDefaultBillingInfoRole\x12\x35.blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/aws/xacct/default/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
+  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"F\n&GetDefaultCostAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0e\n\x06region\x18\x02 \x01(\t\"w\n\'GetDefaultCostAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\"\x1e\n\x1cListDefaultCostAccessRequest\"-\n\x1bGetDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\x94\x01\n\x11\x44\x65\x66\x61ultCostAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x0f\n\x07stackId\x18\x03 \x01(\t\x12\x13\n\x0bstackRegion\x18\x04 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x05 \x01(\t\x12\x0e\n\x06status\x18\x06 \x01(\t\x12\x13\n\x0blastUpdated\x18\x07 \x01(\t\"0\n\x1e\x43reateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1eUpdateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1e\x44\x65leteDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"4\n\x1fSaveNotificationSettingsRequest\x12\x11\n\tisEnabled\x18\x01 \x01(\x08\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xb5\x13\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xb7\x01\n\x1fGetDefaultCostAccessTemplateUrl\x12\x38.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest\x1a\x39.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/admin/v1/aws/xacct/dca\x12\x98\x01\n\x15ListDefaultCostAccess\x12..blueapi.admin.v1.ListDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\" /admin/v1/aws/xacct/dca/all:read0\x01\x12\x94\x01\n\x14GetDefaultCostAccess\x12-.blueapi.admin.v1.GetDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\x12 /admin/v1/aws/xacct/dca/{target}\x12\x94\x01\n\x17\x43reateDefaultCostAccess\x12\x30.blueapi.admin.v1.CreateDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/admin/v1/aws/xacct/dca:\x01*\x12\x8d\x01\n\x17UpdateDefaultCostAccess\x12\x30.blueapi.admin.v1.UpdateDefaultCostAccessRequest\x1a\x16.blueapi.api.Operation\"(\x82\xd3\xe4\x93\x02\"\x1a /admin/v1/aws/xacct/dca/{target}\x12\x8d\x01\n\x17\x44\x65leteDefaultCostAccess\x12\x30.blueapi.admin.v1.DeleteDefaultCostAccessRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /admin/v1/aws/xacct/dca/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
   ,
   dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_notification__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -153,23 +153,23 @@ _GETACCOUNTGROUPRESPONSE = _descriptor.Descriptor(
 )
 
 
-_GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST = _descriptor.Descriptor(
-  name='GetDefaultBillingInfoTemplateUrlRequest',
-  full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest',
+_GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST = _descriptor.Descriptor(
+  name='GetDefaultCostAccessTemplateUrlRequest',
+  full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type', full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest.type', index=0,
+      name='type', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest.type', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='region', full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest.region', index=1,
+      name='region', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest.region', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -188,41 +188,41 @@ _GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=436,
-  serialized_end=507,
+  serialized_end=506,
 )
 
 
-_GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE = _descriptor.Descriptor(
-  name='GetDefaultBillingInfoTemplateUrlResponse',
-  full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse',
+_GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE = _descriptor.Descriptor(
+  name='GetDefaultCostAccessTemplateUrlResponse',
+  full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='launchUrl', full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse.launchUrl', index=0,
+      name='launchUrl', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.launchUrl', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='templateUrl', full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse.templateUrl', index=1,
+      name='templateUrl', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.templateUrl', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='stackName', full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse.stackName', index=2,
+      name='stackName', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.stackName', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='principal', full_name='blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse.principal', index=3,
+      name='principal', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.principal', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -240,14 +240,14 @@ _GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=509,
-  serialized_end=629,
+  serialized_start=508,
+  serialized_end=627,
 )
 
 
-_LISTDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
-  name='ListDefaultBillingInfoRequest',
-  full_name='blueapi.admin.v1.ListDefaultBillingInfoRequest',
+_LISTDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
+  name='ListDefaultCostAccessRequest',
+  full_name='blueapi.admin.v1.ListDefaultCostAccessRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
@@ -265,21 +265,21 @@ _LISTDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=631,
-  serialized_end=662,
+  serialized_start=629,
+  serialized_end=659,
 )
 
 
-_GETDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
-  name='GetDefaultBillingInfoRequest',
-  full_name='blueapi.admin.v1.GetDefaultBillingInfoRequest',
+_GETDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
+  name='GetDefaultCostAccessRequest',
+  full_name='blueapi.admin.v1.GetDefaultCostAccessRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.GetDefaultBillingInfoRequest.target', index=0,
+      name='target', full_name='blueapi.admin.v1.GetDefaultCostAccessRequest.target', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -297,63 +297,63 @@ _GETDEFAULTBILLINGINFOREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=664,
-  serialized_end=710,
+  serialized_start=661,
+  serialized_end=706,
 )
 
 
-_DEFAULTBILLINGINFO = _descriptor.Descriptor(
-  name='DefaultBillingInfo',
-  full_name='blueapi.admin.v1.DefaultBillingInfo',
+_DEFAULTCOSTACCESS = _descriptor.Descriptor(
+  name='DefaultCostAccess',
+  full_name='blueapi.admin.v1.DefaultCostAccess',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.DefaultBillingInfo.target', index=0,
+      name='target', full_name='blueapi.admin.v1.DefaultCostAccess.target', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='roleArn', full_name='blueapi.admin.v1.DefaultBillingInfo.roleArn', index=1,
+      name='roleArn', full_name='blueapi.admin.v1.DefaultCostAccess.roleArn', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='stackId', full_name='blueapi.admin.v1.DefaultBillingInfo.stackId', index=2,
+      name='stackId', full_name='blueapi.admin.v1.DefaultCostAccess.stackId', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='stackRegion', full_name='blueapi.admin.v1.DefaultBillingInfo.stackRegion', index=3,
+      name='stackRegion', full_name='blueapi.admin.v1.DefaultCostAccess.stackRegion', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='templateUrl', full_name='blueapi.admin.v1.DefaultBillingInfo.templateUrl', index=4,
+      name='templateUrl', full_name='blueapi.admin.v1.DefaultCostAccess.templateUrl', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='status', full_name='blueapi.admin.v1.DefaultBillingInfo.status', index=5,
+      name='status', full_name='blueapi.admin.v1.DefaultCostAccess.status', index=5,
       number=6, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='lastUpdated', full_name='blueapi.admin.v1.DefaultBillingInfo.lastUpdated', index=6,
+      name='lastUpdated', full_name='blueapi.admin.v1.DefaultCostAccess.lastUpdated', index=6,
       number=7, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -371,21 +371,21 @@ _DEFAULTBILLINGINFO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=713,
-  serialized_end=862,
+  serialized_start=709,
+  serialized_end=857,
 )
 
 
-_CREATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
-  name='CreateDefaultBillingInfoRoleRequest',
-  full_name='blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest',
+_CREATEDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
+  name='CreateDefaultCostAccessRequest',
+  full_name='blueapi.admin.v1.CreateDefaultCostAccessRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest.target', index=0,
+      name='target', full_name='blueapi.admin.v1.CreateDefaultCostAccessRequest.target', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -403,21 +403,21 @@ _CREATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=864,
-  serialized_end=917,
+  serialized_start=859,
+  serialized_end=907,
 )
 
 
-_UPDATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
-  name='UpdateDefaultBillingInfoRoleRequest',
-  full_name='blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest',
+_UPDATEDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
+  name='UpdateDefaultCostAccessRequest',
+  full_name='blueapi.admin.v1.UpdateDefaultCostAccessRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest.target', index=0,
+      name='target', full_name='blueapi.admin.v1.UpdateDefaultCostAccessRequest.target', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -435,21 +435,21 @@ _UPDATEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=919,
-  serialized_end=972,
+  serialized_start=909,
+  serialized_end=957,
 )
 
 
-_DELETEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
-  name='DeleteDefaultBillingInfoRoleRequest',
-  full_name='blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest',
+_DELETEDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
+  name='DeleteDefaultCostAccessRequest',
+  full_name='blueapi.admin.v1.DeleteDefaultCostAccessRequest',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   create_key=_descriptor._internal_create_key,
   fields=[
     _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest.target', index=0,
+      name='target', full_name='blueapi.admin.v1.DeleteDefaultCostAccessRequest.target', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -467,8 +467,8 @@ _DELETEDEFAULTBILLINGINFOROLEREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=974,
-  serialized_end=1027,
+  serialized_start=959,
+  serialized_end=1007,
 )
 
 
@@ -492,8 +492,8 @@ _GETNOTIFICATIONSETTINGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1029,
-  serialized_end=1061,
+  serialized_start=1009,
+  serialized_end=1041,
 )
 
 
@@ -524,8 +524,8 @@ _SAVENOTIFICATIONSETTINGSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1063,
-  serialized_end=1115,
+  serialized_start=1043,
+  serialized_end=1095,
 )
 
 
@@ -549,8 +549,8 @@ _LISTNOTIFICATIONCHANNELSREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1117,
-  serialized_end=1150,
+  serialized_start=1097,
+  serialized_end=1130,
 )
 
 
@@ -581,8 +581,8 @@ _LISTNOTIFICATIONCHANNELSRESPONSE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1152,
-  serialized_end=1238,
+  serialized_start=1132,
+  serialized_end=1218,
 )
 
 
@@ -613,8 +613,8 @@ _GETNOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1240,
-  serialized_end=1283,
+  serialized_start=1220,
+  serialized_end=1263,
 )
 
 
@@ -673,8 +673,8 @@ _CREATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1286,
-  serialized_end=1478,
+  serialized_start=1266,
+  serialized_end=1458,
 )
 
 
@@ -740,8 +740,8 @@ _UPDATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1481,
-  serialized_end=1685,
+  serialized_start=1461,
+  serialized_end=1665,
 )
 
 
@@ -772,8 +772,8 @@ _DELETENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1687,
-  serialized_end=1733,
+  serialized_start=1667,
+  serialized_end=1713,
 )
 
 _LISTACCOUNTGROUPSRESPONSE.fields_by_name['accountGroups'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
@@ -789,14 +789,14 @@ DESCRIPTOR.message_types_by_name['ListAccountGroupsRequest'] = _LISTACCOUNTGROUP
 DESCRIPTOR.message_types_by_name['ListAccountGroupsResponse'] = _LISTACCOUNTGROUPSRESPONSE
 DESCRIPTOR.message_types_by_name['GetAccountGroupRequest'] = _GETACCOUNTGROUPREQUEST
 DESCRIPTOR.message_types_by_name['GetAccountGroupResponse'] = _GETACCOUNTGROUPRESPONSE
-DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoTemplateUrlRequest'] = _GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST
-DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoTemplateUrlResponse'] = _GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE
-DESCRIPTOR.message_types_by_name['ListDefaultBillingInfoRequest'] = _LISTDEFAULTBILLINGINFOREQUEST
-DESCRIPTOR.message_types_by_name['GetDefaultBillingInfoRequest'] = _GETDEFAULTBILLINGINFOREQUEST
-DESCRIPTOR.message_types_by_name['DefaultBillingInfo'] = _DEFAULTBILLINGINFO
-DESCRIPTOR.message_types_by_name['CreateDefaultBillingInfoRoleRequest'] = _CREATEDEFAULTBILLINGINFOROLEREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDefaultBillingInfoRoleRequest'] = _UPDATEDEFAULTBILLINGINFOROLEREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDefaultBillingInfoRoleRequest'] = _DELETEDEFAULTBILLINGINFOROLEREQUEST
+DESCRIPTOR.message_types_by_name['GetDefaultCostAccessTemplateUrlRequest'] = _GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST
+DESCRIPTOR.message_types_by_name['GetDefaultCostAccessTemplateUrlResponse'] = _GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE
+DESCRIPTOR.message_types_by_name['ListDefaultCostAccessRequest'] = _LISTDEFAULTCOSTACCESSREQUEST
+DESCRIPTOR.message_types_by_name['GetDefaultCostAccessRequest'] = _GETDEFAULTCOSTACCESSREQUEST
+DESCRIPTOR.message_types_by_name['DefaultCostAccess'] = _DEFAULTCOSTACCESS
+DESCRIPTOR.message_types_by_name['CreateDefaultCostAccessRequest'] = _CREATEDEFAULTCOSTACCESSREQUEST
+DESCRIPTOR.message_types_by_name['UpdateDefaultCostAccessRequest'] = _UPDATEDEFAULTCOSTACCESSREQUEST
+DESCRIPTOR.message_types_by_name['DeleteDefaultCostAccessRequest'] = _DELETEDEFAULTCOSTACCESSREQUEST
 DESCRIPTOR.message_types_by_name['GetNotificationSettingsRequest'] = _GETNOTIFICATIONSETTINGSREQUEST
 DESCRIPTOR.message_types_by_name['SaveNotificationSettingsRequest'] = _SAVENOTIFICATIONSETTINGSREQUEST
 DESCRIPTOR.message_types_by_name['ListNotificationChannelsRequest'] = _LISTNOTIFICATIONCHANNELSREQUEST
@@ -835,61 +835,61 @@ GetAccountGroupResponse = _reflection.GeneratedProtocolMessageType('GetAccountGr
   })
 _sym_db.RegisterMessage(GetAccountGroupResponse)
 
-GetDefaultBillingInfoTemplateUrlRequest = _reflection.GeneratedProtocolMessageType('GetDefaultBillingInfoTemplateUrlRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST,
+GetDefaultCostAccessTemplateUrlRequest = _reflection.GeneratedProtocolMessageType('GetDefaultCostAccessTemplateUrlRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest)
   })
-_sym_db.RegisterMessage(GetDefaultBillingInfoTemplateUrlRequest)
+_sym_db.RegisterMessage(GetDefaultCostAccessTemplateUrlRequest)
 
-GetDefaultBillingInfoTemplateUrlResponse = _reflection.GeneratedProtocolMessageType('GetDefaultBillingInfoTemplateUrlResponse', (_message.Message,), {
-  'DESCRIPTOR' : _GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE,
+GetDefaultCostAccessTemplateUrlResponse = _reflection.GeneratedProtocolMessageType('GetDefaultCostAccessTemplateUrlResponse', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultBillingInfoTemplateUrlResponse)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse)
   })
-_sym_db.RegisterMessage(GetDefaultBillingInfoTemplateUrlResponse)
+_sym_db.RegisterMessage(GetDefaultCostAccessTemplateUrlResponse)
 
-ListDefaultBillingInfoRequest = _reflection.GeneratedProtocolMessageType('ListDefaultBillingInfoRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTDEFAULTBILLINGINFOREQUEST,
+ListDefaultCostAccessRequest = _reflection.GeneratedProtocolMessageType('ListDefaultCostAccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDEFAULTCOSTACCESSREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.ListDefaultBillingInfoRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.ListDefaultCostAccessRequest)
   })
-_sym_db.RegisterMessage(ListDefaultBillingInfoRequest)
+_sym_db.RegisterMessage(ListDefaultCostAccessRequest)
 
-GetDefaultBillingInfoRequest = _reflection.GeneratedProtocolMessageType('GetDefaultBillingInfoRequest', (_message.Message,), {
-  'DESCRIPTOR' : _GETDEFAULTBILLINGINFOREQUEST,
+GetDefaultCostAccessRequest = _reflection.GeneratedProtocolMessageType('GetDefaultCostAccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _GETDEFAULTCOSTACCESSREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultBillingInfoRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.GetDefaultCostAccessRequest)
   })
-_sym_db.RegisterMessage(GetDefaultBillingInfoRequest)
+_sym_db.RegisterMessage(GetDefaultCostAccessRequest)
 
-DefaultBillingInfo = _reflection.GeneratedProtocolMessageType('DefaultBillingInfo', (_message.Message,), {
-  'DESCRIPTOR' : _DEFAULTBILLINGINFO,
+DefaultCostAccess = _reflection.GeneratedProtocolMessageType('DefaultCostAccess', (_message.Message,), {
+  'DESCRIPTOR' : _DEFAULTCOSTACCESS,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DefaultBillingInfo)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DefaultCostAccess)
   })
-_sym_db.RegisterMessage(DefaultBillingInfo)
+_sym_db.RegisterMessage(DefaultCostAccess)
 
-CreateDefaultBillingInfoRoleRequest = _reflection.GeneratedProtocolMessageType('CreateDefaultBillingInfoRoleRequest', (_message.Message,), {
-  'DESCRIPTOR' : _CREATEDEFAULTBILLINGINFOROLEREQUEST,
+CreateDefaultCostAccessRequest = _reflection.GeneratedProtocolMessageType('CreateDefaultCostAccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEDEFAULTCOSTACCESSREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.CreateDefaultBillingInfoRoleRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.CreateDefaultCostAccessRequest)
   })
-_sym_db.RegisterMessage(CreateDefaultBillingInfoRoleRequest)
+_sym_db.RegisterMessage(CreateDefaultCostAccessRequest)
 
-UpdateDefaultBillingInfoRoleRequest = _reflection.GeneratedProtocolMessageType('UpdateDefaultBillingInfoRoleRequest', (_message.Message,), {
-  'DESCRIPTOR' : _UPDATEDEFAULTBILLINGINFOROLEREQUEST,
+UpdateDefaultCostAccessRequest = _reflection.GeneratedProtocolMessageType('UpdateDefaultCostAccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _UPDATEDEFAULTCOSTACCESSREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.UpdateDefaultBillingInfoRoleRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.UpdateDefaultCostAccessRequest)
   })
-_sym_db.RegisterMessage(UpdateDefaultBillingInfoRoleRequest)
+_sym_db.RegisterMessage(UpdateDefaultCostAccessRequest)
 
-DeleteDefaultBillingInfoRoleRequest = _reflection.GeneratedProtocolMessageType('DeleteDefaultBillingInfoRoleRequest', (_message.Message,), {
-  'DESCRIPTOR' : _DELETEDEFAULTBILLINGINFOROLEREQUEST,
+DeleteDefaultCostAccessRequest = _reflection.GeneratedProtocolMessageType('DeleteDefaultCostAccessRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DELETEDEFAULTCOSTACCESSREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DeleteDefaultBillingInfoRoleRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.DeleteDefaultCostAccessRequest)
   })
-_sym_db.RegisterMessage(DeleteDefaultBillingInfoRoleRequest)
+_sym_db.RegisterMessage(DeleteDefaultCostAccessRequest)
 
 GetNotificationSettingsRequest = _reflection.GeneratedProtocolMessageType('GetNotificationSettingsRequest', (_message.Message,), {
   'DESCRIPTOR' : _GETNOTIFICATIONSETTINGSREQUEST,
@@ -957,8 +957,8 @@ _ADMIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1736,
-  serialized_end=4285,
+  serialized_start=1716,
+  serialized_end=4201,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccountGroups',
@@ -981,63 +981,63 @@ _ADMIN = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='GetDefaultBillingInfoTemplateUrl',
-    full_name='blueapi.admin.v1.Admin.GetDefaultBillingInfoTemplateUrl',
+    name='GetDefaultCostAccessTemplateUrl',
+    full_name='blueapi.admin.v1.Admin.GetDefaultCostAccessTemplateUrl',
     index=2,
     containing_service=None,
-    input_type=_GETDEFAULTBILLINGINFOTEMPLATEURLREQUEST,
-    output_type=_GETDEFAULTBILLINGINFOTEMPLATEURLRESPONSE,
-    serialized_options=b'\202\323\344\223\002\035\022\033/admin/v1/aws/xacct/default',
+    input_type=_GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST,
+    output_type=_GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE,
+    serialized_options=b'\202\323\344\223\002\031\022\027/admin/v1/aws/xacct/dca',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='ListDefaultBillingInfo',
-    full_name='blueapi.admin.v1.Admin.ListDefaultBillingInfo',
+    name='ListDefaultCostAccess',
+    full_name='blueapi.admin.v1.Admin.ListDefaultCostAccess',
     index=3,
     containing_service=None,
-    input_type=_LISTDEFAULTBILLINGINFOREQUEST,
-    output_type=_DEFAULTBILLINGINFO,
-    serialized_options=b'\202\323\344\223\002&\"$/admin/v1/aws/xacct/default/all:read',
+    input_type=_LISTDEFAULTCOSTACCESSREQUEST,
+    output_type=_DEFAULTCOSTACCESS,
+    serialized_options=b'\202\323\344\223\002\"\" /admin/v1/aws/xacct/dca/all:read',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='GetDefaultBillingInfo',
-    full_name='blueapi.admin.v1.Admin.GetDefaultBillingInfo',
+    name='GetDefaultCostAccess',
+    full_name='blueapi.admin.v1.Admin.GetDefaultCostAccess',
     index=4,
     containing_service=None,
-    input_type=_GETDEFAULTBILLINGINFOREQUEST,
-    output_type=_DEFAULTBILLINGINFO,
-    serialized_options=b'\202\323\344\223\002&\022$/admin/v1/aws/xacct/default/{target}',
+    input_type=_GETDEFAULTCOSTACCESSREQUEST,
+    output_type=_DEFAULTCOSTACCESS,
+    serialized_options=b'\202\323\344\223\002\"\022 /admin/v1/aws/xacct/dca/{target}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='CreateDefaultBillingInfoRole',
-    full_name='blueapi.admin.v1.Admin.CreateDefaultBillingInfoRole',
+    name='CreateDefaultCostAccess',
+    full_name='blueapi.admin.v1.Admin.CreateDefaultCostAccess',
     index=5,
     containing_service=None,
-    input_type=_CREATEDEFAULTBILLINGINFOROLEREQUEST,
-    output_type=_DEFAULTBILLINGINFO,
-    serialized_options=b'\202\323\344\223\002 \"\033/admin/v1/aws/xacct/default:\001*',
+    input_type=_CREATEDEFAULTCOSTACCESSREQUEST,
+    output_type=_DEFAULTCOSTACCESS,
+    serialized_options=b'\202\323\344\223\002\034\"\027/admin/v1/aws/xacct/dca:\001*',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='UpdateDefaultBillingInfoRole',
-    full_name='blueapi.admin.v1.Admin.UpdateDefaultBillingInfoRole',
+    name='UpdateDefaultCostAccess',
+    full_name='blueapi.admin.v1.Admin.UpdateDefaultCostAccess',
     index=6,
     containing_service=None,
-    input_type=_UPDATEDEFAULTBILLINGINFOROLEREQUEST,
+    input_type=_UPDATEDEFAULTCOSTACCESSREQUEST,
     output_type=api_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002&\032$/admin/v1/aws/xacct/default/{target}',
+    serialized_options=b'\202\323\344\223\002\"\032 /admin/v1/aws/xacct/dca/{target}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
-    name='DeleteDefaultBillingInfoRole',
-    full_name='blueapi.admin.v1.Admin.DeleteDefaultBillingInfoRole',
+    name='DeleteDefaultCostAccess',
+    full_name='blueapi.admin.v1.Admin.DeleteDefaultCostAccess',
     index=7,
     containing_service=None,
-    input_type=_DELETEDEFAULTBILLINGINFOROLEREQUEST,
+    input_type=_DELETEDEFAULTCOSTACCESSREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002&*$/admin/v1/aws/xacct/default/{target}',
+    serialized_options=b'\202\323\344\223\002\"* /admin/v1/aws/xacct/dca/{target}',
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(

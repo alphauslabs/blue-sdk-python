@@ -28,34 +28,34 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.FromString,
                 )
-        self.GetDefaultBillingInfoTemplateUrl = channel.unary_unary(
-                '/blueapi.admin.v1.Admin/GetDefaultBillingInfoTemplateUrl',
-                request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.SerializeToString,
-                response_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.FromString,
+        self.GetDefaultCostAccessTemplateUrl = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetDefaultCostAccessTemplateUrl',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlResponse.FromString,
                 )
-        self.ListDefaultBillingInfo = channel.unary_stream(
-                '/blueapi.admin.v1.Admin/ListDefaultBillingInfo',
-                request_serializer=admin_dot_v1_dot_admin__pb2.ListDefaultBillingInfoRequest.SerializeToString,
-                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+        self.ListDefaultCostAccess = channel.unary_stream(
+                '/blueapi.admin.v1.Admin/ListDefaultCostAccess',
+                request_serializer=admin_dot_v1_dot_admin__pb2.ListDefaultCostAccessRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultCostAccess.FromString,
                 )
-        self.GetDefaultBillingInfo = channel.unary_unary(
-                '/blueapi.admin.v1.Admin/GetDefaultBillingInfo',
-                request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.SerializeToString,
-                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+        self.GetDefaultCostAccess = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetDefaultCostAccess',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultCostAccess.FromString,
                 )
-        self.CreateDefaultBillingInfoRole = channel.unary_unary(
-                '/blueapi.admin.v1.Admin/CreateDefaultBillingInfoRole',
-                request_serializer=admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.SerializeToString,
-                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+        self.CreateDefaultCostAccess = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateDefaultCostAccess',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateDefaultCostAccessRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.DefaultCostAccess.FromString,
                 )
-        self.UpdateDefaultBillingInfoRole = channel.unary_unary(
-                '/blueapi.admin.v1.Admin/UpdateDefaultBillingInfoRole',
-                request_serializer=admin_dot_v1_dot_admin__pb2.UpdateDefaultBillingInfoRoleRequest.SerializeToString,
+        self.UpdateDefaultCostAccess = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/UpdateDefaultCostAccess',
+                request_serializer=admin_dot_v1_dot_admin__pb2.UpdateDefaultCostAccessRequest.SerializeToString,
                 response_deserializer=api_dot_operation__pb2.Operation.FromString,
                 )
-        self.DeleteDefaultBillingInfoRole = channel.unary_unary(
-                '/blueapi.admin.v1.Admin/DeleteDefaultBillingInfoRole',
-                request_serializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultBillingInfoRoleRequest.SerializeToString,
+        self.DeleteDefaultCostAccess = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/DeleteDefaultCostAccess',
+                request_serializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultCostAccessRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.GetNotificationSettings = channel.unary_unary(
@@ -113,45 +113,45 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetDefaultBillingInfoTemplateUrl(self, request, context):
-        """Gets a CloudFormation launch URL for enabling cross-account access to your account's billing information.
-        Upon successful deployment, you need to validate the access by calling 'POST /admin/v1/aws/xacct/default'.
+    def GetDefaultCostAccessTemplateUrl(self, request, context):
+        """WORK-IN-PROGRESS: Gets a CloudFormation launch URL for enabling various cross-account access to your
+        account's cost information based on type.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDefaultBillingInfo(self, request, context):
-        """Lists the default cross-account role(s) attached to accounts under caller.
+    def ListDefaultCostAccess(self, request, context):
+        """WORK-IN-PROGRESS: Lists the default cross-account role(s) attached to accounts under caller.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetDefaultBillingInfo(self, request, context):
-        """Gets the current role attached to input account.
+    def GetDefaultCostAccess(self, request, context):
+        """WORK-IN-PROGRESS: Gets the current role attached to input account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateDefaultBillingInfoRole(self, request, context):
-        """Starts validation of a cross-account access stack deployment. If successful,
+    def CreateDefaultCostAccess(self, request, context):
+        """WORK-IN-PROGRESS: Starts validation of a cross-account access stack deployment. If successful,
         the new IAM role will be registered to the target account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateDefaultBillingInfoRole(self, request, context):
-        """Starts an update to an existing CloudFormation for template changes, if any.
+    def UpdateDefaultCostAccess(self, request, context):
+        """WORK-IN-PROGRESS: Starts an update to an existing CloudFormation for template changes, if any.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteDefaultBillingInfoRole(self, request, context):
-        """Deletes the current role attached to this target account. This does not delete the
+    def DeleteDefaultCostAccess(self, request, context):
+        """WORK-IN-PROGRESS: Deletes the current role attached to this target account. This does not delete the
         CloudFormation deployment in your account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -220,34 +220,34 @@ def add_AdminServicer_to_server(servicer, server):
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.SerializeToString,
             ),
-            'GetDefaultBillingInfoTemplateUrl': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDefaultBillingInfoTemplateUrl,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.FromString,
-                    response_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.SerializeToString,
+            'GetDefaultCostAccessTemplateUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDefaultCostAccessTemplateUrl,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlResponse.SerializeToString,
             ),
-            'ListDefaultBillingInfo': grpc.unary_stream_rpc_method_handler(
-                    servicer.ListDefaultBillingInfo,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.ListDefaultBillingInfoRequest.FromString,
-                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.SerializeToString,
+            'ListDefaultCostAccess': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListDefaultCostAccess,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.ListDefaultCostAccessRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultCostAccess.SerializeToString,
             ),
-            'GetDefaultBillingInfo': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDefaultBillingInfo,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.FromString,
-                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.SerializeToString,
+            'GetDefaultCostAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDefaultCostAccess,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultCostAccess.SerializeToString,
             ),
-            'CreateDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateDefaultBillingInfoRole,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.FromString,
-                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.SerializeToString,
+            'CreateDefaultCostAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDefaultCostAccess,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateDefaultCostAccessRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.DefaultCostAccess.SerializeToString,
             ),
-            'UpdateDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateDefaultBillingInfoRole,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateDefaultBillingInfoRoleRequest.FromString,
+            'UpdateDefaultCostAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDefaultCostAccess,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateDefaultCostAccessRequest.FromString,
                     response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
             ),
-            'DeleteDefaultBillingInfoRole': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteDefaultBillingInfoRole,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultBillingInfoRoleRequest.FromString,
+            'DeleteDefaultCostAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDefaultCostAccess,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultCostAccessRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetNotificationSettings': grpc.unary_unary_rpc_method_handler(
@@ -331,7 +331,7 @@ class Admin(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetDefaultBillingInfoTemplateUrl(request,
+    def GetDefaultCostAccessTemplateUrl(request,
             target,
             options=(),
             channel_credentials=None,
@@ -341,14 +341,14 @@ class Admin(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultBillingInfoTemplateUrl',
-            admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlRequest.SerializeToString,
-            admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoTemplateUrlResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultCostAccessTemplateUrl',
+            admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListDefaultBillingInfo(request,
+    def ListDefaultCostAccess(request,
             target,
             options=(),
             channel_credentials=None,
@@ -358,14 +358,14 @@ class Admin(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.admin.v1.Admin/ListDefaultBillingInfo',
-            admin_dot_v1_dot_admin__pb2.ListDefaultBillingInfoRequest.SerializeToString,
-            admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+        return grpc.experimental.unary_stream(request, target, '/blueapi.admin.v1.Admin/ListDefaultCostAccess',
+            admin_dot_v1_dot_admin__pb2.ListDefaultCostAccessRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.DefaultCostAccess.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetDefaultBillingInfo(request,
+    def GetDefaultCostAccess(request,
             target,
             options=(),
             channel_credentials=None,
@@ -375,14 +375,14 @@ class Admin(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultBillingInfo',
-            admin_dot_v1_dot_admin__pb2.GetDefaultBillingInfoRequest.SerializeToString,
-            admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetDefaultCostAccess',
+            admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.DefaultCostAccess.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateDefaultBillingInfoRole(request,
+    def CreateDefaultCostAccess(request,
             target,
             options=(),
             channel_credentials=None,
@@ -392,14 +392,14 @@ class Admin(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateDefaultBillingInfoRole',
-            admin_dot_v1_dot_admin__pb2.CreateDefaultBillingInfoRoleRequest.SerializeToString,
-            admin_dot_v1_dot_admin__pb2.DefaultBillingInfo.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateDefaultCostAccess',
+            admin_dot_v1_dot_admin__pb2.CreateDefaultCostAccessRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.DefaultCostAccess.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateDefaultBillingInfoRole(request,
+    def UpdateDefaultCostAccess(request,
             target,
             options=(),
             channel_credentials=None,
@@ -409,14 +409,14 @@ class Admin(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/UpdateDefaultBillingInfoRole',
-            admin_dot_v1_dot_admin__pb2.UpdateDefaultBillingInfoRoleRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/UpdateDefaultCostAccess',
+            admin_dot_v1_dot_admin__pb2.UpdateDefaultCostAccessRequest.SerializeToString,
             api_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteDefaultBillingInfoRole(request,
+    def DeleteDefaultCostAccess(request,
             target,
             options=(),
             channel_credentials=None,
@@ -426,8 +426,8 @@ class Admin(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteDefaultBillingInfoRole',
-            admin_dot_v1_dot_admin__pb2.DeleteDefaultBillingInfoRoleRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteDefaultCostAccess',
+            admin_dot_v1_dot_admin__pb2.DeleteDefaultCostAccessRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
