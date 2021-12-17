@@ -235,7 +235,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAccount(self, request, context):
-        """WORK-IN-PROGRESS: Gets a vendor account. This API includes all of the account's metadata. See
+        """Gets a vendor account. This API includes all of the account's metadata. See
         https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
