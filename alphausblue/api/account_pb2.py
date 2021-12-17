@@ -20,7 +20,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\017ApiAccountProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x11\x61pi/account.proto\x12\x0b\x62lueapi.api\x1a\x12\x61pi/keyvalue.proto\"L\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValueBT\n\x19\x63loud.alphaus.blueapi.apiB\x0f\x41piAccountProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x11\x61pi/account.proto\x12\x0b\x62lueapi.api\x1a\x12\x61pi/keyvalue.proto\"v\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValueBT\n\x19\x63loud.alphaus.blueapi.apiB\x0f\x41piAccountProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
   ,
   dependencies=[api_dot_keyvalue__pb2.DESCRIPTOR,])
 
@@ -50,7 +50,21 @@ _ACCOUNT = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='blueapi.api.Account.metadata', index=2,
+      name='orgId', full_name='blueapi.api.Account.orgId', index=2,
+      number=4, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='billingInternalId', full_name='blueapi.api.Account.billingInternalId', index=3,
+      number=5, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='metadata', full_name='blueapi.api.Account.metadata', index=4,
       number=3, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -69,7 +83,7 @@ _ACCOUNT = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=54,
-  serialized_end=130,
+  serialized_end=172,
 )
 
 _ACCOUNT.fields_by_name['metadata'].message_type = api_dot_keyvalue__pb2._KEYVALUE
