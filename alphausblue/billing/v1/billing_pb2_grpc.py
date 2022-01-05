@@ -40,6 +40,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.FromString,
                 )
+        self.ListUsageCostsDrift = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListUsageCostsDrift',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListUsageCostsDriftRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.UsageCostsDrift.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -81,6 +86,14 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListUsageCostsDrift(self, request, context):
+        """WORK-IN-PROGRESS: Returns the difference, if any, between the usage costs in your invoice and the latest
+        calculated usage costs. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -108,6 +121,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListAwsCalculationHistory,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.SerializeToString,
+            ),
+            'ListUsageCostsDrift': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListUsageCostsDrift,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListUsageCostsDriftRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.UsageCostsDrift.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -202,5 +220,22 @@ class Billing(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAwsCalculationHistory',
             billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListUsageCostsDrift(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListUsageCostsDrift',
+            billing_dot_v1_dot_billing__pb2.ListUsageCostsDriftRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.UsageCostsDrift.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
