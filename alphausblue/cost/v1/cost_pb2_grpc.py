@@ -257,7 +257,8 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCalculatorRunningAccounts(self, request, context):
-        """Lists the vendor cost calculator's queued accounts for calculation.
+        """Lists the vendor calculator's queued accounts for calculation. If result is non-empty, it means calculation is still in progress
+        for the returned accounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
