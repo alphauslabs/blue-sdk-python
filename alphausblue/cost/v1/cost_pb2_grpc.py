@@ -64,10 +64,10 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.GetCalculatorStatus = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/GetCalculatorStatus',
-                request_serializer=cost_dot_v1_dot_cost__pb2.GetCalculatorStatusRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculatorStatusResponse.FromString,
+        self.GetCalculatorRunStatus = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetCalculatorRunStatus',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetCalculatorRunStatusRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculatorRunStatusResponse.FromString,
                 )
         self.GetCalculatorConfig = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetCalculatorConfig',
@@ -256,8 +256,8 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCalculatorStatus(self, request, context):
-        """WORK-IN-PROGRESS: Gets the vendor cost calculator's current status.
+    def GetCalculatorRunStatus(self, request, context):
+        """WORK-IN-PROGRESS: Gets the vendor cost calculator's current calculation status.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -478,10 +478,10 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'GetCalculatorStatus': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCalculatorStatus,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculatorStatusRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.GetCalculatorStatusResponse.SerializeToString,
+            'GetCalculatorRunStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCalculatorRunStatus,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculatorRunStatusRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetCalculatorRunStatusResponse.SerializeToString,
             ),
             'GetCalculatorConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCalculatorConfig,
@@ -758,7 +758,7 @@ class Cost(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetCalculatorStatus(request,
+    def GetCalculatorRunStatus(request,
             target,
             options=(),
             channel_credentials=None,
@@ -768,9 +768,9 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCalculatorStatus',
-            cost_dot_v1_dot_cost__pb2.GetCalculatorStatusRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.GetCalculatorStatusResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCalculatorRunStatus',
+            cost_dot_v1_dot_cost__pb2.GetCalculatorRunStatusRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetCalculatorRunStatusResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
