@@ -257,7 +257,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCalculatorRunningAccounts(self, request, context):
-        """WORK-IN-PROGRESS: Lists the vendor cost calculator's queued accounts for calculation.
+        """Lists the vendor cost calculator's queued accounts for calculation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
