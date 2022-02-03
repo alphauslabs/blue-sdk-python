@@ -191,28 +191,21 @@ class CostServicer(object):
     """
 
     def ListPayerAccounts(self, request, context):
-        """Lists vendor payer accounts. For AWS, these are management accounts (formerly known
-        as master or payer accounts); for Azure, these are subscriptions, for GCP, these
-        are projects.
+        """Lists vendor payer accounts. For AWS, these are management accounts (formerly known as master or payer accounts); for Azure, these are subscriptions, for GCP, these are projects.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPayerAccount(self, request, context):
-        """Gets a vendor payer account. This API includes all of the account's metadata.
-        See https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
-        For AWS, this means a management account (formerly known as master or payer account);
-        for Azure, this means a subscription, for GCP, this means a project.
+        """Gets a vendor payer account. This API includes all of the account's metadata. See https://alphauslabs.github.io/blueapi/ for the list of supported attributes. For AWS, this means a management account (formerly known as master or payer account); for Azure, this means a subscription, for GCP, this means a project.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetPayerAccountImportHistory(self, request, context):
-        """Gets a payer account's import history, which is a list of timestamps our system tracks when the account's data are
-        imported to our system, which in turn, triggers processing. At the moment, this only supports AWS (CUR files).
-        You can also set {id} to `*` to return all payers' information under the organization.
+        """Gets a payer account's import history, which is a list of timestamps our system tracks when the account's data are imported to our system, which in turn, triggers processing. At the moment, this only supports AWS (CUR files). You can also set {id} to `*` to return all payers' information under the organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -240,8 +233,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAccount(self, request, context):
-        """Gets a vendor account. This API includes all of the account's metadata. See
-        https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
+        """Gets a vendor account. This API includes all of the account's metadata. See https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -262,8 +254,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCalculatorRunningAccounts(self, request, context):
-        """Lists the vendor calculator's queued accounts for calculation. If result is non-empty, it means calculation is still in progress
-        for the returned accounts. Only available in Ripple.
+        """Lists the vendor calculator's queued accounts for calculation. If result is non-empty, it means calculation is still in progress for the returned accounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -277,19 +268,14 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ImportCurFiles(self, request, context):
-        """Initiates an ondemand import of all registered CUR files. See
-        [https://help.alphaus.cloud/en/articles/3612555-ripple-aws-things-you-need-to-prepare-before-starting]
-        for more information.
+        """Initiates an ondemand import of all registered CUR files. See [https://help.alphaus.cloud/en/articles/3612555-ripple-aws-things-you-need-to-prepare-before-starting] for more information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CalculateCosts(self, request, context):
-        """Triggers monthly calculations for costs and invoices at either organization or billing group level.
-        For the AWS calculator, aggregation is done at daily and monthly level. Also, all occurrences of the
-        character `|` (pipe) in the CUR descriptions and tag key/values are replaced with the `/` (forward-slash)
-        character. This is due to the `|` character having a special designation in the data processing workflows.
+        """Triggers monthly calculations for costs and invoices at either organization or billing group level. For the AWS calculator, aggregation is done at daily and monthly level. Also, all occurrences of the character `|` (pipe) in the CUR descriptions and tag key/values are replaced with the `/` (forward-slash) character. This is due to the `|` character having a special designation in the data processing workflows.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -303,53 +289,42 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadCostAttributes(self, request, context):
-        """Reads the available cost attributes of an organization (Ripple) or billing group (Wave).
-        Similar to the `ReadCosts` API but without the aggregated usages and costs.
-        At the moment, the supported {vendor} is 'aws'. If datetime range parameters are
-        not set, month-to-date (current month) will be returned.
+        """Reads the available cost attributes of an organization (Ripple) or billing group (Wave). Similar to the `ReadCosts` API but without the aggregated usages and costs. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReadCosts(self, request, context):
-        """Reads the usage-based cost details of an organization (Ripple) or billing group (Wave).
-        At the moment, the supported {vendor} is 'aws'. If datetime range parameters are
-        not set, month-to-date (current month) will be returned.
+        """Reads the usage-based cost details of an organization (Ripple) or billing group (Wave). At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReadAdjustments(self, request, context):
-        """Reads the non-usage-based details of an organization (Ripple) or billing group (Wave).
-        This API covers non-usage-based adjustments, such as Fees, Credits, Discounts, Tax,
-        Upfront Fees, etc. At the moment, the supported {vendor} is 'aws'. If datetime
-        range parameters are not set, month-to-date (current month) will be returned.
+        """Reads the non-usage-based details of an organization (Ripple) or billing group (Wave). This API covers non-usage-based adjustments, such as Fees, Credits, Discounts, Tax, Upfront Fees, etc. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReadTagCosts(self, request, context):
-        """Reads the usage-based tag costs of a billing group. At the moment, the supported {vendor} is 
-        'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
+        """Reads the usage-based tag costs of a billing group. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReadNonTagCosts(self, request, context):
-        """Reads the usage-based non tag costs of a billing group. At the moment, the supported {vendor} is 
-        'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
+        """Reads the usage-based non tag costs of a billing group. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetForecasts(self, request, context):
-        """Fetches cost forecasts for the specified billing group.
-        Includes historical cost (up to previous month) and forecasted cost (up to three months for now).
+        """Fetches cost forecasts for the specified billing group. Includes historical cost (up to previous month) and forecasted cost (up to three months for now).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
