@@ -212,7 +212,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreatePayerAccount(self, request, context):
-        """Registers a vendor payer account.
+        """Registers a vendor payer account. This is now deprecated for AWS payer accounts. To register an AWS payer account, check out the 'CreateDefaultCostAccess' API.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
