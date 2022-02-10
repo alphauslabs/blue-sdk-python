@@ -25,7 +25,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"6\n&GetDefaultCostAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\"\x8b\x01\n\'GetDefaultCostAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\x12\x12\n\nexternalId\x18\x05 \x01(\t\"\x1e\n\x1cListDefaultCostAccessRequest\"-\n\x1bGetDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\xa8\x01\n\x11\x44\x65\x66\x61ultCostAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x12\n\nexternalId\x18\x03 \x01(\t\x12\x0f\n\x07stackId\x18\x04 \x01(\t\x12\x13\n\x0bstackRegion\x18\x05 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x13\n\x0blastUpdated\x18\x08 \x01(\t\"0\n\x1e\x43reateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1eUpdateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1e\x44\x65leteDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"4\n\x1fSaveNotificationSettingsRequest\x12\x11\n\tisEnabled\x18\x01 \x01(\x08\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xb5\x13\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xb7\x01\n\x1fGetDefaultCostAccessTemplateUrl\x12\x38.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest\x1a\x39.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/admin/v1/aws/xacct/dca\x12\x98\x01\n\x15ListDefaultCostAccess\x12..blueapi.admin.v1.ListDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\" /admin/v1/aws/xacct/dca/all:read0\x01\x12\x94\x01\n\x14GetDefaultCostAccess\x12-.blueapi.admin.v1.GetDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\x12 /admin/v1/aws/xacct/dca/{target}\x12\x94\x01\n\x17\x43reateDefaultCostAccess\x12\x30.blueapi.admin.v1.CreateDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/admin/v1/aws/xacct/dca:\x01*\x12\x8d\x01\n\x17UpdateDefaultCostAccess\x12\x30.blueapi.admin.v1.UpdateDefaultCostAccessRequest\x1a\x16.blueapi.api.Operation\"(\x82\xd3\xe4\x93\x02\"\x1a /admin/v1/aws/xacct/dca/{target}\x12\x8d\x01\n\x17\x44\x65leteDefaultCostAccess\x12\x30.blueapi.admin.v1.DeleteDefaultCostAccessRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /admin/v1/aws/xacct/dca/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
+  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"6\n&GetDefaultCostAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\"\x8b\x01\n\'GetDefaultCostAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\x12\x12\n\nexternalId\x18\x05 \x01(\t\"\x1e\n\x1cListDefaultCostAccessRequest\"-\n\x1bGetDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\xa8\x01\n\x11\x44\x65\x66\x61ultCostAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x12\n\nexternalId\x18\x03 \x01(\t\x12\x0f\n\x07stackId\x18\x04 \x01(\t\x12\x13\n\x0bstackRegion\x18\x05 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x13\n\x0blastUpdated\x18\x08 \x01(\t\"0\n\x1e\x43reateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1eUpdateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1e\x44\x65leteDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"4\n\x1fSaveNotificationSettingsRequest\x12\x11\n\tisEnabled\x18\x01 \x01(\x08\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\")\n\'CreateDefaultNotificationChannelRequest\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xe2\x14\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xb7\x01\n\x1fGetDefaultCostAccessTemplateUrl\x12\x38.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest\x1a\x39.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/admin/v1/aws/xacct/dca\x12\x98\x01\n\x15ListDefaultCostAccess\x12..blueapi.admin.v1.ListDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\" /admin/v1/aws/xacct/dca/all:read0\x01\x12\x94\x01\n\x14GetDefaultCostAccess\x12-.blueapi.admin.v1.GetDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\x12 /admin/v1/aws/xacct/dca/{target}\x12\x94\x01\n\x17\x43reateDefaultCostAccess\x12\x30.blueapi.admin.v1.CreateDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/admin/v1/aws/xacct/dca:\x01*\x12\x8d\x01\n\x17UpdateDefaultCostAccess\x12\x30.blueapi.admin.v1.UpdateDefaultCostAccessRequest\x1a\x16.blueapi.api.Operation\"(\x82\xd3\xe4\x93\x02\"\x1a /admin/v1/aws/xacct/dca/{target}\x12\x8d\x01\n\x17\x44\x65leteDefaultCostAccess\x12\x30.blueapi.admin.v1.DeleteDefaultCostAccessRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /admin/v1/aws/xacct/dca/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\xaa\x01\n CreateDefaultNotificationChannel\x12\x39.blueapi.admin.v1.CreateDefaultNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\")\x82\xd3\xe4\x93\x02#\"\x1e/admin/v1/notification/default:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
   ,
   dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_notification__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
 
@@ -685,6 +685,31 @@ _CREATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
 )
 
 
+_CREATEDEFAULTNOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
+  name='CreateDefaultNotificationChannelRequest',
+  full_name='blueapi.admin.v1.CreateDefaultNotificationChannelRequest',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=None,
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=1485,
+  serialized_end=1526,
+)
+
+
 _UPDATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   name='UpdateNotificationChannelRequest',
   full_name='blueapi.admin.v1.UpdateNotificationChannelRequest',
@@ -747,8 +772,8 @@ _UPDATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1486,
-  serialized_end=1690,
+  serialized_start=1529,
+  serialized_end=1733,
 )
 
 
@@ -779,8 +804,8 @@ _DELETENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=1692,
-  serialized_end=1738,
+  serialized_start=1735,
+  serialized_end=1781,
 )
 
 _LISTACCOUNTGROUPSRESPONSE.fields_by_name['accountGroups'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
@@ -810,6 +835,7 @@ DESCRIPTOR.message_types_by_name['ListNotificationChannelsRequest'] = _LISTNOTIF
 DESCRIPTOR.message_types_by_name['ListNotificationChannelsResponse'] = _LISTNOTIFICATIONCHANNELSRESPONSE
 DESCRIPTOR.message_types_by_name['GetNotificationChannelRequest'] = _GETNOTIFICATIONCHANNELREQUEST
 DESCRIPTOR.message_types_by_name['CreateNotificationChannelRequest'] = _CREATENOTIFICATIONCHANNELREQUEST
+DESCRIPTOR.message_types_by_name['CreateDefaultNotificationChannelRequest'] = _CREATEDEFAULTNOTIFICATIONCHANNELREQUEST
 DESCRIPTOR.message_types_by_name['UpdateNotificationChannelRequest'] = _UPDATENOTIFICATIONCHANNELREQUEST
 DESCRIPTOR.message_types_by_name['DeleteNotificationChannelRequest'] = _DELETENOTIFICATIONCHANNELREQUEST
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
@@ -940,6 +966,13 @@ CreateNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('Cre
   })
 _sym_db.RegisterMessage(CreateNotificationChannelRequest)
 
+CreateDefaultNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('CreateDefaultNotificationChannelRequest', (_message.Message,), {
+  'DESCRIPTOR' : _CREATEDEFAULTNOTIFICATIONCHANNELREQUEST,
+  '__module__' : 'admin.v1.admin_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.admin.v1.CreateDefaultNotificationChannelRequest)
+  })
+_sym_db.RegisterMessage(CreateDefaultNotificationChannelRequest)
+
 UpdateNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('UpdateNotificationChannelRequest', (_message.Message,), {
   'DESCRIPTOR' : _UPDATENOTIFICATIONCHANNELREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
@@ -964,8 +997,8 @@ _ADMIN = _descriptor.ServiceDescriptor(
   index=0,
   serialized_options=b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/',
   create_key=_descriptor._internal_create_key,
-  serialized_start=1741,
-  serialized_end=4226,
+  serialized_start=1784,
+  serialized_end=4442,
   methods=[
   _descriptor.MethodDescriptor(
     name='ListAccountGroups',
@@ -1098,9 +1131,19 @@ _ADMIN = _descriptor.ServiceDescriptor(
     create_key=_descriptor._internal_create_key,
   ),
   _descriptor.MethodDescriptor(
+    name='CreateDefaultNotificationChannel',
+    full_name='blueapi.admin.v1.Admin.CreateDefaultNotificationChannel',
+    index=13,
+    containing_service=None,
+    input_type=_CREATEDEFAULTNOTIFICATIONCHANNELREQUEST,
+    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
+    serialized_options=b'\202\323\344\223\002#\"\036/admin/v1/notification/default:\001*',
+    create_key=_descriptor._internal_create_key,
+  ),
+  _descriptor.MethodDescriptor(
     name='UpdateNotificationChannel',
     full_name='blueapi.admin.v1.Admin.UpdateNotificationChannel',
-    index=13,
+    index=14,
     containing_service=None,
     input_type=_UPDATENOTIFICATIONCHANNELREQUEST,
     output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
@@ -1110,7 +1153,7 @@ _ADMIN = _descriptor.ServiceDescriptor(
   _descriptor.MethodDescriptor(
     name='DeleteNotificationChannel',
     full_name='blueapi.admin.v1.Admin.DeleteNotificationChannel',
-    index=14,
+    index=15,
     containing_service=None,
     input_type=_DELETENOTIFICATIONCHANNELREQUEST,
     output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,

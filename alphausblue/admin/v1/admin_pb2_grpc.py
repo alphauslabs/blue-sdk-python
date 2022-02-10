@@ -83,6 +83,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.CreateNotificationChannelRequest.SerializeToString,
                 response_deserializer=api_dot_notification__pb2.NotificationChannel.FromString,
                 )
+        self.CreateDefaultNotificationChannel = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateDefaultNotificationChannel',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateDefaultNotificationChannelRequest.SerializeToString,
+                response_deserializer=api_dot_notification__pb2.NotificationChannel.FromString,
+                )
         self.UpdateNotificationChannel = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/UpdateNotificationChannel',
                 request_serializer=admin_dot_v1_dot_admin__pb2.UpdateNotificationChannelRequest.SerializeToString,
@@ -114,8 +119,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetDefaultCostAccessTemplateUrl(self, request, context):
-        """Gets a CloudFormation launch URL for enabling the default cross-account access to your account's cost information based on type.
-        See comments on the type for more information on what each template does.
+        """Gets a CloudFormation launch URL for enabling the default cross-account access to your account's cost information based on type. See comments on the type for more information on what each template does.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -136,24 +140,21 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDefaultCostAccess(self, request, context):
-        """Starts validation of a default cross-account access stack deployment. If successful, the
-        IAM role created from the CloudFormation stack will be registered to the target.
+        """Starts validation of a default cross-account access stack deployment. If successful, the IAM role created from the CloudFormation stack will be registered to the target.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateDefaultCostAccess(self, request, context):
-        """Starts an update to an existing default cross-account access CloudFormation stack for template changes, if any.
-        Only call this API if the status of your default cross-account access is 'outdated'.
+        """Starts an update to an existing default cross-account access CloudFormation stack for template changes, if any. Only call this API if the status of your default cross-account access is 'outdated'.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteDefaultCostAccess(self, request, context):
-        """Deletes the current default cross-account access role attached to this target account.
-        This does not delete the CloudFormation deployment in your account.
+        """Deletes the current default cross-account access role attached to this target account. This does not delete the CloudFormation deployment in your account.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -189,6 +190,13 @@ class AdminServicer(object):
 
     def CreateNotificationChannel(self, request, context):
         """WORK-IN-PROGRESS: Creates notification settings for login user's organization or group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateDefaultNotificationChannel(self, request, context):
+        """WORK-IN-PROGRESS: Creates a default notification channel of type email based on the caller's primary email address.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -274,6 +282,11 @@ def add_AdminServicer_to_server(servicer, server):
             'CreateNotificationChannel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateNotificationChannel,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.CreateNotificationChannelRequest.FromString,
+                    response_serializer=api_dot_notification__pb2.NotificationChannel.SerializeToString,
+            ),
+            'CreateDefaultNotificationChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDefaultNotificationChannel,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateDefaultNotificationChannelRequest.FromString,
                     response_serializer=api_dot_notification__pb2.NotificationChannel.SerializeToString,
             ),
             'UpdateNotificationChannel': grpc.unary_unary_rpc_method_handler(
@@ -514,6 +527,23 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateNotificationChannel',
             admin_dot_v1_dot_admin__pb2.CreateNotificationChannelRequest.SerializeToString,
+            api_dot_notification__pb2.NotificationChannel.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateDefaultNotificationChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateDefaultNotificationChannel',
+            admin_dot_v1_dot_admin__pb2.CreateDefaultNotificationChannelRequest.SerializeToString,
             api_dot_notification__pb2.NotificationChannel.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
