@@ -19,7 +19,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\031cloud.alphaus.blueapi.apiB\024ApiNotificationProtoZ&github.com/alphauslabs/blue-sdk-go/api',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x61pi/notification.proto\x12\x0b\x62lueapi.api\"\'\n\x14NotificationSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\"\xe1\x01\n\x13NotificationChannel\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x0f\n\x07\x64\x65\x66\x61ult\x18\x03 \x01(\x08\x12\x0c\n\x04name\x18\x04 \x01(\t\x12\x0c\n\x04type\x18\x05 \x01(\t\x12(\n\x05\x65mail\x18\x06 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x07 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x08 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"2\n\x0c\x45mailChannel\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x12\n\nrecipients\x18\x02 \x03(\t\"`\n\x0cSlackChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\x12\x11\n\tchannelId\x18\x02 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x18\n\x10\x63onfigurationUrl\x18\x04 \x01(\t\"$\n\x0eMSTeamsChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\tBY\n\x19\x63loud.alphaus.blueapi.apiB\x14\x41piNotificationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
+  serialized_pb=b'\n\x16\x61pi/notification.proto\x12\x0b\x62lueapi.api\"?\n\x14NotificationSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x16\n\x0e\x64\x65\x66\x61ultChannel\x18\x02 \x01(\t\"\xd0\x01\n\x13NotificationChannel\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12(\n\x05\x65mail\x18\x05 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x06 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x07 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"2\n\x0c\x45mailChannel\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x12\n\nrecipients\x18\x02 \x03(\t\"`\n\x0cSlackChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\x12\x11\n\tchannelId\x18\x02 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x18\n\x10\x63onfigurationUrl\x18\x04 \x01(\t\"$\n\x0eMSTeamsChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\tBY\n\x19\x63loud.alphaus.blueapi.apiB\x14\x41piNotificationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3'
 )
 
 
@@ -40,6 +40,13 @@ _NOTIFICATIONSETTINGS = _descriptor.Descriptor(
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='defaultChannel', full_name='blueapi.api.NotificationSettings.defaultChannel', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
   ],
   extensions=[
   ],
@@ -53,7 +60,7 @@ _NOTIFICATIONSETTINGS = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=39,
-  serialized_end=78,
+  serialized_end=102,
 )
 
 
@@ -80,43 +87,36 @@ _NOTIFICATIONCHANNEL = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='default', full_name='blueapi.api.NotificationChannel.default', index=2,
-      number=3, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
+      name='name', full_name='blueapi.api.NotificationChannel.name', index=2,
+      number=3, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='name', full_name='blueapi.api.NotificationChannel.name', index=3,
+      name='type', full_name='blueapi.api.NotificationChannel.type', index=3,
       number=4, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=b"".decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='type', full_name='blueapi.api.NotificationChannel.type', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
+      name='email', full_name='blueapi.api.NotificationChannel.email', index=4,
+      number=5, type=11, cpp_type=10, label=1,
+      has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='email', full_name='blueapi.api.NotificationChannel.email', index=5,
+      name='slack', full_name='blueapi.api.NotificationChannel.slack', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='slack', full_name='blueapi.api.NotificationChannel.slack', index=6,
+      name='msteams', full_name='blueapi.api.NotificationChannel.msteams', index=6,
       number=7, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='msteams', full_name='blueapi.api.NotificationChannel.msteams', index=7,
-      number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
@@ -133,8 +133,8 @@ _NOTIFICATIONCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=81,
-  serialized_end=306,
+  serialized_start=105,
+  serialized_end=313,
 )
 
 
@@ -172,8 +172,8 @@ _EMAILCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=308,
-  serialized_end=358,
+  serialized_start=315,
+  serialized_end=365,
 )
 
 
@@ -225,8 +225,8 @@ _SLACKCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=360,
-  serialized_end=456,
+  serialized_start=367,
+  serialized_end=463,
 )
 
 
@@ -257,8 +257,8 @@ _MSTEAMSCHANNEL = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=458,
-  serialized_end=494,
+  serialized_start=465,
+  serialized_end=501,
 )
 
 _NOTIFICATIONCHANNEL.fields_by_name['email'].message_type = _EMAILCHANNEL
