@@ -89,10 +89,10 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.FromString,
                 )
-        self.GetCalculationsSchedule = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/GetCalculationsSchedule',
-                request_serializer=cost_dot_v1_dot_cost__pb2.GetCalculationsScheduleRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.CalculationsSchedule.FromString,
+        self.ListCalculationsSchedule = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ListCalculationsSchedule',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleResponse.FromString,
                 )
         self.CreateCalculationsSchedule = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/CreateCalculationsSchedule',
@@ -303,8 +303,8 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCalculationsSchedule(self, request, context):
-        """WORK-IN-PROGRESS: Gets the schedule of your monthly calculations. Only available in Ripple.
+    def ListCalculationsSchedule(self, request, context):
+        """WORK-IN-PROGRESS: Lists the schedules of your monthly calculations. At the moment, only one schedule is allowed per account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -530,10 +530,10 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.SerializeToString,
             ),
-            'GetCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCalculationsSchedule,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculationsScheduleRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.CalculationsSchedule.SerializeToString,
+            'ListCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCalculationsSchedule,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleResponse.SerializeToString,
             ),
             'CreateCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCalculationsSchedule,
@@ -890,7 +890,7 @@ class Cost(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetCalculationsSchedule(request,
+    def ListCalculationsSchedule(request,
             target,
             options=(),
             channel_credentials=None,
@@ -900,9 +900,9 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCalculationsSchedule',
-            cost_dot_v1_dot_cost__pb2.GetCalculationsScheduleRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.CalculationsSchedule.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCalculationsSchedule',
+            cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
