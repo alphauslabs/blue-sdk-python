@@ -89,10 +89,10 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.FromString,
                 )
-        self.ListCalculationsSchedule = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/ListCalculationsSchedule',
-                request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleResponse.FromString,
+        self.ListCalculationsSchedules = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ListCalculationsSchedules',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsSchedulesRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsSchedulesResponse.FromString,
                 )
         self.CreateCalculationsSchedule = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/CreateCalculationsSchedule',
@@ -303,7 +303,7 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListCalculationsSchedule(self, request, context):
+    def ListCalculationsSchedules(self, request, context):
         """WORK-IN-PROGRESS: Lists the schedules of your monthly calculations. At the moment, only one schedule is allowed per account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -311,7 +311,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateCalculationsSchedule(self, request, context):
-        """WORK-IN-PROGRESS: Creates a schedule of your monthly calculations.  Only available in Ripple.
+        """WORK-IN-PROGRESS: Creates a schedule to trigger your monthly calculations.  Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -530,10 +530,10 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.SerializeToString,
             ),
-            'ListCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListCalculationsSchedule,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleResponse.SerializeToString,
+            'ListCalculationsSchedules': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCalculationsSchedules,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsSchedulesRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsSchedulesResponse.SerializeToString,
             ),
             'CreateCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCalculationsSchedule,
@@ -890,7 +890,7 @@ class Cost(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListCalculationsSchedule(request,
+    def ListCalculationsSchedules(request,
             target,
             options=(),
             channel_credentials=None,
@@ -900,9 +900,9 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCalculationsSchedule',
-            cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.ListCalculationsScheduleResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCalculationsSchedules',
+            cost_dot_v1_dot_cost__pb2.ListCalculationsSchedulesRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ListCalculationsSchedulesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
