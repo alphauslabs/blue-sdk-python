@@ -89,6 +89,21 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.FromString,
                 )
+        self.GetCalculationsSchedule = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetCalculationsSchedule',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetCalculationsScheduleRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.CalculationsSchedule.FromString,
+                )
+        self.CreateCalculationsSchedule = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/CreateCalculationsSchedule',
+                request_serializer=cost_dot_v1_dot_cost__pb2.CreateCalculationsScheduleRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.CalculationsSchedule.FromString,
+                )
+        self.DeleteCalculationsSchedule = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/DeleteCalculationsSchedule',
+                request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ReadCostAttributes = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ReadCostAttributes',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadCostAttributesRequest.SerializeToString,
@@ -283,6 +298,27 @@ class CostServicer(object):
 
     def ListCalculationsHistory(self, request, context):
         """Lists vendor costs calculations history and statuses.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCalculationsSchedule(self, request, context):
+        """WORK-IN-PROGRESS: Gets the schedule of your monthly calculations. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCalculationsSchedule(self, request, context):
+        """WORK-IN-PROGRESS: Creates a schedule of your monthly calculations.  Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCalculationsSchedule(self, request, context):
+        """WORK-IN-PROGRESS: Deletes the schedule of your monthly calculations. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -493,6 +529,21 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ListCalculationsHistory,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.SerializeToString,
+            ),
+            'GetCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCalculationsSchedule,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculationsScheduleRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.CalculationsSchedule.SerializeToString,
+            ),
+            'CreateCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCalculationsSchedule,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.CreateCalculationsScheduleRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.CalculationsSchedule.SerializeToString,
+            ),
+            'DeleteCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCalculationsSchedule,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ReadCostAttributes': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadCostAttributes,
@@ -835,6 +886,57 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCalculationsHistory',
             cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.ListCalculationsHistoryResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCalculationsSchedule(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCalculationsSchedule',
+            cost_dot_v1_dot_cost__pb2.GetCalculationsScheduleRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.CalculationsSchedule.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCalculationsSchedule(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateCalculationsSchedule',
+            cost_dot_v1_dot_cost__pb2.CreateCalculationsScheduleRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.CalculationsSchedule.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCalculationsSchedule(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteCalculationsSchedule',
+            cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
