@@ -282,7 +282,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCalculationsHistory(self, request, context):
-        """Lists vendor costs calculations history and statuses. Note that status information is sometimes unstable.
+        """Lists vendor costs calculations history and statuses.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')

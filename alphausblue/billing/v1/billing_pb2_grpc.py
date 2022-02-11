@@ -87,8 +87,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListUsageCostsDrift(self, request, context):
-        """WORK-IN-PROGRESS: Returns a list of accounts that have been updated after invoice along
-        with the differences in costs, if any. Only available in Ripple.
+        """WORK-IN-PROGRESS: Returns a list of accounts that have been updated after invoice along with the differences in costs, if any. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
