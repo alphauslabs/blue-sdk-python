@@ -161,28 +161,28 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetNotificationSettings(self, request, context):
-        """WORK-IN-PROGRESS: Get notification settings for login user's organization or group.
+        """Get notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SaveNotificationSettings(self, request, context):
-        """WORK-IN-PROGRESS: Creates or updates notification settings for login user's organization or group.
+        """Creates or updates notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListNotificationChannels(self, request, context):
-        """WORK-IN-PROGRESS: Lists all notification channels for login user's organization or group.
+        """Lists all notification channels for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Gets notification channel for login user's organization or group.
+        """Gets notification channel for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -196,7 +196,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateDefaultNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Creates a default notification channel of type email based on the caller's primary email address.
+        """Creates a default notification channel of type email based on the caller's primary email address.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -210,7 +210,7 @@ class AdminServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteNotificationChannel(self, request, context):
-        """WORK-IN-PROGRESS: Deletes notification settings for login user's organization or group.
+        """Deletes notification settings for login user's organization or group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
