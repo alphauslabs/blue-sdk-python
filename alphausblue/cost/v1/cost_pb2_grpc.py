@@ -304,21 +304,21 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCalculationsSchedules(self, request, context):
-        """WORK-IN-PROGRESS: Lists the schedules of your monthly calculations. Only available in Ripple.
+        """Lists the schedules of your monthly calculations. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateCalculationsSchedule(self, request, context):
-        """WORK-IN-PROGRESS: Creates a schedule to trigger your monthly calculations. At the moment, only one schedule is allowed per account. Only available in Ripple.
+        """Creates a schedule to trigger your monthly calculations. At the moment, only one schedule is allowed per account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteCalculationsSchedule(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the schedule of your monthly calculations. Only available in Ripple.
+        """Deletes the schedule of your monthly calculations. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
