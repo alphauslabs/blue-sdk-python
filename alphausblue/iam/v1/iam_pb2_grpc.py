@@ -206,50 +206,42 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateGroupRootUser(self, request, context):
-        """WORK IN PROGRESS:
-        Creates a new root user for a billing group or access group.
+        """WORK-IN-PROGRESS: Creates a new root user for a billing group or access group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListGroupRootUsers(self, request, context):
-        """WORK IN PROGRESS
-        Retrieves all the existing group root users asscoiated with the organization.
+        """WORK-IN-PROGRESS: Retrieves all the existing group root users asscoiated with the organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetGroupRootUser(self, request, context):
-        """WORK IN PROGRESS:
-        Retrieves an group root user.
+        """WORK-IN-PROGRESS: Retrieves a group root user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteGroupRootUser(self, request, context):
-        """WORK IN PROGRESS
-        Deletes an existing group root user.
+        """WORK-IN-PROGRESS: Deletes an existing group root user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetFeatureFlags(self, request, context):
-        """WORK IN PROGRESS:
-        Retrieves the features available to a user on an Alphaus product. For a list of
-        valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
+        """WORK-IN-PROGRESS: Retrieves the features available to a user on an Alphaus product. For a list of valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateFeatureFlags(self, request, context):
-        """WORK IN PROGRESS:
-        Updates the features available to a user on an Alphaus product. For a list of
-        valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
+        """WORK-IN-PROGRESS: Updates the features available to a user on an Alphaus product. For a list of valid feature flags, see our documentation at https://alphauslabs.github.io/blueapi/apis/iam.html.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -277,8 +269,7 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListPermissions(self, request, context):
-        """Lists all permissions based on the input's scope. For reference, supported
-        permissions can be found on [https://github.com/mobingi/rbac-permissions].
+        """Lists all permissions based on the input's scope. For reference, supported permissions can be found on [https://github.com/mobingi/rbac-permissions].
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -292,10 +283,7 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateRole(self, request, context):
-        """Creates a role. If your `permissions` list contains an `Admin` entry, all other
-        entries will be discarded except `Admin`. Roles are root user-level. That means
-        all roles created by the root user, or any subuser that has permissions to
-        create roles, are available to all subusers.
+        """Creates a role. If your `permissions` list contains an `Admin` entry, all other entries will be discarded except `Admin`. Roles are root user-level. That means all roles created by the root user, or any subuser that has permissions to create roles, are available to all subusers.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -323,16 +311,14 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateUserRoleMapping(self, request, context):
-        """Maps roles to a subuser. You can only map (or attach) up to 5 roles to a user per namespace.
-        There is no limit for filtering rules per user.
+        """Maps roles to a subuser. You can only map (or attach) up to 5 roles to a user per namespace. There is no limit for filtering rules per user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateUserRoleMapping(self, request, context):
-        """Updates user-to-role mappings. You can only map (or attach) up to 5 roles to a user per namespace.
-        There is no limit for filtering rules per user.
+        """Updates user-to-role mappings. You can only map (or attach) up to 5 roles to a user per namespace. There is no limit for filtering rules per user.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -367,8 +353,7 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateIpFilter(self, request, context):
-        """Creates an IP filter item for IP blacklisting or whitelisting. At the moment,
-        this API is only available to root users.
+        """Creates an IP filter item for IP blacklisting or whitelisting. At the moment, this API is only available to root users.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
