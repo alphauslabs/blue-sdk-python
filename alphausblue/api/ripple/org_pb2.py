@@ -3,6 +3,7 @@
 # source: api/ripple/org.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -13,106 +14,12 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='api/ripple/org.proto',
-  package='blueapi.api.ripple',
-  syntax='proto3',
-  serialized_options=b'\n cloud.alphaus.blueapi.api.rippleB\021ApiRippleOrgProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61pi/ripple/org.proto\x12\x12\x62lueapi.api.ripple\"\x8c\x01\n\x03Org\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x37\n\x08metadata\x18\x03 \x03(\x0b\x32%.blueapi.api.ripple.Org.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x64\n cloud.alphaus.blueapi.api.rippleB\x11\x41piRippleOrgProtoZ-github.com/alphauslabs/blue-sdk-go/api/rippleb\x06proto3'
-)
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61pi/ripple/org.proto\x12\x12\x62lueapi.api.ripple\"\x8c\x01\n\x03Org\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x37\n\x08metadata\x18\x03 \x03(\x0b\x32%.blueapi.api.ripple.Org.MetadataEntry\x1a/\n\rMetadataEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\x64\n cloud.alphaus.blueapi.api.rippleB\x11\x41piRippleOrgProtoZ-github.com/alphauslabs/blue-sdk-go/api/rippleb\x06proto3')
 
 
 
-
-_ORG_METADATAENTRY = _descriptor.Descriptor(
-  name='MetadataEntry',
-  full_name='blueapi.api.ripple.Org.MetadataEntry',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='key', full_name='blueapi.api.ripple.Org.MetadataEntry.key', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='value', full_name='blueapi.api.ripple.Org.MetadataEntry.value', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=b'8\001',
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=138,
-  serialized_end=185,
-)
-
-_ORG = _descriptor.Descriptor(
-  name='Org',
-  full_name='blueapi.api.ripple.Org',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='blueapi.api.ripple.Org.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='email', full_name='blueapi.api.ripple.Org.email', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='blueapi.api.ripple.Org.metadata', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[_ORG_METADATAENTRY, ],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=45,
-  serialized_end=185,
-)
-
-_ORG_METADATAENTRY.containing_type = _ORG
-_ORG.fields_by_name['metadata'].message_type = _ORG_METADATAENTRY
-DESCRIPTOR.message_types_by_name['Org'] = _ORG
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_ORG = DESCRIPTOR.message_types_by_name['Org']
+_ORG_METADATAENTRY = _ORG.nested_types_by_name['MetadataEntry']
 Org = _reflection.GeneratedProtocolMessageType('Org', (_message.Message,), {
 
   'MetadataEntry' : _reflection.GeneratedProtocolMessageType('MetadataEntry', (_message.Message,), {
@@ -128,7 +35,14 @@ Org = _reflection.GeneratedProtocolMessageType('Org', (_message.Message,), {
 _sym_db.RegisterMessage(Org)
 _sym_db.RegisterMessage(Org.MetadataEntry)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-_ORG_METADATAENTRY._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n cloud.alphaus.blueapi.api.rippleB\021ApiRippleOrgProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple'
+  _ORG_METADATAENTRY._options = None
+  _ORG_METADATAENTRY._serialized_options = b'8\001'
+  _ORG._serialized_start=45
+  _ORG._serialized_end=185
+  _ORG_METADATAENTRY._serialized_start=138
+  _ORG_METADATAENTRY._serialized_end=185
 # @@protoc_insertion_point(module_scope)

@@ -3,6 +3,7 @@
 # source: admin/v1/admin.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -19,834 +20,31 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='admin/v1/admin.proto',
-  package='blueapi.admin.v1',
-  syntax='proto3',
-  serialized_options=b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"6\n&GetDefaultCostAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\"\x8b\x01\n\'GetDefaultCostAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\x12\x12\n\nexternalId\x18\x05 \x01(\t\"\x1e\n\x1cListDefaultCostAccessRequest\"-\n\x1bGetDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\xa8\x01\n\x11\x44\x65\x66\x61ultCostAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x12\n\nexternalId\x18\x03 \x01(\t\x12\x0f\n\x07stackId\x18\x04 \x01(\t\x12\x13\n\x0bstackRegion\x18\x05 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x13\n\x0blastUpdated\x18\x08 \x01(\t\"0\n\x1e\x43reateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1eUpdateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1e\x44\x65leteDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"J\n\x1fSaveNotificationSettingsRequest\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x16\n\x0e\x64\x65\x66\x61ultChannel\x18\x02 \x01(\t\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\")\n\'CreateDefaultNotificationChannelRequest\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xe2\x14\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xb7\x01\n\x1fGetDefaultCostAccessTemplateUrl\x12\x38.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest\x1a\x39.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/admin/v1/aws/xacct/dca\x12\x98\x01\n\x15ListDefaultCostAccess\x12..blueapi.admin.v1.ListDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\" /admin/v1/aws/xacct/dca/all:read0\x01\x12\x94\x01\n\x14GetDefaultCostAccess\x12-.blueapi.admin.v1.GetDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\x12 /admin/v1/aws/xacct/dca/{target}\x12\x94\x01\n\x17\x43reateDefaultCostAccess\x12\x30.blueapi.admin.v1.CreateDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/admin/v1/aws/xacct/dca:\x01*\x12\x8d\x01\n\x17UpdateDefaultCostAccess\x12\x30.blueapi.admin.v1.UpdateDefaultCostAccessRequest\x1a\x16.blueapi.api.Operation\"(\x82\xd3\xe4\x93\x02\"\x1a /admin/v1/aws/xacct/dca/{target}\x12\x8d\x01\n\x17\x44\x65leteDefaultCostAccess\x12\x30.blueapi.admin.v1.DeleteDefaultCostAccessRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /admin/v1/aws/xacct/dca/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\xaa\x01\n CreateDefaultNotificationChannel\x12\x39.blueapi.admin.v1.CreateDefaultNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\")\x82\xd3\xe4\x93\x02#\"\x1e/admin/v1/notification/default:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3'
-  ,
-  dependencies=[api_dot_accountgroup__pb2.DESCRIPTOR,api_dot_notification__pb2.DESCRIPTOR,api_dot_operation__pb2.DESCRIPTOR,google_dot_api_dot_annotations__pb2.DESCRIPTOR,google_dot_protobuf_dot_empty__pb2.DESCRIPTOR,protoc__gen__openapiv2_dot_options_dot_annotations__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61\x64min/v1/admin.proto\x12\x10\x62lueapi.admin.v1\x1a\x16\x61pi/accountgroup.proto\x1a\x16\x61pi/notification.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1a\n\x18ListAccountGroupsRequest\"M\n\x19ListAccountGroupsResponse\x12\x30\n\raccountGroups\x18\x01 \x03(\x0b\x32\x19.blueapi.api.AccountGroup\"$\n\x16GetAccountGroupRequest\x12\n\n\x02id\x18\x01 \x01(\t\"G\n\x17GetAccountGroupResponse\x12,\n\tacctGroup\x18\x01 \x01(\x0b\x32\x19.blueapi.api.AccountGroup\"6\n&GetDefaultCostAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\"\x8b\x01\n\'GetDefaultCostAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\x12\x12\n\nexternalId\x18\x05 \x01(\t\"\x1e\n\x1cListDefaultCostAccessRequest\"-\n\x1bGetDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\xa8\x01\n\x11\x44\x65\x66\x61ultCostAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x12\n\nexternalId\x18\x03 \x01(\t\x12\x0f\n\x07stackId\x18\x04 \x01(\t\x12\x13\n\x0bstackRegion\x18\x05 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x13\n\x0blastUpdated\x18\x08 \x01(\t\"0\n\x1e\x43reateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1eUpdateDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"0\n\x1e\x44\x65leteDefaultCostAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\" \n\x1eGetNotificationSettingsRequest\"J\n\x1fSaveNotificationSettingsRequest\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x16\n\x0e\x64\x65\x66\x61ultChannel\x18\x02 \x01(\t\"!\n\x1fListNotificationChannelsRequest\"V\n ListNotificationChannelsResponse\x12\x32\n\x08\x63hannels\x18\x01 \x03(\x0b\x32 .blueapi.api.NotificationChannel\"+\n\x1dGetNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\xc0\x01\n CreateNotificationChannelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x0c\n\x04type\x18\x02 \x01(\t\x12(\n\x05\x65mail\x18\x03 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x04 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x05 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\")\n\'CreateDefaultNotificationChannelRequest\"\xcc\x01\n UpdateNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\t\x12(\n\x05\x65mail\x18\x04 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x05 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x06 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\".\n DeleteNotificationChannelRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xe2\x14\n\x05\x41\x64min\x12\x8c\x01\n\x11ListAccountGroups\x12*.blueapi.admin.v1.ListAccountGroupsRequest\x1a+.blueapi.admin.v1.ListAccountGroupsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/admin/v1/acctgroups0\x01\x12\x89\x01\n\x0fGetAccountGroup\x12(.blueapi.admin.v1.GetAccountGroupRequest\x1a).blueapi.admin.v1.GetAccountGroupResponse\"!\x82\xd3\xe4\x93\x02\x1b\x12\x19/admin/v1/acctgroups/{id}\x12\xb7\x01\n\x1fGetDefaultCostAccessTemplateUrl\x12\x38.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest\x1a\x39.blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x12\x17/admin/v1/aws/xacct/dca\x12\x98\x01\n\x15ListDefaultCostAccess\x12..blueapi.admin.v1.ListDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\" /admin/v1/aws/xacct/dca/all:read0\x01\x12\x94\x01\n\x14GetDefaultCostAccess\x12-.blueapi.admin.v1.GetDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"(\x82\xd3\xe4\x93\x02\"\x12 /admin/v1/aws/xacct/dca/{target}\x12\x94\x01\n\x17\x43reateDefaultCostAccess\x12\x30.blueapi.admin.v1.CreateDefaultCostAccessRequest\x1a#.blueapi.admin.v1.DefaultCostAccess\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/admin/v1/aws/xacct/dca:\x01*\x12\x8d\x01\n\x17UpdateDefaultCostAccess\x12\x30.blueapi.admin.v1.UpdateDefaultCostAccessRequest\x1a\x16.blueapi.api.Operation\"(\x82\xd3\xe4\x93\x02\"\x1a /admin/v1/aws/xacct/dca/{target}\x12\x8d\x01\n\x17\x44\x65leteDefaultCostAccess\x12\x30.blueapi.admin.v1.DeleteDefaultCostAccessRequest\x1a\x16.google.protobuf.Empty\"(\x82\xd3\xe4\x93\x02\"* /admin/v1/aws/xacct/dca/{target}\x12\x97\x01\n\x17GetNotificationSettings\x12\x30.blueapi.admin.v1.GetNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/settings\x12\x9c\x01\n\x18SaveNotificationSettings\x12\x31.blueapi.admin.v1.SaveNotificationSettingsRequest\x1a!.blueapi.api.NotificationSettings\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/settings:\x01*\x12\xaa\x01\n\x18ListNotificationChannels\x12\x31.blueapi.admin.v1.ListNotificationChannelsRequest\x1a\x32.blueapi.admin.v1.ListNotificationChannelsResponse\"\'\x82\xd3\xe4\x93\x02!\x12\x1f/admin/v1/notification/channels\x12\x99\x01\n\x16GetNotificationChannel\x12/.blueapi.admin.v1.GetNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x12$/admin/v1/notification/channels/{id}\x12\x9d\x01\n\x19\x43reateNotificationChannel\x12\x32.blueapi.admin.v1.CreateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\"*\x82\xd3\xe4\x93\x02$\"\x1f/admin/v1/notification/channels:\x01*\x12\xaa\x01\n CreateDefaultNotificationChannel\x12\x39.blueapi.admin.v1.CreateDefaultNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\")\x82\xd3\xe4\x93\x02#\"\x1e/admin/v1/notification/default:\x01*\x12\x9f\x01\n\x19UpdateNotificationChannel\x12\x32.blueapi.admin.v1.UpdateNotificationChannelRequest\x1a .blueapi.api.NotificationChannel\",\x82\xd3\xe4\x93\x02&\x1a$/admin/v1/notification/channels/{id}\x12\x95\x01\n\x19\x44\x65leteNotificationChannel\x12\x32.blueapi.admin.v1.DeleteNotificationChannelRequest\x1a\x16.google.protobuf.Empty\",\x82\xd3\xe4\x93\x02&*$/admin/v1/notification/channels/{id}\x1a\x91\x01\x92\x41\x8d\x01\x12<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/admin/BK\n\x17\x63loud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/adminb\x06proto3')
 
 
 
-
-_LISTACCOUNTGROUPSREQUEST = _descriptor.Descriptor(
-  name='ListAccountGroupsRequest',
-  full_name='blueapi.admin.v1.ListAccountGroupsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=218,
-  serialized_end=244,
-)
-
-
-_LISTACCOUNTGROUPSRESPONSE = _descriptor.Descriptor(
-  name='ListAccountGroupsResponse',
-  full_name='blueapi.admin.v1.ListAccountGroupsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='accountGroups', full_name='blueapi.admin.v1.ListAccountGroupsResponse.accountGroups', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=246,
-  serialized_end=323,
-)
-
-
-_GETACCOUNTGROUPREQUEST = _descriptor.Descriptor(
-  name='GetAccountGroupRequest',
-  full_name='blueapi.admin.v1.GetAccountGroupRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.GetAccountGroupRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=325,
-  serialized_end=361,
-)
-
-
-_GETACCOUNTGROUPRESPONSE = _descriptor.Descriptor(
-  name='GetAccountGroupResponse',
-  full_name='blueapi.admin.v1.GetAccountGroupResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='acctGroup', full_name='blueapi.admin.v1.GetAccountGroupResponse.acctGroup', index=0,
-      number=1, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=363,
-  serialized_end=434,
-)
-
-
-_GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST = _descriptor.Descriptor(
-  name='GetDefaultCostAccessTemplateUrlRequest',
-  full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='type', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlRequest.type', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=436,
-  serialized_end=490,
-)
-
-
-_GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE = _descriptor.Descriptor(
-  name='GetDefaultCostAccessTemplateUrlResponse',
-  full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='launchUrl', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.launchUrl', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='templateUrl', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.templateUrl', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stackName', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.stackName', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='principal', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.principal', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='externalId', full_name='blueapi.admin.v1.GetDefaultCostAccessTemplateUrlResponse.externalId', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=493,
-  serialized_end=632,
-)
-
-
-_LISTDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
-  name='ListDefaultCostAccessRequest',
-  full_name='blueapi.admin.v1.ListDefaultCostAccessRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=634,
-  serialized_end=664,
-)
-
-
-_GETDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
-  name='GetDefaultCostAccessRequest',
-  full_name='blueapi.admin.v1.GetDefaultCostAccessRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.GetDefaultCostAccessRequest.target', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=666,
-  serialized_end=711,
-)
-
-
-_DEFAULTCOSTACCESS = _descriptor.Descriptor(
-  name='DefaultCostAccess',
-  full_name='blueapi.admin.v1.DefaultCostAccess',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.DefaultCostAccess.target', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='roleArn', full_name='blueapi.admin.v1.DefaultCostAccess.roleArn', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='externalId', full_name='blueapi.admin.v1.DefaultCostAccess.externalId', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stackId', full_name='blueapi.admin.v1.DefaultCostAccess.stackId', index=3,
-      number=4, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='stackRegion', full_name='blueapi.admin.v1.DefaultCostAccess.stackRegion', index=4,
-      number=5, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='templateUrl', full_name='blueapi.admin.v1.DefaultCostAccess.templateUrl', index=5,
-      number=6, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='status', full_name='blueapi.admin.v1.DefaultCostAccess.status', index=6,
-      number=7, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='lastUpdated', full_name='blueapi.admin.v1.DefaultCostAccess.lastUpdated', index=7,
-      number=8, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=714,
-  serialized_end=882,
-)
-
-
-_CREATEDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
-  name='CreateDefaultCostAccessRequest',
-  full_name='blueapi.admin.v1.CreateDefaultCostAccessRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.CreateDefaultCostAccessRequest.target', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=884,
-  serialized_end=932,
-)
-
-
-_UPDATEDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
-  name='UpdateDefaultCostAccessRequest',
-  full_name='blueapi.admin.v1.UpdateDefaultCostAccessRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.UpdateDefaultCostAccessRequest.target', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=934,
-  serialized_end=982,
-)
-
-
-_DELETEDEFAULTCOSTACCESSREQUEST = _descriptor.Descriptor(
-  name='DeleteDefaultCostAccessRequest',
-  full_name='blueapi.admin.v1.DeleteDefaultCostAccessRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='target', full_name='blueapi.admin.v1.DeleteDefaultCostAccessRequest.target', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=984,
-  serialized_end=1032,
-)
-
-
-_GETNOTIFICATIONSETTINGSREQUEST = _descriptor.Descriptor(
-  name='GetNotificationSettingsRequest',
-  full_name='blueapi.admin.v1.GetNotificationSettingsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1034,
-  serialized_end=1066,
-)
-
-
-_SAVENOTIFICATIONSETTINGSREQUEST = _descriptor.Descriptor(
-  name='SaveNotificationSettingsRequest',
-  full_name='blueapi.admin.v1.SaveNotificationSettingsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='enabled', full_name='blueapi.admin.v1.SaveNotificationSettingsRequest.enabled', index=0,
-      number=1, type=8, cpp_type=7, label=1,
-      has_default_value=False, default_value=False,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='defaultChannel', full_name='blueapi.admin.v1.SaveNotificationSettingsRequest.defaultChannel', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1068,
-  serialized_end=1142,
-)
-
-
-_LISTNOTIFICATIONCHANNELSREQUEST = _descriptor.Descriptor(
-  name='ListNotificationChannelsRequest',
-  full_name='blueapi.admin.v1.ListNotificationChannelsRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1144,
-  serialized_end=1177,
-)
-
-
-_LISTNOTIFICATIONCHANNELSRESPONSE = _descriptor.Descriptor(
-  name='ListNotificationChannelsResponse',
-  full_name='blueapi.admin.v1.ListNotificationChannelsResponse',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='channels', full_name='blueapi.admin.v1.ListNotificationChannelsResponse.channels', index=0,
-      number=1, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1179,
-  serialized_end=1265,
-)
-
-
-_GETNOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
-  name='GetNotificationChannelRequest',
-  full_name='blueapi.admin.v1.GetNotificationChannelRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.GetNotificationChannelRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1267,
-  serialized_end=1310,
-)
-
-
-_CREATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
-  name='CreateNotificationChannelRequest',
-  full_name='blueapi.admin.v1.CreateNotificationChannelRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='name', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.name', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.type', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='email', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.email', index=2,
-      number=3, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='slack', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.slack', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='msteams', full_name='blueapi.admin.v1.CreateNotificationChannelRequest.msteams', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1313,
-  serialized_end=1505,
-)
-
-
-_CREATEDEFAULTNOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
-  name='CreateDefaultNotificationChannelRequest',
-  full_name='blueapi.admin.v1.CreateDefaultNotificationChannelRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1507,
-  serialized_end=1548,
-)
-
-
-_UPDATENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
-  name='UpdateNotificationChannelRequest',
-  full_name='blueapi.admin.v1.UpdateNotificationChannelRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='type', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.type', index=2,
-      number=3, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='email', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.email', index=3,
-      number=4, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='slack', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.slack', index=4,
-      number=5, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='msteams', full_name='blueapi.admin.v1.UpdateNotificationChannelRequest.msteams', index=5,
-      number=6, type=11, cpp_type=10, label=1,
-      has_default_value=False, default_value=None,
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1551,
-  serialized_end=1755,
-)
-
-
-_DELETENOTIFICATIONCHANNELREQUEST = _descriptor.Descriptor(
-  name='DeleteNotificationChannelRequest',
-  full_name='blueapi.admin.v1.DeleteNotificationChannelRequest',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.admin.v1.DeleteNotificationChannelRequest.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=1757,
-  serialized_end=1803,
-)
-
-_LISTACCOUNTGROUPSRESPONSE.fields_by_name['accountGroups'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
-_GETACCOUNTGROUPRESPONSE.fields_by_name['acctGroup'].message_type = api_dot_accountgroup__pb2._ACCOUNTGROUP
-_LISTNOTIFICATIONCHANNELSRESPONSE.fields_by_name['channels'].message_type = api_dot_notification__pb2._NOTIFICATIONCHANNEL
-_CREATENOTIFICATIONCHANNELREQUEST.fields_by_name['email'].message_type = api_dot_notification__pb2._EMAILCHANNEL
-_CREATENOTIFICATIONCHANNELREQUEST.fields_by_name['slack'].message_type = api_dot_notification__pb2._SLACKCHANNEL
-_CREATENOTIFICATIONCHANNELREQUEST.fields_by_name['msteams'].message_type = api_dot_notification__pb2._MSTEAMSCHANNEL
-_UPDATENOTIFICATIONCHANNELREQUEST.fields_by_name['email'].message_type = api_dot_notification__pb2._EMAILCHANNEL
-_UPDATENOTIFICATIONCHANNELREQUEST.fields_by_name['slack'].message_type = api_dot_notification__pb2._SLACKCHANNEL
-_UPDATENOTIFICATIONCHANNELREQUEST.fields_by_name['msteams'].message_type = api_dot_notification__pb2._MSTEAMSCHANNEL
-DESCRIPTOR.message_types_by_name['ListAccountGroupsRequest'] = _LISTACCOUNTGROUPSREQUEST
-DESCRIPTOR.message_types_by_name['ListAccountGroupsResponse'] = _LISTACCOUNTGROUPSRESPONSE
-DESCRIPTOR.message_types_by_name['GetAccountGroupRequest'] = _GETACCOUNTGROUPREQUEST
-DESCRIPTOR.message_types_by_name['GetAccountGroupResponse'] = _GETACCOUNTGROUPRESPONSE
-DESCRIPTOR.message_types_by_name['GetDefaultCostAccessTemplateUrlRequest'] = _GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST
-DESCRIPTOR.message_types_by_name['GetDefaultCostAccessTemplateUrlResponse'] = _GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE
-DESCRIPTOR.message_types_by_name['ListDefaultCostAccessRequest'] = _LISTDEFAULTCOSTACCESSREQUEST
-DESCRIPTOR.message_types_by_name['GetDefaultCostAccessRequest'] = _GETDEFAULTCOSTACCESSREQUEST
-DESCRIPTOR.message_types_by_name['DefaultCostAccess'] = _DEFAULTCOSTACCESS
-DESCRIPTOR.message_types_by_name['CreateDefaultCostAccessRequest'] = _CREATEDEFAULTCOSTACCESSREQUEST
-DESCRIPTOR.message_types_by_name['UpdateDefaultCostAccessRequest'] = _UPDATEDEFAULTCOSTACCESSREQUEST
-DESCRIPTOR.message_types_by_name['DeleteDefaultCostAccessRequest'] = _DELETEDEFAULTCOSTACCESSREQUEST
-DESCRIPTOR.message_types_by_name['GetNotificationSettingsRequest'] = _GETNOTIFICATIONSETTINGSREQUEST
-DESCRIPTOR.message_types_by_name['SaveNotificationSettingsRequest'] = _SAVENOTIFICATIONSETTINGSREQUEST
-DESCRIPTOR.message_types_by_name['ListNotificationChannelsRequest'] = _LISTNOTIFICATIONCHANNELSREQUEST
-DESCRIPTOR.message_types_by_name['ListNotificationChannelsResponse'] = _LISTNOTIFICATIONCHANNELSRESPONSE
-DESCRIPTOR.message_types_by_name['GetNotificationChannelRequest'] = _GETNOTIFICATIONCHANNELREQUEST
-DESCRIPTOR.message_types_by_name['CreateNotificationChannelRequest'] = _CREATENOTIFICATIONCHANNELREQUEST
-DESCRIPTOR.message_types_by_name['CreateDefaultNotificationChannelRequest'] = _CREATEDEFAULTNOTIFICATIONCHANNELREQUEST
-DESCRIPTOR.message_types_by_name['UpdateNotificationChannelRequest'] = _UPDATENOTIFICATIONCHANNELREQUEST
-DESCRIPTOR.message_types_by_name['DeleteNotificationChannelRequest'] = _DELETENOTIFICATIONCHANNELREQUEST
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_LISTACCOUNTGROUPSREQUEST = DESCRIPTOR.message_types_by_name['ListAccountGroupsRequest']
+_LISTACCOUNTGROUPSRESPONSE = DESCRIPTOR.message_types_by_name['ListAccountGroupsResponse']
+_GETACCOUNTGROUPREQUEST = DESCRIPTOR.message_types_by_name['GetAccountGroupRequest']
+_GETACCOUNTGROUPRESPONSE = DESCRIPTOR.message_types_by_name['GetAccountGroupResponse']
+_GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST = DESCRIPTOR.message_types_by_name['GetDefaultCostAccessTemplateUrlRequest']
+_GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE = DESCRIPTOR.message_types_by_name['GetDefaultCostAccessTemplateUrlResponse']
+_LISTDEFAULTCOSTACCESSREQUEST = DESCRIPTOR.message_types_by_name['ListDefaultCostAccessRequest']
+_GETDEFAULTCOSTACCESSREQUEST = DESCRIPTOR.message_types_by_name['GetDefaultCostAccessRequest']
+_DEFAULTCOSTACCESS = DESCRIPTOR.message_types_by_name['DefaultCostAccess']
+_CREATEDEFAULTCOSTACCESSREQUEST = DESCRIPTOR.message_types_by_name['CreateDefaultCostAccessRequest']
+_UPDATEDEFAULTCOSTACCESSREQUEST = DESCRIPTOR.message_types_by_name['UpdateDefaultCostAccessRequest']
+_DELETEDEFAULTCOSTACCESSREQUEST = DESCRIPTOR.message_types_by_name['DeleteDefaultCostAccessRequest']
+_GETNOTIFICATIONSETTINGSREQUEST = DESCRIPTOR.message_types_by_name['GetNotificationSettingsRequest']
+_SAVENOTIFICATIONSETTINGSREQUEST = DESCRIPTOR.message_types_by_name['SaveNotificationSettingsRequest']
+_LISTNOTIFICATIONCHANNELSREQUEST = DESCRIPTOR.message_types_by_name['ListNotificationChannelsRequest']
+_LISTNOTIFICATIONCHANNELSRESPONSE = DESCRIPTOR.message_types_by_name['ListNotificationChannelsResponse']
+_GETNOTIFICATIONCHANNELREQUEST = DESCRIPTOR.message_types_by_name['GetNotificationChannelRequest']
+_CREATENOTIFICATIONCHANNELREQUEST = DESCRIPTOR.message_types_by_name['CreateNotificationChannelRequest']
+_CREATEDEFAULTNOTIFICATIONCHANNELREQUEST = DESCRIPTOR.message_types_by_name['CreateDefaultNotificationChannelRequest']
+_UPDATENOTIFICATIONCHANNELREQUEST = DESCRIPTOR.message_types_by_name['UpdateNotificationChannelRequest']
+_DELETENOTIFICATIONCHANNELREQUEST = DESCRIPTOR.message_types_by_name['DeleteNotificationChannelRequest']
 ListAccountGroupsRequest = _reflection.GeneratedProtocolMessageType('ListAccountGroupsRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTACCOUNTGROUPSREQUEST,
   '__module__' : 'admin.v1.admin_pb2'
@@ -994,182 +192,87 @@ DeleteNotificationChannelRequest = _reflection.GeneratedProtocolMessageType('Del
   })
 _sym_db.RegisterMessage(DeleteNotificationChannelRequest)
 
+_ADMIN = DESCRIPTOR.services_by_name['Admin']
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
-
-_ADMIN = _descriptor.ServiceDescriptor(
-  name='Admin',
-  full_name='blueapi.admin.v1.Admin',
-  file=DESCRIPTOR,
-  index=0,
-  serialized_options=b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/',
-  create_key=_descriptor._internal_create_key,
-  serialized_start=1806,
-  serialized_end=4464,
-  methods=[
-  _descriptor.MethodDescriptor(
-    name='ListAccountGroups',
-    full_name='blueapi.admin.v1.Admin.ListAccountGroups',
-    index=0,
-    containing_service=None,
-    input_type=_LISTACCOUNTGROUPSREQUEST,
-    output_type=_LISTACCOUNTGROUPSRESPONSE,
-    serialized_options=b'\202\323\344\223\002\026\022\024/admin/v1/acctgroups',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetAccountGroup',
-    full_name='blueapi.admin.v1.Admin.GetAccountGroup',
-    index=1,
-    containing_service=None,
-    input_type=_GETACCOUNTGROUPREQUEST,
-    output_type=_GETACCOUNTGROUPRESPONSE,
-    serialized_options=b'\202\323\344\223\002\033\022\031/admin/v1/acctgroups/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetDefaultCostAccessTemplateUrl',
-    full_name='blueapi.admin.v1.Admin.GetDefaultCostAccessTemplateUrl',
-    index=2,
-    containing_service=None,
-    input_type=_GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST,
-    output_type=_GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE,
-    serialized_options=b'\202\323\344\223\002\031\022\027/admin/v1/aws/xacct/dca',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListDefaultCostAccess',
-    full_name='blueapi.admin.v1.Admin.ListDefaultCostAccess',
-    index=3,
-    containing_service=None,
-    input_type=_LISTDEFAULTCOSTACCESSREQUEST,
-    output_type=_DEFAULTCOSTACCESS,
-    serialized_options=b'\202\323\344\223\002\"\" /admin/v1/aws/xacct/dca/all:read',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetDefaultCostAccess',
-    full_name='blueapi.admin.v1.Admin.GetDefaultCostAccess',
-    index=4,
-    containing_service=None,
-    input_type=_GETDEFAULTCOSTACCESSREQUEST,
-    output_type=_DEFAULTCOSTACCESS,
-    serialized_options=b'\202\323\344\223\002\"\022 /admin/v1/aws/xacct/dca/{target}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateDefaultCostAccess',
-    full_name='blueapi.admin.v1.Admin.CreateDefaultCostAccess',
-    index=5,
-    containing_service=None,
-    input_type=_CREATEDEFAULTCOSTACCESSREQUEST,
-    output_type=_DEFAULTCOSTACCESS,
-    serialized_options=b'\202\323\344\223\002\034\"\027/admin/v1/aws/xacct/dca:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateDefaultCostAccess',
-    full_name='blueapi.admin.v1.Admin.UpdateDefaultCostAccess',
-    index=6,
-    containing_service=None,
-    input_type=_UPDATEDEFAULTCOSTACCESSREQUEST,
-    output_type=api_dot_operation__pb2._OPERATION,
-    serialized_options=b'\202\323\344\223\002\"\032 /admin/v1/aws/xacct/dca/{target}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteDefaultCostAccess',
-    full_name='blueapi.admin.v1.Admin.DeleteDefaultCostAccess',
-    index=7,
-    containing_service=None,
-    input_type=_DELETEDEFAULTCOSTACCESSREQUEST,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002\"* /admin/v1/aws/xacct/dca/{target}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetNotificationSettings',
-    full_name='blueapi.admin.v1.Admin.GetNotificationSettings',
-    index=8,
-    containing_service=None,
-    input_type=_GETNOTIFICATIONSETTINGSREQUEST,
-    output_type=api_dot_notification__pb2._NOTIFICATIONSETTINGS,
-    serialized_options=b'\202\323\344\223\002!\022\037/admin/v1/notification/settings',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='SaveNotificationSettings',
-    full_name='blueapi.admin.v1.Admin.SaveNotificationSettings',
-    index=9,
-    containing_service=None,
-    input_type=_SAVENOTIFICATIONSETTINGSREQUEST,
-    output_type=api_dot_notification__pb2._NOTIFICATIONSETTINGS,
-    serialized_options=b'\202\323\344\223\002$\"\037/admin/v1/notification/settings:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='ListNotificationChannels',
-    full_name='blueapi.admin.v1.Admin.ListNotificationChannels',
-    index=10,
-    containing_service=None,
-    input_type=_LISTNOTIFICATIONCHANNELSREQUEST,
-    output_type=_LISTNOTIFICATIONCHANNELSRESPONSE,
-    serialized_options=b'\202\323\344\223\002!\022\037/admin/v1/notification/channels',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='GetNotificationChannel',
-    full_name='blueapi.admin.v1.Admin.GetNotificationChannel',
-    index=11,
-    containing_service=None,
-    input_type=_GETNOTIFICATIONCHANNELREQUEST,
-    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
-    serialized_options=b'\202\323\344\223\002&\022$/admin/v1/notification/channels/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateNotificationChannel',
-    full_name='blueapi.admin.v1.Admin.CreateNotificationChannel',
-    index=12,
-    containing_service=None,
-    input_type=_CREATENOTIFICATIONCHANNELREQUEST,
-    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
-    serialized_options=b'\202\323\344\223\002$\"\037/admin/v1/notification/channels:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='CreateDefaultNotificationChannel',
-    full_name='blueapi.admin.v1.Admin.CreateDefaultNotificationChannel',
-    index=13,
-    containing_service=None,
-    input_type=_CREATEDEFAULTNOTIFICATIONCHANNELREQUEST,
-    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
-    serialized_options=b'\202\323\344\223\002#\"\036/admin/v1/notification/default:\001*',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='UpdateNotificationChannel',
-    full_name='blueapi.admin.v1.Admin.UpdateNotificationChannel',
-    index=14,
-    containing_service=None,
-    input_type=_UPDATENOTIFICATIONCHANNELREQUEST,
-    output_type=api_dot_notification__pb2._NOTIFICATIONCHANNEL,
-    serialized_options=b'\202\323\344\223\002&\032$/admin/v1/notification/channels/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-  _descriptor.MethodDescriptor(
-    name='DeleteNotificationChannel',
-    full_name='blueapi.admin.v1.Admin.DeleteNotificationChannel',
-    index=15,
-    containing_service=None,
-    input_type=_DELETENOTIFICATIONCHANNELREQUEST,
-    output_type=google_dot_protobuf_dot_empty__pb2._EMPTY,
-    serialized_options=b'\202\323\344\223\002&*$/admin/v1/notification/channels/{id}',
-    create_key=_descriptor._internal_create_key,
-  ),
-])
-_sym_db.RegisterServiceDescriptor(_ADMIN)
-
-DESCRIPTOR.services_by_name['Admin'] = _ADMIN
-
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n\027cloud.alphaus.api.adminB\nAdminProtoZ$github.com/alphauslabs/blueapi/admin'
+  _ADMIN._options = None
+  _ADMIN._serialized_options = b'\222A\215\001\022<(BETA) Admin API. Base URL: https://api.alphaus.cloud/m/blue\032M\n\022Service definition\0227https://github.com/alphauslabs/blueapi/tree/main/admin/'
+  _ADMIN.methods_by_name['ListAccountGroups']._options = None
+  _ADMIN.methods_by_name['ListAccountGroups']._serialized_options = b'\202\323\344\223\002\026\022\024/admin/v1/acctgroups'
+  _ADMIN.methods_by_name['GetAccountGroup']._options = None
+  _ADMIN.methods_by_name['GetAccountGroup']._serialized_options = b'\202\323\344\223\002\033\022\031/admin/v1/acctgroups/{id}'
+  _ADMIN.methods_by_name['GetDefaultCostAccessTemplateUrl']._options = None
+  _ADMIN.methods_by_name['GetDefaultCostAccessTemplateUrl']._serialized_options = b'\202\323\344\223\002\031\022\027/admin/v1/aws/xacct/dca'
+  _ADMIN.methods_by_name['ListDefaultCostAccess']._options = None
+  _ADMIN.methods_by_name['ListDefaultCostAccess']._serialized_options = b'\202\323\344\223\002\"\" /admin/v1/aws/xacct/dca/all:read'
+  _ADMIN.methods_by_name['GetDefaultCostAccess']._options = None
+  _ADMIN.methods_by_name['GetDefaultCostAccess']._serialized_options = b'\202\323\344\223\002\"\022 /admin/v1/aws/xacct/dca/{target}'
+  _ADMIN.methods_by_name['CreateDefaultCostAccess']._options = None
+  _ADMIN.methods_by_name['CreateDefaultCostAccess']._serialized_options = b'\202\323\344\223\002\034\"\027/admin/v1/aws/xacct/dca:\001*'
+  _ADMIN.methods_by_name['UpdateDefaultCostAccess']._options = None
+  _ADMIN.methods_by_name['UpdateDefaultCostAccess']._serialized_options = b'\202\323\344\223\002\"\032 /admin/v1/aws/xacct/dca/{target}'
+  _ADMIN.methods_by_name['DeleteDefaultCostAccess']._options = None
+  _ADMIN.methods_by_name['DeleteDefaultCostAccess']._serialized_options = b'\202\323\344\223\002\"* /admin/v1/aws/xacct/dca/{target}'
+  _ADMIN.methods_by_name['GetNotificationSettings']._options = None
+  _ADMIN.methods_by_name['GetNotificationSettings']._serialized_options = b'\202\323\344\223\002!\022\037/admin/v1/notification/settings'
+  _ADMIN.methods_by_name['SaveNotificationSettings']._options = None
+  _ADMIN.methods_by_name['SaveNotificationSettings']._serialized_options = b'\202\323\344\223\002$\"\037/admin/v1/notification/settings:\001*'
+  _ADMIN.methods_by_name['ListNotificationChannels']._options = None
+  _ADMIN.methods_by_name['ListNotificationChannels']._serialized_options = b'\202\323\344\223\002!\022\037/admin/v1/notification/channels'
+  _ADMIN.methods_by_name['GetNotificationChannel']._options = None
+  _ADMIN.methods_by_name['GetNotificationChannel']._serialized_options = b'\202\323\344\223\002&\022$/admin/v1/notification/channels/{id}'
+  _ADMIN.methods_by_name['CreateNotificationChannel']._options = None
+  _ADMIN.methods_by_name['CreateNotificationChannel']._serialized_options = b'\202\323\344\223\002$\"\037/admin/v1/notification/channels:\001*'
+  _ADMIN.methods_by_name['CreateDefaultNotificationChannel']._options = None
+  _ADMIN.methods_by_name['CreateDefaultNotificationChannel']._serialized_options = b'\202\323\344\223\002#\"\036/admin/v1/notification/default:\001*'
+  _ADMIN.methods_by_name['UpdateNotificationChannel']._options = None
+  _ADMIN.methods_by_name['UpdateNotificationChannel']._serialized_options = b'\202\323\344\223\002&\032$/admin/v1/notification/channels/{id}'
+  _ADMIN.methods_by_name['DeleteNotificationChannel']._options = None
+  _ADMIN.methods_by_name['DeleteNotificationChannel']._serialized_options = b'\202\323\344\223\002&*$/admin/v1/notification/channels/{id}'
+  _LISTACCOUNTGROUPSREQUEST._serialized_start=218
+  _LISTACCOUNTGROUPSREQUEST._serialized_end=244
+  _LISTACCOUNTGROUPSRESPONSE._serialized_start=246
+  _LISTACCOUNTGROUPSRESPONSE._serialized_end=323
+  _GETACCOUNTGROUPREQUEST._serialized_start=325
+  _GETACCOUNTGROUPREQUEST._serialized_end=361
+  _GETACCOUNTGROUPRESPONSE._serialized_start=363
+  _GETACCOUNTGROUPRESPONSE._serialized_end=434
+  _GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST._serialized_start=436
+  _GETDEFAULTCOSTACCESSTEMPLATEURLREQUEST._serialized_end=490
+  _GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE._serialized_start=493
+  _GETDEFAULTCOSTACCESSTEMPLATEURLRESPONSE._serialized_end=632
+  _LISTDEFAULTCOSTACCESSREQUEST._serialized_start=634
+  _LISTDEFAULTCOSTACCESSREQUEST._serialized_end=664
+  _GETDEFAULTCOSTACCESSREQUEST._serialized_start=666
+  _GETDEFAULTCOSTACCESSREQUEST._serialized_end=711
+  _DEFAULTCOSTACCESS._serialized_start=714
+  _DEFAULTCOSTACCESS._serialized_end=882
+  _CREATEDEFAULTCOSTACCESSREQUEST._serialized_start=884
+  _CREATEDEFAULTCOSTACCESSREQUEST._serialized_end=932
+  _UPDATEDEFAULTCOSTACCESSREQUEST._serialized_start=934
+  _UPDATEDEFAULTCOSTACCESSREQUEST._serialized_end=982
+  _DELETEDEFAULTCOSTACCESSREQUEST._serialized_start=984
+  _DELETEDEFAULTCOSTACCESSREQUEST._serialized_end=1032
+  _GETNOTIFICATIONSETTINGSREQUEST._serialized_start=1034
+  _GETNOTIFICATIONSETTINGSREQUEST._serialized_end=1066
+  _SAVENOTIFICATIONSETTINGSREQUEST._serialized_start=1068
+  _SAVENOTIFICATIONSETTINGSREQUEST._serialized_end=1142
+  _LISTNOTIFICATIONCHANNELSREQUEST._serialized_start=1144
+  _LISTNOTIFICATIONCHANNELSREQUEST._serialized_end=1177
+  _LISTNOTIFICATIONCHANNELSRESPONSE._serialized_start=1179
+  _LISTNOTIFICATIONCHANNELSRESPONSE._serialized_end=1265
+  _GETNOTIFICATIONCHANNELREQUEST._serialized_start=1267
+  _GETNOTIFICATIONCHANNELREQUEST._serialized_end=1310
+  _CREATENOTIFICATIONCHANNELREQUEST._serialized_start=1313
+  _CREATENOTIFICATIONCHANNELREQUEST._serialized_end=1505
+  _CREATEDEFAULTNOTIFICATIONCHANNELREQUEST._serialized_start=1507
+  _CREATEDEFAULTNOTIFICATIONCHANNELREQUEST._serialized_end=1548
+  _UPDATENOTIFICATIONCHANNELREQUEST._serialized_start=1551
+  _UPDATENOTIFICATIONCHANNELREQUEST._serialized_end=1755
+  _DELETENOTIFICATIONCHANNELREQUEST._serialized_start=1757
+  _DELETENOTIFICATIONCHANNELREQUEST._serialized_end=1803
+  _ADMIN._serialized_start=1806
+  _ADMIN._serialized_end=4464
 # @@protoc_insertion_point(module_scope)

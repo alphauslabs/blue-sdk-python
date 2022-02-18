@@ -3,6 +3,7 @@
 # source: api/ripple/payer.proto
 """Generated protocol buffer code."""
 from google.protobuf import descriptor as _descriptor
+from google.protobuf import descriptor_pool as _descriptor_pool
 from google.protobuf import message as _message
 from google.protobuf import reflection as _reflection
 from google.protobuf import symbol_database as _symbol_database
@@ -15,76 +16,11 @@ from alphausblue.api import account_pb2 as api_dot_account__pb2
 from alphausblue.api import keyvalue_pb2 as api_dot_keyvalue__pb2
 
 
-DESCRIPTOR = _descriptor.FileDescriptor(
-  name='api/ripple/payer.proto',
-  package='blueapi.api.ripple',
-  syntax='proto3',
-  serialized_options=b'\n cloud.alphaus.blueapi.api.rippleB\023ApiRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple',
-  create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n\x16\x61pi/ripple/payer.proto\x12\x12\x62lueapi.api.ripple\x1a\x11\x61pi/account.proto\x1a\x12\x61pi/keyvalue.proto\"q\n\x05Payer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValue\x12%\n\x07members\x18\x04 \x03(\x0b\x32\x14.blueapi.api.AccountBf\n cloud.alphaus.blueapi.api.rippleB\x13\x41piRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/rippleb\x06proto3'
-  ,
-  dependencies=[api_dot_account__pb2.DESCRIPTOR,api_dot_keyvalue__pb2.DESCRIPTOR,])
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/ripple/payer.proto\x12\x12\x62lueapi.api.ripple\x1a\x11\x61pi/account.proto\x1a\x12\x61pi/keyvalue.proto\"q\n\x05Payer\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValue\x12%\n\x07members\x18\x04 \x03(\x0b\x32\x14.blueapi.api.AccountBf\n cloud.alphaus.blueapi.api.rippleB\x13\x41piRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/rippleb\x06proto3')
 
 
 
-
-_PAYER = _descriptor.Descriptor(
-  name='Payer',
-  full_name='blueapi.api.ripple.Payer',
-  filename=None,
-  file=DESCRIPTOR,
-  containing_type=None,
-  create_key=_descriptor._internal_create_key,
-  fields=[
-    _descriptor.FieldDescriptor(
-      name='id', full_name='blueapi.api.ripple.Payer.id', index=0,
-      number=1, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='name', full_name='blueapi.api.ripple.Payer.name', index=1,
-      number=2, type=9, cpp_type=9, label=1,
-      has_default_value=False, default_value=b"".decode('utf-8'),
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='metadata', full_name='blueapi.api.ripple.Payer.metadata', index=2,
-      number=3, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-    _descriptor.FieldDescriptor(
-      name='members', full_name='blueapi.api.ripple.Payer.members', index=3,
-      number=4, type=11, cpp_type=10, label=3,
-      has_default_value=False, default_value=[],
-      message_type=None, enum_type=None, containing_type=None,
-      is_extension=False, extension_scope=None,
-      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
-  ],
-  extensions=[
-  ],
-  nested_types=[],
-  enum_types=[
-  ],
-  serialized_options=None,
-  is_extendable=False,
-  syntax='proto3',
-  extension_ranges=[],
-  oneofs=[
-  ],
-  serialized_start=85,
-  serialized_end=198,
-)
-
-_PAYER.fields_by_name['metadata'].message_type = api_dot_keyvalue__pb2._KEYVALUE
-_PAYER.fields_by_name['members'].message_type = api_dot_account__pb2._ACCOUNT
-DESCRIPTOR.message_types_by_name['Payer'] = _PAYER
-_sym_db.RegisterFileDescriptor(DESCRIPTOR)
-
+_PAYER = DESCRIPTOR.message_types_by_name['Payer']
 Payer = _reflection.GeneratedProtocolMessageType('Payer', (_message.Message,), {
   'DESCRIPTOR' : _PAYER,
   '__module__' : 'api.ripple.payer_pb2'
@@ -92,6 +28,10 @@ Payer = _reflection.GeneratedProtocolMessageType('Payer', (_message.Message,), {
   })
 _sym_db.RegisterMessage(Payer)
 
+if _descriptor._USE_C_DESCRIPTORS == False:
 
-DESCRIPTOR._options = None
+  DESCRIPTOR._options = None
+  DESCRIPTOR._serialized_options = b'\n cloud.alphaus.blueapi.api.rippleB\023ApiRipplePayerProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple'
+  _PAYER._serialized_start=85
+  _PAYER._serialized_end=198
 # @@protoc_insertion_point(module_scope)
