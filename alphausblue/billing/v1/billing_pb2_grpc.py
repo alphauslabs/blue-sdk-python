@@ -35,10 +35,10 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.FromString,
                 )
-        self.ListAwsCalculationHistory = channel.unary_stream(
-                '/blueapi.billing.v1.Billing/ListAwsCalculationHistory',
-                request_serializer=billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.FromString,
+        self.ListAwsDailyRunHistory = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListAwsDailyRunHistory',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAwsDailyRunHistoryRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.AwsDailyRunHistory.FromString,
                 )
         self.ListUsageCostsDrift = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListUsageCostsDrift',
@@ -79,8 +79,8 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListAwsCalculationHistory(self, request, context):
-        """Reads the calculation history of all accounts in your billing groups. Only available in Ripple.
+    def ListAwsDailyRunHistory(self, request, context):
+        """WORK-IN-PROGRESS: Reads the calculation history of all accounts in your billing groups. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -116,10 +116,10 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetAccessGroupResponse.SerializeToString,
             ),
-            'ListAwsCalculationHistory': grpc.unary_stream_rpc_method_handler(
-                    servicer.ListAwsCalculationHistory,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.SerializeToString,
+            'ListAwsDailyRunHistory': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAwsDailyRunHistory,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAwsDailyRunHistoryRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.AwsDailyRunHistory.SerializeToString,
             ),
             'ListUsageCostsDrift': grpc.unary_stream_rpc_method_handler(
                     servicer.ListUsageCostsDrift,
@@ -206,7 +206,7 @@ class Billing(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListAwsCalculationHistory(request,
+    def ListAwsDailyRunHistory(request,
             target,
             options=(),
             channel_credentials=None,
@@ -216,9 +216,9 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAwsCalculationHistory',
-            billing_dot_v1_dot_billing__pb2.ListAwsCalculationHistoryRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.AwsCalculationHistory.FromString,
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAwsDailyRunHistory',
+            billing_dot_v1_dot_billing__pb2.ListAwsDailyRunHistoryRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.AwsDailyRunHistory.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

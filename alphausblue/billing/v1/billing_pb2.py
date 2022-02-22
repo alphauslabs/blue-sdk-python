@@ -17,7 +17,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x62illing/v1/billing.proto\x12\x12\x62lueapi.billing.v1\x1a\x11\x61pi/account.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\xcd\x01\n\x0c\x42illingGroup\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x03 \x01(\t\x12&\n\x08\x61\x63\x63ounts\x18\x04 \x03(\x0b\x32\x14.blueapi.api.Account\x12H\n\x0finvoiceSettings\x18\x05 \x01(\x0b\x32/.blueapi.billing.v1.BillingGroupInvoiceSettings\"\xee\x01\n\x1b\x42illingGroupInvoiceSettings\x12\x43\n\x03\x61ws\x18\x01 \x01(\x0b\x32\x36.blueapi.billing.v1.BillingGroupVendoredInvoiceSetting\x12\x45\n\x05\x61zure\x18\x02 \x01(\x0b\x32\x36.blueapi.billing.v1.BillingGroupVendoredInvoiceSetting\x12\x43\n\x03gcp\x18\x03 \x01(\x0b\x32\x36.blueapi.billing.v1.BillingGroupVendoredInvoiceSetting\"\xd3\x03\n\"BillingGroupVendoredInvoiceSetting\x12\x10\n\x08\x63\x61lcType\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscountRate\x18\x02 \x01(\x01\x12\x17\n\x0fsubstitutionFee\x18\x03 \x01(\t\x12\x17\n\x0fsubstitutionFix\x18\x04 \x01(\x01\x12\x18\n\x10substitutionRate\x18\x05 \x01(\x01\x12\x12\n\nsupportFee\x18\x06 \x01(\t\x12\x13\n\x0bsupportRate\x18\x07 \x01(\x01\x12\x12\n\nsupportFix\x18\x08 \x01(\x01\x12\x0f\n\x07taxRate\x18\t \x01(\x01\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x1b\n\x13\x64iscountTargetUsage\x18\x0b \x01(\t\x12\"\n\x1asubstitutionFeeTargetUsage\x18\x0c \x01(\t\x12\x19\n\x11\x64iscountCalcLogic\x18\r \x01(\t\x12!\n\x19substitutionFeeCalcTarget\x18\x0e \x01(\t\x12\x1f\n\x17substitutionFeeCalcType\x18\x0f \x01(\t\x12\x1b\n\x13supportAmountTarget\x18\x10 \x01(\t\x12\x1c\n\x14supportFeeCalcTarget\x18\x11 \x01(\t\"\x1a\n\x18ListBillingGroupsRequest\"\xf1\x02\n\x19\x43reateBillingGroupRequest\x12\x16\n\x0e\x62illingGroupId\x18\x01 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x02 \x01(\t\x12\x13\n\x0b\x63ompanyName\x18\x03 \x01(\t\x12\x14\n\x0c\x62illingTitle\x18\x04 \x01(\t\x12\x13\n\x0bphoneNumber\x18\x05 \x01(\t\x12\x12\n\npostalCode\x18\x06 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x07 \x01(\t\x12\x10\n\x08personal\x18\x08 \x01(\t\x12\x0f\n\x07remarks\x18\t \x01(\t\x12\x11\n\tprojectId\x18\n \x01(\t\x12\x10\n\x08language\x18\x0b \x01(\t\x12\x13\n\x0b\x64isplayCost\x18\x0c \x01(\t\x12\x18\n\x10\x65xchangeRateType\x18\r \x01(\t\x12\x46\n\x08invoices\x18\x0e \x01(\x0b\x32\x34.blueapi.billing.v1.CreateBillingGroupRequestInvoice\"\xff\x01\n CreateBillingGroupRequestInvoice\x12G\n\x03\x61ws\x18\x01 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12I\n\x05\x61zure\x18\x02 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12G\n\x03gcp\x18\x03 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\"\xd7\x03\n&CreateBillingGroupRequestInvoiceVendor\x12\x10\n\x08\x63\x61lcType\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscountRate\x18\x02 \x01(\x01\x12\x17\n\x0fsubstitutionFee\x18\x03 \x01(\t\x12\x17\n\x0fsubstitutionFix\x18\x04 \x01(\x01\x12\x18\n\x10substitutionRate\x18\x05 \x01(\x01\x12\x12\n\nsupportFee\x18\x06 \x01(\t\x12\x13\n\x0bsupportRate\x18\x07 \x01(\x01\x12\x12\n\nsupportFix\x18\x08 \x01(\x01\x12\x0f\n\x07taxRate\x18\t \x01(\x01\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x1b\n\x13\x64iscountTargetUsage\x18\x0b \x01(\t\x12\"\n\x1asubstitutionFeeTargetUsage\x18\x0c \x01(\t\x12\x19\n\x11\x64iscountCalcLogic\x18\r \x01(\t\x12!\n\x19substitutionFeeCalcTarget\x18\x0e \x01(\t\x12\x1f\n\x17substitutionFeeCalcType\x18\x0f \x01(\t\x12\x1b\n\x13supportAmountTarget\x18\x10 \x01(\t\x12\x1c\n\x14supportFeeCalcTarget\x18\x11 \x01(\t\"3\n\x16GetBillingGroupRequest\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\"Q\n\x17GetBillingGroupResponse\x12\x36\n\x0c\x62illingGroup\x18\x01 \x01(\x0b\x32 .blueapi.billing.v1.BillingGroup\"\x96\x01\n\x0b\x41\x63\x63\x65ssGroup\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\x12\x17\n\x0f\x61\x63\x63\x65ssGroupName\x18\x02 \x01(\t\x12\x1e\n\x16\x61\x63\x63\x65ssGroupDescription\x18\x03 \x01(\t\x12\x37\n\rbillingGroups\x18\x04 \x03(\x0b\x32 .blueapi.billing.v1.BillingGroup\".\n\x15GetAccessGroupRequest\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\"N\n\x16GetAccessGroupResponse\x12\x34\n\x0b\x61\x63\x63\x65ssGroup\x18\x01 \x01(\x0b\x32\x1f.blueapi.billing.v1.AccessGroup\"\xb8\x02\n\x15\x41wsCalculationHistory\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\x12\x43\n\x08\x61\x63\x63ounts\x18\x04 \x03(\x0b\x32\x31.blueapi.billing.v1.AwsCalculationHistory.Account\x1a\x97\x01\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12J\n\x07history\x18\x02 \x03(\x0b\x32\x39.blueapi.billing.v1.AwsCalculationHistory.Account.History\x1a-\n\x07History\x12\x11\n\ttimestamp\x18\x01 \x01(\t\x12\x0f\n\x07trigger\x18\x02 \x01(\t\"1\n ListAwsCalculationHistoryRequest\x12\r\n\x05month\x18\x01 \x01(\t\"V\n\x1aListUsageCostsDriftRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\"\x86\x01\n\x0fUsageCostsDrift\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x63\x63ount\x18\x03 \x01(\t\x12\x10\n\x08snapshot\x18\x04 \x01(\x01\x12\x0f\n\x07\x63urrent\x18\x05 \x01(\x01\x12\x0c\n\x04\x64iff\x18\x06 \x01(\x01\x32\xa5\x08\n\x07\x42illing\x12\x80\x01\n\x11ListBillingGroups\x12,.blueapi.billing.v1.ListBillingGroupsRequest\x1a .blueapi.billing.v1.BillingGroup\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/billinggroups0\x01\x12\x83\x01\n\x12\x43reateBillingGroup\x12-.blueapi.billing.v1.CreateBillingGroupRequest\x1a .blueapi.billing.v1.BillingGroup\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/billinggroups:\x01*\x12\x99\x01\n\x0fGetBillingGroup\x12*.blueapi.billing.v1.GetBillingGroupRequest\x1a+.blueapi.billing.v1.GetBillingGroupResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/billinggroups/{billingInternalId}\x12\x91\x01\n\x0eGetAccessGroup\x12).blueapi.billing.v1.GetAccessGroupRequest\x1a*.blueapi.billing.v1.GetAccessGroupResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/accessgroups/{accessGroupId}\x12\xa3\x01\n\x19ListAwsCalculationHistory\x12\x34.blueapi.billing.v1.ListAwsCalculationHistoryRequest\x1a).blueapi.billing.v1.AwsCalculationHistory\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/aws/calchistory:read:\x01*0\x01\x12\x9a\x01\n\x13ListUsageCostsDrift\x12..blueapi.billing.v1.ListUsageCostsDriftRequest\x1a#.blueapi.billing.v1.UsageCostsDrift\",\x82\xd3\xe4\x93\x02&\"!/v1/{vendor}/usagecostsdrift:read:\x01*0\x01\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Billing API. Base URL: https://api.alphaus.cloud/m/blue/billing\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/billing/BQ\n\x19\x63loud.alphaus.api.billingB\x0c\x42illingProtoZ&github.com/alphauslabs/blueapi/billingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x62illing/v1/billing.proto\x12\x12\x62lueapi.billing.v1\x1a\x11\x61pi/account.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\xcd\x01\n\x0c\x42illingGroup\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x03 \x01(\t\x12&\n\x08\x61\x63\x63ounts\x18\x04 \x03(\x0b\x32\x14.blueapi.api.Account\x12H\n\x0finvoiceSettings\x18\x05 \x01(\x0b\x32/.blueapi.billing.v1.BillingGroupInvoiceSettings\"\xee\x01\n\x1b\x42illingGroupInvoiceSettings\x12\x43\n\x03\x61ws\x18\x01 \x01(\x0b\x32\x36.blueapi.billing.v1.BillingGroupVendoredInvoiceSetting\x12\x45\n\x05\x61zure\x18\x02 \x01(\x0b\x32\x36.blueapi.billing.v1.BillingGroupVendoredInvoiceSetting\x12\x43\n\x03gcp\x18\x03 \x01(\x0b\x32\x36.blueapi.billing.v1.BillingGroupVendoredInvoiceSetting\"\xd3\x03\n\"BillingGroupVendoredInvoiceSetting\x12\x10\n\x08\x63\x61lcType\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscountRate\x18\x02 \x01(\x01\x12\x17\n\x0fsubstitutionFee\x18\x03 \x01(\t\x12\x17\n\x0fsubstitutionFix\x18\x04 \x01(\x01\x12\x18\n\x10substitutionRate\x18\x05 \x01(\x01\x12\x12\n\nsupportFee\x18\x06 \x01(\t\x12\x13\n\x0bsupportRate\x18\x07 \x01(\x01\x12\x12\n\nsupportFix\x18\x08 \x01(\x01\x12\x0f\n\x07taxRate\x18\t \x01(\x01\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x1b\n\x13\x64iscountTargetUsage\x18\x0b \x01(\t\x12\"\n\x1asubstitutionFeeTargetUsage\x18\x0c \x01(\t\x12\x19\n\x11\x64iscountCalcLogic\x18\r \x01(\t\x12!\n\x19substitutionFeeCalcTarget\x18\x0e \x01(\t\x12\x1f\n\x17substitutionFeeCalcType\x18\x0f \x01(\t\x12\x1b\n\x13supportAmountTarget\x18\x10 \x01(\t\x12\x1c\n\x14supportFeeCalcTarget\x18\x11 \x01(\t\"\x1a\n\x18ListBillingGroupsRequest\"\xf1\x02\n\x19\x43reateBillingGroupRequest\x12\x16\n\x0e\x62illingGroupId\x18\x01 \x01(\t\x12\x18\n\x10\x62illingGroupName\x18\x02 \x01(\t\x12\x13\n\x0b\x63ompanyName\x18\x03 \x01(\t\x12\x14\n\x0c\x62illingTitle\x18\x04 \x01(\t\x12\x13\n\x0bphoneNumber\x18\x05 \x01(\t\x12\x12\n\npostalCode\x18\x06 \x01(\t\x12\x0f\n\x07\x61\x64\x64ress\x18\x07 \x01(\t\x12\x10\n\x08personal\x18\x08 \x01(\t\x12\x0f\n\x07remarks\x18\t \x01(\t\x12\x11\n\tprojectId\x18\n \x01(\t\x12\x10\n\x08language\x18\x0b \x01(\t\x12\x13\n\x0b\x64isplayCost\x18\x0c \x01(\t\x12\x18\n\x10\x65xchangeRateType\x18\r \x01(\t\x12\x46\n\x08invoices\x18\x0e \x01(\x0b\x32\x34.blueapi.billing.v1.CreateBillingGroupRequestInvoice\"\xff\x01\n CreateBillingGroupRequestInvoice\x12G\n\x03\x61ws\x18\x01 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12I\n\x05\x61zure\x18\x02 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\x12G\n\x03gcp\x18\x03 \x01(\x0b\x32:.blueapi.billing.v1.CreateBillingGroupRequestInvoiceVendor\"\xd7\x03\n&CreateBillingGroupRequestInvoiceVendor\x12\x10\n\x08\x63\x61lcType\x18\x01 \x01(\t\x12\x14\n\x0c\x64iscountRate\x18\x02 \x01(\x01\x12\x17\n\x0fsubstitutionFee\x18\x03 \x01(\t\x12\x17\n\x0fsubstitutionFix\x18\x04 \x01(\x01\x12\x18\n\x10substitutionRate\x18\x05 \x01(\x01\x12\x12\n\nsupportFee\x18\x06 \x01(\t\x12\x13\n\x0bsupportRate\x18\x07 \x01(\x01\x12\x12\n\nsupportFix\x18\x08 \x01(\x01\x12\x0f\n\x07taxRate\x18\t \x01(\x01\x12\x10\n\x08\x63urrency\x18\n \x01(\t\x12\x1b\n\x13\x64iscountTargetUsage\x18\x0b \x01(\t\x12\"\n\x1asubstitutionFeeTargetUsage\x18\x0c \x01(\t\x12\x19\n\x11\x64iscountCalcLogic\x18\r \x01(\t\x12!\n\x19substitutionFeeCalcTarget\x18\x0e \x01(\t\x12\x1f\n\x17substitutionFeeCalcType\x18\x0f \x01(\t\x12\x1b\n\x13supportAmountTarget\x18\x10 \x01(\t\x12\x1c\n\x14supportFeeCalcTarget\x18\x11 \x01(\t\"3\n\x16GetBillingGroupRequest\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\"Q\n\x17GetBillingGroupResponse\x12\x36\n\x0c\x62illingGroup\x18\x01 \x01(\x0b\x32 .blueapi.billing.v1.BillingGroup\"\x96\x01\n\x0b\x41\x63\x63\x65ssGroup\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\x12\x17\n\x0f\x61\x63\x63\x65ssGroupName\x18\x02 \x01(\t\x12\x1e\n\x16\x61\x63\x63\x65ssGroupDescription\x18\x03 \x01(\t\x12\x37\n\rbillingGroups\x18\x04 \x03(\x0b\x32 .blueapi.billing.v1.BillingGroup\".\n\x15GetAccessGroupRequest\x12\x15\n\raccessGroupId\x18\x01 \x01(\t\"N\n\x16GetAccessGroupResponse\x12\x34\n\x0b\x61\x63\x63\x65ssGroup\x18\x01 \x01(\x0b\x32\x1f.blueapi.billing.v1.AccessGroup\"\xaf\x02\n\x12\x41wsDailyRunHistory\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\x12@\n\x08\x61\x63\x63ounts\x18\x04 \x03(\x0b\x32..blueapi.billing.v1.AwsDailyRunHistory.Account\x1a\x94\x01\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12G\n\x07history\x18\x02 \x03(\x0b\x32\x36.blueapi.billing.v1.AwsDailyRunHistory.Account.History\x1a-\n\x07History\x12\x11\n\ttimestamp\x18\x01 \x01(\t\x12\x0f\n\x07trigger\x18\x02 \x01(\t\"R\n\x1dListAwsDailyRunHistoryRequest\x12\r\n\x05month\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x11\n\taccountId\x18\x03 \x01(\t\"V\n\x1aListUsageCostsDriftRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x02 \x01(\t\x12\r\n\x05month\x18\x03 \x01(\t\"\x86\x01\n\x0fUsageCostsDrift\x12\x19\n\x11\x62illingInternalId\x18\x01 \x01(\t\x12\x16\n\x0e\x62illingGroupId\x18\x02 \x01(\t\x12\x0f\n\x07\x61\x63\x63ount\x18\x03 \x01(\t\x12\x10\n\x08snapshot\x18\x04 \x01(\x01\x12\x0f\n\x07\x63urrent\x18\x05 \x01(\x01\x12\x0c\n\x04\x64iff\x18\x06 \x01(\x01\x32\xa0\x08\n\x07\x42illing\x12\x80\x01\n\x11ListBillingGroups\x12,.blueapi.billing.v1.ListBillingGroupsRequest\x1a .blueapi.billing.v1.BillingGroup\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/billinggroups0\x01\x12\x83\x01\n\x12\x43reateBillingGroup\x12-.blueapi.billing.v1.CreateBillingGroupRequest\x1a .blueapi.billing.v1.BillingGroup\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/billinggroups:\x01*\x12\x99\x01\n\x0fGetBillingGroup\x12*.blueapi.billing.v1.GetBillingGroupRequest\x1a+.blueapi.billing.v1.GetBillingGroupResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/billinggroups/{billingInternalId}\x12\x91\x01\n\x0eGetAccessGroup\x12).blueapi.billing.v1.GetAccessGroupRequest\x1a*.blueapi.billing.v1.GetAccessGroupResponse\"(\x82\xd3\xe4\x93\x02\"\x12 /v1/accessgroups/{accessGroupId}\x12\x9e\x01\n\x16ListAwsDailyRunHistory\x12\x31.blueapi.billing.v1.ListAwsDailyRunHistoryRequest\x1a&.blueapi.billing.v1.AwsDailyRunHistory\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/aws/dailyrunhistory:read:\x01*0\x01\x12\x9a\x01\n\x13ListUsageCostsDrift\x12..blueapi.billing.v1.ListUsageCostsDriftRequest\x1a#.blueapi.billing.v1.UsageCostsDrift\",\x82\xd3\xe4\x93\x02&\"!/v1/{vendor}/usagecostsdrift:read:\x01*0\x01\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Billing API. Base URL: https://api.alphaus.cloud/m/blue/billing\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/billing/BQ\n\x19\x63loud.alphaus.api.billingB\x0c\x42illingProtoZ&github.com/alphauslabs/blueapi/billingb\x06proto3')
 
 
 
@@ -33,10 +33,10 @@ _GETBILLINGGROUPRESPONSE = DESCRIPTOR.message_types_by_name['GetBillingGroupResp
 _ACCESSGROUP = DESCRIPTOR.message_types_by_name['AccessGroup']
 _GETACCESSGROUPREQUEST = DESCRIPTOR.message_types_by_name['GetAccessGroupRequest']
 _GETACCESSGROUPRESPONSE = DESCRIPTOR.message_types_by_name['GetAccessGroupResponse']
-_AWSCALCULATIONHISTORY = DESCRIPTOR.message_types_by_name['AwsCalculationHistory']
-_AWSCALCULATIONHISTORY_ACCOUNT = _AWSCALCULATIONHISTORY.nested_types_by_name['Account']
-_AWSCALCULATIONHISTORY_ACCOUNT_HISTORY = _AWSCALCULATIONHISTORY_ACCOUNT.nested_types_by_name['History']
-_LISTAWSCALCULATIONHISTORYREQUEST = DESCRIPTOR.message_types_by_name['ListAwsCalculationHistoryRequest']
+_AWSDAILYRUNHISTORY = DESCRIPTOR.message_types_by_name['AwsDailyRunHistory']
+_AWSDAILYRUNHISTORY_ACCOUNT = _AWSDAILYRUNHISTORY.nested_types_by_name['Account']
+_AWSDAILYRUNHISTORY_ACCOUNT_HISTORY = _AWSDAILYRUNHISTORY_ACCOUNT.nested_types_by_name['History']
+_LISTAWSDAILYRUNHISTORYREQUEST = DESCRIPTOR.message_types_by_name['ListAwsDailyRunHistoryRequest']
 _LISTUSAGECOSTSDRIFTREQUEST = DESCRIPTOR.message_types_by_name['ListUsageCostsDriftRequest']
 _USAGECOSTSDRIFT = DESCRIPTOR.message_types_by_name['UsageCostsDrift']
 BillingGroup = _reflection.GeneratedProtocolMessageType('BillingGroup', (_message.Message,), {
@@ -123,35 +123,35 @@ GetAccessGroupResponse = _reflection.GeneratedProtocolMessageType('GetAccessGrou
   })
 _sym_db.RegisterMessage(GetAccessGroupResponse)
 
-AwsCalculationHistory = _reflection.GeneratedProtocolMessageType('AwsCalculationHistory', (_message.Message,), {
+AwsDailyRunHistory = _reflection.GeneratedProtocolMessageType('AwsDailyRunHistory', (_message.Message,), {
 
   'Account' : _reflection.GeneratedProtocolMessageType('Account', (_message.Message,), {
 
     'History' : _reflection.GeneratedProtocolMessageType('History', (_message.Message,), {
-      'DESCRIPTOR' : _AWSCALCULATIONHISTORY_ACCOUNT_HISTORY,
+      'DESCRIPTOR' : _AWSDAILYRUNHISTORY_ACCOUNT_HISTORY,
       '__module__' : 'billing.v1.billing_pb2'
-      # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsCalculationHistory.Account.History)
+      # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsDailyRunHistory.Account.History)
       })
     ,
-    'DESCRIPTOR' : _AWSCALCULATIONHISTORY_ACCOUNT,
+    'DESCRIPTOR' : _AWSDAILYRUNHISTORY_ACCOUNT,
     '__module__' : 'billing.v1.billing_pb2'
-    # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsCalculationHistory.Account)
+    # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsDailyRunHistory.Account)
     })
   ,
-  'DESCRIPTOR' : _AWSCALCULATIONHISTORY,
+  'DESCRIPTOR' : _AWSDAILYRUNHISTORY,
   '__module__' : 'billing.v1.billing_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsCalculationHistory)
+  # @@protoc_insertion_point(class_scope:blueapi.billing.v1.AwsDailyRunHistory)
   })
-_sym_db.RegisterMessage(AwsCalculationHistory)
-_sym_db.RegisterMessage(AwsCalculationHistory.Account)
-_sym_db.RegisterMessage(AwsCalculationHistory.Account.History)
+_sym_db.RegisterMessage(AwsDailyRunHistory)
+_sym_db.RegisterMessage(AwsDailyRunHistory.Account)
+_sym_db.RegisterMessage(AwsDailyRunHistory.Account.History)
 
-ListAwsCalculationHistoryRequest = _reflection.GeneratedProtocolMessageType('ListAwsCalculationHistoryRequest', (_message.Message,), {
-  'DESCRIPTOR' : _LISTAWSCALCULATIONHISTORYREQUEST,
+ListAwsDailyRunHistoryRequest = _reflection.GeneratedProtocolMessageType('ListAwsDailyRunHistoryRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTAWSDAILYRUNHISTORYREQUEST,
   '__module__' : 'billing.v1.billing_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.billing.v1.ListAwsCalculationHistoryRequest)
+  # @@protoc_insertion_point(class_scope:blueapi.billing.v1.ListAwsDailyRunHistoryRequest)
   })
-_sym_db.RegisterMessage(ListAwsCalculationHistoryRequest)
+_sym_db.RegisterMessage(ListAwsDailyRunHistoryRequest)
 
 ListUsageCostsDriftRequest = _reflection.GeneratedProtocolMessageType('ListUsageCostsDriftRequest', (_message.Message,), {
   'DESCRIPTOR' : _LISTUSAGECOSTSDRIFTREQUEST,
@@ -182,8 +182,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _BILLING.methods_by_name['GetBillingGroup']._serialized_options = b'\202\323\344\223\002\'\022%/v1/billinggroups/{billingInternalId}'
   _BILLING.methods_by_name['GetAccessGroup']._options = None
   _BILLING.methods_by_name['GetAccessGroup']._serialized_options = b'\202\323\344\223\002\"\022 /v1/accessgroups/{accessGroupId}'
-  _BILLING.methods_by_name['ListAwsCalculationHistory']._options = None
-  _BILLING.methods_by_name['ListAwsCalculationHistory']._serialized_options = b'\202\323\344\223\002\035\"\030/v1/aws/calchistory:read:\001*'
+  _BILLING.methods_by_name['ListAwsDailyRunHistory']._options = None
+  _BILLING.methods_by_name['ListAwsDailyRunHistory']._serialized_options = b'\202\323\344\223\002!\"\034/v1/aws/dailyrunhistory:read:\001*'
   _BILLING.methods_by_name['ListUsageCostsDrift']._options = None
   _BILLING.methods_by_name['ListUsageCostsDrift']._serialized_options = b'\202\323\344\223\002&\"!/v1/{vendor}/usagecostsdrift:read:\001*'
   _BILLINGGROUP._serialized_start=146
@@ -210,18 +210,18 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _GETACCESSGROUPREQUEST._serialized_end=2531
   _GETACCESSGROUPRESPONSE._serialized_start=2533
   _GETACCESSGROUPRESPONSE._serialized_end=2611
-  _AWSCALCULATIONHISTORY._serialized_start=2614
-  _AWSCALCULATIONHISTORY._serialized_end=2926
-  _AWSCALCULATIONHISTORY_ACCOUNT._serialized_start=2775
-  _AWSCALCULATIONHISTORY_ACCOUNT._serialized_end=2926
-  _AWSCALCULATIONHISTORY_ACCOUNT_HISTORY._serialized_start=2881
-  _AWSCALCULATIONHISTORY_ACCOUNT_HISTORY._serialized_end=2926
-  _LISTAWSCALCULATIONHISTORYREQUEST._serialized_start=2928
-  _LISTAWSCALCULATIONHISTORYREQUEST._serialized_end=2977
-  _LISTUSAGECOSTSDRIFTREQUEST._serialized_start=2979
-  _LISTUSAGECOSTSDRIFTREQUEST._serialized_end=3065
-  _USAGECOSTSDRIFT._serialized_start=3068
-  _USAGECOSTSDRIFT._serialized_end=3202
-  _BILLING._serialized_start=3205
-  _BILLING._serialized_end=4266
+  _AWSDAILYRUNHISTORY._serialized_start=2614
+  _AWSDAILYRUNHISTORY._serialized_end=2917
+  _AWSDAILYRUNHISTORY_ACCOUNT._serialized_start=2769
+  _AWSDAILYRUNHISTORY_ACCOUNT._serialized_end=2917
+  _AWSDAILYRUNHISTORY_ACCOUNT_HISTORY._serialized_start=2872
+  _AWSDAILYRUNHISTORY_ACCOUNT_HISTORY._serialized_end=2917
+  _LISTAWSDAILYRUNHISTORYREQUEST._serialized_start=2919
+  _LISTAWSDAILYRUNHISTORYREQUEST._serialized_end=3001
+  _LISTUSAGECOSTSDRIFTREQUEST._serialized_start=3003
+  _LISTUSAGECOSTSDRIFTREQUEST._serialized_end=3089
+  _USAGECOSTSDRIFT._serialized_start=3092
+  _USAGECOSTSDRIFT._serialized_end=3226
+  _BILLING._serialized_start=3229
+  _BILLING._serialized_end=4285
 # @@protoc_insertion_point(module_scope)
