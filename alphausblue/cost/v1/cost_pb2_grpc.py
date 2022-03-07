@@ -104,6 +104,21 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ListCostsFilter = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ListCostsFilter',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterConditionRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterConditionResponse.FromString,
+                )
+        self.CreateCostsFilter = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/CreateCostsFilter',
+                request_serializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterConditionRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterConditionResponse.FromString,
+                )
+        self.DeleteCostsFilter = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/DeleteCostsFilter',
+                request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCostsFilterConditionRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ReadCostAttributes = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ReadCostAttributes',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadCostAttributesRequest.SerializeToString,
@@ -319,6 +334,27 @@ class CostServicer(object):
 
     def DeleteCalculationsSchedule(self, request, context):
         """Deletes the schedule of your monthly calculations. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCostsFilter(self, request, context):
+        """WORK-IN-PROGRESS: Lists the usage-based cost filter condition.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCostsFilter(self, request, context):
+        """WORK-IN-PROGRESS: Creates the usage-based cost filter condition.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCostsFilter(self, request, context):
+        """WORK-IN-PROGRESS: Deletes the usage-based cost filter condition.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -543,6 +579,21 @@ def add_CostServicer_to_server(servicer, server):
             'DeleteCalculationsSchedule': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCalculationsSchedule,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListCostsFilter': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCostsFilter,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterConditionRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterConditionResponse.SerializeToString,
+            ),
+            'CreateCostsFilter': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCostsFilter,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterConditionRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterConditionResponse.SerializeToString,
+            ),
+            'DeleteCostsFilter': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCostsFilter,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCostsFilterConditionRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ReadCostAttributes': grpc.unary_stream_rpc_method_handler(
@@ -936,6 +987,57 @@ class Cost(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteCalculationsSchedule',
             cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCostsFilter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCostsFilter',
+            cost_dot_v1_dot_cost__pb2.ListCostsFilterConditionRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ListCostsFilterConditionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCostsFilter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateCostsFilter',
+            cost_dot_v1_dot_cost__pb2.CreateCostsFilterConditionRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.CreateCostsFilterConditionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCostsFilter(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteCostsFilter',
+            cost_dot_v1_dot_cost__pb2.DeleteCostsFilterConditionRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
