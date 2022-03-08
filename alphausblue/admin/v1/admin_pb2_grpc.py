@@ -58,6 +58,16 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultCostAccessRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.GetCloudWatchMetricsStreamTemplateUrl = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetCloudWatchMetricsStreamTemplateUrl',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetCloudWatchMetricsStreamTemplateUrlRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.GetCloudWatchMetricsStreamTemplateUrlResponse.FromString,
+                )
+        self.CreateCloudWatchMetricsStream = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateCloudWatchMetricsStream',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateCloudWatchMetricsStreamRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.CloudWatchMetricsStream.FromString,
+                )
         self.GetNotificationSettings = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/GetNotificationSettings',
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetNotificationSettingsRequest.SerializeToString,
@@ -155,6 +165,20 @@ class AdminServicer(object):
 
     def DeleteDefaultCostAccess(self, request, context):
         """Deletes the current default cross-account access role attached to this target account. This does not delete the CloudFormation deployment in your account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCloudWatchMetricsStreamTemplateUrl(self, request, context):
+        """WORK-IN-PROGRESS: Gets a CloudFormation launch URL for enabling CloudWatch metrics streaming on a target account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCloudWatchMetricsStream(self, request, context):
+        """WORK-IN-PROGRESS: Starts validation of a CloudWatch Metrics streaming stack deployment.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -258,6 +282,16 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.DeleteDefaultCostAccess,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteDefaultCostAccessRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetCloudWatchMetricsStreamTemplateUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCloudWatchMetricsStreamTemplateUrl,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetCloudWatchMetricsStreamTemplateUrlRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.GetCloudWatchMetricsStreamTemplateUrlResponse.SerializeToString,
+            ),
+            'CreateCloudWatchMetricsStream': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCloudWatchMetricsStream,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateCloudWatchMetricsStreamRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.CloudWatchMetricsStream.SerializeToString,
             ),
             'GetNotificationSettings': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotificationSettings,
@@ -443,6 +477,40 @@ class Admin(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteDefaultCostAccess',
             admin_dot_v1_dot_admin__pb2.DeleteDefaultCostAccessRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCloudWatchMetricsStreamTemplateUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetCloudWatchMetricsStreamTemplateUrl',
+            admin_dot_v1_dot_admin__pb2.GetCloudWatchMetricsStreamTemplateUrlRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.GetCloudWatchMetricsStreamTemplateUrlResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCloudWatchMetricsStream(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateCloudWatchMetricsStream',
+            admin_dot_v1_dot_admin__pb2.CreateCloudWatchMetricsStreamRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.CloudWatchMetricsStream.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
