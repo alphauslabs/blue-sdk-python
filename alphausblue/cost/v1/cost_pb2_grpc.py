@@ -340,21 +340,21 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCostsFilter(self, request, context):
-        """WORK-IN-PROGRESS: Lists the usage-based cost filter condition.
+        """Lists the usage-based cost filter condition. Only available in Wave.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateCostsFilter(self, request, context):
-        """WORK-IN-PROGRESS: Creates the usage-based cost filter condition.
+        """Creates the usage-based cost filter condition. Only available in Wave.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteCostsFilter(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the usage-based cost filter condition.
+        """Deletes the usage-based cost filter condition. Only available in Wave.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
