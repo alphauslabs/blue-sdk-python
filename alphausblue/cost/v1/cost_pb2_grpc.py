@@ -104,20 +104,30 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.ListCostsFilter = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/ListCostsFilter',
-                request_serializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterResponse.FromString,
+        self.ListCostFilters = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ListCostFilters',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListCostFiltersRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCostFiltersResponse.FromString,
                 )
-        self.CreateCostsFilter = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/CreateCostsFilter',
-                request_serializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterResponse.FromString,
+        self.CreateCostFilters = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/CreateCostFilters',
+                request_serializer=cost_dot_v1_dot_cost__pb2.CreateCostFiltersRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.CreateCostFiltersResponse.FromString,
                 )
-        self.DeleteCostsFilter = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/DeleteCostsFilter',
-                request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCostsFilterRequest.SerializeToString,
+        self.UpdateCostFilters = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/UpdateCostFilters',
+                request_serializer=cost_dot_v1_dot_cost__pb2.UpdateCostFiltersRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.UpdateCostFiltersResponse.FromString,
+                )
+        self.DeleteCostFilters = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/DeleteCostFilters',
+                request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCostFiltersRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ExportCostFiltersFile = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ExportCostFiltersFile',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.FromString,
                 )
         self.ReadCostAttributes = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ReadCostAttributes',
@@ -339,22 +349,36 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListCostsFilter(self, request, context):
-        """Lists the usage-based cost filter condition. Only available in Wave.
+    def ListCostFilters(self, request, context):
+        """Lists the usage-based cost filter condition. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateCostsFilter(self, request, context):
-        """Creates the usage-based cost filter condition. Only available in Wave.
+    def CreateCostFilters(self, request, context):
+        """Creates the usage-based cost filter condition. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteCostsFilter(self, request, context):
-        """Deletes the usage-based cost filter condition. Only available in Wave.
+    def UpdateCostFilters(self, request, context):
+        """Updates the usage-based cost filter condition. Only available in Wave(Pro).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCostFilters(self, request, context):
+        """Deletes the usage-based cost filter condition. Only available in Wave(Pro).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportCostFiltersFile(self, request, context):
+        """Exports the usage-based cost filter condition. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -581,20 +605,30 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCalculationsScheduleRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'ListCostsFilter': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListCostsFilter,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCostsFilterResponse.SerializeToString,
+            'ListCostFilters': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCostFilters,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCostFiltersRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCostFiltersResponse.SerializeToString,
             ),
-            'CreateCostsFilter': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateCostsFilter,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.CreateCostsFilterResponse.SerializeToString,
+            'CreateCostFilters': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCostFilters,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.CreateCostFiltersRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.CreateCostFiltersResponse.SerializeToString,
             ),
-            'DeleteCostsFilter': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteCostsFilter,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCostsFilterRequest.FromString,
+            'UpdateCostFilters': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostFilters,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.UpdateCostFiltersRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.UpdateCostFiltersResponse.SerializeToString,
+            ),
+            'DeleteCostFilters': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCostFilters,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCostFiltersRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ExportCostFiltersFile': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportCostFiltersFile,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.SerializeToString,
             ),
             'ReadCostAttributes': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadCostAttributes,
@@ -992,7 +1026,7 @@ class Cost(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListCostsFilter(request,
+    def ListCostFilters(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1002,14 +1036,14 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCostsFilter',
-            cost_dot_v1_dot_cost__pb2.ListCostsFilterRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.ListCostsFilterResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCostFilters',
+            cost_dot_v1_dot_cost__pb2.ListCostFiltersRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ListCostFiltersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateCostsFilter(request,
+    def CreateCostFilters(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1019,14 +1053,14 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateCostsFilter',
-            cost_dot_v1_dot_cost__pb2.CreateCostsFilterRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.CreateCostsFilterResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateCostFilters',
+            cost_dot_v1_dot_cost__pb2.CreateCostFiltersRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.CreateCostFiltersResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteCostsFilter(request,
+    def UpdateCostFilters(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1036,9 +1070,43 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteCostsFilter',
-            cost_dot_v1_dot_cost__pb2.DeleteCostsFilterRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/UpdateCostFilters',
+            cost_dot_v1_dot_cost__pb2.UpdateCostFiltersRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.UpdateCostFiltersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCostFilters(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteCostFilters',
+            cost_dot_v1_dot_cost__pb2.DeleteCostFiltersRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExportCostFiltersFile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ExportCostFiltersFile',
+            cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
