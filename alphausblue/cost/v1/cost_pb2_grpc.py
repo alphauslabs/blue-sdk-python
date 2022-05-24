@@ -357,7 +357,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateCostFilters(self, request, context):
-        """Creates the usage-based cost filter condition. Only available in Wave(Pro).
+        """Creates the usage-based cost filter condition. You can consider cost filters as predefined/prefiltered queries using the 'v1/{vendor}/costs:read' or 'ReadCosts' API. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -385,7 +385,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadCostAttributes(self, request, context):
-        """Reads the available cost attributes of an organization (Ripple) or billing group (Wave). Similar to the `ReadCosts` API but without the aggregated usages and costs. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
+        """Reads the available cost attributes of an organization (Ripple) or billing group (Wave). Similar to the 'ReadCosts' API but without the aggregated usages and costs. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
