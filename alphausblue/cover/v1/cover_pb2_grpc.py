@@ -35,6 +35,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsResponse.FromString,
                 )
+        self.UpdateMemberAvatar = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateMemberAvatar',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberAvatarRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberAvatarResponse.FromString,
+                )
+        self.UpdateMemberIcon = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateMemberIcon',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberIconRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberIconResponse.FromString,
+                )
+        self.UpdateMemberColorTheme = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateMemberColorTheme',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberColorThemeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberColorThemeResponse.FromString,
+                )
+        self.UpdateMemberUsername = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateMemberUsername',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberUsernameRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberUsernameResponse.FromString,
+                )
+        self.UpdateMemberEmail = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateMemberEmail',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberEmailRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberEmailResponse.FromString,
+                )
         self.DeleteMember = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteMember',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteMemberRequest.SerializeToString,
@@ -49,6 +74,11 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/ResetPassword',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ResetPasswordRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ResetPasswordResponse.FromString,
+                )
+        self.CreateView = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateView',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateViewRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateViewResponse.FromString,
                 )
         self.GetViews = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetViews',
@@ -98,14 +128,49 @@ class CoverServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetMemberDetails(self, request, context):
-        """Get the details of the cover user
+        """Get the details of the user
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateMemberAvatar(self, request, context):
+        """Modify user's avatar
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateMemberIcon(self, request, context):
+        """Modify user's icon
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateMemberColorTheme(self, request, context):
+        """Modify user's color theme
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateMemberUsername(self, request, context):
+        """Modify username
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateMemberEmail(self, request, context):
+        """Modify user's email
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteMember(self, request, context):
-        """Deletes a cover user
+        """Deletes a user
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -120,6 +185,13 @@ class CoverServicer(object):
 
     def ResetPassword(self, request, context):
         """Reset member's password
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateView(self, request, context):
+        """Create a view
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -176,6 +248,31 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsResponse.SerializeToString,
             ),
+            'UpdateMemberAvatar': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMemberAvatar,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberAvatarRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberAvatarResponse.SerializeToString,
+            ),
+            'UpdateMemberIcon': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMemberIcon,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberIconRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberIconResponse.SerializeToString,
+            ),
+            'UpdateMemberColorTheme': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMemberColorTheme,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberColorThemeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberColorThemeResponse.SerializeToString,
+            ),
+            'UpdateMemberUsername': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMemberUsername,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberUsernameRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberUsernameResponse.SerializeToString,
+            ),
+            'UpdateMemberEmail': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMemberEmail,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberEmailRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberEmailResponse.SerializeToString,
+            ),
             'DeleteMember': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteMember,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteMemberRequest.FromString,
@@ -190,6 +287,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ResetPassword,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ResetPasswordRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ResetPasswordResponse.SerializeToString,
+            ),
+            'CreateView': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateView,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateViewRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateViewResponse.SerializeToString,
             ),
             'GetViews': grpc.unary_unary_rpc_method_handler(
                     servicer.GetViews,
@@ -291,6 +393,91 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def UpdateMemberAvatar(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateMemberAvatar',
+            cover_dot_v1_dot_cover__pb2.UpdateMemberAvatarRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateMemberAvatarResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateMemberIcon(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateMemberIcon',
+            cover_dot_v1_dot_cover__pb2.UpdateMemberIconRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateMemberIconResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateMemberColorTheme(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateMemberColorTheme',
+            cover_dot_v1_dot_cover__pb2.UpdateMemberColorThemeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateMemberColorThemeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateMemberUsername(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateMemberUsername',
+            cover_dot_v1_dot_cover__pb2.UpdateMemberUsernameRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateMemberUsernameResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateMemberEmail(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateMemberEmail',
+            cover_dot_v1_dot_cover__pb2.UpdateMemberEmailRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateMemberEmailResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def DeleteMember(request,
             target,
             options=(),
@@ -338,6 +525,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ResetPassword',
             cover_dot_v1_dot_cover__pb2.ResetPasswordRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ResetPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateView(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateView',
+            cover_dot_v1_dot_cover__pb2.CreateViewRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateViewResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
