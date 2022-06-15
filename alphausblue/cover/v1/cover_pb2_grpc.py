@@ -55,10 +55,20 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserColorThemeRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserColorThemeResponse.FromString,
                 )
+        self.UpdateUserName = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserName',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserNameRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserNameResponse.FromString,
+                )
         self.UpdateUserEmail = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateUserEmail',
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserEmailRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserEmailResponse.FromString,
+                )
+        self.UpdateUserMainView = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserMainView',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserMainViewRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserMainViewResponse.FromString,
                 )
         self.ResetUserPassword = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ResetUserPassword',
@@ -95,6 +105,26 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCurrentViewRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCurrentViewResponse.FromString,
                 )
+        self.GetFavoriteViews = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetFavoriteViews',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetFavoriteViewsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetFavoriteViewsResponse.FromString,
+                )
+        self.PublishView = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/PublishView',
+                request_serializer=cover_dot_v1_dot_cover__pb2.PublishViewRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.PublishViewResponse.FromString,
+                )
+        self.AddFavorite = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/AddFavorite',
+                request_serializer=cover_dot_v1_dot_cover__pb2.AddFavoriteRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AddFavoriteResponse.FromString,
+                )
+        self.RemoveFavorite = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/RemoveFavorite',
+                request_serializer=cover_dot_v1_dot_cover__pb2.RemoveFavoriteRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.RemoveFavoriteResponse.FromString,
+                )
         self.UpdateView = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateView',
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewRequest.SerializeToString,
@@ -104,6 +134,66 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/DeleteView',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteViewResponse.FromString,
+                )
+        self.CreateCostGroup = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateCostGroup',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupResponse.FromString,
+                )
+        self.GetCostGroups = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetCostGroups',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.FromString,
+                )
+        self.GetCostGroupDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetCostGroupDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsResponse.FromString,
+                )
+        self.UpdateCostGroupName = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupName',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupNameRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupNameResponse.FromString,
+                )
+        self.UpdateCostGroupDescription = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupDescription',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupDescriptionRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupDescriptionResponse.FromString,
+                )
+        self.UpdateCostGroupImage = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupImage',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupImageRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupImageResponse.FromString,
+                )
+        self.UpdateCostGroupIcon = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupIcon',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupIconRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupIconResponse.FromString,
+                )
+        self.UpdateCostGroupColorTheme = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupColorTheme',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupColorThemeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupColorThemeResponse.FromString,
+                )
+        self.UpdateCostGroupCombinations = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupCombinations',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsResponse.FromString,
+                )
+        self.AssignCostGroupMember = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/AssignCostGroupMember',
+                request_serializer=cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberResponse.FromString,
+                )
+        self.RemoveCostGroupMember = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/RemoveCostGroupMember',
+                request_serializer=cover_dot_v1_dot_cover__pb2.RemoveCostGroupMemberRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.RemoveCostGroupMemberResponse.FromString,
+                )
+        self.DeleteCostGroup = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteCostGroup',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupResponse.FromString,
                 )
 
 
@@ -167,8 +257,22 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateUserName(self, request, context):
+        """Modify user's name
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateUserEmail(self, request, context):
         """Modify user's email
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserMainView(self, request, context):
+        """Modify user's main view
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -223,6 +327,34 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetFavoriteViews(self, request, context):
+        """Get favorite views
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def PublishView(self, request, context):
+        """Publish current view
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddFavorite(self, request, context):
+        """Add to favorites
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveFavorite(self, request, context):
+        """Remove from favorites
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateView(self, request, context):
         """Updates the view details
         """
@@ -232,6 +364,90 @@ class CoverServicer(object):
 
     def DeleteView(self, request, context):
         """Deletes a view
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCostGroup(self, request, context):
+        """Create a cost group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCostGroups(self, request, context):
+        """Get all the cost groups
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCostGroupDetails(self, request, context):
+        """Get the details of the cost group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostGroupName(self, request, context):
+        """Update cost group's name
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostGroupDescription(self, request, context):
+        """Update cost group's description
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostGroupImage(self, request, context):
+        """Update cost group's image
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostGroupIcon(self, request, context):
+        """Update cost group's icon
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostGroupColorTheme(self, request, context):
+        """Update cost group's color theme
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostGroupCombinations(self, request, context):
+        """Update cost group's combinations
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AssignCostGroupMember(self, request, context):
+        """Assign a member to a cost group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveCostGroupMember(self, request, context):
+        """Remove a member from a cost group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCostGroup(self, request, context):
+        """Deletes a cost group
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -280,10 +496,20 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserColorThemeRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserColorThemeResponse.SerializeToString,
             ),
+            'UpdateUserName': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserName,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserNameRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserNameResponse.SerializeToString,
+            ),
             'UpdateUserEmail': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateUserEmail,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserEmailRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserEmailResponse.SerializeToString,
+            ),
+            'UpdateUserMainView': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserMainView,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserMainViewRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserMainViewResponse.SerializeToString,
             ),
             'ResetUserPassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetUserPassword,
@@ -320,6 +546,26 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCurrentViewRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCurrentViewResponse.SerializeToString,
             ),
+            'GetFavoriteViews': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFavoriteViews,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetFavoriteViewsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetFavoriteViewsResponse.SerializeToString,
+            ),
+            'PublishView': grpc.unary_unary_rpc_method_handler(
+                    servicer.PublishView,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.PublishViewRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.PublishViewResponse.SerializeToString,
+            ),
+            'AddFavorite': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddFavorite,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.AddFavoriteRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AddFavoriteResponse.SerializeToString,
+            ),
+            'RemoveFavorite': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveFavorite,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.RemoveFavoriteRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.RemoveFavoriteResponse.SerializeToString,
+            ),
             'UpdateView': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateView,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewRequest.FromString,
@@ -329,6 +575,66 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteView,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewResponse.SerializeToString,
+            ),
+            'CreateCostGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCostGroup,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupResponse.SerializeToString,
+            ),
+            'GetCostGroups': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCostGroups,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.SerializeToString,
+            ),
+            'GetCostGroupDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCostGroupDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsResponse.SerializeToString,
+            ),
+            'UpdateCostGroupName': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupName,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupNameRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupNameResponse.SerializeToString,
+            ),
+            'UpdateCostGroupDescription': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupDescription,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupDescriptionRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupDescriptionResponse.SerializeToString,
+            ),
+            'UpdateCostGroupImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupImage,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupImageRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupImageResponse.SerializeToString,
+            ),
+            'UpdateCostGroupIcon': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupIcon,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupIconRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupIconResponse.SerializeToString,
+            ),
+            'UpdateCostGroupColorTheme': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupColorTheme,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupColorThemeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupColorThemeResponse.SerializeToString,
+            ),
+            'UpdateCostGroupCombinations': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupCombinations,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsResponse.SerializeToString,
+            ),
+            'AssignCostGroupMember': grpc.unary_unary_rpc_method_handler(
+                    servicer.AssignCostGroupMember,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberResponse.SerializeToString,
+            ),
+            'RemoveCostGroupMember': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveCostGroupMember,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.RemoveCostGroupMemberRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.RemoveCostGroupMemberResponse.SerializeToString,
+            ),
+            'DeleteCostGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCostGroup,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -478,6 +784,23 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def UpdateUserName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserName',
+            cover_dot_v1_dot_cover__pb2.UpdateUserNameRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserNameResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def UpdateUserEmail(request,
             target,
             options=(),
@@ -491,6 +814,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserEmail',
             cover_dot_v1_dot_cover__pb2.UpdateUserEmailRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateUserEmailResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateUserMainView(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserMainView',
+            cover_dot_v1_dot_cover__pb2.UpdateUserMainViewRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserMainViewResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -614,6 +954,74 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
+    def GetFavoriteViews(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetFavoriteViews',
+            cover_dot_v1_dot_cover__pb2.GetFavoriteViewsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetFavoriteViewsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def PublishView(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/PublishView',
+            cover_dot_v1_dot_cover__pb2.PublishViewRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.PublishViewResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddFavorite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddFavorite',
+            cover_dot_v1_dot_cover__pb2.AddFavoriteRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AddFavoriteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveFavorite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/RemoveFavorite',
+            cover_dot_v1_dot_cover__pb2.RemoveFavoriteRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.RemoveFavoriteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
     def UpdateView(request,
             target,
             options=(),
@@ -644,5 +1052,209 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteView',
             cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteViewResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCostGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateCostGroup',
+            cover_dot_v1_dot_cover__pb2.CreateCostGroupRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateCostGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCostGroups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCostGroups',
+            cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCostGroupDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCostGroupDetails',
+            cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCostGroupName(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupName',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupNameRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupNameResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCostGroupDescription(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupDescription',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupDescriptionRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupDescriptionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCostGroupImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupImage',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupImageRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupImageResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCostGroupIcon(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupIcon',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupIconRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupIconResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCostGroupColorTheme(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupColorTheme',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupColorThemeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupColorThemeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateCostGroupCombinations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupCombinations',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AssignCostGroupMember(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AssignCostGroupMember',
+            cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveCostGroupMember(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/RemoveCostGroupMember',
+            cover_dot_v1_dot_cover__pb2.RemoveCostGroupMemberRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.RemoveCostGroupMemberResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCostGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteCostGroup',
+            cover_dot_v1_dot_cover__pb2.DeleteCostGroupRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteCostGroupResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
