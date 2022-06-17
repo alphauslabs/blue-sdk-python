@@ -75,6 +75,26 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ResetUserPasswordRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ResetUserPasswordResponse.FromString,
                 )
+        self.UpdateUserLocale = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserLocale',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserLocaleRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserLocaleResponse.FromString,
+                )
+        self.UpdateUserAppTheme = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserAppTheme',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserAppThemeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserAppThemeResponse.FromString,
+                )
+        self.UpdateUserTimezone = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserTimezone',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.FromString,
+                )
+        self.UpdateUserAttributes = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserAttributes',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesResponse.FromString,
+                )
         self.DeleteMember = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteMember',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteMemberRequest.SerializeToString,
@@ -280,6 +300,34 @@ class CoverServicer(object):
 
     def ResetUserPassword(self, request, context):
         """Reset user's password
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserLocale(self, request, context):
+        """Modify user's locale
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserAppTheme(self, request, context):
+        """Modify user's app theme
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserTimezone(self, request, context):
+        """Modify user's timezone
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserAttributes(self, request, context):
+        """Modify attributes
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -515,6 +563,26 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ResetUserPassword,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ResetUserPasswordRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ResetUserPasswordResponse.SerializeToString,
+            ),
+            'UpdateUserLocale': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserLocale,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserLocaleRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserLocaleResponse.SerializeToString,
+            ),
+            'UpdateUserAppTheme': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserAppTheme,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserAppThemeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserAppThemeResponse.SerializeToString,
+            ),
+            'UpdateUserTimezone': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserTimezone,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.SerializeToString,
+            ),
+            'UpdateUserAttributes': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserAttributes,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesResponse.SerializeToString,
             ),
             'DeleteMember': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteMember,
@@ -848,6 +916,74 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ResetUserPassword',
             cover_dot_v1_dot_cover__pb2.ResetUserPasswordRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ResetUserPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateUserLocale(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserLocale',
+            cover_dot_v1_dot_cover__pb2.UpdateUserLocaleRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserLocaleResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateUserAppTheme(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserAppTheme',
+            cover_dot_v1_dot_cover__pb2.UpdateUserAppThemeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserAppThemeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateUserTimezone(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserTimezone',
+            cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateUserAttributes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateUserAttributes',
+            cover_dot_v1_dot_cover__pb2.UpdateUserAttributesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserAttributesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
