@@ -35,6 +35,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsResponse.FromString,
                 )
+        self.GetMemberCostGroup = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetMemberCostGroup',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupResponse.FromString,
+                )
         self.GetUserDetails = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetUserDetails',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetUserDetailsRequest.SerializeToString,
@@ -99,11 +104,6 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/DeleteMember',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteMemberRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteMemberResponse.FromString,
-                )
-        self.AdminResetPassword = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/AdminResetPassword',
-                request_serializer=cover_dot_v1_dot_cover__pb2.AdminResetPasswordRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.AdminResetPasswordResponse.FromString,
                 )
         self.ResetPassword = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ResetPassword',
@@ -249,6 +249,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetMemberCostGroup(self, request, context):
+        """Get the cost group to which the member is attached
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetUserDetails(self, request, context):
         """Get the details of the logged-in user
         """
@@ -335,13 +342,6 @@ class CoverServicer(object):
 
     def DeleteMember(self, request, context):
         """Deletes a user
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def AdminResetPassword(self, request, context):
-        """Trigger reset password from Admin
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -524,6 +524,11 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetMemberDetailsResponse.SerializeToString,
             ),
+            'GetMemberCostGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMemberCostGroup,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupResponse.SerializeToString,
+            ),
             'GetUserDetails': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUserDetails,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetUserDetailsRequest.FromString,
@@ -588,11 +593,6 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteMember,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteMemberRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteMemberResponse.SerializeToString,
-            ),
-            'AdminResetPassword': grpc.unary_unary_rpc_method_handler(
-                    servicer.AdminResetPassword,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.AdminResetPasswordRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.AdminResetPasswordResponse.SerializeToString,
             ),
             'ResetPassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetPassword,
@@ -780,6 +780,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetMemberDetails',
             cover_dot_v1_dot_cover__pb2.GetMemberDetailsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetMemberDetailsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMemberCostGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetMemberCostGroup',
+            cover_dot_v1_dot_cover__pb2.GetMemberCostGroupRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetMemberCostGroupResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1001,23 +1018,6 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteMember',
             cover_dot_v1_dot_cover__pb2.DeleteMemberRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteMemberResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def AdminResetPassword(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AdminResetPassword',
-            cover_dot_v1_dot_cover__pb2.AdminResetPasswordRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.AdminResetPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
