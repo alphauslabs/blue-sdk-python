@@ -155,6 +155,21 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteViewResponse.FromString,
                 )
+        self.UpdateSideMenuState = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateSideMenuState',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateSideMenuStateRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateSideMenuStateResponse.FromString,
+                )
+        self.AddSideMenuFavorite = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/AddSideMenuFavorite',
+                request_serializer=cover_dot_v1_dot_cover__pb2.AddSideMenuFavoriteRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AddSideMenuFavoriteResponse.FromString,
+                )
+        self.RemoveSideMenuFavorite = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/RemoveSideMenuFavorite',
+                request_serializer=cover_dot_v1_dot_cover__pb2.RemoveSideMenuFavoriteRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.RemoveSideMenuFavoriteResponse.FromString,
+                )
         self.CreateCostGroup = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateCostGroup',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupRequest.SerializeToString,
@@ -417,6 +432,27 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateSideMenuState(self, request, context):
+        """Updates the side menu state
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddSideMenuFavorite(self, request, context):
+        """Add as side menu favorite
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RemoveSideMenuFavorite(self, request, context):
+        """Remove from side menu favorite
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateCostGroup(self, request, context):
         """Create a cost group
         """
@@ -643,6 +679,21 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteView,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewResponse.SerializeToString,
+            ),
+            'UpdateSideMenuState': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSideMenuState,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateSideMenuStateRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateSideMenuStateResponse.SerializeToString,
+            ),
+            'AddSideMenuFavorite': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddSideMenuFavorite,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.AddSideMenuFavoriteRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AddSideMenuFavoriteResponse.SerializeToString,
+            ),
+            'RemoveSideMenuFavorite': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveSideMenuFavorite,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.RemoveSideMenuFavoriteRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.RemoveSideMenuFavoriteResponse.SerializeToString,
             ),
             'CreateCostGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCostGroup,
@@ -1188,6 +1239,57 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteView',
             cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteViewResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateSideMenuState(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateSideMenuState',
+            cover_dot_v1_dot_cover__pb2.UpdateSideMenuStateRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateSideMenuStateResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddSideMenuFavorite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddSideMenuFavorite',
+            cover_dot_v1_dot_cover__pb2.AddSideMenuFavoriteRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AddSideMenuFavoriteResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveSideMenuFavorite(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/RemoveSideMenuFavorite',
+            cover_dot_v1_dot_cover__pb2.RemoveSideMenuFavoriteRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.RemoveSideMenuFavoriteResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

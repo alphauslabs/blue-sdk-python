@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from alphausblue.api.cover import user_pb2 as api_dot_cover_dot_user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61pi/cover/view.proto\x12\x11\x62lueapi.api.cover\x1a\x14\x61pi/cover/user.proto\"\xf2\x02\n\x08ViewData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tisPrivate\x18\x04 \x01(\x08\x12\x12\n\nisEditable\x18\x05 \x01(\x08\x12\x0c\n\x04icon\x18\x06 \x01(\t\x12\x34\n\tcreatedBy\x18\x07 \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x11\n\tcreatedAt\x18\x08 \x01(\t\x12\x34\n\tupdatedBy\x18\t \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x11\n\tupdatedAt\x18\n \x01(\t\x12-\n\x06layout\x18\x0b \x03(\x0b\x32\x1d.blueapi.api.cover.ViewLayout\x12-\n\x08sideMenu\x18\x0c \x01(\x0b\x32\x1b.blueapi.api.cover.SideMenu\x12\x12\n\nreportType\x18\r \x01(\t\"\x90\x01\n\x08ViewList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tisPrivate\x18\x04 \x01(\x08\x12\x12\n\nisEditable\x18\x05 \x01(\x08\x12\x0c\n\x04icon\x18\x06 \x01(\t\x12\x0f\n\x07\x63reated\x18\x07 \x01(\t\x12\x0f\n\x07updated\x18\x08 \x01(\t\"\xaa\x01\n\nViewLayout\x12\t\n\x01i\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\x13\n\x0b\x63omponentId\x18\x04 \x01(\t\x12\x31\n\x07options\x18\x05 \x01(\x0b\x32 .blueapi.api.cover.LayoutOptions\x12\x33\n\x08requests\x18\x06 \x03(\x0b\x32!.blueapi.api.cover.LayoutRequests\"i\n\x08SideMenu\x12\x10\n\x08\x66\x61vorite\x18\x01 \x03(\t\x12\x15\n\risOpenedAdmin\x18\x02 \x01(\x08\x12\x18\n\x10isOpenedFeatures\x18\x03 \x01(\x08\x12\x1a\n\x12isOpenedCostGroups\x18\x04 \x01(\x08\"3\n\rLayoutOptions\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"w\n\x0eLayoutRequests\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x30\n\x06params\x18\x04 \x01(\x0b\x32 .blueapi.api.cover.RequestParams\x12\x0c\n\x04hash\x18\x05 \x01(\t\"+\n\rRequestParams\x12\r\n\x05start\x18\x01 \x01(\t\x12\x0b\n\x03\x65nd\x18\x02 \x01(\t\"}\n\tFavorites\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tisPrivate\x18\x04 \x01(\x08\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x0f\n\x07\x63reated\x18\x06 \x01(\t\x12\x0f\n\x07updated\x18\x07 \x01(\tBb\n\x1f\x63loud.alphaus.blueapi.api.coverB\x11\x41piCoverViewProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x61pi/cover/view.proto\x12\x11\x62lueapi.api.cover\x1a\x14\x61pi/cover/user.proto\"\xf2\x02\n\x08ViewData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tisPrivate\x18\x04 \x01(\x08\x12\x12\n\nisEditable\x18\x05 \x01(\x08\x12\x0c\n\x04icon\x18\x06 \x01(\t\x12\x34\n\tcreatedBy\x18\x07 \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x11\n\tcreatedAt\x18\x08 \x01(\t\x12\x34\n\tupdatedBy\x18\t \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x11\n\tupdatedAt\x18\n \x01(\t\x12-\n\x06layout\x18\x0b \x03(\x0b\x32\x1d.blueapi.api.cover.ViewLayout\x12-\n\x08sideMenu\x18\x0c \x01(\x0b\x32\x1b.blueapi.api.cover.SideMenu\x12\x12\n\nreportType\x18\r \x01(\t\"\x94\x01\n\x08ViewList\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tisPrivate\x18\x04 \x01(\x08\x12\x12\n\nisEditable\x18\x05 \x01(\x08\x12\x0c\n\x04icon\x18\x06 \x01(\t\x12\x11\n\tcreatedAt\x18\x07 \x01(\t\x12\x11\n\tupdatedAt\x18\x08 \x01(\t\"\xaa\x01\n\nViewLayout\x12\t\n\x01i\x18\x01 \x01(\t\x12\t\n\x01x\x18\x02 \x01(\x01\x12\t\n\x01y\x18\x03 \x01(\x01\x12\x13\n\x0b\x63omponentId\x18\x04 \x01(\t\x12\x31\n\x07options\x18\x05 \x01(\x0b\x32 .blueapi.api.cover.LayoutOptions\x12\x33\n\x08requests\x18\x06 \x03(\x0b\x32!.blueapi.api.cover.LayoutRequests\"i\n\x08SideMenu\x12\x10\n\x08\x66\x61vorite\x18\x01 \x03(\t\x12\x15\n\risOpenedAdmin\x18\x02 \x01(\x08\x12\x18\n\x10isOpenedFeatures\x18\x03 \x01(\x08\x12\x1a\n\x12isOpenedCostGroups\x18\x04 \x01(\x08\"3\n\rLayoutOptions\x12\r\n\x05title\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"w\n\x0eLayoutRequests\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0b\n\x03url\x18\x03 \x01(\t\x12\x30\n\x06params\x18\x04 \x01(\x0b\x32 .blueapi.api.cover.RequestParams\x12\x0c\n\x04hash\x18\x05 \x01(\t\"+\n\rRequestParams\x12\r\n\x05start\x18\x01 \x01(\t\x12\x0b\n\x03\x65nd\x18\x02 \x01(\t\"\x81\x01\n\tFavorites\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x11\n\tisPrivate\x18\x04 \x01(\x08\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x11\n\tcreatedAt\x18\x06 \x01(\t\x12\x11\n\tupdatedAt\x18\x07 \x01(\t\"+\n\rSideMenuState\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\x08\x42\x62\n\x1f\x63loud.alphaus.blueapi.api.coverB\x11\x41piCoverViewProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
 
 
 
@@ -27,6 +27,7 @@ _LAYOUTOPTIONS = DESCRIPTOR.message_types_by_name['LayoutOptions']
 _LAYOUTREQUESTS = DESCRIPTOR.message_types_by_name['LayoutRequests']
 _REQUESTPARAMS = DESCRIPTOR.message_types_by_name['RequestParams']
 _FAVORITES = DESCRIPTOR.message_types_by_name['Favorites']
+_SIDEMENUSTATE = DESCRIPTOR.message_types_by_name['SideMenuState']
 ViewData = _reflection.GeneratedProtocolMessageType('ViewData', (_message.Message,), {
   'DESCRIPTOR' : _VIEWDATA,
   '__module__' : 'api.cover.view_pb2'
@@ -83,6 +84,13 @@ Favorites = _reflection.GeneratedProtocolMessageType('Favorites', (_message.Mess
   })
 _sym_db.RegisterMessage(Favorites)
 
+SideMenuState = _reflection.GeneratedProtocolMessageType('SideMenuState', (_message.Message,), {
+  'DESCRIPTOR' : _SIDEMENUSTATE,
+  '__module__' : 'api.cover.view_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.api.cover.SideMenuState)
+  })
+_sym_db.RegisterMessage(SideMenuState)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -90,17 +98,19 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _VIEWDATA._serialized_start=66
   _VIEWDATA._serialized_end=436
   _VIEWLIST._serialized_start=439
-  _VIEWLIST._serialized_end=583
-  _VIEWLAYOUT._serialized_start=586
-  _VIEWLAYOUT._serialized_end=756
-  _SIDEMENU._serialized_start=758
-  _SIDEMENU._serialized_end=863
-  _LAYOUTOPTIONS._serialized_start=865
-  _LAYOUTOPTIONS._serialized_end=916
-  _LAYOUTREQUESTS._serialized_start=918
-  _LAYOUTREQUESTS._serialized_end=1037
-  _REQUESTPARAMS._serialized_start=1039
-  _REQUESTPARAMS._serialized_end=1082
-  _FAVORITES._serialized_start=1084
-  _FAVORITES._serialized_end=1209
+  _VIEWLIST._serialized_end=587
+  _VIEWLAYOUT._serialized_start=590
+  _VIEWLAYOUT._serialized_end=760
+  _SIDEMENU._serialized_start=762
+  _SIDEMENU._serialized_end=867
+  _LAYOUTOPTIONS._serialized_start=869
+  _LAYOUTOPTIONS._serialized_end=920
+  _LAYOUTREQUESTS._serialized_start=922
+  _LAYOUTREQUESTS._serialized_end=1041
+  _REQUESTPARAMS._serialized_start=1043
+  _REQUESTPARAMS._serialized_end=1086
+  _FAVORITES._serialized_start=1089
+  _FAVORITES._serialized_end=1218
+  _SIDEMENUSTATE._serialized_start=1220
+  _SIDEMENUSTATE._serialized_end=1263
 # @@protoc_insertion_point(module_scope)
