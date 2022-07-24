@@ -17,7 +17,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18invoice/v1/invoice.proto\x12\x12\x62lueapi.invoice.v1\x1a\x11\x61pi/invoice.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"7\n\x11GetInvoiceRequest\x12\x11\n\tyearMonth\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\"M\n\x18\x45xportInvoiceFileRequest\x12\x11\n\tyearMonth\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\"(\n\x19\x45xportInvoiceFileResponse\x12\x0b\n\x03url\x18\x01 \x01(\t2\xbd\x03\n\x07Invoice\x12t\n\nGetInvoice\x12%.blueapi.invoice.v1.GetInvoiceRequest\x1a\x14.blueapi.api.Invoice\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/invoice/{yearMonth}:read:\x01*0\x01\x12\x9b\x01\n\x11\x45xportInvoiceFile\x12,.blueapi.invoice.v1.ExportInvoiceFileRequest\x1a-.blueapi.invoice.v1.ExportInvoiceFileResponse\")\x82\xd3\xe4\x93\x02#\"\x1e/v1/invoice/{yearMonth}:export:\x01*\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Invoice API. Base URL: https://api.alphaus.cloud/m/blue/invoice\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/invoice/BQ\n\x19\x63loud.alphaus.api.invoiceB\x0cInvoiceProtoZ&github.com/alphauslabs/blueapi/invoiceb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18invoice/v1/invoice.proto\x12\x12\x62lueapi.invoice.v1\x1a\x11\x61pi/invoice.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"2\n\x11GetInvoiceRequest\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\"H\n\x18\x45xportInvoiceFileRequest\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\r\n\x05level\x18\x04 \x01(\t\"(\n\x19\x45xportInvoiceFileResponse\x12\x0b\n\x03url\x18\x01 \x01(\t2\xb1\x03\n\x07Invoice\x12m\n\nGetInvoice\x12%.blueapi.invoice.v1.GetInvoiceRequest\x1a\x14.blueapi.api.Invoice\"\"\x82\xd3\xe4\x93\x02\x1c\"\x17/v1/invoice/{date}:read:\x01*\x12\x96\x01\n\x11\x45xportInvoiceFile\x12,.blueapi.invoice.v1.ExportInvoiceFileRequest\x1a-.blueapi.invoice.v1.ExportInvoiceFileResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/invoice/{date}:export:\x01*\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Invoice API. Base URL: https://api.alphaus.cloud/m/blue/invoice\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/invoice/BQ\n\x19\x63loud.alphaus.api.invoiceB\x0cInvoiceProtoZ&github.com/alphauslabs/blueapi/invoiceb\x06proto3')
 
 
 
@@ -53,15 +53,15 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _INVOICE._options = None
   _INVOICE._serialized_options = b'\222A\231\001\022F(BETA) Invoice API. Base URL: https://api.alphaus.cloud/m/blue/invoice\032O\n\022Service definition\0229https://github.com/alphauslabs/blueapi/tree/main/invoice/'
   _INVOICE.methods_by_name['GetInvoice']._options = None
-  _INVOICE.methods_by_name['GetInvoice']._serialized_options = b'\202\323\344\223\002!\"\034/v1/invoice/{yearMonth}:read:\001*'
+  _INVOICE.methods_by_name['GetInvoice']._serialized_options = b'\202\323\344\223\002\034\"\027/v1/invoice/{date}:read:\001*'
   _INVOICE.methods_by_name['ExportInvoiceFile']._options = None
-  _INVOICE.methods_by_name['ExportInvoiceFile']._serialized_options = b'\202\323\344\223\002#\"\036/v1/invoice/{yearMonth}:export:\001*'
+  _INVOICE.methods_by_name['ExportInvoiceFile']._serialized_options = b'\202\323\344\223\002\036\"\031/v1/invoice/{date}:export:\001*'
   _GETINVOICEREQUEST._serialized_start=145
-  _GETINVOICEREQUEST._serialized_end=200
-  _EXPORTINVOICEFILEREQUEST._serialized_start=202
-  _EXPORTINVOICEFILEREQUEST._serialized_end=279
-  _EXPORTINVOICEFILERESPONSE._serialized_start=281
-  _EXPORTINVOICEFILERESPONSE._serialized_end=321
-  _INVOICE._serialized_start=324
-  _INVOICE._serialized_end=769
+  _GETINVOICEREQUEST._serialized_end=195
+  _EXPORTINVOICEFILEREQUEST._serialized_start=197
+  _EXPORTINVOICEFILEREQUEST._serialized_end=269
+  _EXPORTINVOICEFILERESPONSE._serialized_start=271
+  _EXPORTINVOICEFILERESPONSE._serialized_end=311
+  _INVOICE._serialized_start=314
+  _INVOICE._serialized_end=747
 # @@protoc_insertion_point(module_scope)

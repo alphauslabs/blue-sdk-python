@@ -16,7 +16,7 @@ class InvoiceStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetInvoice = channel.unary_stream(
+        self.GetInvoice = channel.unary_unary(
                 '/blueapi.invoice.v1.Invoice/GetInvoice',
                 request_serializer=invoice_dot_v1_dot_invoice__pb2.GetInvoiceRequest.SerializeToString,
                 response_deserializer=api_dot_invoice__pb2.Invoice.FromString,
@@ -49,7 +49,7 @@ class InvoiceServicer(object):
 
 def add_InvoiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetInvoice': grpc.unary_stream_rpc_method_handler(
+            'GetInvoice': grpc.unary_unary_rpc_method_handler(
                     servicer.GetInvoice,
                     request_deserializer=invoice_dot_v1_dot_invoice__pb2.GetInvoiceRequest.FromString,
                     response_serializer=api_dot_invoice__pb2.Invoice.SerializeToString,
@@ -81,7 +81,7 @@ class Invoice(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.invoice.v1.Invoice/GetInvoice',
+        return grpc.experimental.unary_unary(request, target, '/blueapi.invoice.v1.Invoice/GetInvoice',
             invoice_dot_v1_dot_invoice__pb2.GetInvoiceRequest.SerializeToString,
             api_dot_invoice__pb2.Invoice.FromString,
             options, channel_credentials,
