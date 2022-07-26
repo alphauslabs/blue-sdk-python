@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 
 
@@ -44,6 +45,16 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/ListUsageCostsDrift',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListUsageCostsDriftRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.UsageCostsDrift.FromString,
+                )
+        self.GetInvoice = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetInvoice',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
+                response_deserializer=api_dot_invoice__pb2.Invoice.FromString,
+                )
+        self.ExportInvoiceFile = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ExportInvoiceFile',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.FromString,
                 )
 
 
@@ -93,6 +104,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetInvoice(self, request, context):
+        """Gets a invoice.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportInvoiceFile(self, request, context):
+        """Exports a invoice.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -125,6 +150,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListUsageCostsDrift,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListUsageCostsDriftRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.UsageCostsDrift.SerializeToString,
+            ),
+            'GetInvoice': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInvoice,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.FromString,
+                    response_serializer=api_dot_invoice__pb2.Invoice.SerializeToString,
+            ),
+            'ExportInvoiceFile': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportInvoiceFile,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -236,5 +271,39 @@ class Billing(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListUsageCostsDrift',
             billing_dot_v1_dot_billing__pb2.ListUsageCostsDriftRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.UsageCostsDrift.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetInvoice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetInvoice',
+            billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
+            api_dot_invoice__pb2.Invoice.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExportInvoiceFile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/ExportInvoiceFile',
+            billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
