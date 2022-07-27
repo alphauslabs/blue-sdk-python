@@ -105,14 +105,14 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetInvoice(self, request, context):
-        """Gets a invoice.
+        """Gets an invoice.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ExportInvoiceFile(self, request, context):
-        """Exports a invoice.
+        """Exports an invoice.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
