@@ -2,7 +2,9 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from alphausblue.cover.v1 import cover_pb2 as cover_dot_v1_dot_cover__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 
 class CoverStub(object):
@@ -229,6 +231,36 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/DeleteCostGroup',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupResponse.FromString,
+                )
+        self.GetAccountAccessTemplateUrl = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAccountAccessTemplateUrl',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessTemplateUrlRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessTemplateUrlResponse.FromString,
+                )
+        self.ListAccountAccess = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListAccountAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListAccountAccessRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+                )
+        self.GetAccountAccess = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAccountAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+                )
+        self.CreateAccountAccess = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateAccountAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+                )
+        self.UpdateAccountAccess = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateAccountAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateAccountAccessRequest.SerializeToString,
+                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                )
+        self.DeleteAccountAccess = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteAccountAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteAccountAccessRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
 
@@ -537,6 +569,48 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAccountAccessTemplateUrl(self, request, context):
+        """Gets a CloudFormation launch URL for enabling the account access.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAccountAccess(self, request, context):
+        """Lists the account access role(s) attached to accounts under caller.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAccountAccess(self, request, context):
+        """Gets the current account role attached to the input target.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAccountAccess(self, request, context):
+        """Starts validation of the account access stack deployment. If successful, the IAM role created from the CloudFormation stack will be registered to the target.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccountAccess(self, request, context):
+        """Starts an update to an existing account access CloudFormation stack for template changes, if any. Only call this API if the status of your account access is 'outdated'.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAccountAccess(self, request, context):
+        """Deletes the current account access role attached to this target account. This does not delete the CloudFormation deployment in your account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -754,6 +828,36 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteCostGroup,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteCostGroupResponse.SerializeToString,
+            ),
+            'GetAccountAccessTemplateUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAccountAccessTemplateUrl,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessTemplateUrlRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessTemplateUrlResponse.SerializeToString,
+            ),
+            'ListAccountAccess': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAccountAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListAccountAccessRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountAccess.SerializeToString,
+            ),
+            'GetAccountAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAccountAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountAccess.SerializeToString,
+            ),
+            'CreateAccountAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAccountAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountAccess.SerializeToString,
+            ),
+            'UpdateAccountAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccountAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateAccountAccessRequest.FromString,
+                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteAccountAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAccountAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteAccountAccessRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1494,5 +1598,107 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteCostGroup',
             cover_dot_v1_dot_cover__pb2.DeleteCostGroupRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteCostGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAccountAccessTemplateUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAccountAccessTemplateUrl',
+            cover_dot_v1_dot_cover__pb2.GetAccountAccessTemplateUrlRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAccountAccessTemplateUrlResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAccountAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListAccountAccess',
+            cover_dot_v1_dot_cover__pb2.ListAccountAccessRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAccountAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAccountAccess',
+            cover_dot_v1_dot_cover__pb2.GetAccountAccessRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAccountAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateAccountAccess',
+            cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccountAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateAccountAccess',
+            cover_dot_v1_dot_cover__pb2.UpdateAccountAccessRequest.SerializeToString,
+            api_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAccountAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteAccountAccess',
+            cover_dot_v1_dot_cover__pb2.DeleteAccountAccessRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
