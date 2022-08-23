@@ -15,14 +15,14 @@ _sym_db = _symbol_database.Default()
 from alphausblue.api.cover import user_pb2 as api_dot_cover_dot_user__pb2
 from alphausblue.api.cover import view_pb2 as api_dot_cover_dot_view__pb2
 from alphausblue.api.cover import costgroup_pb2 as api_dot_cover_dot_costgroup__pb2
-from alphausblue.api.cover.aws import asset_pb2 as api_dot_cover_dot_aws_dot_asset__pb2
+from alphausblue.api.cover import asset_pb2 as api_dot_cover_dot_asset__pb2
 from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x63over/v1/cover.proto\x12\x10\x62lueapi.cover.v1\x1a\x14\x61pi/cover/user.proto\x1a\x14\x61pi/cover/view.proto\x1a\x19\x61pi/cover/costgroup.proto\x1a\x19\x61pi/cover/aws/asset.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"$\n\x13InviteMemberRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"%\n\x14InviteMemberResponse\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"D\n\x13\x43reateMemberRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"E\n\x14\x43reateMemberResponse\x12-\n\x08userData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.UserData\"\x13\n\x11GetMembersRequest\"C\n\x12GetMembersResponse\x12-\n\x08userData\x18\x01 \x03(\x0b\x32\x1b.blueapi.api.cover.UserData\")\n\x17GetMemberDetailsRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"I\n\x18GetMemberDetailsResponse\x12-\n\x08userData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.UserData\"+\n\x19GetMemberCostGroupRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"T\n\x1aGetMemberCostGroupResponse\x12\x36\n\ncostGroups\x18\x01 \x03(\x0b\x32\".blueapi.api.cover.MemberCostGroup\"\x17\n\x15GetUserDetailsRequest\"G\n\x16GetUserDetailsResponse\x12-\n\x08userData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.UserData\")\n\x17UpdateUserAvatarRequest\x12\x0e\n\x06\x61vatar\x18\x01 \x01(\t\"*\n\x18UpdateUserAvatarResponse\x12\x0e\n\x06\x61vatar\x18\x01 \x01(\t\"%\n\x15UpdateUserIconRequest\x12\x0c\n\x04icon\x18\x01 \x01(\t\"&\n\x16UpdateUserIconResponse\x12\x0c\n\x04icon\x18\x01 \x01(\t\"1\n\x1bUpdateUserColorThemeRequest\x12\x12\n\ncolorTheme\x18\x01 \x01(\t\"2\n\x1cUpdateUserColorThemeResponse\x12\x12\n\ncolorTheme\x18\x01 \x01(\t\"%\n\x15UpdateUserNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"&\n\x16UpdateUserNameResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\"\'\n\x16UpdateUserEmailRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"(\n\x17UpdateUserEmailResponse\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"+\n\x19UpdateUserMainViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\",\n\x1aUpdateUserMainViewResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"I\n\x18ResetUserPasswordRequest\x12\x18\n\x10previousPassword\x18\x01 \x01(\t\x12\x13\n\x0bnewPassword\x18\x02 \x01(\t\"+\n\x19ResetUserPasswordResponse\x12\x0e\n\x06userId\x18\x01 \x01(\t\")\n\x17UpdateUserLocaleRequest\x12\x0e\n\x06locale\x18\x01 \x01(\t\"*\n\x18UpdateUserLocaleResponse\x12\x0e\n\x06locale\x18\x01 \x01(\t\"-\n\x19UpdateUserAppThemeRequest\x12\x10\n\x08\x61ppTheme\x18\x01 \x01(\t\".\n\x1aUpdateUserAppThemeResponse\x12\x10\n\x08\x61ppTheme\x18\x01 \x01(\t\"-\n\x19UpdateUserTimezoneRequest\x12\x10\n\x08timezone\x18\x01 \x01(\t\".\n\x1aUpdateUserTimezoneResponse\x12\x10\n\x08timezone\x18\x01 \x01(\t\"1\n\x1bUpdateUserAttributesRequest\x12\x12\n\nattributes\x18\x01 \x03(\t\"2\n\x1cUpdateUserAttributesResponse\x12\x12\n\nattributes\x18\x01 \x03(\t\"%\n\x13\x44\x65leteMemberRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"&\n\x14\x44\x65leteMemberResponse\x12\x0e\n\x06userId\x18\x01 \x01(\t\"&\n\x14ResetPasswordRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"\'\n\x15ResetPasswordResponse\x12\x0e\n\x06userId\x18\x01 \x01(\t\"\x7f\n\x11\x43reateViewRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x11\n\tisPrivate\x18\x03 \x01(\x08\x12\x12\n\nisEditable\x18\x04 \x01(\x08\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x12\n\nreportType\x18\x06 \x01(\t\"C\n\x12\x43reateViewResponse\x12-\n\x08viewData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.ViewData\"\x11\n\x0fGetViewsRequest\"A\n\x10GetViewsResponse\x12-\n\x08viewList\x18\x01 \x03(\x0b\x32\x1b.blueapi.api.cover.ViewList\"\'\n\x15GetCurrentViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"G\n\x16GetCurrentViewResponse\x12-\n\x08viewData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.ViewData\"\x19\n\x17GetFavoriteViewsRequest\"K\n\x18GetFavoriteViewsResponse\x12/\n\tfavorites\x18\x01 \x03(\x0b\x32\x1c.blueapi.api.cover.Favorites\"$\n\x12PublishViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"\"\n\x13PublishViewResponse\x12\x0b\n\x03url\x18\x01 \x01(\t\"$\n\x12\x41\x64\x64\x46\x61voriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"%\n\x13\x41\x64\x64\x46\x61voriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"\'\n\x15RemoveFavoriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"(\n\x16RemoveFavoriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"{\n\x11UpdateViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0c\n\x04icon\x18\x04 \x01(\t\x12\x11\n\tisPrivate\x18\x05 \x01(\x08\x12\x12\n\nisEditable\x18\x06 \x01(\x08\"$\n\x12UpdateViewResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"#\n\x11\x44\x65leteViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"$\n\x12\x44\x65leteViewResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"e\n\x1aUpdateSideMenuStateRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x37\n\rsidemenustate\x18\x02 \x03(\x0b\x32 .blueapi.api.cover.SideMenuState\"-\n\x1bUpdateSideMenuStateResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"@\n\x1a\x41\x64\x64SideMenuFavoriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x12\n\nmenuItemId\x18\x02 \x01(\t\"-\n\x1b\x41\x64\x64SideMenuFavoriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"C\n\x1dRemoveSideMenuFavoriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x12\n\nmenuItemId\x18\x02 \x01(\t\"0\n\x1eRemoveSideMenuFavoriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"\xa3\x01\n\x16\x43reateCostGroupRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x0c\n\x04icon\x18\x04 \x01(\t\x12\x12\n\ncolorTheme\x18\x05 \x01(\t\x12\x35\n\x0c\x63ombinations\x18\x06 \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\"R\n\x17\x43reateCostGroupResponse\x12\x37\n\rcostGroupData\x18\x01 \x01(\x0b\x32 .blueapi.api.cover.CostGroupData\"\x16\n\x14GetCostGroupsRequest\"P\n\x15GetCostGroupsResponse\x12\x37\n\rcostGroupData\x18\x01 \x03(\x0b\x32 .blueapi.api.cover.CostGroupData\"1\n\x1aGetCostGroupDetailsRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\"V\n\x1bGetCostGroupDetailsResponse\x12\x37\n\rcostGroupData\x18\x01 \x01(\x0b\x32 .blueapi.api.cover.CostGroupData\"?\n\x1aUpdateCostGroupNameRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"+\n\x1bUpdateCostGroupNameResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\"M\n!UpdateCostGroupDescriptionRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"9\n\"UpdateCostGroupDescriptionResponse\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\"A\n\x1bUpdateCostGroupImageRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\"-\n\x1cUpdateCostGroupImageResponse\x12\r\n\x05image\x18\x01 \x01(\t\"?\n\x1aUpdateCostGroupIconRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0c\n\x04icon\x18\x02 \x01(\t\"+\n\x1bUpdateCostGroupIconResponse\x12\x0c\n\x04icon\x18\x01 \x01(\t\"K\n UpdateCostGroupColorThemeRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x12\n\ncolorTheme\x18\x02 \x01(\t\"7\n!UpdateCostGroupColorThemeResponse\x12\x12\n\ncolorTheme\x18\x01 \x01(\t\"p\n\"UpdateCostGroupCombinationsRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x35\n\x0c\x63ombinations\x18\x02 \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\"\\\n#UpdateCostGroupCombinationsResponse\x12\x35\n\x0c\x63ombinations\x18\x01 \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\"C\n\x1c\x41ssignCostGroupMemberRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"D\n\x1d\x41ssignCostGroupMemberResponse\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"C\n\x1cRemoveCostGroupMemberRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"D\n\x1dRemoveCostGroupMemberResponse\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"-\n\x16\x44\x65leteCostGroupRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\".\n\x17\x44\x65leteCostGroupResponse\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\"2\n\"GetAccountAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\"\x87\x01\n#GetAccountAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\x12\x12\n\nexternalId\x18\x05 \x01(\t\"\x1a\n\x18ListAccountAccessRequest\")\n\x17GetAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\xa4\x01\n\rAccountAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x12\n\nexternalId\x18\x03 \x01(\t\x12\x0f\n\x07stackId\x18\x04 \x01(\t\x12\x13\n\x0bstackRegion\x18\x05 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x13\n\x0blastUpdated\x18\x08 \x01(\t\",\n\x1a\x43reateAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\",\n\x1aUpdateAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\",\n\x1a\x44\x65leteAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"4\n\x11ListAssetsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\"^\n\x12ListAssetsResponse\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12,\n\x06\x61ssets\x18\x03 \x03(\x0b\x32\x1c.blueapi.api.cover.aws.Asset2\xbf\x38\n\x05\x43over\x12|\n\x0cInviteMember\x12%.blueapi.cover.v1.InviteMemberRequest\x1a&.blueapi.cover.v1.InviteMemberResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/members/invite:\x01*\x12u\n\x0c\x43reateMember\x12%.blueapi.cover.v1.CreateMemberRequest\x1a&.blueapi.cover.v1.CreateMemberResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/members:\x01*\x12l\n\nGetMembers\x12#.blueapi.cover.v1.GetMembersRequest\x1a$.blueapi.cover.v1.GetMembersResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/members\x12\x87\x01\n\x10GetMemberDetails\x12).blueapi.cover.v1.GetMemberDetailsRequest\x1a*.blueapi.cover.v1.GetMemberDetailsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/members/{userId}\x12\x97\x01\n\x12GetMemberCostGroup\x12+.blueapi.cover.v1.GetMemberCostGroupRequest\x1a,.blueapi.cover.v1.GetMemberCostGroupResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/members/{userId}/costgroup\x12s\n\x0eGetUserDetails\x12\'.blueapi.cover.v1.GetUserDetailsRequest\x1a(.blueapi.cover.v1.GetUserDetailsResponse\"\x0e\x82\xd3\xe4\x93\x02\x08\x12\x06/v1/me\x12\x83\x01\n\x10UpdateUserAvatar\x12).blueapi.cover.v1.UpdateUserAvatarRequest\x1a*.blueapi.cover.v1.UpdateUserAvatarResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x1a\r/v1/me/avatar:\x01*\x12{\n\x0eUpdateUserIcon\x12\'.blueapi.cover.v1.UpdateUserIconRequest\x1a(.blueapi.cover.v1.UpdateUserIconResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x1a\x0b/v1/me/icon:\x01*\x12\x93\x01\n\x14UpdateUserColorTheme\x12-.blueapi.cover.v1.UpdateUserColorThemeRequest\x1a..blueapi.cover.v1.UpdateUserColorThemeResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/v1/me/colortheme:\x01*\x12{\n\x0eUpdateUserName\x12\'.blueapi.cover.v1.UpdateUserNameRequest\x1a(.blueapi.cover.v1.UpdateUserNameResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x1a\x0b/v1/me/name:\x01*\x12\x7f\n\x0fUpdateUserEmail\x12(.blueapi.cover.v1.UpdateUserEmailRequest\x1a).blueapi.cover.v1.UpdateUserEmailResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x1a\x0c/v1/me/email:\x01*\x12\x8b\x01\n\x12UpdateUserMainView\x12+.blueapi.cover.v1.UpdateUserMainViewRequest\x1a,.blueapi.cover.v1.UpdateUserMainViewResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/me/mainview:\x01*\x12\x88\x01\n\x11ResetUserPassword\x12*.blueapi.cover.v1.ResetUserPasswordRequest\x1a+.blueapi.cover.v1.ResetUserPasswordResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/me/password:\x01*\x12\x83\x01\n\x10UpdateUserLocale\x12).blueapi.cover.v1.UpdateUserLocaleRequest\x1a*.blueapi.cover.v1.UpdateUserLocaleResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x1a\r/v1/me/locale:\x01*\x12\x8b\x01\n\x12UpdateUserAppTheme\x12+.blueapi.cover.v1.UpdateUserAppThemeRequest\x1a,.blueapi.cover.v1.UpdateUserAppThemeResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/me/apptheme:\x01*\x12\x8b\x01\n\x12UpdateUserTimezone\x12+.blueapi.cover.v1.UpdateUserTimezoneRequest\x1a,.blueapi.cover.v1.UpdateUserTimezoneResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/me/timezone:\x01*\x12\x93\x01\n\x14UpdateUserAttributes\x12-.blueapi.cover.v1.UpdateUserAttributesRequest\x1a..blueapi.cover.v1.UpdateUserAttributesResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/v1/me/attributes:\x01*\x12{\n\x0c\x44\x65leteMember\x12%.blueapi.cover.v1.DeleteMemberRequest\x1a&.blueapi.cover.v1.DeleteMemberResponse\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/members/{userId}\x12\x86\x01\n\rResetPassword\x12&.blueapi.cover.v1.ResetPasswordRequest\x1a\'.blueapi.cover.v1.ResetPasswordResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/members/resetpassword:\x01*\x12m\n\nCreateView\x12#.blueapi.cover.v1.CreateViewRequest\x1a$.blueapi.cover.v1.CreateViewResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/views:\x01*\x12\x64\n\x08GetViews\x12!.blueapi.cover.v1.GetViewsRequest\x1a\".blueapi.cover.v1.GetViewsResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/views\x12\x7f\n\x0eGetCurrentView\x12\'.blueapi.cover.v1.GetCurrentViewRequest\x1a(.blueapi.cover.v1.GetCurrentViewResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/views/{viewId}\x12\x86\x01\n\x10GetFavoriteViews\x12).blueapi.cover.v1.GetFavoriteViewsRequest\x1a*.blueapi.cover.v1.GetFavoriteViewsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/views/favorites\x12x\n\x0bPublishView\x12$.blueapi.cover.v1.PublishViewRequest\x1a%.blueapi.cover.v1.PublishViewResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/views/publish:\x01*\x12y\n\x0b\x41\x64\x64\x46\x61vorite\x12$.blueapi.cover.v1.AddFavoriteRequest\x1a%.blueapi.cover.v1.AddFavoriteResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x1a\x12/v1/views/favorite:\x01*\x12\x84\x01\n\x0eRemoveFavorite\x12\'.blueapi.cover.v1.RemoveFavoriteRequest\x1a(.blueapi.cover.v1.RemoveFavoriteResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x1a\x14/v1/views/unfavorite:\x01*\x12v\n\nUpdateView\x12#.blueapi.cover.v1.UpdateViewRequest\x1a$.blueapi.cover.v1.UpdateViewResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x1a\x12/v1/views/{viewId}:\x01*\x12s\n\nDeleteView\x12#.blueapi.cover.v1.DeleteViewRequest\x1a$.blueapi.cover.v1.DeleteViewResponse\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/views/{viewId}\x12\x9f\x01\n\x13UpdateSideMenuState\x12,.blueapi.cover.v1.UpdateSideMenuStateRequest\x1a-.blueapi.cover.v1.UpdateSideMenuStateResponse\"+\x82\xd3\xe4\x93\x02%\x1a /v1/views/{viewId}/sidemenustate:\x01*\x12\xa2\x01\n\x13\x41\x64\x64SideMenuFavorite\x12,.blueapi.cover.v1.AddSideMenuFavoriteRequest\x1a-.blueapi.cover.v1.AddSideMenuFavoriteResponse\".\x82\xd3\xe4\x93\x02(\"#/v1/views/{viewId}/sidemenufavorite:\x01*\x12\xad\x01\n\x16RemoveSideMenuFavorite\x12/.blueapi.cover.v1.RemoveSideMenuFavoriteRequest\x1a\x30.blueapi.cover.v1.RemoveSideMenuFavoriteResponse\"0\x82\xd3\xe4\x93\x02*\"%/v1/views/{viewId}/sidemenuunfavorite:\x01*\x12\x81\x01\n\x0f\x43reateCostGroup\x12(.blueapi.cover.v1.CreateCostGroupRequest\x1a).blueapi.cover.v1.CreateCostGroupResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/costgroups:\x01*\x12x\n\rGetCostGroups\x12&.blueapi.cover.v1.GetCostGroupsRequest\x1a\'.blueapi.cover.v1.GetCostGroupsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/costgroups\x12\x98\x01\n\x13GetCostGroupDetails\x12,.blueapi.cover.v1.GetCostGroupDetailsRequest\x1a-.blueapi.cover.v1.GetCostGroupDetailsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/costgroups/{costGroupId}\x12\xa0\x01\n\x13UpdateCostGroupName\x12,.blueapi.cover.v1.UpdateCostGroupNameRequest\x1a-.blueapi.cover.v1.UpdateCostGroupNameResponse\",\x82\xd3\xe4\x93\x02&\x1a!/v1/costgroups/{costGroupId}/name:\x01*\x12\xbc\x01\n\x1aUpdateCostGroupDescription\x12\x33.blueapi.cover.v1.UpdateCostGroupDescriptionRequest\x1a\x34.blueapi.cover.v1.UpdateCostGroupDescriptionResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/costgroups/{costGroupId}/description:\x01*\x12\xa4\x01\n\x14UpdateCostGroupImage\x12-.blueapi.cover.v1.UpdateCostGroupImageRequest\x1a..blueapi.cover.v1.UpdateCostGroupImageResponse\"-\x82\xd3\xe4\x93\x02\'\x1a\"/v1/costgroups/{costGroupId}/image:\x01*\x12\xa0\x01\n\x13UpdateCostGroupIcon\x12,.blueapi.cover.v1.UpdateCostGroupIconRequest\x1a-.blueapi.cover.v1.UpdateCostGroupIconResponse\",\x82\xd3\xe4\x93\x02&\x1a!/v1/costgroups/{costGroupId}/icon:\x01*\x12\xb8\x01\n\x19UpdateCostGroupColorTheme\x12\x32.blueapi.cover.v1.UpdateCostGroupColorThemeRequest\x1a\x33.blueapi.cover.v1.UpdateCostGroupColorThemeResponse\"2\x82\xd3\xe4\x93\x02,\x1a\'/v1/costgroups/{costGroupId}/colortheme:\x01*\x12\xc0\x01\n\x1bUpdateCostGroupCombinations\x12\x34.blueapi.cover.v1.UpdateCostGroupCombinationsRequest\x1a\x35.blueapi.cover.v1.UpdateCostGroupCombinationsResponse\"4\x82\xd3\xe4\x93\x02.\x1a)/v1/costgroups/{costGroupId}/combinations:\x01*\x12\xac\x01\n\x15\x41ssignCostGroupMember\x12..blueapi.cover.v1.AssignCostGroupMemberRequest\x1a/.blueapi.cover.v1.AssignCostGroupMemberResponse\"2\x82\xd3\xe4\x93\x02,\"\'/v1/costgroups/{costGroupId}/member/add:\x01*\x12\xaf\x01\n\x15RemoveCostGroupMember\x12..blueapi.cover.v1.RemoveCostGroupMemberRequest\x1a/.blueapi.cover.v1.RemoveCostGroupMemberResponse\"5\x82\xd3\xe4\x93\x02/\"*/v1/costgroups/{costGroupId}/member/remove:\x01*\x12\x8c\x01\n\x0f\x44\x65leteCostGroup\x12(.blueapi.cover.v1.DeleteCostGroupRequest\x1a).blueapi.cover.v1.DeleteCostGroupResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/costgroups/{costGroupId}\x12\xa6\x01\n\x1bGetAccountAccessTemplateUrl\x12\x34.blueapi.cover.v1.GetAccountAccessTemplateUrlRequest\x1a\x35.blueapi.cover.v1.GetAccountAccessTemplateUrlResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/aws/acctaccess\x12\x83\x01\n\x11ListAccountAccess\x12*.blueapi.cover.v1.ListAccountAccessRequest\x1a\x1f.blueapi.cover.v1.AccountAccess\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x17/v1/aws/acctaccess:read0\x01\x12\x83\x01\n\x10GetAccountAccess\x12).blueapi.cover.v1.GetAccountAccessRequest\x1a\x1f.blueapi.cover.v1.AccountAccess\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/aws/acctaccess/{target}\x12\x83\x01\n\x13\x43reateAccountAccess\x12,.blueapi.cover.v1.CreateAccountAccessRequest\x1a\x1f.blueapi.cover.v1.AccountAccess\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/aws/acctaccess:\x01*\x12\x80\x01\n\x13UpdateAccountAccess\x12,.blueapi.cover.v1.UpdateAccountAccessRequest\x1a\x16.blueapi.api.Operation\"#\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/v1/aws/acctaccess/{target}\x12\x80\x01\n\x13\x44\x65leteAccountAccess\x12,.blueapi.cover.v1.DeleteAccountAccessRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/v1/aws/acctaccess/{target}\x12~\n\nListAssets\x12#.blueapi.cover.v1.ListAssetsRequest\x1a$.blueapi.cover.v1.ListAssetsResponse\"%\x82\xd3\xe4\x93\x02\x1f\x12\x1d/v1/{vendor}/assets/{service}\x1a\x98\x01\x92\x41\x94\x01\x12\x43(ALPHA) Cover API. Base URL: https://api.alphaus.cloud/m/blue/cover\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/cover/BK\n\x17\x63loud.alphaus.api.coverB\nCoverProtoZ$github.com/alphauslabs/blueapi/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x63over/v1/cover.proto\x12\x10\x62lueapi.cover.v1\x1a\x14\x61pi/cover/user.proto\x1a\x14\x61pi/cover/view.proto\x1a\x19\x61pi/cover/costgroup.proto\x1a\x15\x61pi/cover/asset.proto\x1a\x13\x61pi/operation.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"$\n\x13InviteMemberRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"%\n\x14InviteMemberResponse\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"D\n\x13\x43reateMemberRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\x12\x10\n\x08password\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\"E\n\x14\x43reateMemberResponse\x12-\n\x08userData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.UserData\"\x13\n\x11GetMembersRequest\"C\n\x12GetMembersResponse\x12-\n\x08userData\x18\x01 \x03(\x0b\x32\x1b.blueapi.api.cover.UserData\")\n\x17GetMemberDetailsRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"I\n\x18GetMemberDetailsResponse\x12-\n\x08userData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.UserData\"+\n\x19GetMemberCostGroupRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"T\n\x1aGetMemberCostGroupResponse\x12\x36\n\ncostGroups\x18\x01 \x03(\x0b\x32\".blueapi.api.cover.MemberCostGroup\"\x17\n\x15GetUserDetailsRequest\"G\n\x16GetUserDetailsResponse\x12-\n\x08userData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.UserData\")\n\x17UpdateUserAvatarRequest\x12\x0e\n\x06\x61vatar\x18\x01 \x01(\t\"*\n\x18UpdateUserAvatarResponse\x12\x0e\n\x06\x61vatar\x18\x01 \x01(\t\"%\n\x15UpdateUserIconRequest\x12\x0c\n\x04icon\x18\x01 \x01(\t\"&\n\x16UpdateUserIconResponse\x12\x0c\n\x04icon\x18\x01 \x01(\t\"1\n\x1bUpdateUserColorThemeRequest\x12\x12\n\ncolorTheme\x18\x01 \x01(\t\"2\n\x1cUpdateUserColorThemeResponse\x12\x12\n\ncolorTheme\x18\x01 \x01(\t\"%\n\x15UpdateUserNameRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\"&\n\x16UpdateUserNameResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\"\'\n\x16UpdateUserEmailRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"(\n\x17UpdateUserEmailResponse\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"+\n\x19UpdateUserMainViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\",\n\x1aUpdateUserMainViewResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"I\n\x18ResetUserPasswordRequest\x12\x18\n\x10previousPassword\x18\x01 \x01(\t\x12\x13\n\x0bnewPassword\x18\x02 \x01(\t\"+\n\x19ResetUserPasswordResponse\x12\x0e\n\x06userId\x18\x01 \x01(\t\")\n\x17UpdateUserLocaleRequest\x12\x0e\n\x06locale\x18\x01 \x01(\t\"*\n\x18UpdateUserLocaleResponse\x12\x0e\n\x06locale\x18\x01 \x01(\t\"-\n\x19UpdateUserAppThemeRequest\x12\x10\n\x08\x61ppTheme\x18\x01 \x01(\t\".\n\x1aUpdateUserAppThemeResponse\x12\x10\n\x08\x61ppTheme\x18\x01 \x01(\t\"-\n\x19UpdateUserTimezoneRequest\x12\x10\n\x08timezone\x18\x01 \x01(\t\".\n\x1aUpdateUserTimezoneResponse\x12\x10\n\x08timezone\x18\x01 \x01(\t\"1\n\x1bUpdateUserAttributesRequest\x12\x12\n\nattributes\x18\x01 \x03(\t\"2\n\x1cUpdateUserAttributesResponse\x12\x12\n\nattributes\x18\x01 \x03(\t\"%\n\x13\x44\x65leteMemberRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"&\n\x14\x44\x65leteMemberResponse\x12\x0e\n\x06userId\x18\x01 \x01(\t\"&\n\x14ResetPasswordRequest\x12\x0e\n\x06userId\x18\x01 \x01(\t\"\'\n\x15ResetPasswordResponse\x12\x0e\n\x06userId\x18\x01 \x01(\t\"\x7f\n\x11\x43reateViewRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\x11\n\tisPrivate\x18\x03 \x01(\x08\x12\x12\n\nisEditable\x18\x04 \x01(\x08\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x12\n\nreportType\x18\x06 \x01(\t\"C\n\x12\x43reateViewResponse\x12-\n\x08viewData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.ViewData\"\x11\n\x0fGetViewsRequest\"A\n\x10GetViewsResponse\x12-\n\x08viewList\x18\x01 \x03(\x0b\x32\x1b.blueapi.api.cover.ViewList\"\'\n\x15GetCurrentViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"G\n\x16GetCurrentViewResponse\x12-\n\x08viewData\x18\x01 \x01(\x0b\x32\x1b.blueapi.api.cover.ViewData\"\x19\n\x17GetFavoriteViewsRequest\"K\n\x18GetFavoriteViewsResponse\x12/\n\tfavorites\x18\x01 \x03(\x0b\x32\x1c.blueapi.api.cover.Favorites\"$\n\x12PublishViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"\"\n\x13PublishViewResponse\x12\x0b\n\x03url\x18\x01 \x01(\t\"$\n\x12\x41\x64\x64\x46\x61voriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"%\n\x13\x41\x64\x64\x46\x61voriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"\'\n\x15RemoveFavoriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"(\n\x16RemoveFavoriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"{\n\x11UpdateViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0c\n\x04icon\x18\x04 \x01(\t\x12\x11\n\tisPrivate\x18\x05 \x01(\x08\x12\x12\n\nisEditable\x18\x06 \x01(\x08\"$\n\x12UpdateViewResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"#\n\x11\x44\x65leteViewRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"$\n\x12\x44\x65leteViewResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"e\n\x1aUpdateSideMenuStateRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x37\n\rsidemenustate\x18\x02 \x03(\x0b\x32 .blueapi.api.cover.SideMenuState\"-\n\x1bUpdateSideMenuStateResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"@\n\x1a\x41\x64\x64SideMenuFavoriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x12\n\nmenuItemId\x18\x02 \x01(\t\"-\n\x1b\x41\x64\x64SideMenuFavoriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"C\n\x1dRemoveSideMenuFavoriteRequest\x12\x0e\n\x06viewId\x18\x01 \x01(\t\x12\x12\n\nmenuItemId\x18\x02 \x01(\t\"0\n\x1eRemoveSideMenuFavoriteResponse\x12\x0e\n\x06viewId\x18\x01 \x01(\t\"\xa3\x01\n\x16\x43reateCostGroupRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\x12\r\n\x05image\x18\x03 \x01(\t\x12\x0c\n\x04icon\x18\x04 \x01(\t\x12\x12\n\ncolorTheme\x18\x05 \x01(\t\x12\x35\n\x0c\x63ombinations\x18\x06 \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\"R\n\x17\x43reateCostGroupResponse\x12\x37\n\rcostGroupData\x18\x01 \x01(\x0b\x32 .blueapi.api.cover.CostGroupData\"\x16\n\x14GetCostGroupsRequest\"P\n\x15GetCostGroupsResponse\x12\x37\n\rcostGroupData\x18\x01 \x03(\x0b\x32 .blueapi.api.cover.CostGroupData\"1\n\x1aGetCostGroupDetailsRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\"V\n\x1bGetCostGroupDetailsResponse\x12\x37\n\rcostGroupData\x18\x01 \x01(\x0b\x32 .blueapi.api.cover.CostGroupData\"?\n\x1aUpdateCostGroupNameRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\"+\n\x1bUpdateCostGroupNameResponse\x12\x0c\n\x04name\x18\x01 \x01(\t\"M\n!UpdateCostGroupDescriptionRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\"9\n\"UpdateCostGroupDescriptionResponse\x12\x13\n\x0b\x64\x65scription\x18\x01 \x01(\t\"A\n\x1bUpdateCostGroupImageRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\r\n\x05image\x18\x02 \x01(\t\"-\n\x1cUpdateCostGroupImageResponse\x12\r\n\x05image\x18\x01 \x01(\t\"?\n\x1aUpdateCostGroupIconRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0c\n\x04icon\x18\x02 \x01(\t\"+\n\x1bUpdateCostGroupIconResponse\x12\x0c\n\x04icon\x18\x01 \x01(\t\"K\n UpdateCostGroupColorThemeRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x12\n\ncolorTheme\x18\x02 \x01(\t\"7\n!UpdateCostGroupColorThemeResponse\x12\x12\n\ncolorTheme\x18\x01 \x01(\t\"p\n\"UpdateCostGroupCombinationsRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x35\n\x0c\x63ombinations\x18\x02 \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\"\\\n#UpdateCostGroupCombinationsResponse\x12\x35\n\x0c\x63ombinations\x18\x01 \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\"C\n\x1c\x41ssignCostGroupMemberRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"D\n\x1d\x41ssignCostGroupMemberResponse\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"C\n\x1cRemoveCostGroupMemberRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"D\n\x1dRemoveCostGroupMemberResponse\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\x12\x0e\n\x06userId\x18\x02 \x01(\t\"-\n\x16\x44\x65leteCostGroupRequest\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\".\n\x17\x44\x65leteCostGroupResponse\x12\x13\n\x0b\x63ostGroupId\x18\x01 \x01(\t\"2\n\"GetAccountAccessTemplateUrlRequest\x12\x0c\n\x04type\x18\x01 \x01(\t\"\x87\x01\n#GetAccountAccessTemplateUrlResponse\x12\x11\n\tlaunchUrl\x18\x01 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x02 \x01(\t\x12\x11\n\tstackName\x18\x03 \x01(\t\x12\x11\n\tprincipal\x18\x04 \x01(\t\x12\x12\n\nexternalId\x18\x05 \x01(\t\"\x1a\n\x18ListAccountAccessRequest\")\n\x17GetAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"\xa4\x01\n\rAccountAccess\x12\x0e\n\x06target\x18\x01 \x01(\t\x12\x0f\n\x07roleArn\x18\x02 \x01(\t\x12\x12\n\nexternalId\x18\x03 \x01(\t\x12\x0f\n\x07stackId\x18\x04 \x01(\t\x12\x13\n\x0bstackRegion\x18\x05 \x01(\t\x12\x13\n\x0btemplateUrl\x18\x06 \x01(\t\x12\x0e\n\x06status\x18\x07 \x01(\t\x12\x13\n\x0blastUpdated\x18\x08 \x01(\t\",\n\x1a\x43reateAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\",\n\x1aUpdateAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\",\n\x1a\x44\x65leteAccountAccessRequest\x12\x0e\n\x06target\x18\x01 \x01(\t\"e\n\x11ListAssetsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12@\n\nawsOptions\x18\x02 \x01(\x0b\x32,.blueapi.cover.v1.ListAssetsAwsFilterOptions\"?\n\x1aListAssetsAwsFilterOptions\x12\x0f\n\x07service\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x02 \x01(\t\"m\n\x18\x44iscoverResourcesRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x41\n\nawsOptions\x18\x02 \x01(\x0b\x32-.blueapi.cover.v1.DiscoverResourcesAwsOptions\"A\n\x1b\x44iscoverResourcesAwsOptions\x12\x10\n\x08\x61\x63\x63ounts\x18\x01 \x01(\t\x12\x10\n\x08services\x18\x02 \x01(\t\".\n\x1cListDiscoveryRequestsRequest\x12\x0e\n\x06vendor\x18\x01 \x01(\t\"U\n\x1dListDiscoveryRequestsResponse\x12\x34\n\x08requests\x18\x01 \x03(\x0b\x32\".blueapi.api.cover.DiscoverRequest2\xe0:\n\x05\x43over\x12|\n\x0cInviteMember\x12%.blueapi.cover.v1.InviteMemberRequest\x1a&.blueapi.cover.v1.InviteMemberResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/members/invite:\x01*\x12u\n\x0c\x43reateMember\x12%.blueapi.cover.v1.CreateMemberRequest\x1a&.blueapi.cover.v1.CreateMemberResponse\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/members:\x01*\x12l\n\nGetMembers\x12#.blueapi.cover.v1.GetMembersRequest\x1a$.blueapi.cover.v1.GetMembersResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/members\x12\x87\x01\n\x10GetMemberDetails\x12).blueapi.cover.v1.GetMemberDetailsRequest\x1a*.blueapi.cover.v1.GetMemberDetailsResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x12\x14/v1/members/{userId}\x12\x97\x01\n\x12GetMemberCostGroup\x12+.blueapi.cover.v1.GetMemberCostGroupRequest\x1a,.blueapi.cover.v1.GetMemberCostGroupResponse\"&\x82\xd3\xe4\x93\x02 \x12\x1e/v1/members/{userId}/costgroup\x12s\n\x0eGetUserDetails\x12\'.blueapi.cover.v1.GetUserDetailsRequest\x1a(.blueapi.cover.v1.GetUserDetailsResponse\"\x0e\x82\xd3\xe4\x93\x02\x08\x12\x06/v1/me\x12\x83\x01\n\x10UpdateUserAvatar\x12).blueapi.cover.v1.UpdateUserAvatarRequest\x1a*.blueapi.cover.v1.UpdateUserAvatarResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x1a\r/v1/me/avatar:\x01*\x12{\n\x0eUpdateUserIcon\x12\'.blueapi.cover.v1.UpdateUserIconRequest\x1a(.blueapi.cover.v1.UpdateUserIconResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x1a\x0b/v1/me/icon:\x01*\x12\x93\x01\n\x14UpdateUserColorTheme\x12-.blueapi.cover.v1.UpdateUserColorThemeRequest\x1a..blueapi.cover.v1.UpdateUserColorThemeResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/v1/me/colortheme:\x01*\x12{\n\x0eUpdateUserName\x12\'.blueapi.cover.v1.UpdateUserNameRequest\x1a(.blueapi.cover.v1.UpdateUserNameResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x1a\x0b/v1/me/name:\x01*\x12\x7f\n\x0fUpdateUserEmail\x12(.blueapi.cover.v1.UpdateUserEmailRequest\x1a).blueapi.cover.v1.UpdateUserEmailResponse\"\x17\x82\xd3\xe4\x93\x02\x11\x1a\x0c/v1/me/email:\x01*\x12\x8b\x01\n\x12UpdateUserMainView\x12+.blueapi.cover.v1.UpdateUserMainViewRequest\x1a,.blueapi.cover.v1.UpdateUserMainViewResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/me/mainview:\x01*\x12\x88\x01\n\x11ResetUserPassword\x12*.blueapi.cover.v1.ResetUserPasswordRequest\x1a+.blueapi.cover.v1.ResetUserPasswordResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/me/password:\x01*\x12\x83\x01\n\x10UpdateUserLocale\x12).blueapi.cover.v1.UpdateUserLocaleRequest\x1a*.blueapi.cover.v1.UpdateUserLocaleResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x1a\r/v1/me/locale:\x01*\x12\x8b\x01\n\x12UpdateUserAppTheme\x12+.blueapi.cover.v1.UpdateUserAppThemeRequest\x1a,.blueapi.cover.v1.UpdateUserAppThemeResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/me/apptheme:\x01*\x12\x8b\x01\n\x12UpdateUserTimezone\x12+.blueapi.cover.v1.UpdateUserTimezoneRequest\x1a,.blueapi.cover.v1.UpdateUserTimezoneResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/me/timezone:\x01*\x12\x93\x01\n\x14UpdateUserAttributes\x12-.blueapi.cover.v1.UpdateUserAttributesRequest\x1a..blueapi.cover.v1.UpdateUserAttributesResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/v1/me/attributes:\x01*\x12{\n\x0c\x44\x65leteMember\x12%.blueapi.cover.v1.DeleteMemberRequest\x1a&.blueapi.cover.v1.DeleteMemberResponse\"\x1c\x82\xd3\xe4\x93\x02\x16*\x14/v1/members/{userId}\x12\x86\x01\n\rResetPassword\x12&.blueapi.cover.v1.ResetPasswordRequest\x1a\'.blueapi.cover.v1.ResetPasswordResponse\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/members/resetpassword:\x01*\x12m\n\nCreateView\x12#.blueapi.cover.v1.CreateViewRequest\x1a$.blueapi.cover.v1.CreateViewResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\"\t/v1/views:\x01*\x12\x64\n\x08GetViews\x12!.blueapi.cover.v1.GetViewsRequest\x1a\".blueapi.cover.v1.GetViewsResponse\"\x11\x82\xd3\xe4\x93\x02\x0b\x12\t/v1/views\x12\x7f\n\x0eGetCurrentView\x12\'.blueapi.cover.v1.GetCurrentViewRequest\x1a(.blueapi.cover.v1.GetCurrentViewResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/views/{viewId}\x12\x86\x01\n\x10GetFavoriteViews\x12).blueapi.cover.v1.GetFavoriteViewsRequest\x1a*.blueapi.cover.v1.GetFavoriteViewsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\x12\x13/v1/views/favorites\x12x\n\x0bPublishView\x12$.blueapi.cover.v1.PublishViewRequest\x1a%.blueapi.cover.v1.PublishViewResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/views/publish:\x01*\x12y\n\x0b\x41\x64\x64\x46\x61vorite\x12$.blueapi.cover.v1.AddFavoriteRequest\x1a%.blueapi.cover.v1.AddFavoriteResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x1a\x12/v1/views/favorite:\x01*\x12\x84\x01\n\x0eRemoveFavorite\x12\'.blueapi.cover.v1.RemoveFavoriteRequest\x1a(.blueapi.cover.v1.RemoveFavoriteResponse\"\x1f\x82\xd3\xe4\x93\x02\x19\x1a\x14/v1/views/unfavorite:\x01*\x12v\n\nUpdateView\x12#.blueapi.cover.v1.UpdateViewRequest\x1a$.blueapi.cover.v1.UpdateViewResponse\"\x1d\x82\xd3\xe4\x93\x02\x17\x1a\x12/v1/views/{viewId}:\x01*\x12s\n\nDeleteView\x12#.blueapi.cover.v1.DeleteViewRequest\x1a$.blueapi.cover.v1.DeleteViewResponse\"\x1a\x82\xd3\xe4\x93\x02\x14*\x12/v1/views/{viewId}\x12\x9f\x01\n\x13UpdateSideMenuState\x12,.blueapi.cover.v1.UpdateSideMenuStateRequest\x1a-.blueapi.cover.v1.UpdateSideMenuStateResponse\"+\x82\xd3\xe4\x93\x02%\x1a /v1/views/{viewId}/sidemenustate:\x01*\x12\xa2\x01\n\x13\x41\x64\x64SideMenuFavorite\x12,.blueapi.cover.v1.AddSideMenuFavoriteRequest\x1a-.blueapi.cover.v1.AddSideMenuFavoriteResponse\".\x82\xd3\xe4\x93\x02(\"#/v1/views/{viewId}/sidemenufavorite:\x01*\x12\xad\x01\n\x16RemoveSideMenuFavorite\x12/.blueapi.cover.v1.RemoveSideMenuFavoriteRequest\x1a\x30.blueapi.cover.v1.RemoveSideMenuFavoriteResponse\"0\x82\xd3\xe4\x93\x02*\"%/v1/views/{viewId}/sidemenuunfavorite:\x01*\x12\x81\x01\n\x0f\x43reateCostGroup\x12(.blueapi.cover.v1.CreateCostGroupRequest\x1a).blueapi.cover.v1.CreateCostGroupResponse\"\x19\x82\xd3\xe4\x93\x02\x13\"\x0e/v1/costgroups:\x01*\x12x\n\rGetCostGroups\x12&.blueapi.cover.v1.GetCostGroupsRequest\x1a\'.blueapi.cover.v1.GetCostGroupsResponse\"\x16\x82\xd3\xe4\x93\x02\x10\x12\x0e/v1/costgroups\x12\x98\x01\n\x13GetCostGroupDetails\x12,.blueapi.cover.v1.GetCostGroupDetailsRequest\x1a-.blueapi.cover.v1.GetCostGroupDetailsResponse\"$\x82\xd3\xe4\x93\x02\x1e\x12\x1c/v1/costgroups/{costGroupId}\x12\xa0\x01\n\x13UpdateCostGroupName\x12,.blueapi.cover.v1.UpdateCostGroupNameRequest\x1a-.blueapi.cover.v1.UpdateCostGroupNameResponse\",\x82\xd3\xe4\x93\x02&\x1a!/v1/costgroups/{costGroupId}/name:\x01*\x12\xbc\x01\n\x1aUpdateCostGroupDescription\x12\x33.blueapi.cover.v1.UpdateCostGroupDescriptionRequest\x1a\x34.blueapi.cover.v1.UpdateCostGroupDescriptionResponse\"3\x82\xd3\xe4\x93\x02-\x1a(/v1/costgroups/{costGroupId}/description:\x01*\x12\xa4\x01\n\x14UpdateCostGroupImage\x12-.blueapi.cover.v1.UpdateCostGroupImageRequest\x1a..blueapi.cover.v1.UpdateCostGroupImageResponse\"-\x82\xd3\xe4\x93\x02\'\x1a\"/v1/costgroups/{costGroupId}/image:\x01*\x12\xa0\x01\n\x13UpdateCostGroupIcon\x12,.blueapi.cover.v1.UpdateCostGroupIconRequest\x1a-.blueapi.cover.v1.UpdateCostGroupIconResponse\",\x82\xd3\xe4\x93\x02&\x1a!/v1/costgroups/{costGroupId}/icon:\x01*\x12\xb8\x01\n\x19UpdateCostGroupColorTheme\x12\x32.blueapi.cover.v1.UpdateCostGroupColorThemeRequest\x1a\x33.blueapi.cover.v1.UpdateCostGroupColorThemeResponse\"2\x82\xd3\xe4\x93\x02,\x1a\'/v1/costgroups/{costGroupId}/colortheme:\x01*\x12\xc0\x01\n\x1bUpdateCostGroupCombinations\x12\x34.blueapi.cover.v1.UpdateCostGroupCombinationsRequest\x1a\x35.blueapi.cover.v1.UpdateCostGroupCombinationsResponse\"4\x82\xd3\xe4\x93\x02.\x1a)/v1/costgroups/{costGroupId}/combinations:\x01*\x12\xac\x01\n\x15\x41ssignCostGroupMember\x12..blueapi.cover.v1.AssignCostGroupMemberRequest\x1a/.blueapi.cover.v1.AssignCostGroupMemberResponse\"2\x82\xd3\xe4\x93\x02,\"\'/v1/costgroups/{costGroupId}/member/add:\x01*\x12\xaf\x01\n\x15RemoveCostGroupMember\x12..blueapi.cover.v1.RemoveCostGroupMemberRequest\x1a/.blueapi.cover.v1.RemoveCostGroupMemberResponse\"5\x82\xd3\xe4\x93\x02/\"*/v1/costgroups/{costGroupId}/member/remove:\x01*\x12\x8c\x01\n\x0f\x44\x65leteCostGroup\x12(.blueapi.cover.v1.DeleteCostGroupRequest\x1a).blueapi.cover.v1.DeleteCostGroupResponse\"$\x82\xd3\xe4\x93\x02\x1e*\x1c/v1/costgroups/{costGroupId}\x12\xa6\x01\n\x1bGetAccountAccessTemplateUrl\x12\x34.blueapi.cover.v1.GetAccountAccessTemplateUrlRequest\x1a\x35.blueapi.cover.v1.GetAccountAccessTemplateUrlResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1/aws/acctaccess\x12\x83\x01\n\x11ListAccountAccess\x12*.blueapi.cover.v1.ListAccountAccessRequest\x1a\x1f.blueapi.cover.v1.AccountAccess\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x17/v1/aws/acctaccess:read0\x01\x12\x83\x01\n\x10GetAccountAccess\x12).blueapi.cover.v1.GetAccountAccessRequest\x1a\x1f.blueapi.cover.v1.AccountAccess\"#\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1/aws/acctaccess/{target}\x12\x83\x01\n\x13\x43reateAccountAccess\x12,.blueapi.cover.v1.CreateAccountAccessRequest\x1a\x1f.blueapi.cover.v1.AccountAccess\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/aws/acctaccess:\x01*\x12\x80\x01\n\x13UpdateAccountAccess\x12,.blueapi.cover.v1.UpdateAccountAccessRequest\x1a\x16.blueapi.api.Operation\"#\x82\xd3\xe4\x93\x02\x1d\x1a\x1b/v1/aws/acctaccess/{target}\x12\x80\x01\n\x13\x44\x65leteAccountAccess\x12,.blueapi.cover.v1.DeleteAccountAccessRequest\x1a\x16.google.protobuf.Empty\"#\x82\xd3\xe4\x93\x02\x1d*\x1b/v1/aws/acctaccess/{target}\x12r\n\nListAssets\x12#.blueapi.cover.v1.ListAssetsRequest\x1a\x18.blueapi.api.cover.Asset\"#\x82\xd3\xe4\x93\x02\x1d\"\x18/v1/{vendor}/assets:read:\x01*0\x01\x12\x80\x01\n\x11\x44iscoverResources\x12*.blueapi.cover.v1.DiscoverResourcesRequest\x1a\x16.google.protobuf.Empty\"\'\x82\xd3\xe4\x93\x02!\"\x1c/v1/{vendor}/assets/discover:\x01*\x12\xa7\x01\n\x15ListDiscoveryRequests\x12..blueapi.cover.v1.ListDiscoveryRequestsRequest\x1a/.blueapi.cover.v1.ListDiscoveryRequestsResponse\"-\x82\xd3\xe4\x93\x02\'\x12%/v1/{vendor}/assets/discover/requests\x1a\x98\x01\x92\x41\x94\x01\x12\x43(ALPHA) Cover API. Base URL: https://api.alphaus.cloud/m/blue/cover\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/cover/BK\n\x17\x63loud.alphaus.api.coverB\nCoverProtoZ$github.com/alphauslabs/blueapi/coverb\x06proto3')
 
 
 
@@ -121,7 +121,11 @@ _CREATEACCOUNTACCESSREQUEST = DESCRIPTOR.message_types_by_name['CreateAccountAcc
 _UPDATEACCOUNTACCESSREQUEST = DESCRIPTOR.message_types_by_name['UpdateAccountAccessRequest']
 _DELETEACCOUNTACCESSREQUEST = DESCRIPTOR.message_types_by_name['DeleteAccountAccessRequest']
 _LISTASSETSREQUEST = DESCRIPTOR.message_types_by_name['ListAssetsRequest']
-_LISTASSETSRESPONSE = DESCRIPTOR.message_types_by_name['ListAssetsResponse']
+_LISTASSETSAWSFILTEROPTIONS = DESCRIPTOR.message_types_by_name['ListAssetsAwsFilterOptions']
+_DISCOVERRESOURCESREQUEST = DESCRIPTOR.message_types_by_name['DiscoverResourcesRequest']
+_DISCOVERRESOURCESAWSOPTIONS = DESCRIPTOR.message_types_by_name['DiscoverResourcesAwsOptions']
+_LISTDISCOVERYREQUESTSREQUEST = DESCRIPTOR.message_types_by_name['ListDiscoveryRequestsRequest']
+_LISTDISCOVERYREQUESTSRESPONSE = DESCRIPTOR.message_types_by_name['ListDiscoveryRequestsResponse']
 InviteMemberRequest = _reflection.GeneratedProtocolMessageType('InviteMemberRequest', (_message.Message,), {
   'DESCRIPTOR' : _INVITEMEMBERREQUEST,
   '__module__' : 'cover.v1.cover_pb2'
@@ -787,12 +791,40 @@ ListAssetsRequest = _reflection.GeneratedProtocolMessageType('ListAssetsRequest'
   })
 _sym_db.RegisterMessage(ListAssetsRequest)
 
-ListAssetsResponse = _reflection.GeneratedProtocolMessageType('ListAssetsResponse', (_message.Message,), {
-  'DESCRIPTOR' : _LISTASSETSRESPONSE,
+ListAssetsAwsFilterOptions = _reflection.GeneratedProtocolMessageType('ListAssetsAwsFilterOptions', (_message.Message,), {
+  'DESCRIPTOR' : _LISTASSETSAWSFILTEROPTIONS,
   '__module__' : 'cover.v1.cover_pb2'
-  # @@protoc_insertion_point(class_scope:blueapi.cover.v1.ListAssetsResponse)
+  # @@protoc_insertion_point(class_scope:blueapi.cover.v1.ListAssetsAwsFilterOptions)
   })
-_sym_db.RegisterMessage(ListAssetsResponse)
+_sym_db.RegisterMessage(ListAssetsAwsFilterOptions)
+
+DiscoverResourcesRequest = _reflection.GeneratedProtocolMessageType('DiscoverResourcesRequest', (_message.Message,), {
+  'DESCRIPTOR' : _DISCOVERRESOURCESREQUEST,
+  '__module__' : 'cover.v1.cover_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.cover.v1.DiscoverResourcesRequest)
+  })
+_sym_db.RegisterMessage(DiscoverResourcesRequest)
+
+DiscoverResourcesAwsOptions = _reflection.GeneratedProtocolMessageType('DiscoverResourcesAwsOptions', (_message.Message,), {
+  'DESCRIPTOR' : _DISCOVERRESOURCESAWSOPTIONS,
+  '__module__' : 'cover.v1.cover_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.cover.v1.DiscoverResourcesAwsOptions)
+  })
+_sym_db.RegisterMessage(DiscoverResourcesAwsOptions)
+
+ListDiscoveryRequestsRequest = _reflection.GeneratedProtocolMessageType('ListDiscoveryRequestsRequest', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDISCOVERYREQUESTSREQUEST,
+  '__module__' : 'cover.v1.cover_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.cover.v1.ListDiscoveryRequestsRequest)
+  })
+_sym_db.RegisterMessage(ListDiscoveryRequestsRequest)
+
+ListDiscoveryRequestsResponse = _reflection.GeneratedProtocolMessageType('ListDiscoveryRequestsResponse', (_message.Message,), {
+  'DESCRIPTOR' : _LISTDISCOVERYREQUESTSRESPONSE,
+  '__module__' : 'cover.v1.cover_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.cover.v1.ListDiscoveryRequestsResponse)
+  })
+_sym_db.RegisterMessage(ListDiscoveryRequestsResponse)
 
 _COVER = DESCRIPTOR.services_by_name['Cover']
 if _descriptor._USE_C_DESCRIPTORS == False:
@@ -900,199 +932,211 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _COVER.methods_by_name['DeleteAccountAccess']._options = None
   _COVER.methods_by_name['DeleteAccountAccess']._serialized_options = b'\202\323\344\223\002\035*\033/v1/aws/acctaccess/{target}'
   _COVER.methods_by_name['ListAssets']._options = None
-  _COVER.methods_by_name['ListAssets']._serialized_options = b'\202\323\344\223\002\037\022\035/v1/{vendor}/assets/{service}'
-  _INVITEMEMBERREQUEST._serialized_start=268
-  _INVITEMEMBERREQUEST._serialized_end=304
-  _INVITEMEMBERRESPONSE._serialized_start=306
-  _INVITEMEMBERRESPONSE._serialized_end=343
-  _CREATEMEMBERREQUEST._serialized_start=345
-  _CREATEMEMBERREQUEST._serialized_end=413
-  _CREATEMEMBERRESPONSE._serialized_start=415
-  _CREATEMEMBERRESPONSE._serialized_end=484
-  _GETMEMBERSREQUEST._serialized_start=486
-  _GETMEMBERSREQUEST._serialized_end=505
-  _GETMEMBERSRESPONSE._serialized_start=507
-  _GETMEMBERSRESPONSE._serialized_end=574
-  _GETMEMBERDETAILSREQUEST._serialized_start=576
-  _GETMEMBERDETAILSREQUEST._serialized_end=617
-  _GETMEMBERDETAILSRESPONSE._serialized_start=619
-  _GETMEMBERDETAILSRESPONSE._serialized_end=692
-  _GETMEMBERCOSTGROUPREQUEST._serialized_start=694
-  _GETMEMBERCOSTGROUPREQUEST._serialized_end=737
-  _GETMEMBERCOSTGROUPRESPONSE._serialized_start=739
-  _GETMEMBERCOSTGROUPRESPONSE._serialized_end=823
-  _GETUSERDETAILSREQUEST._serialized_start=825
-  _GETUSERDETAILSREQUEST._serialized_end=848
-  _GETUSERDETAILSRESPONSE._serialized_start=850
-  _GETUSERDETAILSRESPONSE._serialized_end=921
-  _UPDATEUSERAVATARREQUEST._serialized_start=923
-  _UPDATEUSERAVATARREQUEST._serialized_end=964
-  _UPDATEUSERAVATARRESPONSE._serialized_start=966
-  _UPDATEUSERAVATARRESPONSE._serialized_end=1008
-  _UPDATEUSERICONREQUEST._serialized_start=1010
-  _UPDATEUSERICONREQUEST._serialized_end=1047
-  _UPDATEUSERICONRESPONSE._serialized_start=1049
-  _UPDATEUSERICONRESPONSE._serialized_end=1087
-  _UPDATEUSERCOLORTHEMEREQUEST._serialized_start=1089
-  _UPDATEUSERCOLORTHEMEREQUEST._serialized_end=1138
-  _UPDATEUSERCOLORTHEMERESPONSE._serialized_start=1140
-  _UPDATEUSERCOLORTHEMERESPONSE._serialized_end=1190
-  _UPDATEUSERNAMEREQUEST._serialized_start=1192
-  _UPDATEUSERNAMEREQUEST._serialized_end=1229
-  _UPDATEUSERNAMERESPONSE._serialized_start=1231
-  _UPDATEUSERNAMERESPONSE._serialized_end=1269
-  _UPDATEUSEREMAILREQUEST._serialized_start=1271
-  _UPDATEUSEREMAILREQUEST._serialized_end=1310
-  _UPDATEUSEREMAILRESPONSE._serialized_start=1312
-  _UPDATEUSEREMAILRESPONSE._serialized_end=1352
-  _UPDATEUSERMAINVIEWREQUEST._serialized_start=1354
-  _UPDATEUSERMAINVIEWREQUEST._serialized_end=1397
-  _UPDATEUSERMAINVIEWRESPONSE._serialized_start=1399
-  _UPDATEUSERMAINVIEWRESPONSE._serialized_end=1443
-  _RESETUSERPASSWORDREQUEST._serialized_start=1445
-  _RESETUSERPASSWORDREQUEST._serialized_end=1518
-  _RESETUSERPASSWORDRESPONSE._serialized_start=1520
-  _RESETUSERPASSWORDRESPONSE._serialized_end=1563
-  _UPDATEUSERLOCALEREQUEST._serialized_start=1565
-  _UPDATEUSERLOCALEREQUEST._serialized_end=1606
-  _UPDATEUSERLOCALERESPONSE._serialized_start=1608
-  _UPDATEUSERLOCALERESPONSE._serialized_end=1650
-  _UPDATEUSERAPPTHEMEREQUEST._serialized_start=1652
-  _UPDATEUSERAPPTHEMEREQUEST._serialized_end=1697
-  _UPDATEUSERAPPTHEMERESPONSE._serialized_start=1699
-  _UPDATEUSERAPPTHEMERESPONSE._serialized_end=1745
-  _UPDATEUSERTIMEZONEREQUEST._serialized_start=1747
-  _UPDATEUSERTIMEZONEREQUEST._serialized_end=1792
-  _UPDATEUSERTIMEZONERESPONSE._serialized_start=1794
-  _UPDATEUSERTIMEZONERESPONSE._serialized_end=1840
-  _UPDATEUSERATTRIBUTESREQUEST._serialized_start=1842
-  _UPDATEUSERATTRIBUTESREQUEST._serialized_end=1891
-  _UPDATEUSERATTRIBUTESRESPONSE._serialized_start=1893
-  _UPDATEUSERATTRIBUTESRESPONSE._serialized_end=1943
-  _DELETEMEMBERREQUEST._serialized_start=1945
-  _DELETEMEMBERREQUEST._serialized_end=1982
-  _DELETEMEMBERRESPONSE._serialized_start=1984
-  _DELETEMEMBERRESPONSE._serialized_end=2022
-  _RESETPASSWORDREQUEST._serialized_start=2024
-  _RESETPASSWORDREQUEST._serialized_end=2062
-  _RESETPASSWORDRESPONSE._serialized_start=2064
-  _RESETPASSWORDRESPONSE._serialized_end=2103
-  _CREATEVIEWREQUEST._serialized_start=2105
-  _CREATEVIEWREQUEST._serialized_end=2232
-  _CREATEVIEWRESPONSE._serialized_start=2234
-  _CREATEVIEWRESPONSE._serialized_end=2301
-  _GETVIEWSREQUEST._serialized_start=2303
-  _GETVIEWSREQUEST._serialized_end=2320
-  _GETVIEWSRESPONSE._serialized_start=2322
-  _GETVIEWSRESPONSE._serialized_end=2387
-  _GETCURRENTVIEWREQUEST._serialized_start=2389
-  _GETCURRENTVIEWREQUEST._serialized_end=2428
-  _GETCURRENTVIEWRESPONSE._serialized_start=2430
-  _GETCURRENTVIEWRESPONSE._serialized_end=2501
-  _GETFAVORITEVIEWSREQUEST._serialized_start=2503
-  _GETFAVORITEVIEWSREQUEST._serialized_end=2528
-  _GETFAVORITEVIEWSRESPONSE._serialized_start=2530
-  _GETFAVORITEVIEWSRESPONSE._serialized_end=2605
-  _PUBLISHVIEWREQUEST._serialized_start=2607
-  _PUBLISHVIEWREQUEST._serialized_end=2643
-  _PUBLISHVIEWRESPONSE._serialized_start=2645
-  _PUBLISHVIEWRESPONSE._serialized_end=2679
-  _ADDFAVORITEREQUEST._serialized_start=2681
-  _ADDFAVORITEREQUEST._serialized_end=2717
-  _ADDFAVORITERESPONSE._serialized_start=2719
-  _ADDFAVORITERESPONSE._serialized_end=2756
-  _REMOVEFAVORITEREQUEST._serialized_start=2758
-  _REMOVEFAVORITEREQUEST._serialized_end=2797
-  _REMOVEFAVORITERESPONSE._serialized_start=2799
-  _REMOVEFAVORITERESPONSE._serialized_end=2839
-  _UPDATEVIEWREQUEST._serialized_start=2841
-  _UPDATEVIEWREQUEST._serialized_end=2964
-  _UPDATEVIEWRESPONSE._serialized_start=2966
-  _UPDATEVIEWRESPONSE._serialized_end=3002
-  _DELETEVIEWREQUEST._serialized_start=3004
-  _DELETEVIEWREQUEST._serialized_end=3039
-  _DELETEVIEWRESPONSE._serialized_start=3041
-  _DELETEVIEWRESPONSE._serialized_end=3077
-  _UPDATESIDEMENUSTATEREQUEST._serialized_start=3079
-  _UPDATESIDEMENUSTATEREQUEST._serialized_end=3180
-  _UPDATESIDEMENUSTATERESPONSE._serialized_start=3182
-  _UPDATESIDEMENUSTATERESPONSE._serialized_end=3227
-  _ADDSIDEMENUFAVORITEREQUEST._serialized_start=3229
-  _ADDSIDEMENUFAVORITEREQUEST._serialized_end=3293
-  _ADDSIDEMENUFAVORITERESPONSE._serialized_start=3295
-  _ADDSIDEMENUFAVORITERESPONSE._serialized_end=3340
-  _REMOVESIDEMENUFAVORITEREQUEST._serialized_start=3342
-  _REMOVESIDEMENUFAVORITEREQUEST._serialized_end=3409
-  _REMOVESIDEMENUFAVORITERESPONSE._serialized_start=3411
-  _REMOVESIDEMENUFAVORITERESPONSE._serialized_end=3459
-  _CREATECOSTGROUPREQUEST._serialized_start=3462
-  _CREATECOSTGROUPREQUEST._serialized_end=3625
-  _CREATECOSTGROUPRESPONSE._serialized_start=3627
-  _CREATECOSTGROUPRESPONSE._serialized_end=3709
-  _GETCOSTGROUPSREQUEST._serialized_start=3711
-  _GETCOSTGROUPSREQUEST._serialized_end=3733
-  _GETCOSTGROUPSRESPONSE._serialized_start=3735
-  _GETCOSTGROUPSRESPONSE._serialized_end=3815
-  _GETCOSTGROUPDETAILSREQUEST._serialized_start=3817
-  _GETCOSTGROUPDETAILSREQUEST._serialized_end=3866
-  _GETCOSTGROUPDETAILSRESPONSE._serialized_start=3868
-  _GETCOSTGROUPDETAILSRESPONSE._serialized_end=3954
-  _UPDATECOSTGROUPNAMEREQUEST._serialized_start=3956
-  _UPDATECOSTGROUPNAMEREQUEST._serialized_end=4019
-  _UPDATECOSTGROUPNAMERESPONSE._serialized_start=4021
-  _UPDATECOSTGROUPNAMERESPONSE._serialized_end=4064
-  _UPDATECOSTGROUPDESCRIPTIONREQUEST._serialized_start=4066
-  _UPDATECOSTGROUPDESCRIPTIONREQUEST._serialized_end=4143
-  _UPDATECOSTGROUPDESCRIPTIONRESPONSE._serialized_start=4145
-  _UPDATECOSTGROUPDESCRIPTIONRESPONSE._serialized_end=4202
-  _UPDATECOSTGROUPIMAGEREQUEST._serialized_start=4204
-  _UPDATECOSTGROUPIMAGEREQUEST._serialized_end=4269
-  _UPDATECOSTGROUPIMAGERESPONSE._serialized_start=4271
-  _UPDATECOSTGROUPIMAGERESPONSE._serialized_end=4316
-  _UPDATECOSTGROUPICONREQUEST._serialized_start=4318
-  _UPDATECOSTGROUPICONREQUEST._serialized_end=4381
-  _UPDATECOSTGROUPICONRESPONSE._serialized_start=4383
-  _UPDATECOSTGROUPICONRESPONSE._serialized_end=4426
-  _UPDATECOSTGROUPCOLORTHEMEREQUEST._serialized_start=4428
-  _UPDATECOSTGROUPCOLORTHEMEREQUEST._serialized_end=4503
-  _UPDATECOSTGROUPCOLORTHEMERESPONSE._serialized_start=4505
-  _UPDATECOSTGROUPCOLORTHEMERESPONSE._serialized_end=4560
-  _UPDATECOSTGROUPCOMBINATIONSREQUEST._serialized_start=4562
-  _UPDATECOSTGROUPCOMBINATIONSREQUEST._serialized_end=4674
-  _UPDATECOSTGROUPCOMBINATIONSRESPONSE._serialized_start=4676
-  _UPDATECOSTGROUPCOMBINATIONSRESPONSE._serialized_end=4768
-  _ASSIGNCOSTGROUPMEMBERREQUEST._serialized_start=4770
-  _ASSIGNCOSTGROUPMEMBERREQUEST._serialized_end=4837
-  _ASSIGNCOSTGROUPMEMBERRESPONSE._serialized_start=4839
-  _ASSIGNCOSTGROUPMEMBERRESPONSE._serialized_end=4907
-  _REMOVECOSTGROUPMEMBERREQUEST._serialized_start=4909
-  _REMOVECOSTGROUPMEMBERREQUEST._serialized_end=4976
-  _REMOVECOSTGROUPMEMBERRESPONSE._serialized_start=4978
-  _REMOVECOSTGROUPMEMBERRESPONSE._serialized_end=5046
-  _DELETECOSTGROUPREQUEST._serialized_start=5048
-  _DELETECOSTGROUPREQUEST._serialized_end=5093
-  _DELETECOSTGROUPRESPONSE._serialized_start=5095
-  _DELETECOSTGROUPRESPONSE._serialized_end=5141
-  _GETACCOUNTACCESSTEMPLATEURLREQUEST._serialized_start=5143
-  _GETACCOUNTACCESSTEMPLATEURLREQUEST._serialized_end=5193
-  _GETACCOUNTACCESSTEMPLATEURLRESPONSE._serialized_start=5196
-  _GETACCOUNTACCESSTEMPLATEURLRESPONSE._serialized_end=5331
-  _LISTACCOUNTACCESSREQUEST._serialized_start=5333
-  _LISTACCOUNTACCESSREQUEST._serialized_end=5359
-  _GETACCOUNTACCESSREQUEST._serialized_start=5361
-  _GETACCOUNTACCESSREQUEST._serialized_end=5402
-  _ACCOUNTACCESS._serialized_start=5405
-  _ACCOUNTACCESS._serialized_end=5569
-  _CREATEACCOUNTACCESSREQUEST._serialized_start=5571
-  _CREATEACCOUNTACCESSREQUEST._serialized_end=5615
-  _UPDATEACCOUNTACCESSREQUEST._serialized_start=5617
-  _UPDATEACCOUNTACCESSREQUEST._serialized_end=5661
-  _DELETEACCOUNTACCESSREQUEST._serialized_start=5663
-  _DELETEACCOUNTACCESSREQUEST._serialized_end=5707
-  _LISTASSETSREQUEST._serialized_start=5709
-  _LISTASSETSREQUEST._serialized_end=5761
-  _LISTASSETSRESPONSE._serialized_start=5763
-  _LISTASSETSRESPONSE._serialized_end=5857
-  _COVER._serialized_start=5860
-  _COVER._serialized_end=13091
+  _COVER.methods_by_name['ListAssets']._serialized_options = b'\202\323\344\223\002\035\"\030/v1/{vendor}/assets:read:\001*'
+  _COVER.methods_by_name['DiscoverResources']._options = None
+  _COVER.methods_by_name['DiscoverResources']._serialized_options = b'\202\323\344\223\002!\"\034/v1/{vendor}/assets/discover:\001*'
+  _COVER.methods_by_name['ListDiscoveryRequests']._options = None
+  _COVER.methods_by_name['ListDiscoveryRequests']._serialized_options = b'\202\323\344\223\002\'\022%/v1/{vendor}/assets/discover/requests'
+  _INVITEMEMBERREQUEST._serialized_start=264
+  _INVITEMEMBERREQUEST._serialized_end=300
+  _INVITEMEMBERRESPONSE._serialized_start=302
+  _INVITEMEMBERRESPONSE._serialized_end=339
+  _CREATEMEMBERREQUEST._serialized_start=341
+  _CREATEMEMBERREQUEST._serialized_end=409
+  _CREATEMEMBERRESPONSE._serialized_start=411
+  _CREATEMEMBERRESPONSE._serialized_end=480
+  _GETMEMBERSREQUEST._serialized_start=482
+  _GETMEMBERSREQUEST._serialized_end=501
+  _GETMEMBERSRESPONSE._serialized_start=503
+  _GETMEMBERSRESPONSE._serialized_end=570
+  _GETMEMBERDETAILSREQUEST._serialized_start=572
+  _GETMEMBERDETAILSREQUEST._serialized_end=613
+  _GETMEMBERDETAILSRESPONSE._serialized_start=615
+  _GETMEMBERDETAILSRESPONSE._serialized_end=688
+  _GETMEMBERCOSTGROUPREQUEST._serialized_start=690
+  _GETMEMBERCOSTGROUPREQUEST._serialized_end=733
+  _GETMEMBERCOSTGROUPRESPONSE._serialized_start=735
+  _GETMEMBERCOSTGROUPRESPONSE._serialized_end=819
+  _GETUSERDETAILSREQUEST._serialized_start=821
+  _GETUSERDETAILSREQUEST._serialized_end=844
+  _GETUSERDETAILSRESPONSE._serialized_start=846
+  _GETUSERDETAILSRESPONSE._serialized_end=917
+  _UPDATEUSERAVATARREQUEST._serialized_start=919
+  _UPDATEUSERAVATARREQUEST._serialized_end=960
+  _UPDATEUSERAVATARRESPONSE._serialized_start=962
+  _UPDATEUSERAVATARRESPONSE._serialized_end=1004
+  _UPDATEUSERICONREQUEST._serialized_start=1006
+  _UPDATEUSERICONREQUEST._serialized_end=1043
+  _UPDATEUSERICONRESPONSE._serialized_start=1045
+  _UPDATEUSERICONRESPONSE._serialized_end=1083
+  _UPDATEUSERCOLORTHEMEREQUEST._serialized_start=1085
+  _UPDATEUSERCOLORTHEMEREQUEST._serialized_end=1134
+  _UPDATEUSERCOLORTHEMERESPONSE._serialized_start=1136
+  _UPDATEUSERCOLORTHEMERESPONSE._serialized_end=1186
+  _UPDATEUSERNAMEREQUEST._serialized_start=1188
+  _UPDATEUSERNAMEREQUEST._serialized_end=1225
+  _UPDATEUSERNAMERESPONSE._serialized_start=1227
+  _UPDATEUSERNAMERESPONSE._serialized_end=1265
+  _UPDATEUSEREMAILREQUEST._serialized_start=1267
+  _UPDATEUSEREMAILREQUEST._serialized_end=1306
+  _UPDATEUSEREMAILRESPONSE._serialized_start=1308
+  _UPDATEUSEREMAILRESPONSE._serialized_end=1348
+  _UPDATEUSERMAINVIEWREQUEST._serialized_start=1350
+  _UPDATEUSERMAINVIEWREQUEST._serialized_end=1393
+  _UPDATEUSERMAINVIEWRESPONSE._serialized_start=1395
+  _UPDATEUSERMAINVIEWRESPONSE._serialized_end=1439
+  _RESETUSERPASSWORDREQUEST._serialized_start=1441
+  _RESETUSERPASSWORDREQUEST._serialized_end=1514
+  _RESETUSERPASSWORDRESPONSE._serialized_start=1516
+  _RESETUSERPASSWORDRESPONSE._serialized_end=1559
+  _UPDATEUSERLOCALEREQUEST._serialized_start=1561
+  _UPDATEUSERLOCALEREQUEST._serialized_end=1602
+  _UPDATEUSERLOCALERESPONSE._serialized_start=1604
+  _UPDATEUSERLOCALERESPONSE._serialized_end=1646
+  _UPDATEUSERAPPTHEMEREQUEST._serialized_start=1648
+  _UPDATEUSERAPPTHEMEREQUEST._serialized_end=1693
+  _UPDATEUSERAPPTHEMERESPONSE._serialized_start=1695
+  _UPDATEUSERAPPTHEMERESPONSE._serialized_end=1741
+  _UPDATEUSERTIMEZONEREQUEST._serialized_start=1743
+  _UPDATEUSERTIMEZONEREQUEST._serialized_end=1788
+  _UPDATEUSERTIMEZONERESPONSE._serialized_start=1790
+  _UPDATEUSERTIMEZONERESPONSE._serialized_end=1836
+  _UPDATEUSERATTRIBUTESREQUEST._serialized_start=1838
+  _UPDATEUSERATTRIBUTESREQUEST._serialized_end=1887
+  _UPDATEUSERATTRIBUTESRESPONSE._serialized_start=1889
+  _UPDATEUSERATTRIBUTESRESPONSE._serialized_end=1939
+  _DELETEMEMBERREQUEST._serialized_start=1941
+  _DELETEMEMBERREQUEST._serialized_end=1978
+  _DELETEMEMBERRESPONSE._serialized_start=1980
+  _DELETEMEMBERRESPONSE._serialized_end=2018
+  _RESETPASSWORDREQUEST._serialized_start=2020
+  _RESETPASSWORDREQUEST._serialized_end=2058
+  _RESETPASSWORDRESPONSE._serialized_start=2060
+  _RESETPASSWORDRESPONSE._serialized_end=2099
+  _CREATEVIEWREQUEST._serialized_start=2101
+  _CREATEVIEWREQUEST._serialized_end=2228
+  _CREATEVIEWRESPONSE._serialized_start=2230
+  _CREATEVIEWRESPONSE._serialized_end=2297
+  _GETVIEWSREQUEST._serialized_start=2299
+  _GETVIEWSREQUEST._serialized_end=2316
+  _GETVIEWSRESPONSE._serialized_start=2318
+  _GETVIEWSRESPONSE._serialized_end=2383
+  _GETCURRENTVIEWREQUEST._serialized_start=2385
+  _GETCURRENTVIEWREQUEST._serialized_end=2424
+  _GETCURRENTVIEWRESPONSE._serialized_start=2426
+  _GETCURRENTVIEWRESPONSE._serialized_end=2497
+  _GETFAVORITEVIEWSREQUEST._serialized_start=2499
+  _GETFAVORITEVIEWSREQUEST._serialized_end=2524
+  _GETFAVORITEVIEWSRESPONSE._serialized_start=2526
+  _GETFAVORITEVIEWSRESPONSE._serialized_end=2601
+  _PUBLISHVIEWREQUEST._serialized_start=2603
+  _PUBLISHVIEWREQUEST._serialized_end=2639
+  _PUBLISHVIEWRESPONSE._serialized_start=2641
+  _PUBLISHVIEWRESPONSE._serialized_end=2675
+  _ADDFAVORITEREQUEST._serialized_start=2677
+  _ADDFAVORITEREQUEST._serialized_end=2713
+  _ADDFAVORITERESPONSE._serialized_start=2715
+  _ADDFAVORITERESPONSE._serialized_end=2752
+  _REMOVEFAVORITEREQUEST._serialized_start=2754
+  _REMOVEFAVORITEREQUEST._serialized_end=2793
+  _REMOVEFAVORITERESPONSE._serialized_start=2795
+  _REMOVEFAVORITERESPONSE._serialized_end=2835
+  _UPDATEVIEWREQUEST._serialized_start=2837
+  _UPDATEVIEWREQUEST._serialized_end=2960
+  _UPDATEVIEWRESPONSE._serialized_start=2962
+  _UPDATEVIEWRESPONSE._serialized_end=2998
+  _DELETEVIEWREQUEST._serialized_start=3000
+  _DELETEVIEWREQUEST._serialized_end=3035
+  _DELETEVIEWRESPONSE._serialized_start=3037
+  _DELETEVIEWRESPONSE._serialized_end=3073
+  _UPDATESIDEMENUSTATEREQUEST._serialized_start=3075
+  _UPDATESIDEMENUSTATEREQUEST._serialized_end=3176
+  _UPDATESIDEMENUSTATERESPONSE._serialized_start=3178
+  _UPDATESIDEMENUSTATERESPONSE._serialized_end=3223
+  _ADDSIDEMENUFAVORITEREQUEST._serialized_start=3225
+  _ADDSIDEMENUFAVORITEREQUEST._serialized_end=3289
+  _ADDSIDEMENUFAVORITERESPONSE._serialized_start=3291
+  _ADDSIDEMENUFAVORITERESPONSE._serialized_end=3336
+  _REMOVESIDEMENUFAVORITEREQUEST._serialized_start=3338
+  _REMOVESIDEMENUFAVORITEREQUEST._serialized_end=3405
+  _REMOVESIDEMENUFAVORITERESPONSE._serialized_start=3407
+  _REMOVESIDEMENUFAVORITERESPONSE._serialized_end=3455
+  _CREATECOSTGROUPREQUEST._serialized_start=3458
+  _CREATECOSTGROUPREQUEST._serialized_end=3621
+  _CREATECOSTGROUPRESPONSE._serialized_start=3623
+  _CREATECOSTGROUPRESPONSE._serialized_end=3705
+  _GETCOSTGROUPSREQUEST._serialized_start=3707
+  _GETCOSTGROUPSREQUEST._serialized_end=3729
+  _GETCOSTGROUPSRESPONSE._serialized_start=3731
+  _GETCOSTGROUPSRESPONSE._serialized_end=3811
+  _GETCOSTGROUPDETAILSREQUEST._serialized_start=3813
+  _GETCOSTGROUPDETAILSREQUEST._serialized_end=3862
+  _GETCOSTGROUPDETAILSRESPONSE._serialized_start=3864
+  _GETCOSTGROUPDETAILSRESPONSE._serialized_end=3950
+  _UPDATECOSTGROUPNAMEREQUEST._serialized_start=3952
+  _UPDATECOSTGROUPNAMEREQUEST._serialized_end=4015
+  _UPDATECOSTGROUPNAMERESPONSE._serialized_start=4017
+  _UPDATECOSTGROUPNAMERESPONSE._serialized_end=4060
+  _UPDATECOSTGROUPDESCRIPTIONREQUEST._serialized_start=4062
+  _UPDATECOSTGROUPDESCRIPTIONREQUEST._serialized_end=4139
+  _UPDATECOSTGROUPDESCRIPTIONRESPONSE._serialized_start=4141
+  _UPDATECOSTGROUPDESCRIPTIONRESPONSE._serialized_end=4198
+  _UPDATECOSTGROUPIMAGEREQUEST._serialized_start=4200
+  _UPDATECOSTGROUPIMAGEREQUEST._serialized_end=4265
+  _UPDATECOSTGROUPIMAGERESPONSE._serialized_start=4267
+  _UPDATECOSTGROUPIMAGERESPONSE._serialized_end=4312
+  _UPDATECOSTGROUPICONREQUEST._serialized_start=4314
+  _UPDATECOSTGROUPICONREQUEST._serialized_end=4377
+  _UPDATECOSTGROUPICONRESPONSE._serialized_start=4379
+  _UPDATECOSTGROUPICONRESPONSE._serialized_end=4422
+  _UPDATECOSTGROUPCOLORTHEMEREQUEST._serialized_start=4424
+  _UPDATECOSTGROUPCOLORTHEMEREQUEST._serialized_end=4499
+  _UPDATECOSTGROUPCOLORTHEMERESPONSE._serialized_start=4501
+  _UPDATECOSTGROUPCOLORTHEMERESPONSE._serialized_end=4556
+  _UPDATECOSTGROUPCOMBINATIONSREQUEST._serialized_start=4558
+  _UPDATECOSTGROUPCOMBINATIONSREQUEST._serialized_end=4670
+  _UPDATECOSTGROUPCOMBINATIONSRESPONSE._serialized_start=4672
+  _UPDATECOSTGROUPCOMBINATIONSRESPONSE._serialized_end=4764
+  _ASSIGNCOSTGROUPMEMBERREQUEST._serialized_start=4766
+  _ASSIGNCOSTGROUPMEMBERREQUEST._serialized_end=4833
+  _ASSIGNCOSTGROUPMEMBERRESPONSE._serialized_start=4835
+  _ASSIGNCOSTGROUPMEMBERRESPONSE._serialized_end=4903
+  _REMOVECOSTGROUPMEMBERREQUEST._serialized_start=4905
+  _REMOVECOSTGROUPMEMBERREQUEST._serialized_end=4972
+  _REMOVECOSTGROUPMEMBERRESPONSE._serialized_start=4974
+  _REMOVECOSTGROUPMEMBERRESPONSE._serialized_end=5042
+  _DELETECOSTGROUPREQUEST._serialized_start=5044
+  _DELETECOSTGROUPREQUEST._serialized_end=5089
+  _DELETECOSTGROUPRESPONSE._serialized_start=5091
+  _DELETECOSTGROUPRESPONSE._serialized_end=5137
+  _GETACCOUNTACCESSTEMPLATEURLREQUEST._serialized_start=5139
+  _GETACCOUNTACCESSTEMPLATEURLREQUEST._serialized_end=5189
+  _GETACCOUNTACCESSTEMPLATEURLRESPONSE._serialized_start=5192
+  _GETACCOUNTACCESSTEMPLATEURLRESPONSE._serialized_end=5327
+  _LISTACCOUNTACCESSREQUEST._serialized_start=5329
+  _LISTACCOUNTACCESSREQUEST._serialized_end=5355
+  _GETACCOUNTACCESSREQUEST._serialized_start=5357
+  _GETACCOUNTACCESSREQUEST._serialized_end=5398
+  _ACCOUNTACCESS._serialized_start=5401
+  _ACCOUNTACCESS._serialized_end=5565
+  _CREATEACCOUNTACCESSREQUEST._serialized_start=5567
+  _CREATEACCOUNTACCESSREQUEST._serialized_end=5611
+  _UPDATEACCOUNTACCESSREQUEST._serialized_start=5613
+  _UPDATEACCOUNTACCESSREQUEST._serialized_end=5657
+  _DELETEACCOUNTACCESSREQUEST._serialized_start=5659
+  _DELETEACCOUNTACCESSREQUEST._serialized_end=5703
+  _LISTASSETSREQUEST._serialized_start=5705
+  _LISTASSETSREQUEST._serialized_end=5806
+  _LISTASSETSAWSFILTEROPTIONS._serialized_start=5808
+  _LISTASSETSAWSFILTEROPTIONS._serialized_end=5871
+  _DISCOVERRESOURCESREQUEST._serialized_start=5873
+  _DISCOVERRESOURCESREQUEST._serialized_end=5982
+  _DISCOVERRESOURCESAWSOPTIONS._serialized_start=5984
+  _DISCOVERRESOURCESAWSOPTIONS._serialized_end=6049
+  _LISTDISCOVERYREQUESTSREQUEST._serialized_start=6051
+  _LISTDISCOVERYREQUESTSREQUEST._serialized_end=6097
+  _LISTDISCOVERYREQUESTSRESPONSE._serialized_start=6099
+  _LISTDISCOVERYREQUESTSRESPONSE._serialized_end=6184
+  _COVER._serialized_start=6187
+  _COVER._serialized_end=13707
 # @@protoc_insertion_point(module_scope)
