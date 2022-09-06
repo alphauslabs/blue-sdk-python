@@ -15,12 +15,17 @@ _sym_db = _symbol_database.Default()
 from alphausblue.api.cover import user_pb2 as api_dot_cover_dot_user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61pi/cover/costgroup.proto\x12\x11\x62lueapi.api.cover\x1a\x14\x61pi/cover/user.proto\"\xb6\x02\n\rCostGroupData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x12\n\ncolorTheme\x18\x06 \x01(\t\x12\x11\n\tcreatedAt\x18\x07 \x01(\t\x12\x11\n\tupdatedAt\x18\x08 \x01(\t\x12\x32\n\x07members\x18\t \x03(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x35\n\x0c\x63ombinations\x18\n \x03(\x0b\x32\x1f.blueapi.api.cover.Combinations\x12\x34\n\tcreatedBy\x18\x0b \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\"e\n\x0c\x43ombinations\x12\x10\n\x08\x63riteria\x18\x01 \x01(\t\x12\x12\n\ncomparator\x18\x02 \x01(\t\x12\r\n\x05value\x18\x03 \x01(\t\x12\x0e\n\x06tagKey\x18\x04 \x01(\t\x12\x10\n\x08tagValue\x18\x05 \x01(\t\"8\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\tBg\n\x1f\x63loud.alphaus.blueapi.api.coverB\x16\x41piCoverCostGroupProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61pi/cover/costgroup.proto\x12\x11\x62lueapi.api.cover\x1a\x14\x61pi/cover/user.proto\"\xb6\x02\n\rCostGroupData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x12\n\ncolorTheme\x18\x06 \x01(\t\x12\x11\n\tcreatedAt\x18\x07 \x01(\t\x12\x11\n\tupdatedAt\x18\x08 \x01(\t\x12\x32\n\x07members\x18\t \x03(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x35\n\x0c\x63ombinations\x18\n \x01(\x0b\x32\x1f.blueapi.api.cover.Combinations\x12\x34\n\tcreatedBy\x18\x0b \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\"\xc6\x01\n\x0c\x43ombinations\x12:\n\nawsOptions\x18\x01 \x01(\x0b\x32&.blueapi.api.cover.CostGroupAwsOptions\x12>\n\x0c\x61zureOptions\x18\x02 \x01(\x0b\x32(.blueapi.api.cover.CostGroupAzureOptions\x12:\n\ngcpOptions\x18\x03 \x01(\x0b\x32&.blueapi.api.cover.CostGroupGcpOptions\"R\n\x13\x43ostGroupAwsOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"T\n\x15\x43ostGroupAzureOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"R\n\x13\x43ostGroupGcpOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x9c\x01\n\x17\x43ostGroupOptionsFilters\x12N\n\nandFilters\x18\x01 \x03(\x0b\x32:.blueapi.api.cover.CostGroupOptionsFilters.AndFiltersEntry\x1a\x31\n\x0f\x41ndFiltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\tBg\n\x1f\x63loud.alphaus.blueapi.api.coverB\x16\x41piCoverCostGroupProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
 
 
 
 _COSTGROUPDATA = DESCRIPTOR.message_types_by_name['CostGroupData']
 _COMBINATIONS = DESCRIPTOR.message_types_by_name['Combinations']
+_COSTGROUPAWSOPTIONS = DESCRIPTOR.message_types_by_name['CostGroupAwsOptions']
+_COSTGROUPAZUREOPTIONS = DESCRIPTOR.message_types_by_name['CostGroupAzureOptions']
+_COSTGROUPGCPOPTIONS = DESCRIPTOR.message_types_by_name['CostGroupGcpOptions']
+_COSTGROUPOPTIONSFILTERS = DESCRIPTOR.message_types_by_name['CostGroupOptionsFilters']
+_COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY = _COSTGROUPOPTIONSFILTERS.nested_types_by_name['AndFiltersEntry']
 _ACCOUNT = DESCRIPTOR.message_types_by_name['Account']
 CostGroupData = _reflection.GeneratedProtocolMessageType('CostGroupData', (_message.Message,), {
   'DESCRIPTOR' : _COSTGROUPDATA,
@@ -36,6 +41,42 @@ Combinations = _reflection.GeneratedProtocolMessageType('Combinations', (_messag
   })
 _sym_db.RegisterMessage(Combinations)
 
+CostGroupAwsOptions = _reflection.GeneratedProtocolMessageType('CostGroupAwsOptions', (_message.Message,), {
+  'DESCRIPTOR' : _COSTGROUPAWSOPTIONS,
+  '__module__' : 'api.cover.costgroup_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.api.cover.CostGroupAwsOptions)
+  })
+_sym_db.RegisterMessage(CostGroupAwsOptions)
+
+CostGroupAzureOptions = _reflection.GeneratedProtocolMessageType('CostGroupAzureOptions', (_message.Message,), {
+  'DESCRIPTOR' : _COSTGROUPAZUREOPTIONS,
+  '__module__' : 'api.cover.costgroup_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.api.cover.CostGroupAzureOptions)
+  })
+_sym_db.RegisterMessage(CostGroupAzureOptions)
+
+CostGroupGcpOptions = _reflection.GeneratedProtocolMessageType('CostGroupGcpOptions', (_message.Message,), {
+  'DESCRIPTOR' : _COSTGROUPGCPOPTIONS,
+  '__module__' : 'api.cover.costgroup_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.api.cover.CostGroupGcpOptions)
+  })
+_sym_db.RegisterMessage(CostGroupGcpOptions)
+
+CostGroupOptionsFilters = _reflection.GeneratedProtocolMessageType('CostGroupOptionsFilters', (_message.Message,), {
+
+  'AndFiltersEntry' : _reflection.GeneratedProtocolMessageType('AndFiltersEntry', (_message.Message,), {
+    'DESCRIPTOR' : _COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY,
+    '__module__' : 'api.cover.costgroup_pb2'
+    # @@protoc_insertion_point(class_scope:blueapi.api.cover.CostGroupOptionsFilters.AndFiltersEntry)
+    })
+  ,
+  'DESCRIPTOR' : _COSTGROUPOPTIONSFILTERS,
+  '__module__' : 'api.cover.costgroup_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.api.cover.CostGroupOptionsFilters)
+  })
+_sym_db.RegisterMessage(CostGroupOptionsFilters)
+_sym_db.RegisterMessage(CostGroupOptionsFilters.AndFiltersEntry)
+
 Account = _reflection.GeneratedProtocolMessageType('Account', (_message.Message,), {
   'DESCRIPTOR' : _ACCOUNT,
   '__module__' : 'api.cover.costgroup_pb2'
@@ -47,10 +88,22 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\037cloud.alphaus.blueapi.api.coverB\026ApiCoverCostGroupProtoZ,github.com/alphauslabs/blue-sdk-go/api/cover'
+  _COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY._options = None
+  _COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY._serialized_options = b'8\001'
   _COSTGROUPDATA._serialized_start=71
   _COSTGROUPDATA._serialized_end=381
-  _COMBINATIONS._serialized_start=383
-  _COMBINATIONS._serialized_end=484
-  _ACCOUNT._serialized_start=486
-  _ACCOUNT._serialized_end=542
+  _COMBINATIONS._serialized_start=384
+  _COMBINATIONS._serialized_end=582
+  _COSTGROUPAWSOPTIONS._serialized_start=584
+  _COSTGROUPAWSOPTIONS._serialized_end=666
+  _COSTGROUPAZUREOPTIONS._serialized_start=668
+  _COSTGROUPAZUREOPTIONS._serialized_end=752
+  _COSTGROUPGCPOPTIONS._serialized_start=754
+  _COSTGROUPGCPOPTIONS._serialized_end=836
+  _COSTGROUPOPTIONSFILTERS._serialized_start=839
+  _COSTGROUPOPTIONSFILTERS._serialized_end=995
+  _COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY._serialized_start=946
+  _COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY._serialized_end=995
+  _ACCOUNT._serialized_start=997
+  _ACCOUNT._serialized_end=1053
 # @@protoc_insertion_point(module_scope)
