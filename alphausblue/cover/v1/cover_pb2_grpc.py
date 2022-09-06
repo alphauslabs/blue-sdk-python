@@ -218,6 +218,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsResponse.FromString,
                 )
+        self.ResolveCostGroupCombinations = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ResolveCostGroupCombinations',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ResolveCostGroupCombinationsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ResolveCostGroupCombinationsResponse.FromString,
+                )
         self.AssignCostGroupMember = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/AssignCostGroupMember',
                 request_serializer=cover_dot_v1_dot_cover__pb2.AssignCostGroupMemberRequest.SerializeToString,
@@ -564,6 +569,12 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ResolveCostGroupCombinations(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def AssignCostGroupMember(self, request, context):
         """Assign a member to a cost group
         """
@@ -850,6 +861,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UpdateCostGroupCombinations,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsResponse.SerializeToString,
+            ),
+            'ResolveCostGroupCombinations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResolveCostGroupCombinations,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ResolveCostGroupCombinationsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ResolveCostGroupCombinationsResponse.SerializeToString,
             ),
             'AssignCostGroupMember': grpc.unary_unary_rpc_method_handler(
                     servicer.AssignCostGroupMember,
@@ -1599,6 +1615,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateCostGroupCombinations',
             cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateCostGroupCombinationsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ResolveCostGroupCombinations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ResolveCostGroupCombinations',
+            cover_dot_v1_dot_cover__pb2.ResolveCostGroupCombinationsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ResolveCostGroupCombinationsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

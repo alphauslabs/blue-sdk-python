@@ -16,13 +16,14 @@ from google.rpc import status_pb2 as google_dot_rpc_dot_status__pb2
 from google.protobuf import any_pb2 as google_dot_protobuf_dot_any__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x61pi/operation.proto\x12\x0b\x62lueapi.api\x1a\x17google/rpc/status.proto\x1a\x19google/protobuf/any.proto\"\xa8\x01\n\tOperation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x08metadata\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x0c\n\x04\x64one\x18\x03 \x01(\x08\x12#\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x12.google.rpc.StatusH\x00\x12(\n\x08response\x18\x05 \x01(\x0b\x32\x14.google.protobuf.AnyH\x00\x42\x08\n\x06result\"a\n\x1cOperationImportCurMetadataV1\x12\r\n\x05month\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x02 \x03(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\t\x12\x0f\n\x07updated\x18\x04 \x01(\t\"\x88\x01\n$OperationAwsCalculateCostsMetadataV1\x12\r\n\x05orgId\x18\x01 \x01(\t\x12\r\n\x05month\x18\x02 \x01(\t\x12\x10\n\x08groupIds\x18\x03 \x03(\t\x12\x0e\n\x06status\x18\x04 \x01(\t\x12\x0f\n\x07\x63reated\x18\x05 \x01(\t\x12\x0f\n\x07updated\x18\x06 \x01(\tBV\n\x19\x63loud.alphaus.blueapi.apiB\x11\x41piOperationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x13\x61pi/operation.proto\x12\x0b\x62lueapi.api\x1a\x17google/rpc/status.proto\x1a\x19google/protobuf/any.proto\"\xa8\x01\n\tOperation\x12\x0c\n\x04name\x18\x01 \x01(\t\x12&\n\x08metadata\x18\x02 \x01(\x0b\x32\x14.google.protobuf.Any\x12\x0c\n\x04\x64one\x18\x03 \x01(\x08\x12#\n\x05\x65rror\x18\x04 \x01(\x0b\x32\x12.google.rpc.StatusH\x00\x12(\n\x08response\x18\x05 \x01(\x0b\x32\x14.google.protobuf.AnyH\x00\x42\x08\n\x06result\"a\n\x1cOperationImportCurMetadataV1\x12\r\n\x05month\x18\x01 \x01(\t\x12\x10\n\x08\x61\x63\x63ounts\x18\x02 \x03(\t\x12\x0f\n\x07\x63reated\x18\x03 \x01(\t\x12\x0f\n\x07updated\x18\x04 \x01(\t\"\x88\x01\n$OperationAwsCalculateCostsMetadataV1\x12\r\n\x05orgId\x18\x01 \x01(\t\x12\r\n\x05month\x18\x02 \x01(\t\x12\x10\n\x08groupIds\x18\x03 \x03(\t\x12\x0e\n\x06status\x18\x04 \x01(\t\x12\x0f\n\x07\x63reated\x18\x05 \x01(\t\x12\x0f\n\x07updated\x18\x06 \x01(\t\"J\n$OperationAwsDiscoverAssetsMetadataV1\x12\x10\n\x08\x61\x63\x63ounts\x18\x01 \x03(\t\x12\x10\n\x08services\x18\x02 \x03(\tBV\n\x19\x63loud.alphaus.blueapi.apiB\x11\x41piOperationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
 
 
 
 _OPERATION = DESCRIPTOR.message_types_by_name['Operation']
 _OPERATIONIMPORTCURMETADATAV1 = DESCRIPTOR.message_types_by_name['OperationImportCurMetadataV1']
 _OPERATIONAWSCALCULATECOSTSMETADATAV1 = DESCRIPTOR.message_types_by_name['OperationAwsCalculateCostsMetadataV1']
+_OPERATIONAWSDISCOVERASSETSMETADATAV1 = DESCRIPTOR.message_types_by_name['OperationAwsDiscoverAssetsMetadataV1']
 Operation = _reflection.GeneratedProtocolMessageType('Operation', (_message.Message,), {
   'DESCRIPTOR' : _OPERATION,
   '__module__' : 'api.operation_pb2'
@@ -44,6 +45,13 @@ OperationAwsCalculateCostsMetadataV1 = _reflection.GeneratedProtocolMessageType(
   })
 _sym_db.RegisterMessage(OperationAwsCalculateCostsMetadataV1)
 
+OperationAwsDiscoverAssetsMetadataV1 = _reflection.GeneratedProtocolMessageType('OperationAwsDiscoverAssetsMetadataV1', (_message.Message,), {
+  'DESCRIPTOR' : _OPERATIONAWSDISCOVERASSETSMETADATAV1,
+  '__module__' : 'api.operation_pb2'
+  # @@protoc_insertion_point(class_scope:blueapi.api.OperationAwsDiscoverAssetsMetadataV1)
+  })
+_sym_db.RegisterMessage(OperationAwsDiscoverAssetsMetadataV1)
+
 if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
@@ -54,4 +62,6 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _OPERATIONIMPORTCURMETADATAV1._serialized_end=356
   _OPERATIONAWSCALCULATECOSTSMETADATAV1._serialized_start=359
   _OPERATIONAWSCALCULATECOSTSMETADATAV1._serialized_end=495
+  _OPERATIONAWSDISCOVERASSETSMETADATAV1._serialized_start=497
+  _OPERATIONAWSDISCOVERASSETSMETADATAV1._serialized_end=571
 # @@protoc_insertion_point(module_scope)
