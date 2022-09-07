@@ -399,7 +399,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadAdjustments(self, request, context):
-        """Reads the non-usage-based details of an organization (Ripple) or billing group (Wave). This API covers non-usage-based adjustments, such as Fees, Credits, Discounts, Tax, Upfront Fees, etc. At the moment, the supported {vendor} is 'aws'. If datetime range parameters are not set, month-to-date (current month) will be returned.
+        """Reads the non-usage-based details of an organization (Ripple) or billing group (Wave). This API covers non-usage-based adjustments, such as Fees, Credits, Discounts, Tax, Upfront Fees, etc. At the moment, the supported {vendor} is 'aws' or 'azure'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
