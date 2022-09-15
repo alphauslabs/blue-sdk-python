@@ -273,11 +273,6 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.RegisterAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.GetAccountType = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/GetAccountType',
-                request_serializer=cover_dot_v1_dot_cover__pb2.GetAccountTypeRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountTypeResponse.FromString,
-                )
         self.ListAssets = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/ListAssets',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListAssetsRequest.SerializeToString,
@@ -655,13 +650,6 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetAccountType(self, request, context):
-        """Gets the account type of the target account.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ListAssets(self, request, context):
         """WORK-IN-PROGRESS: Lists all assets per service. 
         """
@@ -940,11 +928,6 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.RegisterAccount,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.RegisterAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'GetAccountType': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetAccountType,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountTypeRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAccountTypeResponse.SerializeToString,
             ),
             'ListAssets': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAssets,
@@ -1836,23 +1819,6 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/RegisterAccount',
             cover_dot_v1_dot_cover__pb2.RegisterAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetAccountType(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAccountType',
-            cover_dot_v1_dot_cover__pb2.GetAccountTypeRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.GetAccountTypeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
