@@ -266,7 +266,7 @@ class CoverStub(object):
         self.DeleteAccountAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteAccountAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteAccountAccessRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteAccountAccessResponse.FromString,
                 )
         self.RegisterAccount = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/RegisterAccount',
@@ -934,7 +934,7 @@ def add_CoverServicer_to_server(servicer, server):
             'DeleteAccountAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAccountAccess,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteAccountAccessRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteAccountAccessResponse.SerializeToString,
             ),
             'RegisterAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.RegisterAccount,
@@ -1818,7 +1818,7 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteAccountAccess',
             cover_dot_v1_dot_cover__pb2.DeleteAccountAccessRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            cover_dot_v1_dot_cover__pb2.DeleteAccountAccessResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
