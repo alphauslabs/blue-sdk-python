@@ -2,7 +2,6 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from alphausblue.api.cover import asset_pb2 as api_dot_cover_dot_asset__pb2
 from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from alphausblue.cover.v1 import cover_pb2 as cover_dot_v1_dot_cover__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -276,17 +275,7 @@ class CoverStub(object):
         self.ListAssets = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/ListAssets',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListAssetsRequest.SerializeToString,
-                response_deserializer=api_dot_cover_dot_asset__pb2.Asset.FromString,
-                )
-        self.DiscoverResources = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/DiscoverResources',
-                request_serializer=cover_dot_v1_dot_cover__pb2.DiscoverResourcesRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
-        self.ListDiscoveryRequests = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/ListDiscoveryRequests',
-                request_serializer=cover_dot_v1_dot_cover__pb2.ListDiscoveryRequestsRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.ListDiscoveryRequestsResponse.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.Asset.FromString,
                 )
         self.GetCostUsage = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetCostUsage',
@@ -662,20 +651,6 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DiscoverResources(self, request, context):
-        """WORK-IN-PROGRESS: Send request to discover resources in cloud. 
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListDiscoveryRequests(self, request, context):
-        """WORK-IN-PROGRESS: List all discovery requests and their status requested by the login user. 
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def GetCostUsage(self, request, context):
         """WORK-IN-PROGRESS: Get usage and usage-based costs for the specified costgroup
         """
@@ -944,17 +919,7 @@ def add_CoverServicer_to_server(servicer, server):
             'ListAssets': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAssets,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListAssetsRequest.FromString,
-                    response_serializer=api_dot_cover_dot_asset__pb2.Asset.SerializeToString,
-            ),
-            'DiscoverResources': grpc.unary_unary_rpc_method_handler(
-                    servicer.DiscoverResources,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.DiscoverResourcesRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'ListDiscoveryRequests': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDiscoveryRequests,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListDiscoveryRequestsRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.ListDiscoveryRequestsResponse.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.Asset.SerializeToString,
             ),
             'GetCostUsage': grpc.unary_stream_rpc_method_handler(
                     servicer.GetCostUsage,
@@ -1852,41 +1817,7 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListAssets',
             cover_dot_v1_dot_cover__pb2.ListAssetsRequest.SerializeToString,
-            api_dot_cover_dot_asset__pb2.Asset.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def DiscoverResources(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DiscoverResources',
-            cover_dot_v1_dot_cover__pb2.DiscoverResourcesRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListDiscoveryRequests(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ListDiscoveryRequests',
-            cover_dot_v1_dot_cover__pb2.ListDiscoveryRequestsRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.ListDiscoveryRequestsResponse.FromString,
+            cover_dot_v1_dot_cover__pb2.Asset.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
