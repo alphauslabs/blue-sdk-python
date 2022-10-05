@@ -56,6 +56,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.FromString,
                 )
+        self.ListInvoiceServiceDiscounts = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.InvoiceServiceDiscounts.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -118,6 +123,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListInvoiceServiceDiscounts(self, request, context):
+        """WORK-IN-PROGRESS: Reads the invoice service discounts. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -160,6 +172,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ExportInvoiceFile,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.SerializeToString,
+            ),
+            'ListInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.InvoiceServiceDiscounts.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -305,5 +322,22 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/ExportInvoiceFile',
             billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.ListInvoiceServiceDiscountsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.InvoiceServiceDiscounts.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
