@@ -152,6 +152,16 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewResponse.FromString,
                 )
+        self.UpdateViewLayout = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateViewLayout',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewLayoutRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewLayoutResponse.FromString,
+                )
+        self.UpdateViewWidget = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateViewWidget',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetResponse.FromString,
+                )
         self.DeleteView = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteView',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
@@ -477,6 +487,20 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateViewLayout(self, request, context):
+        """Updates the view's layout
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateViewWidget(self, request, context):
+        """Updates the view's widget
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteView(self, request, context):
         """Deletes a view
         """
@@ -795,6 +819,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UpdateView,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewResponse.SerializeToString,
+            ),
+            'UpdateViewLayout': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateViewLayout,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewLayoutRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewLayoutResponse.SerializeToString,
+            ),
+            'UpdateViewWidget': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateViewWidget,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetResponse.SerializeToString,
             ),
             'DeleteView': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteView,
@@ -1393,6 +1427,40 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateView',
             cover_dot_v1_dot_cover__pb2.UpdateViewRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateViewResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateViewLayout(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateViewLayout',
+            cover_dot_v1_dot_cover__pb2.UpdateViewLayoutRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateViewLayoutResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateViewWidget(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateViewWidget',
+            cover_dot_v1_dot_cover__pb2.UpdateViewWidgetRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateViewWidgetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
