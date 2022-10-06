@@ -77,6 +77,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateAccountInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAccountInvoiceServiceDiscountsResponse.FromString,
                 )
+        self.RemoveAccountInvoiceServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/RemoveAccountInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.RemoveAccountInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.DeleteAccountInvoiceServiceDiscounts = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteAccountInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.SerializeToString,
@@ -172,6 +177,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RemoveAccountInvoiceServiceDiscounts(self, request, context):
+        """WORK-IN-PROGRESS: Removes the account invoice service discounts. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteAccountInvoiceServiceDiscounts(self, request, context):
         """WORK-IN-PROGRESS: Deletes the account invoice service discounts. Only available in Ripple.
         """
@@ -241,6 +253,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.UpdateAccountInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAccountInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.UpdateAccountInvoiceServiceDiscountsResponse.SerializeToString,
+            ),
+            'RemoveAccountInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.RemoveAccountInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.RemoveAccountInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'DeleteAccountInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAccountInvoiceServiceDiscounts,
@@ -459,6 +476,23 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/UpdateAccountInvoiceServiceDiscounts',
             billing_dot_v1_dot_billing__pb2.UpdateAccountInvoiceServiceDiscountsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.UpdateAccountInvoiceServiceDiscountsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RemoveAccountInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/RemoveAccountInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.RemoveAccountInvoiceServiceDiscountsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
