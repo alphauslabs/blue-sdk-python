@@ -278,7 +278,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccountResources(self, request, context):
-        """WORK-IN-PROGRESS: Lists all account resource for vendor.
+        """Lists all account resource for vendor.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
