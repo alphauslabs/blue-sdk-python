@@ -49,11 +49,6 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ListAccountsRequest.SerializeToString,
                 response_deserializer=api_dot_account__pb2.Account.FromString,
                 )
-        self.ListAccountResources = channel.unary_stream(
-                '/blueapi.cost.v1.Cost/ListAccountResources',
-                request_serializer=cost_dot_v1_dot_cost__pb2.ListAccountResourcesRequest.SerializeToString,
-                response_deserializer=api_dot_account__pb2.AccountResource.FromString,
-                )
         self.GetAccount = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetAccount',
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetAccountRequest.SerializeToString,
@@ -277,15 +272,16 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListAccountResources(self, request, context):
-        """Lists all account resource for vendor.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def GetAccount(self, request, context):
-        """Gets a vendor account. This API includes all of the account's metadata. See https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
+        """TO BE DELETED: Lists all account resource for vendor.
+        rpc ListAccountResources(ListAccountResourcesRequest) returns (stream api.AccountResource) {
+        option (google.api.http) = {
+        post: "/v1/{vendor}/accounts:read"
+        body: "*"
+        };
+        }
+
+        Gets a vendor account. This API includes all of the account's metadata. See https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -561,11 +557,6 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ListAccounts,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ListAccountsRequest.FromString,
                     response_serializer=api_dot_account__pb2.Account.SerializeToString,
-            ),
-            'ListAccountResources': grpc.unary_stream_rpc_method_handler(
-                    servicer.ListAccountResources,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListAccountResourcesRequest.FromString,
-                    response_serializer=api_dot_account__pb2.AccountResource.SerializeToString,
             ),
             'GetAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAccount,
@@ -852,23 +843,6 @@ class Cost(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/ListAccounts',
             cost_dot_v1_dot_cost__pb2.ListAccountsRequest.SerializeToString,
             api_dot_account__pb2.Account.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ListAccountResources(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/ListAccountResources',
-            cost_dot_v1_dot_cost__pb2.ListAccountResourcesRequest.SerializeToString,
-            api_dot_account__pb2.AccountResource.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

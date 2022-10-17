@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 from alphausblue.api import keyvalue_pb2 as api_dot_keyvalue__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x61pi/account.proto\x12\x0b\x62lueapi.api\x1a\x12\x61pi/keyvalue.proto\"v\n\x07\x41\x63\x63ount\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValue\"\x8e\x01\n\x0f\x41\x63\x63ountResource\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\'\n\x08metadata\x18\x06 \x03(\x0b\x32\x15.blueapi.api.KeyValueBT\n\x19\x63loud.alphaus.blueapi.apiB\x0f\x41piAccountProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x11\x61pi/account.proto\x12\x0b\x62lueapi.api\x1a\x12\x61pi/keyvalue.proto\"\x86\x01\n\x07\x41\x63\x63ount\x12\x0e\n\x06vendor\x18\x06 \x01(\t\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\'\n\x08metadata\x18\x03 \x03(\x0b\x32\x15.blueapi.api.KeyValue\"\x8e\x01\n\x0f\x41\x63\x63ountResource\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t\x12\x19\n\x11\x62illingInternalId\x18\x05 \x01(\t\x12\'\n\x08metadata\x18\x06 \x03(\x0b\x32\x15.blueapi.api.KeyValueBT\n\x19\x63loud.alphaus.blueapi.apiB\x0f\x41piAccountProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.account_pb2', globals())
@@ -22,8 +22,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031cloud.alphaus.blueapi.apiB\017ApiAccountProtoZ&github.com/alphauslabs/blue-sdk-go/api'
-  _ACCOUNT._serialized_start=54
-  _ACCOUNT._serialized_end=172
-  _ACCOUNTRESOURCE._serialized_start=175
-  _ACCOUNTRESOURCE._serialized_end=317
+  _ACCOUNT._serialized_start=55
+  _ACCOUNT._serialized_end=189
+  _ACCOUNTRESOURCE._serialized_start=192
+  _ACCOUNTRESOURCE._serialized_end=334
 # @@protoc_insertion_point(module_scope)
