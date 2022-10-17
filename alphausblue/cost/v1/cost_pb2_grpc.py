@@ -273,15 +273,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAccount(self, request, context):
-        """TO BE DELETED: Lists all account resource for vendor.
-        rpc ListAccountResources(ListAccountResourcesRequest) returns (stream api.AccountResource) {
-        option (google.api.http) = {
-        post: "/v1/{vendor}/accounts:read"
-        body: "*"
-        };
-        }
-
-        Gets a vendor account. This API includes all of the account's metadata. See https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
+        """Gets a vendor account. This API includes all of the account's metadata. See https://alphauslabs.github.io/blueapi/ for the list of supported attributes.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
