@@ -297,6 +297,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationResponse.FromString,
                 )
+        self.ApplyRightSizingRecommendation = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ApplyRightSizingRecommendation',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationResponse.FromString,
+                )
         self.GetEC2Instances = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetEC2Instances',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.SerializeToString,
@@ -699,6 +704,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ApplyRightSizingRecommendation(self, request, context):
+        """Applies the right sizing recommendation of a resource
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetEC2Instances(self, request, context):
         """Gets the EC2 instances of all accounts in Cost Group
         """
@@ -988,6 +1000,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetRightSizingRecommendation,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationResponse.SerializeToString,
+            ),
+            'ApplyRightSizingRecommendation': grpc.unary_unary_rpc_method_handler(
+                    servicer.ApplyRightSizingRecommendation,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationResponse.SerializeToString,
             ),
             'GetEC2Instances': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEC2Instances,
@@ -1954,6 +1971,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetRightSizingRecommendation',
             cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ApplyRightSizingRecommendation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ApplyRightSizingRecommendation',
+            cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
