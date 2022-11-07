@@ -297,10 +297,15 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationResponse.FromString,
                 )
-        self.ApplyRightSizingRecommendation = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/ApplyRightSizingRecommendation',
-                request_serializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationResponse.FromString,
+        self.ModifyResourceType = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ModifyResourceType',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ModifyResourceTypeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ModifyResourceTypeResponse.FromString,
+                )
+        self.TerminateResource = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/TerminateResource',
+                request_serializer=cover_dot_v1_dot_cover__pb2.TerminateResourceRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.TerminateResourceResponse.FromString,
                 )
         self.GetEC2Instances = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetEC2Instances',
@@ -704,8 +709,15 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ApplyRightSizingRecommendation(self, request, context):
-        """Applies the right sizing recommendation of a resource
+    def ModifyResourceType(self, request, context):
+        """Modify resource type from right sizing recommendation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def TerminateResource(self, request, context):
+        """Terminate a resource from right sizing recommendation
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1001,10 +1013,15 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetRightSizingRecommendationResponse.SerializeToString,
             ),
-            'ApplyRightSizingRecommendation': grpc.unary_unary_rpc_method_handler(
-                    servicer.ApplyRightSizingRecommendation,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationResponse.SerializeToString,
+            'ModifyResourceType': grpc.unary_unary_rpc_method_handler(
+                    servicer.ModifyResourceType,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ModifyResourceTypeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ModifyResourceTypeResponse.SerializeToString,
+            ),
+            'TerminateResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.TerminateResource,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.TerminateResourceRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.TerminateResourceResponse.SerializeToString,
             ),
             'GetEC2Instances': grpc.unary_unary_rpc_method_handler(
                     servicer.GetEC2Instances,
@@ -1975,7 +1992,7 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ApplyRightSizingRecommendation(request,
+    def ModifyResourceType(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1985,9 +2002,26 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ApplyRightSizingRecommendation',
-            cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.ApplyRightSizingRecommendationResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ModifyResourceType',
+            cover_dot_v1_dot_cover__pb2.ModifyResourceTypeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ModifyResourceTypeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def TerminateResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/TerminateResource',
+            cover_dot_v1_dot_cover__pb2.TerminateResourceRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.TerminateResourceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
