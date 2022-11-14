@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)api/cover/rightsizingrecommendation.proto\x12\x11\x62lueapi.api.cover\"S\n\x0b\x41\x63\x63ountData\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x31\n\x08resource\x18\x02 \x03(\x0b\x32\x1f.blueapi.api.cover.ResourceData\"\xde\x02\n\x0cResourceData\x12\x12\n\nresourceId\x18\x01 \x01(\t\x12\x14\n\x0cresourceName\x18\x02 \x01(\t\x12\x14\n\x0cresourceType\x18\x03 \x01(\t\x12\x17\n\x0f\x63onsumedService\x18\x04 \x01(\t\x12\x14\n\x0c\x63urrentPrice\x18\x05 \x01(\x01\x12\x0e\n\x06region\x18\x06 \x01(\t\x12\x19\n\x11maxCpuUtilization\x18\x07 \x01(\x01\x12\x1d\n\x15maxStorageUtilization\x18\x08 \x01(\x01\x12\x1c\n\x14maxMemoryUtilization\x18\t \x01(\x01\x12\x17\n\x0fnetworkCapacity\x18\n \x01(\t\x12\x17\n\x0frightSizingType\x18\x0b \x01(\t\x12\x45\n\x14recommendationDetail\x18\x0c \x03(\x0b\x32\'.blueapi.api.cover.RecommendationDetail\"x\n\x14RecommendationDetail\x12\x1f\n\x17recommendedResourceType\x18\x01 \x01(\t\x12\x15\n\restimatedCost\x18\x02 \x01(\x01\x12\x18\n\x10\x65stimatedSavings\x18\x03 \x01(\x01\x12\x0e\n\x06region\x18\x04 \x01(\tBw\n\x1f\x63loud.alphaus.blueapi.api.coverB&ApiCoverRightSizingRecommendationProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n)api/cover/rightsizingrecommendation.proto\x12\x11\x62lueapi.api.cover\"\x91\x03\n\x0cResourceData\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x11\n\taccountId\x18\x02 \x01(\t\x12\x12\n\nresourceId\x18\x03 \x01(\t\x12\x14\n\x0cresourceName\x18\x04 \x01(\t\x12\x14\n\x0cresourceType\x18\x05 \x01(\t\x12\x17\n\x0f\x63onsumedService\x18\x06 \x01(\t\x12\x14\n\x0c\x63urrentPrice\x18\x07 \x01(\x01\x12\x0e\n\x06region\x18\x08 \x01(\t\x12\x19\n\x11maxCpuUtilization\x18\t \x01(\x01\x12\x1d\n\x15maxStorageUtilization\x18\n \x01(\x01\x12\x1c\n\x14maxMemoryUtilization\x18\x0b \x01(\x01\x12\x17\n\x0fnetworkCapacity\x18\x0c \x01(\t\x12\x17\n\x0frightSizingType\x18\r \x01(\t\x12\x45\n\x14recommendationDetail\x18\x0e \x03(\x0b\x32\'.blueapi.api.cover.RecommendationDetail\x12\x0e\n\x06status\x18\x0f \x01(\t\"x\n\x14RecommendationDetail\x12\x1f\n\x17recommendedResourceType\x18\x01 \x01(\t\x12\x15\n\restimatedCost\x18\x02 \x01(\x01\x12\x18\n\x10\x65stimatedSavings\x18\x03 \x01(\x01\x12\x0e\n\x06region\x18\x04 \x01(\tBw\n\x1f\x63loud.alphaus.blueapi.api.coverB&ApiCoverRightSizingRecommendationProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.rightsizingrecommendation_pb2', globals())
@@ -21,10 +21,8 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\037cloud.alphaus.blueapi.api.coverB&ApiCoverRightSizingRecommendationProtoZ,github.com/alphauslabs/blue-sdk-go/api/cover'
-  _ACCOUNTDATA._serialized_start=64
-  _ACCOUNTDATA._serialized_end=147
-  _RESOURCEDATA._serialized_start=150
-  _RESOURCEDATA._serialized_end=500
-  _RECOMMENDATIONDETAIL._serialized_start=502
-  _RECOMMENDATIONDETAIL._serialized_end=622
+  _RESOURCEDATA._serialized_start=65
+  _RESOURCEDATA._serialized_end=466
+  _RECOMMENDATIONDETAIL._serialized_start=468
+  _RECOMMENDATIONDETAIL._serialized_end=588
 # @@protoc_insertion_point(module_scope)
