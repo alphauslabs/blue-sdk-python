@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61pi/gcp/cost.proto\x12\x0f\x62lueapi.api.gcp\"\xbe\x01\n\x04\x43ost\x12\x0f\n\x07\x61\x63\x63ount\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\x12\x0f\n\x07service\x18\x04 \x01(\t\x12\x0b\n\x03sku\x18\x05 \x01(\t\x12\x0e\n\x06region\x18\x06 \x01(\t\x12\x0c\n\x04zone\x18\x07 \x01(\t\x12\x11\n\tusageUnit\x18\x08 \x01(\t\x12\x13\n\x0busageAmount\x18\t \x01(\x01\x12\x14\n\x0c\x62\x61seCurrency\x18\n \x01(\t\x12\x0c\n\x04\x63ost\x18\x0b \x01(\x01\x42\\\n\x1d\x63loud.alphaus.blueapi.api.gcpB\x0f\x41piGcpCostProtoZ*github.com/alphauslabs/blue-sdk-go/api/gcpb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61pi/gcp/cost.proto\x12\x0f\x62lueapi.api.gcp\"\xf4\x01\n\x04\x43ost\x12\x0f\n\x07\x61\x63\x63ount\x18\x01 \x01(\t\x12\x0f\n\x07groupId\x18\x02 \x01(\t\x12\x0c\n\x04\x64\x61te\x18\x03 \x01(\t\x12\x0f\n\x07service\x18\x04 \x01(\t\x12\x0b\n\x03sku\x18\x05 \x01(\t\x12\x0e\n\x06region\x18\x06 \x01(\t\x12\x0c\n\x04zone\x18\x07 \x01(\t\x12\x11\n\tusageUnit\x18\x08 \x01(\t\x12\x13\n\x0busageAmount\x18\t \x01(\x01\x12\x18\n\x10usagePricingUnit\x18\x0c \x01(\x01\x12\x1a\n\x12usagePricingAmount\x18\r \x01(\t\x12\x14\n\x0c\x62\x61seCurrency\x18\n \x01(\t\x12\x0c\n\x04\x63ost\x18\x0b \x01(\x01\x42\\\n\x1d\x63loud.alphaus.blueapi.api.gcpB\x0f\x41piGcpCostProtoZ*github.com/alphauslabs/blue-sdk-go/api/gcpb\x06proto3')
 
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, globals())
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.gcp.cost_pb2', globals())
@@ -22,5 +22,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035cloud.alphaus.blueapi.api.gcpB\017ApiGcpCostProtoZ*github.com/alphauslabs/blue-sdk-go/api/gcp'
   _COST._serialized_start=40
-  _COST._serialized_end=230
+  _COST._serialized_end=284
 # @@protoc_insertion_point(module_scope)
