@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.api import account_pb2 as api_dot_account__pb2
+from alphausblue.api import costtag_pb2 as api_dot_costtag__pb2
 from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from alphausblue.api.ripple import payer_pb2 as api_dot_ripple_dot_payer__pb2
 from alphausblue.cost.v1 import cost_pb2 as cost_dot_v1_dot_cost__pb2
@@ -63,6 +64,11 @@ class CostStub(object):
                 '/blueapi.cost.v1.Cost/DeleteAccount',
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ListTags = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ListTags',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListTagsRequest.SerializeToString,
+                response_deserializer=api_dot_costtag__pb2.CostTag.FromString,
                 )
         self.ListCalculatorRunningAccounts = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ListCalculatorRunningAccounts',
@@ -288,6 +294,13 @@ class CostServicer(object):
 
     def DeleteAccount(self, request, context):
         """WORK-IN-PROGRESS: Deletes a vendor account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTags(self, request, context):
+        """WORK-IN-PROGRESS: Lists all vendor tags.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -564,6 +577,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.DeleteAccount,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListTags': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListTags,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListTagsRequest.FromString,
+                    response_serializer=api_dot_costtag__pb2.CostTag.SerializeToString,
             ),
             'ListCalculatorRunningAccounts': grpc.unary_stream_rpc_method_handler(
                     servicer.ListCalculatorRunningAccounts,
@@ -886,6 +904,23 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteAccount',
             cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListTags(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/ListTags',
+            cost_dot_v1_dot_cost__pb2.ListTagsRequest.SerializeToString,
+            api_dot_costtag__pb2.CostTag.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
