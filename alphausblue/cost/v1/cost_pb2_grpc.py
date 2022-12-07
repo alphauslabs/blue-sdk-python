@@ -300,7 +300,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListTags(self, request, context):
-        """WORK-IN-PROGRESS: Lists all vendor tags.
+        """Lists all vendor tags.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
