@@ -42,6 +42,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupResponse.FromString,
                 )
+        self.UpdateMemberPermission = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateMemberPermission',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberPermissionRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberPermissionResponse.FromString,
+                )
         self.GetUserDetails = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetUserDetails',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetUserDetailsRequest.SerializeToString,
@@ -348,6 +353,13 @@ class CoverServicer(object):
 
     def GetMemberCostGroup(self, request, context):
         """Get the cost group to which the member is attached
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateMemberPermission(self, request, context):
+        """Modify member's permission
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -758,6 +770,11 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetMemberCostGroupResponse.SerializeToString,
             ),
+            'UpdateMemberPermission': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMemberPermission,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateMemberPermissionRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateMemberPermissionResponse.SerializeToString,
+            ),
             'GetUserDetails': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUserDetails,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetUserDetailsRequest.FromString,
@@ -1121,6 +1138,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetMemberCostGroup',
             cover_dot_v1_dot_cover__pb2.GetMemberCostGroupRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetMemberCostGroupResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateMemberPermission(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateMemberPermission',
+            cover_dot_v1_dot_cover__pb2.UpdateMemberPermissionRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateMemberPermissionResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
