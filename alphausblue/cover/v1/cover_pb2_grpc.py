@@ -332,6 +332,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesResponse.FromString,
                 )
+        self.UploadChargeCode = channel.stream_unary(
+                '/blueapi.cover.v1.Cover/UploadChargeCode',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -778,6 +783,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UploadChargeCode(self, request_iterator, context):
+        """Upload charge code
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1095,6 +1107,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetEC2Instances,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesResponse.SerializeToString,
+            ),
+            'UploadChargeCode': grpc.stream_unary_rpc_method_handler(
+                    servicer.UploadChargeCode,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2175,5 +2192,22 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetEC2Instances',
             cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetEC2InstancesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UploadChargeCode(request_iterator,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.stream_unary(request_iterator, target, '/blueapi.cover.v1.Cover/UploadChargeCode',
+            cover_dot_v1_dot_cover__pb2.UploadChargeCodeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UploadChargeCodeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
