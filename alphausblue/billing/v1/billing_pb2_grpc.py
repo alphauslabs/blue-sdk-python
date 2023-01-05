@@ -62,6 +62,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
                 response_deserializer=api_dot_invoice__pb2.Invoice.FromString,
                 )
+        self.UpdateInvoicePreviews = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateInvoicePreviews',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateInvoicePreviewsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ExportInvoiceFile = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/ExportInvoiceFile',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
@@ -166,6 +171,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateInvoicePreviews(self, request, context):
+        """Updates an invoice preview. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ExportInvoiceFile(self, request, context):
         """Exports an invoice.
         """
@@ -262,6 +274,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetInvoice,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.FromString,
                     response_serializer=api_dot_invoice__pb2.Invoice.SerializeToString,
+            ),
+            'UpdateInvoicePreviews': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateInvoicePreviews,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateInvoicePreviewsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ExportInvoiceFile': grpc.unary_unary_rpc_method_handler(
                     servicer.ExportInvoiceFile,
@@ -459,6 +476,23 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetInvoice',
             billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
             api_dot_invoice__pb2.Invoice.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateInvoicePreviews(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/UpdateInvoicePreviews',
+            billing_dot_v1_dot_billing__pb2.UpdateInvoicePreviewsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
