@@ -337,6 +337,26 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeResponse.FromString,
                 )
+        self.AssignPayer = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/AssignPayer',
+                request_serializer=cover_dot_v1_dot_cover__pb2.AssignPayerRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AssignPayerResponse.FromString,
+                )
+        self.GetPayers = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetPayers',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetPayersRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetPayersResponse.FromString,
+                )
+        self.GetAccounts = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAccounts',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAccountsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountsResponse.FromString,
+                )
+        self.GetServices = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetServices',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetServicesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetServicesResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -790,6 +810,34 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AssignPayer(self, request, context):
+        """Assign payer to a linked account
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPayers(self, request, context):
+        """Get list of all payers
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAccounts(self, request, context):
+        """Get list of registered accounts
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetServices(self, request, context):
+        """Get list of supported services
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1112,6 +1160,26 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UploadChargeCode,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UploadChargeCodeResponse.SerializeToString,
+            ),
+            'AssignPayer': grpc.unary_unary_rpc_method_handler(
+                    servicer.AssignPayer,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.AssignPayerRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AssignPayerResponse.SerializeToString,
+            ),
+            'GetPayers': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPayers,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetPayersRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetPayersResponse.SerializeToString,
+            ),
+            'GetAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAccounts,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAccountsResponse.SerializeToString,
+            ),
+            'GetServices': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetServices,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetServicesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetServicesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2209,5 +2277,73 @@ class Cover(object):
         return grpc.experimental.stream_unary(request_iterator, target, '/blueapi.cover.v1.Cover/UploadChargeCode',
             cover_dot_v1_dot_cover__pb2.UploadChargeCodeRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UploadChargeCodeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AssignPayer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AssignPayer',
+            cover_dot_v1_dot_cover__pb2.AssignPayerRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AssignPayerResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPayers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetPayers',
+            cover_dot_v1_dot_cover__pb2.GetPayersRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetPayersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAccounts',
+            cover_dot_v1_dot_cover__pb2.GetAccountsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAccountsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetServices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetServices',
+            cover_dot_v1_dot_cover__pb2.GetServicesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetServicesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
