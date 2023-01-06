@@ -32,11 +32,6 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ActivateUserRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ActivateUserResponse.FromString,
                 )
-        self.CheckUserActivation = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/CheckUserActivation',
-                request_serializer=cover_dot_v1_dot_cover__pb2.CheckUserActivationRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.CheckUserActivationResponse.FromString,
-                )
         self.CreateMember = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateMember',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateMemberRequest.SerializeToString,
@@ -379,13 +374,6 @@ class CoverServicer(object):
 
     def ActivateUser(self, request, context):
         """Activate the added user
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def CheckUserActivation(self, request, context):
-        """Check user activation status
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -856,11 +844,6 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ActivateUserRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ActivateUserResponse.SerializeToString,
             ),
-            'CheckUserActivation': grpc.unary_unary_rpc_method_handler(
-                    servicer.CheckUserActivation,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.CheckUserActivationRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.CheckUserActivationResponse.SerializeToString,
-            ),
             'CreateMember': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateMember,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateMemberRequest.FromString,
@@ -1240,23 +1223,6 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ActivateUser',
             cover_dot_v1_dot_cover__pb2.ActivateUserRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ActivateUserResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def CheckUserActivation(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CheckUserActivation',
-            cover_dot_v1_dot_cover__pb2.CheckUserActivationRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.CheckUserActivationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
