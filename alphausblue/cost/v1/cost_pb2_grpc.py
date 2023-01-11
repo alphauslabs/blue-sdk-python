@@ -80,6 +80,21 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetCalculatorConfigRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculatorConfigResponse.FromString,
                 )
+        self.ListCalculatorCostModifiers = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ListCalculatorCostModifiers',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculatorCostModifiersRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculatorCostModifiersResponse.FromString,
+                )
+        self.CreateCalculatorCostModifier = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/CreateCalculatorCostModifier',
+                request_serializer=cost_dot_v1_dot_cost__pb2.CreateCalculatorCostModifierRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.CreateCalculatorCostModifierResponse.FromString,
+                )
+        self.DeleteCalculatorCostModifier = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/DeleteCalculatorCostModifier',
+                request_serializer=cost_dot_v1_dot_cost__pb2.DeleteCalculatorCostModifierRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.ImportCurFiles = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/ImportCurFiles',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ImportCurFilesRequest.SerializeToString,
@@ -315,6 +330,27 @@ class CostServicer(object):
 
     def GetCalculatorConfig(self, request, context):
         """WORK-IN-PROGRESS: Gets the vendor cost calculator's current configuration.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCalculatorCostModifiers(self, request, context):
+        """WORK-IN-PROGRESS: Lists the cost calculator's cost modifiers. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCalculatorCostModifier(self, request, context):
+        """WORK-IN-PROGRESS: Creates a cost modifier. A cost modifier allows you to manipulate the cost per lineitem. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCalculatorCostModifier(self, request, context):
+        """WORK-IN-PROGRESS: Deletes a cost modifier. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -592,6 +628,21 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetCalculatorConfig,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculatorConfigRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetCalculatorConfigResponse.SerializeToString,
+            ),
+            'ListCalculatorCostModifiers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCalculatorCostModifiers,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculatorCostModifiersRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculatorCostModifiersResponse.SerializeToString,
+            ),
+            'CreateCalculatorCostModifier': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCalculatorCostModifier,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.CreateCalculatorCostModifierRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.CreateCalculatorCostModifierResponse.SerializeToString,
+            ),
+            'DeleteCalculatorCostModifier': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCalculatorCostModifier,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteCalculatorCostModifierRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ImportCurFiles': grpc.unary_unary_rpc_method_handler(
                     servicer.ImportCurFiles,
@@ -955,6 +1006,57 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCalculatorConfig',
             cost_dot_v1_dot_cost__pb2.GetCalculatorConfigRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetCalculatorConfigResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListCalculatorCostModifiers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ListCalculatorCostModifiers',
+            cost_dot_v1_dot_cost__pb2.ListCalculatorCostModifiersRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ListCalculatorCostModifiersResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateCalculatorCostModifier(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateCalculatorCostModifier',
+            cost_dot_v1_dot_cost__pb2.CreateCalculatorCostModifierRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.CreateCalculatorCostModifierResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteCalculatorCostModifier(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteCalculatorCostModifier',
+            cost_dot_v1_dot_cost__pb2.DeleteCalculatorCostModifierRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
