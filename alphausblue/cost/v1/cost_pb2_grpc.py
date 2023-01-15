@@ -343,7 +343,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateCalculatorCostModifier(self, request, context):
-        """WORK-IN-PROGRESS: Creates a cost modifier. A cost modifier allows you to manipulate the cost per lineitem. At the moment, the supported {vendor} is 'aws' and only applies to items not affected by trueunblended calculations, such as some usages under AmazonEC2, AmazonRDS, AmazonElastiCache, AmazonES, and AmazonRedShift that are covered by their respective RIs and/or SPs. Only available in Ripple.
+        """WORK-IN-PROGRESS: Creates a cost modifier. A cost modifier allows you to manipulate the cost per lineitem. At the moment, the supported {vendor} is 'aws' and only applies to items not affected by trueunblended calculations, such as some usages under AmazonEC2, AmazonRDS, AmazonElastiCache, AmazonES, and AmazonRedShift that are covered by their respective RIs and/or SPs. Modifiers only affect usage-based items. Non-usage items such as discounts, refunds, fees, etc are not supported. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
