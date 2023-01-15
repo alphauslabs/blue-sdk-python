@@ -336,7 +336,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCalculatorCostModifiers(self, request, context):
-        """WORK-IN-PROGRESS: Lists the cost calculator's cost modifiers. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
+        """Lists the cost calculator's cost modifiers. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -350,7 +350,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteCalculatorCostModifier(self, request, context):
-        """WORK-IN-PROGRESS: Deletes a cost modifier. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
+        """Deletes a cost modifier. At the moment, the supported {vendor} is 'aws'. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
