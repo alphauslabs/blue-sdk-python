@@ -352,6 +352,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetServicesRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetServicesResponse.FromString,
                 )
+        self.GetRegions = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetRegions',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetRegionsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRegionsResponse.FromString,
+                )
         self.GetTags = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetTags',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetTagsRequest.SerializeToString,
@@ -831,6 +836,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRegions(self, request, context):
+        """Get list of available regions
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetTags(self, request, context):
         """Get list of available tags
         """
@@ -1175,6 +1187,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetServices,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetServicesRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetServicesResponse.SerializeToString,
+            ),
+            'GetRegions': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRegions,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetRegionsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRegionsResponse.SerializeToString,
             ),
             'GetTags': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTags,
@@ -2328,6 +2345,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetServices',
             cover_dot_v1_dot_cover__pb2.GetServicesRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetServicesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRegions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetRegions',
+            cover_dot_v1_dot_cover__pb2.GetRegionsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetRegionsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
