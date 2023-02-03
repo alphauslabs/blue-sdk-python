@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
+from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
@@ -100,6 +101,31 @@ class BillingStub(object):
         self.DeleteAccountInvoiceServiceDiscounts = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteAccountInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.CreateReseller = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateReseller',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateResellerRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.ListResellers = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListResellers',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListResellersRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.GetReseller = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetReseller',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetResellerRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.UpdateReseller = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateReseller',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateResellerRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+                )
+        self.DeleteReseller = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteReseller',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteResellerRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
@@ -227,6 +253,41 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateReseller(self, request, context):
+        """WORK-IN-PROGRESS: Registers the reseller account. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListResellers(self, request, context):
+        """WORK-IN-PROGRESS: Lists all the reseller accounts. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetReseller(self, request, context):
+        """WORK-IN-PROGRESS: Gets the reseller account. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateReseller(self, request, context):
+        """WORK-IN-PROGRESS: Updates the reseller account. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteReseller(self, request, context):
+        """WORK-IN-PROGRESS: Deletes the reseller account. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -313,6 +374,31 @@ def add_BillingServicer_to_server(servicer, server):
             'DeleteAccountInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAccountInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateReseller': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateReseller,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateResellerRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'ListResellers': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListResellers,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListResellersRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'GetReseller': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetReseller,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetResellerRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'UpdateReseller': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateReseller,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateResellerRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_reseller__pb2.Reseller.SerializeToString,
+            ),
+            'DeleteReseller': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteReseller,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteResellerRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -611,6 +697,91 @@ class Billing(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/DeleteAccountInvoiceServiceDiscounts',
             billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateReseller(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/CreateReseller',
+            billing_dot_v1_dot_billing__pb2.CreateResellerRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListResellers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListResellers',
+            billing_dot_v1_dot_billing__pb2.ListResellersRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetReseller(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetReseller',
+            billing_dot_v1_dot_billing__pb2.GetResellerRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateReseller(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/UpdateReseller',
+            billing_dot_v1_dot_billing__pb2.UpdateResellerRequest.SerializeToString,
+            api_dot_ripple_dot_reseller__pb2.Reseller.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteReseller(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/DeleteReseller',
+            billing_dot_v1_dot_billing__pb2.DeleteResellerRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
