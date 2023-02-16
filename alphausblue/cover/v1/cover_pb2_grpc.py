@@ -2,7 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from alphausblue.api import operation_pb2 as api_dot_operation__pb2
+from api import operation_pb2 as api_dot_operation__pb2
 from alphausblue.cover.v1 import cover_pb2 as cover_dot_v1_dot_cover__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
