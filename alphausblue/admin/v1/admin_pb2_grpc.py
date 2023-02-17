@@ -3,8 +3,8 @@
 import grpc
 
 from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
-from api import notification_pb2 as api_dot_notification__pb2
-from api import operation_pb2 as api_dot_operation__pb2
+from alphausblue.api import notification_pb2 as api_dot_notification__pb2
+from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
 

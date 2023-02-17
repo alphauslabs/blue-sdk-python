@@ -11,14 +11,14 @@ from google.protobuf import symbol_database as _symbol_database
 _sym_db = _symbol_database.Default()
 
 
-from api.cover import user_pb2 as api_dot_cover_dot_user__pb2
-from api.cover import view_pb2 as api_dot_cover_dot_view__pb2
-from api.cover import costgroup_pb2 as api_dot_cover_dot_costgroup__pb2
-from api.cover import asset_pb2 as api_dot_cover_dot_asset__pb2
-from api.cover import accountaccess_pb2 as api_dot_cover_dot_accountaccess__pb2
-from api.cover import costforecast_pb2 as api_dot_cover_dot_costforecast__pb2
-from api.cover import rightsizingrecommendation_pb2 as api_dot_cover_dot_rightsizingrecommendation__pb2
-from api import operation_pb2 as api_dot_operation__pb2
+from alphausblue.api.cover import user_pb2 as api_dot_cover_dot_user__pb2
+from alphausblue.api.cover import view_pb2 as api_dot_cover_dot_view__pb2
+from alphausblue.api.cover import costgroup_pb2 as api_dot_cover_dot_costgroup__pb2
+from alphausblue.api.cover import asset_pb2 as api_dot_cover_dot_asset__pb2
+from alphausblue.api.cover import accountaccess_pb2 as api_dot_cover_dot_accountaccess__pb2
+from alphausblue.api.cover import costforecast_pb2 as api_dot_cover_dot_costforecast__pb2
+from alphausblue.api.cover import rightsizingrecommendation_pb2 as api_dot_cover_dot_rightsizingrecommendation__pb2
+from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2

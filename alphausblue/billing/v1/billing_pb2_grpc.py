@@ -2,8 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from api import invoice_pb2 as api_dot_invoice__pb2
-from api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
+from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
+from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 

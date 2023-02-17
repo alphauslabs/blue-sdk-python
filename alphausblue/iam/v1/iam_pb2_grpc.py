@@ -2,10 +2,10 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from api import apiclient_pb2 as api_dot_apiclient__pb2
-from api import grouprootuser_pb2 as api_dot_grouprootuser__pb2
-from api import rbac_pb2 as api_dot_rbac__pb2
-from api import user_pb2 as api_dot_user__pb2
+from alphausblue.api import apiclient_pb2 as api_dot_apiclient__pb2
+from alphausblue.api import grouprootuser_pb2 as api_dot_grouprootuser__pb2
+from alphausblue.api import rbac_pb2 as api_dot_rbac__pb2
+from alphausblue.api import user_pb2 as api_dot_user__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.iam.v1 import iam_pb2 as iam_dot_v1_dot_iam__pb2
 
