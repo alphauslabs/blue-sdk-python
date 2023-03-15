@@ -300,7 +300,12 @@ class CoverStub(object):
         self.ListAssets = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/ListAssets',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListAssetsRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.Asset.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.Resource.FromString,
+                )
+        self.GetAssetsSummary = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAssetsSummary',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAssetsSummaryRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAssetsSummaryResponse.FromString,
                 )
         self.GetCostUsage = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetCostUsage',
@@ -321,11 +326,6 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/TerminateResource',
                 request_serializer=cover_dot_v1_dot_cover__pb2.TerminateResourceRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.TerminateResourceResponse.FromString,
-                )
-        self.GetEC2Instances = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/GetEC2Instances',
-                request_serializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesResponse.FromString,
                 )
         self.UploadChargeCode = channel.stream_unary(
                 '/blueapi.cover.v1.Cover/UploadChargeCode',
@@ -760,7 +760,14 @@ class CoverServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAssets(self, request, context):
-        """WORK-IN-PROGRESS: Lists all assets per service. 
+        """WORK-IN-PROGRESS: Lists assets for costgroup 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAssetsSummary(self, request, context):
+        """WORK-IN-PROGRESS: Assets summary for costgroup 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -789,13 +796,6 @@ class CoverServicer(object):
 
     def TerminateResource(self, request, context):
         """Terminate a resource from right sizing recommendation
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetEC2Instances(self, request, context):
-        """Gets the EC2 instances of all accounts in Cost Group
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1136,7 +1136,12 @@ def add_CoverServicer_to_server(servicer, server):
             'ListAssets': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAssets,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListAssetsRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.Asset.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.Resource.SerializeToString,
+            ),
+            'GetAssetsSummary': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAssetsSummary,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAssetsSummaryRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAssetsSummaryResponse.SerializeToString,
             ),
             'GetCostUsage': grpc.unary_stream_rpc_method_handler(
                     servicer.GetCostUsage,
@@ -1157,11 +1162,6 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.TerminateResource,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.TerminateResourceRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.TerminateResourceResponse.SerializeToString,
-            ),
-            'GetEC2Instances': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetEC2Instances,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.GetEC2InstancesResponse.SerializeToString,
             ),
             'UploadChargeCode': grpc.stream_unary_rpc_method_handler(
                     servicer.UploadChargeCode,
@@ -2174,7 +2174,24 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListAssets',
             cover_dot_v1_dot_cover__pb2.ListAssetsRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.Asset.FromString,
+            cover_dot_v1_dot_cover__pb2.Resource.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAssetsSummary(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAssetsSummary',
+            cover_dot_v1_dot_cover__pb2.GetAssetsSummaryRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAssetsSummaryResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2243,23 +2260,6 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/TerminateResource',
             cover_dot_v1_dot_cover__pb2.TerminateResourceRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.TerminateResourceResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetEC2Instances(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetEC2Instances',
-            cover_dot_v1_dot_cover__pb2.GetEC2InstancesRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.GetEC2InstancesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
