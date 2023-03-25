@@ -362,6 +362,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetTagsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetTagsResponse.FromString,
                 )
+        self.ListFees = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListFees',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListFeesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+                )
+        self.GetFeeDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetFeeDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetFeeDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+                )
+        self.CreateFeeReallocation = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/CreateFeeReallocation',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeReallocationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+                )
+        self.UpdateFeeDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateFeeDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateFeeDetailsRequest.SerializeToString,
+                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                )
+        self.DeleteFeeDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteFeeDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteFeeDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteFeeDetailsResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -850,6 +875,41 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListFees(self, request, context):
+        """Lists the fees
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFeeDetails(self, request, context):
+        """Gets the fee details
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateFeeReallocation(self, request, context):
+        """Create assignments for fee reallocation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateFeeDetails(self, request, context):
+        """Update fee details
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteFeeDetails(self, request, context):
+        """Deletes fee details
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1197,6 +1257,31 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetTags,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetTagsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetTagsResponse.SerializeToString,
+            ),
+            'ListFees': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListFees,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListFeesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
+            ),
+            'GetFeeDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetFeeDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetFeeDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
+            ),
+            'CreateFeeReallocation': grpc.unary_stream_rpc_method_handler(
+                    servicer.CreateFeeReallocation,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeReallocationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
+            ),
+            'UpdateFeeDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateFeeDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateFeeDetailsRequest.FromString,
+                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'DeleteFeeDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteFeeDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteFeeDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteFeeDetailsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2379,5 +2464,90 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetTags',
             cover_dot_v1_dot_cover__pb2.GetTagsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetTagsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListFees(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListFees',
+            cover_dot_v1_dot_cover__pb2.ListFeesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetFeeDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetFeeDetails',
+            cover_dot_v1_dot_cover__pb2.GetFeeDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateFeeReallocation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/CreateFeeReallocation',
+            cover_dot_v1_dot_cover__pb2.CreateFeeReallocationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateFeeDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateFeeDetails',
+            cover_dot_v1_dot_cover__pb2.UpdateFeeDetailsRequest.SerializeToString,
+            api_dot_operation__pb2.Operation.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteFeeDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteFeeDetails',
+            cover_dot_v1_dot_cover__pb2.DeleteFeeDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteFeeDetailsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
