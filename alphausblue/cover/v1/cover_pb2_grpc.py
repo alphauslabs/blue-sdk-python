@@ -387,6 +387,21 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupFeeRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.FeeItem.FromString,
                 )
+        self.ListFeeAdjustmentAllocators = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListFeeAdjustmentAllocators',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListFeeAdjustmentAllocatorsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocator.FromString,
+                )
+        self.CreateFeeAdjustmentAllocator = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateFeeAdjustmentAllocator',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorResponse.FromString,
+                )
+        self.DeleteFeeAdjustmentAllocator = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteFeeAdjustmentAllocator',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteFeeAdjustmentAllocatorRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -910,6 +925,27 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListFeeAdjustmentAllocators(self, request, context):
+        """WORK-IN-PROGRESS: Lists the fee adjustment allocators
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateFeeAdjustmentAllocator(self, request, context):
+        """WORK-IN-PROGRESS: Creates fee adjustment allocator
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteFeeAdjustmentAllocator(self, request, context):
+        """WORK-IN-PROGRESS: Deletes a fee adjustment allocator
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1282,6 +1318,21 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetCostGroupFee,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupFeeRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.FeeItem.SerializeToString,
+            ),
+            'ListFeeAdjustmentAllocators': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListFeeAdjustmentAllocators,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListFeeAdjustmentAllocatorsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocator.SerializeToString,
+            ),
+            'CreateFeeAdjustmentAllocator': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateFeeAdjustmentAllocator,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorResponse.SerializeToString,
+            ),
+            'DeleteFeeAdjustmentAllocator': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteFeeAdjustmentAllocator,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteFeeAdjustmentAllocatorRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2549,5 +2600,56 @@ class Cover(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetCostGroupFee',
             cover_dot_v1_dot_cover__pb2.GetCostGroupFeeRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.FeeItem.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListFeeAdjustmentAllocators(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListFeeAdjustmentAllocators',
+            cover_dot_v1_dot_cover__pb2.ListFeeAdjustmentAllocatorsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocator.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateFeeAdjustmentAllocator(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateFeeAdjustmentAllocator',
+            cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteFeeAdjustmentAllocator(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteFeeAdjustmentAllocator',
+            cover_dot_v1_dot_cover__pb2.DeleteFeeAdjustmentAllocatorRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
