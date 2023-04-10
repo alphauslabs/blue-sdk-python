@@ -133,6 +133,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingSettingRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingSettingResponse.FromString,
                 )
+        self.ListExchangeRates = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ListExchangeRates',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -300,6 +305,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListExchangeRates(self, request, context):
+        """WORK-IN-PROGRESS: Lists all exchange rate. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -417,6 +429,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetBillingSetting,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingSettingRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetBillingSettingResponse.SerializeToString,
+            ),
+            'ListExchangeRates': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExchangeRates,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -817,5 +834,22 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetBillingSetting',
             billing_dot_v1_dot_billing__pb2.GetBillingSettingRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.GetBillingSettingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListExchangeRates(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/ListExchangeRates',
+            billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
