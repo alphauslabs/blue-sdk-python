@@ -165,6 +165,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.CreatePartnerTokenRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
                 )
+        self.RefreshPartnerToken = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/RefreshPartnerToken',
+                request_serializer=iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
+                )
 
 
 class IamServicer(object):
@@ -378,6 +383,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RefreshPartnerToken(self, request, context):
+        """WORK-IN-PROGRESS: Refreshes an expired partner token. Only partners are expected to call this API.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IamServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -524,6 +536,11 @@ def add_IamServicer_to_server(servicer, server):
             'CreatePartnerToken': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePartnerToken,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.CreatePartnerTokenRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.PartnerToken.SerializeToString,
+            ),
+            'RefreshPartnerToken': grpc.unary_unary_rpc_method_handler(
+                    servicer.RefreshPartnerToken,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.PartnerToken.SerializeToString,
             ),
     }
@@ -1026,6 +1043,23 @@ class Iam(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/CreatePartnerToken',
             iam_dot_v1_dot_iam__pb2.CreatePartnerTokenRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RefreshPartnerToken(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/RefreshPartnerToken',
+            iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
