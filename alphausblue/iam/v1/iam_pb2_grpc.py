@@ -377,7 +377,7 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreatePartnerToken(self, request, context):
-        """BETA: Creates a partner token for custom integrations.
+        """BETA: Creates a partner token for custom integrations. Available only to Ripple and Cover users.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
