@@ -155,6 +155,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadCostAttributesRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.CostAttributeItem.FromString,
                 )
+        self.GetCostAttributes = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetCostAttributes',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetCostAttributesRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetCostAttributesResponse.FromString,
+                )
         self.ReadCosts = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ReadCosts',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadCostsRequest.SerializeToString,
@@ -440,6 +445,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetCostAttributes(self, request, context):
+        """WORK-IN-PROGRESS: Reads the available cost attributes of an organization (Ripple) or billing group (Wave).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ReadCosts(self, request, context):
         """Reads the usage-based cost details of an organization (Ripple) or billing group (Wave). At the moment, the supported {vendor} are 'aws' and 'gcp'. If datetime range parameters are not set, month-to-date (current month) will be returned.
         """
@@ -703,6 +715,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ReadCostAttributes,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ReadCostAttributesRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.CostAttributeItem.SerializeToString,
+            ),
+            'GetCostAttributes': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCostAttributes,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCostAttributesRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetCostAttributesResponse.SerializeToString,
             ),
             'ReadCosts': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadCosts,
@@ -1261,6 +1278,23 @@ class Cost(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/ReadCostAttributes',
             cost_dot_v1_dot_cost__pb2.ReadCostAttributesRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.CostAttributeItem.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCostAttributes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetCostAttributes',
+            cost_dot_v1_dot_cost__pb2.GetCostAttributesRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetCostAttributesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
