@@ -177,6 +177,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetResponse.FromString,
                 )
+        self.UpdateViewColorTheme = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateViewColorTheme',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewColorThemeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewColorThemeResponse.FromString,
+                )
         self.DeleteView = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteView',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
@@ -367,16 +372,6 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListFeesRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
                 )
-        self.GetFeeDetails = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/GetFeeDetails',
-                request_serializer=cover_dot_v1_dot_cover__pb2.GetFeeDetailsRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
-                )
-        self.RecalculateFee = channel.unary_stream(
-                '/blueapi.cover.v1.Cover/RecalculateFee',
-                request_serializer=cover_dot_v1_dot_cover__pb2.RecalculateFeeRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
-                )
         self.RestoreFee = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/RestoreFee',
                 request_serializer=cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.SerializeToString,
@@ -390,17 +385,17 @@ class CoverStub(object):
         self.ListFeeAdjustmentAllocators = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/ListFeeAdjustmentAllocators',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListFeeAdjustmentAllocatorsRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocator.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.FromString,
                 )
         self.CreateFeeAdjustmentAllocator = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateFeeAdjustmentAllocator',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorResponse.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.FromString,
                 )
         self.UpdateFeeAdjustmentAllocator = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateFeeAdjustmentAllocator',
-                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateFeeAdjustmentAllocatorRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateFeeAdjustmentAllocatorResponse.FromString,
+                request_serializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.FromString,
                 )
         self.DeleteFeeAdjustmentAllocator = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteFeeAdjustmentAllocator',
@@ -637,6 +632,13 @@ class CoverServicer(object):
 
     def UpdateViewWidget(self, request, context):
         """Updates the view's widget
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateViewColorTheme(self, request, context):
+        """Update view's color theme
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -907,20 +909,6 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetFeeDetails(self, request, context):
-        """Gets the fee details
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RecalculateFee(self, request, context):
-        """Recalculate fee based on criteria
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def RestoreFee(self, request, context):
         """Restore distributed fees
         """
@@ -1133,6 +1121,11 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewWidgetResponse.SerializeToString,
             ),
+            'UpdateViewColorTheme': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateViewColorTheme,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewColorThemeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewColorThemeResponse.SerializeToString,
+            ),
             'DeleteView': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteView,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.FromString,
@@ -1323,16 +1316,6 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListFeesRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
             ),
-            'GetFeeDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetFeeDetails,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetFeeDetailsRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
-            ),
-            'RecalculateFee': grpc.unary_stream_rpc_method_handler(
-                    servicer.RecalculateFee,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.RecalculateFeeRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
-            ),
             'RestoreFee': grpc.unary_stream_rpc_method_handler(
                     servicer.RestoreFee,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.FromString,
@@ -1346,17 +1329,17 @@ def add_CoverServicer_to_server(servicer, server):
             'ListFeeAdjustmentAllocators': grpc.unary_stream_rpc_method_handler(
                     servicer.ListFeeAdjustmentAllocators,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListFeeAdjustmentAllocatorsRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocator.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.SerializeToString,
             ),
             'CreateFeeAdjustmentAllocator': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateFeeAdjustmentAllocator,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorResponse.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.SerializeToString,
             ),
             'UpdateFeeAdjustmentAllocator': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateFeeAdjustmentAllocator,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateFeeAdjustmentAllocatorRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateFeeAdjustmentAllocatorResponse.SerializeToString,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.SerializeToString,
             ),
             'DeleteFeeAdjustmentAllocator': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFeeAdjustmentAllocator,
@@ -1920,6 +1903,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateViewWidget',
             cover_dot_v1_dot_cover__pb2.UpdateViewWidgetRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateViewWidgetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateViewColorTheme(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateViewColorTheme',
+            cover_dot_v1_dot_cover__pb2.UpdateViewColorThemeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateViewColorThemeResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2570,40 +2570,6 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetFeeDetails(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetFeeDetails',
-            cover_dot_v1_dot_cover__pb2.GetFeeDetailsRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RecalculateFee(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/RecalculateFee',
-            cover_dot_v1_dot_cover__pb2.RecalculateFeeRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
     def RestoreFee(request,
             target,
             options=(),
@@ -2650,7 +2616,7 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListFeeAdjustmentAllocators',
             cover_dot_v1_dot_cover__pb2.ListFeeAdjustmentAllocatorsRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocator.FromString,
+            cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2667,7 +2633,7 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateFeeAdjustmentAllocator',
             cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorResponse.FromString,
+            cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2683,8 +2649,8 @@ class Cover(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateFeeAdjustmentAllocator',
-            cover_dot_v1_dot_cover__pb2.UpdateFeeAdjustmentAllocatorRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.UpdateFeeAdjustmentAllocatorResponse.FromString,
+            cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.FeeAdjustmentAllocatorResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
