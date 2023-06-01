@@ -226,6 +226,21 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetAccountBudgetAlertsRequest.SerializeToString,
                 response_deserializer=api_dot_wave_dot_budget__pb2.BudgetAlert.FromString,
                 )
+        self.CreateAccountBudgetAlerts = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/CreateAccountBudgetAlerts',
+                request_serializer=cost_dot_v1_dot_cost__pb2.CreateAccountBudgetAlertsRequest.SerializeToString,
+                response_deserializer=api_dot_wave_dot_budget__pb2.BudgetAlert.FromString,
+                )
+        self.UpdateAccountBudgetAlerts = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/UpdateAccountBudgetAlerts',
+                request_serializer=cost_dot_v1_dot_cost__pb2.UpdateAccountBudgetAlertsRequest.SerializeToString,
+                response_deserializer=api_dot_wave_dot_budget__pb2.BudgetAlert.FromString,
+                )
+        self.DeleteAccountBudgetAlerts = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/DeleteAccountBudgetAlerts',
+                request_serializer=cost_dot_v1_dot_cost__pb2.DeleteAccountBudgetAlertsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.GetRecommendations = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetRecommendations',
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetRecommendationsRequest.SerializeToString,
@@ -549,6 +564,27 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateAccountBudgetAlerts(self, request, context):
+        """WORK-IN-PROGRESS: Create the budget alerts for the account id. Only available in Wave(Pro).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccountBudgetAlerts(self, request, context):
+        """WORK-IN-PROGRESS: Update the budget alerts for the account id. Only available in Wave(Pro).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAccountBudgetAlerts(self, request, context):
+        """WORK-IN-PROGRESS: Delete the budget alerts for the account id. Only available in Wave(Pro).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetRecommendations(self, request, context):
         """WORK-IN-PROGRESS: Get cost opmtimization recommendations for an organization (or MSP).
         """
@@ -798,6 +834,21 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetAccountBudgetAlerts,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetAccountBudgetAlertsRequest.FromString,
                     response_serializer=api_dot_wave_dot_budget__pb2.BudgetAlert.SerializeToString,
+            ),
+            'CreateAccountBudgetAlerts': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAccountBudgetAlerts,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.CreateAccountBudgetAlertsRequest.FromString,
+                    response_serializer=api_dot_wave_dot_budget__pb2.BudgetAlert.SerializeToString,
+            ),
+            'UpdateAccountBudgetAlerts': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccountBudgetAlerts,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.UpdateAccountBudgetAlertsRequest.FromString,
+                    response_serializer=api_dot_wave_dot_budget__pb2.BudgetAlert.SerializeToString,
+            ),
+            'DeleteAccountBudgetAlerts': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAccountBudgetAlerts,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteAccountBudgetAlertsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetRecommendations': grpc.unary_unary_rpc_method_handler(
                     servicer.GetRecommendations,
@@ -1534,6 +1585,57 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetAccountBudgetAlerts',
             cost_dot_v1_dot_cost__pb2.GetAccountBudgetAlertsRequest.SerializeToString,
             api_dot_wave_dot_budget__pb2.BudgetAlert.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAccountBudgetAlerts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateAccountBudgetAlerts',
+            cost_dot_v1_dot_cost__pb2.CreateAccountBudgetAlertsRequest.SerializeToString,
+            api_dot_wave_dot_budget__pb2.BudgetAlert.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccountBudgetAlerts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/UpdateAccountBudgetAlerts',
+            cost_dot_v1_dot_cost__pb2.UpdateAccountBudgetAlertsRequest.SerializeToString,
+            api_dot_wave_dot_budget__pb2.BudgetAlert.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAccountBudgetAlerts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/DeleteAccountBudgetAlerts',
+            cost_dot_v1_dot_cost__pb2.DeleteAccountBudgetAlertsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
