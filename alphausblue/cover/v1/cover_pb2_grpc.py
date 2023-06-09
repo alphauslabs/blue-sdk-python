@@ -407,6 +407,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ProxyCreateCompletionRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ProxyCreateCompletionResponse.FromString,
                 )
+        self.SimulateFeeAllocator = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/SimulateFeeAllocator',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -958,6 +963,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SimulateFeeAllocator(self, request, context):
+        """WORK-IN-PROGRESS: Simulate fee allocator
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1350,6 +1362,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ProxyCreateCompletion,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ProxyCreateCompletionRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ProxyCreateCompletionResponse.SerializeToString,
+            ),
+            'SimulateFeeAllocator': grpc.unary_stream_rpc_method_handler(
+                    servicer.SimulateFeeAllocator,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2685,5 +2702,22 @@ class Cover(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ProxyCreateCompletion',
             cover_dot_v1_dot_cover__pb2.ProxyCreateCompletionRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ProxyCreateCompletionResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SimulateFeeAllocator(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/SimulateFeeAllocator',
+            cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
