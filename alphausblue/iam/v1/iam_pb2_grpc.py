@@ -170,6 +170,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
                 )
+        self.VerifyEmailForResetPassword = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/VerifyEmailForResetPassword',
+                request_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
+                )
 
 
 class IamServicer(object):
@@ -390,6 +395,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def VerifyEmailForResetPassword(self, request, context):
+        """Verify Email Input For Reset Password
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IamServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -542,6 +554,11 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.RefreshPartnerToken,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.PartnerToken.SerializeToString,
+            ),
+            'VerifyEmailForResetPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyEmailForResetPassword,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1061,5 +1078,22 @@ class Iam(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/RefreshPartnerToken',
             iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def VerifyEmailForResetPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyEmailForResetPassword',
+            iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
