@@ -175,6 +175,21 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
                 )
+        self.RequestForVerificationCode = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/RequestForVerificationCode',
+                request_serializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeResponse.FromString,
+                )
+        self.ValidateVerificationCode = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/ValidateVerificationCode',
+                request_serializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.FromString,
+                )
+        self.UpdatePassword = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/UpdatePassword',
+                request_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordResponse.FromString,
+                )
 
 
 class IamServicer(object):
@@ -402,6 +417,27 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RequestForVerificationCode(self, request, context):
+        """Request for 6-digit verification code from front-end
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ValidateVerificationCode(self, request, context):
+        """Request for 6-digit verification code validation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePassword(self, request, context):
+        """Request for updating password after successful validation of the 6-digit verification code 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IamServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -559,6 +595,21 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.VerifyEmailForResetPassword,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.SerializeToString,
+            ),
+            'RequestForVerificationCode': grpc.unary_unary_rpc_method_handler(
+                    servicer.RequestForVerificationCode,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeResponse.SerializeToString,
+            ),
+            'ValidateVerificationCode': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateVerificationCode,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.SerializeToString,
+            ),
+            'UpdatePassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePassword,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1095,5 +1146,56 @@ class Iam(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyEmailForResetPassword',
             iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RequestForVerificationCode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/RequestForVerificationCode',
+            iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ValidateVerificationCode(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/ValidateVerificationCode',
+            iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdatePassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/UpdatePassword',
+            iam_dot_v1_dot_iam__pb2.UpdatePasswordRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.UpdatePasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
