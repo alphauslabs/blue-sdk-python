@@ -190,10 +190,10 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.FromString,
                 )
-        self.UpdatePassword = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/UpdatePassword',
-                request_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordRequest.SerializeToString,
-                response_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordResponse.FromString,
+        self.UpdatePasswordFromLogin = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/UpdatePasswordFromLogin',
+                request_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginResponse.FromString,
                 )
 
 
@@ -443,7 +443,7 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdatePassword(self, request, context):
+    def UpdatePasswordFromLogin(self, request, context):
         """Request for updating password after successful validation of the 6-digit verification code 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -623,10 +623,10 @@ def add_IamServicer_to_server(servicer, server):
                     request_deserializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.SerializeToString,
             ),
-            'UpdatePassword': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdatePassword,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordRequest.FromString,
-                    response_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordResponse.SerializeToString,
+            'UpdatePasswordFromLogin': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePasswordFromLogin,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1218,7 +1218,7 @@ class Iam(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdatePassword(request,
+    def UpdatePasswordFromLogin(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1228,8 +1228,8 @@ class Iam(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/UpdatePassword',
-            iam_dot_v1_dot_iam__pb2.UpdatePasswordRequest.SerializeToString,
-            iam_dot_v1_dot_iam__pb2.UpdatePasswordResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/UpdatePasswordFromLogin',
+            iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
