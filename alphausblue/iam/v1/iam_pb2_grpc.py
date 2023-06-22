@@ -175,6 +175,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
                 )
+        self.VerifyUsernameForResetPassword = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/VerifyUsernameForResetPassword',
+                request_serializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordResponse.FromString,
+                )
         self.RequestForVerificationCode = channel.unary_unary(
                 '/blueapi.iam.v1.Iam/RequestForVerificationCode',
                 request_serializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.SerializeToString,
@@ -417,6 +422,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def VerifyUsernameForResetPassword(self, request, context):
+        """Verify Username Input for Reset Password
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def RequestForVerificationCode(self, request, context):
         """Request for 6-digit verification code from front-end
         """
@@ -595,6 +607,11 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.VerifyEmailForResetPassword,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.SerializeToString,
+            ),
+            'VerifyUsernameForResetPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyUsernameForResetPassword,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordResponse.SerializeToString,
             ),
             'RequestForVerificationCode': grpc.unary_unary_rpc_method_handler(
                     servicer.RequestForVerificationCode,
@@ -1146,6 +1163,23 @@ class Iam(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyEmailForResetPassword',
             iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def VerifyUsernameForResetPassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyUsernameForResetPassword',
+            iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
