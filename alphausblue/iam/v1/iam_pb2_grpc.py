@@ -416,35 +416,35 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def VerifyEmailForResetPassword(self, request, context):
-        """Verify Email Input For Reset Password
+        """WORK-IN-PROGRESS: Verify Email Input For Reset Password.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def VerifyUsernameForResetPassword(self, request, context):
-        """Verify Username Input for Reset Password
+        """WORK-IN-PROGRESS: Verify Username Input for Reset Password.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RequestForVerificationCode(self, request, context):
-        """Request for 6-digit verification code from front-end
+        """WORK-IN-PROGRESS: Request for 6-digit verification code from front-end.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ValidateVerificationCode(self, request, context):
-        """Request for 6-digit verification code validation
+        """WORK-IN-PROGRESS: Request for 6-digit verification code validation.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdatePasswordFromLogin(self, request, context):
-        """Request for updating password after successful validation of the 6-digit verification code 
+        """WORK-IN-PROGRESS: Request for updating password after successful validation of the 6-digit verification code.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
