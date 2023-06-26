@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
+from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessgroup__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -137,6 +138,26 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/ListExchangeRates',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.FromString,
+                )
+        self.ListAccessGroups = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ListAccessGroups',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
+                )
+        self.CreateAccessGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateAccessGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateAccessGroupRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
+                )
+        self.UpdateAccessGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateAccessGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateAccessGroupRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
+                )
+        self.DeleteAccessGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteAccessGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAccessGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
 
@@ -312,6 +333,34 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAccessGroups(self, request, context):
+        """WORK-IN-PROGRESS: Lists access group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAccessGroup(self, request, context):
+        """WORK-IN-PROGRESS: Registers the access group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccessGroup(self, request, context):
+        """WORK-IN-PROGRESS: Updates the access group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAccessGroup(self, request, context):
+        """WORK-IN-PROGRESS: Deletes the access group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -434,6 +483,26 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListExchangeRates,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.SerializeToString,
+            ),
+            'ListAccessGroups': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAccessGroups,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.SerializeToString,
+            ),
+            'CreateAccessGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAccessGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateAccessGroupRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.SerializeToString,
+            ),
+            'UpdateAccessGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccessGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAccessGroupRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.SerializeToString,
+            ),
+            'DeleteAccessGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAccessGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAccessGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -851,5 +920,73 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/ListExchangeRates',
             billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAccessGroups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/ListAccessGroups',
+            billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.SerializeToString,
+            api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAccessGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/CreateAccessGroup',
+            billing_dot_v1_dot_billing__pb2.CreateAccessGroupRequest.SerializeToString,
+            api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccessGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/UpdateAccessGroup',
+            billing_dot_v1_dot_billing__pb2.UpdateAccessGroupRequest.SerializeToString,
+            api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAccessGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/DeleteAccessGroup',
+            billing_dot_v1_dot_billing__pb2.DeleteAccessGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
