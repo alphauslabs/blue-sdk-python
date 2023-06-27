@@ -139,7 +139,7 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.FromString,
                 )
-        self.ListAccessGroups = channel.unary_unary(
+        self.ListAccessGroups = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListAccessGroups',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
@@ -484,7 +484,7 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListExchangeRatesResponse.SerializeToString,
             ),
-            'ListAccessGroups': grpc.unary_unary_rpc_method_handler(
+            'ListAccessGroups': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAccessGroups,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_accessgroup__pb2.AccessGroup.SerializeToString,
@@ -934,7 +934,7 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/ListAccessGroups',
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAccessGroups',
             billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.SerializeToString,
             api_dot_ripple_dot_accessgroup__pb2.AccessGroup.FromString,
             options, channel_credentials,
