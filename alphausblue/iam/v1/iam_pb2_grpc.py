@@ -170,30 +170,15 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.PartnerToken.FromString,
                 )
-        self.VerifyEmailForResetPassword = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/VerifyEmailForResetPassword',
-                request_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
-                response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
+        self.VerifyUserForResetPassword = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/VerifyUserForResetPassword',
+                request_serializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordResponse.FromString,
                 )
-        self.VerifyUsernameForResetPassword = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/VerifyUsernameForResetPassword',
-                request_serializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordRequest.SerializeToString,
-                response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordResponse.FromString,
-                )
-        self.RequestForVerificationCode = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/RequestForVerificationCode',
-                request_serializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.SerializeToString,
-                response_deserializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeResponse.FromString,
-                )
-        self.ValidateVerificationCode = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/ValidateVerificationCode',
-                request_serializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.SerializeToString,
-                response_deserializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.FromString,
-                )
-        self.UpdatePasswordFromLogin = channel.unary_unary(
-                '/blueapi.iam.v1.Iam/UpdatePasswordFromLogin',
-                request_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginRequest.SerializeToString,
-                response_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginResponse.FromString,
+        self.ValidateResetPasswordLinkAndChangePassword = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/ValidateResetPasswordLinkAndChangePassword',
+                request_serializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordResponse.FromString,
                 )
 
 
@@ -415,36 +400,15 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VerifyEmailForResetPassword(self, request, context):
-        """WORK-IN-PROGRESS: Verify Email Input For Reset Password.
+    def VerifyUserForResetPassword(self, request, context):
+        """WORK-IN-PROGRESS: Verify User Input For Reset Password
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def VerifyUsernameForResetPassword(self, request, context):
-        """WORK-IN-PROGRESS: Verify Username Input for Reset Password.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def RequestForVerificationCode(self, request, context):
-        """WORK-IN-PROGRESS: Request for 6-digit verification code from front-end.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ValidateVerificationCode(self, request, context):
-        """WORK-IN-PROGRESS: Request for 6-digit verification code validation.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpdatePasswordFromLogin(self, request, context):
-        """WORK-IN-PROGRESS: Request for updating password after successful validation of the 6-digit verification code.
+    def ValidateResetPasswordLinkAndChangePassword(self, request, context):
+        """WORK-IN-PROGRESS: Validate reset password link and proceed to update password
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -603,30 +567,15 @@ def add_IamServicer_to_server(servicer, server):
                     request_deserializer=iam_dot_v1_dot_iam__pb2.RefreshPartnerTokenRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.PartnerToken.SerializeToString,
             ),
-            'VerifyEmailForResetPassword': grpc.unary_unary_rpc_method_handler(
-                    servicer.VerifyEmailForResetPassword,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.FromString,
-                    response_serializer=iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.SerializeToString,
+            'VerifyUserForResetPassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyUserForResetPassword,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordResponse.SerializeToString,
             ),
-            'VerifyUsernameForResetPassword': grpc.unary_unary_rpc_method_handler(
-                    servicer.VerifyUsernameForResetPassword,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordRequest.FromString,
-                    response_serializer=iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordResponse.SerializeToString,
-            ),
-            'RequestForVerificationCode': grpc.unary_unary_rpc_method_handler(
-                    servicer.RequestForVerificationCode,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.FromString,
-                    response_serializer=iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeResponse.SerializeToString,
-            ),
-            'ValidateVerificationCode': grpc.unary_unary_rpc_method_handler(
-                    servicer.ValidateVerificationCode,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.FromString,
-                    response_serializer=iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.SerializeToString,
-            ),
-            'UpdatePasswordFromLogin': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdatePasswordFromLogin,
-                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginRequest.FromString,
-                    response_serializer=iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginResponse.SerializeToString,
+            'ValidateResetPasswordLinkAndChangePassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateResetPasswordLinkAndChangePassword,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1150,7 +1099,7 @@ class Iam(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VerifyEmailForResetPassword(request,
+    def VerifyUserForResetPassword(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1160,14 +1109,14 @@ class Iam(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyEmailForResetPassword',
-            iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordRequest.SerializeToString,
-            iam_dot_v1_dot_iam__pb2.VerifyEmailForResetPasswordResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyUserForResetPassword',
+            iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def VerifyUsernameForResetPassword(request,
+    def ValidateResetPasswordLinkAndChangePassword(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1177,59 +1126,8 @@ class Iam(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/VerifyUsernameForResetPassword',
-            iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordRequest.SerializeToString,
-            iam_dot_v1_dot_iam__pb2.VerifyUsernameForResetPasswordResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def RequestForVerificationCode(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/RequestForVerificationCode',
-            iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeRequest.SerializeToString,
-            iam_dot_v1_dot_iam__pb2.RequestForVerificationCodeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def ValidateVerificationCode(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/ValidateVerificationCode',
-            iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeRequest.SerializeToString,
-            iam_dot_v1_dot_iam__pb2.ValidateVerificationCodeResponse.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdatePasswordFromLogin(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/UpdatePasswordFromLogin',
-            iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginRequest.SerializeToString,
-            iam_dot_v1_dot_iam__pb2.UpdatePasswordFromLoginResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/ValidateResetPasswordLinkAndChangePassword',
+            iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
