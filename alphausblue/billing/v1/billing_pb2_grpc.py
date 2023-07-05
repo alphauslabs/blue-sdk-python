@@ -334,28 +334,28 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListAccessGroups(self, request, context):
-        """WORK-IN-PROGRESS: Lists access group. Only available in Ripple.
+        """Lists access group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateAccessGroup(self, request, context):
-        """WORK-IN-PROGRESS: Registers the access group. Only available in Ripple.
+        """Registers the access group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAccessGroup(self, request, context):
-        """WORK-IN-PROGRESS: Updates the access group. Only available in Ripple.
+        """Updates the access group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteAccessGroup(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the access group. Only available in Ripple.
+        """Deletes the access group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
