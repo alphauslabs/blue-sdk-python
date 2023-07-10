@@ -412,10 +412,40 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.FeeDetails.FromString,
                 )
-        self.SimulateAccountCostAllocator = channel.unary_stream(
-                '/blueapi.cover.v1.Cover/SimulateAccountCostAllocator',
+        self.ListAccountUsage = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListAccountUsage',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListAccountUsageRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountUsageDetails.FromString,
+                )
+        self.RestoreAccountUsage = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/RestoreAccountUsage',
+                request_serializer=cover_dot_v1_dot_cover__pb2.RestoreAccountUsageRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountUsageDetails.FromString,
+                )
+        self.SimulateAccountUsage = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/SimulateAccountUsage',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountCostDetails.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountUsageDetails.FromString,
+                )
+        self.ListSavings = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListSavings',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListFeesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
+                )
+        self.RestoreSavings = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/RestoreSavings',
+                request_serializer=cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
+                )
+        self.SimulateSavings = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/SimulateSavings',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
+                )
+        self.GetCostGroupAllocation = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/GetCostGroupAllocation',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AllocationItem.FromString,
                 )
 
 
@@ -975,8 +1005,50 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def SimulateAccountCostAllocator(self, request, context):
-        """WORK-IN-PROGRESS: Simulate account cost allocator
+    def ListAccountUsage(self, request, context):
+        """WORK-IN-PROGRESS: Lists the allocated account usages
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RestoreAccountUsage(self, request, context):
+        """WORK-IN-PROGRESS: Restore the allocated account usages
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SimulateAccountUsage(self, request, context):
+        """WORK-IN-PROGRESS: Simulate the output of the account usage allocation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSavings(self, request, context):
+        """WORK-IN-PROGRESS: Lists the allocated ri and sp savings
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RestoreSavings(self, request, context):
+        """WORK-IN-PROGRESS: Restore the allocated ri and sp savings
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SimulateSavings(self, request, context):
+        """WORK-IN-PROGRESS: Simulate the output of the ri and sp savings allocation
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCostGroupAllocation(self, request, context):
+        """WORK-IN-PROGRESS: Get all available allocation items for the specified cost group
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1380,10 +1452,40 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.FeeDetails.SerializeToString,
             ),
-            'SimulateAccountCostAllocator': grpc.unary_stream_rpc_method_handler(
-                    servicer.SimulateAccountCostAllocator,
+            'ListAccountUsage': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAccountUsage,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListAccountUsageRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountUsageDetails.SerializeToString,
+            ),
+            'RestoreAccountUsage': grpc.unary_stream_rpc_method_handler(
+                    servicer.RestoreAccountUsage,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.RestoreAccountUsageRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountUsageDetails.SerializeToString,
+            ),
+            'SimulateAccountUsage': grpc.unary_stream_rpc_method_handler(
+                    servicer.SimulateAccountUsage,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountCostDetails.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountUsageDetails.SerializeToString,
+            ),
+            'ListSavings': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListSavings,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListFeesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.SerializeToString,
+            ),
+            'RestoreSavings': grpc.unary_stream_rpc_method_handler(
+                    servicer.RestoreSavings,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.SerializeToString,
+            ),
+            'SimulateSavings': grpc.unary_stream_rpc_method_handler(
+                    servicer.SimulateSavings,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.SerializeToString,
+            ),
+            'GetCostGroupAllocation': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetCostGroupAllocation,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AllocationItem.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2740,7 +2842,7 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def SimulateAccountCostAllocator(request,
+    def ListAccountUsage(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2750,8 +2852,110 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/SimulateAccountCostAllocator',
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListAccountUsage',
+            cover_dot_v1_dot_cover__pb2.ListAccountUsageRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AccountUsageDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RestoreAccountUsage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/RestoreAccountUsage',
+            cover_dot_v1_dot_cover__pb2.RestoreAccountUsageRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AccountUsageDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SimulateAccountUsage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/SimulateAccountUsage',
             cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.AccountCostDetails.FromString,
+            cover_dot_v1_dot_cover__pb2.AccountUsageDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListSavings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListSavings',
+            cover_dot_v1_dot_cover__pb2.ListFeesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def RestoreSavings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/RestoreSavings',
+            cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SimulateSavings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/SimulateSavings',
+            cover_dot_v1_dot_cover__pb2.CreateFeeAdjustmentAllocatorRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCostGroupAllocation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetCostGroupAllocation',
+            cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AllocationItem.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
