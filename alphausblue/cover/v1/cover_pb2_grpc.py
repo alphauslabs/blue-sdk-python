@@ -207,7 +207,7 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupResponse.FromString,
                 )
-        self.GetCostGroups = channel.unary_unary(
+        self.GetCostGroups = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetCostGroups',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.FromString,
@@ -434,7 +434,7 @@ class CoverStub(object):
                 )
         self.RestoreSavings = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/RestoreSavings',
-                request_serializer=cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.SerializeToString,
+                request_serializer=cover_dot_v1_dot_cover__pb2.RestoreSavingsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
                 )
         self.SimulateSavings = channel.unary_stream(
@@ -1247,7 +1247,7 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.CreateCostGroupResponse.SerializeToString,
             ),
-            'GetCostGroups': grpc.unary_unary_rpc_method_handler(
+            'GetCostGroups': grpc.unary_stream_rpc_method_handler(
                     servicer.GetCostGroups,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.SerializeToString,
@@ -1474,7 +1474,7 @@ def add_CoverServicer_to_server(servicer, server):
             ),
             'RestoreSavings': grpc.unary_stream_rpc_method_handler(
                     servicer.RestoreSavings,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.FromString,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.RestoreSavingsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.SavingsDetails.SerializeToString,
             ),
             'SimulateSavings': grpc.unary_stream_rpc_method_handler(
@@ -2155,7 +2155,7 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCostGroups',
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetCostGroups',
             cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.FromString,
             options, channel_credentials,
@@ -2921,7 +2921,7 @@ class Cover(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/RestoreSavings',
-            cover_dot_v1_dot_cover__pb2.RestoreFeeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.RestoreSavingsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.SavingsDetails.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
