@@ -2,9 +2,9 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
-from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.operations.v1 import operations_pb2 as operations_dot_v1_dot_operations__pb2
+from protos import operation_pb2 as protos_dot_operation__pb2
 
 
 class OperationsStub(object):
@@ -28,12 +28,12 @@ class OperationsStub(object):
         self.ListOperations = channel.unary_stream(
                 '/blueapi.operations.v1.Operations/ListOperations',
                 request_serializer=operations_dot_v1_dot_operations__pb2.ListOperationsRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 )
         self.GetOperation = channel.unary_unary(
                 '/blueapi.operations.v1.Operations/GetOperation',
                 request_serializer=operations_dot_v1_dot_operations__pb2.GetOperationRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 )
         self.DeleteOperation = channel.unary_unary(
                 '/blueapi.operations.v1.Operations/DeleteOperation',
@@ -48,7 +48,7 @@ class OperationsStub(object):
         self.WaitOperation = channel.unary_unary(
                 '/blueapi.operations.v1.Operations/WaitOperation',
                 request_serializer=operations_dot_v1_dot_operations__pb2.WaitOperationRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 )
 
 
@@ -120,12 +120,12 @@ def add_OperationsServicer_to_server(servicer, server):
             'ListOperations': grpc.unary_stream_rpc_method_handler(
                     servicer.ListOperations,
                     request_deserializer=operations_dot_v1_dot_operations__pb2.ListOperationsRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'GetOperation': grpc.unary_unary_rpc_method_handler(
                     servicer.GetOperation,
                     request_deserializer=operations_dot_v1_dot_operations__pb2.GetOperationRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'DeleteOperation': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteOperation,
@@ -140,7 +140,7 @@ def add_OperationsServicer_to_server(servicer, server):
             'WaitOperation': grpc.unary_unary_rpc_method_handler(
                     servicer.WaitOperation,
                     request_deserializer=operations_dot_v1_dot_operations__pb2.WaitOperationRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -174,7 +174,7 @@ class Operations(object):
             metadata=None):
         return grpc.experimental.unary_stream(request, target, '/blueapi.operations.v1.Operations/ListOperations',
             operations_dot_v1_dot_operations__pb2.ListOperationsRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -191,7 +191,7 @@ class Operations(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.operations.v1.Operations/GetOperation',
             operations_dot_v1_dot_operations__pb2.GetOperationRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -242,6 +242,6 @@ class Operations(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.operations.v1.Operations/WaitOperation',
             operations_dot_v1_dot_operations__pb2.WaitOperationRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

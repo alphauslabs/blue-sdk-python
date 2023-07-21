@@ -4,8 +4,8 @@ import grpc
 
 from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
 from alphausblue.api import notification_pb2 as api_dot_notification__pb2
-from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from protos import operation_pb2 as protos_dot_operation__pb2
 
 
 class AdminStub(object):
@@ -51,7 +51,7 @@ class AdminStub(object):
         self.UpdateDefaultCostAccess = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/UpdateDefaultCostAccess',
                 request_serializer=admin_dot_v1_dot_admin__pb2.UpdateDefaultCostAccessRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 )
         self.DeleteDefaultCostAccess = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/DeleteDefaultCostAccess',
@@ -336,7 +336,7 @@ def add_AdminServicer_to_server(servicer, server):
             'UpdateDefaultCostAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDefaultCostAccess,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateDefaultCostAccessRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'DeleteDefaultCostAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDefaultCostAccess,
@@ -544,7 +544,7 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/UpdateDefaultCostAccess',
             admin_dot_v1_dot_admin__pb2.UpdateDefaultCostAccessRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 

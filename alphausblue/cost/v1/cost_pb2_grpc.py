@@ -4,11 +4,11 @@ import grpc
 
 from alphausblue.api import account_pb2 as api_dot_account__pb2
 from alphausblue.api import costtag_pb2 as api_dot_costtag__pb2
-from alphausblue.api import operation_pb2 as api_dot_operation__pb2
 from alphausblue.api.ripple import payer_pb2 as api_dot_ripple_dot_payer__pb2
 from alphausblue.api.wave import budget_pb2 as api_dot_wave_dot_budget__pb2
 from alphausblue.cost.v1 import cost_pb2 as cost_dot_v1_dot_cost__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
+from protos import operation_pb2 as protos_dot_operation__pb2
 
 
 class CostStub(object):
@@ -99,12 +99,12 @@ class CostStub(object):
         self.ImportCurFiles = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/ImportCurFiles',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ImportCurFilesRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 )
         self.CalculateCosts = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/CalculateCosts',
                 request_serializer=cost_dot_v1_dot_cost__pb2.CalculateCostsRequest.SerializeToString,
-                response_deserializer=api_dot_operation__pb2.Operation.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 )
         self.ListCalculationsHistory = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/ListCalculationsHistory',
@@ -708,12 +708,12 @@ def add_CostServicer_to_server(servicer, server):
             'ImportCurFiles': grpc.unary_unary_rpc_method_handler(
                     servicer.ImportCurFiles,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ImportCurFilesRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'CalculateCosts': grpc.unary_unary_rpc_method_handler(
                     servicer.CalculateCosts,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.CalculateCostsRequest.FromString,
-                    response_serializer=api_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ListCalculationsHistory': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCalculationsHistory,
@@ -1159,7 +1159,7 @@ class Cost(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/ImportCurFiles',
             cost_dot_v1_dot_cost__pb2.ImportCurFilesRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -1176,7 +1176,7 @@ class Cost(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CalculateCosts',
             cost_dot_v1_dot_cost__pb2.CalculateCostsRequest.SerializeToString,
-            api_dot_operation__pb2.Operation.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
