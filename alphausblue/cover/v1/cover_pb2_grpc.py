@@ -447,6 +447,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.AllocationItem.FromString,
                 )
+        self.AddUserFromAuth0asRoot = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/AddUserFromAuth0asRoot',
+                request_serializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1054,6 +1059,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddUserFromAuth0asRoot(self, request, context):
+        """WORK-IN-PROGRESS: Add user from Auth0 as Root user
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1486,6 +1498,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetCostGroupAllocation,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.AllocationItem.SerializeToString,
+            ),
+            'AddUserFromAuth0asRoot': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddUserFromAuth0asRoot,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2957,5 +2974,22 @@ class Cover(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetCostGroupAllocation',
             cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.AllocationItem.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddUserFromAuth0asRoot(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddUserFromAuth0asRoot',
+            cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
