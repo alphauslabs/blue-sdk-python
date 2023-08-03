@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61pi/aws/breakeven.proto\x12\x0f\x62lueapi.api.aws\"\xd4\x02\n\x10\x41wsCostBreakeven\x12\x0b\n\x03\x61rn\x18\x01 \x01(\t\x12\x11\n\tstartDate\x18\x02 \x01(\t\x12\x0f\n\x07\x65ndDate\x18\x03 \x01(\t\x12\x19\n\x11\x65stimateEvenPoint\x18\x04 \x01(\t\x12\x16\n\x0e\x62reakEvenPoint\x18\x05 \x01(\t\x12\x14\n\x0cpurchaseCost\x18\x06 \x01(\x01\x12\x13\n\x0binitialCost\x18\x07 \x01(\x01\x12\x15\n\restimateUsage\x18\x08 \x01(\x01\x12\x17\n\x0f\x63urrentPublicOd\x18\t \x01(\x01\x12\x17\n\x0f\x63urrentActualOd\x18\n \x01(\x01\x12\x11\n\treduction\x18\x0b \x01(\x01\x12\x12\n\nupperRatio\x18\x0c \x01(\x01\x12\x12\n\nlowerRatio\x18\r \x01(\x01\x12-\n\tchartData\x18\x0e \x03(\x0b\x32\x1a.blueapi.api.aws.ChartData\"q\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x16\n\x0epublicOndemand\x18\x02 \x01(\x01\x12\x16\n\x0e\x61\x63tualOndemand\x18\x03 \x01(\x01\x12\x11\n\tusageCost\x18\x04 \x01(\x01\x12\x13\n\x0butilization\x18\x05 \x01(\x01\x42\x61\n\x1d\x63loud.alphaus.blueapi.api.awsB\x14\x41piAwsBreakevenProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x17\x61pi/aws/breakeven.proto\x12\x0f\x62lueapi.api.aws\"\xb2\x01\n\x10\x41wsCostBreakeven\x12\x0b\n\x03\x61rn\x18\x01 \x01(\t\x12\x11\n\tstartDate\x18\x02 \x01(\t\x12\x0f\n\x07\x65ndDate\x18\x03 \x01(\t\x12\x16\n\x0e\x62reakEvenPoint\x18\x04 \x01(\t\x12\x12\n\nupperRatio\x18\x05 \x01(\x01\x12\x12\n\nlowerRatio\x18\x06 \x01(\x01\x12-\n\tchartData\x18\x07 \x03(\x0b\x32\x1a.blueapi.api.aws.ChartData\"Z\n\tChartData\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x16\n\x0e\x61\x63tualOndemand\x18\x02 \x01(\x01\x12\x12\n\nactualCost\x18\x03 \x01(\x01\x12\x13\n\x0butilization\x18\x04 \x01(\x01\x42\x61\n\x1d\x63loud.alphaus.blueapi.api.awsB\x14\x41piAwsBreakevenProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,7 +23,7 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035cloud.alphaus.blueapi.api.awsB\024ApiAwsBreakevenProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws'
   _globals['_AWSCOSTBREAKEVEN']._serialized_start=45
-  _globals['_AWSCOSTBREAKEVEN']._serialized_end=385
-  _globals['_CHARTDATA']._serialized_start=387
-  _globals['_CHARTDATA']._serialized_end=500
+  _globals['_AWSCOSTBREAKEVEN']._serialized_end=223
+  _globals['_CHARTDATA']._serialized_start=225
+  _globals['_CHARTDATA']._serialized_end=315
 # @@protoc_insertion_point(module_scope)
