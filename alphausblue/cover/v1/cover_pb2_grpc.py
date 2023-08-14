@@ -282,6 +282,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
                 )
+        self.GetDataAccess = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetDataAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetDataAccessRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DataAccess.FromString,
+                )
         self.CreateAccountAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateAccountAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.SerializeToString,
@@ -828,6 +833,12 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDataAccess(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateAccountAccess(self, request, context):
         """Starts validation of the account access stack deployment. If successful, the IAM role created from the CloudFormation stack will be registered to the target.
         """
@@ -1333,6 +1344,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetAccountAccess,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetAccountAccessRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.AccountAccess.SerializeToString,
+            ),
+            'GetDataAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDataAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetDataAccessRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DataAccess.SerializeToString,
             ),
             'CreateAccountAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccountAccess,
@@ -2413,6 +2429,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAccountAccess',
             cover_dot_v1_dot_cover__pb2.GetAccountAccessRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetDataAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetDataAccess',
+            cover_dot_v1_dot_cover__pb2.GetDataAccessRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DataAccess.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
