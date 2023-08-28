@@ -284,8 +284,13 @@ class CoverStub(object):
                 )
         self.GetDataAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetDataAccess',
-                request_serializer=cover_dot_v1_dot_cover__pb2.GetDataAccessRequest.SerializeToString,
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAndDeleteDataAccessRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DataAccess.FromString,
+                )
+        self.DeleteDataAccess = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteDataAccess',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAndDeleteDataAccessRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.CreateAccountAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateAccountAccess',
@@ -314,7 +319,12 @@ class CoverStub(object):
                 )
         self.AddBillingAccount = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/AddBillingAccount',
-                request_serializer=cover_dot_v1_dot_cover__pb2.AddBillingAccountRequest.SerializeToString,
+                request_serializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.UpdateBillingAccount = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateBillingAccount',
+                request_serializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.ListDataAccess = channel.unary_stream(
@@ -860,6 +870,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteDataAccess(self, request, context):
+        """Deletes GCP or Azure accounts based on the provided request.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateAccountAccess(self, request, context):
         """Starts validation of the account access stack deployment. If successful, the IAM role created from the CloudFormation stack will be registered to the target.
         """
@@ -897,6 +914,13 @@ class CoverServicer(object):
 
     def AddBillingAccount(self, request, context):
         """Add Billing Account ID for GCP. 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingAccount(self, request, context):
+        """Update Billing Account ID for GCP. It updates DatasetId, DatasetRegion, etc.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1396,8 +1420,13 @@ def add_CoverServicer_to_server(servicer, server):
             ),
             'GetDataAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDataAccess,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetDataAccessRequest.FromString,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAndDeleteDataAccessRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DataAccess.SerializeToString,
+            ),
+            'DeleteDataAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDataAccess,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAndDeleteDataAccessRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'CreateAccountAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccountAccess,
@@ -1426,7 +1455,12 @@ def add_CoverServicer_to_server(servicer, server):
             ),
             'AddBillingAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.AddBillingAccount,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.AddBillingAccountRequest.FromString,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateBillingAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingAccount,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListDataAccess': grpc.unary_stream_rpc_method_handler(
@@ -2513,8 +2547,25 @@ class Cover(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetDataAccess',
-            cover_dot_v1_dot_cover__pb2.GetDataAccessRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAndDeleteDataAccessRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DataAccess.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteDataAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteDataAccess',
+            cover_dot_v1_dot_cover__pb2.GetAndDeleteDataAccessRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -2615,7 +2666,24 @@ class Cover(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddBillingAccount',
-            cover_dot_v1_dot_cover__pb2.AddBillingAccountRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateBillingAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateBillingAccount',
+            cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
