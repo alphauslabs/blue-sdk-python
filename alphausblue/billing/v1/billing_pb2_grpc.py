@@ -64,6 +64,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
                 response_deserializer=api_dot_invoice__pb2.Invoice.FromString,
                 )
+        self.ListInvoice = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListInvoice',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListInvoiceRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListInvoiceResponse.FromString,
+                )
         self.UpdateInvoicePreviews = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/UpdateInvoicePreviews',
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateInvoicePreviewsRequest.SerializeToString,
@@ -208,14 +213,14 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateInvoice(self, request, context):
-        """WORK-IN-PROGRESS: Creates an invoice. Only available in Ripple.
+        """Creates an invoice. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetInvoiceStatus(self, request, context):
-        """WORK-IN-PROGRESS: Gets an invoice. Only available in Ripple.
+        """Gets an invoice. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -223,6 +228,13 @@ class BillingServicer(object):
 
     def GetInvoice(self, request, context):
         """Gets an invoice.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListInvoice(self, request, context):
+        """Reads list of the invoice.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -408,6 +420,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetInvoice,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.FromString,
                     response_serializer=api_dot_invoice__pb2.Invoice.SerializeToString,
+            ),
+            'ListInvoice': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListInvoice,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListInvoiceRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListInvoiceResponse.SerializeToString,
             ),
             'UpdateInvoicePreviews': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateInvoicePreviews,
@@ -665,6 +682,23 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetInvoice',
             billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
             api_dot_invoice__pb2.Invoice.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListInvoice(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListInvoice',
+            billing_dot_v1_dot_billing__pb2.ListInvoiceRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ListInvoiceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
