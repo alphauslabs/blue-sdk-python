@@ -322,11 +322,6 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.UpdateBillingAccount = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/UpdateBillingAccount',
-                request_serializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                )
         self.ListDataAccess = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/ListDataAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListDataAccessRequest.SerializeToString,
@@ -934,13 +929,6 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateBillingAccount(self, request, context):
-        """Update Billing Account ID for GCP. It updates DatasetId, DatasetRegion, etc.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def ListDataAccess(self, request, context):
         """Lists Azure and GCP accounts.
         """
@@ -1491,11 +1479,6 @@ def add_CoverServicer_to_server(servicer, server):
             ),
             'AddBillingAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.AddBillingAccount,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            ),
-            'UpdateBillingAccount': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateBillingAccount,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.BillingAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
@@ -2717,23 +2700,6 @@ class Cover(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddBillingAccount',
-            cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def UpdateBillingAccount(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateBillingAccount',
             cover_dot_v1_dot_cover__pb2.BillingAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
