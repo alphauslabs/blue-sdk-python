@@ -164,6 +164,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAccessGroupRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
+        self.ListAbcBillingGroups = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListAbcBillingGroups',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.AbcBillingGroup.FromString,
+                )
+        self.ListAbcBillingGroupAccounts = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListAbcBillingGroupAccounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupAccountsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.AbcAccount.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -373,6 +383,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAbcBillingGroups(self, request, context):
+        """WORK-IN-PROGRESS: Gets all Billing Groups in AWS Billing Conductor(ABC) for specific payer id.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAbcBillingGroupAccounts(self, request, context):
+        """WORK-IN-PROGRESS: Gets all accounts associated to AWS Billing Conductor(ABC) Billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -520,6 +544,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.DeleteAccessGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAccessGroupRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListAbcBillingGroups': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAbcBillingGroups,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.AbcBillingGroup.SerializeToString,
+            ),
+            'ListAbcBillingGroupAccounts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAbcBillingGroupAccounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupAccountsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.AbcAccount.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1022,5 +1056,39 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/DeleteAccessGroup',
             billing_dot_v1_dot_billing__pb2.DeleteAccessGroupRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAbcBillingGroups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAbcBillingGroups',
+            billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.AbcBillingGroup.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAbcBillingGroupAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAbcBillingGroupAccounts',
+            billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupAccountsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.AbcAccount.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
