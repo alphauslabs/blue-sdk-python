@@ -68,6 +68,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.CreateCloudWatchMetricsStreamRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.CloudWatchMetricsStream.FromString,
                 )
+        self.CreateProformaCur = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateProformaCur',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateProformaCurRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.GetNotificationSettings = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/GetNotificationSettings',
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetNotificationSettingsRequest.SerializeToString,
@@ -204,6 +209,13 @@ class AdminServicer(object):
 
     def CreateCloudWatchMetricsStream(self, request, context):
         """WORK-IN-PROGRESS: Starts validation of a CloudWatch Metrics streaming stack deployment.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateProformaCur(self, request, context):
+        """WORK-IN-PROGRESS: Configure AWS Proforma Cost and Usage Report.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -352,6 +364,11 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.CreateCloudWatchMetricsStream,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.CreateCloudWatchMetricsStreamRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.CloudWatchMetricsStream.SerializeToString,
+            ),
+            'CreateProformaCur': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateProformaCur,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateProformaCurRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetNotificationSettings': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotificationSettings,
@@ -596,6 +613,23 @@ class Admin(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateCloudWatchMetricsStream',
             admin_dot_v1_dot_admin__pb2.CreateCloudWatchMetricsStreamRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.CloudWatchMetricsStream.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateProformaCur(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateProformaCur',
+            admin_dot_v1_dot_admin__pb2.CreateProformaCurRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
