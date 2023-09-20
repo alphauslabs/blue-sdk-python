@@ -71,7 +71,7 @@ class AdminStub(object):
         self.CreateProformaCur = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/CreateProformaCur',
                 request_serializer=admin_dot_v1_dot_admin__pb2.CreateProformaCurRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.ProformaCur.FromString,
                 )
         self.GetNotificationSettings = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/GetNotificationSettings',
@@ -368,7 +368,7 @@ def add_AdminServicer_to_server(servicer, server):
             'CreateProformaCur': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateProformaCur,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.CreateProformaCurRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.ProformaCur.SerializeToString,
             ),
             'GetNotificationSettings': grpc.unary_unary_rpc_method_handler(
                     servicer.GetNotificationSettings,
@@ -629,7 +629,7 @@ class Admin(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/CreateProformaCur',
             admin_dot_v1_dot_admin__pb2.CreateProformaCurRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            admin_dot_v1_dot_admin__pb2.ProformaCur.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
