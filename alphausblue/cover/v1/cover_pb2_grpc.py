@@ -212,6 +212,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.FromString,
                 )
+        self.GetCategories = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetCategories',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetCategoriesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetCategoriesResponse.FromString,
+                )
         self.GetCostGroupDetails = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetCostGroupDetails',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupDetailsRequest.SerializeToString,
@@ -771,6 +776,13 @@ class CoverServicer(object):
 
     def GetCostGroups(self, request, context):
         """Get all the cost groups
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCategories(self, request, context):
+        """Retrieve the categories to be utilized in the creation of the cost group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1371,6 +1383,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetCostGroups,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.SerializeToString,
+            ),
+            'GetCategories': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCategories,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetCategoriesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetCategoriesResponse.SerializeToString,
             ),
             'GetCostGroupDetails': grpc.unary_unary_rpc_method_handler(
                     servicer.GetCostGroupDetails,
@@ -2328,6 +2345,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCostGroups',
             cover_dot_v1_dot_cover__pb2.GetCostGroupsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetCostGroupsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCategories(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCategories',
+            cover_dot_v1_dot_cover__pb2.GetCategoriesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetCategoriesResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
