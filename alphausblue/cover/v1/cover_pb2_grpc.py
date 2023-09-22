@@ -482,10 +482,10 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.AllocationItem.FromString,
                 )
-        self.AddUserFromAuth0asRoot = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/AddUserFromAuth0asRoot',
-                request_serializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootResponse.FromString,
+        self.ProcessAuth0User = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ProcessAuth0User',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ProcessAuth0UserRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ProcessAuth0UserResponse.FromString,
                 )
         self.AddPartnerCenterCredentials = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/AddPartnerCenterCredentials',
@@ -1158,8 +1158,8 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def AddUserFromAuth0asRoot(self, request, context):
-        """WORK-IN-PROGRESS: Add user from Auth0 as Root user
+    def ProcessAuth0User(self, request, context):
+        """WORK-IN-PROGRESS: Add or read user from Auth0
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1654,10 +1654,10 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAllocationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.AllocationItem.SerializeToString,
             ),
-            'AddUserFromAuth0asRoot': grpc.unary_unary_rpc_method_handler(
-                    servicer.AddUserFromAuth0asRoot,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootResponse.SerializeToString,
+            'ProcessAuth0User': grpc.unary_unary_rpc_method_handler(
+                    servicer.ProcessAuth0User,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ProcessAuth0UserRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ProcessAuth0UserResponse.SerializeToString,
             ),
             'AddPartnerCenterCredentials': grpc.unary_unary_rpc_method_handler(
                     servicer.AddPartnerCenterCredentials,
@@ -3267,7 +3267,7 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def AddUserFromAuth0asRoot(request,
+    def ProcessAuth0User(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3277,9 +3277,9 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddUserFromAuth0asRoot',
-            cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.AddUserFromAuth0asRootResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ProcessAuth0User',
+            cover_dot_v1_dot_cover__pb2.ProcessAuth0UserRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ProcessAuth0UserResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
