@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.gcp.cost_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035cloud.alphaus.blueapi.api.gcpB\017ApiGcpCostProtoZ*github.com/alphauslabs/blue-sdk-go/api/gcp'
   _globals['_COST']._serialized_start=40

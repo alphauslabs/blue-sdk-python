@@ -14,13 +14,12 @@ _sym_db = _symbol_database.Default()
 from alphausblue.api.cover import user_pb2 as api_dot_cover_dot_user__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61pi/cover/costgroup.proto\x12\x11\x62lueapi.api.cover\x1a\x14\x61pi/cover/user.proto\"\xb6\x02\n\rCostGroupData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x12\n\ncolorTheme\x18\x06 \x01(\t\x12\x11\n\tcreatedAt\x18\x07 \x01(\t\x12\x11\n\tupdatedAt\x18\x08 \x01(\t\x12\x32\n\x07members\x18\t \x03(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x35\n\x0c\x63ombinations\x18\n \x01(\x0b\x32\x1f.blueapi.api.cover.Combinations\x12\x34\n\tcreatedBy\x18\x0b \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\"\xce\x02\n\x0c\x43ombinations\x12:\n\nawsOptions\x18\x01 \x01(\x0b\x32&.blueapi.api.cover.CostGroupAwsOptions\x12>\n\x0c\x61zureOptions\x18\x02 \x01(\x0b\x32(.blueapi.api.cover.CostGroupAzureOptions\x12:\n\ngcpOptions\x18\x03 \x01(\x0b\x32&.blueapi.api.cover.CostGroupGcpOptions\x12\x44\n\x0f\x61zurecspOptions\x18\x04 \x01(\x0b\x32+.blueapi.api.cover.CostGroupAzureCspOptions\x12@\n\rcustomOptions\x18\x05 \x01(\x0b\x32).blueapi.api.cover.CostGroupCustomOptions\"\x92\x01\n\x13\x43ostGroupAwsOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x94\x01\n\x15\x43ostGroupAzureOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x97\x01\n\x18\x43ostGroupAzureCspOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x92\x01\n\x13\x43ostGroupGcpOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"U\n\x16\x43ostGroupCustomOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x9c\x01\n\x17\x43ostGroupOptionsFilters\x12N\n\nandFilters\x18\x01 \x03(\x0b\x32:.blueapi.api.cover.CostGroupOptionsFilters.AndFiltersEntry\x1a\x31\n\x0f\x41ndFiltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\tBg\n\x1f\x63loud.alphaus.blueapi.api.coverB\x16\x41piCoverCostGroupProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x19\x61pi/cover/costgroup.proto\x12\x11\x62lueapi.api.cover\x1a\x14\x61pi/cover/user.proto\"\xb6\x02\n\rCostGroupData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\r\n\x05image\x18\x04 \x01(\t\x12\x0c\n\x04icon\x18\x05 \x01(\t\x12\x12\n\ncolorTheme\x18\x06 \x01(\t\x12\x11\n\tcreatedAt\x18\x07 \x01(\t\x12\x11\n\tupdatedAt\x18\x08 \x01(\t\x12\x32\n\x07members\x18\t \x03(\x0b\x32!.blueapi.api.cover.MemberUserData\x12\x35\n\x0c\x63ombinations\x18\n \x01(\x0b\x32\x1f.blueapi.api.cover.Combinations\x12\x34\n\tcreatedBy\x18\x0b \x01(\x0b\x32!.blueapi.api.cover.MemberUserData\"\xce\x02\n\x0c\x43ombinations\x12:\n\nawsOptions\x18\x01 \x01(\x0b\x32&.blueapi.api.cover.CostGroupAwsOptions\x12>\n\x0c\x61zureOptions\x18\x02 \x01(\x0b\x32(.blueapi.api.cover.CostGroupAzureOptions\x12:\n\ngcpOptions\x18\x03 \x01(\x0b\x32&.blueapi.api.cover.CostGroupGcpOptions\x12\x44\n\x0f\x61zurecspOptions\x18\x04 \x01(\x0b\x32+.blueapi.api.cover.CostGroupAzureCspOptions\x12@\n\rcustomOptions\x18\x05 \x01(\x0b\x32).blueapi.api.cover.CostGroupCustomOptions\"\x92\x01\n\x13\x43ostGroupAwsOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x94\x01\n\x15\x43ostGroupAzureOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x97\x01\n\x18\x43ostGroupAzureCspOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x91\x02\n\x13\x43ostGroupGcpOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12>\n\ntagFilters\x18\x02 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12:\n\x06labels\x18\x03 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\x12\x41\n\rprojectLabels\x18\x04 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"U\n\x16\x43ostGroupCustomOptions\x12;\n\x07\x66ilters\x18\x01 \x03(\x0b\x32*.blueapi.api.cover.CostGroupOptionsFilters\"\x9c\x01\n\x17\x43ostGroupOptionsFilters\x12N\n\nandFilters\x18\x01 \x03(\x0b\x32:.blueapi.api.cover.CostGroupOptionsFilters.AndFiltersEntry\x1a\x31\n\x0f\x41ndFiltersEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"8\n\x07\x41\x63\x63ount\x12\x11\n\taccountId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0c\n\x04type\x18\x03 \x01(\tBg\n\x1f\x63loud.alphaus.blueapi.api.coverB\x16\x41piCoverCostGroupProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.costgroup_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\037cloud.alphaus.blueapi.api.coverB\026ApiCoverCostGroupProtoZ,github.com/alphauslabs/blue-sdk-go/api/cover'
   _COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY._options = None
@@ -36,13 +35,13 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_COSTGROUPAZURECSPOPTIONS']._serialized_start=1021
   _globals['_COSTGROUPAZURECSPOPTIONS']._serialized_end=1172
   _globals['_COSTGROUPGCPOPTIONS']._serialized_start=1175
-  _globals['_COSTGROUPGCPOPTIONS']._serialized_end=1321
-  _globals['_COSTGROUPCUSTOMOPTIONS']._serialized_start=1323
-  _globals['_COSTGROUPCUSTOMOPTIONS']._serialized_end=1408
-  _globals['_COSTGROUPOPTIONSFILTERS']._serialized_start=1411
-  _globals['_COSTGROUPOPTIONSFILTERS']._serialized_end=1567
-  _globals['_COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY']._serialized_start=1518
-  _globals['_COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY']._serialized_end=1567
-  _globals['_ACCOUNT']._serialized_start=1569
-  _globals['_ACCOUNT']._serialized_end=1625
+  _globals['_COSTGROUPGCPOPTIONS']._serialized_end=1448
+  _globals['_COSTGROUPCUSTOMOPTIONS']._serialized_start=1450
+  _globals['_COSTGROUPCUSTOMOPTIONS']._serialized_end=1535
+  _globals['_COSTGROUPOPTIONSFILTERS']._serialized_start=1538
+  _globals['_COSTGROUPOPTIONSFILTERS']._serialized_end=1694
+  _globals['_COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY']._serialized_start=1645
+  _globals['_COSTGROUPOPTIONSFILTERS_ANDFILTERSENTRY']._serialized_end=1694
+  _globals['_ACCOUNT']._serialized_start=1696
+  _globals['_ACCOUNT']._serialized_end=1752
 # @@protoc_insertion_point(module_scope)

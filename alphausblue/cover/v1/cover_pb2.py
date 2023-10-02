@@ -30,7 +30,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cover.v1.cover_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\027cloud.alphaus.api.coverB\nCoverProtoZ$github.com/alphauslabs/blueapi/cover'
   _LISTASSETSFILTERS_ANDFILTERSENTRY._options = None

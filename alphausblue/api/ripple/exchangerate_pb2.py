@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.ripple.exchangerate_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n cloud.alphaus.blueapi.api.rippleB\032ApiRippleExchangeRateProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple'
   _globals['_EXCHANGERATE']._serialized_start=53

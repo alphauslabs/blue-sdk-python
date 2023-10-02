@@ -21,7 +21,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'preferences.v1.preferences_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035cloud.alphaus.api.preferencesB\020PreferencesProtoZ*github.com/alphauslabs/blueapi/preferences'
   _PREFERENCES._options = None

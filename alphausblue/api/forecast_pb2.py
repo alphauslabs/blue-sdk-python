@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.forecast_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031cloud.alphaus.blueapi.apiB\020ApiForecastProtoZ&github.com/alphauslabs/blue-sdk-go/api'
   _globals['_FORECASTDATA']._serialized_start=36

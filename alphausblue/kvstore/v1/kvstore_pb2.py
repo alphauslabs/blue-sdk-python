@@ -22,7 +22,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'kvstore.v1.kvstore_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031cloud.alphaus.api.kvstoreB\014KvStoreProtoZ&github.com/alphauslabs/blueapi/kvstore'
   _KVSTORE._options = None

@@ -39,7 +39,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cost.v1.cost_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\026cloud.alphaus.api.costB\tCostProtoZ#github.com/alphauslabs/blueapi/cost\222A\260\002\022\316\001\n\032Alphaus Blue: Cost Service\"R\n\032Alphaus Blue: Cost Service\0224https://alphauslabs.github.io/blueapi/apis/cost.html*W\n\033License: Apache License 2.0\0228https://github.com/alphauslabs/blueapi/blob/main/LICENSE2\0031.0r]\n%More about Alphaus Blue: Cost Service\0224https://alphauslabs.github.io/blueapi/apis/cost.html'
   _CALCULATORCOSTMODIFIERAWSOPTIONS_QUALIFIER_ANDENTRY._options = None

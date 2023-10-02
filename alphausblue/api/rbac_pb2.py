@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.rbac_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031cloud.alphaus.blueapi.apiB\014ApiRbacProtoZ&github.com/alphauslabs/blue-sdk-go/api'
   _globals['_POLICY']._serialized_start=31

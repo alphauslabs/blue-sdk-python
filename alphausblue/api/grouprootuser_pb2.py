@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.grouprootuser_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\031cloud.alphaus.blueapi.apiB\025ApiGroupRootUserProtoZ&github.com/alphauslabs/blue-sdk-go/api'
   _globals['_GROUPROOTUSER']._serialized_start=41

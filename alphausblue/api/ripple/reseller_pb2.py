@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.ripple.reseller_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n cloud.alphaus.blueapi.api.rippleB\026ApiRippleResellerProtoZ-github.com/alphauslabs/blue-sdk-go/api/ripple'
   _globals['_RESELLER']._serialized_start=50

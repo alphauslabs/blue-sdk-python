@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.asset_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\037cloud.alphaus.blueapi.api.coverB\022ApiCoverAssetProtoZ,github.com/alphauslabs/blue-sdk-go/api/cover'
   _ASSET_ATTRIBUTESENTRY._options = None

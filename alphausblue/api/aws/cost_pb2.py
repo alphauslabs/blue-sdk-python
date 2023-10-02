@@ -20,7 +20,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.aws.cost_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035cloud.alphaus.blueapi.api.awsB\017ApiAwsCostProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws'
   _COSTATTRIBUTE_TAGSENTRY._options = None

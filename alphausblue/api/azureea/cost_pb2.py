@@ -19,7 +19,6 @@ _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.azureea.cost_pb2', _globals)
 if _descriptor._USE_C_DESCRIPTORS == False:
-
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n!cloud.alphaus.blueapi.api.azureeaB\023ApiAzureEaCostProtoZ.github.com/alphauslabs/blue-sdk-go/api/azureea'
   _globals['_COST']._serialized_start=48
