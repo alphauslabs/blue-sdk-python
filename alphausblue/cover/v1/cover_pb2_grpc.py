@@ -502,6 +502,56 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeResponse.FromString,
                 )
+        self.GetAlerts = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAlerts',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAlertsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAlertsResponse.FromString,
+                )
+        self.CreateAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateAlertRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateAlertResponse.FromString,
+                )
+        self.GetAlertDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAlertDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAlertDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAlertDetailsResponse.FromString,
+                )
+        self.DeleteAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteAlertRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteAlertResponse.FromString,
+                )
+        self.UpdateAlertDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateAlertDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsResponse.FromString,
+                )
+        self.GetChannels = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetChannels',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetChannelsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetChannelsResponse.FromString,
+                )
+        self.CreateChannel = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateChannel',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateChannelRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateChannelResponse.FromString,
+                )
+        self.GetChannelDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetChannelDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetChannelDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetChannelDetailsResponse.FromString,
+                )
+        self.DeleteChannel = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteChannel',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteChannelRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteChannelResponse.FromString,
+                )
+        self.UpdateChannelDetails = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateChannelDetails',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1186,6 +1236,76 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAlerts(self, request, context):
+        """WORK-IN-PROGRESS: Get Alerts under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAlert(self, request, context):
+        """WORK-IN-PROGRESS: Create Alerts under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAlertDetails(self, request, context):
+        """WORK-IN-PROGRESS: Get Specific Alert under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAlert(self, request, context):
+        """WORK-IN-PROGRESS: Delete Specific Alert under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAlertDetails(self, request, context):
+        """WORK-IN-PROGRESS: Update Specific Alert under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetChannels(self, request, context):
+        """WORK-IN-PROGRESS: Get Channels under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateChannel(self, request, context):
+        """WORK-IN-PROGRESS: Create Channel under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetChannelDetails(self, request, context):
+        """WORK-IN-PROGRESS: Get Specific Channel under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteChannel(self, request, context):
+        """WORK-IN-PROGRESS: Delete Specific Channel under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateChannelDetails(self, request, context):
+        """WORK-IN-PROGRESS: Update Specific Channel under organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1673,6 +1793,56 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetCostGroupAttribute,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeResponse.SerializeToString,
+            ),
+            'GetAlerts': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAlerts,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAlertsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAlertsResponse.SerializeToString,
+            ),
+            'CreateAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateAlertRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateAlertResponse.SerializeToString,
+            ),
+            'GetAlertDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAlertDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAlertDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAlertDetailsResponse.SerializeToString,
+            ),
+            'DeleteAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteAlertRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteAlertResponse.SerializeToString,
+            ),
+            'UpdateAlertDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAlertDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsResponse.SerializeToString,
+            ),
+            'GetChannels': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetChannels,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetChannelsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetChannelsResponse.SerializeToString,
+            ),
+            'CreateChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateChannel,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateChannelRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateChannelResponse.SerializeToString,
+            ),
+            'GetChannelDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetChannelDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetChannelDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetChannelDetailsResponse.SerializeToString,
+            ),
+            'DeleteChannel': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteChannel,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteChannelRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteChannelResponse.SerializeToString,
+            ),
+            'UpdateChannelDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateChannelDetails,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3331,5 +3501,175 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCostGroupAttribute',
             cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAlerts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAlerts',
+            cover_dot_v1_dot_cover__pb2.GetAlertsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAlertsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAlert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateAlert',
+            cover_dot_v1_dot_cover__pb2.CreateAlertRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateAlertResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAlertDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAlertDetails',
+            cover_dot_v1_dot_cover__pb2.GetAlertDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAlertDetailsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAlert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteAlert',
+            cover_dot_v1_dot_cover__pb2.DeleteAlertRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteAlertResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAlertDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateAlertDetails',
+            cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetChannels(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetChannels',
+            cover_dot_v1_dot_cover__pb2.GetChannelsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetChannelsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateChannel',
+            cover_dot_v1_dot_cover__pb2.CreateChannelRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateChannelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetChannelDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetChannelDetails',
+            cover_dot_v1_dot_cover__pb2.GetChannelDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetChannelDetailsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteChannel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteChannel',
+            cover_dot_v1_dot_cover__pb2.DeleteChannelRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteChannelResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateChannelDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateChannelDetails',
+            cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
