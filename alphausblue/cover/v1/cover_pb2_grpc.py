@@ -502,7 +502,7 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeResponse.FromString,
                 )
-        self.GetAlerts = channel.unary_unary(
+        self.GetAlerts = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetAlerts',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetAlertsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetAlertsResponse.FromString,
@@ -527,7 +527,7 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsResponse.FromString,
                 )
-        self.GetChannels = channel.unary_unary(
+        self.GetChannels = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetChannels',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetChannelsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetChannelsResponse.FromString,
@@ -1794,7 +1794,7 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCostGroupAttributeResponse.SerializeToString,
             ),
-            'GetAlerts': grpc.unary_unary_rpc_method_handler(
+            'GetAlerts': grpc.unary_stream_rpc_method_handler(
                     servicer.GetAlerts,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetAlertsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetAlertsResponse.SerializeToString,
@@ -1819,7 +1819,7 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateAlertDetailsResponse.SerializeToString,
             ),
-            'GetChannels': grpc.unary_unary_rpc_method_handler(
+            'GetChannels': grpc.unary_stream_rpc_method_handler(
                     servicer.GetChannels,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetChannelsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetChannelsResponse.SerializeToString,
@@ -3515,7 +3515,7 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAlerts',
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetAlerts',
             cover_dot_v1_dot_cover__pb2.GetAlertsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetAlertsResponse.FromString,
             options, channel_credentials,
@@ -3600,7 +3600,7 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetChannels',
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetChannels',
             cover_dot_v1_dot_cover__pb2.GetChannelsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetChannelsResponse.FromString,
             options, channel_credentials,
