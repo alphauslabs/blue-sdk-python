@@ -5,6 +5,7 @@ import grpc
 from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
 from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessgroup__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
+from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
@@ -173,6 +174,11 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/ListAbcBillingGroupAccounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupAccountsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.AbcAccount.FromString,
+                )
+        self.ReadInvoiceAdjustments = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadInvoiceAdjustments',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
+                response_deserializer=api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
                 )
 
 
@@ -397,6 +403,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReadInvoiceAdjustments(self, request, context):
+        """WORK-IN-PROGRESS: Reads the adjustment details involved in invoicing of an organization billing group (Wave).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -554,6 +567,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListAbcBillingGroupAccounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupAccountsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.AbcAccount.SerializeToString,
+            ),
+            'ReadInvoiceAdjustments': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadInvoiceAdjustments,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.FromString,
+                    response_serializer=api_dot_wave_dot_adjustment__pb2.Adjustment.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1090,5 +1108,22 @@ class Billing(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAbcBillingGroupAccounts',
             billing_dot_v1_dot_billing__pb2.ListAbcBillingGroupAccountsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.AbcAccount.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReadInvoiceAdjustments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ReadInvoiceAdjustments',
+            billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
+            api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
