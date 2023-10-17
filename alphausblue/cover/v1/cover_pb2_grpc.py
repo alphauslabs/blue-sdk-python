@@ -555,7 +555,7 @@ class CoverStub(object):
         self.GetRiSpRecommendations = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetRiSpRecommendations',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.FromString,
                 )
 
 
@@ -1859,7 +1859,7 @@ def add_CoverServicer_to_server(servicer, server):
             'GetRiSpRecommendations': grpc.unary_unary_rpc_method_handler(
                     servicer.GetRiSpRecommendations,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3704,6 +3704,6 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetRiSpRecommendations',
             cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.FromString,
+            cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
