@@ -61,6 +61,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.CreateAccountRequest.SerializeToString,
                 response_deserializer=api_dot_account__pb2.Account.FromString,
                 )
+        self.UpdateAccount = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/UpdateAccount',
+                request_serializer=cost_dot_v1_dot_cost__pb2.UpdateAccountRequest.SerializeToString,
+                response_deserializer=api_dot_account__pb2.Account.FromString,
+                )
         self.DeleteAccount = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/DeleteAccount',
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.SerializeToString,
@@ -328,6 +333,13 @@ class CostServicer(object):
 
     def CreateAccount(self, request, context):
         """Registers a vendor account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccount(self, request, context):
+        """WORK-IN-PROGRESS: Updates a vendor account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -668,6 +680,11 @@ def add_CostServicer_to_server(servicer, server):
             'CreateAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccount,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.CreateAccountRequest.FromString,
+                    response_serializer=api_dot_account__pb2.Account.SerializeToString,
+            ),
+            'UpdateAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccount,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.UpdateAccountRequest.FromString,
                     response_serializer=api_dot_account__pb2.Account.SerializeToString,
             ),
             'DeleteAccount': grpc.unary_unary_rpc_method_handler(
@@ -1023,6 +1040,23 @@ class Cost(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CreateAccount',
             cost_dot_v1_dot_cost__pb2.CreateAccountRequest.SerializeToString,
+            api_dot_account__pb2.Account.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/UpdateAccount',
+            cost_dot_v1_dot_cost__pb2.UpdateAccountRequest.SerializeToString,
             api_dot_account__pb2.Account.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
