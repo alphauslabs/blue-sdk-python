@@ -557,10 +557,10 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.FromString,
                 )
-        self.GetAnomalyinCostGroup = channel.unary_unary(
+        self.GetAnomalyinCostGroup = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetAnomalyinCostGroup',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupResponse.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AnomalyData.FromString,
                 )
         self.CreateRiSpExpirationAlert = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateRiSpExpirationAlert',
@@ -1885,10 +1885,10 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.SerializeToString,
             ),
-            'GetAnomalyinCostGroup': grpc.unary_unary_rpc_method_handler(
+            'GetAnomalyinCostGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.GetAnomalyinCostGroup,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupResponse.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AnomalyData.SerializeToString,
             ),
             'CreateRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateRiSpExpirationAlert,
@@ -3753,9 +3753,9 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAnomalyinCostGroup',
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/GetAnomalyinCostGroup',
             cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupResponse.FromString,
+            cover_dot_v1_dot_cover__pb2.AnomalyData.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
