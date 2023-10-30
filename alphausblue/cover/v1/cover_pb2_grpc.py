@@ -569,7 +569,7 @@ class CoverStub(object):
                 )
         self.UpdateRiSpExpirationAlert = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateRiSpExpirationAlert',
-                request_serializer=cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.SerializeToString,
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateRiSpExpirationAlertRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.GetRiSpExpirationAlert = channel.unary_unary(
@@ -1921,7 +1921,7 @@ def add_CoverServicer_to_server(servicer, server):
             ),
             'UpdateRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateRiSpExpirationAlert,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.FromString,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateRiSpExpirationAlertRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
@@ -3822,7 +3822,7 @@ class Cover(object):
             timeout=None,
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateRiSpExpirationAlert',
-            cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateRiSpExpirationAlertRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
