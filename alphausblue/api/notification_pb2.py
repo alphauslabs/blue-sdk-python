@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/notification.proto\x12\x0b\x62lueapi.api\"?\n\x14NotificationSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x16\n\x0e\x64\x65\x66\x61ultChannel\x18\x02 \x01(\t\"\xd0\x01\n\x13NotificationChannel\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12(\n\x05\x65mail\x18\x05 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x06 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x07 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"2\n\x0c\x45mailChannel\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x12\n\nrecipients\x18\x02 \x03(\t\"`\n\x0cSlackChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\x12\x11\n\tchannelId\x18\x02 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x18\n\x10\x63onfigurationUrl\x18\x04 \x01(\t\"$\n\x0eMSTeamsChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\"\x8a\x01\n\x0cNotification\x12\n\n\x02id\x18\x01 \x01(\t\x12\x18\n\x10notificationType\x18\x02 \x01(\t\x12\x10\n\x08\x63hannels\x18\x03 \x03(\t\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x31\n\x07\x61\x63\x63ount\x18\x05 \x01(\x0b\x32 .blueapi.api.NotificationAccount\"8\n\x13NotificationAccount\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x11\n\taccountId\x18\x02 \x01(\tBY\n\x19\x63loud.alphaus.blueapi.apiB\x14\x41piNotificationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/notification.proto\x12\x0b\x62lueapi.api\"?\n\x14NotificationSettings\x12\x0f\n\x07\x65nabled\x18\x01 \x01(\x08\x12\x16\n\x0e\x64\x65\x66\x61ultChannel\x18\x02 \x01(\t\"\xd0\x01\n\x13NotificationChannel\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\x0c\n\x04type\x18\x04 \x01(\t\x12(\n\x05\x65mail\x18\x05 \x01(\x0b\x32\x19.blueapi.api.EmailChannel\x12(\n\x05slack\x18\x06 \x01(\x0b\x32\x19.blueapi.api.SlackChannel\x12,\n\x07msteams\x18\x07 \x01(\x0b\x32\x1b.blueapi.api.MSTeamsChannel\"2\n\x0c\x45mailChannel\x12\x0e\n\x06\x66ormat\x18\x01 \x01(\t\x12\x12\n\nrecipients\x18\x02 \x03(\t\"\x83\x01\n\x0cSlackChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\x12\x11\n\tchannelId\x18\x02 \x01(\t\x12\x0f\n\x07\x63hannel\x18\x03 \x01(\t\x12\x18\n\x10\x63onfigurationUrl\x18\x04 \x01(\t\x12\x0c\n\x04\x63ode\x18\x05 \x01(\t\x12\x13\n\x0bredirectUri\x18\x06 \x01(\t\"$\n\x0eMSTeamsChannel\x12\x12\n\nwebhookUrl\x18\x01 \x01(\t\"\x8a\x01\n\x0cNotification\x12\n\n\x02id\x18\x01 \x01(\t\x12\x18\n\x10notificationType\x18\x02 \x01(\t\x12\x10\n\x08\x63hannels\x18\x03 \x03(\t\x12\x0f\n\x07\x65nabled\x18\x04 \x01(\x08\x12\x31\n\x07\x61\x63\x63ount\x18\x05 \x01(\x0b\x32 .blueapi.api.NotificationAccount\"8\n\x13NotificationAccount\x12\x0e\n\x06vendor\x18\x01 \x01(\t\x12\x11\n\taccountId\x18\x02 \x01(\tBY\n\x19\x63loud.alphaus.blueapi.apiB\x14\x41piNotificationProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,12 +27,12 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_NOTIFICATIONCHANNEL']._serialized_end=313
   _globals['_EMAILCHANNEL']._serialized_start=315
   _globals['_EMAILCHANNEL']._serialized_end=365
-  _globals['_SLACKCHANNEL']._serialized_start=367
-  _globals['_SLACKCHANNEL']._serialized_end=463
-  _globals['_MSTEAMSCHANNEL']._serialized_start=465
-  _globals['_MSTEAMSCHANNEL']._serialized_end=501
-  _globals['_NOTIFICATION']._serialized_start=504
-  _globals['_NOTIFICATION']._serialized_end=642
-  _globals['_NOTIFICATIONACCOUNT']._serialized_start=644
-  _globals['_NOTIFICATIONACCOUNT']._serialized_end=700
+  _globals['_SLACKCHANNEL']._serialized_start=368
+  _globals['_SLACKCHANNEL']._serialized_end=499
+  _globals['_MSTEAMSCHANNEL']._serialized_start=501
+  _globals['_MSTEAMSCHANNEL']._serialized_end=537
+  _globals['_NOTIFICATION']._serialized_start=540
+  _globals['_NOTIFICATION']._serialized_end=678
+  _globals['_NOTIFICATIONACCOUNT']._serialized_start=680
+  _globals['_NOTIFICATIONACCOUNT']._serialized_end=736
 # @@protoc_insertion_point(module_scope)
