@@ -180,6 +180,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
                 response_deserializer=api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
                 )
+        self.ListAccountResources = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListAccountResources',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ResourceAccount.FromString,
+                )
 
 
 class BillingServicer(object):
@@ -410,6 +415,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListAccountResources(self, request, context):
+        """WORK-IN-PROGRESS: Returns all registered accounts that are not associated to any billing groups and accounts found in CUR for the specified month. For Ripple only
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -572,6 +584,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ReadInvoiceAdjustments,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.FromString,
                     response_serializer=api_dot_wave_dot_adjustment__pb2.Adjustment.SerializeToString,
+            ),
+            'ListAccountResources': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAccountResources,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ResourceAccount.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1125,5 +1142,22 @@ class Billing(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ReadInvoiceAdjustments',
             billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
             api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListAccountResources(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAccountResources',
+            billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ResourceAccount.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
