@@ -552,39 +552,39 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsResponse.FromString,
                 )
-        self.GetRiSpRecommendations = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/GetRiSpRecommendations',
-                request_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.FromString,
+        self.GetDiscountRecommendations = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetDiscountRecommendations',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetDiscountRecommendationsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetDiscountRecommendationsResponse.FromString,
                 )
         self.GetAnomalyinCostGroup = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/GetAnomalyinCostGroup',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.AnomalyData.FromString,
                 )
-        self.CreateRiSpExpirationAlert = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/CreateRiSpExpirationAlert',
-                request_serializer=cover_dot_v1_dot_cover__pb2.CreateRiSpExpirationAlertRequest.SerializeToString,
+        self.CreateDiscountExpirationAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateDiscountExpirationAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateDiscountExpirationAlertRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.UpdateRiSpExpirationAlert = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/UpdateRiSpExpirationAlert',
-                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateRiSpExpirationAlertRequest.SerializeToString,
+        self.UpdateDiscountExpirationAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateDiscountExpirationAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateDiscountExpirationAlertRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
-        self.GetRiSpExpirationAlert = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/GetRiSpExpirationAlert',
-                request_serializer=cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.RiSpExpiryAlertData.FromString,
+        self.GetDiscountExpirationAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetDiscountExpirationAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ManipulateDiscountExpirationAlertRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DiscountExpiryAlertData.FromString,
                 )
-        self.ListRiSpExpirationAlert = channel.unary_stream(
-                '/blueapi.cover.v1.Cover/ListRiSpExpirationAlert',
-                request_serializer=cover_dot_v1_dot_cover__pb2.ListRiSpExpirationAlertRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.RiSpExpiryAlertData.FromString,
+        self.ListDiscountExpirationAlert = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListDiscountExpirationAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListDiscountExpirationAlertRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DiscountExpiryAlertData.FromString,
                 )
-        self.DeleteRiSpExpirationAlert = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/DeleteRiSpExpirationAlert',
-                request_serializer=cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.SerializeToString,
+        self.DeleteDiscountExpirationAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteDiscountExpirationAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ManipulateDiscountExpirationAlertRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
         self.CreateAnomalyAlert = channel.unary_unary(
@@ -1346,8 +1346,8 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetRiSpRecommendations(self, request, context):
-        """Get the RI or SP recommendations for every account in a cost group
+    def GetDiscountRecommendations(self, request, context):
+        """Get the discount recommendations for every account in a cost group
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1360,36 +1360,36 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateRiSpExpirationAlert(self, request, context):
-        """Create RI or SP Expiration Alert.
+    def CreateDiscountExpirationAlert(self, request, context):
+        """Create discount Expiration Alert.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateRiSpExpirationAlert(self, request, context):
-        """Update RI or SP Expiration Alert
+    def UpdateDiscountExpirationAlert(self, request, context):
+        """Update discount Expiration Alert
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetRiSpExpirationAlert(self, request, context):
-        """Get RI or SP Expiration Alert Data
+    def GetDiscountExpirationAlert(self, request, context):
+        """Get discount Expiration Alert Data
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListRiSpExpirationAlert(self, request, context):
-        """List all Ri and Sp Expiration Alert Data
+    def ListDiscountExpirationAlert(self, request, context):
+        """List all discount Expiration Alert Data
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteRiSpExpirationAlert(self, request, context):
-        """Delete selected Ri and Sp Expiration Alert Data
+    def DeleteDiscountExpirationAlert(self, request, context):
+        """Delete selected discount Expiration Alert Data
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1940,39 +1940,39 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateChannelDetailsResponse.SerializeToString,
             ),
-            'GetRiSpRecommendations': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRiSpRecommendations,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.SerializeToString,
+            'GetDiscountRecommendations': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDiscountRecommendations,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetDiscountRecommendationsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetDiscountRecommendationsResponse.SerializeToString,
             ),
             'GetAnomalyinCostGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.GetAnomalyinCostGroup,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetAnomalyinCostGroupRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.AnomalyData.SerializeToString,
             ),
-            'CreateRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateRiSpExpirationAlert,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateRiSpExpirationAlertRequest.FromString,
+            'CreateDiscountExpirationAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateDiscountExpirationAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateDiscountExpirationAlertRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'UpdateRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateRiSpExpirationAlert,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateRiSpExpirationAlertRequest.FromString,
+            'UpdateDiscountExpirationAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateDiscountExpirationAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateDiscountExpirationAlertRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'GetRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRiSpExpirationAlert,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.RiSpExpiryAlertData.SerializeToString,
+            'GetDiscountExpirationAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDiscountExpirationAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ManipulateDiscountExpirationAlertRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DiscountExpiryAlertData.SerializeToString,
             ),
-            'ListRiSpExpirationAlert': grpc.unary_stream_rpc_method_handler(
-                    servicer.ListRiSpExpirationAlert,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListRiSpExpirationAlertRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.RiSpExpiryAlertData.SerializeToString,
+            'ListDiscountExpirationAlert': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListDiscountExpirationAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListDiscountExpirationAlertRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DiscountExpiryAlertData.SerializeToString,
             ),
-            'DeleteRiSpExpirationAlert': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteRiSpExpirationAlert,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.FromString,
+            'DeleteDiscountExpirationAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteDiscountExpirationAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ManipulateDiscountExpirationAlertRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'CreateAnomalyAlert': grpc.unary_unary_rpc_method_handler(
@@ -3811,7 +3811,7 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetRiSpRecommendations(request,
+    def GetDiscountRecommendations(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3821,9 +3821,9 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetRiSpRecommendations',
-            cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.GetRiSpRecommendationsResponse.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetDiscountRecommendations',
+            cover_dot_v1_dot_cover__pb2.GetDiscountRecommendationsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetDiscountRecommendationsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
@@ -3845,7 +3845,7 @@ class Cover(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def CreateRiSpExpirationAlert(request,
+    def CreateDiscountExpirationAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3855,14 +3855,14 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateRiSpExpirationAlert',
-            cover_dot_v1_dot_cover__pb2.CreateRiSpExpirationAlertRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateDiscountExpirationAlert',
+            cover_dot_v1_dot_cover__pb2.CreateDiscountExpirationAlertRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def UpdateRiSpExpirationAlert(request,
+    def UpdateDiscountExpirationAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3872,14 +3872,14 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateRiSpExpirationAlert',
-            cover_dot_v1_dot_cover__pb2.UpdateRiSpExpirationAlertRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateDiscountExpirationAlert',
+            cover_dot_v1_dot_cover__pb2.UpdateDiscountExpirationAlertRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetRiSpExpirationAlert(request,
+    def GetDiscountExpirationAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3889,14 +3889,14 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetRiSpExpirationAlert',
-            cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.RiSpExpiryAlertData.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetDiscountExpirationAlert',
+            cover_dot_v1_dot_cover__pb2.ManipulateDiscountExpirationAlertRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DiscountExpiryAlertData.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def ListRiSpExpirationAlert(request,
+    def ListDiscountExpirationAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3906,14 +3906,14 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListRiSpExpirationAlert',
-            cover_dot_v1_dot_cover__pb2.ListRiSpExpirationAlertRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.RiSpExpiryAlertData.FromString,
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListDiscountExpirationAlert',
+            cover_dot_v1_dot_cover__pb2.ListDiscountExpirationAlertRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DiscountExpiryAlertData.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def DeleteRiSpExpirationAlert(request,
+    def DeleteDiscountExpirationAlert(request,
             target,
             options=(),
             channel_credentials=None,
@@ -3923,8 +3923,8 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteRiSpExpirationAlert',
-            cover_dot_v1_dot_cover__pb2.ManipulateRiSpExpirationAlertRequest.SerializeToString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteDiscountExpirationAlert',
+            cover_dot_v1_dot_cover__pb2.ManipulateDiscountExpirationAlertRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
