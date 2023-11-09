@@ -602,6 +602,16 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListAnomalyAlertRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.AnomalyAlertData.FromString,
                 )
+        self.GetAnomalyAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAnomalyAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ManipulateAnomalyAlertRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AnomalyAlertData.FromString,
+                )
+        self.UpdateAnomalyAlert = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateAnomalyAlert',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateAnomalyAlertRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1426,6 +1436,20 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAnomalyAlert(self, request, context):
+        """Get Anomaly Alert Data
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAnomalyAlert(self, request, context):
+        """Update Anomaly Alert
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2013,6 +2037,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ListAnomalyAlert,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListAnomalyAlertRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.AnomalyAlertData.SerializeToString,
+            ),
+            'GetAnomalyAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAnomalyAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ManipulateAnomalyAlertRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AnomalyAlertData.SerializeToString,
+            ),
+            'UpdateAnomalyAlert': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAnomalyAlert,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateAnomalyAlertRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4011,5 +4045,39 @@ class Cover(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListAnomalyAlert',
             cover_dot_v1_dot_cover__pb2.ListAnomalyAlertRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.AnomalyAlertData.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAnomalyAlert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetAnomalyAlert',
+            cover_dot_v1_dot_cover__pb2.ManipulateAnomalyAlertRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AnomalyAlertData.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAnomalyAlert(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateAnomalyAlert',
+            cover_dot_v1_dot_cover__pb2.UpdateAnomalyAlertRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
