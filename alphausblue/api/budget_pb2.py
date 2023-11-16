@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x61pi/budget.proto\x12\x0b\x62lueapi.api\"[\n\x06\x42udget\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nfiscalYear\x18\x02 \x01(\t\x12\x31\n\rmonthlyBudget\x18\x03 \x03(\x0b\x32\x1a.blueapi.api.MonthlyBudget\"2\n\rMonthlyBudget\x12\x11\n\tyearMonth\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"2\n\x10\x44\x61ilyBudgetAlert\x12\r\n\x05value\x18\x01 \x01(\x01\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"4\n\x12MonthlyBudgetAlert\x12\r\n\x05value\x18\x01 \x01(\x01\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"<\n\x17\x42udgetAlertNotification\x12\x10\n\x08\x63hannels\x18\x02 \x03(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x42S\n\x19\x63loud.alphaus.blueapi.apiB\x0e\x41piBudgetProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x10\x61pi/budget.proto\x12\x0b\x62lueapi.api\"[\n\x06\x42udget\x12\n\n\x02id\x18\x01 \x01(\t\x12\x12\n\nfiscalYear\x18\x02 \x01(\t\x12\x31\n\rmonthlyBudget\x18\x03 \x03(\x0b\x32\x1a.blueapi.api.MonthlyBudget\"2\n\rMonthlyBudget\x12\x11\n\tyearMonth\x18\x01 \x01(\t\x12\x0e\n\x06\x61mount\x18\x02 \x01(\x01\"2\n\x10\x44\x61ilyBudgetAlert\x12\r\n\x05value\x18\x01 \x01(\x01\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\">\n\x1c\x44\x61ilyRateIncreaseBudgetAlert\x12\r\n\x05value\x18\x01 \x01(\x01\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"4\n\x12MonthlyBudgetAlert\x12\r\n\x05value\x18\x01 \x01(\x01\x12\x0f\n\x07\x65nabled\x18\x02 \x01(\x08\"<\n\x17\x42udgetAlertNotification\x12\x10\n\x08\x63hannels\x18\x02 \x03(\t\x12\x0f\n\x07\x65nabled\x18\x03 \x01(\x08\x42S\n\x19\x63loud.alphaus.blueapi.apiB\x0e\x41piBudgetProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,8 +27,10 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_MONTHLYBUDGET']._serialized_end=176
   _globals['_DAILYBUDGETALERT']._serialized_start=178
   _globals['_DAILYBUDGETALERT']._serialized_end=228
-  _globals['_MONTHLYBUDGETALERT']._serialized_start=230
-  _globals['_MONTHLYBUDGETALERT']._serialized_end=282
-  _globals['_BUDGETALERTNOTIFICATION']._serialized_start=284
-  _globals['_BUDGETALERTNOTIFICATION']._serialized_end=344
+  _globals['_DAILYRATEINCREASEBUDGETALERT']._serialized_start=230
+  _globals['_DAILYRATEINCREASEBUDGETALERT']._serialized_end=292
+  _globals['_MONTHLYBUDGETALERT']._serialized_start=294
+  _globals['_MONTHLYBUDGETALERT']._serialized_end=346
+  _globals['_BUDGETALERTNOTIFICATION']._serialized_start=348
+  _globals['_BUDGETALERTNOTIFICATION']._serialized_end=408
 # @@protoc_insertion_point(module_scope)
