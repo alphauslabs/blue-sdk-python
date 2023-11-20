@@ -622,6 +622,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.RegisterNewUserRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.RegisterNewUserResponse.FromString,
                 )
+        self.GetUserProfile = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetUserProfile',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1474,6 +1479,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetUserProfile(self, request, context):
+        """Octo getting user profile
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2081,6 +2093,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.RegisterNewUser,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.RegisterNewUserRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.RegisterNewUserResponse.SerializeToString,
+            ),
+            'GetUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUserProfile,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4147,5 +4164,22 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/RegisterNewUser',
             cover_dot_v1_dot_cover__pb2.RegisterNewUserRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.RegisterNewUserResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetUserProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetUserProfile',
+            cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
