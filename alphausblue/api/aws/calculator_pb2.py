@@ -13,7 +13,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pi/aws/calculator.proto\x12\x0f\x62lueapi.api.aws\"$\n\x13\x41\x64justmentsTypeList\x12\r\n\x05types\x18\x01 \x03(\t\"j\n\x18\x45xcludedServiceFromUsage\x12\x19\n\x11managementAccount\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x1e\n\x16\x63onvertedToAdjustments\x18\x03 \x01(\x08\"\xa3\x01\n\x10\x43\x61lculatorConfig\x12\x41\n\x13\x61\x64justmentsTypeList\x18\x01 \x01(\x0b\x32$.blueapi.api.aws.AdjustmentsTypeList\x12L\n\x19\x65xcludedServicesFromUsage\x18\x02 \x03(\x0b\x32).blueapi.api.aws.ExcludedServiceFromUsageBb\n\x1d\x63loud.alphaus.blueapi.api.awsB\x15\x41piAwsCalculatorProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pi/aws/calculator.proto\x12\x0f\x62lueapi.api.aws\"\xd4\x01\n\x1c\x41\x63\x63ountMonthlyCostCalculated\x12\x0f\n\x07\x61\x63\x63ount\x18\x01 \x01(\t\x12\r\n\x05month\x18\x02 \x01(\t\x12\x11\n\ttimestamp\x18\x03 \x01(\t\x12\r\n\x05runId\x18\x04 \x01(\t\x12\x45\n\x04meta\x18\x05 \x03(\x0b\x32\x37.blueapi.api.aws.AccountMonthlyCostCalculated.MetaEntry\x1a+\n\tMetaEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"$\n\x13\x41\x64justmentsTypeList\x12\r\n\x05types\x18\x01 \x03(\t\"j\n\x18\x45xcludedServiceFromUsage\x12\x19\n\x11managementAccount\x18\x01 \x01(\t\x12\x13\n\x0bproductCode\x18\x02 \x01(\t\x12\x1e\n\x16\x63onvertedToAdjustments\x18\x03 \x01(\x08\"\xa3\x01\n\x10\x43\x61lculatorConfig\x12\x41\n\x13\x61\x64justmentsTypeList\x18\x01 \x01(\x0b\x32$.blueapi.api.aws.AdjustmentsTypeList\x12L\n\x19\x65xcludedServicesFromUsage\x18\x02 \x03(\x0b\x32).blueapi.api.aws.ExcludedServiceFromUsageBb\n\x1d\x63loud.alphaus.blueapi.api.awsB\x15\x41piAwsCalculatorProtoZ*github.com/alphauslabs/blue-sdk-go/api/awsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -21,10 +21,16 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.aws.calculator_pb2', _g
 if _descriptor._USE_C_DESCRIPTORS == False:
   DESCRIPTOR._options = None
   DESCRIPTOR._serialized_options = b'\n\035cloud.alphaus.blueapi.api.awsB\025ApiAwsCalculatorProtoZ*github.com/alphauslabs/blue-sdk-go/api/aws'
-  _globals['_ADJUSTMENTSTYPELIST']._serialized_start=45
-  _globals['_ADJUSTMENTSTYPELIST']._serialized_end=81
-  _globals['_EXCLUDEDSERVICEFROMUSAGE']._serialized_start=83
-  _globals['_EXCLUDEDSERVICEFROMUSAGE']._serialized_end=189
-  _globals['_CALCULATORCONFIG']._serialized_start=192
-  _globals['_CALCULATORCONFIG']._serialized_end=355
+  _ACCOUNTMONTHLYCOSTCALCULATED_METAENTRY._options = None
+  _ACCOUNTMONTHLYCOSTCALCULATED_METAENTRY._serialized_options = b'8\001'
+  _globals['_ACCOUNTMONTHLYCOSTCALCULATED']._serialized_start=46
+  _globals['_ACCOUNTMONTHLYCOSTCALCULATED']._serialized_end=258
+  _globals['_ACCOUNTMONTHLYCOSTCALCULATED_METAENTRY']._serialized_start=215
+  _globals['_ACCOUNTMONTHLYCOSTCALCULATED_METAENTRY']._serialized_end=258
+  _globals['_ADJUSTMENTSTYPELIST']._serialized_start=260
+  _globals['_ADJUSTMENTSTYPELIST']._serialized_end=296
+  _globals['_EXCLUDEDSERVICEFROMUSAGE']._serialized_start=298
+  _globals['_EXCLUDEDSERVICEFROMUSAGE']._serialized_end=404
+  _globals['_CALCULATORCONFIG']._serialized_start=407
+  _globals['_CALCULATORCONFIG']._serialized_end=570
 # @@protoc_insertion_point(module_scope)
