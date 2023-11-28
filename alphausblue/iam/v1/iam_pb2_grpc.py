@@ -394,7 +394,7 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def RefreshPartnerToken(self, request, context):
-        """WORK-IN-PROGRESS: Refreshes an expired partner token. Only partners are expected to call this API.
+        """BETA: Refreshes an expired partner token. Only partners are expected to call this API.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
