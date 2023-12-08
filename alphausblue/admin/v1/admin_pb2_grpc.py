@@ -3,6 +3,7 @@
 import grpc
 
 from alphausblue.admin.v1 import admin_pb2 as admin_dot_v1_dot_admin__pb2
+from alphausblue.api import audit_pb2 as api_dot_audit__pb2
 from alphausblue.api import notification_pb2 as api_dot_notification__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
@@ -137,6 +138,11 @@ class AdminStub(object):
                 '/blueapi.admin.v1.Admin/DeleteNotification',
                 request_serializer=admin_dot_v1_dot_admin__pb2.DeleteNotificationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ExportAuditLogs = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/ExportAuditLogs',
+                request_serializer=admin_dot_v1_dot_admin__pb2.ExportAuditLogsRequest.SerializeToString,
+                response_deserializer=api_dot_audit__pb2.AuditExport.FromString,
                 )
 
 
@@ -312,6 +318,13 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ExportAuditLogs(self, request, context):
+        """WORK-IN-PROGRESS: Exports audit logs for login user's organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -434,6 +447,11 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.DeleteNotification,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteNotificationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ExportAuditLogs': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportAuditLogs,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.ExportAuditLogsRequest.FromString,
+                    response_serializer=api_dot_audit__pb2.AuditExport.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -851,5 +869,22 @@ class Admin(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/DeleteNotification',
             admin_dot_v1_dot_admin__pb2.DeleteNotificationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExportAuditLogs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/ExportAuditLogs',
+            admin_dot_v1_dot_admin__pb2.ExportAuditLogsRequest.SerializeToString,
+            api_dot_audit__pb2.AuditExport.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
