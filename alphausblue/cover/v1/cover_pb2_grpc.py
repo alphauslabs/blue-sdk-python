@@ -627,6 +627,26 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
                 )
+        self.GetBudget = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetBudget',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetBudgetRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetBudgetResponse.FromString,
+                )
+        self.CreateBudget = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateBudget',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateBudgetRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateBudgetResponse.FromString,
+                )
+        self.DeleteBudget = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteBudget',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteBudgetRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteBudgetResponse.FromString,
+                )
+        self.UpdateBudget = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateBudget',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateBudgetRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateBudgetResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1319,35 +1339,35 @@ class CoverServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAlerts(self, request, context):
-        """WORK-IN-PROGRESS: Get Alerts under organization
+        """Get Alerts under organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateAlert(self, request, context):
-        """WORK-IN-PROGRESS: Create Alerts under organization
+        """Create Alerts under organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetAlertDetails(self, request, context):
-        """WORK-IN-PROGRESS: Get Specific Alert under organization
+        """Get Specific Alert under organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteAlert(self, request, context):
-        """WORK-IN-PROGRESS: Delete Specific Alert under organization
+        """Delete Specific Alert under organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAlertDetails(self, request, context):
-        """WORK-IN-PROGRESS: Update Specific Alert under organization
+        """Update Specific Alert under organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1481,6 +1501,34 @@ class CoverServicer(object):
 
     def GetUserProfile(self, request, context):
         """Octo getting user profile
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBudget(self, request, context):
+        """Get Budget data for specific cost group in an organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateBudget(self, request, context):
+        """Create Budget for specific cost group in an organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteBudget(self, request, context):
+        """Delete Budget for specific cost group in an organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBudget(self, request, context):
+        """Update Budget for specific cost group in an organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2098,6 +2146,26 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetUserProfile,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.SerializeToString,
+            ),
+            'GetBudget': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBudget,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetBudgetRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetBudgetResponse.SerializeToString,
+            ),
+            'CreateBudget': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBudget,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateBudgetRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateBudgetResponse.SerializeToString,
+            ),
+            'DeleteBudget': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteBudget,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteBudgetRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteBudgetResponse.SerializeToString,
+            ),
+            'UpdateBudget': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBudget,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateBudgetRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateBudgetResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4181,5 +4249,73 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetUserProfile',
             cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetBudget(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetBudget',
+            cover_dot_v1_dot_cover__pb2.GetBudgetRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetBudgetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateBudget(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateBudget',
+            cover_dot_v1_dot_cover__pb2.CreateBudgetRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateBudgetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteBudget(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/DeleteBudget',
+            cover_dot_v1_dot_cover__pb2.DeleteBudgetRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteBudgetResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateBudget(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/UpdateBudget',
+            cover_dot_v1_dot_cover__pb2.UpdateBudgetRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateBudgetResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
