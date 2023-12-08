@@ -627,6 +627,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
                 )
+        self.ListBudgets = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListBudgets',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListBudgetsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListBudgetsResponse.FromString,
+                )
         self.GetBudget = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/GetBudget',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetBudgetRequest.SerializeToString,
@@ -1506,6 +1511,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListBudgets(self, request, context):
+        """List all Budgets in an organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetBudget(self, request, context):
         """Get Budget data for specific cost group in an organization
         """
@@ -2146,6 +2158,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetUserProfile,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.SerializeToString,
+            ),
+            'ListBudgets': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListBudgets,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListBudgetsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListBudgetsResponse.SerializeToString,
             ),
             'GetBudget': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBudget,
@@ -4249,6 +4266,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetUserProfile',
             cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListBudgets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListBudgets',
+            cover_dot_v1_dot_cover__pb2.ListBudgetsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListBudgetsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
