@@ -672,28 +672,28 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetUtilization(self, request, context):
-        """WORK-IN-PROGRESS: Get the utilization details for an organization (or MSP).
+        """Get the utilization details for an organization (or MSP).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCoverageOptions(self, request, context):
-        """WORK-IN-PROGRESS: Get coverage options details for an organization (or MSP).
+        """Get coverage options details for an organization (or MSP).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCoverageOndemand(self, request, context):
-        """WORK-IN-PROGRESS: Get ondemand cost details for an organization (or MSP).
+        """Get ondemand cost details for an organization (or MSP).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetBreakevenPoint(self, request, context):
-        """WORK-IN-PROGRESS: Get the breakeven point details for the RI or SP.
+        """Get the breakeven point details for the RI or SP.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
