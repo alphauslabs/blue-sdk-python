@@ -36,6 +36,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryResponse.FromString,
                 )
+        self.GetPayerProformaReports = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetPayerProformaReports',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetPayerProformaReportsRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerProformaReportsResponse.FromString,
+                )
         self.CreatePayerAccount = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/CreatePayerAccount',
                 request_serializer=cost_dot_v1_dot_cost__pb2.CreatePayerAccountRequest.SerializeToString,
@@ -323,6 +328,13 @@ class CostServicer(object):
 
     def GetPayerAccountImportHistory(self, request, context):
         """Gets a payer account's import history, which is a list of timestamps our system tracks when the account's data are imported to our system, which in turn, triggers processing. At the moment, this only supports AWS (CUR files). You can also set {id} to `*` to return all payers' information under the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPayerProformaReports(self, request, context):
+        """Gets a payer account's proforma reports. Applicable for AWS payer accounts only.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -717,6 +729,11 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryResponse.SerializeToString,
             ),
+            'GetPayerProformaReports': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPayerProformaReports,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerProformaReportsRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetPayerProformaReportsResponse.SerializeToString,
+            ),
             'CreatePayerAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.CreatePayerAccount,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.CreatePayerAccountRequest.FromString,
@@ -1041,6 +1058,23 @@ class Cost(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/GetPayerAccountImportHistory',
             cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetPayerProformaReports(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetPayerProformaReports',
+            cost_dot_v1_dot_cost__pb2.GetPayerProformaReportsRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetPayerProformaReportsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
