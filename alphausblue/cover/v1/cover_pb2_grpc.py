@@ -1524,7 +1524,7 @@ class CoverServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetBudget(self, request, context):
-        """WORK-IN-PROGRESS: Get Budget data for specific cost group in an organization
+        """WORK-IN-PROGRESS: Get specific Budget data for a cost group in an organization
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
