@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from alphausblue.api import adjustment_pb2 as api_dot_adjustment__pb2
 from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
 from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessgroup__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
@@ -184,6 +185,26 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/ListAccountResources',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ResourceAccount.FromString,
+                )
+        self.GetAdjustmentConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetAdjustmentConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetAdjustmentConfigRequest.SerializeToString,
+                response_deserializer=api_dot_adjustment__pb2.AdjustmentConfig.FromString,
+                )
+        self.CreateAdjustmentConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateAdjustmentConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateAdjustmentConfigRequest.SerializeToString,
+                response_deserializer=api_dot_adjustment__pb2.AdjustmentConfig.FromString,
+                )
+        self.UpdateAdjustmentConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateAdjustmentConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateAdjustmentConfigRequest.SerializeToString,
+                response_deserializer=api_dot_adjustment__pb2.AdjustmentConfig.FromString,
+                )
+        self.DeleteAdjustmentConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteAdjustmentConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAdjustmentConfigRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 )
 
 
@@ -422,6 +443,34 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAdjustmentConfig(self, request, context):
+        """WORK-IN-PROGRESS: Gets adjustment config
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAdjustmentConfig(self, request, context):
+        """WORK-IN-PROGRESS: Creates adjustment config
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAdjustmentConfig(self, request, context):
+        """WORK-IN-PROGRESS: Updates adjustment config
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAdjustmentConfig(self, request, context):
+        """WORK-IN-PROGRESS: Deletes adjustment config
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -589,6 +638,26 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListAccountResources,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ResourceAccount.SerializeToString,
+            ),
+            'GetAdjustmentConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAdjustmentConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetAdjustmentConfigRequest.FromString,
+                    response_serializer=api_dot_adjustment__pb2.AdjustmentConfig.SerializeToString,
+            ),
+            'CreateAdjustmentConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAdjustmentConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateAdjustmentConfigRequest.FromString,
+                    response_serializer=api_dot_adjustment__pb2.AdjustmentConfig.SerializeToString,
+            ),
+            'UpdateAdjustmentConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAdjustmentConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAdjustmentConfigRequest.FromString,
+                    response_serializer=api_dot_adjustment__pb2.AdjustmentConfig.SerializeToString,
+            ),
+            'DeleteAdjustmentConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAdjustmentConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAdjustmentConfigRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1159,5 +1228,73 @@ class Billing(object):
         return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListAccountResources',
             billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ResourceAccount.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetAdjustmentConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetAdjustmentConfig',
+            billing_dot_v1_dot_billing__pb2.GetAdjustmentConfigRequest.SerializeToString,
+            api_dot_adjustment__pb2.AdjustmentConfig.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAdjustmentConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/CreateAdjustmentConfig',
+            billing_dot_v1_dot_billing__pb2.CreateAdjustmentConfigRequest.SerializeToString,
+            api_dot_adjustment__pb2.AdjustmentConfig.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def UpdateAdjustmentConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/UpdateAdjustmentConfig',
+            billing_dot_v1_dot_billing__pb2.UpdateAdjustmentConfigRequest.SerializeToString,
+            api_dot_adjustment__pb2.AdjustmentConfig.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def DeleteAdjustmentConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/DeleteAdjustmentConfig',
+            billing_dot_v1_dot_billing__pb2.DeleteAdjustmentConfigRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
