@@ -339,35 +339,35 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateReseller(self, request, context):
-        """WORK-IN-PROGRESS: Registers the reseller account. Only available in Ripple.
+        """Registers the reseller account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListResellers(self, request, context):
-        """WORK-IN-PROGRESS: Lists all the reseller accounts. Only available in Ripple.
+        """Lists all the reseller accounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetReseller(self, request, context):
-        """WORK-IN-PROGRESS: Gets the reseller account. Only available in Ripple.
+        """Gets the reseller account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateReseller(self, request, context):
-        """WORK-IN-PROGRESS: Updates the reseller account. Only available in Ripple.
+        """Updates the reseller account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteReseller(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the reseller account. Only available in Ripple.
+        """Deletes the reseller account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
