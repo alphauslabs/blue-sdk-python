@@ -61,6 +61,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceStatusRequest.SerializeToString,
                 response_deserializer=api_dot_invoice__pb2.InvoiceMessage.FromString,
                 )
+        self.ListInvoiceStatus = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListInvoiceStatus',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListInvoiceStatusRequest.SerializeToString,
+                response_deserializer=api_dot_invoice__pb2.InvoiceMessage.FromString,
+                )
         self.GetInvoice = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/GetInvoice',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceRequest.SerializeToString,
@@ -263,6 +268,13 @@ class BillingServicer(object):
 
     def GetInvoiceStatus(self, request, context):
         """Gets an invoice. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListInvoiceStatus(self, request, context):
+        """WORK-IN-PROGRESS: Reads an invoice status. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -512,6 +524,11 @@ def add_BillingServicer_to_server(servicer, server):
             'GetInvoiceStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetInvoiceStatus,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetInvoiceStatusRequest.FromString,
+                    response_serializer=api_dot_invoice__pb2.InvoiceMessage.SerializeToString,
+            ),
+            'ListInvoiceStatus': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListInvoiceStatus,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListInvoiceStatusRequest.FromString,
                     response_serializer=api_dot_invoice__pb2.InvoiceMessage.SerializeToString,
             ),
             'GetInvoice': grpc.unary_unary_rpc_method_handler(
@@ -802,6 +819,23 @@ class Billing(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/GetInvoiceStatus',
             billing_dot_v1_dot_billing__pb2.GetInvoiceStatusRequest.SerializeToString,
+            api_dot_invoice__pb2.InvoiceMessage.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListInvoiceStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ListInvoiceStatus',
+            billing_dot_v1_dot_billing__pb2.ListInvoiceStatusRequest.SerializeToString,
             api_dot_invoice__pb2.InvoiceMessage.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
