@@ -144,11 +144,6 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.ExportAuditLogsRequest.SerializeToString,
                 response_deserializer=api_dot_audit__pb2.AuditExport.FromString,
                 )
-        self.GetMFAUsersInfo = channel.unary_unary(
-                '/blueapi.admin.v1.Admin/GetMFAUsersInfo',
-                request_serializer=admin_dot_v1_dot_admin__pb2.GetMFAUsersInfoRequest.SerializeToString,
-                response_deserializer=admin_dot_v1_dot_admin__pb2.GetMFAUsersInfoResponse.FromString,
-                )
 
 
 class AdminServicer(object):
@@ -330,13 +325,6 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetMFAUsersInfo(self, request, context):
-        """WORK-IN-PROGRESS: List MFA users info for login user's organization based on status.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
 
 def add_AdminServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -464,11 +452,6 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.ExportAuditLogs,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.ExportAuditLogsRequest.FromString,
                     response_serializer=api_dot_audit__pb2.AuditExport.SerializeToString,
-            ),
-            'GetMFAUsersInfo': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetMFAUsersInfo,
-                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetMFAUsersInfoRequest.FromString,
-                    response_serializer=admin_dot_v1_dot_admin__pb2.GetMFAUsersInfoResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -903,22 +886,5 @@ class Admin(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/ExportAuditLogs',
             admin_dot_v1_dot_admin__pb2.ExportAuditLogsRequest.SerializeToString,
             api_dot_audit__pb2.AuditExport.FromString,
-            options, channel_credentials,
-            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
-
-    @staticmethod
-    def GetMFAUsersInfo(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(request, target, '/blueapi.admin.v1.Admin/GetMFAUsersInfo',
-            admin_dot_v1_dot_admin__pb2.GetMFAUsersInfoRequest.SerializeToString,
-            admin_dot_v1_dot_admin__pb2.GetMFAUsersInfoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)

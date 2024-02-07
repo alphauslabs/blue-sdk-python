@@ -180,6 +180,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordResponse.FromString,
                 )
+        self.GetMFAUsers = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/GetMFAUsers',
+                request_serializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoResponse.FromString,
+                )
 
 
 class IamServicer(object):
@@ -414,6 +419,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetMFAUsers(self, request, context):
+        """WORK-IN-PROGRESS: List MFA users info for login user's organization based on status.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IamServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -576,6 +588,11 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.ValidateResetPasswordLinkAndChangePassword,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordResponse.SerializeToString,
+            ),
+            'GetMFAUsers': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMFAUsers,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1129,5 +1146,22 @@ class Iam(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/ValidateResetPasswordLinkAndChangePassword',
             iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetMFAUsers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.iam.v1.Iam/GetMFAUsers',
+            iam_dot_v1_dot_iam__pb2.MFAUsersInfoRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.MFAUsersInfoResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
