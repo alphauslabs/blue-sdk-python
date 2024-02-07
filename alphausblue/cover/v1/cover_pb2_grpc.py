@@ -662,6 +662,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetFreeTrialExpiryRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetFreeTrialExpiryResponse.FromString,
                 )
+        self.GetCustomerSubscriptionStatus = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetCustomerSubscriptionStatus',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetCustomerSubscriptionStatusRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetCustomerSubscriptionStatusResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1570,6 +1575,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetCustomerSubscriptionStatus(self, request, context):
+        """Get the Customer Subscription status from marketplace
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2217,6 +2229,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetFreeTrialExpiry,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetFreeTrialExpiryRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetFreeTrialExpiryResponse.SerializeToString,
+            ),
+            'GetCustomerSubscriptionStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCustomerSubscriptionStatus,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetCustomerSubscriptionStatusRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetCustomerSubscriptionStatusResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4419,5 +4436,22 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetFreeTrialExpiry',
             cover_dot_v1_dot_cover__pb2.GetFreeTrialExpiryRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetFreeTrialExpiryResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCustomerSubscriptionStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetCustomerSubscriptionStatus',
+            cover_dot_v1_dot_cover__pb2.GetCustomerSubscriptionStatusRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetCustomerSubscriptionStatusResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
