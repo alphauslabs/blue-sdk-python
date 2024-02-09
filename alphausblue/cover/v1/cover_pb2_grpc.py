@@ -667,6 +667,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateProfilingRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.CreateProfilingResponse.FromString,
                 )
+        self.AddOrgIdtoMarketplace = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/AddOrgIdtoMarketplace',
+                request_serializer=cover_dot_v1_dot_cover__pb2.AddOrgIdtoMarketplaceRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AddOrgIdtoMarketplaceResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1582,6 +1587,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddOrgIdtoMarketplace(self, request, context):
+        """Adding orgId to marketplace customers
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2234,6 +2246,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.CreateProfiling,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateProfilingRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.CreateProfilingResponse.SerializeToString,
+            ),
+            'AddOrgIdtoMarketplace': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddOrgIdtoMarketplace,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.AddOrgIdtoMarketplaceRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AddOrgIdtoMarketplaceResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4453,5 +4470,22 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateProfiling',
             cover_dot_v1_dot_cover__pb2.CreateProfilingRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.CreateProfilingResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def AddOrgIdtoMarketplace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/AddOrgIdtoMarketplace',
+            cover_dot_v1_dot_cover__pb2.AddOrgIdtoMarketplaceRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.AddOrgIdtoMarketplaceResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
