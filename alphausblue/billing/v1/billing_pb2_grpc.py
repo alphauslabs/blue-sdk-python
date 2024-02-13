@@ -464,6 +464,12 @@ class BillingServicer(object):
 
     def CreateAdjustmentConfig(self, request, context):
         """WORK-IN-PROGRESS: Creates adjustment config
+
+        [ERRORS] 
+        - InvalidArgument:
+        - the AdjustmentConfig is already exists.
+        - NotFound:
+        - the AdjustmentConfig is not found.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
