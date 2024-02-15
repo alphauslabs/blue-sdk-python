@@ -635,7 +635,14 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadBudgetAlerts(self, request, context):
-        """WORK-IN-PROGRESS: Reads the budget alerts. Only available in Wave(Pro).
+        """Reads the budget alerts.
+
+        Only available in Wave(Pro).
+        [ERRORS] 
+        - Unimplemented:
+        - not implemented
+        - InvalidArgument:
+        - parse error
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
