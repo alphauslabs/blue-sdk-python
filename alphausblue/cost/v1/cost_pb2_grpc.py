@@ -649,28 +649,28 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetBudgetAlerts(self, request, context):
-        """WORK-IN-PROGRESS: Gets the budget alerts. Only available in Wave(Pro).
+        """Gets the budget alerts. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateBudgetAlerts(self, request, context):
-        """WORK-IN-PROGRESS: Create the budget alerts. Only available in Wave(Pro).
+        """Create the budget alerts. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateBudgetAlerts(self, request, context):
-        """WORK-IN-PROGRESS: Updates the budget alerts. Only available in Wave(Pro).
+        """Updates the budget alerts. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteBudgetAlerts(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the budget alerts. Only available in Wave(Pro).
+        """Deletes the budget alerts. Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
