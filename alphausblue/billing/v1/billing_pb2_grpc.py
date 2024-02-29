@@ -360,8 +360,8 @@ class BillingServicer(object):
     def ListResellers(self, request, context):
         """ListResellers
 
-        Lists all the reseller accounts. 
-        Only available in Ripple.
+        **Lists all the reseller accounts.**
+        > **Only available in Ripple.**
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
