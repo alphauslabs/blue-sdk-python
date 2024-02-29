@@ -358,7 +358,10 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListResellers(self, request, context):
-        """Lists all the reseller accounts. Only available in Ripple.
+        """ListResellers
+
+        Lists all the reseller accounts. 
+        Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
