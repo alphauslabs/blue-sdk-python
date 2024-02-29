@@ -635,8 +635,9 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadBudgetAlerts(self, request, context):
-        """Reads the budget alerts.
+        """ReadBudgetAlerts
 
+        Reads the budget alerts.
         Only available in Wave(Pro).
         [ERRORS] 
         - Unimplemented:
@@ -649,28 +650,40 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetBudgetAlerts(self, request, context):
-        """Gets the budget alerts. Only available in Wave(Pro).
+        """GetBudgetAlerts
+
+        Gets the budget alerts.
+        Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateBudgetAlerts(self, request, context):
-        """Create the budget alerts. Only available in Wave(Pro).
+        """CreateBudgetAlerts
+
+        Create the budget alerts.
+        Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateBudgetAlerts(self, request, context):
-        """Updates the budget alerts. Only available in Wave(Pro).
+        """UpdateBudgetAlerts
+
+        Updates the budget alerts.
+        Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteBudgetAlerts(self, request, context):
-        """Deletes the budget alerts. Only available in Wave(Pro).
+        """DeleteBudgetAlerts
+
+        Deletes the budget alerts.
+        Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
