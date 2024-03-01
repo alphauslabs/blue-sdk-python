@@ -396,7 +396,10 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListExchangeRates(self, request, context):
-        """Lists all exchange rate. Only available in Ripple.
+        """ListExchangeRates
+
+        Lists all exchange rate.
+        > Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
