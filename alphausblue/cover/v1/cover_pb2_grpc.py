@@ -677,6 +677,21 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetReportSummaryRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetReportSummaryResponse.FromString,
                 )
+        self.ListRecommendations = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListRecommendations',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListRecommendationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListRecommendationResponse.FromString,
+                )
+        self.GetRecommendation = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetRecommendation',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationResponse.FromString,
+                )
+        self.ExecuteOptimization = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ExecuteOptimization',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1606,6 +1621,27 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListRecommendations(self, request, context):
+        """Lists recommendations based on specified criteria.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRecommendation(self, request, context):
+        """Retrieves a specific recommendation by its ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExecuteOptimization(self, request, context):
+        """Executes optimization based on a recommendation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2268,6 +2304,21 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetReportSummary,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetReportSummaryRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetReportSummaryResponse.SerializeToString,
+            ),
+            'ListRecommendations': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListRecommendations,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListRecommendationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListRecommendationResponse.SerializeToString,
+            ),
+            'GetRecommendation': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecommendation,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationResponse.SerializeToString,
+            ),
+            'ExecuteOptimization': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExecuteOptimization,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4521,5 +4572,56 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetReportSummary',
             cover_dot_v1_dot_cover__pb2.GetReportSummaryRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetReportSummaryResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ListRecommendations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cover.v1.Cover/ListRecommendations',
+            cover_dot_v1_dot_cover__pb2.ListRecommendationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListRecommendationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetRecommendation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetRecommendation',
+            cover_dot_v1_dot_cover__pb2.GetRecommendationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetRecommendationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ExecuteOptimization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ExecuteOptimization',
+            cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
