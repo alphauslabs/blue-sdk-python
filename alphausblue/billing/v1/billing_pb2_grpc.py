@@ -375,7 +375,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateReseller(self, request, context):
-        """WORK-IN-PROGRESS: Updates the reseller account. Only available in Ripple.
+        """Updates the reseller account. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
