@@ -259,7 +259,9 @@ class IamServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetFeatureFlags(self, request, context):
-        """WORK-IN-PROGRESS: Retrieves the features available to a user on an Alphaus product. For a list of valid feature flags, see our [documentation](https://labs.alphaus.cloud/docs/blueapi/apis/iam/).
+        """WORK-IN-PROGRESS: Retrieves the features available to a user on an Alphaus product.
+
+        For a list of valid feature flags, see our documentation at https://labs.alphaus.cloud/docs/blueapi/apis/iam/.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
