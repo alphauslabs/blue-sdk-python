@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*api/cover/optimizationrecommendation.proto\x12\x11\x62lueapi.api.cover\"\xbd\x02\n\x12RecommendationData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\taccountId\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x0e\n\x06vendor\x18\x04 \x01(\t\x12\x0f\n\x07service\x18\x05 \x01(\t\x12\x0e\n\x06source\x18\x06 \x01(\t\x12\x16\n\x0erecommendation\x18\x07 \x01(\t\x12\x0e\n\x06\x61\x63tion\x18\x08 \x01(\t\x12\x1c\n\x14\x65stimatedMonthlyCost\x18\t \x01(\x02\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\n \x01(\x02\x12\x1d\n\x15recommendationDetails\x18\x0b \x01(\t\x12\x0f\n\x07scoring\x18\x0c \x01(\t\x12\x19\n\x11\x61\x63tionImplemented\x18\r \x01(\x08\x12\x15\n\rimplementedBy\x18\x0e \x01(\tBx\n\x1f\x63loud.alphaus.blueapi.api.coverB\'ApiCoverOptimizationRecommendationProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n*api/cover/optimizationrecommendation.proto\x12\x11\x62lueapi.api.cover\"\xec\x02\n\x12RecommendationData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\taccountId\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\x0e\n\x06vendor\x18\x04 \x01(\t\x12\x0f\n\x07service\x18\x05 \x01(\t\x12\x0e\n\x06source\x18\x06 \x01(\t\x12\x16\n\x0erecommendation\x18\x07 \x01(\t\x12\x1d\n\x15recommendationDetails\x18\x08 \x01(\t\x12\x1c\n\x14\x65stimatedMonthlyCost\x18\t \x01(\x02\x12\x1f\n\x17\x65stimatedMonthlySavings\x18\n \x01(\x02\x12\x12\n\nassignedTo\x18\x0b \x01(\t\x12\x1b\n\x13isActionImplemented\x18\x0c \x01(\t\x12\x0f\n\x07scoring\x18\r \x01(\t\x12\x14\n\x0cisInProgress\x18\x0e \x01(\x08\x12\x17\n\x0f\x64\x61teImplemented\x18\x0f \x01(\t\x12\x0f\n\x07\x64\x65tails\x18\x10 \x01(\tBx\n\x1f\x63loud.alphaus.blueapi.api.coverB\'ApiCoverOptimizationRecommendationProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -23,5 +23,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['DESCRIPTOR']._options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\037cloud.alphaus.blueapi.api.coverB\'ApiCoverOptimizationRecommendationProtoZ,github.com/alphauslabs/blue-sdk-go/api/cover'
   _globals['_RECOMMENDATIONDATA']._serialized_start=66
-  _globals['_RECOMMENDATIONDATA']._serialized_end=383
+  _globals['_RECOMMENDATIONDATA']._serialized_end=430
 # @@protoc_insertion_point(module_scope)
