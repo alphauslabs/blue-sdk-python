@@ -692,6 +692,16 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.FromString,
                 )
+        self.MarkAsExecuted = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/MarkAsExecuted',
+                request_serializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedResponse.FromString,
+                )
+        self.OptimizationHistory = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/OptimizationHistory',
+                request_serializer=cover_dot_v1_dot_cover__pb2.OptimizationHistoryRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.OptimizationHistoryResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1642,6 +1652,20 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def MarkAsExecuted(self, request, context):
+        """Mark a recommendation executed.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def OptimizationHistory(self, request, context):
+        """Lists recommendations based on specified criteria.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2319,6 +2343,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ExecuteOptimization,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.SerializeToString,
+            ),
+            'MarkAsExecuted': grpc.unary_unary_rpc_method_handler(
+                    servicer.MarkAsExecuted,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedResponse.SerializeToString,
+            ),
+            'OptimizationHistory': grpc.unary_unary_rpc_method_handler(
+                    servicer.OptimizationHistory,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.OptimizationHistoryRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.OptimizationHistoryResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4623,5 +4657,39 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/ExecuteOptimization',
             cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def MarkAsExecuted(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/MarkAsExecuted',
+            cover_dot_v1_dot_cover__pb2.MarkAsExecutedRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.MarkAsExecutedResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def OptimizationHistory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/OptimizationHistory',
+            cover_dot_v1_dot_cover__pb2.OptimizationHistoryRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.OptimizationHistoryResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
