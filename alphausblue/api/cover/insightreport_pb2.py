@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x61pi/cover/insightreport.proto\x12\x11\x62lueapi.api.cover\"\xb6\x01\n\x10\x45xecutiveSummary\x12\x11\n\tcostUsage\x18\x01 \x01(\x01\x12\x1f\n\x17previousPeriodCostUsage\x18\x02 \x01(\x01\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x19\n\x11percentageChanged\x18\x04 \x01(\x01\x12\x1d\n\x15\x61verageMonthlyChanged\x18\x05 \x01(\x01\x12$\n\x1c\x64ifferenceFromPreviousPeriod\x18\x06 \x01(\x01\"M\n!OptimizationRecommendationSummary\x12\x18\n\x10potentialSavings\x18\x01 \x03(\x01\x12\x0e\n\x06\x61\x63tion\x18\x02 \x03(\t\"\x8c\x02\n\x0eSavingsSummary\x12\x1c\n\x14totalRecommendations\x18\x01 \x01(\x03\x12$\n\x1ctotalExecutedRecommendations\x18\x02 \x01(\x03\x12\x14\n\x0ctotalSavings\x18\x03 \x01(\x01\x12\x19\n\x11percentageSavings\x18\x04 \x01(\x01\x12#\n\x1bmostEffectiveRecommendation\x18\x05 \x01(\t\x12*\n\"mostEffectiveRecommendationSavings\x18\x06 \x01(\x01\x12\x34\n,mostEffectiveRecommendationPercentageSavings\x18\x07 \x01(\x01\x42k\n\x1f\x63loud.alphaus.blueapi.api.coverB\x1a\x41piCoverInsightReportProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1d\x61pi/cover/insightreport.proto\x12\x11\x62lueapi.api.cover\"\xb6\x01\n\x10\x45xecutiveSummary\x12\x11\n\tcostUsage\x18\x01 \x01(\x01\x12\x1f\n\x17previousPeriodCostUsage\x18\x02 \x01(\x01\x12\x0e\n\x06status\x18\x03 \x01(\t\x12\x19\n\x11percentageChanged\x18\x04 \x01(\x01\x12\x1d\n\x15\x61verageMonthlyChanged\x18\x05 \x01(\x01\x12$\n\x1c\x64ifferenceFromPreviousPeriod\x18\x06 \x01(\x01\"M\n!OptimizationRecommendationSummary\x12\x18\n\x10potentialSavings\x18\x01 \x03(\x01\x12\x0e\n\x06\x61\x63tion\x18\x02 \x03(\t\"\xec\x02\n\x0eSavingsSummary\x12\x1c\n\x14totalRecommendations\x18\x01 \x01(\x03\x12$\n\x1ctotalExecutedRecommendations\x18\x02 \x01(\x03\x12\x1d\n\x15totalEstimatedSavings\x18\x03 \x01(\x01\x12\x1a\n\x12totalEstimatedCost\x18\x04 \x01(\x01\x12\x19\n\x11percentageSavings\x18\x05 \x01(\x01\x12#\n\x1bmostEffectiveRecommendation\x18\x06 \x01(\t\x12\x33\n+mostEffectiveRecommendationEstimatedSavings\x18\x07 \x01(\x01\x12\x30\n(mostEffectiveRecommendationEstimatedCost\x18\x08 \x01(\x01\x12\x34\n,mostEffectiveRecommendationPercentageSavings\x18\t \x01(\x01\x42k\n\x1f\x63loud.alphaus.blueapi.api.coverB\x1a\x41piCoverInsightReportProtoZ,github.com/alphauslabs/blue-sdk-go/api/coverb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -27,5 +27,5 @@ if _descriptor._USE_C_DESCRIPTORS == False:
   _globals['_OPTIMIZATIONRECOMMENDATIONSUMMARY']._serialized_start=237
   _globals['_OPTIMIZATIONRECOMMENDATIONSUMMARY']._serialized_end=314
   _globals['_SAVINGSSUMMARY']._serialized_start=317
-  _globals['_SAVINGSSUMMARY']._serialized_end=585
+  _globals['_SAVINGSSUMMARY']._serialized_end=681
 # @@protoc_insertion_point(module_scope)
