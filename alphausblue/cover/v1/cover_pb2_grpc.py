@@ -712,6 +712,16 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.SetCostGroupAnomalyOptionsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.SetCostGroupAnomalyOptionsResponse.FromString,
                 )
+        self.SetOrgFiscalMonth = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/SetOrgFiscalMonth',
+                request_serializer=cover_dot_v1_dot_cover__pb2.SetOrgFiscalMonthRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.SetOrgFiscalMonthResponse.FromString,
+                )
+        self.GetOrgFiscalMonth = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetOrgFiscalMonth',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthResponse.FromString,
+                )
 
 
 class CoverServicer(object):
@@ -1690,6 +1700,20 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetOrgFiscalMonth(self, request, context):
+        """Sets Org's starting month/ fiscal month
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOrgFiscalMonth(self, request, context):
+        """Get Org's starting month/ fiscal month
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2387,6 +2411,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.SetCostGroupAnomalyOptions,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.SetCostGroupAnomalyOptionsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.SetCostGroupAnomalyOptionsResponse.SerializeToString,
+            ),
+            'SetOrgFiscalMonth': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetOrgFiscalMonth,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.SetOrgFiscalMonthRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.SetOrgFiscalMonthResponse.SerializeToString,
+            ),
+            'GetOrgFiscalMonth': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOrgFiscalMonth,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4759,5 +4793,39 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/SetCostGroupAnomalyOptions',
             cover_dot_v1_dot_cover__pb2.SetCostGroupAnomalyOptionsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.SetCostGroupAnomalyOptionsResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def SetOrgFiscalMonth(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/SetOrgFiscalMonth',
+            cover_dot_v1_dot_cover__pb2.SetOrgFiscalMonthRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.SetOrgFiscalMonthResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetOrgFiscalMonth(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/GetOrgFiscalMonth',
+            cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
