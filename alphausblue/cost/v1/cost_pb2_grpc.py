@@ -306,6 +306,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.FromString,
                 )
+        self.GetCustomersByAccountIds = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/GetCustomersByAccountIds',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetCustomerByAccountIdsRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.Customer.FromString,
+                )
 
 
 class CostServicer(object):
@@ -731,6 +736,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetCustomersByAccountIds(self, request, context):
+        """WORK-IN-PROGRESS: Find customers by customer/account ids.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1018,6 +1030,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetBreakevenPoint,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.SerializeToString,
+            ),
+            'GetCustomersByAccountIds': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetCustomersByAccountIds,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCustomerByAccountIdsRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.Customer.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1996,5 +2013,22 @@ class Cost(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/GetBreakevenPoint',
             cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def GetCustomersByAccountIds(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/GetCustomersByAccountIds',
+            cost_dot_v1_dot_cost__pb2.GetCustomerByAccountIdsRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.Customer.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
