@@ -6,6 +6,7 @@ from alphausblue.api import adjustment_pb2 as api_dot_adjustment__pb2
 from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
 from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessgroup__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
+from alphausblue.api.ripple import untaggedgroup_pb2 as api_dot_ripple_dot_untaggedgroup__pb2
 from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -210,6 +211,11 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/DeleteAdjustmentConfig',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAdjustmentConfigRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
+        self.ReadUntaggedGroups = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadUntaggedGroups',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadUntaggedGroupsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_untaggedgroup__pb2.UntaggedGroup.FromString,
                 )
 
 
@@ -448,7 +454,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadInvoiceAdjustments(self, request, context):
-        """WORK-IN-PROGRESS: Reads the adjustment details involved in invoicing of an organization billing group (Wave).
+        """Reads the adjustment details involved in invoicing of an organization billing group (Wave).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -490,6 +496,13 @@ class BillingServicer(object):
 
     def DeleteAdjustmentConfig(self, request, context):
         """WORK-IN-PROGRESS: Deletes adjustment config
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadUntaggedGroups(self, request, context):
+        """WORK-IN-PROGRESS: Reads the untagged group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -687,6 +700,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.DeleteAdjustmentConfig,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAdjustmentConfigRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReadUntaggedGroups': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadUntaggedGroups,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadUntaggedGroupsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_untaggedgroup__pb2.UntaggedGroup.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1342,5 +1360,22 @@ class Billing(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.billing.v1.Billing/DeleteAdjustmentConfig',
             billing_dot_v1_dot_billing__pb2.DeleteAdjustmentConfigRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def ReadUntaggedGroups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(request, target, '/blueapi.billing.v1.Billing/ReadUntaggedGroups',
+            billing_dot_v1_dot_billing__pb2.ReadUntaggedGroupsRequest.SerializeToString,
+            api_dot_ripple_dot_untaggedgroup__pb2.UntaggedGroup.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
