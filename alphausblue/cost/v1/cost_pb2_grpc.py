@@ -306,10 +306,10 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.FromString,
                 )
-        self.GetCustomersByAccountIds = channel.unary_stream(
-                '/blueapi.cost.v1.Cost/GetCustomersByAccountIds',
-                request_serializer=cost_dot_v1_dot_cost__pb2.GetCustomerByAccountIdsRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.Customer.FromString,
+        self.CheckAccountsBelongToMsp = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/CheckAccountsBelongToMsp',
+                request_serializer=cost_dot_v1_dot_cost__pb2.CheckAccountsRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.CheckAccountsResponse.FromString,
                 )
 
 
@@ -736,8 +736,8 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCustomersByAccountIds(self, request, context):
-        """WORK-IN-PROGRESS: Find customers by customer/account ids.
+    def CheckAccountsBelongToMsp(self, request, context):
+        """WORK-IN-PROGRESS: Check inputed accountIds belong to current MSP or not
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1031,10 +1031,10 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetBreakevenPointResponse.SerializeToString,
             ),
-            'GetCustomersByAccountIds': grpc.unary_stream_rpc_method_handler(
-                    servicer.GetCustomersByAccountIds,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCustomerByAccountIdsRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.Customer.SerializeToString,
+            'CheckAccountsBelongToMsp': grpc.unary_unary_rpc_method_handler(
+                    servicer.CheckAccountsBelongToMsp,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.CheckAccountsRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.CheckAccountsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2017,7 +2017,7 @@ class Cost(object):
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
     @staticmethod
-    def GetCustomersByAccountIds(request,
+    def CheckAccountsBelongToMsp(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2027,8 +2027,8 @@ class Cost(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(request, target, '/blueapi.cost.v1.Cost/GetCustomersByAccountIds',
-            cost_dot_v1_dot_cost__pb2.GetCustomerByAccountIdsRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.Customer.FromString,
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cost.v1.Cost/CheckAccountsBelongToMsp',
+            cost_dot_v1_dot_cost__pb2.CheckAccountsRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.CheckAccountsResponse.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
