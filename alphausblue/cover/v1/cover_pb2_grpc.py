@@ -302,6 +302,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
                 )
+        self.CreateAccountAccessStackset = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateAccountAccessStackset',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessStacksetRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                )
         self.CreateAccountAccessCur = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateAccountAccessCur',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.SerializeToString,
@@ -1121,6 +1126,13 @@ class CoverServicer(object):
 
     def CreateAccountAccess(self, request, context):
         """Starts validation of the account access stack deployment. If successful, the IAM role created from the CloudFormation stack will be registered to the target.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAccountAccessStackset(self, request, context):
+        """Starts validation of the account access stackset deployment. If successful, the IAM role created from the CloudFormation stackset will be registered to the linked accounts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2001,6 +2013,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.CreateAccountAccess,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.AccountAccess.SerializeToString,
+            ),
+            'CreateAccountAccessStackset': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAccountAccessStackset,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessStacksetRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'CreateAccountAccessCur': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccountAccessCur,
@@ -3399,6 +3416,23 @@ class Cover(object):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateAccountAccess',
             cover_dot_v1_dot_cover__pb2.CreateAccountAccessRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
+            options, channel_credentials,
+            insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
+
+    @staticmethod
+    def CreateAccountAccessStackset(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateAccountAccessStackset',
+            cover_dot_v1_dot_cover__pb2.CreateAccountAccessStacksetRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
