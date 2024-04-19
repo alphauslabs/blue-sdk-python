@@ -449,7 +449,7 @@ class CostServicer(object):
     def ImportCurFiles(self, request, context):
         """Initiates an ondemand import of all registered CUR files.
 
-        See (https://help.alphaus.cloud/en/articles/3612555-ripple-aws-things-you-need-to-prepare-before-starting)[https://help.alphaus.cloud/en/articles/3612555-ripple-aws-things-you-need-to-prepare-before-starting] for more information.
+        See https://help.alphaus.cloud/en/articles/3612555-ripple-aws-things-you-need-to-prepare-before-starting for more information.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
