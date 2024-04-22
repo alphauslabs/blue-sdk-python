@@ -305,7 +305,7 @@ class CoverStub(object):
         self.CreateAccountAccessStackset = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateAccountAccessStackset',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessStacksetRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
                 )
         self.CreateAccountAccessCur = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/CreateAccountAccessCur',
@@ -2017,7 +2017,7 @@ def add_CoverServicer_to_server(servicer, server):
             'CreateAccountAccessStackset': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccountAccessStackset,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateAccountAccessStacksetRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.AccountAccess.SerializeToString,
             ),
             'CreateAccountAccessCur': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateAccountAccessCur,
@@ -3432,7 +3432,7 @@ class Cover(object):
             metadata=None):
         return grpc.experimental.unary_unary(request, target, '/blueapi.cover.v1.Cover/CreateAccountAccessStackset',
             cover_dot_v1_dot_cover__pb2.CreateAccountAccessStacksetRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            cover_dot_v1_dot_cover__pb2.AccountAccess.FromString,
             options, channel_credentials,
             insecure, call_credentials, compression, wait_for_ready, timeout, metadata)
 
