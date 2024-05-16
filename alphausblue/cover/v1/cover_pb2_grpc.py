@@ -752,10 +752,10 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthResponse.FromString,
                 _registered_method=True)
-        self.LeaveOrganization = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/LeaveOrganization',
-                request_serializer=cover_dot_v1_dot_cover__pb2.LeaveOrganizationRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.LeaveOrganizationResponse.FromString,
+        self.TransferOrganization = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/TransferOrganization',
+                request_serializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationResponse.FromString,
                 _registered_method=True)
 
 
@@ -1756,8 +1756,8 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def LeaveOrganization(self, request, context):
-        """WORK-IN-PROGRESS: Leaves the existing organization where the account is linked and process all the other setup also.
+    def TransferOrganization(self, request, context):
+        """WORK-IN-PROGRESS: Transfer the account from the original organization to Alphaus payer account
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2476,10 +2476,10 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetOrgFiscalMonthResponse.SerializeToString,
             ),
-            'LeaveOrganization': grpc.unary_unary_rpc_method_handler(
-                    servicer.LeaveOrganization,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.LeaveOrganizationRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.LeaveOrganizationResponse.SerializeToString,
+            'TransferOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.TransferOrganization,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -6327,7 +6327,7 @@ class Cover(object):
             _registered_method=True)
 
     @staticmethod
-    def LeaveOrganization(request,
+    def TransferOrganization(request,
             target,
             options=(),
             channel_credentials=None,
@@ -6340,9 +6340,9 @@ class Cover(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.cover.v1.Cover/LeaveOrganization',
-            cover_dot_v1_dot_cover__pb2.LeaveOrganizationRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.LeaveOrganizationResponse.FromString,
+            '/blueapi.cover.v1.Cover/TransferOrganization',
+            cover_dot_v1_dot_cover__pb2.TransferOrganizationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.TransferOrganizationResponse.FromString,
             options,
             channel_credentials,
             insecure,
