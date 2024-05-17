@@ -727,6 +727,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedResponse.FromString,
                 _registered_method=True)
+        self.UndoExecutedRecommendation = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UndoExecutedRecommendation',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UndoExecutedRecommendationRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UndoExecutedRecommendationResponse.FromString,
+                _registered_method=True)
         self.OptimizationHistory = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/OptimizationHistory',
                 request_serializer=cover_dot_v1_dot_cover__pb2.OptimizationHistoryRequest.SerializeToString,
@@ -1721,6 +1726,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UndoExecutedRecommendation(self, request, context):
+        """Undo a executed recommendation (For recommendation).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def OptimizationHistory(self, request, context):
         """Lists recommendations based on specified criteria.
         """
@@ -2450,6 +2462,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.MarkAsExecuted,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.MarkAsExecutedResponse.SerializeToString,
+            ),
+            'UndoExecutedRecommendation': grpc.unary_unary_rpc_method_handler(
+                    servicer.UndoExecutedRecommendation,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UndoExecutedRecommendationRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UndoExecutedRecommendationResponse.SerializeToString,
             ),
             'OptimizationHistory': grpc.unary_unary_rpc_method_handler(
                     servicer.OptimizationHistory,
@@ -6181,6 +6198,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/MarkAsExecuted',
             cover_dot_v1_dot_cover__pb2.MarkAsExecutedRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.MarkAsExecutedResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UndoExecutedRecommendation(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UndoExecutedRecommendation',
+            cover_dot_v1_dot_cover__pb2.UndoExecutedRecommendationRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UndoExecutedRecommendationResponse.FromString,
             options,
             channel_credentials,
             insecure,
