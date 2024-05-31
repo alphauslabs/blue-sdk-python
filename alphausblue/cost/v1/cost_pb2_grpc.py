@@ -573,9 +573,7 @@ class CostServicer(object):
     def ReadCosts(self, request, context):
         """Reads the usage-based cost details of an organization (Ripple) or billing group (Wave).
 
-        If datetime range parameters are not set, month-to-date (current month) will be returned.
-
-        You can refer to this [guide](https://labs.alphaus.cloud/docs/guides/aws-query-costs/) for more examples on how to use this API. Although the guide uses `bluectl`, the parameters are still the same.
+        You can refer to this [guide](https://labs.alphaus.cloud/docs/guides/aws-query-costs/) for more examples on how to use this API. Although the guide uses `bluectl`, the parameters are the same.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
