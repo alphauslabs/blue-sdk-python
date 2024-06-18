@@ -45,6 +45,11 @@ class PricingStub(object):
                 request_serializer=pricing_dot_v1_dot_pricing__pb2.GetInfoRequest.SerializeToString,
                 response_deserializer=pricing_dot_v1_dot_pricing__pb2.GetInfoResponse.FromString,
                 _registered_method=True)
+        self.GetEC2Info = channel.unary_unary(
+                '/blueapi.pricing.v1.Pricing/GetEC2Info',
+                request_serializer=pricing_dot_v1_dot_pricing__pb2.GetEC2InfoRequest.SerializeToString,
+                response_deserializer=pricing_dot_v1_dot_pricing__pb2.GetEC2InfoResponse.FromString,
+                _registered_method=True)
 
 
 class PricingServicer(object):
@@ -58,6 +63,13 @@ class PricingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetEC2Info(self, request, context):
+        """EC2 service pricing endpoint
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PricingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -65,6 +77,11 @@ def add_PricingServicer_to_server(servicer, server):
                     servicer.GetInfo,
                     request_deserializer=pricing_dot_v1_dot_pricing__pb2.GetInfoRequest.FromString,
                     response_serializer=pricing_dot_v1_dot_pricing__pb2.GetInfoResponse.SerializeToString,
+            ),
+            'GetEC2Info': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetEC2Info,
+                    request_deserializer=pricing_dot_v1_dot_pricing__pb2.GetEC2InfoRequest.FromString,
+                    response_serializer=pricing_dot_v1_dot_pricing__pb2.GetEC2InfoResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -95,6 +112,33 @@ class Pricing(object):
             '/blueapi.pricing.v1.Pricing/GetInfo',
             pricing_dot_v1_dot_pricing__pb2.GetInfoRequest.SerializeToString,
             pricing_dot_v1_dot_pricing__pb2.GetInfoResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetEC2Info(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.pricing.v1.Pricing/GetEC2Info',
+            pricing_dot_v1_dot_pricing__pb2.GetEC2InfoRequest.SerializeToString,
+            pricing_dot_v1_dot_pricing__pb2.GetEC2InfoResponse.FromString,
             options,
             channel_credentials,
             insecure,
