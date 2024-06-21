@@ -12,11 +12,12 @@ from google.protobuf.internal import builder as _builder
 _sym_db = _symbol_database.Default()
 
 
+from alphausblue.api.pricing import details_pb2 as api_dot_pricing_dot_details__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18pricing/v1/pricing.proto\x12\x12\x62lueapi.pricing.v1\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x10\n\x0eGetInfoRequest\"#\n\x0fGetInfoResponse\x12\x10\n\x08response\x18\x01 \x01(\t\"q\n\x11GetEC2InfoRequest\x12\r\n\x05\x63loud\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12,\n\x07\x63ompute\x18\x04 \x01(\x0b\x32\x1b.blueapi.pricing.v1.Compute\"3\n\x07\x43ompute\x12\x0b\n\x03sku\x18\x01 \x01(\t\x12\x0f\n\x07tenancy\x18\x02 \x01(\t\x12\n\n\x02os\x18\x03 \x01(\t\"\x89\x01\n\x12GetEC2InfoResponse\x12\x36\n\x10unit_cost_matrix\x18\x01 \x03(\x0b\x32\x1c.blueapi.pricing.v1.UnitCost\x12;\n\x0fservice_details\x18\x02 \x01(\x0b\x32\".blueapi.pricing.v1.ServiceDetails\"=\n\x08UnitCost\x12\x0c\n\x04unit\x18\x01 \x01(\t\x12\x11\n\tunit_cost\x18\x02 \x01(\x01\x12\x10\n\x08\x63urrency\x18\x03 \x01(\t\"E\n\x0eServiceDetails\x12\x33\n\x07\x63ompute\x18\x01 \x01(\x0b\x32\".blueapi.pricing.v1.ComputeDetails\"u\n\x0e\x43omputeDetails\x12\x15\n\rinstance_type\x18\x01 \x01(\t\x12\x0c\n\x04vcpu\x18\x02 \x01(\x05\x12\x11\n\tmemory_gb\x18\x03 \x01(\x05\x12\n\n\x02os\x18\x04 \x01(\t\x12\x0f\n\x07tenancy\x18\x05 \x01(\t\x12\x0e\n\x06region\x18\x06 \x01(\t2\x80\x03\n\x07Pricing\x12\x64\n\x07GetInfo\x12\".blueapi.pricing.v1.GetInfoRequest\x1a#.blueapi.pricing.v1.GetInfoResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v0/info\x12o\n\nGetEC2Info\x12%.blueapi.pricing.v1.GetEC2InfoRequest\x1a&.blueapi.pricing.v1.GetEC2InfoResponse\"\x12\x82\xd3\xe4\x93\x02\x0c\"\x07/v0/ec2:\x01*\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Pricing API. Base URL: https://api.alphaus.cloud/m/blue/pricing\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/pricing/BQ\n\x19\x63loud.alphaus.api.pricingB\x0cPricingProtoZ&github.com/alphauslabs/blueapi/pricingb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18pricing/v1/pricing.proto\x12\x12\x62lueapi.pricing.v1\x1a\x19\x61pi/pricing/details.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x10\n\x0eGetInfoRequest\"#\n\x0fGetInfoResponse\x12\x10\n\x08response\x18\x01 \x01(\t\"V\n\x15GetPricingInfoRequest\x12\r\n\x05\x63loud\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x0e\n\x06region\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\t\"\xca\x01\n\x16GetPricingInfoResponse\x12\r\n\x05\x63loud\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x13\n\x0bregion_code\x18\x03 \x01(\t\x12\r\n\x05token\x18\x04 \x01(\t\x12\x0b\n\x03sku\x18\x05 \x01(\t\x12\x0c\n\x04unit\x18\x06 \x01(\t\x12\x14\n\x0cpriceperunit\x18\x07 \x01(\x01\x12;\n\x0eserviceDetails\x18\x08 \x01(\x0b\x32#.blueapi.api.pricing.ServiceDetails2\x97\x03\n\x07Pricing\x12\x64\n\x07GetInfo\x12\".blueapi.pricing.v1.GetInfoRequest\x1a#.blueapi.pricing.v1.GetInfoResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v0/info\x12\x85\x01\n\x0eGetPricingInfo\x12).blueapi.pricing.v1.GetPricingInfoRequest\x1a*.blueapi.pricing.v1.GetPricingInfoResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v0/pricingInfo:\x01*0\x01\x1a\x9d\x01\x92\x41\x99\x01\x12\x46(BETA) Pricing API. Base URL: https://api.alphaus.cloud/m/blue/pricing\x1aO\n\x12Service definition\x12\x39https://github.com/alphauslabs/blueapi/tree/main/pricing/BQ\n\x19\x63loud.alphaus.api.pricingB\x0cPricingProtoZ&github.com/alphauslabs/blueapi/pricingb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -28,24 +29,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRICING']._serialized_options = b'\222A\231\001\022F(BETA) Pricing API. Base URL: https://api.alphaus.cloud/m/blue/pricing\032O\n\022Service definition\0229https://github.com/alphauslabs/blueapi/tree/main/pricing/'
   _globals['_PRICING'].methods_by_name['GetInfo']._loaded_options = None
   _globals['_PRICING'].methods_by_name['GetInfo']._serialized_options = b'\202\323\344\223\002\n\022\010/v0/info'
-  _globals['_PRICING'].methods_by_name['GetEC2Info']._loaded_options = None
-  _globals['_PRICING'].methods_by_name['GetEC2Info']._serialized_options = b'\202\323\344\223\002\014\"\007/v0/ec2:\001*'
-  _globals['_GETINFOREQUEST']._serialized_start=126
-  _globals['_GETINFOREQUEST']._serialized_end=142
-  _globals['_GETINFORESPONSE']._serialized_start=144
-  _globals['_GETINFORESPONSE']._serialized_end=179
-  _globals['_GETEC2INFOREQUEST']._serialized_start=181
-  _globals['_GETEC2INFOREQUEST']._serialized_end=294
-  _globals['_COMPUTE']._serialized_start=296
-  _globals['_COMPUTE']._serialized_end=347
-  _globals['_GETEC2INFORESPONSE']._serialized_start=350
-  _globals['_GETEC2INFORESPONSE']._serialized_end=487
-  _globals['_UNITCOST']._serialized_start=489
-  _globals['_UNITCOST']._serialized_end=550
-  _globals['_SERVICEDETAILS']._serialized_start=552
-  _globals['_SERVICEDETAILS']._serialized_end=621
-  _globals['_COMPUTEDETAILS']._serialized_start=623
-  _globals['_COMPUTEDETAILS']._serialized_end=740
-  _globals['_PRICING']._serialized_start=743
-  _globals['_PRICING']._serialized_end=1127
+  _globals['_PRICING'].methods_by_name['GetPricingInfo']._loaded_options = None
+  _globals['_PRICING'].methods_by_name['GetPricingInfo']._serialized_options = b'\202\323\344\223\002\024\"\017/v0/pricingInfo:\001*'
+  _globals['_GETINFOREQUEST']._serialized_start=153
+  _globals['_GETINFOREQUEST']._serialized_end=169
+  _globals['_GETINFORESPONSE']._serialized_start=171
+  _globals['_GETINFORESPONSE']._serialized_end=206
+  _globals['_GETPRICINGINFOREQUEST']._serialized_start=208
+  _globals['_GETPRICINGINFOREQUEST']._serialized_end=294
+  _globals['_GETPRICINGINFORESPONSE']._serialized_start=297
+  _globals['_GETPRICINGINFORESPONSE']._serialized_end=499
+  _globals['_PRICING']._serialized_start=502
+  _globals['_PRICING']._serialized_end=909
 # @@protoc_insertion_point(module_scope)
