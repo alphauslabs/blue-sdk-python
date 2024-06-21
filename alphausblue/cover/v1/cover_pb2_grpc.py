@@ -762,6 +762,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationResponse.FromString,
                 _registered_method=True)
+        self.UpdateCostGroupCreationUI = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostGroupCreationUI',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -1775,6 +1780,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateCostGroupCreationUI(self, request, context):
+        """WORK-IN-PROGRESS: Set user preference in cost group creation UI
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2497,6 +2509,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.TransferOrganization,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.TransferOrganizationResponse.SerializeToString,
+            ),
+            'UpdateCostGroupCreationUI': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostGroupCreationUI,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -6388,6 +6405,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/TransferOrganization',
             cover_dot_v1_dot_cover__pb2.TransferOrganizationRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.TransferOrganizationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateCostGroupCreationUI(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateCostGroupCreationUI',
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIResponse.FromString,
             options,
             channel_credentials,
             insecure,
