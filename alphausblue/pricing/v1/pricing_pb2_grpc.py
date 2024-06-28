@@ -45,7 +45,7 @@ class PricingStub(object):
                 request_serializer=pricing_dot_v1_dot_pricing__pb2.GetInfoRequest.SerializeToString,
                 response_deserializer=pricing_dot_v1_dot_pricing__pb2.GetInfoResponse.FromString,
                 _registered_method=True)
-        self.GetPricingInfo = channel.unary_stream(
+        self.GetPricingInfo = channel.unary_unary(
                 '/blueapi.pricing.v1.Pricing/GetPricingInfo',
                 request_serializer=pricing_dot_v1_dot_pricing__pb2.GetPricingInfoRequest.SerializeToString,
                 response_deserializer=pricing_dot_v1_dot_pricing__pb2.GetPricingInfoResponse.FromString,
@@ -78,7 +78,7 @@ def add_PricingServicer_to_server(servicer, server):
                     request_deserializer=pricing_dot_v1_dot_pricing__pb2.GetInfoRequest.FromString,
                     response_serializer=pricing_dot_v1_dot_pricing__pb2.GetInfoResponse.SerializeToString,
             ),
-            'GetPricingInfo': grpc.unary_stream_rpc_method_handler(
+            'GetPricingInfo': grpc.unary_unary_rpc_method_handler(
                     servicer.GetPricingInfo,
                     request_deserializer=pricing_dot_v1_dot_pricing__pb2.GetPricingInfoRequest.FromString,
                     response_serializer=pricing_dot_v1_dot_pricing__pb2.GetPricingInfoResponse.SerializeToString,
@@ -133,7 +133,7 @@ class Pricing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
+        return grpc.experimental.unary_unary(
             request,
             target,
             '/blueapi.pricing.v1.Pricing/GetPricingInfo',
