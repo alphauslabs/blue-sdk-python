@@ -336,6 +336,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.CheckAccountsRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.CheckAccountsResponse.FromString,
                 _registered_method=True)
+        self.ReadInvoiceId = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ReadInvoiceId',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdResponse.FromString,
+                _registered_method=True)
 
 
 class CostServicer(object):
@@ -794,6 +799,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReadInvoiceId(self, request, context):
+        """WORK-IN-PROGRESS: Read the invoice ids. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1086,6 +1098,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.CheckAccountsBelongToMsp,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.CheckAccountsRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.CheckAccountsResponse.SerializeToString,
+            ),
+            'ReadInvoiceId': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadInvoiceId,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2655,6 +2672,33 @@ class Cost(object):
             '/blueapi.cost.v1.Cost/CheckAccountsBelongToMsp',
             cost_dot_v1_dot_cost__pb2.CheckAccountsRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.CheckAccountsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadInvoiceId(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ReadInvoiceId',
+            cost_dot_v1_dot_cost__pb2.ReadInvoiceIdRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ReadInvoiceIdResponse.FromString,
             options,
             channel_credentials,
             insecure,
