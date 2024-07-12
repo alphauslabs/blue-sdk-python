@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.preferences.v1 import preferences_pb2 as preferences_dot_v1_dot_preferences__pb2
 
-GRPC_GENERATED_VERSION = '1.64.1'
+GRPC_GENERATED_VERSION = '1.65.0'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.65.0'
 SCHEDULED_RELEASE_DATE = 'June 25, 2024'
