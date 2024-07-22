@@ -174,6 +174,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.FromString,
                 _registered_method=True)
+        self.UpdateWaveFeatureSetting = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/UpdateWaveFeatureSetting',
+                request_serializer=admin_dot_v1_dot_admin__pb2.UpdateWaveFeatureSettingRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.FromString,
+                _registered_method=True)
 
 
 class AdminServicer(object):
@@ -362,6 +367,13 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateWaveFeatureSetting(self, request, context):
+        """WORK-IN-PROGRESS: Updates the wave feature management default value per organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -493,6 +505,11 @@ def add_AdminServicer_to_server(servicer, server):
             'GetWaveFeatures': grpc.unary_unary_rpc_method_handler(
                     servicer.GetWaveFeatures,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.SerializeToString,
+            ),
+            'UpdateWaveFeatureSetting': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateWaveFeatureSetting,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateWaveFeatureSettingRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.SerializeToString,
             ),
     }
@@ -1198,6 +1215,33 @@ class Admin(object):
             target,
             '/blueapi.admin.v1.Admin/GetWaveFeatures',
             admin_dot_v1_dot_admin__pb2.GetWaveFeaturesRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateWaveFeatureSetting(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.admin.v1.Admin/UpdateWaveFeatureSetting',
+            admin_dot_v1_dot_admin__pb2.UpdateWaveFeatureSettingRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.FromString,
             options,
             channel_credentials,
