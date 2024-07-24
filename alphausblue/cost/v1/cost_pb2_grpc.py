@@ -800,7 +800,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadInvoiceIds(self, request, context):
-        """WORK-IN-PROGRESS: Read the invoice ids. Only available in Ripple.
+        """Read the invoice ids. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
