@@ -76,7 +76,7 @@ class PricingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetSupportedServices(self, request, context):
-        """WORK-IN-PROGRESS: Get list of supported services, regions, and attribute keys for filtering
+        """WORK-IN-PROGRESS: Get list of supported services, regions, attributes, and columns for filtering
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
