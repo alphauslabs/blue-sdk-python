@@ -50,6 +50,11 @@ class PricingStub(object):
                 request_serializer=pricing_dot_v1_dot_pricing__pb2.GetPricingRequest.SerializeToString,
                 response_deserializer=pricing_dot_v1_dot_pricing__pb2.GetPricingResponse.FromString,
                 _registered_method=True)
+        self.GetSupportedServices = channel.unary_unary(
+                '/blueapi.pricing.v1.Pricing/GetSupportedServices',
+                request_serializer=pricing_dot_v1_dot_pricing__pb2.GetSupportedServicesRequest.SerializeToString,
+                response_deserializer=pricing_dot_v1_dot_pricing__pb2.GetSupportedServicesResponse.FromString,
+                _registered_method=True)
 
 
 class PricingServicer(object):
@@ -70,6 +75,13 @@ class PricingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetSupportedServices(self, request, context):
+        """WORK-IN-PROGRESS: Get list of supported services, regions, and attribute keys for filtering
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PricingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -82,6 +94,11 @@ def add_PricingServicer_to_server(servicer, server):
                     servicer.GetPricing,
                     request_deserializer=pricing_dot_v1_dot_pricing__pb2.GetPricingRequest.FromString,
                     response_serializer=pricing_dot_v1_dot_pricing__pb2.GetPricingResponse.SerializeToString,
+            ),
+            'GetSupportedServices': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSupportedServices,
+                    request_deserializer=pricing_dot_v1_dot_pricing__pb2.GetSupportedServicesRequest.FromString,
+                    response_serializer=pricing_dot_v1_dot_pricing__pb2.GetSupportedServicesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -139,6 +156,33 @@ class Pricing(object):
             '/blueapi.pricing.v1.Pricing/GetPricing',
             pricing_dot_v1_dot_pricing__pb2.GetPricingRequest.SerializeToString,
             pricing_dot_v1_dot_pricing__pb2.GetPricingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSupportedServices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.pricing.v1.Pricing/GetSupportedServices',
+            pricing_dot_v1_dot_pricing__pb2.GetSupportedServicesRequest.SerializeToString,
+            pricing_dot_v1_dot_pricing__pb2.GetSupportedServicesResponse.FromString,
             options,
             channel_credentials,
             insecure,
