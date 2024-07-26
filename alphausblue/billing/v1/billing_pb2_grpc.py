@@ -6,7 +6,7 @@ import warnings
 from alphausblue.api import adjustment_pb2 as api_dot_adjustment__pb2
 from alphausblue.api import invoice_pb2 as api_dot_invoice__pb2
 from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessgroup__pb2
-from alphausblue.api.ripple import customizebillingservice_pb2 as api_dot_ripple_dot_customizebillingservice__pb2
+from alphausblue.api.ripple import customizedbillingservice_pb2 as api_dot_ripple_dot_customizedbillingservice__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.api.ripple import untaggedgroup_pb2 as api_dot_ripple_dot_untaggedgroup__pb2
 from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__pb2
@@ -243,15 +243,15 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ReadUntaggedGroupsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_untaggedgroup__pb2.UntaggedGroup.FromString,
                 _registered_method=True)
-        self.ReadCustomizeBillingServices = channel.unary_stream(
-                '/blueapi.billing.v1.Billing/ReadCustomizeBillingServices',
-                request_serializer=billing_dot_v1_dot_billing__pb2.ReadCustomizeBillingServicesRequest.SerializeToString,
-                response_deserializer=api_dot_ripple_dot_customizebillingservice__pb2.CustomizeBillingService.FromString,
+        self.ReadCustomizedBillingServices = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadCustomizedBillingServices',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadCustomizedBillingServicesRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
                 _registered_method=True)
-        self.GetCustomizeBillingService = channel.unary_unary(
-                '/blueapi.billing.v1.Billing/GetCustomizeBillingService',
-                request_serializer=billing_dot_v1_dot_billing__pb2.GetCustomizeBillingServiceRequest.SerializeToString,
-                response_deserializer=api_dot_ripple_dot_customizebillingservice__pb2.CustomizeBillingService.FromString,
+        self.GetCustomizedBillingService = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetCustomizedBillingService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetCustomizedBillingServiceRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
                 _registered_method=True)
 
 
@@ -544,15 +544,15 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ReadCustomizeBillingServices(self, request, context):
-        """WORK-IN-PROGRESS: Reads the customize billing service. Only available in Ripple.
+    def ReadCustomizedBillingServices(self, request, context):
+        """WORK-IN-PROGRESS: Reads the customized billing service. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCustomizeBillingService(self, request, context):
-        """WORK-IN-PROGRESS: Gets the customize billing service. Only available in Ripple.
+    def GetCustomizedBillingService(self, request, context):
+        """WORK-IN-PROGRESS: Gets the customized billing service. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -756,15 +756,15 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ReadUntaggedGroupsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_untaggedgroup__pb2.UntaggedGroup.SerializeToString,
             ),
-            'ReadCustomizeBillingServices': grpc.unary_stream_rpc_method_handler(
-                    servicer.ReadCustomizeBillingServices,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadCustomizeBillingServicesRequest.FromString,
-                    response_serializer=api_dot_ripple_dot_customizebillingservice__pb2.CustomizeBillingService.SerializeToString,
+            'ReadCustomizedBillingServices': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadCustomizedBillingServices,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadCustomizedBillingServicesRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.SerializeToString,
             ),
-            'GetCustomizeBillingService': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCustomizeBillingService,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetCustomizeBillingServiceRequest.FromString,
-                    response_serializer=api_dot_ripple_dot_customizebillingservice__pb2.CustomizeBillingService.SerializeToString,
+            'GetCustomizedBillingService': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCustomizedBillingService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetCustomizedBillingServiceRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1832,7 +1832,7 @@ class Billing(object):
             _registered_method=True)
 
     @staticmethod
-    def ReadCustomizeBillingServices(request,
+    def ReadCustomizedBillingServices(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1845,9 +1845,9 @@ class Billing(object):
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/blueapi.billing.v1.Billing/ReadCustomizeBillingServices',
-            billing_dot_v1_dot_billing__pb2.ReadCustomizeBillingServicesRequest.SerializeToString,
-            api_dot_ripple_dot_customizebillingservice__pb2.CustomizeBillingService.FromString,
+            '/blueapi.billing.v1.Billing/ReadCustomizedBillingServices',
+            billing_dot_v1_dot_billing__pb2.ReadCustomizedBillingServicesRequest.SerializeToString,
+            api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
             options,
             channel_credentials,
             insecure,
@@ -1859,7 +1859,7 @@ class Billing(object):
             _registered_method=True)
 
     @staticmethod
-    def GetCustomizeBillingService(request,
+    def GetCustomizedBillingService(request,
             target,
             options=(),
             channel_credentials=None,
@@ -1872,9 +1872,9 @@ class Billing(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.billing.v1.Billing/GetCustomizeBillingService',
-            billing_dot_v1_dot_billing__pb2.GetCustomizeBillingServiceRequest.SerializeToString,
-            api_dot_ripple_dot_customizebillingservice__pb2.CustomizeBillingService.FromString,
+            '/blueapi.billing.v1.Billing/GetCustomizedBillingService',
+            billing_dot_v1_dot_billing__pb2.GetCustomizedBillingServiceRequest.SerializeToString,
+            api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
             options,
             channel_credentials,
             insecure,
