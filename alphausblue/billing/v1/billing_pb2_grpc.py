@@ -253,6 +253,21 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetCustomizedBillingServiceRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
                 _registered_method=True)
+        self.CreateCustomizedBillingService = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateCustomizedBillingService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateCustomizedBillingServiceRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
+                _registered_method=True)
+        self.UpdateCustomizedBillingService = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateCustomizedBillingService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateCustomizedBillingServiceRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
+                _registered_method=True)
+        self.DeleteCustomizedBillingService = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteCustomizedBillingService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteCustomizedBillingServiceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -558,6 +573,27 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateCustomizedBillingService(self, request, context):
+        """WORK-IN-PROGRESS: Creates the customized billing service. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCustomizedBillingService(self, request, context):
+        """WORK-IN-PROGRESS: Updates the customized billing service by updating the fields specified in the update mask. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCustomizedBillingService(self, request, context):
+        """WORK-IN-PROGRESS: Deletes the customized billing service. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -765,6 +801,21 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetCustomizedBillingService,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetCustomizedBillingServiceRequest.FromString,
                     response_serializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.SerializeToString,
+            ),
+            'CreateCustomizedBillingService': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCustomizedBillingService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateCustomizedBillingServiceRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.SerializeToString,
+            ),
+            'UpdateCustomizedBillingService': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCustomizedBillingService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateCustomizedBillingServiceRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.SerializeToString,
+            ),
+            'DeleteCustomizedBillingService': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCustomizedBillingService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteCustomizedBillingServiceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1875,6 +1926,87 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/GetCustomizedBillingService',
             billing_dot_v1_dot_billing__pb2.GetCustomizedBillingServiceRequest.SerializeToString,
             api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateCustomizedBillingService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateCustomizedBillingService',
+            billing_dot_v1_dot_billing__pb2.CreateCustomizedBillingServiceRequest.SerializeToString,
+            api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateCustomizedBillingService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateCustomizedBillingService',
+            billing_dot_v1_dot_billing__pb2.UpdateCustomizedBillingServiceRequest.SerializeToString,
+            api_dot_ripple_dot_customizedbillingservice__pb2.CustomizedBillingService.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteCustomizedBillingService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/DeleteCustomizedBillingService',
+            billing_dot_v1_dot_billing__pb2.DeleteCustomizedBillingServiceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
