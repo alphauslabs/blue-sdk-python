@@ -767,6 +767,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIResponse.FromString,
                 _registered_method=True)
+        self.ListUnitTypes = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListUnitTypes',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListUnitTypesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListUnitTypesResponse.FromString,
+                _registered_method=True)
+        self.CreateUnitType = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateUnitType',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateUnitTypeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateUnitTypeResponse.FromString,
+                _registered_method=True)
+        self.GetUnitType = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetUnitType',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetUnitTypeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetUnitTypeResponse.FromString,
+                _registered_method=True)
+        self.UpdateUnitType = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUnitType',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUnitTypeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUnitTypeResponse.FromString,
+                _registered_method=True)
+        self.DeleteUnitType = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteUnitType',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -1787,6 +1812,41 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListUnitTypes(self, request, context):
+        """Lists Unit Types
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateUnitType(self, request, context):
+        """Create Unit Type
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetUnitType(self, request, context):
+        """Get Specific Unit Type 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUnitType(self, request, context):
+        """Update Specific Unit Type
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteUnitType(self, request, context):
+        """Delete Specific Unit Type
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2514,6 +2574,31 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UpdateCostGroupCreationUI,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIResponse.SerializeToString,
+            ),
+            'ListUnitTypes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUnitTypes,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListUnitTypesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListUnitTypesResponse.SerializeToString,
+            ),
+            'CreateUnitType': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateUnitType,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateUnitTypeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateUnitTypeResponse.SerializeToString,
+            ),
+            'GetUnitType': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUnitType,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetUnitTypeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetUnitTypeResponse.SerializeToString,
+            ),
+            'UpdateUnitType': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUnitType,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUnitTypeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUnitTypeResponse.SerializeToString,
+            ),
+            'DeleteUnitType': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteUnitType,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -6432,6 +6517,141 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/UpdateCostGroupCreationUI',
             cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateCostGroupCreationUIResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUnitTypes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListUnitTypes',
+            cover_dot_v1_dot_cover__pb2.ListUnitTypesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListUnitTypesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateUnitType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/CreateUnitType',
+            cover_dot_v1_dot_cover__pb2.CreateUnitTypeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateUnitTypeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetUnitType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetUnitType',
+            cover_dot_v1_dot_cover__pb2.GetUnitTypeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetUnitTypeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateUnitType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateUnitType',
+            cover_dot_v1_dot_cover__pb2.UpdateUnitTypeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUnitTypeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteUnitType(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/DeleteUnitType',
+            cover_dot_v1_dot_cover__pb2.DeleteUnitTypeRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteUnitTypeResponse.FromString,
             options,
             channel_credentials,
             insecure,
