@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.pricing.v1 import pricing_pb2 as pricing_dot_v1_dot_pricing__pb2
 
-GRPC_GENERATED_VERSION = '1.65.2'
+GRPC_GENERATED_VERSION = '1.65.4'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.66.0'
 SCHEDULED_RELEASE_DATE = 'August 6, 2024'
