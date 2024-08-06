@@ -717,6 +717,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationResponse.FromString,
                 _registered_method=True)
+        self.GetRecommendationV2 = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetRecommendationV2',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV2Request.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV2Response.FromString,
+                _registered_method=True)
         self.ExecuteOptimization = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ExecuteOptimization',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
@@ -1742,6 +1747,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRecommendationV2(self, request, context):
+        """Retrieves a specific recommendation by its ID. (Version 2)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ExecuteOptimization(self, request, context):
         """Executes optimization based on a recommendation.
         """
@@ -2524,6 +2536,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetRecommendation,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationResponse.SerializeToString,
+            ),
+            'GetRecommendationV2': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecommendationV2,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV2Request.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV2Response.SerializeToString,
             ),
             'ExecuteOptimization': grpc.unary_unary_rpc_method_handler(
                     servicer.ExecuteOptimization,
@@ -6247,6 +6264,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/GetRecommendation',
             cover_dot_v1_dot_cover__pb2.GetRecommendationRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetRecommendationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetRecommendationV2(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetRecommendationV2',
+            cover_dot_v1_dot_cover__pb2.GetRecommendationV2Request.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetRecommendationV2Response.FromString,
             options,
             channel_credentials,
             insecure,
