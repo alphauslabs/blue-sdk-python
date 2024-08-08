@@ -9,6 +9,7 @@ from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessg
 from alphausblue.api.ripple import customizedbillingservice_pb2 as api_dot_ripple_dot_customizedbillingservice__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.api.ripple import untaggedgroup_pb2 as api_dot_ripple_dot_untaggedgroup__pb2
+from alphausblue.api.ripple.v1 import invoiceservicediscounts_pb2 as api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2
 from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -112,6 +113,11 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/ExportInvoiceFile',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.FromString,
+                _registered_method=True)
+        self.ReadServiceDiscountsService = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadServiceDiscountsService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadServiceDiscountsServiceRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.Service.FromString,
                 _registered_method=True)
         self.ListInvoiceServiceDiscounts = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListInvoiceServiceDiscounts',
@@ -360,6 +366,13 @@ class BillingServicer(object):
 
     def ExportInvoiceFile(self, request, context):
         """Exports an invoice.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadServiceDiscountsService(self, request, context):
+        """Reads the service relate to the service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -661,6 +674,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ExportInvoiceFile,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.SerializeToString,
+            ),
+            'ReadServiceDiscountsService': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadServiceDiscountsService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadServiceDiscountsServiceRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.Service.SerializeToString,
             ),
             'ListInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
                     servicer.ListInvoiceServiceDiscounts,
@@ -1170,6 +1188,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ExportInvoiceFile',
             billing_dot_v1_dot_billing__pb2.ExportInvoiceFileRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ExportInvoiceFileResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadServiceDiscountsService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ReadServiceDiscountsService',
+            billing_dot_v1_dot_billing__pb2.ReadServiceDiscountsServiceRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.Service.FromString,
             options,
             channel_credentials,
             insecure,
