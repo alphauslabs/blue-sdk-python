@@ -119,12 +119,12 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ReadServiceDiscountsServicesRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.Service.FromString,
                 _registered_method=True)
-        self.CreateInvoiceServiceDiscounts = channel.unary_stream(
+        self.CreateInvoiceServiceDiscounts = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/CreateInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.InvoiceServiceDiscounts.FromString,
                 _registered_method=True)
-        self.UpdateInvoiceServiceDiscounts = channel.unary_stream(
+        self.UpdateInvoiceServiceDiscounts = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/UpdateInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.InvoiceServiceDiscounts.FromString,
@@ -716,12 +716,12 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ReadServiceDiscountsServicesRequest.FromString,
                     response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.Service.SerializeToString,
             ),
-            'CreateInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
+            'CreateInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.InvoiceServiceDiscounts.SerializeToString,
             ),
-            'UpdateInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
+            'UpdateInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.InvoiceServiceDiscounts.SerializeToString,
@@ -1287,7 +1287,7 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
+        return grpc.experimental.unary_unary(
             request,
             target,
             '/blueapi.billing.v1.Billing/CreateInvoiceServiceDiscounts',
@@ -1314,7 +1314,7 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
+        return grpc.experimental.unary_unary(
             request,
             target,
             '/blueapi.billing.v1.Billing/UpdateInvoiceServiceDiscounts',
