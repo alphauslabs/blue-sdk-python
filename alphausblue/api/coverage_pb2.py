@@ -14,7 +14,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61pi/coverage.proto\x12\x0b\x62lueapi.api\"J\n\x0bOptionsData\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x0coptionsChart\x18\x02 \x03(\x0b\x32\x19.blueapi.api.OptionsChart\"=\n\x0cOptionsChart\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x10\n\x08\x63overage\x18\x02 \x01(\x01\x12\r\n\x05usage\x18\x03 \x01(\x01\"M\n\x0cOndemandData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rondemandChart\x18\x02 \x03(\x0b\x32\x1a.blueapi.api.OndemandChart\"l\n\rOndemandChart\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x17\n\x0fnormalizedUsage\x18\x03 \x01(\x01\x12\x14\n\x0condemandCost\x18\x04 \x01(\x01\x12\r\n\x05usage\x18\x05 \x01(\x01\x42U\n\x19\x63loud.alphaus.blueapi.apiB\x10\x41piCoverageProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x61pi/coverage.proto\x12\x0b\x62lueapi.api\"J\n\x0bOptionsData\x12\n\n\x02id\x18\x01 \x01(\t\x12/\n\x0coptionsChart\x18\x02 \x03(\x0b\x32\x19.blueapi.api.OptionsChart\"b\n\x0cOptionsChart\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0c\n\x04\x63ost\x18\x04 \x01(\x01\x12\x10\n\x08\x63overage\x18\x02 \x01(\x01\x12\r\n\x05usage\x18\x03 \x01(\x01\x12\x15\n\rusageCoverage\x18\x05 \x01(\x01\"M\n\x0cOndemandData\x12\n\n\x02id\x18\x01 \x01(\t\x12\x31\n\rondemandChart\x18\x02 \x03(\x0b\x32\x1a.blueapi.api.OndemandChart\"l\n\rOndemandChart\x12\x0c\n\x04\x64\x61te\x18\x01 \x01(\t\x12\x0f\n\x07service\x18\x02 \x01(\t\x12\x17\n\x0fnormalizedUsage\x18\x03 \x01(\x01\x12\x14\n\x0condemandCost\x18\x04 \x01(\x01\x12\r\n\x05usage\x18\x05 \x01(\x01\x42U\n\x19\x63loud.alphaus.blueapi.apiB\x10\x41piCoverageProtoZ&github.com/alphauslabs/blue-sdk-go/apib\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -25,9 +25,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_OPTIONSDATA']._serialized_start=35
   _globals['_OPTIONSDATA']._serialized_end=109
   _globals['_OPTIONSCHART']._serialized_start=111
-  _globals['_OPTIONSCHART']._serialized_end=172
-  _globals['_ONDEMANDDATA']._serialized_start=174
-  _globals['_ONDEMANDDATA']._serialized_end=251
-  _globals['_ONDEMANDCHART']._serialized_start=253
-  _globals['_ONDEMANDCHART']._serialized_end=361
+  _globals['_OPTIONSCHART']._serialized_end=209
+  _globals['_ONDEMANDDATA']._serialized_start=211
+  _globals['_ONDEMANDDATA']._serialized_end=288
+  _globals['_ONDEMANDCHART']._serialized_start=290
+  _globals['_ONDEMANDCHART']._serialized_end=398
 # @@protoc_insertion_point(module_scope)
