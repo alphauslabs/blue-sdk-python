@@ -6,7 +6,7 @@ import warnings
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.kvstore.v1 import kvstore_pb2 as kvstore_dot_v1_dot_kvstore__pb2
 
-GRPC_GENERATED_VERSION = '1.65.4'
+GRPC_GENERATED_VERSION = '1.65.5'
 GRPC_VERSION = grpc.__version__
 EXPECTED_ERROR_RELEASE = '1.66.0'
 SCHEDULED_RELEASE_DATE = 'August 6, 2024'
