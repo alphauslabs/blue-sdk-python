@@ -292,7 +292,7 @@ class BillingStub(object):
         self.GetTags = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/GetTags',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetTagsRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.Customer.FromString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.TagData.FromString,
                 _registered_method=True)
 
 
@@ -902,7 +902,7 @@ def add_BillingServicer_to_server(servicer, server):
             'GetTags': grpc.unary_stream_rpc_method_handler(
                     servicer.GetTags,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetTagsRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.Customer.SerializeToString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.TagData.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2228,7 +2228,7 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/GetTags',
             billing_dot_v1_dot_billing__pb2.GetTagsRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.Customer.FromString,
+            billing_dot_v1_dot_billing__pb2.TagData.FromString,
             options,
             channel_credentials,
             insecure,
