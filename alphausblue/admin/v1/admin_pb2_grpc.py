@@ -174,6 +174,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.UpdateWaveFeatureSettingRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.FromString,
                 _registered_method=True)
+        self.GetMSPDefaultMeta = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/GetMSPDefaultMeta',
+                request_serializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaResponse.FromString,
+                _registered_method=True)
 
 
 class AdminServicer(object):
@@ -369,6 +374,13 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetMSPDefaultMeta(self, request, context):
+        """WORK-IN-PROGRESS: Fetch the default meta saved per organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -506,6 +518,11 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.UpdateWaveFeatureSetting,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateWaveFeatureSettingRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.SerializeToString,
+            ),
+            'GetMSPDefaultMeta': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMSPDefaultMeta,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1238,6 +1255,33 @@ class Admin(object):
             '/blueapi.admin.v1.Admin/UpdateWaveFeatureSetting',
             admin_dot_v1_dot_admin__pb2.UpdateWaveFeatureSettingRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.GetWaveFeaturesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetMSPDefaultMeta(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.admin.v1.Admin/GetMSPDefaultMeta',
+            admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaResponse.FromString,
             options,
             channel_credentials,
             insecure,
