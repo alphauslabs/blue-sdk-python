@@ -179,6 +179,11 @@ class AdminStub(object):
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaResponse.FromString,
                 _registered_method=True)
+        self.UpdateMSPDefaultMeta = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/UpdateMSPDefaultMeta',
+                request_serializer=admin_dot_v1_dot_admin__pb2.UpdateMSPDefaultMetaRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class AdminServicer(object):
@@ -381,6 +386,13 @@ class AdminServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateMSPDefaultMeta(self, request, context):
+        """WORK-IN-PROGRESS: Set the default meta saved per organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_AdminServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -523,6 +535,11 @@ def add_AdminServicer_to_server(servicer, server):
                     servicer.GetMSPDefaultMeta,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaResponse.SerializeToString,
+            ),
+            'UpdateMSPDefaultMeta': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateMSPDefaultMeta,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateMSPDefaultMetaRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1282,6 +1299,33 @@ class Admin(object):
             '/blueapi.admin.v1.Admin/GetMSPDefaultMeta',
             admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.GetMSPDefaultMetaResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateMSPDefaultMeta(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.admin.v1.Admin/UpdateMSPDefaultMeta',
+            admin_dot_v1_dot_admin__pb2.UpdateMSPDefaultMetaRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
