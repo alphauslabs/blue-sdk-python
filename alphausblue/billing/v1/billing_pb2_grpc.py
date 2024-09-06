@@ -294,10 +294,10 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateCustomFieldRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.CustomField.FromString,
                 _registered_method=True)
-        self.ListCustomField = channel.unary_unary(
+        self.ListCustomField = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListCustomField',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.CustomFieldList.FromString,
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListCustomFieldRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.CustomField.FromString,
                 _registered_method=True)
         self.UpdateCustomField = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/UpdateCustomField',
@@ -686,9 +686,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateCustomField(self, request, context):
-        """WORK-IN-PROGRESS: Updates an existing CustomField. You can provide new values for the `key` and/or `description` fields.
-        If you only need to update one field, set the other field to null. 
-        The `id` in the URL path identifies the CustomField to be updated.
+        """WORK-IN-PROGRESS: Update the `customField` specified id, modifying its key and description
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -954,10 +952,10 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.CreateCustomFieldRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.CustomField.SerializeToString,
             ),
-            'ListCustomField': grpc.unary_unary_rpc_method_handler(
+            'ListCustomField': grpc.unary_stream_rpc_method_handler(
                     servicer.ListCustomField,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.CustomFieldList.SerializeToString,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListCustomFieldRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.CustomField.SerializeToString,
             ),
             'UpdateCustomField': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateCustomField,
@@ -2342,12 +2340,12 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
+        return grpc.experimental.unary_stream(
             request,
             target,
             '/blueapi.billing.v1.Billing/ListCustomField',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.CustomFieldList.FromString,
+            billing_dot_v1_dot_billing__pb2.ListCustomFieldRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.CustomField.FromString,
             options,
             channel_credentials,
             insecure,
