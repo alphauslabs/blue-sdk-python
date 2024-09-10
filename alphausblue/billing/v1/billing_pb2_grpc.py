@@ -309,6 +309,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteCustomFieldRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.CreateFreeFormat = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateFreeFormat',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateFreeFormatRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.DeleteFreeFormat = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteFreeFormat',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -699,6 +709,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateFreeFormat(self, request, context):
+        """WORK-IN-PROGRESS: Creates new billing group free format item (miscellaneous)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteFreeFormat(self, request, context):
+        """WORK-IN-PROGRESS: Delete billing group free format item (miscellaneous)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -965,6 +989,16 @@ def add_BillingServicer_to_server(servicer, server):
             'DeleteCustomField': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteCustomField,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteCustomFieldRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateFreeFormat': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateFreeFormat,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateFreeFormatRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteFreeFormat': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteFreeFormat,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -2399,6 +2433,60 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/DeleteCustomField',
             billing_dot_v1_dot_billing__pb2.DeleteCustomFieldRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateFreeFormat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateFreeFormat',
+            billing_dot_v1_dot_billing__pb2.CreateFreeFormatRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteFreeFormat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/DeleteFreeFormat',
+            billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
