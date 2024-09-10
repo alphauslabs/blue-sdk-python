@@ -132,6 +132,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.FromString,
                 _registered_method=True)
+        self.UpdateUserCurrency = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserCurrency',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyResponse.FromString,
+                _registered_method=True)
         self.UpdateUserAttributes = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateUserAttributes',
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesRequest.SerializeToString,
@@ -926,6 +931,13 @@ class CoverServicer(object):
 
     def UpdateUserTimezone(self, request, context):
         """Modify user's timezone
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserCurrency(self, request, context):
+        """Modify user's currency
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1951,6 +1963,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UpdateUserTimezone,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.SerializeToString,
+            ),
+            'UpdateUserCurrency': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserCurrency,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyResponse.SerializeToString,
             ),
             'UpdateUserAttributes': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateUserAttributes,
@@ -3127,6 +3144,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/UpdateUserTimezone',
             cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateUserCurrency(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateUserCurrency',
+            cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyResponse.FromString,
             options,
             channel_credentials,
             insecure,
