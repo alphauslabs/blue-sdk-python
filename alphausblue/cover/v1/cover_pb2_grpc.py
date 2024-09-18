@@ -212,6 +212,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyResponse.FromString,
                 _registered_method=True)
+        self.ListExchangeRates = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListExchangeRates',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListExchangeRatesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListExchangeRatesResponse.FromString,
+                _registered_method=True)
         self.DeleteView = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/DeleteView',
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteViewRequest.SerializeToString,
@@ -1048,6 +1053,13 @@ class CoverServicer(object):
 
     def UpdateViewCurrency(self, request, context):
         """Update report's currency settings
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExchangeRates(self, request, context):
+        """Get list of exchange rates for a fixed report
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2055,6 +2067,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UpdateViewCurrency,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyResponse.SerializeToString,
+            ),
+            'ListExchangeRates': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExchangeRates,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListExchangeRatesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListExchangeRatesResponse.SerializeToString,
             ),
             'DeleteView': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteView,
@@ -3593,6 +3610,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/UpdateViewCurrency',
             cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListExchangeRates(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListExchangeRates',
+            cover_dot_v1_dot_cover__pb2.ListExchangeRatesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListExchangeRatesResponse.FromString,
             options,
             channel_credentials,
             insecure,
