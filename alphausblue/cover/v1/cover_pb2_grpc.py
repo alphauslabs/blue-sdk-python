@@ -132,11 +132,6 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.FromString,
                 _registered_method=True)
-        self.UpdateUserCurrency = channel.unary_unary(
-                '/blueapi.cover.v1.Cover/UpdateUserCurrency',
-                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyRequest.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyResponse.FromString,
-                _registered_method=True)
         self.UpdateUserAttributes = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateUserAttributes',
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesRequest.SerializeToString,
@@ -211,6 +206,16 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/UpdateViewCurrency',
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyResponse.FromString,
+                _registered_method=True)
+        self.SetOrgUpdateCurrency = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/SetOrgUpdateCurrency',
+                request_serializer=cover_dot_v1_dot_cover__pb2.SetOrgUpdateCurrencyRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.SetOrgUpdateCurrencyResponse.FromString,
+                _registered_method=True)
+        self.GetOrgUpdateCurrency = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetOrgUpdateCurrency',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetOrgUpdateCurrencyRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetOrgUpdateCurrencyResponse.FromString,
                 _registered_method=True)
         self.ListExchangeRates = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ListExchangeRates',
@@ -946,13 +951,6 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateUserCurrency(self, request, context):
-        """Modify user's currency
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
     def UpdateUserAttributes(self, request, context):
         """Modify attributes
         """
@@ -1053,6 +1051,20 @@ class CoverServicer(object):
 
     def UpdateViewCurrency(self, request, context):
         """Update report's currency settings
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetOrgUpdateCurrency(self, request, context):
+        """Sets Org's reference of currency exchange rate
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOrgUpdateCurrency(self, request, context):
+        """Get Org's reference of currency exchange rate
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1988,11 +2000,6 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserTimezoneResponse.SerializeToString,
             ),
-            'UpdateUserCurrency': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateUserCurrency,
-                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyRequest.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyResponse.SerializeToString,
-            ),
             'UpdateUserAttributes': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateUserAttributes,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserAttributesRequest.FromString,
@@ -2067,6 +2074,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.UpdateViewCurrency,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyResponse.SerializeToString,
+            ),
+            'SetOrgUpdateCurrency': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetOrgUpdateCurrency,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.SetOrgUpdateCurrencyRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.SetOrgUpdateCurrencyResponse.SerializeToString,
+            ),
+            'GetOrgUpdateCurrency': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOrgUpdateCurrency,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetOrgUpdateCurrencyRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetOrgUpdateCurrencyResponse.SerializeToString,
             ),
             'ListExchangeRates': grpc.unary_unary_rpc_method_handler(
                     servicer.ListExchangeRates,
@@ -3189,33 +3206,6 @@ class Cover(object):
             _registered_method=True)
 
     @staticmethod
-    def UpdateUserCurrency(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.cover.v1.Cover/UpdateUserCurrency',
-            cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyRequest.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.UpdateUserCurrencyResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def UpdateUserAttributes(request,
             target,
             options=(),
@@ -3610,6 +3600,60 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/UpdateViewCurrency',
             cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.UpdateViewCurrencyResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetOrgUpdateCurrency(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/SetOrgUpdateCurrency',
+            cover_dot_v1_dot_cover__pb2.SetOrgUpdateCurrencyRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.SetOrgUpdateCurrencyResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetOrgUpdateCurrency(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetOrgUpdateCurrency',
+            cover_dot_v1_dot_cover__pb2.GetOrgUpdateCurrencyRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetOrgUpdateCurrencyResponse.FromString,
             options,
             channel_credentials,
             insecure,
