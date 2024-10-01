@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&api/cover/recommendation/octoaws.proto\x12(blueapi.api.cover.recommendation.octoaws\"\x14\n\x12\x41WSRecommendationsB\xa7\x01\n9cloud.alphaus.blueapi.api.cover.recommendation.octoawsrecB\"ApiCoverOctoAwsRecommendationProtoZFgithub.com/alphauslabs/blue-sdk-go/api/cover/recommendation/octoawsrecb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&api/cover/recommendation/octoaws.proto\x12(blueapi.api.cover.recommendation.octoaws\"\x14\n\x12\x41WSRecommendationsB\x91\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoAwsRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.recommendation.octoaws_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n9cloud.alphaus.blueapi.api.cover.recommendation.octoawsrecB\"ApiCoverOctoAwsRecommendationProtoZFgithub.com/alphauslabs/blue-sdk-go/api/cover/recommendation/octoawsrec'
+  _globals['DESCRIPTOR']._serialized_options = b'\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoAwsRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendation'
   _globals['_AWSRECOMMENDATIONS']._serialized_start=84
   _globals['_AWSRECOMMENDATIONS']._serialized_end=104
 # @@protoc_insertion_point(module_scope)

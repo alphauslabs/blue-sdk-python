@@ -24,14 +24,14 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'api/cover/recommendation/azurecsp.proto\x12)blueapi.api.cover.recommendation.azurecsp\"\x19\n\x17\x41zureCSPRecommendationsB\xaa\x01\n:cloud.alphaus.blueapi.api.cover.recommendation.azurecsprecB#ApiCoverAzureCspRecommendationProtoZGgithub.com/alphauslabs/blue-sdk-go/api/cover/recommendation/azurecsprecb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'api/cover/recommendation/azurecsp.proto\x12)blueapi.api.cover.recommendation.azurecsp\"\x19\n\x17\x41zureCSPRecommendationsB\x92\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB#ApiCoverAzureCspRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
 _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.recommendation.azurecsp_pb2', _globals)
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
-  _globals['DESCRIPTOR']._serialized_options = b'\n:cloud.alphaus.blueapi.api.cover.recommendation.azurecsprecB#ApiCoverAzureCspRecommendationProtoZGgithub.com/alphauslabs/blue-sdk-go/api/cover/recommendation/azurecsprec'
+  _globals['DESCRIPTOR']._serialized_options = b'\n.cloud.alphaus.blueapi.api.cover.recommendationB#ApiCoverAzureCspRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendation'
   _globals['_AZURECSPRECOMMENDATIONS']._serialized_start=86
   _globals['_AZURECSPRECOMMENDATIONS']._serialized_end=111
 # @@protoc_insertion_point(module_scope)
