@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&api/cover/recommendation/octogcp.proto\x12(blueapi.api.cover.recommendation.octogcp\"\x14\n\x12GCPRecommendationsB\x91\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoGcpRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&api/cover/recommendation/octogcp.proto\x12(blueapi.api.cover.recommendation.octogcp\"!\n\x1fOctoGeneratedGCPRecommendationsB\x91\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoGcpRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,6 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.recommendation.oc
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoGcpRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendation'
-  _globals['_GCPRECOMMENDATIONS']._serialized_start=84
-  _globals['_GCPRECOMMENDATIONS']._serialized_end=104
+  _globals['_OCTOGENERATEDGCPRECOMMENDATIONS']._serialized_start=84
+  _globals['_OCTOGENERATEDGCPRECOMMENDATIONS']._serialized_end=117
 # @@protoc_insertion_point(module_scope)
