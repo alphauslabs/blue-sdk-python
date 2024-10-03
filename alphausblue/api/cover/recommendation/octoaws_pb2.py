@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from alphausblue.api.cover.recommendation import aws_pb2 as api_dot_cover_dot_recommendation_dot_aws__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&api/cover/recommendation/octoaws.proto\x12(blueapi.api.cover.recommendation.octoaws\"!\n\x1fOctoGeneratedAWSRecommendationsB\x91\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoAwsRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&api/cover/recommendation/octoaws.proto\x12(blueapi.api.cover.recommendation.octoaws\x1a\"api/cover/recommendation/aws.proto\"\xe2\x02\n\x1fOctoGeneratedAWSRecommendations\x12i\n\x0e\x63urrentDetails\x18\x01 \x01(\x0b\x32Q.blueapi.api.cover.recommendation.octoaws.OctoGeneratedAWSRecommendations.Details\x12p\n\x15recommendationDetails\x18\x02 \x01(\x0b\x32Q.blueapi.api.cover.recommendation.octoaws.OctoGeneratedAWSRecommendations.Details\x1a\x62\n\x07\x44\x65tails\x12W\n\nec2Details\x18\x01 \x01(\x0b\x32\x43.blueapi.api.cover.recommendation.aws.AWSResourceDetails.EC2DetailsB\x91\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoAwsRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,8 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.recommendation.oc
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n.cloud.alphaus.blueapi.api.cover.recommendationB\"ApiCoverOctoAwsRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendation'
-  _globals['_OCTOGENERATEDAWSRECOMMENDATIONS']._serialized_start=84
-  _globals['_OCTOGENERATEDAWSRECOMMENDATIONS']._serialized_end=117
+  _globals['_OCTOGENERATEDAWSRECOMMENDATIONS']._serialized_start=121
+  _globals['_OCTOGENERATEDAWSRECOMMENDATIONS']._serialized_end=475
+  _globals['_OCTOGENERATEDAWSRECOMMENDATIONS_DETAILS']._serialized_start=377
+  _globals['_OCTOGENERATEDAWSRECOMMENDATIONS_DETAILS']._serialized_end=475
 # @@protoc_insertion_point(module_scope)
