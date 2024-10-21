@@ -7,7 +7,7 @@ from alphausblue.cover.v1 import cover_pb2 as cover_dot_v1_dot_cover__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.66.2'
+GRPC_GENERATED_VERSION = '1.67.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -671,6 +671,11 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/GetUserProfile',
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
+                _registered_method=True)
+        self.UpdateUserProfile = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserProfile',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserProfileRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserProfileResponse.FromString,
                 _registered_method=True)
         self.ListBudgets = channel.unary_stream(
                 '/blueapi.cover.v1.Cover/ListBudgets',
@@ -1711,6 +1716,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateUserProfile(self, request, context):
+        """Update user profile
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListBudgets(self, request, context):
         """WORK-IN-PROGRESS: List all Budgets in an organization or Budgets under specific cost group
         """
@@ -2551,6 +2563,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetUserProfile,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.SerializeToString,
+            ),
+            'UpdateUserProfile': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserProfile,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserProfileRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserProfileResponse.SerializeToString,
             ),
             'ListBudgets': grpc.unary_stream_rpc_method_handler(
                     servicer.ListBudgets,
@@ -6128,6 +6145,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/GetUserProfile',
             cover_dot_v1_dot_cover__pb2.GetUserProfileRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetUserProfileResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateUserProfile(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateUserProfile',
+            cover_dot_v1_dot_cover__pb2.UpdateUserProfileRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserProfileResponse.FromString,
             options,
             channel_credentials,
             insecure,

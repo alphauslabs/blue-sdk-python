@@ -11,7 +11,7 @@ from alphausblue.cost.v1 import cost_pb2 as cost_dot_v1_dot_cost__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.66.2'
+GRPC_GENERATED_VERSION = '1.67.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
