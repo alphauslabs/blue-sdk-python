@@ -6,6 +6,7 @@ import warnings
 from alphausblue.api import account_pb2 as api_dot_account__pb2
 from alphausblue.api import costtag_pb2 as api_dot_costtag__pb2
 from alphausblue.api.ripple import payer_pb2 as api_dot_ripple_dot_payer__pb2
+from alphausblue.api.ripple.v1 import dashboard_pb2 as api_dot_ripple_dot_v1_dot_dashboard__pb2
 from alphausblue.api.wave import budget_pb2 as api_dot_wave_dot_budget__pb2
 from alphausblue.cost.v1 import cost_pb2 as cost_dot_v1_dot_cost__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -335,6 +336,21 @@ class CostStub(object):
                 '/blueapi.cost.v1.Cost/ReadInvoiceIds',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdsRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdsResponse.FromString,
+                _registered_method=True)
+        self.ReadInvoiceOverViews = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ReadInvoiceOverViews',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceOverviewsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.OverViewSection.FromString,
+                _registered_method=True)
+        self.ReadInvoiceCosts = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ReadInvoiceCosts',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceCostsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.TotalSection.FromString,
+                _registered_method=True)
+        self.ReadInvoiceGroupCosts = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ReadInvoiceGroupCosts',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceGroupCostsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.BillingGroupSection.FromString,
                 _registered_method=True)
 
 
@@ -801,6 +817,27 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ReadInvoiceOverViews(self, request, context):
+        """WORK-IN-PROGRESS: Read the invoice overviews. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadInvoiceCosts(self, request, context):
+        """WORK-IN-PROGRESS: Read the invoice costs. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadInvoiceGroupCosts(self, request, context):
+        """WORK-IN-PROGRESS: Read the invoice group costs. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1098,6 +1135,21 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ReadInvoiceIds,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdsRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceIdsResponse.SerializeToString,
+            ),
+            'ReadInvoiceOverViews': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadInvoiceOverViews,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceOverviewsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.OverViewSection.SerializeToString,
+            ),
+            'ReadInvoiceCosts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadInvoiceCosts,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceCostsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.TotalSection.SerializeToString,
+            ),
+            'ReadInvoiceGroupCosts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadInvoiceGroupCosts,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceGroupCostsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.BillingGroupSection.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2694,6 +2746,87 @@ class Cost(object):
             '/blueapi.cost.v1.Cost/ReadInvoiceIds',
             cost_dot_v1_dot_cost__pb2.ReadInvoiceIdsRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.ReadInvoiceIdsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadInvoiceOverViews(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ReadInvoiceOverViews',
+            cost_dot_v1_dot_cost__pb2.ReadInvoiceOverviewsRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_dashboard__pb2.OverViewSection.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadInvoiceCosts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ReadInvoiceCosts',
+            cost_dot_v1_dot_cost__pb2.ReadInvoiceCostsRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_dashboard__pb2.TotalSection.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadInvoiceGroupCosts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ReadInvoiceGroupCosts',
+            cost_dot_v1_dot_cost__pb2.ReadInvoiceGroupCostsRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_dashboard__pb2.BillingGroupSection.FromString,
             options,
             channel_credentials,
             insecure,
