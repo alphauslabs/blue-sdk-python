@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"api/cover/recommendation/gcp.proto\x12$blueapi.api.cover.recommendation.gcp\"\x14\n\x12GCPRecommendationsB\x8d\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\x1e\x41piCoverGcpRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\"api/cover/recommendation/gcp.proto\x12$blueapi.api.cover.recommendation.gcp\"\x86\x01\n\x12GCPRecommendations\x12p\n recommendationHubRecommendations\x18\x01 \x01(\x0b\x32\x46.blueapi.api.cover.recommendation.gcp.RecommendationHubRecommendations\"\xf8\x01\n RecommendationHubRecommendations\x12\x61\n\x08insights\x18\x01 \x03(\x0b\x32O.blueapi.api.cover.recommendation.gcp.RecommendationHubRecommendations.Insights\x12\x19\n\x11recommendedAction\x18\x02 \x01(\t\x12\x10\n\x08resource\x18\x03 \x01(\t\x12\x15\n\rpriorityLevel\x18\x04 \x01(\t\x1a-\n\x08Insights\x12\x0c\n\x04type\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\tB\x8d\x01\n.cloud.alphaus.blueapi.api.cover.recommendationB\x1e\x41piCoverGcpRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendationb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +32,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.cover.recommendation.gc
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n.cloud.alphaus.blueapi.api.cover.recommendationB\036ApiCoverGcpRecommendationProtoZ;github.com/alphauslabs/blue-sdk-go/api/cover/recommendation'
-  _globals['_GCPRECOMMENDATIONS']._serialized_start=76
-  _globals['_GCPRECOMMENDATIONS']._serialized_end=96
+  _globals['_GCPRECOMMENDATIONS']._serialized_start=77
+  _globals['_GCPRECOMMENDATIONS']._serialized_end=211
+  _globals['_RECOMMENDATIONHUBRECOMMENDATIONS']._serialized_start=214
+  _globals['_RECOMMENDATIONHUBRECOMMENDATIONS']._serialized_end=462
+  _globals['_RECOMMENDATIONHUBRECOMMENDATIONS_INSIGHTS']._serialized_start=417
+  _globals['_RECOMMENDATIONHUBRECOMMENDATIONS_INSIGHTS']._serialized_end=462
 # @@protoc_insertion_point(module_scope)
