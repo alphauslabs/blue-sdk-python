@@ -14,7 +14,7 @@ from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
-GRPC_GENERATED_VERSION = '1.67.0'
+GRPC_GENERATED_VERSION = '1.67.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -322,6 +322,16 @@ class BillingStub(object):
         self.DeleteFreeFormat = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteFreeFormat',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.GetTagsAddingSetting = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetTagsAddingSetting',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetTagsAddingSettingRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.TagsAddingSetting.FromString,
+                _registered_method=True)
+        self.UpdateTagsAddingSetting = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateTagsAddingSetting',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
 
@@ -735,6 +745,18 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetTagsAddingSetting(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateTagsAddingSetting(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1016,6 +1038,16 @@ def add_BillingServicer_to_server(servicer, server):
             'DeleteFreeFormat': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteFreeFormat,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetTagsAddingSetting': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetTagsAddingSetting,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetTagsAddingSettingRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.TagsAddingSetting.SerializeToString,
+            ),
+            'UpdateTagsAddingSetting': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateTagsAddingSetting,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -2531,6 +2563,60 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/DeleteFreeFormat',
             billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetTagsAddingSetting(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetTagsAddingSetting',
+            billing_dot_v1_dot_billing__pb2.GetTagsAddingSettingRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.TagsAddingSetting.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateTagsAddingSetting(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateTagsAddingSetting',
+            billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
