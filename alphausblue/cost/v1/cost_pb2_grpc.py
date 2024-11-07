@@ -97,6 +97,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.ReadAccountOriginalResources = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ReadAccountOriginalResources',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ReadAccountOriginalResourcesRequest.SerializeToString,
+                response_deserializer=api_dot_account__pb2.AccountOriginalResource.FromString,
+                _registered_method=True)
         self.ListTags = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ListTags',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ListTagsRequest.SerializeToString,
@@ -436,6 +441,13 @@ class CostServicer(object):
 
     def DeleteAccount(self, request, context):
         """WORK-IN-PROGRESS: Deletes a vendor account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadAccountOriginalResources(self, request, context):
+        """WORK-IN-PROGRESS: Reads all vendor account-original-resources.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -895,6 +907,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.DeleteAccount,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReadAccountOriginalResources': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadAccountOriginalResources,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ReadAccountOriginalResourcesRequest.FromString,
+                    response_serializer=api_dot_account__pb2.AccountOriginalResource.SerializeToString,
             ),
             'ListTags': grpc.unary_stream_rpc_method_handler(
                     servicer.ListTags,
@@ -1450,6 +1467,33 @@ class Cost(object):
             '/blueapi.cost.v1.Cost/DeleteAccount',
             cost_dot_v1_dot_cost__pb2.DeleteAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadAccountOriginalResources(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ReadAccountOriginalResources',
+            cost_dot_v1_dot_cost__pb2.ReadAccountOriginalResourcesRequest.SerializeToString,
+            api_dot_account__pb2.AccountOriginalResource.FromString,
             options,
             channel_credentials,
             insecure,
