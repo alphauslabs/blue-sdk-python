@@ -447,7 +447,7 @@ class CostServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadAccountOriginalResources(self, request, context):
-        """WORK-IN-PROGRESS: Reads all vendor account-original-resources.
+        """Reads all vendor account-original-resources.
         Account that have not been used for one month will no longer be retrieved.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
