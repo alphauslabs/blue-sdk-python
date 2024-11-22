@@ -139,6 +139,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.InvoiceServiceDiscounts.FromString,
                 _registered_method=True)
+        self.ExportServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ExportServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ExportServiceDiscountsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.ServiceDiscountsExport.FromString,
+                _registered_method=True)
         self.ListAccountInvoiceServiceDiscounts = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListAccountInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAccountInvoiceServiceDiscountsRequest.SerializeToString,
@@ -163,6 +168,16 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/DeleteAccountInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.ExportAccountInvoiceServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ExportAccountInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ExportAccountInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.AccountServiceDiscountsExport.FromString,
+                _registered_method=True)
+        self.ExportBillingGroupInvoiceServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ExportBillingGroupInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.GroupServiceDiscountsExport.FromString,
                 _registered_method=True)
         self.CreateReseller = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/CreateReseller',
@@ -478,6 +493,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ExportServiceDiscounts(self, request, context):
+        """WORK-IN-PROGRESS: Exports service discounts. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAccountInvoiceServiceDiscounts(self, request, context):
         """Reads the account invoice service discounts. Only available in Ripple.
         """
@@ -508,6 +530,20 @@ class BillingServicer(object):
 
     def DeleteAccountInvoiceServiceDiscounts(self, request, context):
         """Deletes the account invoice service discounts. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportAccountInvoiceServiceDiscounts(self, request, context):
+        """WORK-IN-PROGRESS: Exports service discounts for account in billing group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportBillingGroupInvoiceServiceDiscounts(self, request, context):
+        """WORK-IN-PROGRESS: Exports service discounts for billing group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -867,6 +903,11 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.InvoiceServiceDiscounts.SerializeToString,
             ),
+            'ExportServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportServiceDiscountsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.ServiceDiscountsExport.SerializeToString,
+            ),
             'ListAccountInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAccountInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListAccountInvoiceServiceDiscountsRequest.FromString,
@@ -891,6 +932,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.DeleteAccountInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ExportAccountInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportAccountInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportAccountInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.AccountServiceDiscountsExport.SerializeToString,
+            ),
+            'ExportBillingGroupInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportBillingGroupInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.GroupServiceDiscountsExport.SerializeToString,
             ),
             'CreateReseller': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateReseller,
@@ -1593,6 +1644,33 @@ class Billing(object):
             _registered_method=True)
 
     @staticmethod
+    def ExportServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ExportServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.ExportServiceDiscountsRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.ServiceDiscountsExport.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListAccountInvoiceServiceDiscounts(request,
             target,
             options=(),
@@ -1717,6 +1795,60 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/DeleteAccountInvoiceServiceDiscounts',
             billing_dot_v1_dot_billing__pb2.DeleteAccountInvoiceServiceDiscountsRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ExportAccountInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ExportAccountInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.ExportAccountInvoiceServiceDiscountsRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.AccountServiceDiscountsExport.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ExportBillingGroupInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ExportBillingGroupInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.ExportBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.GroupServiceDiscountsExport.FromString,
             options,
             channel_credentials,
             insecure,

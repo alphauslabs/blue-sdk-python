@@ -23,9 +23,10 @@ _sym_db = _symbol_database.Default()
 
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
+from alphausblue.api.ripple.v1 import export_pb2 as api_dot_ripple_dot_v1_dot_export__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+api/ripple/v1/invoiceservicediscounts.proto\x12\x15\x62lueapi.api.ripple.v1\x1a\x1fgoogle/api/field_behavior.proto\"\xc4\x01\n\x17InvoiceServiceDiscounts\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x19\n\x0b\x64\x65scription\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01\x12\x46\n\x07setting\x18\x04 \x01(\x0b\x32\x35.blueapi.api.ripple.v1.InvoiceServiceDiscountsSetting\x12\x15\n\x07\x63reated\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03\x12\x15\n\x07updated\x18\x06 \x01(\tB\x04\xe2\x41\x01\x03\"\x98\x02\n\x1eInvoiceServiceDiscountsSetting\x12P\n\nawsDetails\x18\x01 \x03(\x0b\x32<.blueapi.api.ripple.v1.InvoiceServiceDiscountsSettingDetails\x12R\n\x0c\x61zureDetails\x18\x02 \x03(\x0b\x32<.blueapi.api.ripple.v1.InvoiceServiceDiscountsSettingDetails\x12P\n\ngcpDetails\x18\x03 \x03(\x0b\x32<.blueapi.api.ripple.v1.InvoiceServiceDiscountsSettingDetails\"x\n%InvoiceServiceDiscountsSettingDetails\x12\x12\n\x04\x63ode\x18\x01 \x01(\tB\x04\xe2\x41\x01\x02\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x18\n\x10\x63\x61lculationScope\x18\x04 \x01(\x08\"3\n\x07Service\x12\x13\n\x0bserviceCode\x18\x01 \x01(\t\x12\x13\n\x0bserviceName\x18\x02 \x01(\tB~\n#cloud.alphaus.blueapi.api.ripple.v1B%ApiRippleInvoiceServiceDiscountsProtoZ0github.com/alphauslabs/blue-sdk-go/api/ripple/v1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n+api/ripple/v1/invoiceservicediscounts.proto\x12\x15\x62lueapi.api.ripple.v1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1a\x61pi/ripple/v1/export.proto\"\xc4\x01\n\x17InvoiceServiceDiscounts\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x19\n\x0b\x64\x65scription\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01\x12\x46\n\x07setting\x18\x04 \x01(\x0b\x32\x35.blueapi.api.ripple.v1.InvoiceServiceDiscountsSetting\x12\x15\n\x07\x63reated\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03\x12\x15\n\x07updated\x18\x06 \x01(\tB\x04\xe2\x41\x01\x03\"\x98\x02\n\x1eInvoiceServiceDiscountsSetting\x12P\n\nawsDetails\x18\x01 \x03(\x0b\x32<.blueapi.api.ripple.v1.InvoiceServiceDiscountsSettingDetails\x12R\n\x0c\x61zureDetails\x18\x02 \x03(\x0b\x32<.blueapi.api.ripple.v1.InvoiceServiceDiscountsSettingDetails\x12P\n\ngcpDetails\x18\x03 \x03(\x0b\x32<.blueapi.api.ripple.v1.InvoiceServiceDiscountsSettingDetails\"x\n%InvoiceServiceDiscountsSettingDetails\x12\x12\n\x04\x63ode\x18\x01 \x01(\tB\x04\xe2\x41\x01\x02\x12\x12\n\x04name\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03\x12\r\n\x05value\x18\x03 \x01(\x01\x12\x18\n\x10\x63\x61lculationScope\x18\x04 \x01(\x08\"3\n\x07Service\x12\x13\n\x0bserviceCode\x18\x01 \x01(\t\x12\x13\n\x0bserviceName\x18\x02 \x01(\t\"I\n\x16ServiceDiscountsExport\x12/\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.blueapi.api.ripple.v1.ExportData\"P\n\x1d\x41\x63\x63ountServiceDiscountsExport\x12/\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.blueapi.api.ripple.v1.ExportData\"N\n\x1bGroupServiceDiscountsExport\x12/\n\x04\x64\x61ta\x18\x01 \x01(\x0b\x32!.blueapi.api.ripple.v1.ExportDataB~\n#cloud.alphaus.blueapi.api.ripple.v1B%ApiRippleInvoiceServiceDiscountsProtoZ0github.com/alphauslabs/blue-sdk-go/api/ripple/v1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,12 +44,18 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS'].fields_by_name['code']._serialized_options = b'\342A\001\002'
   _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS'].fields_by_name['name']._loaded_options = None
   _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS'].fields_by_name['name']._serialized_options = b'\342A\001\003'
-  _globals['_INVOICESERVICEDISCOUNTS']._serialized_start=104
-  _globals['_INVOICESERVICEDISCOUNTS']._serialized_end=300
-  _globals['_INVOICESERVICEDISCOUNTSSETTING']._serialized_start=303
-  _globals['_INVOICESERVICEDISCOUNTSSETTING']._serialized_end=583
-  _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS']._serialized_start=585
-  _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS']._serialized_end=705
-  _globals['_SERVICE']._serialized_start=707
-  _globals['_SERVICE']._serialized_end=758
+  _globals['_INVOICESERVICEDISCOUNTS']._serialized_start=132
+  _globals['_INVOICESERVICEDISCOUNTS']._serialized_end=328
+  _globals['_INVOICESERVICEDISCOUNTSSETTING']._serialized_start=331
+  _globals['_INVOICESERVICEDISCOUNTSSETTING']._serialized_end=611
+  _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS']._serialized_start=613
+  _globals['_INVOICESERVICEDISCOUNTSSETTINGDETAILS']._serialized_end=733
+  _globals['_SERVICE']._serialized_start=735
+  _globals['_SERVICE']._serialized_end=786
+  _globals['_SERVICEDISCOUNTSEXPORT']._serialized_start=788
+  _globals['_SERVICEDISCOUNTSEXPORT']._serialized_end=861
+  _globals['_ACCOUNTSERVICEDISCOUNTSEXPORT']._serialized_start=863
+  _globals['_ACCOUNTSERVICEDISCOUNTSEXPORT']._serialized_end=943
+  _globals['_GROUPSERVICEDISCOUNTSEXPORT']._serialized_start=945
+  _globals['_GROUPSERVICEDISCOUNTSEXPORT']._serialized_end=1023
 # @@protoc_insertion_point(module_scope)
