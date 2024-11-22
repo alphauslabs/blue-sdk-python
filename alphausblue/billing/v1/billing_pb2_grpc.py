@@ -324,6 +324,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.GetFreeFormat = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetFreeFormat',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetFreeFormatRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetFreeFormatResponse.FromString,
+                _registered_method=True)
         self.GetTagsAddingSetting = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/GetTagsAddingSetting',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetTagsAddingSettingRequest.SerializeToString,
@@ -696,7 +701,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetTags(self, request, context):
-        """WORK-IN-PROGRESS: Returns the customer details and its tags. 
+        """Returns the customer details and its tags. 
         Port for: m/ripple/tags/vendor/{vendor}?type={type}
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -704,42 +709,49 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateCustomField(self, request, context):
-        """WORK-IN-PROGRESS: Creates new customfield
+        """Creates new customfield
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListCustomField(self, request, context):
-        """WORK-IN-PROGRESS: Returns all registered customfields
+        """Returns all registered customfields
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateCustomField(self, request, context):
-        """WORK-IN-PROGRESS: Update the `customField` specified id, modifying its key and description
+        """Update the `customField` specified id, modifying its key and description
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteCustomField(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the customfield
+        """Deletes the customfield
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateFreeFormat(self, request, context):
-        """WORK-IN-PROGRESS: Creates new billing group free format item (miscellaneous)
+        """Creates new billing group free format item (miscellaneous)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteFreeFormat(self, request, context):
-        """WORK-IN-PROGRESS: Delete billing group free format item (miscellaneous)
+        """Delete billing group free format item (miscellaneous)
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetFreeFormat(self, request, context):
+        """Get billing group free format item (miscellaneous)
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1039,6 +1051,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.DeleteFreeFormat,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetFreeFormat': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetFreeFormat,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetFreeFormatRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetFreeFormatResponse.SerializeToString,
             ),
             'GetTagsAddingSetting': grpc.unary_stream_rpc_method_handler(
                     servicer.GetTagsAddingSetting,
@@ -2564,6 +2581,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/DeleteFreeFormat',
             billing_dot_v1_dot_billing__pb2.DeleteFreeFormatRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetFreeFormat(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetFreeFormat',
+            billing_dot_v1_dot_billing__pb2.GetFreeFormatRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetFreeFormatResponse.FromString,
             options,
             channel_credentials,
             insecure,
