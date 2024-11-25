@@ -548,14 +548,14 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ExportAccountInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Exports service discounts for account in billing group. Only available in Ripple.
+        """Exports service discounts for account in billing group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ExportBillingGroupInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Exports service discounts for billing group. Only available in Ripple.
+        """Exports service discounts for billing group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
