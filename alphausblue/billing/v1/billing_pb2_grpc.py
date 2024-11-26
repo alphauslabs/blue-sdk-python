@@ -114,6 +114,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListInvoiceTemplateRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListInvoiceTemplateResponse.FromString,
                 _registered_method=True)
+        self.UpdateBillingGroupInvoiceTemplate = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateBillingGroupInvoiceTemplate',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceTemplateRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.ReadServiceDiscountsServices = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ReadServiceDiscountsServices',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ReadServiceDiscountsServicesRequest.SerializeToString,
@@ -473,6 +478,13 @@ class BillingServicer(object):
 
     def ListInvoiceTemplate(self, request, context):
         """Lists Invoice Template. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingGroupInvoiceTemplate(self, request, context):
+        """Creates/Updates a billing group's invoice template. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -925,6 +937,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListInvoiceTemplate,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListInvoiceTemplateRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListInvoiceTemplateResponse.SerializeToString,
+            ),
+            'UpdateBillingGroupInvoiceTemplate': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupInvoiceTemplate,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceTemplateRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ReadServiceDiscountsServices': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadServiceDiscountsServices,
@@ -1566,6 +1583,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ListInvoiceTemplate',
             billing_dot_v1_dot_billing__pb2.ListInvoiceTemplateRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListInvoiceTemplateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupInvoiceTemplate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateBillingGroupInvoiceTemplate',
+            billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceTemplateRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
