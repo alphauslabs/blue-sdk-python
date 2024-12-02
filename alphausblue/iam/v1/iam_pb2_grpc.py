@@ -10,7 +10,7 @@ from alphausblue.api import user_pb2 as api_dot_user__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.iam.v1 import iam_pb2 as iam_dot_v1_dot_iam__pb2
 
-GRPC_GENERATED_VERSION = '1.68.0'
+GRPC_GENERATED_VERSION = '1.68.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

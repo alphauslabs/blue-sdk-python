@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.preferences.v1 import preferences_pb2 as preferences_dot_v1_dot_preferences__pb2
 
-GRPC_GENERATED_VERSION = '1.68.0'
+GRPC_GENERATED_VERSION = '1.68.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
