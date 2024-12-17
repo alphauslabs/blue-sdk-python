@@ -379,6 +379,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.ExportBillingGroupCsv = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ExportBillingGroupCsv',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -865,6 +870,12 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ExportBillingGroupCsv(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1202,6 +1213,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.UpdateTagsAddingSetting,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ExportBillingGroupCsv': grpc.unary_stream_rpc_method_handler(
+                    servicer.ExportBillingGroupCsv,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3014,6 +3030,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/UpdateTagsAddingSetting',
             billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ExportBillingGroupCsv(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ExportBillingGroupCsv',
+            billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvResponse.FromString,
             options,
             channel_credentials,
             insecure,
