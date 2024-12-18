@@ -477,6 +477,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.CreateAllocatorRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.CostAllocatorDetails.FromString,
                 _registered_method=True)
+        self.GetAllocationAttributes = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetAllocationAttributes',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetAllocationAttributesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetAllocationAttributesResponse.FromString,
+                _registered_method=True)
         self.UpdateAllocator = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateAllocator',
                 request_serializer=cover_dot_v1_dot_cover__pb2.CostAllocatorRequest.SerializeToString,
@@ -1448,6 +1453,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAllocationAttributes(self, request, context):
+        """Get all available attributes for the charges
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateAllocator(self, request, context):
         """WORK-IN-PROGRESS: Updates a cost allocator item
         """
@@ -2379,6 +2391,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.CreateAllocator,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.CreateAllocatorRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.CostAllocatorDetails.SerializeToString,
+            ),
+            'GetAllocationAttributes': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAllocationAttributes,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetAllocationAttributesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetAllocationAttributesResponse.SerializeToString,
             ),
             'UpdateAllocator': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateAllocator,
@@ -5108,6 +5125,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/CreateAllocator',
             cover_dot_v1_dot_cover__pb2.CreateAllocatorRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.CostAllocatorDetails.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAllocationAttributes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetAllocationAttributes',
+            cover_dot_v1_dot_cover__pb2.GetAllocationAttributesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetAllocationAttributesResponse.FromString,
             options,
             channel_credentials,
             insecure,
