@@ -7,7 +7,7 @@ from alphausblue.cover.v1 import cover_pb2 as cover_dot_v1_dot_cover__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.68.1'
+GRPC_GENERATED_VERSION = '1.69.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -756,6 +756,11 @@ class CoverStub(object):
                 '/blueapi.cover.v1.Cover/ExecuteOptimization',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.FromString,
+                _registered_method=True)
+        self.GetExecutionStatus = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/GetExecutionStatus',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetExecutionStatusRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetExecutionStatusResponse.FromString,
                 _registered_method=True)
         self.MarkAsExecuted = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/MarkAsExecuted',
@@ -1845,6 +1850,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetExecutionStatus(self, request, context):
+        """Get Execution status of a recommendation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def MarkAsExecuted(self, request, context):
         """Mark a recommendation executed.
         """
@@ -2671,6 +2683,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ExecuteOptimization,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.SerializeToString,
+            ),
+            'GetExecutionStatus': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetExecutionStatus,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetExecutionStatusRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetExecutionStatusResponse.SerializeToString,
             ),
             'MarkAsExecuted': grpc.unary_unary_rpc_method_handler(
                     servicer.MarkAsExecuted,
@@ -6637,6 +6654,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/ExecuteOptimization',
             cover_dot_v1_dot_cover__pb2.ExecuteOptimizationRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ExecuteOptimizationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetExecutionStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetExecutionStatus',
+            cover_dot_v1_dot_cover__pb2.GetExecutionStatusRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetExecutionStatusResponse.FromString,
             options,
             channel_credentials,
             insecure,
