@@ -195,6 +195,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordResponse.FromString,
                 _registered_method=True)
+        self.GetSubUserMetadata = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/GetSubUserMetadata',
+                request_serializer=iam_dot_v1_dot_iam__pb2.GetSubUserRequest.SerializeToString,
+                response_deserializer=api_dot_user__pb2.SubUser.FromString,
+                _registered_method=True)
         self.ValidateResetPasswordLinkAndChangePassword = channel.unary_unary(
                 '/blueapi.iam.v1.Iam/ValidateResetPasswordLinkAndChangePassword',
                 request_serializer=iam_dot_v1_dot_iam__pb2.ValidateResetPasswordLinkAndChangePasswordRequest.SerializeToString,
@@ -436,6 +441,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetSubUserMetadata(self, request, context):
+        """WORK-IN-PROGRESS: Get Sub User Metadata for login user's organization based on user identity
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ValidateResetPasswordLinkAndChangePassword(self, request, context):
         """WORK-IN-PROGRESS: Validate reset password link and proceed to update password
         """
@@ -607,6 +619,11 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.VerifyUserForResetPassword,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordResponse.SerializeToString,
+            ),
+            'GetSubUserMetadata': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSubUserMetadata,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.GetSubUserRequest.FromString,
+                    response_serializer=api_dot_user__pb2.SubUser.SerializeToString,
             ),
             'ValidateResetPasswordLinkAndChangePassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ValidateResetPasswordLinkAndChangePassword,
@@ -1457,6 +1474,33 @@ class Iam(object):
             '/blueapi.iam.v1.Iam/VerifyUserForResetPassword',
             iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.VerifyUserForResetPasswordResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSubUserMetadata(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.iam.v1.Iam/GetSubUserMetadata',
+            iam_dot_v1_dot_iam__pb2.GetSubUserRequest.SerializeToString,
+            api_dot_user__pb2.SubUser.FromString,
             options,
             channel_credentials,
             insecure,
