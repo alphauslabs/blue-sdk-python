@@ -389,6 +389,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.FileChunk.FromString,
                 _registered_method=True)
+        self.RippleV2InvoiceListing = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/RippleV2InvoiceListing',
+                request_serializer=billing_dot_v1_dot_billing__pb2.RippleV2InvoiceListingRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.RippleV2InvoiceListingResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -887,6 +892,12 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RippleV2InvoiceListing(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1234,6 +1245,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ExportInvoiceSettingCsv,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.FileChunk.SerializeToString,
+            ),
+            'RippleV2InvoiceListing': grpc.unary_stream_rpc_method_handler(
+                    servicer.RippleV2InvoiceListing,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.RippleV2InvoiceListingRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.RippleV2InvoiceListingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3100,6 +3116,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ExportInvoiceSettingCsv',
             billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.FileChunk.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RippleV2InvoiceListing(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/RippleV2InvoiceListing',
+            billing_dot_v1_dot_billing__pb2.RippleV2InvoiceListingRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.RippleV2InvoiceListingResponse.FromString,
             options,
             channel_credentials,
             insecure,
