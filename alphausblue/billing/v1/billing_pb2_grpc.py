@@ -189,6 +189,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.GroupServiceDiscountsExport.FromString,
                 _registered_method=True)
+        self.GetBillingGroupInvoiceServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetBillingGroupInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceServiceDiscountsResponse.FromString,
+                _registered_method=True)
         self.CreateReseller = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/CreateReseller',
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateResellerRequest.SerializeToString,
@@ -598,6 +603,13 @@ class BillingServicer(object):
 
     def ExportBillingGroupInvoiceServiceDiscounts(self, request, context):
         """Exports service discounts for billing group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBillingGroupInvoiceServiceDiscounts(self, request, context):
+        """Returns the service discount associated with the billing group id
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1045,6 +1057,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ExportBillingGroupInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.GroupServiceDiscountsExport.SerializeToString,
+            ),
+            'GetBillingGroupInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBillingGroupInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceServiceDiscountsResponse.SerializeToString,
             ),
             'CreateReseller': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateReseller,
@@ -2036,6 +2053,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ExportBillingGroupInvoiceServiceDiscounts',
             billing_dot_v1_dot_billing__pb2.ExportBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
             api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2.GroupServiceDiscountsExport.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetBillingGroupInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceServiceDiscountsResponse.FromString,
             options,
             channel_credentials,
             insecure,
