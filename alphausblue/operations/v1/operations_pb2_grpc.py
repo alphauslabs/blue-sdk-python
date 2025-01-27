@@ -7,7 +7,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.operations.v1 import operations_pb2 as operations_dot_v1_dot_operations__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.69.0'
+GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
