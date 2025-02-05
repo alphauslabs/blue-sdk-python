@@ -357,7 +357,7 @@ class BillingStub(object):
         self.ListBillingGroupCustomField = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListBillingGroupCustomField',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.BillingGroupCustomField.FromString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldResponse.FromString,
                 _registered_method=True)
         self.DeleteBillingGroupCustomField = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteBillingGroupCustomField',
@@ -1248,7 +1248,7 @@ def add_BillingServicer_to_server(servicer, server):
             'ListBillingGroupCustomField': grpc.unary_stream_rpc_method_handler(
                     servicer.ListBillingGroupCustomField,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.BillingGroupCustomField.SerializeToString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldResponse.SerializeToString,
             ),
             'DeleteBillingGroupCustomField': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteBillingGroupCustomField,
@@ -3002,7 +3002,7 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/ListBillingGroupCustomField',
             billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.BillingGroupCustomField.FromString,
+            billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldResponse.FromString,
             options,
             channel_credentials,
             insecure,
