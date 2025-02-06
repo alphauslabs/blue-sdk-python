@@ -778,56 +778,56 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadCustomizedBillingServices(self, request, context):
-        """WORK-IN-PROGRESS: Reads the customized billing service. Only available in Ripple.
+        """Reads the customized billing service. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCustomizedBillingService(self, request, context):
-        """WORK-IN-PROGRESS: Gets the customized billing service. Only available in Ripple.
+        """Gets the customized billing service. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateCustomizedBillingService(self, request, context):
-        """WORK-IN-PROGRESS: Creates the customized billing service. Only available in Ripple.
+        """Creates the customized billing service. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateCustomizedBillingService(self, request, context):
-        """WORK-IN-PROGRESS: Updates the customized billing service by updating the fields specified in the update mask. Only available in Ripple.
+        """Updates the customized billing service by updating the fields specified in the update mask. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteCustomizedBillingService(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the customized billing service. Only available in Ripple.
+        """Deletes the customized billing service. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCustomizedBillingServiceBillingGroup(self, request, context):
-        """WORK-IN-PROGRESS: Gets the customized billing service in billing group. Only available in Ripple.
+        """Gets the customized billing service in billing group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SetCustomizedBillingServiceBillingGroup(self, request, context):
-        """WORK-IN-PROGRESS: Sets the customized billing service in billing group. Only available in Ripple.
+        """Sets the customized billing service in billing group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteCustomizedBillingServiceBillingGroup(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the customized billing service in billing group. Only available in Ripple.
+        """Deletes the customized billing service in billing group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
