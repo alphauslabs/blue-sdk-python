@@ -47,7 +47,7 @@ class FlowServicer(object):
     """
 
     def GetInfo(self, request, context):
-        """Test endpoint only.
+        """For Testing Purposes Only.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
