@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from alphausblue.flow.v1 import flow_pb2 as flow_dot_v1_dot_flow__pb2
 
 GRPC_GENERATED_VERSION = '1.70.0'
 GRPC_VERSION = grpc.__version__
@@ -34,15 +35,32 @@ class FlowStub(object):
         Args:
             channel: A grpc.Channel.
         """
+        self.GetInfo = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetInfo',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetInfoRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetInfoResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
     """Flow service definition.
     """
 
+    def GetInfo(self, request, context):
+        """Test endpoint only.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
+            'GetInfo': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInfo,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetInfoRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetInfoResponse.SerializeToString,
+            ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
             'blueapi.flow.v1.Flow', rpc_method_handlers)
@@ -54,3 +72,30 @@ def add_FlowServicer_to_server(servicer, server):
 class Flow(object):
     """Flow service definition.
     """
+
+    @staticmethod
+    def GetInfo(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetInfo',
+            flow_dot_v1_dot_flow__pb2.GetInfoRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetInfoResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)

@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x66low/v1/flow.proto\x12\x0f\x62lueapi.flow.v1\x1a.protoc-gen-openapiv2/options/annotations.proto2\x9e\x01\n\x04\x46low\x1a\x95\x01\x92\x41\x91\x01\x12\x41(ALPHA) Flow API. Base URL: https://api.alphaus.cloud/m/blue/flow\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/flow/BH\n\x16\x63loud.alphaus.api.flowB\tFlowProtoZ#github.com/alphauslabs/blueapi/flowb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x66low/v1/flow.proto\x12\x0f\x62lueapi.flow.v1\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x10\n\x0eGetInfoRequest\"#\n\x0fGetInfoResponse\x12\x10\n\x08response\x18\x01 \x01(\t2\xfe\x01\n\x04\x46low\x12^\n\x07GetInfo\x12\x1f.blueapi.flow.v1.GetInfoRequest\x1a .blueapi.flow.v1.GetInfoResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/info\x1a\x95\x01\x92\x41\x91\x01\x12\x41(ALPHA) Flow API. Base URL: https://api.alphaus.cloud/m/blue/flow\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/flow/BH\n\x16\x63loud.alphaus.api.flowB\tFlowProtoZ#github.com/alphauslabs/blueapi/flowb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,6 +36,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\026cloud.alphaus.api.flowB\tFlowProtoZ#github.com/alphauslabs/blueapi/flow'
   _globals['_FLOW']._loaded_options = None
   _globals['_FLOW']._serialized_options = b'\222A\221\001\022A(ALPHA) Flow API. Base URL: https://api.alphaus.cloud/m/blue/flow\032L\n\022Service definition\0226https://github.com/alphauslabs/blueapi/tree/main/flow/'
-  _globals['_FLOW']._serialized_start=88
-  _globals['_FLOW']._serialized_end=246
+  _globals['_FLOW'].methods_by_name['GetInfo']._loaded_options = None
+  _globals['_FLOW'].methods_by_name['GetInfo']._serialized_options = b'\202\323\344\223\002\n\022\010/v1/info'
+  _globals['_GETINFOREQUEST']._serialized_start=117
+  _globals['_GETINFOREQUEST']._serialized_end=133
+  _globals['_GETINFORESPONSE']._serialized_start=135
+  _globals['_GETINFORESPONSE']._serialized_end=170
+  _globals['_FLOW']._serialized_start=173
+  _globals['_FLOW']._serialized_end=427
 # @@protoc_insertion_point(module_scope)
