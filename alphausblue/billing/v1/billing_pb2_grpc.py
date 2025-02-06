@@ -486,7 +486,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListInvoice(self, request, context):
-        """Reads list of the invoice.
+        """WORK-IN-PROGRESS: Reads list of the invoice.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -856,19 +856,22 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def AddBillingGroupCustomField(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Add  a custom field into a billing group
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListBillingGroupCustomField(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Show all the billing groups custom fields
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteBillingGroupCustomField(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Remove a custom field from a billing group
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -921,13 +924,15 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ExportBillingGroupCsv(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Export the billing groups into csv format
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ExportInvoiceSettingCsv(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Exports the invoice settings into csv format
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
