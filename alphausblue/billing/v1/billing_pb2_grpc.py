@@ -399,15 +399,15 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
-        self.ExportBillingGroupCsv = channel.unary_stream(
+        self.ExportBillingGroupCsv = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/ExportBillingGroupCsv',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvResponse.FromString,
                 _registered_method=True)
-        self.ExportInvoiceSettingCsv = channel.unary_stream(
+        self.ExportInvoiceSettingCsv = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/ExportInvoiceSettingCsv',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.FileChunk.FromString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvResponse.FromString,
                 _registered_method=True)
 
 
@@ -1295,15 +1295,15 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateTagsAddingSettingRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'ExportBillingGroupCsv': grpc.unary_stream_rpc_method_handler(
+            'ExportBillingGroupCsv': grpc.unary_unary_rpc_method_handler(
                     servicer.ExportBillingGroupCsv,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ExportBillingGroupCsvResponse.SerializeToString,
             ),
-            'ExportInvoiceSettingCsv': grpc.unary_stream_rpc_method_handler(
+            'ExportInvoiceSettingCsv': grpc.unary_unary_rpc_method_handler(
                     servicer.ExportInvoiceSettingCsv,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.FileChunk.SerializeToString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3245,7 +3245,7 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
+        return grpc.experimental.unary_unary(
             request,
             target,
             '/blueapi.billing.v1.Billing/ExportBillingGroupCsv',
@@ -3272,12 +3272,12 @@ class Billing(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
+        return grpc.experimental.unary_unary(
             request,
             target,
             '/blueapi.billing.v1.Billing/ExportInvoiceSettingCsv',
             billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.FileChunk.FromString,
+            billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvResponse.FromString,
             options,
             channel_credentials,
             insecure,
