@@ -54,6 +54,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
                 _registered_method=True)
+        self.AddAccountToBillingGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/AddAccountToBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.AddAccountToBillingGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.GetBillingGroup = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/GetBillingGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupRequest.SerializeToString,
@@ -424,6 +429,13 @@ class BillingServicer(object):
 
     def CreateBillingGroup(self, request, context):
         """Registers a billing group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AddAccountToBillingGroup(self, request, context):
+        """Add a vendor account to a billing group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -950,6 +962,11 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.BillingGroup.SerializeToString,
             ),
+            'AddAccountToBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddAccountToBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.AddAccountToBillingGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
             'GetBillingGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.GetBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupRequest.FromString,
@@ -1361,6 +1378,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/CreateBillingGroup',
             billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AddAccountToBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/AddAccountToBillingGroup',
+            billing_dot_v1_dot_billing__pb2.AddAccountToBillingGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
