@@ -369,6 +369,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldResponse.FromString,
                 _registered_method=True)
+        self.AddTagsToBillingGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/AddTagsToBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.AddTagsToBillingGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.DeleteBillingGroupCustomField = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteBillingGroupCustomField',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteBillingGroupCustomFieldRequest.SerializeToString,
@@ -893,6 +898,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AddTagsToBillingGroup(self, request, context):
+        """Add Tags to the billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteBillingGroupCustomField(self, request, context):
         """Remove a custom field from a billing group
         """
@@ -1288,6 +1300,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListBillingGroupCustomField,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldResponse.SerializeToString,
+            ),
+            'AddTagsToBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.AddTagsToBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.AddTagsToBillingGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'DeleteBillingGroupCustomField': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteBillingGroupCustomField,
@@ -3096,6 +3113,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ListBillingGroupCustomField',
             billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListBillingGroupCustomFieldResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AddTagsToBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/AddTagsToBillingGroup',
+            billing_dot_v1_dot_billing__pb2.AddTagsToBillingGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
