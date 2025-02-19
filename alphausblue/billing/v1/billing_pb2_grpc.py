@@ -565,28 +565,28 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadServiceDiscountsServices(self, request, context):
-        """WORK-IN-PROGRESS: Reads the service relate to the service discounts. Only available in Ripple.
+        """Reads the service relate to the service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Creates the invoice service discounts. Only available in Ripple.
+        """Creates the invoice service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Updates the invoice service discounts. Only available in Ripple.
+        """Updates the invoice service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the invoice service discounts. Only available in Ripple.
+        """Deletes the invoice service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
