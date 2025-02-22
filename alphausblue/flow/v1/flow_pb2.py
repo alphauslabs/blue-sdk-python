@@ -26,7 +26,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x66low/v1/flow.proto\x12\x0f\x62lueapi.flow.v1\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x10\n\x0eGetInfoRequest\"#\n\x0fGetInfoResponse\x12\x10\n\x08response\x18\x01 \x01(\t2\xfe\x01\n\x04\x46low\x12^\n\x07GetInfo\x12\x1f.blueapi.flow.v1.GetInfoRequest\x1a .blueapi.flow.v1.GetInfoResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/info\x1a\x95\x01\x92\x41\x91\x01\x12\x41(ALPHA) Flow API. Base URL: https://api.alphaus.cloud/m/blue/flow\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/flow/BH\n\x16\x63loud.alphaus.api.flowB\tFlowProtoZ#github.com/alphauslabs/blueapi/flowb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x12\x66low/v1/flow.proto\x12\x0f\x62lueapi.flow.v1\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x10\n\x0eGetInfoRequest\"\xd2\x01\n\x15\x43reateSettingsRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x15\n\rcustomization\x18\x02 \x01(\t\x12\x10\n\x08planTerm\x18\x03 \x01(\t\x12\x15\n\rpaymentOption\x18\x04 \x01(\t\x12\x16\n\x0elookBackPeriod\x18\x05 \x01(\t\x12\x16\n\x0einstanceFamily\x18\x06 \x01(\t\x12\x14\n\x0c\x61nnualBudget\x18\x07 \x01(\t\x12\x15\n\rmonthlyBudget\x18\x08 \x01(\t\x12\x10\n\x08\x61pproval\x18\t \x01(\x08\"#\n\x0fGetInfoResponse\x12\x10\n\x08response\x18\x01 \x01(\t\"*\n\x16\x43reateSettingsResponse\x12\x10\n\x08response\x18\x01 \x01(\t2\x82\x03\n\x04\x46low\x12^\n\x07GetInfo\x12\x1f.blueapi.flow.v1.GetInfoRequest\x1a .blueapi.flow.v1.GetInfoResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/info\x12\x81\x01\n\x0e\x43reateSettings\x12&.blueapi.flow.v1.CreateSettingsRequest\x1a\'.blueapi.flow.v1.CreateSettingsResponse\"\x1e\x82\xd3\xe4\x93\x02\x18\"\x13/v1/settings:create:\x01*\x1a\x95\x01\x92\x41\x91\x01\x12\x41(ALPHA) Flow API. Base URL: https://api.alphaus.cloud/m/blue/flow\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/flow/BH\n\x16\x63loud.alphaus.api.flowB\tFlowProtoZ#github.com/alphauslabs/blueapi/flowb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,10 +38,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FLOW']._serialized_options = b'\222A\221\001\022A(ALPHA) Flow API. Base URL: https://api.alphaus.cloud/m/blue/flow\032L\n\022Service definition\0226https://github.com/alphauslabs/blueapi/tree/main/flow/'
   _globals['_FLOW'].methods_by_name['GetInfo']._loaded_options = None
   _globals['_FLOW'].methods_by_name['GetInfo']._serialized_options = b'\202\323\344\223\002\n\022\010/v1/info'
+  _globals['_FLOW'].methods_by_name['CreateSettings']._loaded_options = None
+  _globals['_FLOW'].methods_by_name['CreateSettings']._serialized_options = b'\202\323\344\223\002\030\"\023/v1/settings:create:\001*'
   _globals['_GETINFOREQUEST']._serialized_start=117
   _globals['_GETINFOREQUEST']._serialized_end=133
-  _globals['_GETINFORESPONSE']._serialized_start=135
-  _globals['_GETINFORESPONSE']._serialized_end=170
-  _globals['_FLOW']._serialized_start=173
-  _globals['_FLOW']._serialized_end=427
+  _globals['_CREATESETTINGSREQUEST']._serialized_start=136
+  _globals['_CREATESETTINGSREQUEST']._serialized_end=346
+  _globals['_GETINFORESPONSE']._serialized_start=348
+  _globals['_GETINFORESPONSE']._serialized_end=383
+  _globals['_CREATESETTINGSRESPONSE']._serialized_start=385
+  _globals['_CREATESETTINGSRESPONSE']._serialized_end=427
+  _globals['_FLOW']._serialized_start=430
+  _globals['_FLOW']._serialized_end=816
 # @@protoc_insertion_point(module_scope)
