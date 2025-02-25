@@ -54,6 +54,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
                 _registered_method=True)
+        self.CreateBillingGroupMerged = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateBillingGroupMerged',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupMergedRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
+                _registered_method=True)
         self.DeleteBillinGroup = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteBillinGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteBillingGroupRequest.SerializeToString,
@@ -474,6 +479,13 @@ class BillingServicer(object):
 
     def CreateBillingGroup(self, request, context):
         """Registers a billing group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateBillingGroupMerged(self, request, context):
+        """Registers a billing group with Merged Endpoints. Only available in Ripple. WORK IN PROGRESS
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1070,6 +1082,11 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.BillingGroup.SerializeToString,
             ),
+            'CreateBillingGroupMerged': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateBillingGroupMerged,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupMergedRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.BillingGroup.SerializeToString,
+            ),
             'DeleteBillinGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteBillinGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteBillingGroupRequest.FromString,
@@ -1530,6 +1547,33 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/CreateBillingGroup',
             billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateBillingGroupMerged(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateBillingGroupMerged',
+            billing_dot_v1_dot_billing__pb2.CreateBillingGroupMergedRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
             options,
             channel_credentials,
