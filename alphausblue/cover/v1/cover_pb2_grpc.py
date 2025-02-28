@@ -837,6 +837,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsResponse.FromString,
                 _registered_method=True)
+        self.ListSharedResources = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListSharedResources',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListSharedResourcesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListSharedResourcesResponse.FromString,
+                _registered_method=True)
+        self.CreateSharedResource = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateSharedResource',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateSharedResourcesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateSharedResourcesResponse.FromString,
+                _registered_method=True)
+        self.GetSharedResource = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetSharedResource',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetSharedResourcesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetSharedResourcesResponse.FromString,
+                _registered_method=True)
+        self.UpdateSharedResource = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateSharedResource',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateSharedResourcesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateSharedResourcesResponse.FromString,
+                _registered_method=True)
+        self.DeleteSharedResource = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteSharedResource',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesResponse.FromString,
+                _registered_method=True)
         self.VerifyAPIAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/VerifyAPIAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.VerifyAPIAccessRequest.SerializeToString,
@@ -1967,6 +1992,41 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListSharedResources(self, request, context):
+        """List all Shared Resources
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateSharedResource(self, request, context):
+        """Create Shared Resource
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSharedResource(self, request, context):
+        """Get Specific Shared Resource
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateSharedResource(self, request, context):
+        """Update Specific Shared Resource
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteSharedResource(self, request, context):
+        """Delete Specific Shared Resource
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def VerifyAPIAccess(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -2775,6 +2835,31 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ListSuggestedUnits,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsResponse.SerializeToString,
+            ),
+            'ListSharedResources': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSharedResources,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListSharedResourcesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListSharedResourcesResponse.SerializeToString,
+            ),
+            'CreateSharedResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateSharedResource,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateSharedResourcesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateSharedResourcesResponse.SerializeToString,
+            ),
+            'GetSharedResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSharedResource,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetSharedResourcesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetSharedResourcesResponse.SerializeToString,
+            ),
+            'UpdateSharedResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSharedResource,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateSharedResourcesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateSharedResourcesResponse.SerializeToString,
+            ),
+            'DeleteSharedResource': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteSharedResource,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesResponse.SerializeToString,
             ),
             'VerifyAPIAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.VerifyAPIAccess,
@@ -7103,6 +7188,141 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/ListSuggestedUnits',
             cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListSharedResources(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListSharedResources',
+            cover_dot_v1_dot_cover__pb2.ListSharedResourcesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListSharedResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateSharedResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/CreateSharedResource',
+            cover_dot_v1_dot_cover__pb2.CreateSharedResourcesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateSharedResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSharedResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetSharedResource',
+            cover_dot_v1_dot_cover__pb2.GetSharedResourcesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetSharedResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateSharedResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateSharedResource',
+            cover_dot_v1_dot_cover__pb2.UpdateSharedResourcesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateSharedResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteSharedResource(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/DeleteSharedResource',
+            cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesResponse.FromString,
             options,
             channel_credentials,
             insecure,
