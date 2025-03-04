@@ -299,6 +299,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
                 response_deserializer=api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
                 _registered_method=True)
+        self.ApplyInvoiceAdjustments = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ApplyInvoiceAdjustments',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ApplyInvoiceAdjustmentsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.ListAccountResources = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListAccountResources',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.SerializeToString,
@@ -833,6 +838,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ApplyInvoiceAdjustments(self, request, context):
+        """WORK-IN-PROGRESS: Applies the adjustment entry item. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListAccountResources(self, request, context):
         """WORK-IN-PROGRESS: Returns all registered accounts that are not associated to any billing groups and accounts found in CUR for the specified month. For Ripple only
         """
@@ -1326,6 +1338,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ReadInvoiceAdjustments,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.FromString,
                     response_serializer=api_dot_wave_dot_adjustment__pb2.Adjustment.SerializeToString,
+            ),
+            'ApplyInvoiceAdjustments': grpc.unary_unary_rpc_method_handler(
+                    servicer.ApplyInvoiceAdjustments,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ApplyInvoiceAdjustmentsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListAccountResources': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAccountResources,
@@ -2871,6 +2888,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ReadInvoiceAdjustments',
             billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
             api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ApplyInvoiceAdjustments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ApplyInvoiceAdjustments',
+            billing_dot_v1_dot_billing__pb2.ApplyInvoiceAdjustmentsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
