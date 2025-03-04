@@ -94,6 +94,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceRequest.SerializeToString,
                 response_deserializer=api_dot_invoice__pb2.InvoiceMessage.FromString,
                 _registered_method=True)
+        self.CreateInvoiceWithSettings = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateInvoiceWithSettings',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.SerializeToString,
+                response_deserializer=api_dot_invoice__pb2.InvoiceMessage.FromString,
+                _registered_method=True)
         self.SaveInvoiceSettings = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/SaveInvoiceSettings',
                 request_serializer=billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.SerializeToString,
@@ -540,6 +545,13 @@ class BillingServicer(object):
 
     def CreateInvoice(self, request, context):
         """Creates an invoice. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateInvoiceWithSettings(self, request, context):
+        """Creates an invoice and add settings. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1132,6 +1144,11 @@ def add_BillingServicer_to_server(servicer, server):
             'CreateInvoice': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateInvoice,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceRequest.FromString,
+                    response_serializer=api_dot_invoice__pb2.InvoiceMessage.SerializeToString,
+            ),
+            'CreateInvoiceWithSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateInvoiceWithSettings,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.FromString,
                     response_serializer=api_dot_invoice__pb2.InvoiceMessage.SerializeToString,
             ),
             'SaveInvoiceSettings': grpc.unary_unary_rpc_method_handler(
@@ -1780,6 +1797,33 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/CreateInvoice',
             billing_dot_v1_dot_billing__pb2.CreateInvoiceRequest.SerializeToString,
+            api_dot_invoice__pb2.InvoiceMessage.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateInvoiceWithSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateInvoiceWithSettings',
+            billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.SerializeToString,
             api_dot_invoice__pb2.InvoiceMessage.FromString,
             options,
             channel_credentials,
