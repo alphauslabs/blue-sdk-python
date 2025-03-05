@@ -9,6 +9,7 @@ from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessg
 from alphausblue.api.ripple import customizedbillingservice_pb2 as api_dot_ripple_dot_customizedbillingservice__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.api.ripple import untaggedgroup_pb2 as api_dot_ripple_dot_untaggedgroup__pb2
+from alphausblue.api.ripple.v1 import accountsupportplan_pb2 as api_dot_ripple_dot_v1_dot_accountsupportplan__pb2
 from alphausblue.api.ripple.v1 import invoiceservicediscounts_pb2 as api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2
 from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
@@ -472,6 +473,16 @@ class BillingStub(object):
         self.UpdateBillingGroupCustomFields = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/UpdateBillingGroupCustomFields',
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupCustomFieldsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.GetBillingGroupAccountSupportPlan = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetBillingGroupAccountSupportPlan',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAccountSupportPlanRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_accountsupportplan__pb2.BillingGroupAccountSupportPlan.FromString,
+                _registered_method=True)
+        self.UpdateBillingGroupAccountSupportPlan = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateBillingGroupAccountSupportPlan',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAccountSupportPlanRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
 
@@ -1093,6 +1104,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetBillingGroupAccountSupportPlan(self, request, context):
+        """WORK-IN-PROGRESS: Gets the account support plan in billing group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingGroupAccountSupportPlan(self, request, context):
+        """WORK-IN-PROGRESS: Updates the account support plan in billing group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1524,6 +1549,16 @@ def add_BillingServicer_to_server(servicer, server):
             'UpdateBillingGroupCustomFields': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBillingGroupCustomFields,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupCustomFieldsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetBillingGroupAccountSupportPlan': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetBillingGroupAccountSupportPlan,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAccountSupportPlanRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_accountsupportplan__pb2.BillingGroupAccountSupportPlan.SerializeToString,
+            ),
+            'UpdateBillingGroupAccountSupportPlan': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupAccountSupportPlan,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAccountSupportPlanRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -3849,6 +3884,60 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/UpdateBillingGroupCustomFields',
             billing_dot_v1_dot_billing__pb2.UpdateBillingGroupCustomFieldsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupAccountSupportPlan(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetBillingGroupAccountSupportPlan',
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupAccountSupportPlanRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_accountsupportplan__pb2.BillingGroupAccountSupportPlan.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupAccountSupportPlan(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateBillingGroupAccountSupportPlan',
+            billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAccountSupportPlanRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
