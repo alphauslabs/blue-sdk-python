@@ -572,7 +572,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListInvoiceStatus(self, request, context):
-        """WORK-IN-PROGRESS: Reads an invoice status. Only available in Ripple.
+        """Reads an invoice status. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -865,7 +865,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAdjustmentConfig(self, request, context):
-        """WORK-IN-PROGRESS: Gets adjustment config
+        """Gets adjustment config
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
