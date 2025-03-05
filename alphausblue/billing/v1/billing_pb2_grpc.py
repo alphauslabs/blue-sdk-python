@@ -872,7 +872,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateAdjustmentConfig(self, request, context):
-        """WORK-IN-PROGRESS: Creates adjustment config
+        """Creates adjustment config
 
         [ERRORS] 
         - InvalidArgument:
@@ -885,14 +885,14 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateAdjustmentConfig(self, request, context):
-        """WORK-IN-PROGRESS: Updates adjustment config
+        """Updates adjustment config
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteAdjustmentConfig(self, request, context):
-        """WORK-IN-PROGRESS: Deletes adjustment config
+        """Deletes adjustment config
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
