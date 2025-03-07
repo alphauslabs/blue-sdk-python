@@ -9,6 +9,7 @@ from alphausblue.api.ripple import accessgroup_pb2 as api_dot_ripple_dot_accessg
 from alphausblue.api.ripple import customizedbillingservice_pb2 as api_dot_ripple_dot_customizedbillingservice__pb2
 from alphausblue.api.ripple import reseller_pb2 as api_dot_ripple_dot_reseller__pb2
 from alphausblue.api.ripple import untaggedgroup_pb2 as api_dot_ripple_dot_untaggedgroup__pb2
+from alphausblue.api.ripple.v1 import adjustmententry_pb2 as api_dot_ripple_dot_v1_dot_adjustmententry__pb2
 from alphausblue.api.ripple.v1 import invoiceservicediscounts_pb2 as api_dot_ripple_dot_v1_dot_invoiceservicediscounts__pb2
 from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__pb2
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
@@ -304,9 +305,29 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.SerializeToString,
                 response_deserializer=api_dot_wave_dot_adjustment__pb2.Adjustment.FromString,
                 _registered_method=True)
-        self.ApplyInvoiceAdjustments = channel.unary_unary(
-                '/blueapi.billing.v1.Billing/ApplyInvoiceAdjustments',
-                request_serializer=billing_dot_v1_dot_billing__pb2.ApplyInvoiceAdjustmentsRequest.SerializeToString,
+        self.ReadAdjustmentEntries = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadAdjustmentEntries',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadAdjustmentEntriesRequest.SerializeToString,
+                response_deserializer=api_dot_ripple_dot_v1_dot_adjustmententry__pb2.AdjustmentEntry.FromString,
+                _registered_method=True)
+        self.ApplyAdjustmentEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ApplyAdjustmentEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ApplyAdjustmentEntryRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.RestoreAdjustmentEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/RestoreAdjustmentEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.RestoreAdjustmentEntryRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.SplitAdjustmentEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/SplitAdjustmentEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SplitAdjustmentEntryRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.AllocateAdjustmentEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/AllocateAdjustmentEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.AllocateAdjustmentEntryRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
         self.ListAccountResources = channel.unary_stream(
@@ -860,8 +881,36 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ApplyInvoiceAdjustments(self, request, context):
+    def ReadAdjustmentEntries(self, request, context):
+        """WORK-IN-PROGRESS: Reads the adjustment entries. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ApplyAdjustmentEntry(self, request, context):
         """WORK-IN-PROGRESS: Applies the adjustment entry item. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RestoreAdjustmentEntry(self, request, context):
+        """WORK-IN-PROGRESS: Restores the adjustment entry item. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SplitAdjustmentEntry(self, request, context):
+        """WORK-IN-PROGRESS: Splits the adjustment entry item. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AllocateAdjustmentEntry(self, request, context):
+        """WORK-IN-PROGRESS: Allocates the adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1380,9 +1429,29 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceAdjustmentsRequest.FromString,
                     response_serializer=api_dot_wave_dot_adjustment__pb2.Adjustment.SerializeToString,
             ),
-            'ApplyInvoiceAdjustments': grpc.unary_unary_rpc_method_handler(
-                    servicer.ApplyInvoiceAdjustments,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.ApplyInvoiceAdjustmentsRequest.FromString,
+            'ReadAdjustmentEntries': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadAdjustmentEntries,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadAdjustmentEntriesRequest.FromString,
+                    response_serializer=api_dot_ripple_dot_v1_dot_adjustmententry__pb2.AdjustmentEntry.SerializeToString,
+            ),
+            'ApplyAdjustmentEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.ApplyAdjustmentEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ApplyAdjustmentEntryRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'RestoreAdjustmentEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.RestoreAdjustmentEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.RestoreAdjustmentEntryRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SplitAdjustmentEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.SplitAdjustmentEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SplitAdjustmentEntryRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'AllocateAdjustmentEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.AllocateAdjustmentEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.AllocateAdjustmentEntryRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListAccountResources': grpc.unary_stream_rpc_method_handler(
@@ -2977,7 +3046,34 @@ class Billing(object):
             _registered_method=True)
 
     @staticmethod
-    def ApplyInvoiceAdjustments(request,
+    def ReadAdjustmentEntries(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ReadAdjustmentEntries',
+            billing_dot_v1_dot_billing__pb2.ReadAdjustmentEntriesRequest.SerializeToString,
+            api_dot_ripple_dot_v1_dot_adjustmententry__pb2.AdjustmentEntry.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ApplyAdjustmentEntry(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2990,8 +3086,89 @@ class Billing(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.billing.v1.Billing/ApplyInvoiceAdjustments',
-            billing_dot_v1_dot_billing__pb2.ApplyInvoiceAdjustmentsRequest.SerializeToString,
+            '/blueapi.billing.v1.Billing/ApplyAdjustmentEntry',
+            billing_dot_v1_dot_billing__pb2.ApplyAdjustmentEntryRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RestoreAdjustmentEntry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/RestoreAdjustmentEntry',
+            billing_dot_v1_dot_billing__pb2.RestoreAdjustmentEntryRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SplitAdjustmentEntry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/SplitAdjustmentEntry',
+            billing_dot_v1_dot_billing__pb2.SplitAdjustmentEntryRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AllocateAdjustmentEntry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/AllocateAdjustmentEntry',
+            billing_dot_v1_dot_billing__pb2.AllocateAdjustmentEntryRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
