@@ -862,6 +862,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesResponse.FromString,
                 _registered_method=True)
+        self.ListUnitMetrics = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListUnitMetrics',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListUnitMetricsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListUnitMetricsResponse.FromString,
+                _registered_method=True)
+        self.CreateUnitMetric = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateUnitMetric',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateUnitMetricRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateUnitMetricResponse.FromString,
+                _registered_method=True)
+        self.GetUnitMetric = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetUnitMetric',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetUnitMetricRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetUnitMetricResponse.FromString,
+                _registered_method=True)
+        self.UpdateUnitMetric = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUnitMetric',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUnitMetricRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUnitMetricResponse.FromString,
+                _registered_method=True)
+        self.DeleteUnitMetric = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteUnitMetric',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricResponse.FromString,
+                _registered_method=True)
         self.VerifyAPIAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/VerifyAPIAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.VerifyAPIAccessRequest.SerializeToString,
@@ -2027,6 +2052,41 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListUnitMetrics(self, request, context):
+        """List all Unit Metrics
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateUnitMetric(self, request, context):
+        """Create Unit Metric
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetUnitMetric(self, request, context):
+        """Get Specific Unit Metric
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUnitMetric(self, request, context):
+        """Update Specific Unit Metric
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteUnitMetric(self, request, context):
+        """Delete Specific Unit Metric
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def VerifyAPIAccess(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -2860,6 +2920,31 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteSharedResource,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesResponse.SerializeToString,
+            ),
+            'ListUnitMetrics': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUnitMetrics,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListUnitMetricsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListUnitMetricsResponse.SerializeToString,
+            ),
+            'CreateUnitMetric': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateUnitMetric,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateUnitMetricRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateUnitMetricResponse.SerializeToString,
+            ),
+            'GetUnitMetric': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetUnitMetric,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetUnitMetricRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetUnitMetricResponse.SerializeToString,
+            ),
+            'UpdateUnitMetric': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUnitMetric,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUnitMetricRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUnitMetricResponse.SerializeToString,
+            ),
+            'DeleteUnitMetric': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteUnitMetric,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricResponse.SerializeToString,
             ),
             'VerifyAPIAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.VerifyAPIAccess,
@@ -7323,6 +7408,141 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/DeleteSharedResource',
             cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteSharedResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUnitMetrics(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListUnitMetrics',
+            cover_dot_v1_dot_cover__pb2.ListUnitMetricsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListUnitMetricsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateUnitMetric(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/CreateUnitMetric',
+            cover_dot_v1_dot_cover__pb2.CreateUnitMetricRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateUnitMetricResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetUnitMetric(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetUnitMetric',
+            cover_dot_v1_dot_cover__pb2.GetUnitMetricRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetUnitMetricResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateUnitMetric(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateUnitMetric',
+            cover_dot_v1_dot_cover__pb2.UpdateUnitMetricRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUnitMetricResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteUnitMetric(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/DeleteUnitMetric',
+            cover_dot_v1_dot_cover__pb2.DeleteUnitMetricRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteUnitMetricResponse.FromString,
             options,
             channel_credentials,
             insecure,
