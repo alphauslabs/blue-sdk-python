@@ -382,6 +382,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListDataAccessRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DataAccess.FromString,
                 _registered_method=True)
+        self.ListUnregisteredAccounts = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListUnregisteredAccounts',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListUnregisteredAccountsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListUnregisteredAccountsResponse.FromString,
+                _registered_method=True)
         self.UpdateDataAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/UpdateDataAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.UpdateDataAccessRequest.SerializeToString,
@@ -1385,6 +1390,13 @@ class CoverServicer(object):
 
     def ListDataAccess(self, request, context):
         """Lists Azure and GCP accounts.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListUnregisteredAccounts(self, request, context):
+        """Lists unregistered linked accounts
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2464,6 +2476,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ListDataAccess,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListDataAccessRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DataAccess.SerializeToString,
+            ),
+            'ListUnregisteredAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUnregisteredAccounts,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListUnregisteredAccountsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListUnregisteredAccountsResponse.SerializeToString,
             ),
             'UpdateDataAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateDataAccess,
@@ -4850,6 +4867,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/ListDataAccess',
             cover_dot_v1_dot_cover__pb2.ListDataAccessRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DataAccess.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUnregisteredAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListUnregisteredAccounts',
+            cover_dot_v1_dot_cover__pb2.ListUnregisteredAccountsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListUnregisteredAccountsResponse.FromString,
             options,
             channel_credentials,
             insecure,
