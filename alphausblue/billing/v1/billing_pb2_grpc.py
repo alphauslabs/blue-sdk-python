@@ -275,6 +275,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.SetGlobalExchangeRateRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.SetPayerExchangeRate = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/SetPayerExchangeRate',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SetPayerExchangeRateRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.SetBillingGroupExchangeRate = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/SetBillingGroupExchangeRate',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SetBillingGroupExchangeRateRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.ListAccessGroups = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListAccessGroups',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAccessGroupsRequest.SerializeToString,
@@ -844,6 +854,20 @@ class BillingServicer(object):
 
     def SetGlobalExchangeRate(self, request, context):
         """Set global exchangerate. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetPayerExchangeRate(self, request, context):
+        """Set payer exchangerate. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetBillingGroupExchangeRate(self, request, context):
+        """Set billing group exchangerate. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1421,6 +1445,16 @@ def add_BillingServicer_to_server(servicer, server):
             'SetGlobalExchangeRate': grpc.unary_unary_rpc_method_handler(
                     servicer.SetGlobalExchangeRate,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.SetGlobalExchangeRateRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SetPayerExchangeRate': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetPayerExchangeRate,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SetPayerExchangeRateRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SetBillingGroupExchangeRate': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetBillingGroupExchangeRate,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SetBillingGroupExchangeRateRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'ListAccessGroups': grpc.unary_stream_rpc_method_handler(
@@ -2906,6 +2940,60 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/SetGlobalExchangeRate',
             billing_dot_v1_dot_billing__pb2.SetGlobalExchangeRateRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetPayerExchangeRate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/SetPayerExchangeRate',
+            billing_dot_v1_dot_billing__pb2.SetPayerExchangeRateRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetBillingGroupExchangeRate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/SetBillingGroupExchangeRate',
+            billing_dot_v1_dot_billing__pb2.SetBillingGroupExchangeRateRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
