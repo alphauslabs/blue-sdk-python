@@ -837,6 +837,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeResponse.FromString,
                 _registered_method=True)
+        self.MergeUnits = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/MergeUnits',
+                request_serializer=cover_dot_v1_dot_cover__pb2.MergeUnitsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.MergeUnitsResponse.FromString,
+                _registered_method=True)
         self.ListSuggestedUnits = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ListSuggestedUnits',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListSuggestedUnitsRequest.SerializeToString,
@@ -2032,6 +2037,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def MergeUnits(self, request, context):
+        """Merge Existing Unit Types
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListSuggestedUnits(self, request, context):
         """List Suggested Unit Types
         """
@@ -2931,6 +2943,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteUnitType,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitTypeResponse.SerializeToString,
+            ),
+            'MergeUnits': grpc.unary_unary_rpc_method_handler(
+                    servicer.MergeUnits,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.MergeUnitsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.MergeUnitsResponse.SerializeToString,
             ),
             'ListSuggestedUnits': grpc.unary_unary_rpc_method_handler(
                     servicer.ListSuggestedUnits,
@@ -7324,6 +7341,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/DeleteUnitType',
             cover_dot_v1_dot_cover__pb2.DeleteUnitTypeRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteUnitTypeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def MergeUnits(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/MergeUnits',
+            cover_dot_v1_dot_cover__pb2.MergeUnitsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.MergeUnitsResponse.FromString,
             options,
             channel_credentials,
             insecure,
