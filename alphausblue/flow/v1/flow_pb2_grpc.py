@@ -45,6 +45,16 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.CreateSettingsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.CreateSettingsResponse.FromString,
                 _registered_method=True)
+        self.UpdateSettings = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/UpdateSettings',
+                request_serializer=flow_dot_v1_dot_flow__pb2.UpdateSettingsRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.UpdateSettingsResponse.FromString,
+                _registered_method=True)
+        self.GetSettings = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetSettings',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -65,6 +75,20 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateSettings(self, request, context):
+        """Update the settings configuration for a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSettings(self, request, context):
+        """Fetch previous settings for a user
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -77,6 +101,16 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.CreateSettings,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.CreateSettingsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.CreateSettingsResponse.SerializeToString,
+            ),
+            'UpdateSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSettings,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.UpdateSettingsRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.UpdateSettingsResponse.SerializeToString,
+            ),
+            'GetSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSettings,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -134,6 +168,60 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/CreateSettings',
             flow_dot_v1_dot_flow__pb2.CreateSettingsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.CreateSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/UpdateSettings',
+            flow_dot_v1_dot_flow__pb2.UpdateSettingsRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.UpdateSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetSettings',
+            flow_dot_v1_dot_flow__pb2.GetSettingsRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetSettingsResponse.FromString,
             options,
             channel_credentials,
             insecure,
