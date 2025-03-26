@@ -957,7 +957,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadAdjustmentEntries(self, request, context):
-        """WORK-IN-PROGRESS: Reads the adjustment entries. Only available in Ripple.
+        """Reads the adjustment entries. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -971,42 +971,42 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ApplyAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Applies the adjustment entry item. Only available in Ripple.
+        """Applies the adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RestoreAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Restores the adjustment entry item. Only available in Ripple.
+        """Restores the adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def SplitAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Splits the adjustment entry item. Only available in Ripple.
+        """Splits the adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def AllocateAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Allocates the adjustment entry item. Only available in Ripple.
+        """Allocates the adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RestoreSplitAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Restores the splitted adjustment entry item. Only available in Ripple.
+        """Restores the splitted adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def RestoreAllocateAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Restores the allocate adjustment entry item. Only available in Ripple.
+        """Restores the allocate adjustment entry item. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
