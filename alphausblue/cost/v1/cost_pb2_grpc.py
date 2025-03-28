@@ -362,10 +362,10 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceGroupCostsRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.BillingGroupSection.FromString,
                 _registered_method=True)
-        self.GetCalculationPrerequisites = channel.unary_unary(
-                '/blueapi.cost.v1.Cost/GetCalculationPrerequisites',
-                request_serializer=cost_dot_v1_dot_cost__pb2.GetCalculationPrerequisitesRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculationPrerequisitesResponse.FromString,
+        self.ListCalculationPrerequisites = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ListCalculationPrerequisites',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesResponse.FromString,
                 _registered_method=True)
 
 
@@ -868,8 +868,8 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCalculationPrerequisites(self, request, context):
-        """WORK-IN-PROGRESS: Get invoice id for a month
+    def ListCalculationPrerequisites(self, request, context):
+        """WORK-IN-PROGRESS: List the prerequisites for cost calculations.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1198,10 +1198,10 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ReadInvoiceGroupCostsRequest.FromString,
                     response_serializer=api_dot_ripple_dot_v1_dot_dashboard__pb2.BillingGroupSection.SerializeToString,
             ),
-            'GetCalculationPrerequisites': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCalculationPrerequisites,
-                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetCalculationPrerequisitesRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.GetCalculationPrerequisitesResponse.SerializeToString,
+            'ListCalculationPrerequisites': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCalculationPrerequisites,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2944,7 +2944,7 @@ class Cost(object):
             _registered_method=True)
 
     @staticmethod
-    def GetCalculationPrerequisites(request,
+    def ListCalculationPrerequisites(request,
             target,
             options=(),
             channel_credentials=None,
@@ -2957,9 +2957,9 @@ class Cost(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.cost.v1.Cost/GetCalculationPrerequisites',
-            cost_dot_v1_dot_cost__pb2.GetCalculationPrerequisitesRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.GetCalculationPrerequisitesResponse.FromString,
+            '/blueapi.cost.v1.Cost/ListCalculationPrerequisites',
+            cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesResponse.FromString,
             options,
             channel_credentials,
             insecure,
