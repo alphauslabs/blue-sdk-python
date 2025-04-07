@@ -553,7 +553,22 @@ class BillingStub(object):
         self.GetAnnouncements = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/GetAnnouncements',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetAnnouncementsRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.GetAnnouncementsResponse.FromString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.Announcement.FromString,
+                _registered_method=True)
+        self.GetBillingGroupAnnouncements = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetBillingGroupAnnouncements',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAnnouncementsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAnnouncementsResponse.FromString,
+                _registered_method=True)
+        self.GetCredits = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetCredits',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetCreditsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.Credit.FromString,
+                _registered_method=True)
+        self.GetCsvSettings = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetCsvSettings',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetCsvSettingsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.CsvSetting.FromString,
                 _registered_method=True)
 
 
@@ -1286,6 +1301,27 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetBillingGroupAnnouncements(self, request, context):
+        """WORK-IN-PROGRESS: Gets the announcement list for billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCredits(self, request, context):
+        """WORK-IN-PROGRESS: Gets the credits
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCsvSettings(self, request, context):
+        """WORK-IN-PROGRESS: Gets the csv column settings
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1797,7 +1833,22 @@ def add_BillingServicer_to_server(servicer, server):
             'GetAnnouncements': grpc.unary_stream_rpc_method_handler(
                     servicer.GetAnnouncements,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetAnnouncementsRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.GetAnnouncementsResponse.SerializeToString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.Announcement.SerializeToString,
+            ),
+            'GetBillingGroupAnnouncements': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetBillingGroupAnnouncements,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAnnouncementsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAnnouncementsResponse.SerializeToString,
+            ),
+            'GetCredits': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetCredits,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetCreditsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.Credit.SerializeToString,
+            ),
+            'GetCsvSettings': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetCsvSettings,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetCsvSettingsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.CsvSetting.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -4554,7 +4605,88 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/GetAnnouncements',
             billing_dot_v1_dot_billing__pb2.GetAnnouncementsRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.GetAnnouncementsResponse.FromString,
+            billing_dot_v1_dot_billing__pb2.Announcement.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupAnnouncements(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetBillingGroupAnnouncements',
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupAnnouncementsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupAnnouncementsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCredits(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetCredits',
+            billing_dot_v1_dot_billing__pb2.GetCreditsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.Credit.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCsvSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetCsvSettings',
+            billing_dot_v1_dot_billing__pb2.GetCsvSettingsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.CsvSetting.FromString,
             options,
             channel_credentials,
             insecure,
