@@ -550,6 +550,31 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAccountSupportPlanRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.CreateAnnouncement = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateAnnouncement',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateAnnouncementRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.UpdateAnnouncement = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateAnnouncement',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateAnnouncementRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.UpdateAnnouncementsStatus = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateAnnouncementsStatus',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateAnnouncementsStatusRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.UpdateAnnouncementDate = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateAnnouncementDate',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateAnnouncementDateRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.DeleteAnnouncement = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteAnnouncement',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteAnnouncementRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.GetAnnouncements = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/GetAnnouncements',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetAnnouncementsRequest.SerializeToString,
@@ -1294,29 +1319,63 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateAnnouncement(self, request, context):
+        """Creates new announcement for wave users
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAnnouncement(self, request, context):
+        """Full update existing announcement 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAnnouncementsStatus(self, request, context):
+        """Update multiple announcements status 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAnnouncementDate(self, request, context):
+        """Update announcement date
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAnnouncement(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetAnnouncements(self, request, context):
-        """WORK-IN-PROGRESS: Gets the announcement list.
+        """Gets the announcement list.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetBillingGroupAnnouncements(self, request, context):
-        """WORK-IN-PROGRESS: Gets the announcement list for billing group
+        """Gets the announcement list for billing group
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCredits(self, request, context):
-        """WORK-IN-PROGRESS: Gets the credits
+        """Gets the credits
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCsvSettings(self, request, context):
-        """WORK-IN-PROGRESS: Gets the csv column settings
+        """Gets the csv column settings
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1828,6 +1887,31 @@ def add_BillingServicer_to_server(servicer, server):
             'UpdateBillingGroupAccountSupportPlan': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBillingGroupAccountSupportPlan,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAccountSupportPlanRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateAnnouncement': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAnnouncement,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateAnnouncementRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateAnnouncement': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAnnouncement,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAnnouncementRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateAnnouncementsStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAnnouncementsStatus,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAnnouncementsStatusRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateAnnouncementDate': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAnnouncementDate,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateAnnouncementDateRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteAnnouncement': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAnnouncement,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteAnnouncementRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetAnnouncements': grpc.unary_stream_rpc_method_handler(
@@ -4578,6 +4662,141 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/UpdateBillingGroupAccountSupportPlan',
             billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAccountSupportPlanRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateAnnouncement(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateAnnouncement',
+            billing_dot_v1_dot_billing__pb2.CreateAnnouncementRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAnnouncement(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateAnnouncement',
+            billing_dot_v1_dot_billing__pb2.UpdateAnnouncementRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAnnouncementsStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateAnnouncementsStatus',
+            billing_dot_v1_dot_billing__pb2.UpdateAnnouncementsStatusRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAnnouncementDate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateAnnouncementDate',
+            billing_dot_v1_dot_billing__pb2.UpdateAnnouncementDateRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteAnnouncement(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/DeleteAnnouncement',
+            billing_dot_v1_dot_billing__pb2.DeleteAnnouncementRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
