@@ -540,6 +540,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupFreeFormatRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.UpdateBillingGroupLinkedResources = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateBillingGroupLinkedResources',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupLinkedResourcesRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.UpdateBillingGroupInvoiceSettings = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateBillingGroupInvoiceSettings',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceSettingsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.GetBillingGroupAccountSupportPlan = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/GetBillingGroupAccountSupportPlan',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAccountSupportPlanRequest.SerializeToString,
@@ -1305,6 +1315,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateBillingGroupLinkedResources(self, request, context):
+        """WORK-IN-PROGRESS: Update linked resources for a billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingGroupInvoiceSettings(self, request, context):
+        """WORK-IN-PROGRESS: Update linked resources for a billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetBillingGroupAccountSupportPlan(self, request, context):
         """WORK-IN-PROGRESS: Gets the account support plan in billing group. Only available in Ripple.
         """
@@ -1877,6 +1901,16 @@ def add_BillingServicer_to_server(servicer, server):
             'UpdateBillingGroupFreeFormat': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBillingGroupFreeFormat,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupFreeFormatRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateBillingGroupLinkedResources': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupLinkedResources,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupLinkedResourcesRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateBillingGroupInvoiceSettings': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupInvoiceSettings,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceSettingsRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetBillingGroupAccountSupportPlan': grpc.unary_unary_rpc_method_handler(
@@ -4608,6 +4642,60 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/UpdateBillingGroupFreeFormat',
             billing_dot_v1_dot_billing__pb2.UpdateBillingGroupFreeFormatRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupLinkedResources(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateBillingGroupLinkedResources',
+            billing_dot_v1_dot_billing__pb2.UpdateBillingGroupLinkedResourcesRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupInvoiceSettings(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateBillingGroupInvoiceSettings',
+            billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceSettingsRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
