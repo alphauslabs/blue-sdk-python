@@ -907,6 +907,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricResponse.FromString,
                 _registered_method=True)
+        self.PreviewGoogleSheet = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/PreviewGoogleSheet',
+                request_serializer=cover_dot_v1_dot_cover__pb2.PreviewGoogleSheetRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.PreviewGoogleSheetResponse.FromString,
+                _registered_method=True)
         self.VerifyAPIAccess = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/VerifyAPIAccess',
                 request_serializer=cover_dot_v1_dot_cover__pb2.VerifyAPIAccessRequest.SerializeToString,
@@ -2135,6 +2140,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PreviewGoogleSheet(self, request, context):
+        """Preview Google Sheet Data
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def VerifyAPIAccess(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -3013,6 +3025,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.DeleteUnitMetric,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.DeleteUnitMetricResponse.SerializeToString,
+            ),
+            'PreviewGoogleSheet': grpc.unary_unary_rpc_method_handler(
+                    servicer.PreviewGoogleSheet,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.PreviewGoogleSheetRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.PreviewGoogleSheetResponse.SerializeToString,
             ),
             'VerifyAPIAccess': grpc.unary_unary_rpc_method_handler(
                     servicer.VerifyAPIAccess,
@@ -7719,6 +7736,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/DeleteUnitMetric',
             cover_dot_v1_dot_cover__pb2.DeleteUnitMetricRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.DeleteUnitMetricResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PreviewGoogleSheet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/PreviewGoogleSheet',
+            cover_dot_v1_dot_cover__pb2.PreviewGoogleSheetRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.PreviewGoogleSheetResponse.FromString,
             options,
             channel_credentials,
             insecure,
