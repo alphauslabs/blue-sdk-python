@@ -317,6 +317,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetCostReductionRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.GetCostReductionResponse.FromString,
                 _registered_method=True)
+        self.GetExportRISP = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetExportRISP',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetExportRISPRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetExportRISPResponse.FromString,
+                _registered_method=True)
         self.GetUtilization = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetUtilization',
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.SerializeToString,
@@ -805,6 +810,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetExportRISP(self, request, context):
+        """Exports RI and SP for all payers. 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetUtilization(self, request, context):
         """Get the utilization details for an organization (or MSP).
         """
@@ -1152,6 +1164,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.GetCostReduction,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetCostReductionRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.GetCostReductionResponse.SerializeToString,
+            ),
+            'GetExportRISP': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetExportRISP,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetExportRISPRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetExportRISPResponse.SerializeToString,
             ),
             'GetUtilization': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUtilization,
@@ -2690,6 +2707,33 @@ class Cost(object):
             '/blueapi.cost.v1.Cost/GetCostReduction',
             cost_dot_v1_dot_cost__pb2.GetCostReductionRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.GetCostReductionResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetExportRISP(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/GetExportRISP',
+            cost_dot_v1_dot_cost__pb2.GetExportRISPRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetExportRISPResponse.FromString,
             options,
             channel_credentials,
             insecure,
