@@ -550,6 +550,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceSettingsRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.UpdateBillingGroupResellerCharges = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateBillingGroupResellerCharges',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupResellerChargesRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.UpdateBillingGroupAdditionalCharges = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateBillingGroupAdditionalCharges',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAdditionalChargesRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.GetBillingGroupAccountSupportPlan = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/GetBillingGroupAccountSupportPlan',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupAccountSupportPlanRequest.SerializeToString,
@@ -1323,7 +1333,21 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def UpdateBillingGroupInvoiceSettings(self, request, context):
-        """WORK-IN-PROGRESS: Update linked resources for a billing group
+        """WORK-IN-PROGRESS: Update invoice settings for a billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingGroupResellerCharges(self, request, context):
+        """WORK-IN-PROGRESS: Update reseller charges for a billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingGroupAdditionalCharges(self, request, context):
+        """WORK-IN-PROGRESS: Update  additonal charges for a billing group
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1911,6 +1935,16 @@ def add_BillingServicer_to_server(servicer, server):
             'UpdateBillingGroupInvoiceSettings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBillingGroupInvoiceSettings,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceSettingsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateBillingGroupResellerCharges': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupResellerCharges,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupResellerChargesRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateBillingGroupAdditionalCharges': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupAdditionalCharges,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAdditionalChargesRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'GetBillingGroupAccountSupportPlan': grpc.unary_unary_rpc_method_handler(
@@ -4696,6 +4730,60 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/UpdateBillingGroupInvoiceSettings',
             billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceSettingsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupResellerCharges(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateBillingGroupResellerCharges',
+            billing_dot_v1_dot_billing__pb2.UpdateBillingGroupResellerChargesRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupAdditionalCharges(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateBillingGroupAdditionalCharges',
+            billing_dot_v1_dot_billing__pb2.UpdateBillingGroupAdditionalChargesRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
