@@ -55,6 +55,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsResponse.FromString,
                 _registered_method=True)
+        self.GetRecommendationDetails = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetRecommendationDetails',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -89,6 +94,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRecommendationDetails(self, request, context):
+        """Fetch user savings plan details
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -111,6 +123,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetSettings,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsResponse.SerializeToString,
+            ),
+            'GetRecommendationDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecommendationDetails,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -222,6 +239,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetSettings',
             flow_dot_v1_dot_flow__pb2.GetSettingsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetRecommendationDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetRecommendationDetails',
+            flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsResponse.FromString,
             options,
             channel_credentials,
             insecure,
