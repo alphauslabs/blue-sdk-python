@@ -150,6 +150,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceDisplaySettingsRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.UpdateInvoiceExchangeRate = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateInvoiceExchangeRate',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceExchangeRateRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.UpdateBillingGroupInvoiceTemplate = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/UpdateBillingGroupInvoiceTemplate',
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupInvoiceTemplateRequest.SerializeToString,
@@ -763,6 +768,13 @@ class BillingServicer(object):
 
     def UpdateInvoiceDisplaySettings(self, request, context):
         """Creates/Updates an invoice display settings. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateInvoiceExchangeRate(self, request, context):
+        """Update invoice exchangerate for the month 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1535,6 +1547,11 @@ def add_BillingServicer_to_server(servicer, server):
             'UpdateInvoiceDisplaySettings': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateInvoiceDisplaySettings,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceDisplaySettingsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateInvoiceExchangeRate': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateInvoiceExchangeRate,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceExchangeRateRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'UpdateBillingGroupInvoiceTemplate': grpc.unary_unary_rpc_method_handler(
@@ -2570,6 +2587,33 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/UpdateInvoiceDisplaySettings',
             billing_dot_v1_dot_billing__pb2.UpdateInvoiceDisplaySettingsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateInvoiceExchangeRate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateInvoiceExchangeRate',
+            billing_dot_v1_dot_billing__pb2.UpdateInvoiceExchangeRateRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
