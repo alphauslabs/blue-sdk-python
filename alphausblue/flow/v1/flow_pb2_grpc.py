@@ -60,6 +60,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsResponse.FromString,
                 _registered_method=True)
+        self.GetCostExplorerAccessTemplateUrl = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetCostExplorerAccessTemplateUrl',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -101,6 +106,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetCostExplorerAccessTemplateUrl(self, request, context):
+        """Gets a CloudFormation launch URL for enabling read-only cross-account access to cost explorer information (API only).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -128,6 +140,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetRecommendationDetails,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsResponse.SerializeToString,
+            ),
+            'GetCostExplorerAccessTemplateUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCostExplorerAccessTemplateUrl,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -266,6 +283,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetRecommendationDetails',
             flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetRecommendationDetailsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCostExplorerAccessTemplateUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetCostExplorerAccessTemplateUrl',
+            flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlResponse.FromString,
             options,
             channel_credentials,
             insecure,
