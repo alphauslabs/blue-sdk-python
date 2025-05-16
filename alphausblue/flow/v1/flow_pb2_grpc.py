@@ -65,6 +65,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlResponse.FromString,
                 _registered_method=True)
+        self.GetSettingsHistory = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetSettingsHistory',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -113,6 +118,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetSettingsHistory(self, request, context):
+        """Gets the settings configuration history for a user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -145,6 +157,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetCostExplorerAccessTemplateUrl,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlResponse.SerializeToString,
+            ),
+            'GetSettingsHistory': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSettingsHistory,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -310,6 +327,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetCostExplorerAccessTemplateUrl',
             flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetCostExplorerAccessTemplateUrlResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSettingsHistory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetSettingsHistory',
+            flow_dot_v1_dot_flow__pb2.GetSettingsHistoryRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetSettingsHistoryResponse.FromString,
             options,
             channel_credentials,
             insecure,
