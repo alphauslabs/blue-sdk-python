@@ -70,6 +70,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryResponse.FromString,
                 _registered_method=True)
+        self.CreateCostExplorerAccess = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/CreateCostExplorerAccess',
+                request_serializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -125,6 +130,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateCostExplorerAccess(self, request, context):
+        """Creates a default cross-account access role for cost explorer (API only).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -162,6 +174,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetSettingsHistory,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetSettingsHistoryResponse.SerializeToString,
+            ),
+            'CreateCostExplorerAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCostExplorerAccess,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -354,6 +371,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetSettingsHistory',
             flow_dot_v1_dot_flow__pb2.GetSettingsHistoryRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetSettingsHistoryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateCostExplorerAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/CreateCostExplorerAccess',
+            flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessResponse.FromString,
             options,
             channel_credentials,
             insecure,
