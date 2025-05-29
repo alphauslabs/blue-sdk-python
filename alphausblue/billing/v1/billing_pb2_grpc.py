@@ -105,6 +105,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.ConvertInvoiceToPdf = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ConvertInvoiceToPdf',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ConvertInvoiceToPdfRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ConvertInvoiceToPdfResponse.FromString,
+                _registered_method=True)
         self.GetInvoiceStatus = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/GetInvoiceStatus',
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetInvoiceStatusRequest.SerializeToString,
@@ -705,6 +710,13 @@ class BillingServicer(object):
 
     def SaveInvoiceSettings(self, request, context):
         """WORK-IN-PROGRESS: Save invoice settings for the month
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ConvertInvoiceToPdf(self, request, context):
+        """WORK-IN-PROGRESS: Convert invoice to pdf 
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1503,6 +1515,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.SaveInvoiceSettings,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ConvertInvoiceToPdf': grpc.unary_unary_rpc_method_handler(
+                    servicer.ConvertInvoiceToPdf,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ConvertInvoiceToPdfRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ConvertInvoiceToPdfResponse.SerializeToString,
             ),
             'GetInvoiceStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetInvoiceStatus,
@@ -2345,6 +2362,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/SaveInvoiceSettings',
             billing_dot_v1_dot_billing__pb2.SaveInvoiceSettingsRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ConvertInvoiceToPdf(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ConvertInvoiceToPdf',
+            billing_dot_v1_dot_billing__pb2.ConvertInvoiceToPdfRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ConvertInvoiceToPdfResponse.FromString,
             options,
             channel_credentials,
             insecure,
