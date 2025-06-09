@@ -210,6 +210,11 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoResponse.FromString,
                 _registered_method=True)
+        self.ResetRipplePassword = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/ResetRipplePassword',
+                request_serializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class IamServicer(object):
@@ -462,6 +467,13 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ResetRipplePassword(self, request, context):
+        """WORK-IN-PROGRESS: Reset ripple password account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_IamServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -634,6 +646,11 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.GetMFAUsers,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.MFAUsersInfoResponse.SerializeToString,
+            ),
+            'ResetRipplePassword': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResetRipplePassword,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1555,6 +1572,33 @@ class Iam(object):
             '/blueapi.iam.v1.Iam/GetMFAUsers',
             iam_dot_v1_dot_iam__pb2.MFAUsersInfoRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.MFAUsersInfoResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ResetRipplePassword(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.iam.v1.Iam/ResetRipplePassword',
+            iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
