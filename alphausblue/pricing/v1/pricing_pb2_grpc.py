@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.pricing.v1 import pricing_pb2 as pricing_dot_v1_dot_pricing__pb2
 
-GRPC_GENERATED_VERSION = '1.72.1'
+GRPC_GENERATED_VERSION = '1.73.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 

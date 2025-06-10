@@ -7,7 +7,7 @@ from alphausblue.cover.v1 import cover_pb2 as cover_dot_v1_dot_cover__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.72.1'
+GRPC_GENERATED_VERSION = '1.73.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
