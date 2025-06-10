@@ -3,6 +3,7 @@
 import grpc
 import warnings
 
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.prism.v1 import prism_pb2 as prism_dot_v1_dot_prism__pb2
 
 GRPC_GENERATED_VERSION = '1.73.0'
@@ -40,6 +41,26 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.TestRequest.SerializeToString,
                 response_deserializer=prism_dot_v1_dot_prism__pb2.TestResponse.FromString,
                 _registered_method=True)
+        self.CreateProject = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/CreateProject',
+                request_serializer=prism_dot_v1_dot_prism__pb2.CreateProjectRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.GetProject = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/GetProject',
+                request_serializer=prism_dot_v1_dot_prism__pb2.GetProjectRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.GetProjectResponse.FromString,
+                _registered_method=True)
+        self.DeleteProject = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/DeleteProject',
+                request_serializer=prism_dot_v1_dot_prism__pb2.DeleteProjectRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.ListProjects = channel.unary_stream(
+                '/blueapi.prism.v1.Prism/ListProjects',
+                request_serializer=prism_dot_v1_dot_prism__pb2.ListProjectsRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.Project.FromString,
+                _registered_method=True)
 
 
 class PrismServicer(object):
@@ -53,6 +74,34 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateProject(self, request, context):
+        """WIP: Creates a new project.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetProject(self, request, context):
+        """WIP: Gets information about a project by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteProject(self, request, context):
+        """WIP: Deletes a project by ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListProjects(self, request, context):
+        """WIP: Lists all projects 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrismServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -60,6 +109,26 @@ def add_PrismServicer_to_server(servicer, server):
                     servicer.Test,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.TestRequest.FromString,
                     response_serializer=prism_dot_v1_dot_prism__pb2.TestResponse.SerializeToString,
+            ),
+            'CreateProject': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateProject,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.CreateProjectRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetProject': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetProject,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.GetProjectRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.GetProjectResponse.SerializeToString,
+            ),
+            'DeleteProject': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteProject,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.DeleteProjectRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ListProjects': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListProjects,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.ListProjectsRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.Project.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -90,6 +159,114 @@ class Prism(object):
             '/blueapi.prism.v1.Prism/Test',
             prism_dot_v1_dot_prism__pb2.TestRequest.SerializeToString,
             prism_dot_v1_dot_prism__pb2.TestResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateProject(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/CreateProject',
+            prism_dot_v1_dot_prism__pb2.CreateProjectRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetProject(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/GetProject',
+            prism_dot_v1_dot_prism__pb2.GetProjectRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.GetProjectResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteProject(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/DeleteProject',
+            prism_dot_v1_dot_prism__pb2.DeleteProjectRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListProjects(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/ListProjects',
+            prism_dot_v1_dot_prism__pb2.ListProjectsRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.Project.FromString,
             options,
             channel_credentials,
             insecure,
