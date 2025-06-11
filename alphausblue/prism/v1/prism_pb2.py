@@ -27,7 +27,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14prism/v1/prism.proto\x12\x10\x62lueapi.prism.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\r\n\x0bTestRequest\" \n\x0cTestResponse\x12\x10\n\x08response\x18\x01 \x01(\t\"3\n\x06Member\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x0c\n\x04role\x18\x03 \x01(\t\"c\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12)\n\x07members\x18\x04 \x03(\x0b\x32\x18.blueapi.prism.v1.Member\"B\n\x14\x43reateProjectRequest\x12*\n\x07project\x18\x01 \x01(\x0b\x32\x19.blueapi.prism.v1.Project\"\x1f\n\x11GetProjectRequest\x12\n\n\x02id\x18\x01 \x01(\t\"n\n\x12GetProjectResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12)\n\x07members\x18\x04 \x03(\x0b\x32\x18.blueapi.prism.v1.Member\"\"\n\x14\x44\x65leteProjectRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x15\n\x13ListProjectsRequest2\xb7\x05\n\x05Prism\x12W\n\x04Test\x12\x1d.blueapi.prism.v1.TestRequest\x1a\x1e.blueapi.prism.v1.TestResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/test\x12g\n\rCreateProject\x12&.blueapi.prism.v1.CreateProjectRequest\x1a\x16.google.protobuf.Empty\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/project:\x01*\x12q\n\nGetProject\x12#.blueapi.prism.v1.GetProjectRequest\x1a$.blueapi.prism.v1.GetProjectResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/project/{id}\x12i\n\rDeleteProject\x12&.blueapi.prism.v1.DeleteProjectRequest\x1a\x16.google.protobuf.Empty\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/project/{id}\x12s\n\x0cListProjects\x12%.blueapi.prism.v1.ListProjectsRequest\x1a\x19.blueapi.prism.v1.Project\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v1/project/all:read:\x01*0\x01\x1a\x98\x01\x92\x41\x94\x01\x12\x43(Alpha) Prism API. Base URL: https://api.alphaus.cloud/m/blue/prism\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/prism/BK\n\x17\x63loud.alphaus.api.prismB\nPrismProtoZ$github.com/alphauslabs/blueapi/prismb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14prism/v1/prism.proto\x12\x10\x62lueapi.prism.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\r\n\x0bTestRequest\" \n\x0cTestResponse\x12\x10\n\x08response\x18\x01 \x01(\t\"3\n\x06Member\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x0c\n\x04role\x18\x03 \x01(\t\"c\n\x07Project\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12)\n\x07members\x18\x04 \x03(\x0b\x32\x18.blueapi.prism.v1.Member\"B\n\x14\x43reateProjectRequest\x12*\n\x07project\x18\x01 \x01(\x0b\x32\x19.blueapi.prism.v1.Project\"\x1f\n\x11GetProjectRequest\x12\n\n\x02id\x18\x01 \x01(\t\"n\n\x12GetProjectResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12)\n\x07members\x18\x04 \x03(\x0b\x32\x18.blueapi.prism.v1.Member\"\"\n\x14\x44\x65leteProjectRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x15\n\x13ListProjectsRequest\"8\n\x19\x43reateOrganizationRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"$\n\x16GetOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\t\"B\n\x17GetOrganizationResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"D\n\x19UpdateOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"\'\n\x19\x44\x65leteOrganizationRequest\x12\n\n\x02id\x18\x01 \x01(\t2\xee\x08\n\x05Prism\x12W\n\x04Test\x12\x1d.blueapi.prism.v1.TestRequest\x1a\x1e.blueapi.prism.v1.TestResponse\"\x10\x82\xd3\xe4\x93\x02\n\x12\x08/v1/test\x12g\n\rCreateProject\x12&.blueapi.prism.v1.CreateProjectRequest\x1a\x16.google.protobuf.Empty\"\x16\x82\xd3\xe4\x93\x02\x10\"\x0b/v1/project:\x01*\x12q\n\nGetProject\x12#.blueapi.prism.v1.GetProjectRequest\x1a$.blueapi.prism.v1.GetProjectResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/project/{id}\x12i\n\rDeleteProject\x12&.blueapi.prism.v1.DeleteProjectRequest\x1a\x16.google.protobuf.Empty\"\x18\x82\xd3\xe4\x93\x02\x12*\x10/v1/project/{id}\x12s\n\x0cListProjects\x12%.blueapi.prism.v1.ListProjectsRequest\x1a\x19.blueapi.prism.v1.Project\"\x1f\x82\xd3\xe4\x93\x02\x19\"\x14/v1/project/all:read:\x01*0\x01\x12m\n\x12\x43reateOrganization\x12+.blueapi.prism.v1.CreateOrganizationRequest\x1a\x16.google.protobuf.Empty\"\x12\x82\xd3\xe4\x93\x02\x0c\"\x07/v1/org:\x01*\x12s\n\x06GetOrg\x12(.blueapi.prism.v1.GetOrganizationRequest\x1a).blueapi.prism.v1.GetOrganizationResponse\"\x14\x82\xd3\xe4\x93\x02\x0e\x12\x0c/v1/org/{id}\x12i\n\tUpdateOrg\x12+.blueapi.prism.v1.UpdateOrganizationRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11\x1a\x0c/v1/org/{id}:\x01*\x12\x66\n\tDeleteOrg\x12+.blueapi.prism.v1.DeleteOrganizationRequest\x1a\x16.google.protobuf.Empty\"\x14\x82\xd3\xe4\x93\x02\x0e*\x0c/v1/org/{id}\x1a\x98\x01\x92\x41\x94\x01\x12\x43(Alpha) Prism API. Base URL: https://api.alphaus.cloud/m/blue/prism\x1aM\n\x12Service definition\x12\x37https://github.com/alphauslabs/blueapi/tree/main/prism/BK\n\x17\x63loud.alphaus.api.prismB\nPrismProtoZ$github.com/alphauslabs/blueapi/prismb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -47,6 +47,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRISM'].methods_by_name['DeleteProject']._serialized_options = b'\202\323\344\223\002\022*\020/v1/project/{id}'
   _globals['_PRISM'].methods_by_name['ListProjects']._loaded_options = None
   _globals['_PRISM'].methods_by_name['ListProjects']._serialized_options = b'\202\323\344\223\002\031\"\024/v1/project/all:read:\001*'
+  _globals['_PRISM'].methods_by_name['CreateOrganization']._loaded_options = None
+  _globals['_PRISM'].methods_by_name['CreateOrganization']._serialized_options = b'\202\323\344\223\002\014\"\007/v1/org:\001*'
+  _globals['_PRISM'].methods_by_name['GetOrg']._loaded_options = None
+  _globals['_PRISM'].methods_by_name['GetOrg']._serialized_options = b'\202\323\344\223\002\016\022\014/v1/org/{id}'
+  _globals['_PRISM'].methods_by_name['UpdateOrg']._loaded_options = None
+  _globals['_PRISM'].methods_by_name['UpdateOrg']._serialized_options = b'\202\323\344\223\002\021\032\014/v1/org/{id}:\001*'
+  _globals['_PRISM'].methods_by_name['DeleteOrg']._loaded_options = None
+  _globals['_PRISM'].methods_by_name['DeleteOrg']._serialized_options = b'\202\323\344\223\002\016*\014/v1/org/{id}'
   _globals['_TESTREQUEST']._serialized_start=149
   _globals['_TESTREQUEST']._serialized_end=162
   _globals['_TESTRESPONSE']._serialized_start=164
@@ -65,6 +73,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEPROJECTREQUEST']._serialized_end=599
   _globals['_LISTPROJECTSREQUEST']._serialized_start=601
   _globals['_LISTPROJECTSREQUEST']._serialized_end=622
-  _globals['_PRISM']._serialized_start=625
-  _globals['_PRISM']._serialized_end=1320
+  _globals['_CREATEORGANIZATIONREQUEST']._serialized_start=624
+  _globals['_CREATEORGANIZATIONREQUEST']._serialized_end=680
+  _globals['_GETORGANIZATIONREQUEST']._serialized_start=682
+  _globals['_GETORGANIZATIONREQUEST']._serialized_end=718
+  _globals['_GETORGANIZATIONRESPONSE']._serialized_start=720
+  _globals['_GETORGANIZATIONRESPONSE']._serialized_end=786
+  _globals['_UPDATEORGANIZATIONREQUEST']._serialized_start=788
+  _globals['_UPDATEORGANIZATIONREQUEST']._serialized_end=856
+  _globals['_DELETEORGANIZATIONREQUEST']._serialized_start=858
+  _globals['_DELETEORGANIZATIONREQUEST']._serialized_end=897
+  _globals['_PRISM']._serialized_start=900
+  _globals['_PRISM']._serialized_end=2034
 # @@protoc_insertion_point(module_scope)

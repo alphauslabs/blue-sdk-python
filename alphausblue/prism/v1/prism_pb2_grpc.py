@@ -61,6 +61,26 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.ListProjectsRequest.SerializeToString,
                 response_deserializer=prism_dot_v1_dot_prism__pb2.Project.FromString,
                 _registered_method=True)
+        self.CreateOrganization = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/CreateOrganization',
+                request_serializer=prism_dot_v1_dot_prism__pb2.CreateOrganizationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.GetOrg = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/GetOrg',
+                request_serializer=prism_dot_v1_dot_prism__pb2.GetOrganizationRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.GetOrganizationResponse.FromString,
+                _registered_method=True)
+        self.UpdateOrg = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/UpdateOrg',
+                request_serializer=prism_dot_v1_dot_prism__pb2.UpdateOrganizationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.DeleteOrg = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/DeleteOrg',
+                request_serializer=prism_dot_v1_dot_prism__pb2.DeleteOrganizationRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class PrismServicer(object):
@@ -102,6 +122,30 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateOrganization(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetOrg(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateOrg(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteOrg(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrismServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -129,6 +173,26 @@ def add_PrismServicer_to_server(servicer, server):
                     servicer.ListProjects,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.ListProjectsRequest.FromString,
                     response_serializer=prism_dot_v1_dot_prism__pb2.Project.SerializeToString,
+            ),
+            'CreateOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateOrganization,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.CreateOrganizationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetOrg': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOrg,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.GetOrganizationRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.GetOrganizationResponse.SerializeToString,
+            ),
+            'UpdateOrg': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOrg,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.UpdateOrganizationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteOrg': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOrg,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.DeleteOrganizationRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -267,6 +331,114 @@ class Prism(object):
             '/blueapi.prism.v1.Prism/ListProjects',
             prism_dot_v1_dot_prism__pb2.ListProjectsRequest.SerializeToString,
             prism_dot_v1_dot_prism__pb2.Project.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateOrganization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/CreateOrganization',
+            prism_dot_v1_dot_prism__pb2.CreateOrganizationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetOrg(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/GetOrg',
+            prism_dot_v1_dot_prism__pb2.GetOrganizationRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.GetOrganizationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateOrg(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/UpdateOrg',
+            prism_dot_v1_dot_prism__pb2.UpdateOrganizationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteOrg(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/DeleteOrg',
+            prism_dot_v1_dot_prism__pb2.DeleteOrganizationRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
