@@ -218,7 +218,7 @@ class IamStub(object):
         self.ResetRipplePassword = channel.unary_unary(
                 '/blueapi.iam.v1.Iam/ResetRipplePassword',
                 request_serializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordResponse.FromString,
                 _registered_method=True)
 
 
@@ -667,7 +667,7 @@ def add_IamServicer_to_server(servicer, server):
             'ResetRipplePassword': grpc.unary_unary_rpc_method_handler(
                     servicer.ResetRipplePassword,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1642,7 +1642,7 @@ class Iam(object):
             target,
             '/blueapi.iam.v1.Iam/ResetRipplePassword',
             iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            iam_dot_v1_dot_iam__pb2.ResetRipplePasswordResponse.FromString,
             options,
             channel_credentials,
             insecure,
