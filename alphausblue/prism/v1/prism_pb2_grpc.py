@@ -66,18 +66,18 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.CreateOrganizationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
-        self.GetOrg = channel.unary_unary(
-                '/blueapi.prism.v1.Prism/GetOrg',
+        self.GetOrganization = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/GetOrganization',
                 request_serializer=prism_dot_v1_dot_prism__pb2.GetOrganizationRequest.SerializeToString,
                 response_deserializer=prism_dot_v1_dot_prism__pb2.GetOrganizationResponse.FromString,
                 _registered_method=True)
-        self.UpdateOrg = channel.unary_unary(
-                '/blueapi.prism.v1.Prism/UpdateOrg',
+        self.UpdateOrganization = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/UpdateOrganization',
                 request_serializer=prism_dot_v1_dot_prism__pb2.UpdateOrganizationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
-        self.DeleteOrg = channel.unary_unary(
-                '/blueapi.prism.v1.Prism/DeleteOrg',
+        self.DeleteOrganization = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/DeleteOrganization',
                 request_serializer=prism_dot_v1_dot_prism__pb2.DeleteOrganizationRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
@@ -148,19 +148,19 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetOrg(self, request, context):
+    def GetOrganization(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def UpdateOrg(self, request, context):
+    def UpdateOrganization(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def DeleteOrg(self, request, context):
+    def DeleteOrganization(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -223,18 +223,18 @@ def add_PrismServicer_to_server(servicer, server):
                     request_deserializer=prism_dot_v1_dot_prism__pb2.CreateOrganizationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'GetOrg': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetOrg,
+            'GetOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetOrganization,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.GetOrganizationRequest.FromString,
                     response_serializer=prism_dot_v1_dot_prism__pb2.GetOrganizationResponse.SerializeToString,
             ),
-            'UpdateOrg': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpdateOrg,
+            'UpdateOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOrganization,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.UpdateOrganizationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
-            'DeleteOrg': grpc.unary_unary_rpc_method_handler(
-                    servicer.DeleteOrg,
+            'DeleteOrganization': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteOrganization,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.DeleteOrganizationRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
@@ -433,7 +433,7 @@ class Prism(object):
             _registered_method=True)
 
     @staticmethod
-    def GetOrg(request,
+    def GetOrganization(request,
             target,
             options=(),
             channel_credentials=None,
@@ -446,7 +446,7 @@ class Prism(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.prism.v1.Prism/GetOrg',
+            '/blueapi.prism.v1.Prism/GetOrganization',
             prism_dot_v1_dot_prism__pb2.GetOrganizationRequest.SerializeToString,
             prism_dot_v1_dot_prism__pb2.GetOrganizationResponse.FromString,
             options,
@@ -460,7 +460,7 @@ class Prism(object):
             _registered_method=True)
 
     @staticmethod
-    def UpdateOrg(request,
+    def UpdateOrganization(request,
             target,
             options=(),
             channel_credentials=None,
@@ -473,7 +473,7 @@ class Prism(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.prism.v1.Prism/UpdateOrg',
+            '/blueapi.prism.v1.Prism/UpdateOrganization',
             prism_dot_v1_dot_prism__pb2.UpdateOrganizationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
@@ -487,7 +487,7 @@ class Prism(object):
             _registered_method=True)
 
     @staticmethod
-    def DeleteOrg(request,
+    def DeleteOrganization(request,
             target,
             options=(),
             channel_credentials=None,
@@ -500,7 +500,7 @@ class Prism(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.prism.v1.Prism/DeleteOrg',
+            '/blueapi.prism.v1.Prism/DeleteOrganization',
             prism_dot_v1_dot_prism__pb2.DeleteOrganizationRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
