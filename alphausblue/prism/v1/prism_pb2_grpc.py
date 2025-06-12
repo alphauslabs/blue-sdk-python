@@ -86,6 +86,21 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.VerifyUserRequest.SerializeToString,
                 response_deserializer=prism_dot_v1_dot_prism__pb2.VerifyUserResponse.FromString,
                 _registered_method=True)
+        self.GetTeam = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/GetTeam',
+                request_serializer=prism_dot_v1_dot_prism__pb2.GetTeamRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.GetTeamResponse.FromString,
+                _registered_method=True)
+        self.ListTeams = channel.unary_stream(
+                '/blueapi.prism.v1.Prism/ListTeams',
+                request_serializer=prism_dot_v1_dot_prism__pb2.ListTeamsRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.Team.FromString,
+                _registered_method=True)
+        self.ListTeamMembers = channel.unary_stream(
+                '/blueapi.prism.v1.Prism/ListTeamMembers',
+                request_serializer=prism_dot_v1_dot_prism__pb2.ListTeamMembersRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.Member.FromString,
+                _registered_method=True)
 
 
 class PrismServicer(object):
@@ -157,6 +172,24 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetTeam(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTeams(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTeamMembers(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrismServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -209,6 +242,21 @@ def add_PrismServicer_to_server(servicer, server):
                     servicer.VerifyUser,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.VerifyUserRequest.FromString,
                     response_serializer=prism_dot_v1_dot_prism__pb2.VerifyUserResponse.SerializeToString,
+            ),
+            'GetTeam': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTeam,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.GetTeamRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.GetTeamResponse.SerializeToString,
+            ),
+            'ListTeams': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListTeams,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.ListTeamsRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.Team.SerializeToString,
+            ),
+            'ListTeamMembers': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListTeamMembers,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.ListTeamMembersRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.Member.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -482,6 +530,87 @@ class Prism(object):
             '/blueapi.prism.v1.Prism/VerifyUser',
             prism_dot_v1_dot_prism__pb2.VerifyUserRequest.SerializeToString,
             prism_dot_v1_dot_prism__pb2.VerifyUserResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetTeam(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/GetTeam',
+            prism_dot_v1_dot_prism__pb2.GetTeamRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.GetTeamResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListTeams(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/ListTeams',
+            prism_dot_v1_dot_prism__pb2.ListTeamsRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.Team.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListTeamMembers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/ListTeamMembers',
+            prism_dot_v1_dot_prism__pb2.ListTeamMembersRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.Member.FromString,
             options,
             channel_credentials,
             insecure,
