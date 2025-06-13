@@ -842,28 +842,28 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ExportServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Exports service discounts. Only available in Ripple.
+        """Exports service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateBillingGroupInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Registers the billing group invoice service discounts. Only available in Ripple.
+        """Registers the billing group invoice service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateBillingGroupInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Updates the billing group invoice service discounts. Only available in Ripple.
+        """Updates the billing group invoice service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteBillingGroupInvoiceServiceDiscounts(self, request, context):
-        """WORK-IN-PROGRESS: Deletes the billing group invoice service discounts. Only available in Ripple.
+        """Deletes the billing group invoice service discounts. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1058,7 +1058,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAdjustmentEntry(self, request, context):
-        """WORK-IN-PROGRESS: Gets the adjustment entry. Only available in Ripple.
+        """Gets the adjustment entry. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1148,7 +1148,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ReadUntaggedGroups(self, request, context):
-        """WORK-IN-PROGRESS: Reads the untagged group. Only available in Ripple.
+        """Reads the untagged group. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
