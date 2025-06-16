@@ -75,6 +75,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessResponse.FromString,
                 _registered_method=True)
+        self.GetDailyUsageCostDetails = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetDailyUsageCostDetails',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -137,6 +142,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDailyUsageCostDetails(self, request, context):
+        """Gets the daily cost and usage details.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -179,6 +191,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.CreateCostExplorerAccess,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessResponse.SerializeToString,
+            ),
+            'GetDailyUsageCostDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDailyUsageCostDetails,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -398,6 +415,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/CreateCostExplorerAccess',
             flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.CreateCostExplorerAccessResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetDailyUsageCostDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetDailyUsageCostDetails',
+            flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.FromString,
             options,
             channel_credentials,
             insecure,
