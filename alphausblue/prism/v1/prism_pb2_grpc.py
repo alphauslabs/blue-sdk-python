@@ -136,6 +136,11 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.DeleteTeamRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.GetIntegrationStatus = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/GetIntegrationStatus',
+                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.GetIntegrationStatusResponse.FromString,
+                _registered_method=True)
 
 
 class PrismServicer(object):
@@ -267,6 +272,12 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetIntegrationStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrismServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -369,6 +380,11 @@ def add_PrismServicer_to_server(servicer, server):
                     servicer.DeleteTeam,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.DeleteTeamRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetIntegrationStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetIntegrationStatus,
+                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.GetIntegrationStatusResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -912,6 +928,33 @@ class Prism(object):
             '/blueapi.prism.v1.Prism/DeleteTeam',
             prism_dot_v1_dot_prism__pb2.DeleteTeamRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetIntegrationStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/GetIntegrationStatus',
+            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.GetIntegrationStatusResponse.FromString,
             options,
             channel_credentials,
             insecure,
