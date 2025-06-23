@@ -156,6 +156,11 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.ReportSchedule.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.UpdateOrgTimezone = channel.unary_unary(
+                '/blueapi.prism.v1.Prism/UpdateOrgTimezone',
+                request_serializer=prism_dot_v1_dot_prism__pb2.UpdateOrgTimezoneRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class PrismServicer(object):
@@ -311,6 +316,12 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def UpdateOrgTimezone(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrismServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -432,6 +443,11 @@ def add_PrismServicer_to_server(servicer, server):
             'CreateReportSchedule': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateReportSchedule,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.ReportSchedule.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'UpdateOrgTimezone': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateOrgTimezone,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.UpdateOrgTimezoneRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -1083,6 +1099,33 @@ class Prism(object):
             target,
             '/blueapi.prism.v1.Prism/CreateReportSchedule',
             prism_dot_v1_dot_prism__pb2.ReportSchedule.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateOrgTimezone(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/UpdateOrgTimezone',
+            prism_dot_v1_dot_prism__pb2.UpdateOrgTimezoneRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
