@@ -176,6 +176,11 @@ class PrismStub(object):
                 request_serializer=prism_dot_v1_dot_prism__pb2.ListWorkflowsRequest.SerializeToString,
                 response_deserializer=prism_dot_v1_dot_prism__pb2.Workflow.FromString,
                 _registered_method=True)
+        self.ListActivities = channel.unary_stream(
+                '/blueapi.prism.v1.Prism/ListActivities',
+                request_serializer=prism_dot_v1_dot_prism__pb2.ListActivitiesRequest.SerializeToString,
+                response_deserializer=prism_dot_v1_dot_prism__pb2.Activity.FromString,
+                _registered_method=True)
 
 
 class PrismServicer(object):
@@ -355,6 +360,12 @@ class PrismServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListActivities(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_PrismServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -497,6 +508,11 @@ def add_PrismServicer_to_server(servicer, server):
                     servicer.ListWorkflows,
                     request_deserializer=prism_dot_v1_dot_prism__pb2.ListWorkflowsRequest.FromString,
                     response_serializer=prism_dot_v1_dot_prism__pb2.Workflow.SerializeToString,
+            ),
+            'ListActivities': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListActivities,
+                    request_deserializer=prism_dot_v1_dot_prism__pb2.ListActivitiesRequest.FromString,
+                    response_serializer=prism_dot_v1_dot_prism__pb2.Activity.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1256,6 +1272,33 @@ class Prism(object):
             '/blueapi.prism.v1.Prism/ListWorkflows',
             prism_dot_v1_dot_prism__pb2.ListWorkflowsRequest.SerializeToString,
             prism_dot_v1_dot_prism__pb2.Workflow.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListActivities(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.prism.v1.Prism/ListActivities',
+            prism_dot_v1_dot_prism__pb2.ListActivitiesRequest.SerializeToString,
+            prism_dot_v1_dot_prism__pb2.Activity.FromString,
             options,
             channel_credentials,
             insecure,
