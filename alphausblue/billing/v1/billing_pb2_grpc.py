@@ -744,7 +744,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListInvoice(self, request, context):
-        """WORK-IN-PROGRESS: Reads list of the invoice.
+        """Reads list of the invoice.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
