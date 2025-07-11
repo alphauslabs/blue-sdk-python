@@ -80,6 +80,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.FromString,
                 _registered_method=True)
+        self.GetAwsAccounts = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetAwsAccounts',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -149,6 +154,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAwsAccounts(self, request, context):
+        """Returns all the aws accounts and its payer of the msp id
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -196,6 +208,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetDailyUsageCostDetails,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.SerializeToString,
+            ),
+            'GetAwsAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAwsAccounts,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -442,6 +459,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetDailyUsageCostDetails',
             flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAwsAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetAwsAccounts',
+            flow_dot_v1_dot_flow__pb2.GetAwsAccountsRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetAwsAccountsResponse.FromString,
             options,
             channel_credentials,
             insecure,
