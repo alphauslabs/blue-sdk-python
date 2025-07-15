@@ -85,6 +85,16 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsResponse.FromString,
                 _registered_method=True)
+        self.GetSPPurchaseAccessTemplateUrl = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/GetSPPurchaseAccessTemplateUrl',
+                request_serializer=flow_dot_v1_dot_flow__pb2.GetSPPurchaseAccessTemplateUrlRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetSPPurchaseAccessTemplateUrlResponse.FromString,
+                _registered_method=True)
+        self.CreateSPPurchaseAccess = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/CreateSPPurchaseAccess',
+                request_serializer=flow_dot_v1_dot_flow__pb2.CreateSPPurchaseAccessRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.CreateSPPurchaseAccessResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -161,6 +171,19 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetSPPurchaseAccessTemplateUrl(self, request, context):
+        """Gets a CloudFormation launch URL for Savings Plan purchase capabilities
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateSPPurchaseAccess(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -213,6 +236,16 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetAwsAccounts,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetAwsAccountsResponse.SerializeToString,
+            ),
+            'GetSPPurchaseAccessTemplateUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSPPurchaseAccessTemplateUrl,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.GetSPPurchaseAccessTemplateUrlRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetSPPurchaseAccessTemplateUrlResponse.SerializeToString,
+            ),
+            'CreateSPPurchaseAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateSPPurchaseAccess,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.CreateSPPurchaseAccessRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.CreateSPPurchaseAccessResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -486,6 +519,60 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetAwsAccounts',
             flow_dot_v1_dot_flow__pb2.GetAwsAccountsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetAwsAccountsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSPPurchaseAccessTemplateUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/GetSPPurchaseAccessTemplateUrl',
+            flow_dot_v1_dot_flow__pb2.GetSPPurchaseAccessTemplateUrlRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.GetSPPurchaseAccessTemplateUrlResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateSPPurchaseAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/CreateSPPurchaseAccess',
+            flow_dot_v1_dot_flow__pb2.CreateSPPurchaseAccessRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.CreateSPPurchaseAccessResponse.FromString,
             options,
             channel_credentials,
             insecure,
