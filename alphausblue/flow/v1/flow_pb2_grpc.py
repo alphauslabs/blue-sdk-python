@@ -78,7 +78,7 @@ class FlowStub(object):
         self.GetDailyUsageCostDetails = channel.unary_unary(
                 '/blueapi.flow.v1.Flow/GetDailyUsageCostDetails',
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.SerializeToString,
-                response_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.FromString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponses.FromString,
                 _registered_method=True)
         self.GetAwsAccounts = channel.unary_unary(
                 '/blueapi.flow.v1.Flow/GetAwsAccounts',
@@ -179,7 +179,8 @@ class FlowServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateSPPurchaseAccess(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a default cross-account access role for Savings Plan (API only).
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
@@ -230,7 +231,7 @@ def add_FlowServicer_to_server(servicer, server):
             'GetDailyUsageCostDetails': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDailyUsageCostDetails,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.FromString,
-                    response_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.SerializeToString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponses.SerializeToString,
             ),
             'GetAwsAccounts': grpc.unary_unary_rpc_method_handler(
                     servicer.GetAwsAccounts,
@@ -491,7 +492,7 @@ class Flow(object):
             target,
             '/blueapi.flow.v1.Flow/GetDailyUsageCostDetails',
             flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsRequest.SerializeToString,
-            flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponse.FromString,
+            flow_dot_v1_dot_flow__pb2.GetDailyUsageCostDetailsResponses.FromString,
             options,
             channel_credentials,
             insecure,
