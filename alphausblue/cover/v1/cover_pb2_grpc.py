@@ -937,6 +937,16 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ContainerCostUsageRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ContainerCostUsageResponse.FromString,
                 _registered_method=True)
+        self.PopulateDemoData = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/PopulateDemoData',
+                request_serializer=cover_dot_v1_dot_cover__pb2.PopulateDemoDataRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.PopulateDemoDataResponse.FromString,
+                _registered_method=True)
+        self.ResetDemoData = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ResetDemoData',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -2199,6 +2209,20 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PopulateDemoData(self, request, context):
+        """WORK-IN-PROGRESS: Populate demo data 
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ResetDemoData(self, request, context):
+        """WORK-IN-PROGRESS: Reset demo data
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -3101,6 +3125,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetContainerCostUsage,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ContainerCostUsageRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ContainerCostUsageResponse.SerializeToString,
+            ),
+            'PopulateDemoData': grpc.unary_unary_rpc_method_handler(
+                    servicer.PopulateDemoData,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.PopulateDemoDataRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.PopulateDemoDataResponse.SerializeToString,
+            ),
+            'ResetDemoData': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResetDemoData,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -7964,6 +7998,60 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/GetContainerCostUsage',
             cover_dot_v1_dot_cover__pb2.ContainerCostUsageRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ContainerCostUsageResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PopulateDemoData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/PopulateDemoData',
+            cover_dot_v1_dot_cover__pb2.PopulateDemoDataRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.PopulateDemoDataResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ResetDemoData(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ResetDemoData',
+            cover_dot_v1_dot_cover__pb2.ResetDemoDataRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ResetDemoDataResponse.FromString,
             options,
             channel_credentials,
             insecure,
