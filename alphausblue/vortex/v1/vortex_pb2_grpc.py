@@ -44,7 +44,7 @@ class VortexStub(object):
         self.CreateOrg = channel.unary_unary(
                 '/blueapi.vortex.v1.Vortex/CreateOrg',
                 request_serializer=vortex_dot_v1_dot_vortex__pb2.CreateOrgRequest.SerializeToString,
-                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                response_deserializer=vortex_dot_v1_dot_vortex__pb2.CreateOrgResponse.FromString,
                 _registered_method=True)
 
 
@@ -77,7 +77,7 @@ def add_VortexServicer_to_server(servicer, server):
             'CreateOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateOrg,
                     request_deserializer=vortex_dot_v1_dot_vortex__pb2.CreateOrgRequest.FromString,
-                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                    response_serializer=vortex_dot_v1_dot_vortex__pb2.CreateOrgResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -134,7 +134,7 @@ class Vortex(object):
             target,
             '/blueapi.vortex.v1.Vortex/CreateOrg',
             vortex_dot_v1_dot_vortex__pb2.CreateOrgRequest.SerializeToString,
-            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            vortex_dot_v1_dot_vortex__pb2.CreateOrgResponse.FromString,
             options,
             channel_credentials,
             insecure,

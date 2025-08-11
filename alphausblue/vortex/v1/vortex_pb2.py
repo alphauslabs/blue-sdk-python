@@ -27,7 +27,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16vortex/v1/vortex.proto\x12\x11\x62lueapi.vortex.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1f\n\x0cTestResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"/\n\x10\x43reateOrgRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t2\xe4\x02\n\x06Vortex\x12T\n\x04Test\x12\x16.google.protobuf.Empty\x1a\x1f.blueapi.vortex.v1.TestResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/testing\x12\x66\n\tCreateOrg\x12#.blueapi.vortex.v1.CreateOrgRequest\x1a\x16.google.protobuf.Empty\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/organizations:\x01*\x1a\x9b\x01\x92\x41\x97\x01\x12\x45(Alpha) Vortex API. Base URL: https://api.alphaus.cloud/m/blue/vortex\x1aN\n\x12Service definition\x12\x38https://github.com/alphauslabs/blueapi/tree/main/vortex/BN\n\x18\x63loud.alphaus.api.vortexB\x0bVortexProtoZ%github.com/alphauslabs/blueapi/vortexb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16vortex/v1/vortex.proto\x12\x11\x62lueapi.vortex.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1f\n\x0cTestResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"/\n\x10\x43reateOrgRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"?\n\x11\x43reateOrgResponse\x12\r\n\x05orgId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t2\xf2\x02\n\x06Vortex\x12T\n\x04Test\x12\x16.google.protobuf.Empty\x1a\x1f.blueapi.vortex.v1.TestResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/testing\x12t\n\tCreateOrg\x12#.blueapi.vortex.v1.CreateOrgRequest\x1a$.blueapi.vortex.v1.CreateOrgResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/organizations:\x01*\x1a\x9b\x01\x92\x41\x97\x01\x12\x45(Alpha) Vortex API. Base URL: https://api.alphaus.cloud/m/blue/vortex\x1aN\n\x12Service definition\x12\x38https://github.com/alphauslabs/blueapi/tree/main/vortex/BN\n\x18\x63loud.alphaus.api.vortexB\x0bVortexProtoZ%github.com/alphauslabs/blueapi/vortexb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,6 +45,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_TESTRESPONSE']._serialized_end=183
   _globals['_CREATEORGREQUEST']._serialized_start=185
   _globals['_CREATEORGREQUEST']._serialized_end=232
-  _globals['_VORTEX']._serialized_start=235
-  _globals['_VORTEX']._serialized_end=591
+  _globals['_CREATEORGRESPONSE']._serialized_start=234
+  _globals['_CREATEORGRESPONSE']._serialized_end=297
+  _globals['_VORTEX']._serialized_start=300
+  _globals['_VORTEX']._serialized_end=670
 # @@protoc_insertion_point(module_scope)
