@@ -191,7 +191,7 @@ class FlowServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetCrossAccountAccessDetails(self, request, context):
-        """Returns the activated cross-account access role for Savings Plan (API only).
+        """Returns the activated cross-account access roles of the target payerId.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
