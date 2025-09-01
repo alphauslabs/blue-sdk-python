@@ -952,6 +952,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataResponse.FromString,
                 _registered_method=True)
+        self.GetDiscountPlan = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetDiscountPlan',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetDiscountPlanRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetDiscountPlanResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -2235,6 +2240,13 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetDiscountPlan(self, request, context):
+        """Get discount plan details for an organization (or MSP).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -3152,6 +3164,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ResetDemoData,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ResetDemoDataResponse.SerializeToString,
+            ),
+            'GetDiscountPlan': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDiscountPlan,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetDiscountPlanRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetDiscountPlanResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -8096,6 +8113,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/ResetDemoData',
             cover_dot_v1_dot_cover__pb2.ResetDemoDataRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ResetDemoDataResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetDiscountPlan(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetDiscountPlan',
+            cover_dot_v1_dot_cover__pb2.GetDiscountPlanRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetDiscountPlanResponse.FromString,
             options,
             channel_credentials,
             insecure,
