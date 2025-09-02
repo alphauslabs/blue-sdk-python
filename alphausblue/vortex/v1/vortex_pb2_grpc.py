@@ -51,6 +51,11 @@ class VortexStub(object):
                 request_serializer=vortex_dot_v1_dot_vortex__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=vortex_dot_v1_dot_vortex__pb2.GetUserResponse.FromString,
                 _registered_method=True)
+        self.ListPrompts = channel.unary_unary(
+                '/blueapi.vortex.v1.Vortex/ListPrompts',
+                request_serializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.SerializeToString,
+                response_deserializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.FromString,
+                _registered_method=True)
 
 
 class VortexServicer(object):
@@ -77,6 +82,12 @@ class VortexServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListPrompts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VortexServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -94,6 +105,11 @@ def add_VortexServicer_to_server(servicer, server):
                     servicer.GetUser,
                     request_deserializer=vortex_dot_v1_dot_vortex__pb2.GetUserRequest.FromString,
                     response_serializer=vortex_dot_v1_dot_vortex__pb2.GetUserResponse.SerializeToString,
+            ),
+            'ListPrompts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPrompts,
+                    request_deserializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.FromString,
+                    response_serializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -178,6 +194,33 @@ class Vortex(object):
             '/blueapi.vortex.v1.Vortex/GetUser',
             vortex_dot_v1_dot_vortex__pb2.GetUserRequest.SerializeToString,
             vortex_dot_v1_dot_vortex__pb2.GetUserResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPrompts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.vortex.v1.Vortex/ListPrompts',
+            vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.SerializeToString,
+            vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.FromString,
             options,
             channel_credentials,
             insecure,

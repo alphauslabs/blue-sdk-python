@@ -27,7 +27,7 @@ from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16vortex/v1/vortex.proto\x12\x11\x62lueapi.vortex.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1f\n\x0cTestResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"/\n\x10\x43reateOrgRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"?\n\x11\x43reateOrgResponse\x12\r\n\x05orgId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"\x1f\n\x0eGetUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"I\n\x0fGetUserResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t2\xde\x03\n\x06Vortex\x12T\n\x04Test\x12\x16.google.protobuf.Empty\x1a\x1f.blueapi.vortex.v1.TestResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/testing\x12t\n\tCreateOrg\x12#.blueapi.vortex.v1.CreateOrgRequest\x1a$.blueapi.vortex.v1.CreateOrgResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/organizations:\x01*\x12j\n\x07GetUser\x12!.blueapi.vortex.v1.GetUserRequest\x1a\".blueapi.vortex.v1.GetUserResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/user/{email}\x1a\x9b\x01\x92\x41\x97\x01\x12\x45(Alpha) Vortex API. Base URL: https://api.alphaus.cloud/m/blue/vortex\x1aN\n\x12Service definition\x12\x38https://github.com/alphauslabs/blueapi/tree/main/vortex/BN\n\x18\x63loud.alphaus.api.vortexB\x0bVortexProtoZ%github.com/alphauslabs/blueapi/vortexb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16vortex/v1/vortex.proto\x12\x11\x62lueapi.vortex.v1\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/api/annotations.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x1f\n\x0cTestResponse\x12\x0f\n\x07message\x18\x01 \x01(\t\"/\n\x10\x43reateOrgRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\"?\n\x11\x43reateOrgResponse\x12\r\n\x05orgId\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x65mail\x18\x03 \x01(\t\"\x1f\n\x0eGetUserRequest\x12\r\n\x05\x65mail\x18\x01 \x01(\t\"I\n\x0fGetUserResponse\x12\n\n\x02id\x18\x01 \x01(\t\x12\r\n\x05\x65mail\x18\x02 \x01(\t\x12\x0c\n\x04name\x18\x03 \x01(\t\x12\r\n\x05orgId\x18\x04 \x01(\t\"G\n\x06Prompt\x12\x0f\n\x07\x63ontent\x18\x01 \x01(\t\x12\x19\n\x11\x66romContainerName\x18\x02 \x01(\t\x12\x11\n\triskLevel\x18\x03 \x01(\t\"\x14\n\x12ListPromptsRequest\"A\n\x13ListPromptsResponse\x12*\n\x07prompts\x18\x01 \x03(\x0b\x32\x19.blueapi.vortex.v1.Prompt2\xd9\x04\n\x06Vortex\x12T\n\x04Test\x12\x16.google.protobuf.Empty\x1a\x1f.blueapi.vortex.v1.TestResponse\"\x13\x82\xd3\xe4\x93\x02\r\x12\x0b/v1/testing\x12t\n\tCreateOrg\x12#.blueapi.vortex.v1.CreateOrgRequest\x1a$.blueapi.vortex.v1.CreateOrgResponse\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/organizations:\x01*\x12j\n\x07GetUser\x12!.blueapi.vortex.v1.GetUserRequest\x1a\".blueapi.vortex.v1.GetUserResponse\"\x18\x82\xd3\xe4\x93\x02\x12\x12\x10/v1/user/{email}\x12y\n\x0bListPrompts\x12%.blueapi.vortex.v1.ListPromptsRequest\x1a&.blueapi.vortex.v1.ListPromptsResponse\"\x1b\x82\xd3\xe4\x93\x02\x15\"\x10/v1/prompts:read:\x01*\x1a\x9b\x01\x92\x41\x97\x01\x12\x45(Alpha) Vortex API. Base URL: https://api.alphaus.cloud/m/blue/vortex\x1aN\n\x12Service definition\x12\x38https://github.com/alphauslabs/blueapi/tree/main/vortex/BN\n\x18\x63loud.alphaus.api.vortexB\x0bVortexProtoZ%github.com/alphauslabs/blueapi/vortexb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,6 +43,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_VORTEX'].methods_by_name['CreateOrg']._serialized_options = b'\202\323\344\223\002\026\"\021/v1/organizations:\001*'
   _globals['_VORTEX'].methods_by_name['GetUser']._loaded_options = None
   _globals['_VORTEX'].methods_by_name['GetUser']._serialized_options = b'\202\323\344\223\002\022\022\020/v1/user/{email}'
+  _globals['_VORTEX'].methods_by_name['ListPrompts']._loaded_options = None
+  _globals['_VORTEX'].methods_by_name['ListPrompts']._serialized_options = b'\202\323\344\223\002\025\"\020/v1/prompts:read:\001*'
   _globals['_TESTRESPONSE']._serialized_start=152
   _globals['_TESTRESPONSE']._serialized_end=183
   _globals['_CREATEORGREQUEST']._serialized_start=185
@@ -53,6 +55,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETUSERREQUEST']._serialized_end=330
   _globals['_GETUSERRESPONSE']._serialized_start=332
   _globals['_GETUSERRESPONSE']._serialized_end=405
-  _globals['_VORTEX']._serialized_start=408
-  _globals['_VORTEX']._serialized_end=886
+  _globals['_PROMPT']._serialized_start=407
+  _globals['_PROMPT']._serialized_end=478
+  _globals['_LISTPROMPTSREQUEST']._serialized_start=480
+  _globals['_LISTPROMPTSREQUEST']._serialized_end=500
+  _globals['_LISTPROMPTSRESPONSE']._serialized_start=502
+  _globals['_LISTPROMPTSRESPONSE']._serialized_end=567
+  _globals['_VORTEX']._serialized_start=570
+  _globals['_VORTEX']._serialized_end=1171
 # @@protoc_insertion_point(module_scope)
