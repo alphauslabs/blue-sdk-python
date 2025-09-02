@@ -51,7 +51,7 @@ class VortexStub(object):
                 request_serializer=vortex_dot_v1_dot_vortex__pb2.GetUserRequest.SerializeToString,
                 response_deserializer=vortex_dot_v1_dot_vortex__pb2.GetUserResponse.FromString,
                 _registered_method=True)
-        self.ListPrompts = channel.unary_unary(
+        self.ListPrompts = channel.unary_stream(
                 '/blueapi.vortex.v1.Vortex/ListPrompts',
                 request_serializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.SerializeToString,
                 response_deserializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.FromString,
@@ -106,7 +106,7 @@ def add_VortexServicer_to_server(servicer, server):
                     request_deserializer=vortex_dot_v1_dot_vortex__pb2.GetUserRequest.FromString,
                     response_serializer=vortex_dot_v1_dot_vortex__pb2.GetUserResponse.SerializeToString,
             ),
-            'ListPrompts': grpc.unary_unary_rpc_method_handler(
+            'ListPrompts': grpc.unary_stream_rpc_method_handler(
                     servicer.ListPrompts,
                     request_deserializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.FromString,
                     response_serializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.SerializeToString,
@@ -215,7 +215,7 @@ class Vortex(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_unary(
+        return grpc.experimental.unary_stream(
             request,
             target,
             '/blueapi.vortex.v1.Vortex/ListPrompts',
