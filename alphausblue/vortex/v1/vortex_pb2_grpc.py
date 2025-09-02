@@ -54,7 +54,7 @@ class VortexStub(object):
         self.ListPrompts = channel.unary_stream(
                 '/blueapi.vortex.v1.Vortex/ListPrompts',
                 request_serializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.SerializeToString,
-                response_deserializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.FromString,
+                response_deserializer=vortex_dot_v1_dot_vortex__pb2.Prompt.FromString,
                 _registered_method=True)
 
 
@@ -109,7 +109,7 @@ def add_VortexServicer_to_server(servicer, server):
             'ListPrompts': grpc.unary_stream_rpc_method_handler(
                     servicer.ListPrompts,
                     request_deserializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.FromString,
-                    response_serializer=vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.SerializeToString,
+                    response_serializer=vortex_dot_v1_dot_vortex__pb2.Prompt.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -220,7 +220,7 @@ class Vortex(object):
             target,
             '/blueapi.vortex.v1.Vortex/ListPrompts',
             vortex_dot_v1_dot_vortex__pb2.ListPromptsRequest.SerializeToString,
-            vortex_dot_v1_dot_vortex__pb2.ListPromptsResponse.FromString,
+            vortex_dot_v1_dot_vortex__pb2.Prompt.FromString,
             options,
             channel_credentials,
             insecure,
