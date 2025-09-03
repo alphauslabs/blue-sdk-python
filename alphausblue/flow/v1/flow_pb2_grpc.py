@@ -95,6 +95,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsResponse.FromString,
                 _registered_method=True)
+        self.CreateMessageToSlack = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/CreateMessageToSlack',
+                request_serializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -185,6 +190,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateMessageToSlack(self, request, context):
+        """Sends configuration and recommendation to a Slack channel
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -247,6 +259,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetCrossAccountAccessDetails,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsResponse.SerializeToString,
+            ),
+            'CreateMessageToSlack': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateMessageToSlack,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -574,6 +591,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetCrossAccountAccessDetails',
             flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateMessageToSlack(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/CreateMessageToSlack',
+            flow_dot_v1_dot_flow__pb2.CreateMessageToSlackRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.CreateMessageToSlackResponse.FromString,
             options,
             channel_credentials,
             insecure,
