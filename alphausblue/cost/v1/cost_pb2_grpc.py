@@ -72,6 +72,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.RegisterPayerAccountRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.UpdatePayerAccount = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/UpdatePayerAccount',
+                request_serializer=cost_dot_v1_dot_cost__pb2.UpdatePayerAccountRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.DeletePayerAccount = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/DeletePayerAccount',
                 request_serializer=cost_dot_v1_dot_cost__pb2.DeletePayerAccountRequest.SerializeToString,
@@ -421,6 +426,13 @@ class CostServicer(object):
 
     def RegisterPayerAccount(self, request, context):
         """WORK-IN-PROGRES: Registers a vendor payer account with their basics details such as accountId and accountName.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdatePayerAccount(self, request, context):
+        """WORK-IN-PROGRES: Updates a vendor payer account's basics details.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -920,6 +932,11 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.RegisterPayerAccountRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
+            'UpdatePayerAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdatePayerAccount,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.UpdatePayerAccountRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
             'DeletePayerAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.DeletePayerAccount,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.DeletePayerAccountRequest.FromString,
@@ -1383,6 +1400,33 @@ class Cost(object):
             target,
             '/blueapi.cost.v1.Cost/RegisterPayerAccount',
             cost_dot_v1_dot_cost__pb2.RegisterPayerAccountRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdatePayerAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/UpdatePayerAccount',
+            cost_dot_v1_dot_cost__pb2.UpdatePayerAccountRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
