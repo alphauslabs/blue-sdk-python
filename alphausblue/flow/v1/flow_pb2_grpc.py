@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.flow.v1 import flow_pb2 as flow_dot_v1_dot_flow__pb2
 
-GRPC_GENERATED_VERSION = '1.74.0'
+GRPC_GENERATED_VERSION = '1.75.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -95,15 +95,20 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsResponse.FromString,
                 _registered_method=True)
-        self.CreateMessageToSlack = channel.unary_unary(
-                '/blueapi.flow.v1.Flow/CreateMessageToSlack',
-                request_serializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackRequest.SerializeToString,
-                response_deserializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackResponse.FromString,
+        self.CreateSPRecommendationNotification = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/CreateSPRecommendationNotification',
+                request_serializer=flow_dot_v1_dot_flow__pb2.CreateSPRecommendationNotificationRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.CreateSPRecommendationNotificationResponse.FromString,
                 _registered_method=True)
         self.GetSPToPurchaseDetails = channel.unary_unary(
                 '/blueapi.flow.v1.Flow/GetSPToPurchaseDetails',
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetSPToPurchaseDetailsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetSPToPurchaseDetailsResponse.FromString,
+                _registered_method=True)
+        self.SendSPToPurchaseDetailsNotification = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/SendSPToPurchaseDetailsNotification',
+                request_serializer=flow_dot_v1_dot_flow__pb2.SendSPToPurchaseDetailsNotificationsRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.SendSPToPurchaseDetailsNotificationsResponse.FromString,
                 _registered_method=True)
 
 
@@ -195,7 +200,7 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def CreateMessageToSlack(self, request, context):
+    def CreateSPRecommendationNotification(self, request, context):
         """Sends configuration and recommendation to a Slack channel
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -204,6 +209,13 @@ class FlowServicer(object):
 
     def GetSPToPurchaseDetails(self, request, context):
         """Get savings plan details to be purchased .
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SendSPToPurchaseDetailsNotification(self, request, context):
+        """Sends savings plan details to be purchased to a Slack channel
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -272,15 +284,20 @@ def add_FlowServicer_to_server(servicer, server):
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetCrossAccountAccessDetailsResponse.SerializeToString,
             ),
-            'CreateMessageToSlack': grpc.unary_unary_rpc_method_handler(
-                    servicer.CreateMessageToSlack,
-                    request_deserializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackRequest.FromString,
-                    response_serializer=flow_dot_v1_dot_flow__pb2.CreateMessageToSlackResponse.SerializeToString,
+            'CreateSPRecommendationNotification': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateSPRecommendationNotification,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.CreateSPRecommendationNotificationRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.CreateSPRecommendationNotificationResponse.SerializeToString,
             ),
             'GetSPToPurchaseDetails': grpc.unary_unary_rpc_method_handler(
                     servicer.GetSPToPurchaseDetails,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetSPToPurchaseDetailsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetSPToPurchaseDetailsResponse.SerializeToString,
+            ),
+            'SendSPToPurchaseDetailsNotification': grpc.unary_unary_rpc_method_handler(
+                    servicer.SendSPToPurchaseDetailsNotification,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.SendSPToPurchaseDetailsNotificationsRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.SendSPToPurchaseDetailsNotificationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -619,7 +636,7 @@ class Flow(object):
             _registered_method=True)
 
     @staticmethod
-    def CreateMessageToSlack(request,
+    def CreateSPRecommendationNotification(request,
             target,
             options=(),
             channel_credentials=None,
@@ -632,9 +649,9 @@ class Flow(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.flow.v1.Flow/CreateMessageToSlack',
-            flow_dot_v1_dot_flow__pb2.CreateMessageToSlackRequest.SerializeToString,
-            flow_dot_v1_dot_flow__pb2.CreateMessageToSlackResponse.FromString,
+            '/blueapi.flow.v1.Flow/CreateSPRecommendationNotification',
+            flow_dot_v1_dot_flow__pb2.CreateSPRecommendationNotificationRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.CreateSPRecommendationNotificationResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -662,6 +679,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetSPToPurchaseDetails',
             flow_dot_v1_dot_flow__pb2.GetSPToPurchaseDetailsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetSPToPurchaseDetailsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SendSPToPurchaseDetailsNotification(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/SendSPToPurchaseDetailsNotification',
+            flow_dot_v1_dot_flow__pb2.SendSPToPurchaseDetailsNotificationsRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.SendSPToPurchaseDetailsNotificationsResponse.FromString,
             options,
             channel_credentials,
             insecure,
