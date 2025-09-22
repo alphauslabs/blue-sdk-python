@@ -225,7 +225,7 @@ class FlowServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def SendSPToPurchaseDetailsNotification(self, request, context):
-        """Sends savings plan details to be purchased to a Slack channel
+        """Sends savings plan details to be purchased to a Slack channel or user email
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
