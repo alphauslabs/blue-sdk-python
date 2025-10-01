@@ -120,6 +120,11 @@ class FlowStub(object):
                 request_serializer=flow_dot_v1_dot_flow__pb2.GetUserAccountSettingsRequest.SerializeToString,
                 response_deserializer=flow_dot_v1_dot_flow__pb2.GetUserAccountSettingsResponse.FromString,
                 _registered_method=True)
+        self.CheckSPToPurchaseDetailsLinkExpiry = channel.unary_unary(
+                '/blueapi.flow.v1.Flow/CheckSPToPurchaseDetailsLinkExpiry',
+                request_serializer=flow_dot_v1_dot_flow__pb2.CheckSPToPurchaseDetailsLinkExpiryRequest.SerializeToString,
+                response_deserializer=flow_dot_v1_dot_flow__pb2.CheckSPToPurchaseDetailsLinkExpiryResponse.FromString,
+                _registered_method=True)
 
 
 class FlowServicer(object):
@@ -245,6 +250,13 @@ class FlowServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CheckSPToPurchaseDetailsLinkExpiry(self, request, context):
+        """Checks the expiry of the link in the SP to purchase details notification
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlowServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -332,6 +344,11 @@ def add_FlowServicer_to_server(servicer, server):
                     servicer.GetUserAccountSettings,
                     request_deserializer=flow_dot_v1_dot_flow__pb2.GetUserAccountSettingsRequest.FromString,
                     response_serializer=flow_dot_v1_dot_flow__pb2.GetUserAccountSettingsResponse.SerializeToString,
+            ),
+            'CheckSPToPurchaseDetailsLinkExpiry': grpc.unary_unary_rpc_method_handler(
+                    servicer.CheckSPToPurchaseDetailsLinkExpiry,
+                    request_deserializer=flow_dot_v1_dot_flow__pb2.CheckSPToPurchaseDetailsLinkExpiryRequest.FromString,
+                    response_serializer=flow_dot_v1_dot_flow__pb2.CheckSPToPurchaseDetailsLinkExpiryResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -794,6 +811,33 @@ class Flow(object):
             '/blueapi.flow.v1.Flow/GetUserAccountSettings',
             flow_dot_v1_dot_flow__pb2.GetUserAccountSettingsRequest.SerializeToString,
             flow_dot_v1_dot_flow__pb2.GetUserAccountSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CheckSPToPurchaseDetailsLinkExpiry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flow.v1.Flow/CheckSPToPurchaseDetailsLinkExpiry',
+            flow_dot_v1_dot_flow__pb2.CheckSPToPurchaseDetailsLinkExpiryRequest.SerializeToString,
+            flow_dot_v1_dot_flow__pb2.CheckSPToPurchaseDetailsLinkExpiryResponse.FromString,
             options,
             channel_credentials,
             insecure,
