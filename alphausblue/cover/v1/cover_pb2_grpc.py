@@ -962,6 +962,11 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostUsageV2Request.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostUsageV2Response.FromString,
                 _registered_method=True)
+        self.ListNonperformingRate = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListNonperformingRate',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -2258,6 +2263,12 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListNonperformingRate(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -3185,6 +3196,11 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetCostUsageV2,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostUsageV2Request.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCostUsageV2Response.SerializeToString,
+            ),
+            'ListNonperformingRate': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListNonperformingRate,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -8183,6 +8199,33 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/GetCostUsageV2',
             cover_dot_v1_dot_cover__pb2.GetCostUsageV2Request.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetCostUsageV2Response.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListNonperformingRate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListNonperformingRate',
+            cover_dot_v1_dot_cover__pb2.ListNonperformingRateRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListNonperformingRateResponse.FromString,
             options,
             channel_credentials,
             insecure,
