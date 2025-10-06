@@ -238,13 +238,15 @@ class PrismServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateOrganization(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Creates a new organization.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetOrganization(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """Gets information about an organization by ID.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
