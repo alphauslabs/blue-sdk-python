@@ -967,6 +967,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateResponse.FromString,
                 _registered_method=True)
+        self.ListForecasts = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListForecasts',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListForecastsRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListForecastsResponse.FromString,
+                _registered_method=True)
+        self.CreateCostForecast = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/CreateCostForecast',
+                request_serializer=cover_dot_v1_dot_cover__pb2.CreateCostForecastRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.CreateCostForecastResponse.FromString,
+                _registered_method=True)
+        self.GetCostForecast = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetCostForecast',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetCostForecastRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostForecastResponse.FromString,
+                _registered_method=True)
+        self.UpdateCostForecast = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateCostForecast',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostForecastRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostForecastResponse.FromString,
+                _registered_method=True)
+        self.DeleteCostForecast = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteCostForecast',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteCostForecastRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteCostForecastResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -2269,6 +2294,36 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListForecasts(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCostForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCostForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateCostForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteCostForecast(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -3201,6 +3256,31 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ListNonperformingRate,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ListNonperformingRateResponse.SerializeToString,
+            ),
+            'ListForecasts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListForecasts,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListForecastsRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListForecastsResponse.SerializeToString,
+            ),
+            'CreateCostForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCostForecast,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.CreateCostForecastRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.CreateCostForecastResponse.SerializeToString,
+            ),
+            'GetCostForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCostForecast,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostForecastRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetCostForecastResponse.SerializeToString,
+            ),
+            'UpdateCostForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateCostForecast,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateCostForecastRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateCostForecastResponse.SerializeToString,
+            ),
+            'DeleteCostForecast': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteCostForecast,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteCostForecastRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteCostForecastResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -8226,6 +8306,141 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/ListNonperformingRate',
             cover_dot_v1_dot_cover__pb2.ListNonperformingRateRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ListNonperformingRateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListForecasts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListForecasts',
+            cover_dot_v1_dot_cover__pb2.ListForecastsRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListForecastsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateCostForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/CreateCostForecast',
+            cover_dot_v1_dot_cover__pb2.CreateCostForecastRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.CreateCostForecastResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCostForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetCostForecast',
+            cover_dot_v1_dot_cover__pb2.GetCostForecastRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetCostForecastResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateCostForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateCostForecast',
+            cover_dot_v1_dot_cover__pb2.UpdateCostForecastRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateCostForecastResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteCostForecast(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/DeleteCostForecast',
+            cover_dot_v1_dot_cover__pb2.DeleteCostForecastRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteCostForecastResponse.FromString,
             options,
             channel_credentials,
             insecure,
