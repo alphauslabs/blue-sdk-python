@@ -15,7 +15,7 @@ from alphausblue.api.wave import adjustment_pb2 as api_dot_wave_dot_adjustment__
 from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 
-GRPC_GENERATED_VERSION = '1.75.1'
+GRPC_GENERATED_VERSION = '1.76.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -28,7 +28,7 @@ except ImportError:
 if _version_not_supported:
     raise RuntimeError(
         f'The grpc package installed is at version {GRPC_VERSION},'
-        + f' but the generated code in billing/v1/billing_pb2_grpc.py depends on'
+        + ' but the generated code in billing/v1/billing_pb2_grpc.py depends on'
         + f' grpcio>={GRPC_GENERATED_VERSION}.'
         + f' Please upgrade your grpc module to grpcio>={GRPC_GENERATED_VERSION}'
         + f' or downgrade your generated code using grpcio-tools<={GRPC_VERSION}.'
@@ -49,6 +49,11 @@ class BillingStub(object):
                 '/blueapi.billing.v1.Billing/ListBillingGroups',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
+                _registered_method=True)
+        self.ListBillingGroupsPaginated = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ListBillingGroupsPaginated',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupsPaginatedRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupsPaginatedResponse.FromString,
                 _registered_method=True)
         self.CreateBillingGroup = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/CreateBillingGroup',
@@ -632,7 +637,14 @@ class BillingServicer(object):
     """
 
     def ListBillingGroups(self, request, context):
-        """Lists all billing groups.
+        """Lists all billing groups (streamed).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBillingGroupsPaginated(self, request, context):
+        """Lists all billing groups with pagination support.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1461,6 +1473,11 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.BillingGroup.SerializeToString,
             ),
+            'ListBillingGroupsPaginated': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBillingGroupsPaginated,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupsPaginatedRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListBillingGroupsPaginatedResponse.SerializeToString,
+            ),
             'CreateBillingGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.CreateBillingGroupRequest.FromString,
@@ -2065,6 +2082,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ListBillingGroups',
             billing_dot_v1_dot_billing__pb2.ListBillingGroupsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.BillingGroup.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBillingGroupsPaginated(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ListBillingGroupsPaginated',
+            billing_dot_v1_dot_billing__pb2.ListBillingGroupsPaginatedRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ListBillingGroupsPaginatedResponse.FromString,
             options,
             channel_credentials,
             insecure,
