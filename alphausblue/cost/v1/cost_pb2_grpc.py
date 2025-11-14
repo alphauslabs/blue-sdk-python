@@ -52,6 +52,16 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.SerializeToString,
                 response_deserializer=api_dot_ripple_dot_payer__pb2.Payer.FromString,
                 _registered_method=True)
+        self.ListPayerAccountsExtended = channel.unary_stream(
+                '/blueapi.cost.v1.Cost/ListPayerAccountsExtended',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ListPayerAccountsRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.PayerAccountExtended.FromString,
+                _registered_method=True)
+        self.GetPayerAccountExtended = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetPayerAccountExtended',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.PayerAccountExtended.FromString,
+                _registered_method=True)
         self.GetPayerAccountImportHistory = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/GetPayerAccountImportHistory',
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryRequest.SerializeToString,
@@ -396,6 +406,26 @@ class CostServicer(object):
         """Gets a vendor payer account.
 
         This API includes all of the account's metadata. See (https://alphauslabs.github.io/blueapi/)[https://alphauslabs.github.io/blueapi/] for the list of supported attributes. For AWS, this means a management account (formerly known as master or payer account); for Azure, this means a subscription, for GCP, this means a project.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListPayerAccountsExtended(self, request, context):
+        """Lists vendor payer accounts with extended information. WORK IN PROGRESS
+
+        This endpoint returns additional fields beyond the standard ListPayerAccounts response.
+        For AWS, these are management accounts (formerly known as master or payer accounts); for Azure, these are subscriptions, for GCP, these are projects.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPayerAccountExtended(self, request, context):
+        """Gets a vendor payer account with extended information. WORK IN PROGRESS
+
+        This endpoint returns additional fields beyond the standard GetPayerAccount response.
+        For AWS, this means a management account (formerly known as master or payer account); for Azure, this means a subscription, for GCP, this means a project.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -912,6 +942,16 @@ def add_CostServicer_to_server(servicer, server):
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.FromString,
                     response_serializer=api_dot_ripple_dot_payer__pb2.Payer.SerializeToString,
             ),
+            'ListPayerAccountsExtended': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListPayerAccountsExtended,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ListPayerAccountsRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.PayerAccountExtended.SerializeToString,
+            ),
+            'GetPayerAccountExtended': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPayerAccountExtended,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.PayerAccountExtended.SerializeToString,
+            ),
             'GetPayerAccountImportHistory': grpc.unary_stream_rpc_method_handler(
                     servicer.GetPayerAccountImportHistory,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.GetPayerAccountImportHistoryRequest.FromString,
@@ -1293,6 +1333,60 @@ class Cost(object):
             '/blueapi.cost.v1.Cost/GetPayerAccount',
             cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.SerializeToString,
             api_dot_ripple_dot_payer__pb2.Payer.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPayerAccountsExtended(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ListPayerAccountsExtended',
+            cost_dot_v1_dot_cost__pb2.ListPayerAccountsRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.PayerAccountExtended.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPayerAccountExtended(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/GetPayerAccountExtended',
+            cost_dot_v1_dot_cost__pb2.GetPayerAccountRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.PayerAccountExtended.FromString,
             options,
             channel_credentials,
             insecure,
