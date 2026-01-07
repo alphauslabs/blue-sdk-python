@@ -1002,6 +1002,16 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetCostForecastsDataRequest.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetCostForecastsDataResponse.FromString,
                 _registered_method=True)
+        self.GetRecommendationV3 = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/GetRecommendationV3',
+                request_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Request.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Response.FromString,
+                _registered_method=True)
+        self.ListRecommendationsV3 = channel.unary_stream(
+                '/blueapi.cover.v1.Cover/ListRecommendationsV3',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Request.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.RecommendationSummary.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -2346,6 +2356,18 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetRecommendationV3(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListRecommendationsV3(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -3313,6 +3335,16 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.GetCostForecastsData,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetCostForecastsDataRequest.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetCostForecastsDataResponse.SerializeToString,
+            ),
+            'GetRecommendationV3': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecommendationV3,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Request.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Response.SerializeToString,
+            ),
+            'ListRecommendationsV3': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListRecommendationsV3,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Request.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.RecommendationSummary.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -8527,6 +8559,60 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/GetCostForecastsData',
             cover_dot_v1_dot_cover__pb2.GetCostForecastsDataRequest.SerializeToString,
             cover_dot_v1_dot_cover__pb2.GetCostForecastsDataResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetRecommendationV3(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/GetRecommendationV3',
+            cover_dot_v1_dot_cover__pb2.GetRecommendationV3Request.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.GetRecommendationV3Response.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListRecommendationsV3(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListRecommendationsV3',
+            cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Request.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.RecommendationSummary.FromString,
             options,
             channel_credentials,
             insecure,
