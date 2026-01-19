@@ -40,6 +40,76 @@ class ArcheraStub(object):
                 request_serializer=archera_dot_v1_dot_archera__pb2.ListOrgsRequest.SerializeToString,
                 response_deserializer=archera_dot_v1_dot_archera__pb2.Org.FromString,
                 _registered_method=True)
+        self.GetCommitmentPlanDetails = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetCommitmentPlanDetails',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetCommitmentPlanDetailsRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.FromString,
+                _registered_method=True)
+        self.CommitmentPlanApply = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/CommitmentPlanApply',
+                request_serializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanApplyRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.FromString,
+                _registered_method=True)
+        self.ListDefaultCommitmentPlans = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListDefaultCommitmentPlans',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListDefaultCommitmentPlansRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListDefaultCommitmentPlansResponse.FromString,
+                _registered_method=True)
+        self.GetRecommendedCommitmentPlan = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetRecommendedCommitmentPlan',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetRecommendedCommitmentPlanRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.FromString,
+                _registered_method=True)
+        self.ListCommitmentPlanLineItems = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListCommitmentPlanLineItems',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanLineItemsRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanLineItemsResponse.FromString,
+                _registered_method=True)
+        self.ListCommitmentPlanResourceMatches = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListCommitmentPlanResourceMatches',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanResourceMatchesRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanResourceMatchesResponse.FromString,
+                _registered_method=True)
+        self.ListCommitments = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListCommitments',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListCommitmentsRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListCommitmentsResponse.FromString,
+                _registered_method=True)
+        self.GetCommitmentsChart = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetCommitmentsChart',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetCommitmentsChartRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.CommitmentsChartResponse.FromString,
+                _registered_method=True)
+        self.GetMetrics = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetMetrics',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetMetricsRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.MetricsResponse.FromString,
+                _registered_method=True)
+        self.ListResources = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListResources',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListResourcesRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListResourcesResponse.FromString,
+                _registered_method=True)
+        self.GetResourceDailyUsage = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetResourceDailyUsage',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetResourceDailyUsageRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.GetResourceDailyUsageResponse.FromString,
+                _registered_method=True)
+        self.ListSegments = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListSegments',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListSegmentsRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListSegmentsResponse.FromString,
+                _registered_method=True)
+        self.GetSegmentDetails = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetSegmentDetails',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetSegmentDetailsRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.SegmentDetails.FromString,
+                _registered_method=True)
+        self.ListDefaultPurchasePlans = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/ListDefaultPurchasePlans',
+                request_serializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansResponse.FromString,
+                _registered_method=True)
 
 
 class ArcheraServicer(object):
@@ -52,6 +122,114 @@ class ArcheraServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetCommitmentPlanDetails(self, request, context):
+        """####################### COMMITMENT PLANS #######################
+
+        Retrieves detailed information about a specific commitment plan, including costs, savings projections, and commitment coverage.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CommitmentPlanApply(self, request, context):
+        """Executes a commitment purchase plan, initiating the commitment purchase process.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDefaultCommitmentPlans(self, request, context):
+        """Retrieves the three default Archera commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetRecommendedCommitmentPlan(self, request, context):
+        """Retrieves only the recommended Archera commitment plan for the specified cloud provider.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCommitmentPlanLineItems(self, request, context):
+        """Retrieves line items for a specific commitment plan.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCommitmentPlanResourceMatches(self, request, context):
+        """Retrieves resource matches for a specific commitment plan.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListCommitments(self, request, context):
+        """####################### COMMITMENTS #######################
+
+        Retrieves a paginated list of commitments for the specified organization and time period.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCommitmentsChart(self, request, context):
+        """Generates time-series chart data for commitment metrics over the specified time period.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetMetrics(self, request, context):
+        """####################### METRICS #######################
+
+        Retrieves key performance metrics for cloud commitments.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListResources(self, request, context):
+        """####################### RESOURCES #######################
+
+        Retrieves a list of infrastructure resources for the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetResourceDailyUsage(self, request, context):
+        """Retrieves daily usage data for a specific resource within the specified date range.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListSegments(self, request, context):
+        """####################### SEGMENTS #######################
+
+        Retrieves all segments for the specified organization and provider.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSegmentDetails(self, request, context):
+        """Retrieves detailed information about a specific segment.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListDefaultPurchasePlans(self, request, context):
+        """Retrieves default purchase plans for a specific segment.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ArcheraServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -59,6 +237,76 @@ def add_ArcheraServicer_to_server(servicer, server):
                     servicer.ListOrgs,
                     request_deserializer=archera_dot_v1_dot_archera__pb2.ListOrgsRequest.FromString,
                     response_serializer=archera_dot_v1_dot_archera__pb2.Org.SerializeToString,
+            ),
+            'GetCommitmentPlanDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCommitmentPlanDetails,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetCommitmentPlanDetailsRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.SerializeToString,
+            ),
+            'CommitmentPlanApply': grpc.unary_unary_rpc_method_handler(
+                    servicer.CommitmentPlanApply,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanApplyRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.SerializeToString,
+            ),
+            'ListDefaultCommitmentPlans': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDefaultCommitmentPlans,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListDefaultCommitmentPlansRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListDefaultCommitmentPlansResponse.SerializeToString,
+            ),
+            'GetRecommendedCommitmentPlan': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetRecommendedCommitmentPlan,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetRecommendedCommitmentPlanRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.SerializeToString,
+            ),
+            'ListCommitmentPlanLineItems': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCommitmentPlanLineItems,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanLineItemsRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanLineItemsResponse.SerializeToString,
+            ),
+            'ListCommitmentPlanResourceMatches': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCommitmentPlanResourceMatches,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanResourceMatchesRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListCommitmentPlanResourceMatchesResponse.SerializeToString,
+            ),
+            'ListCommitments': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListCommitments,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListCommitmentsRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListCommitmentsResponse.SerializeToString,
+            ),
+            'GetCommitmentsChart': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCommitmentsChart,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetCommitmentsChartRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.CommitmentsChartResponse.SerializeToString,
+            ),
+            'GetMetrics': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetMetrics,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetMetricsRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.MetricsResponse.SerializeToString,
+            ),
+            'ListResources': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListResources,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListResourcesRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListResourcesResponse.SerializeToString,
+            ),
+            'GetResourceDailyUsage': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetResourceDailyUsage,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetResourceDailyUsageRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.GetResourceDailyUsageResponse.SerializeToString,
+            ),
+            'ListSegments': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSegments,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListSegmentsRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListSegmentsResponse.SerializeToString,
+            ),
+            'GetSegmentDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSegmentDetails,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetSegmentDetailsRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.SegmentDetails.SerializeToString,
+            ),
+            'ListDefaultPurchasePlans': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListDefaultPurchasePlans,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -89,6 +337,384 @@ class Archera(object):
             '/blueapi.archera.v1.Archera/ListOrgs',
             archera_dot_v1_dot_archera__pb2.ListOrgsRequest.SerializeToString,
             archera_dot_v1_dot_archera__pb2.Org.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCommitmentPlanDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetCommitmentPlanDetails',
+            archera_dot_v1_dot_archera__pb2.GetCommitmentPlanDetailsRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CommitmentPlanApply(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/CommitmentPlanApply',
+            archera_dot_v1_dot_archera__pb2.CommitmentPlanApplyRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDefaultCommitmentPlans(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListDefaultCommitmentPlans',
+            archera_dot_v1_dot_archera__pb2.ListDefaultCommitmentPlansRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListDefaultCommitmentPlansResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetRecommendedCommitmentPlan(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetRecommendedCommitmentPlan',
+            archera_dot_v1_dot_archera__pb2.GetRecommendedCommitmentPlanRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.CommitmentPlanDetails.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListCommitmentPlanLineItems(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListCommitmentPlanLineItems',
+            archera_dot_v1_dot_archera__pb2.ListCommitmentPlanLineItemsRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListCommitmentPlanLineItemsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListCommitmentPlanResourceMatches(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListCommitmentPlanResourceMatches',
+            archera_dot_v1_dot_archera__pb2.ListCommitmentPlanResourceMatchesRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListCommitmentPlanResourceMatchesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListCommitments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListCommitments',
+            archera_dot_v1_dot_archera__pb2.ListCommitmentsRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListCommitmentsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCommitmentsChart(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetCommitmentsChart',
+            archera_dot_v1_dot_archera__pb2.GetCommitmentsChartRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.CommitmentsChartResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetMetrics(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetMetrics',
+            archera_dot_v1_dot_archera__pb2.GetMetricsRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.MetricsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListResources(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListResources',
+            archera_dot_v1_dot_archera__pb2.ListResourcesRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetResourceDailyUsage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetResourceDailyUsage',
+            archera_dot_v1_dot_archera__pb2.GetResourceDailyUsageRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.GetResourceDailyUsageResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListSegments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListSegments',
+            archera_dot_v1_dot_archera__pb2.ListSegmentsRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListSegmentsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSegmentDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetSegmentDetails',
+            archera_dot_v1_dot_archera__pb2.GetSegmentDetailsRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.SegmentDetails.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListDefaultPurchasePlans(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/ListDefaultPurchasePlans',
+            archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansResponse.FromString,
             options,
             channel_credentials,
             insecure,
