@@ -110,6 +110,31 @@ class ArcheraStub(object):
                 request_serializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
                 response_deserializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansResponse.FromString,
                 _registered_method=True)
+        self.RegisterOrg = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/RegisterOrg',
+                request_serializer=archera_dot_v1_dot_archera__pb2.RegisterOrgRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.RegisterOrgResponse.FromString,
+                _registered_method=True)
+        self.StartAwsOnboarding = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/StartAwsOnboarding',
+                request_serializer=archera_dot_v1_dot_archera__pb2.StartAwsOnboardingRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.StartAwsOnboardingResponse.FromString,
+                _registered_method=True)
+        self.GetAwsCloudFormationTemplate = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetAwsCloudFormationTemplate',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetAwsCloudFormationTemplateRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.GetAwsCloudFormationTemplateResponse.FromString,
+                _registered_method=True)
+        self.GetAwsLaunchStackUrl = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/GetAwsLaunchStackUrl',
+                request_serializer=archera_dot_v1_dot_archera__pb2.GetAwsLaunchStackUrlRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.GetAwsLaunchStackUrlResponse.FromString,
+                _registered_method=True)
+        self.VerifyAwsOnboarding = channel.unary_unary(
+                '/blueapi.archera.v1.Archera/VerifyAwsOnboarding',
+                request_serializer=archera_dot_v1_dot_archera__pb2.VerifyAwsOnboardingRequest.SerializeToString,
+                response_deserializer=archera_dot_v1_dot_archera__pb2.VerifyAwsOnboardingResponse.FromString,
+                _registered_method=True)
 
 
 class ArcheraServicer(object):
@@ -230,6 +255,49 @@ class ArcheraServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def RegisterOrg(self, request, context):
+        """------------------------ ONBOARDING ------------------------
+
+        Registers a new child organization under the channel partner.
+        Creates the organization, sets up user memberships, and establishes the partnership relationship.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def StartAwsOnboarding(self, request, context):
+        """Starts the onboarding process for an organization.
+        Creates or retrieves an onboarding record and sets the provider to AWS.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAwsCloudFormationTemplate(self, request, context):
+        """Generates CloudFormation template for AWS integration.
+        Creates the necessary IAM role and policy template for setting up AWS access.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAwsLaunchStackUrl(self, request, context):
+        """Generates AWS CloudFormation launch stack URL.
+        Creates a pre-configured URL to deploy the CloudFormation stack in the AWS console.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def VerifyAwsOnboarding(self, request, context):
+        """Runs AWS onboarding verification process.
+        Creates a new CUR or uses an existing CUR and verifies AWS integration setup
+        and returns validation status for all required features.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ArcheraServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -307,6 +375,31 @@ def add_ArcheraServicer_to_server(servicer, server):
                     servicer.ListDefaultPurchasePlans,
                     request_deserializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansRequest.FromString,
                     response_serializer=archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansResponse.SerializeToString,
+            ),
+            'RegisterOrg': grpc.unary_unary_rpc_method_handler(
+                    servicer.RegisterOrg,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.RegisterOrgRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.RegisterOrgResponse.SerializeToString,
+            ),
+            'StartAwsOnboarding': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartAwsOnboarding,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.StartAwsOnboardingRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.StartAwsOnboardingResponse.SerializeToString,
+            ),
+            'GetAwsCloudFormationTemplate': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAwsCloudFormationTemplate,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetAwsCloudFormationTemplateRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.GetAwsCloudFormationTemplateResponse.SerializeToString,
+            ),
+            'GetAwsLaunchStackUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAwsLaunchStackUrl,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.GetAwsLaunchStackUrlRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.GetAwsLaunchStackUrlResponse.SerializeToString,
+            ),
+            'VerifyAwsOnboarding': grpc.unary_unary_rpc_method_handler(
+                    servicer.VerifyAwsOnboarding,
+                    request_deserializer=archera_dot_v1_dot_archera__pb2.VerifyAwsOnboardingRequest.FromString,
+                    response_serializer=archera_dot_v1_dot_archera__pb2.VerifyAwsOnboardingResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -715,6 +808,141 @@ class Archera(object):
             '/blueapi.archera.v1.Archera/ListDefaultPurchasePlans',
             archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
             archera_dot_v1_dot_archera__pb2.ListDefaultPurchasePlansResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RegisterOrg(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/RegisterOrg',
+            archera_dot_v1_dot_archera__pb2.RegisterOrgRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.RegisterOrgResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StartAwsOnboarding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/StartAwsOnboarding',
+            archera_dot_v1_dot_archera__pb2.StartAwsOnboardingRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.StartAwsOnboardingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAwsCloudFormationTemplate(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetAwsCloudFormationTemplate',
+            archera_dot_v1_dot_archera__pb2.GetAwsCloudFormationTemplateRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.GetAwsCloudFormationTemplateResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAwsLaunchStackUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/GetAwsLaunchStackUrl',
+            archera_dot_v1_dot_archera__pb2.GetAwsLaunchStackUrlRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.GetAwsLaunchStackUrlResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def VerifyAwsOnboarding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.archera.v1.Archera/VerifyAwsOnboarding',
+            archera_dot_v1_dot_archera__pb2.VerifyAwsOnboardingRequest.SerializeToString,
+            archera_dot_v1_dot_archera__pb2.VerifyAwsOnboardingResponse.FromString,
             options,
             channel_credentials,
             insecure,
