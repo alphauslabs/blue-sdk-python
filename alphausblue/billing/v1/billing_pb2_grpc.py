@@ -630,6 +630,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetCsvSettingsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.CsvSetting.FromString,
                 _registered_method=True)
+        self.CreateChildBillingGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateChildBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateChildBillingGroupRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.CreateChildBillingGroupResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1465,6 +1470,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateChildBillingGroup(self, request, context):
+        """Creates a child billing group under a parent billing group
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2052,6 +2064,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetCsvSettings,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetCsvSettingsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.CsvSetting.SerializeToString,
+            ),
+            'CreateChildBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateChildBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateChildBillingGroupRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.CreateChildBillingGroupResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -5214,6 +5231,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/GetCsvSettings',
             billing_dot_v1_dot_billing__pb2.GetCsvSettingsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.CsvSetting.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateChildBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateChildBillingGroup',
+            billing_dot_v1_dot_billing__pb2.CreateChildBillingGroupRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.CreateChildBillingGroupResponse.FromString,
             options,
             channel_credentials,
             insecure,
