@@ -645,6 +645,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsResponse.FromString,
                 _registered_method=True)
+        self.BulkCreateBillingGroup = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1501,6 +1506,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BulkCreateBillingGroup(self, request, context):
+        """Create billing group in bulk
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2103,6 +2115,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListChildBillingGroups,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsResponse.SerializeToString,
+            ),
+            'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
+                    servicer.BulkCreateBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -5346,6 +5363,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ListChildBillingGroups',
             billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BulkCreateBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
+            billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupResponse.FromString,
             options,
             channel_credentials,
             insecure,
