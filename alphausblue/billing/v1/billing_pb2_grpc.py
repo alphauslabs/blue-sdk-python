@@ -643,7 +643,7 @@ class BillingStub(object):
         self.ListChildBillingGroups = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListChildBillingGroups',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsResponse.FromString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ChildBillingGroup.FromString,
                 _registered_method=True)
         self.BulkCreateBillingGroup = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
@@ -2114,7 +2114,7 @@ def add_BillingServicer_to_server(servicer, server):
             'ListChildBillingGroups': grpc.unary_stream_rpc_method_handler(
                     servicer.ListChildBillingGroups,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsResponse.SerializeToString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ChildBillingGroup.SerializeToString,
             ),
             'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.BulkCreateBillingGroup,
@@ -5362,7 +5362,7 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/ListChildBillingGroups',
             billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsResponse.FromString,
+            billing_dot_v1_dot_billing__pb2.ChildBillingGroup.FromString,
             options,
             channel_credentials,
             insecure,
