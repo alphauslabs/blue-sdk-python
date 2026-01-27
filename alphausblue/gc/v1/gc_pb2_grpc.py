@@ -142,7 +142,7 @@ class GuaranteedCommitmentServicer(object):
     """
 
     def ListOrgs(self, request, context):
-        """List all the registered orgs
+        """WORK-IN-PROGRESS: List all the registered orgs
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -151,42 +151,42 @@ class GuaranteedCommitmentServicer(object):
     def GetCommitmentPlanDetails(self, request, context):
         """####################### COMMITMENT PLANS #######################
 
-        Retrieves detailed information about a specific commitment plan, including costs, savings projections, and commitment coverage.
+        WORK-IN-PROGRESS: Do not use. Retrieves detailed information about a specific commitment plan, including costs, savings projections, and commitment coverage.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CommitmentPlanApply(self, request, context):
-        """Executes a commitment purchase plan, initiating the commitment purchase process.
+        """WORK-IN-PROGRESS: Do not use. Executes a commitment purchase plan, initiating the commitment purchase process.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDefaultCommitmentPlans(self, request, context):
-        """Retrieves the three default GuaranteedCommitment commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
+        """WORK-IN-PROGRESS: Do not use. Retrieves the three default GuaranteedCommitment commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRecommendedCommitmentPlan(self, request, context):
-        """Retrieves only the recommended GuaranteedCommitment commitment plan for the specified cloud provider.
+        """WORK-IN-PROGRESS: Do not use. Retrieves only the recommended GuaranteedCommitment commitment plan for the specified cloud provider.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListCommitmentPlanLineItems(self, request, context):
-        """Retrieves line items for a specific commitment plan.
+        """WORK-IN-PROGRESS: Do not use. Retrieves line items for a specific commitment plan.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListCommitmentPlanResourceMatches(self, request, context):
-        """Retrieves resource matches for a specific commitment plan.
+        """WORK-IN-PROGRESS: Do not use. Retrieves resource matches for a specific commitment plan.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -195,14 +195,14 @@ class GuaranteedCommitmentServicer(object):
     def ListCommitments(self, request, context):
         """####################### COMMITMENTS #######################
 
-        Retrieves a paginated list of commitments for the specified organization and time period.
+        WORK-IN-PROGRESS: Do not use. Retrieves a paginated list of commitments for the specified organization and time period.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetCommitmentsChart(self, request, context):
-        """Generates time-series chart data for commitment metrics over the specified time period.
+        """WORK-IN-PROGRESS: Do not use. Generates time-series chart data for commitment metrics over the specified time period.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -211,7 +211,7 @@ class GuaranteedCommitmentServicer(object):
     def GetMetrics(self, request, context):
         """####################### METRICS #######################
 
-        Retrieves key performance metrics for cloud commitments.
+        WORK-IN-PROGRESS: Do not use. Retrieves key performance metrics for cloud commitments.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -220,14 +220,14 @@ class GuaranteedCommitmentServicer(object):
     def ListResources(self, request, context):
         """####################### RESOURCES #######################
 
-        Retrieves a list of infrastructure resources for the organization.
+        WORK-IN-PROGRESS: Do not use. Retrieves a list of infrastructure resources for the organization.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetResourceDailyUsage(self, request, context):
-        """Retrieves daily usage data for a specific resource within the specified date range.
+        """WORK-IN-PROGRESS: Do not use. Retrieves daily usage data for a specific resource within the specified date range.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -236,21 +236,21 @@ class GuaranteedCommitmentServicer(object):
     def ListSegments(self, request, context):
         """####################### SEGMENTS #######################
 
-        Retrieves all segments for the specified organization and provider.
+        WORK-IN-PROGRESS: Do not use. Retrieves all segments for the specified organization and provider.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetSegmentDetails(self, request, context):
-        """Retrieves detailed information about a specific segment.
+        """WORK-IN-PROGRESS: Retrieves detailed information about a specific segment.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListDefaultPurchasePlans(self, request, context):
-        """Retrieves default purchase plans for a specific segment.
+        """WORK-IN-PROGRESS: Do not use. Retrieves default purchase plans for a specific segment.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -259,7 +259,7 @@ class GuaranteedCommitmentServicer(object):
     def RegisterOrg(self, request, context):
         """------------------------ ONBOARDING ------------------------
 
-        Registers a new child organization under the channel partner.
+        WORK-IN-PROGRESS: Registers a new child organization under the channel partner.
         Creates the organization, sets up user memberships, and establishes the partnership relationship.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -267,7 +267,7 @@ class GuaranteedCommitmentServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def StartAwsOnboarding(self, request, context):
-        """Starts the onboarding process for an organization.
+        """WORK-IN-PROGRESS: Starts the onboarding process for an organization.
         Creates or retrieves an onboarding record and sets the provider to AWS.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -275,7 +275,7 @@ class GuaranteedCommitmentServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAwsCloudFormationTemplate(self, request, context):
-        """Generates CloudFormation template for AWS integration.
+        """WORK-IN-PROGRESS: Generates CloudFormation template for AWS integration.
         Creates the necessary IAM role and policy template for setting up AWS access.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -283,7 +283,7 @@ class GuaranteedCommitmentServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetAwsLaunchStackUrl(self, request, context):
-        """Generates AWS CloudFormation launch stack URL.
+        """WORK-IN-PROGRESS: Generates AWS CloudFormation launch stack URL.
         Creates a pre-configured URL to deploy the CloudFormation stack in the AWS console.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -291,7 +291,7 @@ class GuaranteedCommitmentServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def VerifyAwsOnboarding(self, request, context):
-        """Runs AWS onboarding verification process.
+        """WORK-IN-PROGRESS: Runs AWS onboarding verification process.
         Creates a new CUR or uses an existing CUR and verifies AWS integration setup
         and returns validation status for all required features.
         """
