@@ -665,6 +665,26 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupResponse.FromString,
                 _registered_method=True)
+        self.CreateExcludeServiceEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateExcludeServiceEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateExcludeServiceEntryRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.CreateExcludeServiceEntryResponse.FromString,
+                _registered_method=True)
+        self.UpdateExcludeServiceEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateExcludeServiceEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateExcludeServiceEntryRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.UpdateExcludeServiceEntryResponse.FromString,
+                _registered_method=True)
+        self.DeleteExcludeServiceEntry = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteExcludeServiceEntry',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteExcludeServiceEntryRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.DeleteExcludeServiceEntryResponse.FromString,
+                _registered_method=True)
+        self.ListExcludeServices = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ListExcludeServices',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1549,6 +1569,34 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateExcludeServiceEntry(self, request, context):
+        """Create Exclude Service Entry
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateExcludeServiceEntry(self, request, context):
+        """Update Exclude Service Entry
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteExcludeServiceEntry(self, request, context):
+        """Delete Exclude Service Entry
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExcludeServices(self, request, context):
+        """List Exclude Service Entries
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2171,6 +2219,26 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.BulkCreateBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupResponse.SerializeToString,
+            ),
+            'CreateExcludeServiceEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateExcludeServiceEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateExcludeServiceEntryRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.CreateExcludeServiceEntryResponse.SerializeToString,
+            ),
+            'UpdateExcludeServiceEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateExcludeServiceEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateExcludeServiceEntryRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.UpdateExcludeServiceEntryResponse.SerializeToString,
+            ),
+            'DeleteExcludeServiceEntry': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteExcludeServiceEntry,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteExcludeServiceEntryRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.DeleteExcludeServiceEntryResponse.SerializeToString,
+            ),
+            'ListExcludeServices': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExcludeServices,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -5522,6 +5590,114 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
             billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateExcludeServiceEntry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateExcludeServiceEntry',
+            billing_dot_v1_dot_billing__pb2.CreateExcludeServiceEntryRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.CreateExcludeServiceEntryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateExcludeServiceEntry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateExcludeServiceEntry',
+            billing_dot_v1_dot_billing__pb2.UpdateExcludeServiceEntryRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.UpdateExcludeServiceEntryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteExcludeServiceEntry(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/DeleteExcludeServiceEntry',
+            billing_dot_v1_dot_billing__pb2.DeleteExcludeServiceEntryRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.DeleteExcludeServiceEntryResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListExcludeServices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ListExcludeServices',
+            billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.FromString,
             options,
             channel_credentials,
             insecure,
