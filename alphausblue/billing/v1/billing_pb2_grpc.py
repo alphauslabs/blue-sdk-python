@@ -650,6 +650,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupResponse.FromString,
                 _registered_method=True)
+        self.DeleteChildBillingGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteChildBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteChildBillingGroupRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.DeleteChildBillingGroupResponse.FromString,
+                _registered_method=True)
         self.BulkCreateBillingGroup = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
@@ -1518,6 +1523,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteChildBillingGroup(self, request, context):
+        """Deletes all child billing group info
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def BulkCreateBillingGroup(self, request, context):
         """Create billing group in bulk
         """
@@ -2132,6 +2144,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.UpdateChildBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupResponse.SerializeToString,
+            ),
+            'DeleteChildBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteChildBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteChildBillingGroupRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.DeleteChildBillingGroupResponse.SerializeToString,
             ),
             'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.BulkCreateBillingGroup,
@@ -5407,6 +5424,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/UpdateChildBillingGroup',
             billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteChildBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/DeleteChildBillingGroup',
+            billing_dot_v1_dot_billing__pb2.DeleteChildBillingGroupRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.DeleteChildBillingGroupResponse.FromString,
             options,
             channel_credentials,
             insecure,
