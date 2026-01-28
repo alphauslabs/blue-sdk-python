@@ -25,8 +25,8 @@ if _version_not_supported:
     )
 
 
-class GuaranteedCommitmentStub(object):
-    """GuaranteedCommitment service definition.
+class GuaranteedCommitmentsStub(object):
+    """GuaranteedCommitments service definition.
     """
 
     def __init__(self, channel):
@@ -36,109 +36,109 @@ class GuaranteedCommitmentStub(object):
             channel: A grpc.Channel.
         """
         self.ListOrgs = channel.unary_stream(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListOrgs',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListOrgs',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListOrgsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.Org.FromString,
                 _registered_method=True)
         self.GetCommitmentPlanDetails = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetCommitmentPlanDetails',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentPlanDetails',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetCommitmentPlanDetailsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
                 _registered_method=True)
         self.CommitmentPlanApply = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/CommitmentPlanApply',
+                '/blueapi.gc.v1.GuaranteedCommitments/CommitmentPlanApply',
                 request_serializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanApplyRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
                 _registered_method=True)
         self.ListDefaultCommitmentPlans = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListDefaultCommitmentPlans',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultCommitmentPlans',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansResponse.FromString,
                 _registered_method=True)
         self.GetRecommendedCommitmentPlan = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetRecommendedCommitmentPlan',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetRecommendedCommitmentPlan',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetRecommendedCommitmentPlanRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
                 _registered_method=True)
         self.ListCommitmentPlanLineItems = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListCommitmentPlanLineItems',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentPlanLineItems',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsResponse.FromString,
                 _registered_method=True)
         self.ListCommitmentPlanResourceMatches = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListCommitmentPlanResourceMatches',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentPlanResourceMatches',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesResponse.FromString,
                 _registered_method=True)
         self.ListCommitments = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListCommitments',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListCommitments',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentsResponse.FromString,
                 _registered_method=True)
         self.GetCommitmentsChart = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetCommitmentsChart',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsChart',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsChartRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentsChartResponse.FromString,
                 _registered_method=True)
         self.GetMetrics = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetMetrics',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetMetrics',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetMetricsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.MetricsResponse.FromString,
                 _registered_method=True)
         self.ListResources = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListResources',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListResources',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListResourcesRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListResourcesResponse.FromString,
                 _registered_method=True)
         self.GetResourceDailyUsage = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetResourceDailyUsage',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetResourceDailyUsage',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.FromString,
                 _registered_method=True)
         self.ListSegments = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListSegments',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListSegments',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListSegmentsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListSegmentsResponse.FromString,
                 _registered_method=True)
         self.GetSegmentDetails = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetSegmentDetails',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetSegmentDetails',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.SegmentDetails.FromString,
                 _registered_method=True)
         self.ListDefaultPurchasePlans = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/ListDefaultPurchasePlans',
+                '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultPurchasePlans',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansResponse.FromString,
                 _registered_method=True)
         self.RegisterOrg = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/RegisterOrg',
+                '/blueapi.gc.v1.GuaranteedCommitments/RegisterOrg',
                 request_serializer=gc_dot_v1_dot_gc__pb2.RegisterOrgRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.RegisterOrgResponse.FromString,
                 _registered_method=True)
         self.StartAwsOnboarding = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/StartAwsOnboarding',
+                '/blueapi.gc.v1.GuaranteedCommitments/StartAwsOnboarding',
                 request_serializer=gc_dot_v1_dot_gc__pb2.StartAwsOnboardingRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.StartAwsOnboardingResponse.FromString,
                 _registered_method=True)
         self.GetAwsCloudFormationTemplate = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetAwsCloudFormationTemplate',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetAwsCloudFormationTemplate',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetAwsCloudFormationTemplateRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetAwsCloudFormationTemplateResponse.FromString,
                 _registered_method=True)
         self.GetAwsLaunchStackUrl = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/GetAwsLaunchStackUrl',
+                '/blueapi.gc.v1.GuaranteedCommitments/GetAwsLaunchStackUrl',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetAwsLaunchStackUrlRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetAwsLaunchStackUrlResponse.FromString,
                 _registered_method=True)
         self.VerifyAwsOnboarding = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitment/VerifyAwsOnboarding',
+                '/blueapi.gc.v1.GuaranteedCommitments/VerifyAwsOnboarding',
                 request_serializer=gc_dot_v1_dot_gc__pb2.VerifyAwsOnboardingRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.VerifyAwsOnboardingResponse.FromString,
                 _registered_method=True)
 
 
-class GuaranteedCommitmentServicer(object):
-    """GuaranteedCommitment service definition.
+class GuaranteedCommitmentsServicer(object):
+    """GuaranteedCommitments service definition.
     """
 
     def ListOrgs(self, request, context):
@@ -165,14 +165,14 @@ class GuaranteedCommitmentServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListDefaultCommitmentPlans(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves the three default GuaranteedCommitment commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
+        """WORK-IN-PROGRESS: Do not use. Retrieves the three default GuaranteedCommitments commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetRecommendedCommitmentPlan(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves only the recommended GuaranteedCommitment commitment plan for the specified cloud provider.
+        """WORK-IN-PROGRESS: Do not use. Retrieves only the recommended GuaranteedCommitments commitment plan for the specified cloud provider.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -195,7 +195,7 @@ class GuaranteedCommitmentServicer(object):
     def ListCommitments(self, request, context):
         """####################### COMMITMENTS #######################
 
-        WORK-IN-PROGRESS: Do not use. Retrieves a paginated list of commitments for the specified organization and time period.
+        WORK-IN-PROGRESS: Retrieves a list of commitments.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -300,7 +300,7 @@ class GuaranteedCommitmentServicer(object):
         raise NotImplementedError('Method not implemented!')
 
 
-def add_GuaranteedCommitmentServicer_to_server(servicer, server):
+def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'ListOrgs': grpc.unary_stream_rpc_method_handler(
                     servicer.ListOrgs,
@@ -404,14 +404,14 @@ def add_GuaranteedCommitmentServicer_to_server(servicer, server):
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
-            'blueapi.gc.v1.GuaranteedCommitment', rpc_method_handlers)
+            'blueapi.gc.v1.GuaranteedCommitments', rpc_method_handlers)
     server.add_generic_rpc_handlers((generic_handler,))
-    server.add_registered_method_handlers('blueapi.gc.v1.GuaranteedCommitment', rpc_method_handlers)
+    server.add_registered_method_handlers('blueapi.gc.v1.GuaranteedCommitments', rpc_method_handlers)
 
 
  # This class is part of an EXPERIMENTAL API.
-class GuaranteedCommitment(object):
-    """GuaranteedCommitment service definition.
+class GuaranteedCommitments(object):
+    """GuaranteedCommitments service definition.
     """
 
     @staticmethod
@@ -428,7 +428,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListOrgs',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListOrgs',
             gc_dot_v1_dot_gc__pb2.ListOrgsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.Org.FromString,
             options,
@@ -455,7 +455,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetCommitmentPlanDetails',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentPlanDetails',
             gc_dot_v1_dot_gc__pb2.GetCommitmentPlanDetailsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
             options,
@@ -482,7 +482,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/CommitmentPlanApply',
+            '/blueapi.gc.v1.GuaranteedCommitments/CommitmentPlanApply',
             gc_dot_v1_dot_gc__pb2.CommitmentPlanApplyRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
             options,
@@ -509,7 +509,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListDefaultCommitmentPlans',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultCommitmentPlans',
             gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansResponse.FromString,
             options,
@@ -536,7 +536,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetRecommendedCommitmentPlan',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetRecommendedCommitmentPlan',
             gc_dot_v1_dot_gc__pb2.GetRecommendedCommitmentPlanRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
             options,
@@ -563,7 +563,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListCommitmentPlanLineItems',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentPlanLineItems',
             gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsResponse.FromString,
             options,
@@ -590,7 +590,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListCommitmentPlanResourceMatches',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentPlanResourceMatches',
             gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesResponse.FromString,
             options,
@@ -617,7 +617,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListCommitments',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListCommitments',
             gc_dot_v1_dot_gc__pb2.ListCommitmentsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListCommitmentsResponse.FromString,
             options,
@@ -644,7 +644,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetCommitmentsChart',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsChart',
             gc_dot_v1_dot_gc__pb2.GetCommitmentsChartRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentsChartResponse.FromString,
             options,
@@ -671,7 +671,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetMetrics',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetMetrics',
             gc_dot_v1_dot_gc__pb2.GetMetricsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.MetricsResponse.FromString,
             options,
@@ -698,7 +698,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListResources',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListResources',
             gc_dot_v1_dot_gc__pb2.ListResourcesRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListResourcesResponse.FromString,
             options,
@@ -725,7 +725,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetResourceDailyUsage',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetResourceDailyUsage',
             gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.FromString,
             options,
@@ -752,7 +752,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListSegments',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListSegments',
             gc_dot_v1_dot_gc__pb2.ListSegmentsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListSegmentsResponse.FromString,
             options,
@@ -779,7 +779,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetSegmentDetails',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetSegmentDetails',
             gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.SegmentDetails.FromString,
             options,
@@ -806,7 +806,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/ListDefaultPurchasePlans',
+            '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultPurchasePlans',
             gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansResponse.FromString,
             options,
@@ -833,7 +833,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/RegisterOrg',
+            '/blueapi.gc.v1.GuaranteedCommitments/RegisterOrg',
             gc_dot_v1_dot_gc__pb2.RegisterOrgRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.RegisterOrgResponse.FromString,
             options,
@@ -860,7 +860,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/StartAwsOnboarding',
+            '/blueapi.gc.v1.GuaranteedCommitments/StartAwsOnboarding',
             gc_dot_v1_dot_gc__pb2.StartAwsOnboardingRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.StartAwsOnboardingResponse.FromString,
             options,
@@ -887,7 +887,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetAwsCloudFormationTemplate',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetAwsCloudFormationTemplate',
             gc_dot_v1_dot_gc__pb2.GetAwsCloudFormationTemplateRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetAwsCloudFormationTemplateResponse.FromString,
             options,
@@ -914,7 +914,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/GetAwsLaunchStackUrl',
+            '/blueapi.gc.v1.GuaranteedCommitments/GetAwsLaunchStackUrl',
             gc_dot_v1_dot_gc__pb2.GetAwsLaunchStackUrlRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetAwsLaunchStackUrlResponse.FromString,
             options,
@@ -941,7 +941,7 @@ class GuaranteedCommitment(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitment/VerifyAwsOnboarding',
+            '/blueapi.gc.v1.GuaranteedCommitments/VerifyAwsOnboarding',
             gc_dot_v1_dot_gc__pb2.VerifyAwsOnboardingRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.VerifyAwsOnboardingResponse.FromString,
             options,
