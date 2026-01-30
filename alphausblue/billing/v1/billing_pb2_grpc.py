@@ -1587,7 +1587,7 @@ class BillingServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def BulkCreateBillingGroup(self, request, context):
-        """Create billing group in bulk
+        """Create billing group in bulk from CSV file
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
