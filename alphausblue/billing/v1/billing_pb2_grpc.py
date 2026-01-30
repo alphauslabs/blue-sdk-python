@@ -660,6 +660,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupInvoiceSettingsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupInvoiceSettingsResponse.FromString,
                 _registered_method=True)
+        self.SetChildBillingGroupInvoiceServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/SetChildBillingGroupInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SetChildBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.SetChildBillingGroupCustomizedBillingService = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/SetChildBillingGroupCustomizedBillingService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.BulkCreateBillingGroup = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
@@ -1562,6 +1572,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetChildBillingGroupInvoiceServiceDiscounts(self, request, context):
+        """Sets the child billing group invoice service discounts. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetChildBillingGroupCustomizedBillingService(self, request, context):
+        """Sets the customized billing service in child billing group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def BulkCreateBillingGroup(self, request, context):
         """Create billing group in bulk
         """
@@ -2214,6 +2238,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.UpdateChildBillingGroupInvoiceSettings,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupInvoiceSettingsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupInvoiceSettingsResponse.SerializeToString,
+            ),
+            'SetChildBillingGroupInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetChildBillingGroupInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SetChildBillingGroupInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SetChildBillingGroupCustomizedBillingService': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetChildBillingGroupCustomizedBillingService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SetChildBillingGroupCustomizedBillingServiceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
             'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.BulkCreateBillingGroup,
@@ -5563,6 +5597,60 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/UpdateChildBillingGroupInvoiceSettings',
             billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupInvoiceSettingsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.UpdateChildBillingGroupInvoiceSettingsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetChildBillingGroupInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/SetChildBillingGroupInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.SetChildBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetChildBillingGroupCustomizedBillingService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/SetChildBillingGroupCustomizedBillingService',
+            billing_dot_v1_dot_billing__pb2.SetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
