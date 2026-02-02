@@ -675,6 +675,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.SetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.GetChildBillingGroupCustomizedBillingService = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/GetChildBillingGroupCustomizedBillingService',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceResponse.FromString,
+                _registered_method=True)
         self.BulkCreateBillingGroup = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
@@ -1598,6 +1603,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetChildBillingGroupCustomizedBillingService(self, request, context):
+        """Gets the customized billing service in child billing group. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def BulkCreateBillingGroup(self, request, context):
         """Create billing group in bulk from CSV file
         """
@@ -2265,6 +2277,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.SetChildBillingGroupCustomizedBillingService,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.SetChildBillingGroupCustomizedBillingServiceRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetChildBillingGroupCustomizedBillingService': grpc.unary_stream_rpc_method_handler(
+                    servicer.GetChildBillingGroupCustomizedBillingService,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceResponse.SerializeToString,
             ),
             'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.BulkCreateBillingGroup,
@@ -5695,6 +5712,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/SetChildBillingGroupCustomizedBillingService',
             billing_dot_v1_dot_billing__pb2.SetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetChildBillingGroupCustomizedBillingService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetChildBillingGroupCustomizedBillingService',
+            billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceResponse.FromString,
             options,
             channel_credentials,
             insecure,
