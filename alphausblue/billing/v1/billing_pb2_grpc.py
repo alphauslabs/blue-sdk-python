@@ -680,6 +680,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceResponse.FromString,
                 _registered_method=True)
+        self.GetChildBillingGroupInvoiceServiceDiscounts = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetChildBillingGroupInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsResponse.FromString,
+                _registered_method=True)
+        self.ListChildBillingGroupAccountInvoiceServiceDiscounts = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListChildBillingGroupAccountInvoiceServiceDiscounts',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.FromString,
+                _registered_method=True)
         self.BulkCreateBillingGroup = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
@@ -1610,6 +1620,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetChildBillingGroupInvoiceServiceDiscounts(self, request, context):
+        """Returns the service discount associated with the billing group id
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListChildBillingGroupAccountInvoiceServiceDiscounts(self, request, context):
+        """Returns the account's service discounts associated with the child billing group id
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def BulkCreateBillingGroup(self, request, context):
         """Create billing group in bulk from CSV file
         """
@@ -2282,6 +2306,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetChildBillingGroupCustomizedBillingService,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceResponse.SerializeToString,
+            ),
+            'GetChildBillingGroupInvoiceServiceDiscounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetChildBillingGroupInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsResponse.SerializeToString,
+            ),
+            'ListChildBillingGroupAccountInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListChildBillingGroupAccountInvoiceServiceDiscounts,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.SerializeToString,
             ),
             'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
                     servicer.BulkCreateBillingGroup,
@@ -5739,6 +5773,60 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/GetChildBillingGroupCustomizedBillingService',
             billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.GetChildBillingGroupCustomizedBillingServiceResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetChildBillingGroupInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetChildBillingGroupInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListChildBillingGroupAccountInvoiceServiceDiscounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ListChildBillingGroupAccountInvoiceServiceDiscounts',
+            billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.FromString,
             options,
             channel_credentials,
             insecure,
