@@ -105,10 +105,10 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.SegmentDetails.FromString,
                 _registered_method=True)
-        self.ListDefaultPurchasePlans = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultPurchasePlans',
-                request_serializer=gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansResponse.FromString,
+        self.ListPurchasePlansBySegment = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ListPurchasePlansBySegment',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentResponse.FromString,
                 _registered_method=True)
         self.RegisterOrg = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/RegisterOrg',
@@ -254,7 +254,7 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListDefaultPurchasePlans(self, request, context):
+    def ListPurchasePlansBySegment(self, request, context):
         """WORK-IN-PROGRESS: Do not use. Retrieves default purchase plans of a company.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -385,10 +385,10 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.SegmentDetails.SerializeToString,
             ),
-            'ListDefaultPurchasePlans': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDefaultPurchasePlans,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansResponse.SerializeToString,
+            'ListPurchasePlansBySegment': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPurchasePlansBySegment,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentResponse.SerializeToString,
             ),
             'RegisterOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.RegisterOrg,
@@ -811,7 +811,7 @@ class GuaranteedCommitments(object):
             _registered_method=True)
 
     @staticmethod
-    def ListDefaultPurchasePlans(request,
+    def ListPurchasePlansBySegment(request,
             target,
             options=(),
             channel_credentials=None,
@@ -824,9 +824,9 @@ class GuaranteedCommitments(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultPurchasePlans',
-            gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.ListDefaultPurchasePlansResponse.FromString,
+            '/blueapi.gc.v1.GuaranteedCommitments/ListPurchasePlansBySegment',
+            gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentResponse.FromString,
             options,
             channel_credentials,
             insecure,
