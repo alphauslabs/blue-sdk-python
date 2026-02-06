@@ -255,7 +255,7 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListPurchasePlansBySegment(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves default purchase plans of a company.
+        """WORK-IN-PROGRESS:  Retrieves purchase plan of a company.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
