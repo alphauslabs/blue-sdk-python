@@ -29,7 +29,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16luster/v1/luster.proto\x12\x11\x62lueapi.luster.v1\x1a\x16\x61pi/luster/space.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x13\n\x11ReadSpacesRequest2\xa8\x02\n\x06Luster\x12\x63\n\nReadSpaces\x12$.blueapi.luster.v1.ReadSpacesRequest\x1a\x19.blueapi.api.luster.Space\"\x12\x82\xd3\xe4\x93\x02\x0c\x12\n/v1/spaces0\x01\x1a\xb8\x01\x92\x41\xb4\x01\x12\x45(ALPHA) Luster API. Base URL: https://api.alphaus.cloud/m/blue/luster\x1ak\n/Luster is a service that manages user contexts.\x12\x38https://github.com/alphauslabs/blueapi/tree/main/luster/BN\n\x18\x63loud.alphaus.api.lusterB\x0bLusterProtoZ%github.com/alphauslabs/blueapi/lusterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16luster/v1/luster.proto\x12\x11\x62lueapi.luster.v1\x1a\x16\x61pi/luster/space.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x13\n\x11ReadSpacesRequest\"\x11\n\x0fGetSpaceRequest\"\x14\n\x12\x43reateSpaceRequest\"\x14\n\x12UpdateSpaceRequest\"\x14\n\x12\x44\x65leteSpaceRequest2\xd0\x05\n\x06Luster\x12k\n\nReadSpaces\x12$.blueapi.luster.v1.ReadSpacesRequest\x1a\x19.blueapi.api.luster.Space\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/spaces:read:\x01*0\x01\x12\x62\n\x08GetSpace\x12\".blueapi.luster.v1.GetSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/spaces/{id}\x12\x66\n\x0b\x43reateSpace\x12%.blueapi.luster.v1.CreateSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/spaces:\x01*\x12k\n\x0bUpdateSpace\x12%.blueapi.luster.v1.UpdateSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/spaces/{id}:\x01*\x12\x65\n\x0b\x44\x65leteSpace\x12%.blueapi.luster.v1.DeleteSpaceRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/spaces/{id}\x1a\xb8\x01\x92\x41\xb4\x01\x12\x45(ALPHA) Luster API. Base URL: https://api.alphaus.cloud/m/blue/luster\x1ak\n/Luster is a service that manages user contexts.\x12\x38https://github.com/alphauslabs/blueapi/tree/main/luster/BN\n\x18\x63loud.alphaus.api.lusterB\x0bLusterProtoZ%github.com/alphauslabs/blueapi/lusterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,9 +40,25 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LUSTER']._loaded_options = None
   _globals['_LUSTER']._serialized_options = b'\222A\264\001\022E(ALPHA) Luster API. Base URL: https://api.alphaus.cloud/m/blue/luster\032k\n/Luster is a service that manages user contexts.\0228https://github.com/alphauslabs/blueapi/tree/main/luster/'
   _globals['_LUSTER'].methods_by_name['ReadSpaces']._loaded_options = None
-  _globals['_LUSTER'].methods_by_name['ReadSpaces']._serialized_options = b'\202\323\344\223\002\014\022\n/v1/spaces'
+  _globals['_LUSTER'].methods_by_name['ReadSpaces']._serialized_options = b'\202\323\344\223\002\024\"\017/v1/spaces:read:\001*'
+  _globals['_LUSTER'].methods_by_name['GetSpace']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['GetSpace']._serialized_options = b'\202\323\344\223\002\021\022\017/v1/spaces/{id}'
+  _globals['_LUSTER'].methods_by_name['CreateSpace']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['CreateSpace']._serialized_options = b'\202\323\344\223\002\017\"\n/v1/spaces:\001*'
+  _globals['_LUSTER'].methods_by_name['UpdateSpace']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['UpdateSpace']._serialized_options = b'\202\323\344\223\002\024\032\017/v1/spaces/{id}:\001*'
+  _globals['_LUSTER'].methods_by_name['DeleteSpace']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['DeleteSpace']._serialized_options = b'\202\323\344\223\002\021*\017/v1/spaces/{id}'
   _globals['_READSPACESREQUEST']._serialized_start=209
   _globals['_READSPACESREQUEST']._serialized_end=228
-  _globals['_LUSTER']._serialized_start=231
-  _globals['_LUSTER']._serialized_end=527
+  _globals['_GETSPACEREQUEST']._serialized_start=230
+  _globals['_GETSPACEREQUEST']._serialized_end=247
+  _globals['_CREATESPACEREQUEST']._serialized_start=249
+  _globals['_CREATESPACEREQUEST']._serialized_end=269
+  _globals['_UPDATESPACEREQUEST']._serialized_start=271
+  _globals['_UPDATESPACEREQUEST']._serialized_end=291
+  _globals['_DELETESPACEREQUEST']._serialized_start=293
+  _globals['_DELETESPACEREQUEST']._serialized_end=313
+  _globals['_LUSTER']._serialized_start=316
+  _globals['_LUSTER']._serialized_end=1036
 # @@protoc_insertion_point(module_scope)

@@ -4,6 +4,7 @@ import grpc
 import warnings
 
 from alphausblue.api.luster import space_pb2 as api_dot_luster_dot_space__pb2
+from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.luster.v1 import luster_pb2 as luster_dot_v1_dot_luster__pb2
 
 GRPC_GENERATED_VERSION = '1.76.0'
@@ -41,6 +42,26 @@ class LusterStub(object):
                 request_serializer=luster_dot_v1_dot_luster__pb2.ReadSpacesRequest.SerializeToString,
                 response_deserializer=api_dot_luster_dot_space__pb2.Space.FromString,
                 _registered_method=True)
+        self.GetSpace = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/GetSpace',
+                request_serializer=luster_dot_v1_dot_luster__pb2.GetSpaceRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_space__pb2.Space.FromString,
+                _registered_method=True)
+        self.CreateSpace = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/CreateSpace',
+                request_serializer=luster_dot_v1_dot_luster__pb2.CreateSpaceRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_space__pb2.Space.FromString,
+                _registered_method=True)
+        self.UpdateSpace = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/UpdateSpace',
+                request_serializer=luster_dot_v1_dot_luster__pb2.UpdateSpaceRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_space__pb2.Space.FromString,
+                _registered_method=True)
+        self.DeleteSpace = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/DeleteSpace',
+                request_serializer=luster_dot_v1_dot_luster__pb2.DeleteSpaceRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class LusterServicer(object):
@@ -48,7 +69,35 @@ class LusterServicer(object):
     """
 
     def ReadSpaces(self, request, context):
-        """(ALPHA) Read spaces.
+        """(ALPHA) Reads spaces.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSpace(self, request, context):
+        """(ALPHA) Gets space.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateSpace(self, request, context):
+        """(ALPHA) Creates space.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateSpace(self, request, context):
+        """(ALPHA) Updates space.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteSpace(self, request, context):
+        """(ALPHA) Deletes space.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -61,6 +110,26 @@ def add_LusterServicer_to_server(servicer, server):
                     servicer.ReadSpaces,
                     request_deserializer=luster_dot_v1_dot_luster__pb2.ReadSpacesRequest.FromString,
                     response_serializer=api_dot_luster_dot_space__pb2.Space.SerializeToString,
+            ),
+            'GetSpace': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSpace,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.GetSpaceRequest.FromString,
+                    response_serializer=api_dot_luster_dot_space__pb2.Space.SerializeToString,
+            ),
+            'CreateSpace': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateSpace,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.CreateSpaceRequest.FromString,
+                    response_serializer=api_dot_luster_dot_space__pb2.Space.SerializeToString,
+            ),
+            'UpdateSpace': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateSpace,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.UpdateSpaceRequest.FromString,
+                    response_serializer=api_dot_luster_dot_space__pb2.Space.SerializeToString,
+            ),
+            'DeleteSpace': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteSpace,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteSpaceRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -91,6 +160,114 @@ class Luster(object):
             '/blueapi.luster.v1.Luster/ReadSpaces',
             luster_dot_v1_dot_luster__pb2.ReadSpacesRequest.SerializeToString,
             api_dot_luster_dot_space__pb2.Space.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSpace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/GetSpace',
+            luster_dot_v1_dot_luster__pb2.GetSpaceRequest.SerializeToString,
+            api_dot_luster_dot_space__pb2.Space.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateSpace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/CreateSpace',
+            luster_dot_v1_dot_luster__pb2.CreateSpaceRequest.SerializeToString,
+            api_dot_luster_dot_space__pb2.Space.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateSpace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/UpdateSpace',
+            luster_dot_v1_dot_luster__pb2.UpdateSpaceRequest.SerializeToString,
+            api_dot_luster_dot_space__pb2.Space.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteSpace(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/DeleteSpace',
+            luster_dot_v1_dot_luster__pb2.DeleteSpaceRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
