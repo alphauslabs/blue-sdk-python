@@ -95,16 +95,6 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.FromString,
                 _registered_method=True)
-        self.ListSegments = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/ListSegments',
-                request_serializer=gc_dot_v1_dot_gc__pb2.ListSegmentsRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.ListSegmentsResponse.FromString,
-                _registered_method=True)
-        self.GetSegmentDetails = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/GetSegmentDetails',
-                request_serializer=gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.SegmentDetails.FromString,
-                _registered_method=True)
         self.ListPurchasePlansBySegment = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/ListPurchasePlansBySegment',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.SerializeToString,
@@ -243,24 +233,24 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListSegments(self, request, context):
+    def ListPurchasePlansBySegment(self, request, context):
         """####################### SEGMENTS #######################
 
         WORK-IN-PROGRESS: Do not use. Retrieves all segments for the specified organization and provider.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        rpc ListSegments(ListSegmentsRequest) returns (ListSegmentsResponse) {
+        option (google.api.http) = {
+        get: "/v1/segments/info"
+        };
+        }
 
-    def GetSegmentDetails(self, request, context):
-        """WORK-IN-PROGRESS: Retrieves detailed information about a specific segment.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        WORK-IN-PROGRESS: Retrieves detailed information about a specific segment.
+        rpc GetSegmentDetails(GetSegmentDetailsRequest) returns (SegmentDetails) {
+        option (google.api.http) = {
+        get: "/v1/segments/{segmentId}"
+        };
+        }
 
-    def ListPurchasePlansBySegment(self, request, context):
-        """WORK-IN-PROGRESS:  Retrieves purchase plan of a company.
+        WORK-IN-PROGRESS:  Retrieves purchase plan of a company.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -387,16 +377,6 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetResourceDailyUsage,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.SerializeToString,
-            ),
-            'ListSegments': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListSegments,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListSegmentsRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.ListSegmentsResponse.SerializeToString,
-            ),
-            'GetSegmentDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetSegmentDetails,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.SegmentDetails.SerializeToString,
             ),
             'ListPurchasePlansBySegment': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPurchasePlansBySegment,
@@ -764,60 +744,6 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/GetResourceDailyUsage',
             gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListSegments(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/ListSegments',
-            gc_dot_v1_dot_gc__pb2.ListSegmentsRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.ListSegmentsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetSegmentDetails(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/GetSegmentDetails',
-            gc_dot_v1_dot_gc__pb2.GetSegmentDetailsRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.SegmentDetails.FromString,
             options,
             channel_credentials,
             insecure,
