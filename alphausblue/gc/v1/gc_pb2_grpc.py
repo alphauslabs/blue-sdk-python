@@ -80,6 +80,11 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsChartRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentsChartResponse.FromString,
                 _registered_method=True)
+        self.GetCommitmentsUtilization = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsUtilization',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsUtilizationRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentsUtilizationResponse.FromString,
+                _registered_method=True)
         self.GetMetrics = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/GetMetrics',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetMetricsRequest.SerializeToString,
@@ -228,6 +233,13 @@ class GuaranteedCommitmentsServicer(object):
 
     def GetCommitmentsChart(self, request, context):
         """WORK-IN-PROGRESS: Generates time-series chart data for commitment metrics over the specified time period.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetCommitmentsUtilization(self, request, context):
+        """WORK-IN-PROGRESS: Generates utilization data for commitment over the active period.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -418,6 +430,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetCommitmentsChart,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsChartRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentsChartResponse.SerializeToString,
+            ),
+            'GetCommitmentsUtilization': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetCommitmentsUtilization,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsUtilizationRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentsUtilizationResponse.SerializeToString,
             ),
             'GetMetrics': grpc.unary_unary_rpc_method_handler(
                     servicer.GetMetrics,
@@ -744,6 +761,33 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsChart',
             gc_dot_v1_dot_gc__pb2.GetCommitmentsChartRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentsChartResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetCommitmentsUtilization(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsUtilization',
+            gc_dot_v1_dot_gc__pb2.GetCommitmentsUtilizationRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.CommitmentsUtilizationResponse.FromString,
             options,
             channel_credentials,
             insecure,
