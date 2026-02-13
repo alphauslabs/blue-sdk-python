@@ -3,6 +3,9 @@
 import grpc
 import warnings
 
+from alphausblue.api.luster import comment_pb2 as api_dot_luster_dot_comment__pb2
+from alphausblue.api.luster import context_pb2 as api_dot_luster_dot_context__pb2
+from alphausblue.api.luster import label_pb2 as api_dot_luster_dot_label__pb2
 from alphausblue.api.luster import space_pb2 as api_dot_luster_dot_space__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.luster.v1 import luster_pb2 as luster_dot_v1_dot_luster__pb2
@@ -62,6 +65,51 @@ class LusterStub(object):
                 request_serializer=luster_dot_v1_dot_luster__pb2.DeleteSpaceRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.ReadContexts = channel.unary_stream(
+                '/blueapi.luster.v1.Luster/ReadContexts',
+                request_serializer=luster_dot_v1_dot_luster__pb2.ReadContextsRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_context__pb2.Context.FromString,
+                _registered_method=True)
+        self.GetContext = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/GetContext',
+                request_serializer=luster_dot_v1_dot_luster__pb2.GetContextRequest.SerializeToString,
+                response_deserializer=luster_dot_v1_dot_luster__pb2.GetContextResponse.FromString,
+                _registered_method=True)
+        self.CreateContext = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/CreateContext',
+                request_serializer=luster_dot_v1_dot_luster__pb2.CreateContextRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_context__pb2.Context.FromString,
+                _registered_method=True)
+        self.UpdateContext = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/UpdateContext',
+                request_serializer=luster_dot_v1_dot_luster__pb2.UpdateContextRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_context__pb2.Context.FromString,
+                _registered_method=True)
+        self.DeleteContext = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/DeleteContext',
+                request_serializer=luster_dot_v1_dot_luster__pb2.DeleteContextRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.CreateContextComment = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/CreateContextComment',
+                request_serializer=luster_dot_v1_dot_luster__pb2.CreateContextCommentRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_comment__pb2.Comment.FromString,
+                _registered_method=True)
+        self.UpdateContextComment = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/UpdateContextComment',
+                request_serializer=luster_dot_v1_dot_luster__pb2.UpdateContextCommentRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_comment__pb2.Comment.FromString,
+                _registered_method=True)
+        self.DeleteContextComment = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/DeleteContextComment',
+                request_serializer=luster_dot_v1_dot_luster__pb2.DeleteContextCommentRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.CreateLabel = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/CreateLabel',
+                request_serializer=luster_dot_v1_dot_luster__pb2.CreateLabelRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_label__pb2.Label.FromString,
+                _registered_method=True)
 
 
 class LusterServicer(object):
@@ -70,6 +118,7 @@ class LusterServicer(object):
 
     def ReadSpaces(self, request, context):
         """(ALPHA) Reads spaces.
+        スペースの読み取り。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -77,6 +126,7 @@ class LusterServicer(object):
 
     def GetSpace(self, request, context):
         """(ALPHA) Gets space.
+        スペースの取得。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -84,6 +134,7 @@ class LusterServicer(object):
 
     def CreateSpace(self, request, context):
         """(ALPHA) Creates space.
+        スペースの作成。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -91,6 +142,7 @@ class LusterServicer(object):
 
     def UpdateSpace(self, request, context):
         """(ALPHA) Updates space.
+        スペースの更新。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -98,6 +150,71 @@ class LusterServicer(object):
 
     def DeleteSpace(self, request, context):
         """(ALPHA) Deletes space.
+        スペースの削除。 削除する場合はスペース内で作成したコンテクストも削除され閲覧できなくなります。
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadContexts(self, request, context):
+        """(ALPHA) Reads contexts.
+        スペースの読み取り。
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetContext(self, request, context):
+        """(ALPHA) Gets context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateContext(self, request, context):
+        """(ALPHA) Creates context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateContext(self, request, context):
+        """(ALPHA) Updates context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteContext(self, request, context):
+        """(ALPHA) Deletes context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateContextComment(self, request, context):
+        """(ALPHA) Creates comment in context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateContextComment(self, request, context):
+        """(ALPHA) Updates comment in context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteContextComment(self, request, context):
+        """(ALPHA) Deletes comment in context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateLabel(self, request, context):
+        """(ALPHA) Creates label.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -130,6 +247,51 @@ def add_LusterServicer_to_server(servicer, server):
                     servicer.DeleteSpace,
                     request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteSpaceRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReadContexts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadContexts,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.ReadContextsRequest.FromString,
+                    response_serializer=api_dot_luster_dot_context__pb2.Context.SerializeToString,
+            ),
+            'GetContext': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetContext,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.GetContextRequest.FromString,
+                    response_serializer=luster_dot_v1_dot_luster__pb2.GetContextResponse.SerializeToString,
+            ),
+            'CreateContext': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateContext,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.CreateContextRequest.FromString,
+                    response_serializer=api_dot_luster_dot_context__pb2.Context.SerializeToString,
+            ),
+            'UpdateContext': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateContext,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.UpdateContextRequest.FromString,
+                    response_serializer=api_dot_luster_dot_context__pb2.Context.SerializeToString,
+            ),
+            'DeleteContext': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteContext,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteContextRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateContextComment': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateContextComment,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.CreateContextCommentRequest.FromString,
+                    response_serializer=api_dot_luster_dot_comment__pb2.Comment.SerializeToString,
+            ),
+            'UpdateContextComment': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateContextComment,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.UpdateContextCommentRequest.FromString,
+                    response_serializer=api_dot_luster_dot_comment__pb2.Comment.SerializeToString,
+            ),
+            'DeleteContextComment': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteContextComment,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteContextCommentRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateLabel,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.CreateLabelRequest.FromString,
+                    response_serializer=api_dot_luster_dot_label__pb2.Label.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -268,6 +430,249 @@ class Luster(object):
             '/blueapi.luster.v1.Luster/DeleteSpace',
             luster_dot_v1_dot_luster__pb2.DeleteSpaceRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadContexts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/ReadContexts',
+            luster_dot_v1_dot_luster__pb2.ReadContextsRequest.SerializeToString,
+            api_dot_luster_dot_context__pb2.Context.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetContext(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/GetContext',
+            luster_dot_v1_dot_luster__pb2.GetContextRequest.SerializeToString,
+            luster_dot_v1_dot_luster__pb2.GetContextResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateContext(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/CreateContext',
+            luster_dot_v1_dot_luster__pb2.CreateContextRequest.SerializeToString,
+            api_dot_luster_dot_context__pb2.Context.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateContext(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/UpdateContext',
+            luster_dot_v1_dot_luster__pb2.UpdateContextRequest.SerializeToString,
+            api_dot_luster_dot_context__pb2.Context.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteContext(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/DeleteContext',
+            luster_dot_v1_dot_luster__pb2.DeleteContextRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateContextComment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/CreateContextComment',
+            luster_dot_v1_dot_luster__pb2.CreateContextCommentRequest.SerializeToString,
+            api_dot_luster_dot_comment__pb2.Comment.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateContextComment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/UpdateContextComment',
+            luster_dot_v1_dot_luster__pb2.UpdateContextCommentRequest.SerializeToString,
+            api_dot_luster_dot_comment__pb2.Comment.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteContextComment(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/DeleteContextComment',
+            luster_dot_v1_dot_luster__pb2.DeleteContextCommentRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateLabel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/CreateLabel',
+            luster_dot_v1_dot_luster__pb2.CreateLabelRequest.SerializeToString,
+            api_dot_luster_dot_label__pb2.Label.FromString,
             options,
             channel_credentials,
             insecure,

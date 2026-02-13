@@ -23,13 +23,15 @@ _sym_db = _symbol_database.Default()
 
 
 from alphausblue.api.luster import space_pb2 as api_dot_luster_dot_space__pb2
+from alphausblue.api.luster import context_pb2 as api_dot_luster_dot_context__pb2
+from alphausblue.api.luster import comment_pb2 as api_dot_luster_dot_comment__pb2
+from alphausblue.api.luster import label_pb2 as api_dot_luster_dot_label__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
-from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16luster/v1/luster.proto\x12\x11\x62lueapi.luster.v1\x1a\x16\x61pi/luster/space.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x13\n\x11ReadSpacesRequest\"\x11\n\x0fGetSpaceRequest\"\x14\n\x12\x43reateSpaceRequest\"\x14\n\x12UpdateSpaceRequest\"\x14\n\x12\x44\x65leteSpaceRequest2\xd0\x05\n\x06Luster\x12k\n\nReadSpaces\x12$.blueapi.luster.v1.ReadSpacesRequest\x1a\x19.blueapi.api.luster.Space\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/spaces:read:\x01*0\x01\x12\x62\n\x08GetSpace\x12\".blueapi.luster.v1.GetSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/spaces/{id}\x12\x66\n\x0b\x43reateSpace\x12%.blueapi.luster.v1.CreateSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/spaces:\x01*\x12k\n\x0bUpdateSpace\x12%.blueapi.luster.v1.UpdateSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/spaces/{id}:\x01*\x12\x65\n\x0b\x44\x65leteSpace\x12%.blueapi.luster.v1.DeleteSpaceRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/spaces/{id}\x1a\xb8\x01\x92\x41\xb4\x01\x12\x45(ALPHA) Luster API. Base URL: https://api.alphaus.cloud/m/blue/luster\x1ak\n/Luster is a service that manages user contexts.\x12\x38https://github.com/alphauslabs/blueapi/tree/main/luster/BN\n\x18\x63loud.alphaus.api.lusterB\x0bLusterProtoZ%github.com/alphauslabs/blueapi/lusterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16luster/v1/luster.proto\x12\x11\x62lueapi.luster.v1\x1a\x16\x61pi/luster/space.proto\x1a\x18\x61pi/luster/context.proto\x1a\x18\x61pi/luster/comment.proto\x1a\x16\x61pi/luster/label.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x13\n\x11ReadSpacesRequest\"\x1d\n\x0fGetSpaceRequest\x12\n\n\x02id\x18\x01 \x01(\t\"7\n\x12\x43reateSpaceRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x02 \x01(\t\" \n\x12UpdateSpaceRequest\x12\n\n\x02id\x18\x01 \x01(\t\" \n\x12\x44\x65leteSpaceRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x15\n\x13ReadContextsRequest\"\x1f\n\x11GetContextRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\x9a\x01\n\x12GetContextResponse\x12(\n\x05space\x18\x01 \x01(\x0b\x32\x19.blueapi.api.luster.Space\x12,\n\x07\x63ontext\x18\x02 \x01(\x0b\x32\x1b.blueapi.api.luster.Context\x12,\n\x07\x63omment\x18\x03 \x03(\x0b\x32\x1b.blueapi.api.luster.Comment\"6\n\x14\x43reateContextRequest\x12\r\n\x05title\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"\"\n\x14UpdateContextRequest\x12\n\n\x02id\x18\x01 \x01(\t\"\"\n\x14\x44\x65leteContextRequest\x12\n\n\x02id\x18\x01 \x01(\t\":\n\x1b\x43reateContextCommentRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\t\"<\n\x1bUpdateContextCommentRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tcommentId\x18\x02 \x01(\t\"<\n\x1b\x44\x65leteContextCommentRequest\x12\n\n\x02id\x18\x01 \x01(\t\x12\x11\n\tcommentId\x18\x02 \x01(\t\"F\n\x12\x43reateLabelRequest\x12\x0c\n\x04name\x18\x01 \x01(\t\x12\r\n\x05\x63olor\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t2\xb1\x0e\n\x06Luster\x12k\n\nReadSpaces\x12$.blueapi.luster.v1.ReadSpacesRequest\x1a\x19.blueapi.api.luster.Space\"\x1a\x82\xd3\xe4\x93\x02\x14\"\x0f/v1/spaces:read:\x01*0\x01\x12\x62\n\x08GetSpace\x12\".blueapi.luster.v1.GetSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x17\x82\xd3\xe4\x93\x02\x11\x12\x0f/v1/spaces/{id}\x12\x66\n\x0b\x43reateSpace\x12%.blueapi.luster.v1.CreateSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x15\x82\xd3\xe4\x93\x02\x0f\"\n/v1/spaces:\x01*\x12k\n\x0bUpdateSpace\x12%.blueapi.luster.v1.UpdateSpaceRequest\x1a\x19.blueapi.api.luster.Space\"\x1a\x82\xd3\xe4\x93\x02\x14\x1a\x0f/v1/spaces/{id}:\x01*\x12\x65\n\x0b\x44\x65leteSpace\x12%.blueapi.luster.v1.DeleteSpaceRequest\x1a\x16.google.protobuf.Empty\"\x17\x82\xd3\xe4\x93\x02\x11*\x0f/v1/spaces/{id}\x12s\n\x0cReadContexts\x12&.blueapi.luster.v1.ReadContextsRequest\x1a\x1b.blueapi.api.luster.Context\"\x1c\x82\xd3\xe4\x93\x02\x16\"\x11/v1/contexts:read:\x01*0\x01\x12t\n\nGetContext\x12$.blueapi.luster.v1.GetContextRequest\x1a%.blueapi.luster.v1.GetContextResponse\"\x19\x82\xd3\xe4\x93\x02\x13\x12\x11/v1/contexts/{id}\x12n\n\rCreateContext\x12\'.blueapi.luster.v1.CreateContextRequest\x1a\x1b.blueapi.api.luster.Context\"\x17\x82\xd3\xe4\x93\x02\x11\"\x0c/v1/contexts:\x01*\x12s\n\rUpdateContext\x12\'.blueapi.luster.v1.UpdateContextRequest\x1a\x1b.blueapi.api.luster.Context\"\x1c\x82\xd3\xe4\x93\x02\x16\x1a\x11/v1/contexts/{id}:\x01*\x12k\n\rDeleteContext\x12\'.blueapi.luster.v1.DeleteContextRequest\x1a\x16.google.protobuf.Empty\"\x19\x82\xd3\xe4\x93\x02\x13*\x11/v1/contexts/{id}\x12\x89\x01\n\x14\x43reateContextComment\x12..blueapi.luster.v1.CreateContextCommentRequest\x1a\x1b.blueapi.api.luster.Comment\"$\x82\xd3\xe4\x93\x02\x1e\"\x19/v1/contexts/{id}/comment:\x01*\x12\x95\x01\n\x14UpdateContextComment\x12..blueapi.luster.v1.UpdateContextCommentRequest\x1a\x1b.blueapi.api.luster.Comment\"0\x82\xd3\xe4\x93\x02*\x1a%/v1/contexts/{id}/comment/{commentId}:\x01*\x12\x8d\x01\n\x14\x44\x65leteContextComment\x12..blueapi.luster.v1.DeleteContextCommentRequest\x1a\x16.google.protobuf.Empty\"-\x82\xd3\xe4\x93\x02\'*%/v1/contexts/{id}/comment/{commentId}\x12n\n\x0b\x43reateLabel\x12%.blueapi.luster.v1.CreateLabelRequest\x1a\x19.blueapi.api.luster.Label\"\x1d\x82\xd3\xe4\x93\x02\x17\"\x12/v1/contexts/label:\x01*\x1a\xb8\x01\x92\x41\xb4\x01\x12\x45(ALPHA) Luster API. Base URL: https://api.alphaus.cloud/m/blue/luster\x1ak\n/Luster is a service that manages user contexts.\x12\x38https://github.com/alphauslabs/blueapi/tree/main/luster/BN\n\x18\x63loud.alphaus.api.lusterB\x0bLusterProtoZ%github.com/alphauslabs/blueapi/lusterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -49,16 +51,54 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LUSTER'].methods_by_name['UpdateSpace']._serialized_options = b'\202\323\344\223\002\024\032\017/v1/spaces/{id}:\001*'
   _globals['_LUSTER'].methods_by_name['DeleteSpace']._loaded_options = None
   _globals['_LUSTER'].methods_by_name['DeleteSpace']._serialized_options = b'\202\323\344\223\002\021*\017/v1/spaces/{id}'
-  _globals['_READSPACESREQUEST']._serialized_start=209
-  _globals['_READSPACESREQUEST']._serialized_end=228
-  _globals['_GETSPACEREQUEST']._serialized_start=230
-  _globals['_GETSPACEREQUEST']._serialized_end=247
-  _globals['_CREATESPACEREQUEST']._serialized_start=249
-  _globals['_CREATESPACEREQUEST']._serialized_end=269
-  _globals['_UPDATESPACEREQUEST']._serialized_start=271
-  _globals['_UPDATESPACEREQUEST']._serialized_end=291
-  _globals['_DELETESPACEREQUEST']._serialized_start=293
-  _globals['_DELETESPACEREQUEST']._serialized_end=313
-  _globals['_LUSTER']._serialized_start=316
-  _globals['_LUSTER']._serialized_end=1036
+  _globals['_LUSTER'].methods_by_name['ReadContexts']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['ReadContexts']._serialized_options = b'\202\323\344\223\002\026\"\021/v1/contexts:read:\001*'
+  _globals['_LUSTER'].methods_by_name['GetContext']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['GetContext']._serialized_options = b'\202\323\344\223\002\023\022\021/v1/contexts/{id}'
+  _globals['_LUSTER'].methods_by_name['CreateContext']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['CreateContext']._serialized_options = b'\202\323\344\223\002\021\"\014/v1/contexts:\001*'
+  _globals['_LUSTER'].methods_by_name['UpdateContext']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['UpdateContext']._serialized_options = b'\202\323\344\223\002\026\032\021/v1/contexts/{id}:\001*'
+  _globals['_LUSTER'].methods_by_name['DeleteContext']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['DeleteContext']._serialized_options = b'\202\323\344\223\002\023*\021/v1/contexts/{id}'
+  _globals['_LUSTER'].methods_by_name['CreateContextComment']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['CreateContextComment']._serialized_options = b'\202\323\344\223\002\036\"\031/v1/contexts/{id}/comment:\001*'
+  _globals['_LUSTER'].methods_by_name['UpdateContextComment']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['UpdateContextComment']._serialized_options = b'\202\323\344\223\002*\032%/v1/contexts/{id}/comment/{commentId}:\001*'
+  _globals['_LUSTER'].methods_by_name['DeleteContextComment']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['DeleteContextComment']._serialized_options = b'\202\323\344\223\002\'*%/v1/contexts/{id}/comment/{commentId}'
+  _globals['_LUSTER'].methods_by_name['CreateLabel']._loaded_options = None
+  _globals['_LUSTER'].methods_by_name['CreateLabel']._serialized_options = b'\202\323\344\223\002\027\"\022/v1/contexts/label:\001*'
+  _globals['_READSPACESREQUEST']._serialized_start=252
+  _globals['_READSPACESREQUEST']._serialized_end=271
+  _globals['_GETSPACEREQUEST']._serialized_start=273
+  _globals['_GETSPACEREQUEST']._serialized_end=302
+  _globals['_CREATESPACEREQUEST']._serialized_start=304
+  _globals['_CREATESPACEREQUEST']._serialized_end=359
+  _globals['_UPDATESPACEREQUEST']._serialized_start=361
+  _globals['_UPDATESPACEREQUEST']._serialized_end=393
+  _globals['_DELETESPACEREQUEST']._serialized_start=395
+  _globals['_DELETESPACEREQUEST']._serialized_end=427
+  _globals['_READCONTEXTSREQUEST']._serialized_start=429
+  _globals['_READCONTEXTSREQUEST']._serialized_end=450
+  _globals['_GETCONTEXTREQUEST']._serialized_start=452
+  _globals['_GETCONTEXTREQUEST']._serialized_end=483
+  _globals['_GETCONTEXTRESPONSE']._serialized_start=486
+  _globals['_GETCONTEXTRESPONSE']._serialized_end=640
+  _globals['_CREATECONTEXTREQUEST']._serialized_start=642
+  _globals['_CREATECONTEXTREQUEST']._serialized_end=696
+  _globals['_UPDATECONTEXTREQUEST']._serialized_start=698
+  _globals['_UPDATECONTEXTREQUEST']._serialized_end=732
+  _globals['_DELETECONTEXTREQUEST']._serialized_start=734
+  _globals['_DELETECONTEXTREQUEST']._serialized_end=768
+  _globals['_CREATECONTEXTCOMMENTREQUEST']._serialized_start=770
+  _globals['_CREATECONTEXTCOMMENTREQUEST']._serialized_end=828
+  _globals['_UPDATECONTEXTCOMMENTREQUEST']._serialized_start=830
+  _globals['_UPDATECONTEXTCOMMENTREQUEST']._serialized_end=890
+  _globals['_DELETECONTEXTCOMMENTREQUEST']._serialized_start=892
+  _globals['_DELETECONTEXTCOMMENTREQUEST']._serialized_end=952
+  _globals['_CREATELABELREQUEST']._serialized_start=954
+  _globals['_CREATELABELREQUEST']._serialized_end=1024
+  _globals['_LUSTER']._serialized_start=1027
+  _globals['_LUSTER']._serialized_end=2868
 # @@protoc_insertion_point(module_scope)
