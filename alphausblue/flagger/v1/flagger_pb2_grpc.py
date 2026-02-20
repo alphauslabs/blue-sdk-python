@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.flagger.v1 import flagger_pb2 as flagger_dot_v1_dot_flagger__pb2
 
-GRPC_GENERATED_VERSION = '1.78.0'
+GRPC_GENERATED_VERSION = '1.78.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -26,7 +26,7 @@ if _version_not_supported:
 
 
 class FlaggerStub(object):
-    """Flag service definition.
+    """Flagger service definition.
     """
 
     def __init__(self, channel):
@@ -43,7 +43,7 @@ class FlaggerStub(object):
 
 
 class FlaggerServicer(object):
-    """Flag service definition.
+    """Flagger service definition.
     """
 
     def GetBooleanFlag(self, request, context):
@@ -69,7 +69,7 @@ def add_FlaggerServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class Flagger(object):
-    """Flag service definition.
+    """Flagger service definition.
     """
 
     @staticmethod

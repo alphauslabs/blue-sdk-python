@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.gc.v1 import gc_pb2 as gc_dot_v1_dot_gc__pb2
 
-GRPC_GENERATED_VERSION = '1.78.0'
+GRPC_GENERATED_VERSION = '1.78.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
