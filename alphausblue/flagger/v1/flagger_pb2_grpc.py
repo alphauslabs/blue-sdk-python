@@ -47,7 +47,8 @@ class FlaggerServicer(object):
     """
 
     def GetBooleanFlag(self, request, context):
-        """Missing associated documentation comment in .proto file."""
+        """GetBooleanFlag returns the boolean value of a flag for a given namespace.
+        """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')

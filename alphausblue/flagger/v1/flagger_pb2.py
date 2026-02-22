@@ -27,7 +27,7 @@ from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x66lagger/v1/flagger.proto\x12\x12\x62lueapi.flagger.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"9\n\x15GetBooleanFlagRequest\x12\x14\n\x0cnamespace_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\"\'\n\x16GetBooleanFlagResponse\x12\r\n\x05value\x18\x01 \x01(\x08\x32\xc9\x02\n\x07\x46lagger\x12\xa8\x01\n\x0eGetBooleanFlag\x12).blueapi.flagger.v1.GetBooleanFlagRequest\x1a*.blueapi.flagger.v1.GetBooleanFlagResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/flagger/v1/namespace/{namespace_id}/flags/boolean/{id}\x1a\x92\x01\x92\x41\x8e\x01\x12<(ALPHA) Flag API. Base URL: https://api.alphaus.cloud/m/blue\x1aN\n\x12Service definition\x12\x38https://github.com/alphauslabs/blueapi/tree/main/flaggerBQ\n\x19\x63loud.alphaus.api.flaggerB\x0c\x46laggerProtoZ&github.com/alphauslabs/blueapi/flaggerb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x66lagger/v1/flagger.proto\x12\x12\x62lueapi.flagger.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\xc5\x01\n\x15GetBooleanFlagRequest\x12\x14\n\x0cnamespace_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x14\n\x07segment\x18\x03 \x01(\tH\x00\x88\x01\x01\x12=\n\x02kv\x18\x04 \x03(\x0b\x32\x31.blueapi.flagger.v1.GetBooleanFlagRequest.KvEntry\x1a)\n\x07KvEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x42\n\n\x08_segment\"\'\n\x16GetBooleanFlagResponse\x12\r\n\x05value\x18\x01 \x01(\x08\x32\xc9\x02\n\x07\x46lagger\x12\xa8\x01\n\x0eGetBooleanFlag\x12).blueapi.flagger.v1.GetBooleanFlagRequest\x1a*.blueapi.flagger.v1.GetBooleanFlagResponse\"?\x82\xd3\xe4\x93\x02\x39\x12\x37/flagger/v1/namespace/{namespace_id}/flags/boolean/{id}\x1a\x92\x01\x92\x41\x8e\x01\x12<(ALPHA) Flag API. Base URL: https://api.alphaus.cloud/m/blue\x1aN\n\x12Service definition\x12\x38https://github.com/alphauslabs/blueapi/tree/main/flaggerBQ\n\x19\x63loud.alphaus.api.flaggerB\x0c\x46laggerProtoZ&github.com/alphauslabs/blueapi/flaggerb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -35,14 +35,18 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'flagger.v1.flagger_pb2', _g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\031cloud.alphaus.api.flaggerB\014FlaggerProtoZ&github.com/alphauslabs/blueapi/flagger'
+  _globals['_GETBOOLEANFLAGREQUEST_KVENTRY']._loaded_options = None
+  _globals['_GETBOOLEANFLAGREQUEST_KVENTRY']._serialized_options = b'8\001'
   _globals['_FLAGGER']._loaded_options = None
   _globals['_FLAGGER']._serialized_options = b'\222A\216\001\022<(ALPHA) Flag API. Base URL: https://api.alphaus.cloud/m/blue\032N\n\022Service definition\0228https://github.com/alphauslabs/blueapi/tree/main/flagger'
   _globals['_FLAGGER'].methods_by_name['GetBooleanFlag']._loaded_options = None
   _globals['_FLAGGER'].methods_by_name['GetBooleanFlag']._serialized_options = b'\202\323\344\223\0029\0227/flagger/v1/namespace/{namespace_id}/flags/boolean/{id}'
-  _globals['_GETBOOLEANFLAGREQUEST']._serialized_start=155
-  _globals['_GETBOOLEANFLAGREQUEST']._serialized_end=212
-  _globals['_GETBOOLEANFLAGRESPONSE']._serialized_start=214
-  _globals['_GETBOOLEANFLAGRESPONSE']._serialized_end=253
-  _globals['_FLAGGER']._serialized_start=256
-  _globals['_FLAGGER']._serialized_end=585
+  _globals['_GETBOOLEANFLAGREQUEST']._serialized_start=156
+  _globals['_GETBOOLEANFLAGREQUEST']._serialized_end=353
+  _globals['_GETBOOLEANFLAGREQUEST_KVENTRY']._serialized_start=300
+  _globals['_GETBOOLEANFLAGREQUEST_KVENTRY']._serialized_end=341
+  _globals['_GETBOOLEANFLAGRESPONSE']._serialized_start=355
+  _globals['_GETBOOLEANFLAGRESPONSE']._serialized_end=394
+  _globals['_FLAGGER']._serialized_start=397
+  _globals['_FLAGGER']._serialized_end=726
 # @@protoc_insertion_point(module_scope)
