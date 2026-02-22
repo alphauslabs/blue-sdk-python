@@ -35,10 +35,10 @@ class FlaggerStub(object):
         Args:
             channel: A grpc.Channel.
         """
-        self.GetBooleanFlag = channel.unary_unary(
-                '/blueapi.flagger.v1.Flagger/GetBooleanFlag',
-                request_serializer=flagger_dot_v1_dot_flagger__pb2.GetBooleanFlagRequest.SerializeToString,
-                response_deserializer=flagger_dot_v1_dot_flagger__pb2.GetBooleanFlagResponse.FromString,
+        self.EvaluateBooleanFlag = channel.unary_unary(
+                '/blueapi.flagger.v1.Flagger/EvaluateBooleanFlag',
+                request_serializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagRequest.SerializeToString,
+                response_deserializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagResponse.FromString,
                 _registered_method=True)
 
 
@@ -46,8 +46,8 @@ class FlaggerServicer(object):
     """Flagger service definition.
     """
 
-    def GetBooleanFlag(self, request, context):
-        """GetBooleanFlag returns the boolean value of a flag for a given namespace.
+    def EvaluateBooleanFlag(self, request, context):
+        """EvaluateBooleanFlag returns the boolean value of a flag for a given namespace.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -56,10 +56,10 @@ class FlaggerServicer(object):
 
 def add_FlaggerServicer_to_server(servicer, server):
     rpc_method_handlers = {
-            'GetBooleanFlag': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetBooleanFlag,
-                    request_deserializer=flagger_dot_v1_dot_flagger__pb2.GetBooleanFlagRequest.FromString,
-                    response_serializer=flagger_dot_v1_dot_flagger__pb2.GetBooleanFlagResponse.SerializeToString,
+            'EvaluateBooleanFlag': grpc.unary_unary_rpc_method_handler(
+                    servicer.EvaluateBooleanFlag,
+                    request_deserializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagRequest.FromString,
+                    response_serializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -74,7 +74,7 @@ class Flagger(object):
     """
 
     @staticmethod
-    def GetBooleanFlag(request,
+    def EvaluateBooleanFlag(request,
             target,
             options=(),
             channel_credentials=None,
@@ -87,9 +87,9 @@ class Flagger(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.flagger.v1.Flagger/GetBooleanFlag',
-            flagger_dot_v1_dot_flagger__pb2.GetBooleanFlagRequest.SerializeToString,
-            flagger_dot_v1_dot_flagger__pb2.GetBooleanFlagResponse.FromString,
+            '/blueapi.flagger.v1.Flagger/EvaluateBooleanFlag',
+            flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagRequest.SerializeToString,
+            flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagResponse.FromString,
             options,
             channel_credentials,
             insecure,
