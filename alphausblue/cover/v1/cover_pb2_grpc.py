@@ -1017,6 +1017,31 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.ExecuteRecommendationV3Request.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteRecommendationV3Response.FromString,
                 _registered_method=True)
+        self.InviteUsers = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/InviteUsers',
+                request_serializer=cover_dot_v1_dot_cover__pb2.InviteUsersRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.InviteUsersResponse.FromString,
+                _registered_method=True)
+        self.DeleteUser = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/DeleteUser',
+                request_serializer=cover_dot_v1_dot_cover__pb2.DeleteUserRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUserResponse.FromString,
+                _registered_method=True)
+        self.UpdateUserRole = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/UpdateUserRole',
+                request_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserRoleRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserRoleResponse.FromString,
+                _registered_method=True)
+        self.ListUsers = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ListUsers',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ListUsersRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListUsersResponse.FromString,
+                _registered_method=True)
+        self.ReinviteUser = channel.unary_unary(
+                '/blueapi.cover.v1.Cover/ReinviteUser',
+                request_serializer=cover_dot_v1_dot_cover__pb2.ReinviteUserRequest.SerializeToString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ReinviteUserResponse.FromString,
+                _registered_method=True)
 
 
 class CoverServicer(object):
@@ -2379,6 +2404,41 @@ class CoverServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def InviteUsers(self, request, context):
+        """Invites users to join the organization and assigns them roles.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteUser(self, request, context):
+        """Deletes a user from the organization.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateUserRole(self, request, context):
+        """Updates a user's role and cost group access.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListUsers(self, request, context):
+        """Lists all users in the organization
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReinviteUser(self, request, context):
+        """Reinvites a user to join the organization. This can be used when the user did not receive or lost the original invitation email.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CoverServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -3361,6 +3421,31 @@ def add_CoverServicer_to_server(servicer, server):
                     servicer.ExecuteRecommendationV3,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ExecuteRecommendationV3Request.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.ExecuteRecommendationV3Response.SerializeToString,
+            ),
+            'InviteUsers': grpc.unary_unary_rpc_method_handler(
+                    servicer.InviteUsers,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.InviteUsersRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.InviteUsersResponse.SerializeToString,
+            ),
+            'DeleteUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteUser,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.DeleteUserRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.DeleteUserResponse.SerializeToString,
+            ),
+            'UpdateUserRole': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateUserRole,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.UpdateUserRoleRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.UpdateUserRoleResponse.SerializeToString,
+            ),
+            'ListUsers': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListUsers,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ListUsersRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListUsersResponse.SerializeToString,
+            ),
+            'ReinviteUser': grpc.unary_unary_rpc_method_handler(
+                    servicer.ReinviteUser,
+                    request_deserializer=cover_dot_v1_dot_cover__pb2.ReinviteUserRequest.FromString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ReinviteUserResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -8656,6 +8741,141 @@ class Cover(object):
             '/blueapi.cover.v1.Cover/ExecuteRecommendationV3',
             cover_dot_v1_dot_cover__pb2.ExecuteRecommendationV3Request.SerializeToString,
             cover_dot_v1_dot_cover__pb2.ExecuteRecommendationV3Response.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def InviteUsers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/InviteUsers',
+            cover_dot_v1_dot_cover__pb2.InviteUsersRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.InviteUsersResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/DeleteUser',
+            cover_dot_v1_dot_cover__pb2.DeleteUserRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.DeleteUserResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateUserRole(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/UpdateUserRole',
+            cover_dot_v1_dot_cover__pb2.UpdateUserRoleRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.UpdateUserRoleResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListUsers(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ListUsers',
+            cover_dot_v1_dot_cover__pb2.ListUsersRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ListUsersResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReinviteUser(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cover.v1.Cover/ReinviteUser',
+            cover_dot_v1_dot_cover__pb2.ReinviteUserRequest.SerializeToString,
+            cover_dot_v1_dot_cover__pb2.ReinviteUserResponse.FromString,
             options,
             channel_credentials,
             insecure,
