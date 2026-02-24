@@ -40,6 +40,11 @@ class FlaggerStub(object):
                 request_serializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagRequest.SerializeToString,
                 response_deserializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagResponse.FromString,
                 _registered_method=True)
+        self.EvaluateVariantFlag = channel.unary_unary(
+                '/blueapi.flagger.v1.Flagger/EvaluateVariantFlag',
+                request_serializer=flagger_dot_v1_dot_flagger__pb2.EvaluateVariantFlagRequest.SerializeToString,
+                response_deserializer=flagger_dot_v1_dot_flagger__pb2.EvaluateVariantFlagResponse.FromString,
+                _registered_method=True)
 
 
 class FlaggerServicer(object):
@@ -53,6 +58,13 @@ class FlaggerServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def EvaluateVariantFlag(self, request, context):
+        """EvaluateVariantFlag returns the variant value of a flag for a given namespace.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_FlaggerServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -60,6 +72,11 @@ def add_FlaggerServicer_to_server(servicer, server):
                     servicer.EvaluateBooleanFlag,
                     request_deserializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagRequest.FromString,
                     response_serializer=flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagResponse.SerializeToString,
+            ),
+            'EvaluateVariantFlag': grpc.unary_unary_rpc_method_handler(
+                    servicer.EvaluateVariantFlag,
+                    request_deserializer=flagger_dot_v1_dot_flagger__pb2.EvaluateVariantFlagRequest.FromString,
+                    response_serializer=flagger_dot_v1_dot_flagger__pb2.EvaluateVariantFlagResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -90,6 +107,33 @@ class Flagger(object):
             '/blueapi.flagger.v1.Flagger/EvaluateBooleanFlag',
             flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagRequest.SerializeToString,
             flagger_dot_v1_dot_flagger__pb2.EvaluateBooleanFlagResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def EvaluateVariantFlag(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.flagger.v1.Flagger/EvaluateVariantFlag',
+            flagger_dot_v1_dot_flagger__pb2.EvaluateVariantFlagRequest.SerializeToString,
+            flagger_dot_v1_dot_flagger__pb2.EvaluateVariantFlagResponse.FromString,
             options,
             channel_credentials,
             insecure,
