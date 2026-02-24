@@ -165,6 +165,11 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusResponse.FromString,
                 _registered_method=True)
+        self.ValidateBillingGroup = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ValidateBillingGroup',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupResponse.FromString,
+                _registered_method=True)
 
 
 class GuaranteedCommitmentsServicer(object):
@@ -383,6 +388,12 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ValidateBillingGroup(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -515,6 +526,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetPayerAccountStatus,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusResponse.SerializeToString,
+            ),
+            'ValidateBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateBillingGroup,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1220,6 +1236,33 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/GetPayerAccountStatus',
             gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ValidateBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ValidateBillingGroup',
+            gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ValidateBillingGroupResponse.FromString,
             options,
             channel_credentials,
             insecure,
