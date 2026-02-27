@@ -720,6 +720,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.FromString,
                 _registered_method=True)
+        self.BulkLinkAccount = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/BulkLinkAccount',
+                request_serializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountResponse.FromString,
+                _registered_method=True)
+        self.GetBulkLinkAccountJob = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetBulkLinkAccountJob',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetBulkLinkAccountJobRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetBulkLinkAccountJobResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1681,6 +1691,20 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BulkLinkAccount(self, request, context):
+        """Link accounts to a billing group in bulk from a CSV file.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBulkLinkAccountJob(self, request, context):
+        """Gets the status of a bulk link account job.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2358,6 +2382,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListExcludeServices,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.SerializeToString,
+            ),
+            'BulkLinkAccount': grpc.unary_unary_rpc_method_handler(
+                    servicer.BulkLinkAccount,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountResponse.SerializeToString,
+            ),
+            'GetBulkLinkAccountJob': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBulkLinkAccountJob,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetBulkLinkAccountJobRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetBulkLinkAccountJobResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -6006,6 +6040,60 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ListExcludeServices',
             billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BulkLinkAccount(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/BulkLinkAccount',
+            billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.BulkLinkAccountResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBulkLinkAccountJob(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetBulkLinkAccountJob',
+            billing_dot_v1_dot_billing__pb2.GetBulkLinkAccountJobRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetBulkLinkAccountJobResponse.FromString,
             options,
             channel_credentials,
             insecure,
