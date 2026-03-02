@@ -170,6 +170,16 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupResponse.FromString,
                 _registered_method=True)
+        self.GetGuaranteedCommitmentTemplateUrl = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetGuaranteedCommitmentTemplateUrl',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlResponse.FromString,
+                _registered_method=True)
+        self.CreateGuaranteedCommitmentAccess = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/CreateGuaranteedCommitmentAccess',
+                request_serializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessResponse.FromString,
+                _registered_method=True)
 
 
 class GuaranteedCommitmentsServicer(object):
@@ -394,6 +404,21 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetGuaranteedCommitmentTemplateUrl(self, request, context):
+        """GetGuaranteedCommitmentTemplateUrl returns a CloudFormation launch URL for deploying
+        both Alphaus (Ripple) and Archera IAM roles in a single stack.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateGuaranteedCommitmentAccess(self, request, context):
+        """CreateGuaranteedCommitmentAccess verifies and registers a deployed guaranteed CloudFormation stack.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -531,6 +556,16 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.ValidateBillingGroup,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupResponse.SerializeToString,
+            ),
+            'GetGuaranteedCommitmentTemplateUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGuaranteedCommitmentTemplateUrl,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlResponse.SerializeToString,
+            ),
+            'CreateGuaranteedCommitmentAccess': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateGuaranteedCommitmentAccess,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1263,6 +1298,60 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/ValidateBillingGroup',
             gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ValidateBillingGroupResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetGuaranteedCommitmentTemplateUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetGuaranteedCommitmentTemplateUrl',
+            gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateGuaranteedCommitmentAccess(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/CreateGuaranteedCommitmentAccess',
+            gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessResponse.FromString,
             options,
             channel_credentials,
             insecure,
