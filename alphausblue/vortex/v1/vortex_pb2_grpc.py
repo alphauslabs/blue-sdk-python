@@ -38,7 +38,7 @@ class VortexStub(object):
         """
         self.Test = channel.unary_unary(
                 '/blueapi.vortex.v1.Vortex/Test',
-                request_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+                request_serializer=vortex_dot_v1_dot_vortex__pb2.TestRequest.SerializeToString,
                 response_deserializer=vortex_dot_v1_dot_vortex__pb2.TestResponse.FromString,
                 _registered_method=True)
         self.CreateOrg = channel.unary_unary(
@@ -115,7 +115,7 @@ def add_VortexServicer_to_server(servicer, server):
     rpc_method_handlers = {
             'Test': grpc.unary_unary_rpc_method_handler(
                     servicer.Test,
-                    request_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                    request_deserializer=vortex_dot_v1_dot_vortex__pb2.TestRequest.FromString,
                     response_serializer=vortex_dot_v1_dot_vortex__pb2.TestResponse.SerializeToString,
             ),
             'CreateOrg': grpc.unary_unary_rpc_method_handler(
@@ -170,7 +170,7 @@ class Vortex(object):
             request,
             target,
             '/blueapi.vortex.v1.Vortex/Test',
-            google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            vortex_dot_v1_dot_vortex__pb2.TestRequest.SerializeToString,
             vortex_dot_v1_dot_vortex__pb2.TestResponse.FromString,
             options,
             channel_credentials,
