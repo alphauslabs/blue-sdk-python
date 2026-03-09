@@ -105,10 +105,10 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentResponse.FromString,
                 _registered_method=True)
-        self.ListPurchasePlansDetails = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/ListPurchasePlansDetails',
-                request_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansDetailsRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansDetailsResponse.FromString,
+        self.GetPurchasePlansDetails = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetPurchasePlansDetails',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsResponse.FromString,
                 _registered_method=True)
         self.SaveCommitmentsPlanAsDraft = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/SaveCommitmentsPlanAsDraft',
@@ -119,6 +119,11 @@ class GuaranteedCommitmentsStub(object):
                 '/blueapi.gc.v1.GuaranteedCommitments/ListDraftPurchasePlans',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansResponse.FromString,
+                _registered_method=True)
+        self.GetDraftPurchasePlansDetails = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetDraftPurchasePlansDetails',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsResponse.FromString,
                 _registered_method=True)
         self.DeleteDraftPurchasePlan = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/DeleteDraftPurchasePlan',
@@ -313,7 +318,7 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListPurchasePlansDetails(self, request, context):
+    def GetPurchasePlansDetails(self, request, context):
         """WORK-IN-PROGRESS: Retrieves details of a specific purchase plan of a company.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -329,6 +334,13 @@ class GuaranteedCommitmentsServicer(object):
 
     def ListDraftPurchasePlans(self, request, context):
         """WORK-IN-PROGRESS: Retrieves the drafted purchase plans
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetDraftPurchasePlansDetails(self, request, context):
+        """WORK-IN-PROGRESS: Retrieves the details of a specific draft plan.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -504,10 +516,10 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentResponse.SerializeToString,
             ),
-            'ListPurchasePlansDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListPurchasePlansDetails,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansDetailsRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansDetailsResponse.SerializeToString,
+            'GetPurchasePlansDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPurchasePlansDetails,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsResponse.SerializeToString,
             ),
             'SaveCommitmentsPlanAsDraft': grpc.unary_unary_rpc_method_handler(
                     servicer.SaveCommitmentsPlanAsDraft,
@@ -518,6 +530,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.ListDraftPurchasePlans,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansResponse.SerializeToString,
+            ),
+            'GetDraftPurchasePlansDetails': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetDraftPurchasePlansDetails,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsResponse.SerializeToString,
             ),
             'DeleteDraftPurchasePlan': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDraftPurchasePlan,
@@ -975,7 +992,7 @@ class GuaranteedCommitments(object):
             _registered_method=True)
 
     @staticmethod
-    def ListPurchasePlansDetails(request,
+    def GetPurchasePlansDetails(request,
             target,
             options=(),
             channel_credentials=None,
@@ -988,9 +1005,9 @@ class GuaranteedCommitments(object):
         return grpc.experimental.unary_unary(
             request,
             target,
-            '/blueapi.gc.v1.GuaranteedCommitments/ListPurchasePlansDetails',
-            gc_dot_v1_dot_gc__pb2.ListPurchasePlansDetailsRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.ListPurchasePlansDetailsResponse.FromString,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetPurchasePlansDetails',
+            gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsResponse.FromString,
             options,
             channel_credentials,
             insecure,
@@ -1045,6 +1062,33 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/ListDraftPurchasePlans',
             gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetDraftPurchasePlansDetails(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetDraftPurchasePlansDetails',
+            gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsResponse.FromString,
             options,
             channel_credentials,
             insecure,
