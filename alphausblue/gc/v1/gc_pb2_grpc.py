@@ -40,35 +40,10 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListOrgsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.Org.FromString,
                 _registered_method=True)
-        self.GetCommitmentsPlanDetails = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsPlanDetails',
-                request_serializer=gc_dot_v1_dot_gc__pb2.GetCommitmentPlanDetailsRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
-                _registered_method=True)
         self.CommitmentsPlanApply = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/CommitmentsPlanApply',
                 request_serializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanApplyRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
-                _registered_method=True)
-        self.ListDefaultCommitmentsPlan = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultCommitmentsPlan',
-                request_serializer=gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansResponse.FromString,
-                _registered_method=True)
-        self.GetRecommendedCommitmentsPlan = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/GetRecommendedCommitmentsPlan',
-                request_serializer=gc_dot_v1_dot_gc__pb2.GetRecommendedCommitmentPlanRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
-                _registered_method=True)
-        self.ListCommitmentsPlanLineItems = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentsPlanLineItems',
-                request_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsResponse.FromString,
-                _registered_method=True)
-        self.ListCommitmentsPlanResourceMatches = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentsPlanResourceMatches',
-                request_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesResponse.FromString,
                 _registered_method=True)
         self.ListCommitments = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/ListCommitments',
@@ -203,52 +178,53 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def GetCommitmentsPlanDetails(self, request, context):
+    def CommitmentsPlanApply(self, request, context):
         """####################### COMMITMENT PLANS #######################
 
-        WORK-IN-PROGRESS: Do not use. Retrieves detailed information about a specific commitment plan, including costs, savings projections, and commitment coverage.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
+        // WORK-IN-PROGRESS: Do not use. Retrieves detailed information about a specific commitment plan, including costs, savings projections, and commitment coverage.
+        rpc GetCommitmentsPlanDetails(GetCommitmentPlanDetailsRequest) returns (CommitmentPlanDetails) {
+        option (google.api.http) = {
+        get: "/v1/commitments/plan/{planId}"
+        };
+        }
 
-    def CommitmentsPlanApply(self, request, context):
-        """WORK-IN-PROGRESS: Executes a commitment purchase plan, initiating the commitment purchase process.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListDefaultCommitmentsPlan(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves the three default GuaranteedCommitments commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetRecommendedCommitmentsPlan(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves only the recommended GuaranteedCommitments commitment plan for the specified cloud provider.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListCommitmentsPlanLineItems(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves line items for a specific commitment plan.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ListCommitmentsPlanResourceMatches(self, request, context):
-        """WORK-IN-PROGRESS: Do not use. Retrieves resource matches for a specific commitment plan.
+        WORK-IN-PROGRESS: Executes a commitment purchase plan, initiating the commitment purchase process.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListCommitments(self, request, context):
-        """####################### COMMITMENTS #######################
+        """// WORK-IN-PROGRESS: Do not use. Retrieves the three default GuaranteedCommitments commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
+        rpc ListDefaultCommitmentsPlan(ListDefaultCommitmentPlansRequest) returns (ListDefaultCommitmentPlansResponse) {
+        option (google.api.http) = {
+        get: "/v1/commitments/plan/default"
+        };
+        }
+
+        // WORK-IN-PROGRESS: Do not use. Retrieves only the recommended GuaranteedCommitments commitment plan for the specified cloud provider.
+        rpc GetRecommendedCommitmentsPlan(GetRecommendedCommitmentPlanRequest) returns (CommitmentPlanDetails) {
+        option (google.api.http) = {
+        get: "/v1/commitments/plan/recommended"
+        };
+        }
+
+        // WORK-IN-PROGRESS: Do not use. Retrieves line items for a specific commitment plan.
+        rpc ListCommitmentsPlanLineItems(ListCommitmentPlanLineItemsRequest) returns (ListCommitmentPlanLineItemsResponse) {
+        option (google.api.http) = {
+        get: "/v1/commitments/plan/{planId}/lineitems"
+        };
+        }
+
+        // WORK-IN-PROGRESS: Do not use. Retrieves resource matches for a specific commitment plan.
+        rpc ListCommitmentsPlanResourceMatches(ListCommitmentPlanResourceMatchesRequest)
+        returns (ListCommitmentPlanResourceMatchesResponse) {
+        option (google.api.http) = {
+        get: "/v1/commitments/plan/{planId}/resourcematches"
+        };
+        }
+
+        ####################### COMMITMENTS #######################
 
         WORK-IN-PROGRESS: Retrieves a list of commitments.
         """
@@ -347,7 +323,7 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteDraftPurchasePlan(self, request, context):
-        """WORK-IN-PROGRESS: Deletes a draft purchase plan.
+        """WORK-IN-PROGRESS: Deletes a drafted purchase plan.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -451,35 +427,10 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListOrgsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.Org.SerializeToString,
             ),
-            'GetCommitmentsPlanDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetCommitmentsPlanDetails,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetCommitmentPlanDetailsRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.SerializeToString,
-            ),
             'CommitmentsPlanApply': grpc.unary_unary_rpc_method_handler(
                     servicer.CommitmentsPlanApply,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanApplyRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.SerializeToString,
-            ),
-            'ListDefaultCommitmentsPlan': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListDefaultCommitmentsPlan,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansResponse.SerializeToString,
-            ),
-            'GetRecommendedCommitmentsPlan': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetRecommendedCommitmentsPlan,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetRecommendedCommitmentPlanRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.SerializeToString,
-            ),
-            'ListCommitmentsPlanLineItems': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListCommitmentsPlanLineItems,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsResponse.SerializeToString,
-            ),
-            'ListCommitmentsPlanResourceMatches': grpc.unary_unary_rpc_method_handler(
-                    servicer.ListCommitmentsPlanResourceMatches,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesResponse.SerializeToString,
             ),
             'ListCommitments': grpc.unary_unary_rpc_method_handler(
                     servicer.ListCommitments,
@@ -641,33 +592,6 @@ class GuaranteedCommitments(object):
             _registered_method=True)
 
     @staticmethod
-    def GetCommitmentsPlanDetails(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsPlanDetails',
-            gc_dot_v1_dot_gc__pb2.GetCommitmentPlanDetailsRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
     def CommitmentsPlanApply(request,
             target,
             options=(),
@@ -684,114 +608,6 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/CommitmentsPlanApply',
             gc_dot_v1_dot_gc__pb2.CommitmentPlanApplyRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListDefaultCommitmentsPlan(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/ListDefaultCommitmentsPlan',
-            gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.ListDefaultCommitmentPlansResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetRecommendedCommitmentsPlan(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/GetRecommendedCommitmentsPlan',
-            gc_dot_v1_dot_gc__pb2.GetRecommendedCommitmentPlanRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.CommitmentPlanDetails.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListCommitmentsPlanLineItems(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentsPlanLineItems',
-            gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.ListCommitmentPlanLineItemsResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ListCommitmentsPlanResourceMatches(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/ListCommitmentsPlanResourceMatches',
-            gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.ListCommitmentPlanResourceMatchesResponse.FromString,
             options,
             channel_credentials,
             insecure,
