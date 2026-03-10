@@ -95,11 +95,6 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansResponse.FromString,
                 _registered_method=True)
-        self.GetDraftPurchasePlansDetails = channel.unary_unary(
-                '/blueapi.gc.v1.GuaranteedCommitments/GetDraftPurchasePlansDetails',
-                request_serializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsResponse.FromString,
-                _registered_method=True)
         self.DeleteDraftPurchasePlan = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/DeleteDraftPurchasePlan',
                 request_serializer=gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanRequest.SerializeToString,
@@ -181,13 +176,6 @@ class GuaranteedCommitmentsServicer(object):
     def CommitmentsPlanApply(self, request, context):
         """####################### COMMITMENT PLANS #######################
 
-        // WORK-IN-PROGRESS: Do not use. Retrieves detailed information about a specific commitment plan, including costs, savings projections, and commitment coverage.
-        rpc GetCommitmentsPlanDetails(GetCommitmentPlanDetailsRequest) returns (CommitmentPlanDetails) {
-        option (google.api.http) = {
-        get: "/v1/commitments/plan/{planId}"
-        };
-        }
-
         WORK-IN-PROGRESS: Executes a commitment purchase plan, initiating the commitment purchase process.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -195,36 +183,7 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListCommitments(self, request, context):
-        """// WORK-IN-PROGRESS: Do not use. Retrieves the three default GuaranteedCommitments commitment plans (High Savings, Balanced, Recommended) for the specified cloud provider.
-        rpc ListDefaultCommitmentsPlan(ListDefaultCommitmentPlansRequest) returns (ListDefaultCommitmentPlansResponse) {
-        option (google.api.http) = {
-        get: "/v1/commitments/plan/default"
-        };
-        }
-
-        // WORK-IN-PROGRESS: Do not use. Retrieves only the recommended GuaranteedCommitments commitment plan for the specified cloud provider.
-        rpc GetRecommendedCommitmentsPlan(GetRecommendedCommitmentPlanRequest) returns (CommitmentPlanDetails) {
-        option (google.api.http) = {
-        get: "/v1/commitments/plan/recommended"
-        };
-        }
-
-        // WORK-IN-PROGRESS: Do not use. Retrieves line items for a specific commitment plan.
-        rpc ListCommitmentsPlanLineItems(ListCommitmentPlanLineItemsRequest) returns (ListCommitmentPlanLineItemsResponse) {
-        option (google.api.http) = {
-        get: "/v1/commitments/plan/{planId}/lineitems"
-        };
-        }
-
-        // WORK-IN-PROGRESS: Do not use. Retrieves resource matches for a specific commitment plan.
-        rpc ListCommitmentsPlanResourceMatches(ListCommitmentPlanResourceMatchesRequest)
-        returns (ListCommitmentPlanResourceMatchesResponse) {
-        option (google.api.http) = {
-        get: "/v1/commitments/plan/{planId}/resourcematches"
-        };
-        }
-
-        ####################### COMMITMENTS #######################
+        """####################### COMMITMENTS #######################
 
         WORK-IN-PROGRESS: Retrieves a list of commitments.
         """
@@ -295,7 +254,8 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetPurchasePlansDetails(self, request, context):
-        """WORK-IN-PROGRESS: Retrieves details of a specific purchase plan of a company.
+        """WORK-IN-PROGRESS: Retrieves full details of a specific purchase plan of a company.
+        Includes the basic info, detailed metrics, commitment line items, covered infrastructure resource matches, and audit history.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -310,13 +270,6 @@ class GuaranteedCommitmentsServicer(object):
 
     def ListDraftPurchasePlans(self, request, context):
         """WORK-IN-PROGRESS: Retrieves the drafted purchase plans
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetDraftPurchasePlansDetails(self, request, context):
-        """WORK-IN-PROGRESS: Retrieves the details of a specific draft plan.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -481,11 +434,6 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.ListDraftPurchasePlans,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansResponse.SerializeToString,
-            ),
-            'GetDraftPurchasePlansDetails': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetDraftPurchasePlansDetails,
-                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsResponse.SerializeToString,
             ),
             'DeleteDraftPurchasePlan': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteDraftPurchasePlan,
@@ -878,33 +826,6 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/ListDraftPurchasePlans',
             gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListDraftPurchasePlansResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetDraftPurchasePlansDetails(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.gc.v1.GuaranteedCommitments/GetDraftPurchasePlansDetails',
-            gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.GetDraftPurchasePlansDetailsResponse.FromString,
             options,
             channel_credentials,
             insecure,
