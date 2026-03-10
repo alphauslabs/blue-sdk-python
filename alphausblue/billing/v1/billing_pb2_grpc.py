@@ -640,9 +640,9 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupResponse.FromString,
                 _registered_method=True)
-        self.ListChildBillingGroups = channel.unary_stream(
-                '/blueapi.billing.v1.Billing/ListChildBillingGroups',
-                request_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.SerializeToString,
+        self.ReadChildBillingGroups = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadChildBillingGroups',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadChildBillingGroupsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ChildBillingGroup.FromString,
                 _registered_method=True)
         self.UpdateChildBillingGroup = channel.unary_unary(
@@ -685,8 +685,8 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsResponse.FromString,
                 _registered_method=True)
-        self.ListChildBillingGroupAccountInvoiceServiceDiscounts = channel.unary_stream(
-                '/blueapi.billing.v1.Billing/ListChildBillingGroupAccountInvoiceServiceDiscounts',
+        self.ReadChildBillingGroupAccountInvoiceServiceDiscounts = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadChildBillingGroupAccountInvoiceServiceDiscounts',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.FromString,
                 _registered_method=True)
@@ -1579,7 +1579,7 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListChildBillingGroups(self, request, context):
+    def ReadChildBillingGroups(self, request, context):
         """Lists child billing groups under a specific filter
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -1642,7 +1642,7 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
-    def ListChildBillingGroupAccountInvoiceServiceDiscounts(self, request, context):
+    def ReadChildBillingGroupAccountInvoiceServiceDiscounts(self, request, context):
         """Returns the account's service discounts associated with the child billing group id
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -2303,9 +2303,9 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupResponse.SerializeToString,
             ),
-            'ListChildBillingGroups': grpc.unary_stream_rpc_method_handler(
-                    servicer.ListChildBillingGroups,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.FromString,
+            'ReadChildBillingGroups': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadChildBillingGroups,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadChildBillingGroupsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ChildBillingGroup.SerializeToString,
             ),
             'UpdateChildBillingGroup': grpc.unary_unary_rpc_method_handler(
@@ -2348,8 +2348,8 @@ def add_BillingServicer_to_server(servicer, server):
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.GetChildBillingGroupInvoiceServiceDiscountsResponse.SerializeToString,
             ),
-            'ListChildBillingGroupAccountInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
-                    servicer.ListChildBillingGroupAccountInvoiceServiceDiscounts,
+            'ReadChildBillingGroupAccountInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadChildBillingGroupAccountInvoiceServiceDiscounts,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.SerializeToString,
             ),
@@ -5619,7 +5619,7 @@ class Billing(object):
             _registered_method=True)
 
     @staticmethod
-    def ListChildBillingGroups(request,
+    def ReadChildBillingGroups(request,
             target,
             options=(),
             channel_credentials=None,
@@ -5632,8 +5632,8 @@ class Billing(object):
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/blueapi.billing.v1.Billing/ListChildBillingGroups',
-            billing_dot_v1_dot_billing__pb2.ListChildBillingGroupsRequest.SerializeToString,
+            '/blueapi.billing.v1.Billing/ReadChildBillingGroups',
+            billing_dot_v1_dot_billing__pb2.ReadChildBillingGroupsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ChildBillingGroup.FromString,
             options,
             channel_credentials,
@@ -5862,7 +5862,7 @@ class Billing(object):
             _registered_method=True)
 
     @staticmethod
-    def ListChildBillingGroupAccountInvoiceServiceDiscounts(request,
+    def ReadChildBillingGroupAccountInvoiceServiceDiscounts(request,
             target,
             options=(),
             channel_credentials=None,
@@ -5875,7 +5875,7 @@ class Billing(object):
         return grpc.experimental.unary_stream(
             request,
             target,
-            '/blueapi.billing.v1.Billing/ListChildBillingGroupAccountInvoiceServiceDiscounts',
+            '/blueapi.billing.v1.Billing/ReadChildBillingGroupAccountInvoiceServiceDiscounts',
             billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.FromString,
             options,
