@@ -205,7 +205,7 @@ class CostStub(object):
         self.ExportCostFiltersFile = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/ExportCostFiltersFile',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.ReadCostAttributes = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ReadCostAttributes',
@@ -1095,7 +1095,7 @@ def add_CostServicer_to_server(servicer, server):
             'ExportCostFiltersFile': grpc.unary_unary_rpc_method_handler(
                     servicer.ExportCostFiltersFile,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'ReadCostAttributes': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadCostAttributes,
@@ -2169,7 +2169,7 @@ class Cost(object):
             target,
             '/blueapi.cost.v1.Cost/ExportCostFiltersFile',
             cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
