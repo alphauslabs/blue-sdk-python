@@ -687,7 +687,7 @@ class BillingStub(object):
                 _registered_method=True)
         self.ReadChildBillingGroupAccountInvoiceServiceDiscounts = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ReadChildBillingGroupAccountInvoiceServiceDiscounts',
-                request_serializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.FromString,
                 _registered_method=True)
         self.BulkCreateBillingGroup = channel.unary_stream(
@@ -2350,7 +2350,7 @@ def add_BillingServicer_to_server(servicer, server):
             ),
             'ReadChildBillingGroupAccountInvoiceServiceDiscounts': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadChildBillingGroupAccountInvoiceServiceDiscounts,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.FromString,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadChildBillingGroupAccountInvoiceServiceDiscountsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.SerializeToString,
             ),
             'BulkCreateBillingGroup': grpc.unary_stream_rpc_method_handler(
@@ -5876,7 +5876,7 @@ class Billing(object):
             request,
             target,
             '/blueapi.billing.v1.Billing/ReadChildBillingGroupAccountInvoiceServiceDiscounts',
-            billing_dot_v1_dot_billing__pb2.ListChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ReadChildBillingGroupAccountInvoiceServiceDiscountsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.AccountInvoiceServiceDiscounts.FromString,
             options,
             channel_credentials,
