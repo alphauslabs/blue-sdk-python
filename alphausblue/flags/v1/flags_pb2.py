@@ -28,7 +28,7 @@ from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 from protoc_gen_openapiv2.options import annotations_pb2 as protoc__gen__openapiv2_dot_options_dot_annotations__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x66lags/v1/flags.proto\x12\x10\x62lueapi.flags.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"\x8d\x01\n\x1a\x45valuateBooleanFlagRequest\x12\x14\n\x0cnamespace_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12\x14\n\x07segment\x18\x03 \x01(\tH\x00\x88\x01\x01\x12+\n\nattributes\x18\x04 \x01(\x0b\x32\x17.google.protobuf.StructB\n\n\x08_segment\",\n\x1b\x45valuateBooleanFlagResponse\x12\r\n\x05value\x18\x01 \x01(\x08\"k\n\x1a\x45valuateVariantFlagRequest\x12\x14\n\x0cnamespace_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12+\n\nattributes\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"Y\n\x1b\x45valuateVariantFlagResponse\x12\r\n\x05value\x18\x01 \x01(\t\x12+\n\nattachment\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct2\x86\x04\n\x05\x46lags\x12\xb3\x01\n\x13\x45valuateBooleanFlag\x12,.blueapi.flags.v1.EvaluateBooleanFlagRequest\x1a-.blueapi.flags.v1.EvaluateBooleanFlagResponse\"?\x82\xd3\xe4\x93\x02\x39\"4/flags/v1/namespace/{namespace_id}/boolean/{id}:eval:\x01*\x12\xb3\x01\n\x13\x45valuateVariantFlag\x12,.blueapi.flags.v1.EvaluateVariantFlagRequest\x1a-.blueapi.flags.v1.EvaluateVariantFlagResponse\"?\x82\xd3\xe4\x93\x02\x39\"4/flags/v1/namespace/{namespace_id}/variant/{id}:eval:\x01*\x1a\x90\x01\x92\x41\x8c\x01\x12<(ALPHA) Flag API. Base URL: https://api.alphaus.cloud/m/blue\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/flagsBK\n\x17\x63loud.alphaus.api.flagsB\nFlagsProtoZ$github.com/alphauslabs/blueapi/flagsb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x14\x66lags/v1/flags.proto\x12\x10\x62lueapi.flags.v1\x1a\x1cgoogle/api/annotations.proto\x1a\x1bgoogle/protobuf/empty.proto\x1a\x1cgoogle/protobuf/struct.proto\x1a.protoc-gen-openapiv2/options/annotations.proto\"k\n\x1a\x45valuateBooleanFlagRequest\x12\x14\n\x0cnamespace_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12+\n\nattributes\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\",\n\x1b\x45valuateBooleanFlagResponse\x12\r\n\x05value\x18\x01 \x01(\x08\"k\n\x1a\x45valuateVariantFlagRequest\x12\x14\n\x0cnamespace_id\x18\x01 \x01(\t\x12\n\n\x02id\x18\x02 \x01(\t\x12+\n\nattributes\x18\x03 \x01(\x0b\x32\x17.google.protobuf.Struct\"Y\n\x1b\x45valuateVariantFlagResponse\x12\r\n\x05value\x18\x01 \x01(\t\x12+\n\nattachment\x18\x02 \x01(\x0b\x32\x17.google.protobuf.Struct2\x86\x04\n\x05\x46lags\x12\xb3\x01\n\x13\x45valuateBooleanFlag\x12,.blueapi.flags.v1.EvaluateBooleanFlagRequest\x1a-.blueapi.flags.v1.EvaluateBooleanFlagResponse\"?\x82\xd3\xe4\x93\x02\x39\"4/flags/v1/namespace/{namespace_id}/boolean/{id}:eval:\x01*\x12\xb3\x01\n\x13\x45valuateVariantFlag\x12,.blueapi.flags.v1.EvaluateVariantFlagRequest\x1a-.blueapi.flags.v1.EvaluateVariantFlagResponse\"?\x82\xd3\xe4\x93\x02\x39\"4/flags/v1/namespace/{namespace_id}/variant/{id}:eval:\x01*\x1a\x90\x01\x92\x41\x8c\x01\x12<(ALPHA) Flag API. Base URL: https://api.alphaus.cloud/m/blue\x1aL\n\x12Service definition\x12\x36https://github.com/alphauslabs/blueapi/tree/main/flagsBK\n\x17\x63loud.alphaus.api.flagsB\nFlagsProtoZ$github.com/alphauslabs/blueapi/flagsb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -42,14 +42,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_FLAGS'].methods_by_name['EvaluateBooleanFlag']._serialized_options = b'\202\323\344\223\0029\"4/flags/v1/namespace/{namespace_id}/boolean/{id}:eval:\001*'
   _globals['_FLAGS'].methods_by_name['EvaluateVariantFlag']._loaded_options = None
   _globals['_FLAGS'].methods_by_name['EvaluateVariantFlag']._serialized_options = b'\202\323\344\223\0029\"4/flags/v1/namespace/{namespace_id}/variant/{id}:eval:\001*'
-  _globals['_EVALUATEBOOLEANFLAGREQUEST']._serialized_start=180
-  _globals['_EVALUATEBOOLEANFLAGREQUEST']._serialized_end=321
-  _globals['_EVALUATEBOOLEANFLAGRESPONSE']._serialized_start=323
-  _globals['_EVALUATEBOOLEANFLAGRESPONSE']._serialized_end=367
-  _globals['_EVALUATEVARIANTFLAGREQUEST']._serialized_start=369
-  _globals['_EVALUATEVARIANTFLAGREQUEST']._serialized_end=476
-  _globals['_EVALUATEVARIANTFLAGRESPONSE']._serialized_start=478
-  _globals['_EVALUATEVARIANTFLAGRESPONSE']._serialized_end=567
-  _globals['_FLAGS']._serialized_start=570
-  _globals['_FLAGS']._serialized_end=1088
+  _globals['_EVALUATEBOOLEANFLAGREQUEST']._serialized_start=179
+  _globals['_EVALUATEBOOLEANFLAGREQUEST']._serialized_end=286
+  _globals['_EVALUATEBOOLEANFLAGRESPONSE']._serialized_start=288
+  _globals['_EVALUATEBOOLEANFLAGRESPONSE']._serialized_end=332
+  _globals['_EVALUATEVARIANTFLAGREQUEST']._serialized_start=334
+  _globals['_EVALUATEVARIANTFLAGREQUEST']._serialized_end=441
+  _globals['_EVALUATEVARIANTFLAGRESPONSE']._serialized_start=443
+  _globals['_EVALUATEVARIANTFLAGRESPONSE']._serialized_end=532
+  _globals['_FLAGS']._serialized_start=535
+  _globals['_FLAGS']._serialized_end=1053
 # @@protoc_insertion_point(module_scope)
