@@ -24,7 +24,7 @@ _sym_db = _symbol_database.Default()
 
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/luster/label.proto\x12\x12\x62lueapi.api.luster\"k\n\x05Label\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x63olor\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x11\n\tcreatedAt\x18\x05 \x01(\t\x12\x11\n\tupdatedAt\x18\x06 \x01(\tBf\n cloud.alphaus.blueapi.api.lusterB\x13\x41piLusterLabelProtoZ-github.com/alphauslabs/blue-sdk-go/api/lusterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/luster/label.proto\x12\x12\x62lueapi.api.luster\"m\n\x05Label\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\r\n\x05\x63olor\x18\x03 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x04 \x01(\t\x12\x12\n\ncreated_at\x18\x05 \x01(\t\x12\x12\n\nupdated_at\x18\x06 \x01(\tBf\n cloud.alphaus.blueapi.api.lusterB\x13\x41piLusterLabelProtoZ-github.com/alphauslabs/blue-sdk-go/api/lusterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,5 +33,5 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n cloud.alphaus.blueapi.api.lusterB\023ApiLusterLabelProtoZ-github.com/alphauslabs/blue-sdk-go/api/luster'
   _globals['_LABEL']._serialized_start=46
-  _globals['_LABEL']._serialized_end=153
+  _globals['_LABEL']._serialized_end=155
 # @@protoc_insertion_point(module_scope)

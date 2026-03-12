@@ -158,7 +158,6 @@ class LusterServicer(object):
 
     def ReadContexts(self, request, context):
         """(ALPHA) Reads contexts.
-        スペースの読み取り。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
