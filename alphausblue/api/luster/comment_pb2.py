@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pi/luster/comment.proto\x12\x12\x62lueapi.api.luster\"m\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x12\x0f\n\x07user_id\x18\x04 \x01(\t\x12\x12\n\ncreated_at\x18\x05 \x01(\t\x12\x12\n\nupdated_at\x18\x06 \x01(\tBh\n cloud.alphaus.blueapi.api.lusterB\x15\x41piLusterCommentProtoZ-github.com/alphauslabs/blue-sdk-go/api/lusterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x18\x61pi/luster/comment.proto\x12\x12\x62lueapi.api.luster\x1a\x1fgoogle/api/field_behavior.proto\"\x7f\n\x07\x43omment\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x03 \x01(\t\x12\x15\n\x07user_id\x18\x04 \x01(\tB\x04\xe2\x41\x01\x03\x12\x18\n\ncreated_at\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03\x12\x18\n\nupdated_at\x18\x06 \x01(\tB\x04\xe2\x41\x01\x03\x42h\n cloud.alphaus.blueapi.api.lusterB\x15\x41piLusterCommentProtoZ-github.com/alphauslabs/blue-sdk-go/api/lusterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,12 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.luster.comment_pb2', _g
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n cloud.alphaus.blueapi.api.lusterB\025ApiLusterCommentProtoZ-github.com/alphauslabs/blue-sdk-go/api/luster'
-  _globals['_COMMENT']._serialized_start=48
-  _globals['_COMMENT']._serialized_end=157
+  _globals['_COMMENT'].fields_by_name['user_id']._loaded_options = None
+  _globals['_COMMENT'].fields_by_name['user_id']._serialized_options = b'\342A\001\003'
+  _globals['_COMMENT'].fields_by_name['created_at']._loaded_options = None
+  _globals['_COMMENT'].fields_by_name['created_at']._serialized_options = b'\342A\001\003'
+  _globals['_COMMENT'].fields_by_name['updated_at']._loaded_options = None
+  _globals['_COMMENT'].fields_by_name['updated_at']._serialized_options = b'\342A\001\003'
+  _globals['_COMMENT']._serialized_start=81
+  _globals['_COMMENT']._serialized_end=208
 # @@protoc_insertion_point(module_scope)

@@ -22,9 +22,10 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/luster/space.proto\x12\x12\x62lueapi.api.luster\"G\n\x05Space\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0f\n\x07members\x18\x04 \x03(\tBf\n cloud.alphaus.blueapi.api.lusterB\x13\x41piLusterSpaceProtoZ-github.com/alphauslabs/blue-sdk-go/api/lusterb\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x16\x61pi/luster/space.proto\x12\x12\x62lueapi.api.luster\x1a\x1fgoogle/api/field_behavior.proto\"{\n\x05Space\x12\n\n\x02id\x18\x01 \x01(\t\x12\x0c\n\x04name\x18\x02 \x01(\t\x12\x13\n\x0b\x64\x65scription\x18\x03 \x01(\t\x12\x0f\n\x07members\x18\x04 \x03(\t\x12\x18\n\ncreated_at\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03\x12\x18\n\nupdated_at\x18\x06 \x01(\tB\x04\xe2\x41\x01\x03\x42\x66\n cloud.alphaus.blueapi.api.lusterB\x13\x41piLusterSpaceProtoZ-github.com/alphauslabs/blue-sdk-go/api/lusterb\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -32,6 +33,10 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'api.luster.space_pb2', _glo
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n cloud.alphaus.blueapi.api.lusterB\023ApiLusterSpaceProtoZ-github.com/alphauslabs/blue-sdk-go/api/luster'
-  _globals['_SPACE']._serialized_start=46
-  _globals['_SPACE']._serialized_end=117
+  _globals['_SPACE'].fields_by_name['created_at']._loaded_options = None
+  _globals['_SPACE'].fields_by_name['created_at']._serialized_options = b'\342A\001\003'
+  _globals['_SPACE'].fields_by_name['updated_at']._loaded_options = None
+  _globals['_SPACE'].fields_by_name['updated_at']._serialized_options = b'\342A\001\003'
+  _globals['_SPACE']._serialized_start=79
+  _globals['_SPACE']._serialized_end=202
 # @@protoc_insertion_point(module_scope)
