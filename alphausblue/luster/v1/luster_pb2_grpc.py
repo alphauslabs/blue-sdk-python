@@ -110,6 +110,16 @@ class LusterStub(object):
                 request_serializer=luster_dot_v1_dot_luster__pb2.CreateLabelRequest.SerializeToString,
                 response_deserializer=api_dot_luster_dot_label__pb2.Label.FromString,
                 _registered_method=True)
+        self.UpdateLabel = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/UpdateLabel',
+                request_serializer=luster_dot_v1_dot_luster__pb2.UpdateLabelRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_label__pb2.Label.FromString,
+                _registered_method=True)
+        self.DeleteLabel = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/DeleteLabel',
+                request_serializer=luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class LusterServicer(object):
@@ -118,7 +128,6 @@ class LusterServicer(object):
 
     def ReadSpaces(self, request, context):
         """(ALPHA) Reads spaces.
-        スペースの読み取り。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -126,7 +135,6 @@ class LusterServicer(object):
 
     def GetSpace(self, request, context):
         """(ALPHA) Gets space.
-        スペースの取得。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -134,7 +142,6 @@ class LusterServicer(object):
 
     def CreateSpace(self, request, context):
         """(ALPHA) Creates space.
-        スペースの作成。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -142,15 +149,13 @@ class LusterServicer(object):
 
     def UpdateSpace(self, request, context):
         """(ALPHA) Updates space.
-        スペースの更新。
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteSpace(self, request, context):
-        """(ALPHA) Deletes space.
-        スペースの削除。 削除する場合はスペース内で作成したコンテクストも削除され閲覧できなくなります。
+        """(ALPHA) Deletes space. When deleted, contexts created within the space will also be deleted and cannot be viewed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -214,6 +219,20 @@ class LusterServicer(object):
 
     def CreateLabel(self, request, context):
         """(ALPHA) Creates label.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateLabel(self, request, context):
+        """(ALPHA) Updates label.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteLabel(self, request, context):
+        """(ALPHA) Deletes label.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -291,6 +310,16 @@ def add_LusterServicer_to_server(servicer, server):
                     servicer.CreateLabel,
                     request_deserializer=luster_dot_v1_dot_luster__pb2.CreateLabelRequest.FromString,
                     response_serializer=api_dot_luster_dot_label__pb2.Label.SerializeToString,
+            ),
+            'UpdateLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateLabel,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.UpdateLabelRequest.FromString,
+                    response_serializer=api_dot_luster_dot_label__pb2.Label.SerializeToString,
+            ),
+            'DeleteLabel': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteLabel,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -672,6 +701,60 @@ class Luster(object):
             '/blueapi.luster.v1.Luster/CreateLabel',
             luster_dot_v1_dot_luster__pb2.CreateLabelRequest.SerializeToString,
             api_dot_luster_dot_label__pb2.Label.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateLabel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/UpdateLabel',
+            luster_dot_v1_dot_luster__pb2.UpdateLabelRequest.SerializeToString,
+            api_dot_luster_dot_label__pb2.Label.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteLabel(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/DeleteLabel',
+            luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
