@@ -105,6 +105,11 @@ class LusterStub(object):
                 request_serializer=luster_dot_v1_dot_luster__pb2.DeleteContextCommentRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.ReadLabels = channel.unary_stream(
+                '/blueapi.luster.v1.Luster/ReadLabels',
+                request_serializer=luster_dot_v1_dot_luster__pb2.ReadLabelsRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_label__pb2.Label.FromString,
+                _registered_method=True)
         self.CreateLabel = channel.unary_unary(
                 '/blueapi.luster.v1.Luster/CreateLabel',
                 request_serializer=luster_dot_v1_dot_luster__pb2.CreateLabelRequest.SerializeToString,
@@ -127,112 +132,120 @@ class LusterServicer(object):
     """
 
     def ReadSpaces(self, request, context):
-        """(ALPHA) Reads spaces.
+        """(ALPHA) [SPACE] Reads spaces.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetSpace(self, request, context):
-        """(ALPHA) Gets space.
+        """(ALPHA) [SPACE] Gets space.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateSpace(self, request, context):
-        """(ALPHA) Creates space.
+        """(ALPHA) [SPACE] Creates space.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateSpace(self, request, context):
-        """(ALPHA) Updates space.
+        """(ALPHA) [SPACE] Updates space.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteSpace(self, request, context):
-        """(ALPHA) Deletes space. When deleted, contexts created within the space will also be deleted and cannot be viewed.
+        """(ALPHA) [SPACE] Deletes space. 
+        When deleted, contexts created within the space will also be deleted and cannot be viewed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ReadContexts(self, request, context):
-        """(ALPHA) Reads contexts.
+        """(ALPHA) [CONTEXT] Reads contexts.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetContext(self, request, context):
-        """(ALPHA) Gets context.
+        """(ALPHA [CONTEXT]) Gets context.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateContext(self, request, context):
-        """(ALPHA) Creates context.
+        """(ALPHA) [CONTEXT] Creates context.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateContext(self, request, context):
-        """(ALPHA) Updates context.
+        """(ALPHA) [CONTEXT] Updates context.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteContext(self, request, context):
-        """(ALPHA) Deletes context.
+        """(ALPHA) [CONTEXT] Deletes context.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateContextComment(self, request, context):
-        """(ALPHA) Creates comment in context.
+        """(ALPHA) [COMMENT] Creates comment in context.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateContextComment(self, request, context):
-        """(ALPHA) Updates comment in context.
+        """(ALPHA) [COMMENT] Updates comment in context.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteContextComment(self, request, context):
-        """(ALPHA) Deletes comment in context.
+        """(ALPHA) [COMMENT] Deletes comment in context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadLabels(self, request, context):
+        """(ALPHA) [LABEL] Reads labels.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def CreateLabel(self, request, context):
-        """(ALPHA) Creates label.
+        """(ALPHA) [LABEL] Creates label.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def UpdateLabel(self, request, context):
-        """(ALPHA) Updates label.
+        """(ALPHA) [LABEL] Updates label.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteLabel(self, request, context):
-        """(ALPHA) Deletes label.
+        """(ALPHA) [LABEL] Deletes label.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -305,6 +318,11 @@ def add_LusterServicer_to_server(servicer, server):
                     servicer.DeleteContextComment,
                     request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteContextCommentRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReadLabels': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadLabels,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.ReadLabelsRequest.FromString,
+                    response_serializer=api_dot_luster_dot_label__pb2.Label.SerializeToString,
             ),
             'CreateLabel': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateLabel,
@@ -674,6 +692,33 @@ class Luster(object):
             '/blueapi.luster.v1.Luster/DeleteContextComment',
             luster_dot_v1_dot_luster__pb2.DeleteContextCommentRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadLabels(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/ReadLabels',
+            luster_dot_v1_dot_luster__pb2.ReadLabelsRequest.SerializeToString,
+            api_dot_luster_dot_label__pb2.Label.FromString,
             options,
             channel_credentials,
             insecure,
