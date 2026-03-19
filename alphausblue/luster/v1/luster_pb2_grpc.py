@@ -161,6 +161,7 @@ class LusterServicer(object):
 
     def DeleteSpace(self, request, context):
         """(ALPHA) [SPACE] Deletes space. 
+
         When deleted, contexts created within the space will also be deleted and cannot be viewed.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
