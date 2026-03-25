@@ -5,6 +5,7 @@ import warnings
 
 from alphausblue.api.luster import comment_pb2 as api_dot_luster_dot_comment__pb2
 from alphausblue.api.luster import context_pb2 as api_dot_luster_dot_context__pb2
+from alphausblue.api.luster import hub_pb2 as api_dot_luster_dot_hub__pb2
 from alphausblue.api.luster import label_pb2 as api_dot_luster_dot_label__pb2
 from alphausblue.api.luster import space_pb2 as api_dot_luster_dot_space__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
@@ -125,6 +126,11 @@ class LusterStub(object):
                 request_serializer=luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.ReadHubs = channel.unary_stream(
+                '/blueapi.luster.v1.Luster/ReadHubs',
+                request_serializer=luster_dot_v1_dot_luster__pb2.ReadHubsRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_hub__pb2.Hub.FromString,
+                _registered_method=True)
 
 
 class LusterServicer(object):
@@ -160,7 +166,7 @@ class LusterServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def DeleteSpace(self, request, context):
-        """(ALPHA) [SPACE] Deletes space. 
+        """(ALPHA) [SPACE] Deletes space.
 
         When deleted, contexts created within the space will also be deleted and cannot be viewed.
         """
@@ -247,6 +253,13 @@ class LusterServicer(object):
 
     def DeleteLabel(self, request, context):
         """(ALPHA) [LABEL] Deletes label.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadHubs(self, request, context):
+        """(ALPHA) [HUB] Reads hubs.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -339,6 +352,11 @@ def add_LusterServicer_to_server(servicer, server):
                     servicer.DeleteLabel,
                     request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReadHubs': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadHubs,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.ReadHubsRequest.FromString,
+                    response_serializer=api_dot_luster_dot_hub__pb2.Hub.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -801,6 +819,33 @@ class Luster(object):
             '/blueapi.luster.v1.Luster/DeleteLabel',
             luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadHubs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/ReadHubs',
+            luster_dot_v1_dot_luster__pb2.ReadHubsRequest.SerializeToString,
+            api_dot_luster_dot_hub__pb2.Hub.FromString,
             options,
             channel_credentials,
             insecure,
