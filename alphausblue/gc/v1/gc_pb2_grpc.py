@@ -150,6 +150,21 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusResponse.FromString,
                 _registered_method=True)
+        self.ListBillingGroups = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ListBillingGroups',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ListBillingGroupsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ListBillingGroupsResponse.FromString,
+                _registered_method=True)
+        self.SetBillingGroupStatus = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/SetBillingGroupStatus',
+                request_serializer=gc_dot_v1_dot_gc__pb2.SetBillingGroupStatusRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.SetBillingGroupStatusResponse.FromString,
+                _registered_method=True)
+        self.GetBillingGroupStatus = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupStatus',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusResponse.FromString,
+                _registered_method=True)
         self.ValidateBillingGroup = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/ValidateBillingGroup',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.SerializeToString,
@@ -336,8 +351,10 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetOnboardingStatus(self, request, context):
-        """WORK-IN-PROGRESS: Retrieves the latest onboarding status for an MSP or a company under an MSP.
-        Retrieves the latest onboarding status for an MSP or a company under an MSP.
+        """WORK-IN-PROGRESS: Retrieves the latest onboarding status for:
+        - an MSP
+        - a company under an MSP
+        - a payer account under an MSP
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -358,6 +375,24 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def GetPayerAccountStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListBillingGroups(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetBillingGroupStatus(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBillingGroupStatus(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -501,6 +536,21 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetPayerAccountStatus,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusResponse.SerializeToString,
+            ),
+            'ListBillingGroups': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListBillingGroups,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListBillingGroupsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ListBillingGroupsResponse.SerializeToString,
+            ),
+            'SetBillingGroupStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetBillingGroupStatus,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.SetBillingGroupStatusRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.SetBillingGroupStatusResponse.SerializeToString,
+            ),
+            'GetBillingGroupStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBillingGroupStatus,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusResponse.SerializeToString,
             ),
             'ValidateBillingGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.ValidateBillingGroup,
@@ -1140,6 +1190,87 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/GetPayerAccountStatus',
             gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetPayerAccountStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListBillingGroups(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ListBillingGroups',
+            gc_dot_v1_dot_gc__pb2.ListBillingGroupsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ListBillingGroupsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetBillingGroupStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/SetBillingGroupStatus',
+            gc_dot_v1_dot_gc__pb2.SetBillingGroupStatusRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.SetBillingGroupStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupStatus',
+            gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusResponse.FromString,
             options,
             channel_credentials,
             insecure,
