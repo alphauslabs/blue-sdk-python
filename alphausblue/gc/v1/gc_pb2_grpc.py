@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.gc.v1 import gc_pb2 as gc_dot_v1_dot_gc__pb2
 
-GRPC_GENERATED_VERSION = '1.78.0'
+GRPC_GENERATED_VERSION = '1.80.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -179,6 +179,41 @@ class GuaranteedCommitmentsStub(object):
                 '/blueapi.gc.v1.GuaranteedCommitments/CreateGuaranteedCommitmentAccess',
                 request_serializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessResponse.FromString,
+                _registered_method=True)
+        self.StartAzureOnboarding = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/StartAzureOnboarding',
+                request_serializer=gc_dot_v1_dot_gc__pb2.StartAzureOnboardingRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.StartAzureOnboardingResponse.FromString,
+                _registered_method=True)
+        self.UpdateAzureOnboarding = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/UpdateAzureOnboarding',
+                request_serializer=gc_dot_v1_dot_gc__pb2.UpdateAzureOnboardingRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.AzureOnboardingState.FromString,
+                _registered_method=True)
+        self.GetAzureOnboardingAuthUrl = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetAzureOnboardingAuthUrl',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetAzureOnboardingAuthUrlRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetAzureOnboardingAuthUrlResponse.FromString,
+                _registered_method=True)
+        self.ValidateAzureAppInstall = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ValidateAzureAppInstall',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ValidateAzureAppInstallRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.AzureOnboardingState.FromString,
+                _registered_method=True)
+        self.ListAzureOnboardingAccounts = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ListAzureOnboardingAccounts',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ListAzureOnboardingAccountsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureOnboardingAccountsResponse.FromString,
+                _registered_method=True)
+        self.CreateAzureIntegration = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/CreateAzureIntegration',
+                request_serializer=gc_dot_v1_dot_gc__pb2.CreateAzureIntegrationRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CreateAzureIntegrationResponse.FromString,
+                _registered_method=True)
+        self.ListAzureIntegrations = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ListAzureIntegrations',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
                 _registered_method=True)
 
 
@@ -419,6 +454,69 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def StartAzureOnboarding(self, request, context):
+        """####################### AZURE ONBOARDING #######################
+
+        WORK-IN-PROGRESS: Starts the Azure onboarding process.
+        Creates an onboarding record in Archera for the given org and returns the onboardingId.
+        Stores the Ripple billingGroupId/companyId association for later use.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAzureOnboarding(self, request, context):
+        """## Developers guide, will be deleted once documentation is in place ##
+        Used for multiple PATCH steps: setting azure resource config (step 2/3),
+        selecting account kind (step 5.5), and selecting account IDs (step 7).
+
+        WORK-IN-PROGRESS: Updates the Azure onboarding record.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetAzureOnboardingAuthUrl(self, request, context):
+        """WORK-IN-PROGRESS: Returns the Azure OAuth URL the user must visit to authorize Archera.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ValidateAzureAppInstall(self, request, context):
+        """## Developers guide, will be deleted once documentation is in place ##
+        Called after the user visits the auth URL (step 4).
+
+        WORK-IN-PROGRESS: Validates that the Azure app was installed and the user authorized it.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAzureOnboardingAccounts(self, request, context):
+        """WORK-IN-PROGRESS: Lists the available Azure subscriptions or billing accounts
+        for the user to select during onboarding.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAzureIntegration(self, request, context):
+        """Persists the Ripple billingGroupId/companyId mapping alongside the Archera integration.
+
+        WORK-IN-PROGRESS: Creates the Azure cloud integration after all onboarding steps complete.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAzureIntegrations(self, request, context):
+        """WORK-IN-PROGRESS: Lists Azure integrations to verify onboarding completion.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -566,6 +664,41 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.CreateGuaranteedCommitmentAccess,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessResponse.SerializeToString,
+            ),
+            'StartAzureOnboarding': grpc.unary_unary_rpc_method_handler(
+                    servicer.StartAzureOnboarding,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.StartAzureOnboardingRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.StartAzureOnboardingResponse.SerializeToString,
+            ),
+            'UpdateAzureOnboarding': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAzureOnboarding,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.UpdateAzureOnboardingRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.AzureOnboardingState.SerializeToString,
+            ),
+            'GetAzureOnboardingAuthUrl': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAzureOnboardingAuthUrl,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetAzureOnboardingAuthUrlRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetAzureOnboardingAuthUrlResponse.SerializeToString,
+            ),
+            'ValidateAzureAppInstall': grpc.unary_unary_rpc_method_handler(
+                    servicer.ValidateAzureAppInstall,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ValidateAzureAppInstallRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.AzureOnboardingState.SerializeToString,
+            ),
+            'ListAzureOnboardingAccounts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAzureOnboardingAccounts,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureOnboardingAccountsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ListAzureOnboardingAccountsResponse.SerializeToString,
+            ),
+            'CreateAzureIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAzureIntegration,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.CreateAzureIntegrationRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CreateAzureIntegrationResponse.SerializeToString,
+            ),
+            'ListAzureIntegrations': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListAzureIntegrations,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1352,6 +1485,195 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/CreateGuaranteedCommitmentAccess',
             gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CreateGuaranteedCommitmentAccessResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def StartAzureOnboarding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/StartAzureOnboarding',
+            gc_dot_v1_dot_gc__pb2.StartAzureOnboardingRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.StartAzureOnboardingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAzureOnboarding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/UpdateAzureOnboarding',
+            gc_dot_v1_dot_gc__pb2.UpdateAzureOnboardingRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.AzureOnboardingState.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAzureOnboardingAuthUrl(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetAzureOnboardingAuthUrl',
+            gc_dot_v1_dot_gc__pb2.GetAzureOnboardingAuthUrlRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetAzureOnboardingAuthUrlResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ValidateAzureAppInstall(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ValidateAzureAppInstall',
+            gc_dot_v1_dot_gc__pb2.ValidateAzureAppInstallRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.AzureOnboardingState.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAzureOnboardingAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ListAzureOnboardingAccounts',
+            gc_dot_v1_dot_gc__pb2.ListAzureOnboardingAccountsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ListAzureOnboardingAccountsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateAzureIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/CreateAzureIntegration',
+            gc_dot_v1_dot_gc__pb2.CreateAzureIntegrationRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.CreateAzureIntegrationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAzureIntegrations(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ListAzureIntegrations',
+            gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
             options,
             channel_credentials,
             insecure,
