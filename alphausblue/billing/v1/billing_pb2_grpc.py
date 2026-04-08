@@ -716,6 +716,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.FromString,
                 _registered_method=True)
+        self.ListServices = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ListServices',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListServicesRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListServicesResponse.FromString,
+                _registered_method=True)
         self.BulkLinkAccount = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/BulkLinkAccount',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.SerializeToString,
@@ -1676,6 +1681,14 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListServices(self, request, context):
+        """Lists available cloud services and their associated SKUs for a given vendor.
+        Use this to retrieve service codes and names that can be referenced in exclude service settings.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def BulkLinkAccount(self, request, context):
         """Link accounts to a billing group in bulk from a CSV file.
         Returns a long-running operation. Poll status via the Operations service (GET /ops/v1/{name}).
@@ -2356,6 +2369,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ListExcludeServices,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.SerializeToString,
+            ),
+            'ListServices': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListServices,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListServicesRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListServicesResponse.SerializeToString,
             ),
             'BulkLinkAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.BulkLinkAccount,
@@ -5982,6 +6000,33 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/ListExcludeServices',
             billing_dot_v1_dot_billing__pb2.ListExcludeServicesRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListExcludeServicesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListServices(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ListServices',
+            billing_dot_v1_dot_billing__pb2.ListServicesRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ListServicesResponse.FromString,
             options,
             channel_credentials,
             insecure,
