@@ -126,6 +126,11 @@ class LusterStub(object):
                 request_serializer=luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.GetHub = channel.unary_unary(
+                '/blueapi.luster.v1.Luster/GetHub',
+                request_serializer=luster_dot_v1_dot_luster__pb2.GetHubRequest.SerializeToString,
+                response_deserializer=api_dot_luster_dot_hub__pb2.Hub.FromString,
+                _registered_method=True)
         self.ReadHubs = channel.unary_stream(
                 '/blueapi.luster.v1.Luster/ReadHubs',
                 request_serializer=luster_dot_v1_dot_luster__pb2.ReadHubsRequest.SerializeToString,
@@ -258,6 +263,13 @@ class LusterServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetHub(self, request, context):
+        """(ALPHA) [HUB] Gets hub.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ReadHubs(self, request, context):
         """(ALPHA) [HUB] Reads hubs.
         """
@@ -352,6 +364,11 @@ def add_LusterServicer_to_server(servicer, server):
                     servicer.DeleteLabel,
                     request_deserializer=luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'GetHub': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetHub,
+                    request_deserializer=luster_dot_v1_dot_luster__pb2.GetHubRequest.FromString,
+                    response_serializer=api_dot_luster_dot_hub__pb2.Hub.SerializeToString,
             ),
             'ReadHubs': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadHubs,
@@ -819,6 +836,33 @@ class Luster(object):
             '/blueapi.luster.v1.Luster/DeleteLabel',
             luster_dot_v1_dot_luster__pb2.DeleteLabelRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetHub(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.luster.v1.Luster/GetHub',
+            luster_dot_v1_dot_luster__pb2.GetHubRequest.SerializeToString,
+            api_dot_luster_dot_hub__pb2.Hub.FromString,
             options,
             channel_credentials,
             insecure,
