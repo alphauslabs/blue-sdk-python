@@ -726,6 +726,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.SerializeToString,
                 response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.BulkTagBillingGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/BulkTagBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.BulkTagBillingGroupRequest.SerializeToString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1697,6 +1702,15 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BulkTagBillingGroup(self, request, context):
+        """Bulk-tag multiple billing groups from a CSV file.
+        Supports add, delete, and dry-run modes.
+        Returns a long-running operation. Poll status via the Operations service (GET /ops/v1/{name}).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2378,6 +2392,11 @@ def add_BillingServicer_to_server(servicer, server):
             'BulkLinkAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.BulkLinkAccount,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.FromString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BulkTagBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.BulkTagBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.BulkTagBillingGroupRequest.FromString,
                     response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
     }
@@ -6053,6 +6072,33 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/BulkLinkAccount',
             billing_dot_v1_dot_billing__pb2.BulkLinkAccountRequest.SerializeToString,
+            protos_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BulkTagBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/BulkTagBillingGroup',
+            billing_dot_v1_dot_billing__pb2.BulkTagBillingGroupRequest.SerializeToString,
             protos_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
