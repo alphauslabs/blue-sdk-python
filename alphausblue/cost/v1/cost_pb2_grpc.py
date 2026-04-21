@@ -392,6 +392,11 @@ class CostStub(object):
                 request_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesRequest.SerializeToString,
                 response_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesResponse.FromString,
                 _registered_method=True)
+        self.SetupPayerAccountBillingTransfer = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/SetupPayerAccountBillingTransfer',
+                request_serializer=cost_dot_v1_dot_cost__pb2.SetupPayerAccountBillingTransferRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class CostServicer(object):
@@ -942,6 +947,13 @@ class CostServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SetupPayerAccountBillingTransfer(self, request, context):
+        """WORK-IN-PROGRESS: Setup payer's billing transfer information
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_CostServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1294,6 +1306,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ListCalculationPrerequisites,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesRequest.FromString,
                     response_serializer=cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesResponse.SerializeToString,
+            ),
+            'SetupPayerAccountBillingTransfer': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetupPayerAccountBillingTransfer,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.SetupPayerAccountBillingTransferRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -3187,6 +3204,33 @@ class Cost(object):
             '/blueapi.cost.v1.Cost/ListCalculationPrerequisites',
             cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesRequest.SerializeToString,
             cost_dot_v1_dot_cost__pb2.ListCalculationPrerequisitesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetupPayerAccountBillingTransfer(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/SetupPayerAccountBillingTransfer',
+            cost_dot_v1_dot_cost__pb2.SetupPayerAccountBillingTransferRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
