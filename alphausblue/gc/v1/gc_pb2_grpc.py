@@ -75,6 +75,11 @@ class GuaranteedCommitmentsStub(object):
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.FromString,
                 _registered_method=True)
+        self.ListReservableResources = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ListReservableResources',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ListReservableResourcesRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ListReservableResourcesResponse.FromString,
+                _registered_method=True)
         self.ListPurchasePlansBySegment = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/ListPurchasePlansBySegment',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.SerializeToString,
@@ -104,6 +109,16 @@ class GuaranteedCommitmentsStub(object):
                 '/blueapi.gc.v1.GuaranteedCommitments/DeleteDraftPurchasePlan',
                 request_serializer=gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanResponse.FromString,
+                _registered_method=True)
+        self.GetAvailableCommitmentTypes = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetAvailableCommitmentTypes',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetAvailableCommitmentTypesRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetAvailableCommitmentTypesResponse.FromString,
+                _registered_method=True)
+        self.CreateCustomCommitmentPlan = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/CreateCustomCommitmentPlan',
+                request_serializer=gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.DefaultPurchasePlan.FromString,
                 _registered_method=True)
         self.RegisterOrg = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/RegisterOrg',
@@ -285,6 +300,16 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListReservableResources(self, request, context):
+        """DEVELOPER'S NOTE: FOR Infrastructure Plan
+
+        WORK-IN-PROGRESS: Only works for Alphaus for now. Retrieves a paginated list of reservable infrastructure resources for a segment.
+        Supports filtering, sorting, and a date range for usage aggregation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListPurchasePlansBySegment(self, request, context):
         """####################### SEGMENTS #######################
 
@@ -344,8 +369,28 @@ class GuaranteedCommitmentsServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetAvailableCommitmentTypes(self, request, context):
+        """DEVELOPER'S NOTE: FOR Infrastructure Plan and custom (top-down) commitment plan
+
+        WORK-IN-PROGRESS: Only works for Alphaus for now. Retrieves the available commitment types for a given provider.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCustomCommitmentPlan(self, request, context):
+        """DEVELOPER'S NOTE: FOR Infrastructure Plan and custom (top-down) commitment plan
+
+        WORK-IN-PROGRESS: Only works for Alphaus for now. Creates a custom (top-down) commitment purchase plan.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def RegisterOrg(self, request, context):
-        """WORK-IN-PROGRESS: Registers a new child organization under the channel partner.
+        """------------------------ ONBOARDING ------------------------
+
+        WORK-IN-PROGRESS: Registers a new child organization under the channel partner.
         Creates the organization, sets up user memberships, and establishes the partnership relationship.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -560,6 +605,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetResourceDailyUsageResponse.SerializeToString,
             ),
+            'ListReservableResources': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListReservableResources,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListReservableResourcesRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ListReservableResourcesResponse.SerializeToString,
+            ),
             'ListPurchasePlansBySegment': grpc.unary_unary_rpc_method_handler(
                     servicer.ListPurchasePlansBySegment,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListPurchasePlansBySegmentRequest.FromString,
@@ -589,6 +639,16 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.DeleteDraftPurchasePlan,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanResponse.SerializeToString,
+            ),
+            'GetAvailableCommitmentTypes': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetAvailableCommitmentTypes,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetAvailableCommitmentTypesRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetAvailableCommitmentTypesResponse.SerializeToString,
+            ),
+            'CreateCustomCommitmentPlan': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCustomCommitmentPlan,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.DefaultPurchasePlan.SerializeToString,
             ),
             'RegisterOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.RegisterOrg,
@@ -929,6 +989,33 @@ class GuaranteedCommitments(object):
             _registered_method=True)
 
     @staticmethod
+    def ListReservableResources(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ListReservableResources',
+            gc_dot_v1_dot_gc__pb2.ListReservableResourcesRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ListReservableResourcesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
     def ListPurchasePlansBySegment(request,
             target,
             options=(),
@@ -1080,6 +1167,60 @@ class GuaranteedCommitments(object):
             '/blueapi.gc.v1.GuaranteedCommitments/DeleteDraftPurchasePlan',
             gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.DeleteDraftPurchasePlanResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetAvailableCommitmentTypes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetAvailableCommitmentTypes',
+            gc_dot_v1_dot_gc__pb2.GetAvailableCommitmentTypesRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetAvailableCommitmentTypesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateCustomCommitmentPlan(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/CreateCustomCommitmentPlan',
+            gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.DefaultPurchasePlan.FromString,
             options,
             channel_credentials,
             insecure,
