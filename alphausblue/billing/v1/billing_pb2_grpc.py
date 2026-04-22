@@ -386,6 +386,16 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.RestoreAllocateAdjustmentEntryRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.CreateCustomFee = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateCustomFee',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateCustomFeeRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.CreateCustomFeeResponse.FromString,
+                _registered_method=True)
+        self.ListAdjustmentEntryItems = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ListAdjustmentEntryItems',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListAdjustmentEntryItemsRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.AdjustmentEntryItem.FromString,
+                _registered_method=True)
         self.ListAccountResources = channel.unary_stream(
                 '/blueapi.billing.v1.Billing/ListAccountResources',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListAccountResourcesRequest.SerializeToString,
@@ -1214,6 +1224,23 @@ class BillingServicer(object):
 
     def RestoreAllocateAdjustmentEntry(self, request, context):
         """Restores the allocate adjustment entry item. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateCustomFee(self, request, context):
+        """Creates custom fee entries in the RIPPLE_FEES table.
+        Used to write Guaranteed Commitment entries and Custom Fee entries directly to the fee table. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListAdjustmentEntryItems(self, request, context):
+        """Lists adjustment entry items from the fee table.
+        Reads fee entries from the RIPPLE_FEES table, optionally filtered by mobingi_type.
+        Note: Commitment entries (mobingi_type="COMMITMENT") are excluded from ReadAdjustmentEntries to avoid duplication with the Adjusting Entries UI. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2053,6 +2080,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.RestoreAllocateAdjustmentEntry,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.RestoreAllocateAdjustmentEntryRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateCustomFee': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateCustomFee,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateCustomFeeRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.CreateCustomFeeResponse.SerializeToString,
+            ),
+            'ListAdjustmentEntryItems': grpc.unary_stream_rpc_method_handler(
+                    servicer.ListAdjustmentEntryItems,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListAdjustmentEntryItemsRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.AdjustmentEntryItem.SerializeToString,
             ),
             'ListAccountResources': grpc.unary_stream_rpc_method_handler(
                     servicer.ListAccountResources,
@@ -4237,6 +4274,60 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/RestoreAllocateAdjustmentEntry',
             billing_dot_v1_dot_billing__pb2.RestoreAllocateAdjustmentEntryRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateCustomFee(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateCustomFee',
+            billing_dot_v1_dot_billing__pb2.CreateCustomFeeRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.CreateCustomFeeResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListAdjustmentEntryItems(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ListAdjustmentEntryItems',
+            billing_dot_v1_dot_billing__pb2.ListAdjustmentEntryItemsRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.AdjustmentEntryItem.FromString,
             options,
             channel_credentials,
             insecure,
