@@ -340,7 +340,7 @@ class CostStub(object):
         self.ExportReport = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/ExportReport',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ExportReportRequest.SerializeToString,
-                response_deserializer=cost_dot_v1_dot_cost__pb2.ExportReportResponse.FromString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.GetUtilization = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetUtilization',
@@ -872,6 +872,7 @@ class CostServicer(object):
     def ExportReport(self, request, context):
         """Exports a vendor report and delivers results via email notification channel.
         Supports multiple report types per vendor. For AWS, this covers RI/SP utilization reports.
+        Returns a long-running operation; use GetOperation to poll for completion.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1255,7 +1256,7 @@ def add_CostServicer_to_server(servicer, server):
             'ExportReport': grpc.unary_unary_rpc_method_handler(
                     servicer.ExportReport,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ExportReportRequest.FromString,
-                    response_serializer=cost_dot_v1_dot_cost__pb2.ExportReportResponse.SerializeToString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'GetUtilization': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUtilization,
@@ -2933,7 +2934,7 @@ class Cost(object):
             target,
             '/blueapi.cost.v1.Cost/ExportReport',
             cost_dot_v1_dot_cost__pb2.ExportReportRequest.SerializeToString,
-            cost_dot_v1_dot_cost__pb2.ExportReportResponse.FromString,
+            protos_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
