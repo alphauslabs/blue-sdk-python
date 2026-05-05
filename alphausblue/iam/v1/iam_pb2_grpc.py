@@ -220,6 +220,16 @@ class IamStub(object):
                 request_serializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.SerializeToString,
                 response_deserializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordResponse.FromString,
                 _registered_method=True)
+        self.GetExperimentalUIPreferences = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/GetExperimentalUIPreferences',
+                request_serializer=iam_dot_v1_dot_iam__pb2.GetExperimentalUIPreferencesRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.GetExperimentalUIPreferencesResponse.FromString,
+                _registered_method=True)
+        self.UpsertExperimentalUIPreference = channel.unary_unary(
+                '/blueapi.iam.v1.Iam/UpsertExperimentalUIPreference',
+                request_serializer=iam_dot_v1_dot_iam__pb2.UpsertExperimentalUIPreferenceRequest.SerializeToString,
+                response_deserializer=iam_dot_v1_dot_iam__pb2.UpsertExperimentalUIPreferenceResponse.FromString,
+                _registered_method=True)
         self.UnlockUserAccount = channel.unary_unary(
                 '/blueapi.iam.v1.Iam/UnlockUserAccount',
                 request_serializer=iam_dot_v1_dot_iam__pb2.UnlockUserAccountRequest.SerializeToString,
@@ -491,6 +501,20 @@ class IamServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetExperimentalUIPreferences(self, request, context):
+        """Gets experimental UI preferences for the authenticated MSP.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpsertExperimentalUIPreference(self, request, context):
+        """Creates or updates an experimental UI preference for a specific component.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UnlockUserAccount(self, request, context):
         """WORK-IN-PROGRESS: Unlocks ripple or wave user account.
         """
@@ -680,6 +704,16 @@ def add_IamServicer_to_server(servicer, server):
                     servicer.ResetRipplePassword,
                     request_deserializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.FromString,
                     response_serializer=iam_dot_v1_dot_iam__pb2.ResetRipplePasswordResponse.SerializeToString,
+            ),
+            'GetExperimentalUIPreferences': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetExperimentalUIPreferences,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.GetExperimentalUIPreferencesRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.GetExperimentalUIPreferencesResponse.SerializeToString,
+            ),
+            'UpsertExperimentalUIPreference': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpsertExperimentalUIPreference,
+                    request_deserializer=iam_dot_v1_dot_iam__pb2.UpsertExperimentalUIPreferenceRequest.FromString,
+                    response_serializer=iam_dot_v1_dot_iam__pb2.UpsertExperimentalUIPreferenceResponse.SerializeToString,
             ),
             'UnlockUserAccount': grpc.unary_unary_rpc_method_handler(
                     servicer.UnlockUserAccount,
@@ -1660,6 +1694,60 @@ class Iam(object):
             '/blueapi.iam.v1.Iam/ResetRipplePassword',
             iam_dot_v1_dot_iam__pb2.ResetRipplePasswordRequest.SerializeToString,
             iam_dot_v1_dot_iam__pb2.ResetRipplePasswordResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetExperimentalUIPreferences(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.iam.v1.Iam/GetExperimentalUIPreferences',
+            iam_dot_v1_dot_iam__pb2.GetExperimentalUIPreferencesRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.GetExperimentalUIPreferencesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpsertExperimentalUIPreference(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.iam.v1.Iam/UpsertExperimentalUIPreference',
+            iam_dot_v1_dot_iam__pb2.UpsertExperimentalUIPreferenceRequest.SerializeToString,
+            iam_dot_v1_dot_iam__pb2.UpsertExperimentalUIPreferenceResponse.FromString,
             options,
             channel_credentials,
             insecure,
