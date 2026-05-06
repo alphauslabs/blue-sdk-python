@@ -306,7 +306,7 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListReservableResources(self, request, context):
-        """DEVELOPER'S NOTE: FOR Infrastructure Plan
+        """DEVELOPER'S NOTE: FOR Infrastructure Plan.USED FOR RIPPLE ONLY
 
         WORK-IN-PROGRESS: Only works for Alphaus for now. Retrieves a paginated list of reservable infrastructure resources for a segment.
         Supports filtering, sorting, and a date range for usage aggregation.
@@ -361,21 +361,25 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def ListDraftPurchasePlans(self, request, context):
-        """WORK-IN-PROGRESS: Retrieves the drafted purchase plans
+        """USED FOR RIPPLE AND WAVEPRO
+
+        WORK-IN-PROGRESS: Retrieves the drafted purchase plans
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteDraftPurchasePlan(self, request, context):
-        """WORK-IN-PROGRESS: Deletes a drafted purchase plan.
+        """USED FOR RIPPLE ONLY
+
+        WORK-IN-PROGRESS: Deletes a drafted purchase plan.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def GetAvailableCommitmentTypes(self, request, context):
-        """DEVELOPER'S NOTE: FOR Infrastructure Plan and custom (top-down) commitment plan
+        """DEVELOPER'S NOTE: FOR Infrastructure Plan and custom (top-down) commitment plan. USED FOR RIPPLE ONLY
 
         WORK-IN-PROGRESS: Only works for Alphaus for now. Retrieves the available commitment types for a given provider.
         """
@@ -384,7 +388,7 @@ class GuaranteedCommitmentsServicer(object):
         raise NotImplementedError('Method not implemented!')
 
     def CreateCustomCommitmentPlan(self, request, context):
-        """DEVELOPER'S NOTE: FOR Infrastructure Plan and custom (top-down) commitment plan
+        """DEVELOPER'S NOTE: FOR Infrastructure Plan and custom (top-down) commitment plan. USED FOR RIPPLE ONLY
 
         WORK-IN-PROGRESS: Only works for Alphaus for now. Creates a custom (top-down) commitment purchase plan.
         """
