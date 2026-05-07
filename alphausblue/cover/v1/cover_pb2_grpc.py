@@ -1007,10 +1007,10 @@ class CoverStub(object):
                 request_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Request.SerializeToString,
                 response_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Response.FromString,
                 _registered_method=True)
-        self.ListRecommendationsV3 = channel.unary_stream(
+        self.ListRecommendationsV3 = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ListRecommendationsV3',
                 request_serializer=cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Request.SerializeToString,
-                response_deserializer=cover_dot_v1_dot_cover__pb2.RecommendationSummary.FromString,
+                response_deserializer=cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Response.FromString,
                 _registered_method=True)
         self.ExecuteRecommendationV3 = channel.unary_unary(
                 '/blueapi.cover.v1.Cover/ExecuteRecommendationV3',
@@ -3436,10 +3436,10 @@ def add_CoverServicer_to_server(servicer, server):
                     request_deserializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Request.FromString,
                     response_serializer=cover_dot_v1_dot_cover__pb2.GetRecommendationV3Response.SerializeToString,
             ),
-            'ListRecommendationsV3': grpc.unary_stream_rpc_method_handler(
+            'ListRecommendationsV3': grpc.unary_unary_rpc_method_handler(
                     servicer.ListRecommendationsV3,
                     request_deserializer=cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Request.FromString,
-                    response_serializer=cover_dot_v1_dot_cover__pb2.RecommendationSummary.SerializeToString,
+                    response_serializer=cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Response.SerializeToString,
             ),
             'ExecuteRecommendationV3': grpc.unary_unary_rpc_method_handler(
                     servicer.ExecuteRecommendationV3,
@@ -8742,12 +8742,12 @@ class Cover(object):
             wait_for_ready=None,
             timeout=None,
             metadata=None):
-        return grpc.experimental.unary_stream(
+        return grpc.experimental.unary_unary(
             request,
             target,
             '/blueapi.cover.v1.Cover/ListRecommendationsV3',
             cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Request.SerializeToString,
-            cover_dot_v1_dot_cover__pb2.RecommendationSummary.FromString,
+            cover_dot_v1_dot_cover__pb2.ListRecommendationsV3Response.FromString,
             options,
             channel_credentials,
             insecure,
