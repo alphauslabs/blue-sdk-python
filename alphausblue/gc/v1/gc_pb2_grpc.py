@@ -118,7 +118,7 @@ class GuaranteedCommitmentsStub(object):
         self.CreateCustomCommitmentPlan = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/CreateCustomCommitmentPlan',
                 request_serializer=gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanRequest.SerializeToString,
-                response_deserializer=gc_dot_v1_dot_gc__pb2.DefaultPurchasePlan.FromString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanResponse.FromString,
                 _registered_method=True)
         self.RegisterOrg = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/RegisterOrg',
@@ -665,7 +665,7 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
             'CreateCustomCommitmentPlan': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCustomCommitmentPlan,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanRequest.FromString,
-                    response_serializer=gc_dot_v1_dot_gc__pb2.DefaultPurchasePlan.SerializeToString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanResponse.SerializeToString,
             ),
             'RegisterOrg': grpc.unary_unary_rpc_method_handler(
                     servicer.RegisterOrg,
@@ -1242,7 +1242,7 @@ class GuaranteedCommitments(object):
             target,
             '/blueapi.gc.v1.GuaranteedCommitments/CreateCustomCommitmentPlan',
             gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanRequest.SerializeToString,
-            gc_dot_v1_dot_gc__pb2.DefaultPurchasePlan.FromString,
+            gc_dot_v1_dot_gc__pb2.CreateCustomCommitmentPlanResponse.FromString,
             options,
             channel_credentials,
             insecure,
