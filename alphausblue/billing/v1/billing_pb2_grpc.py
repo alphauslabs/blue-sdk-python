@@ -741,6 +741,31 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkTagBillingGroupRequest.SerializeToString,
                 response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GetBillingGroupInvoiceLayoutConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/GetBillingGroupInvoiceLayoutConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceLayoutConfigRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceLayoutConfigResponse.FromString,
+                _registered_method=True)
+        self.SetBillingGroupInvoiceLayoutConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/SetBillingGroupInvoiceLayoutConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.SetBillingGroupInvoiceLayoutConfigRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.CreateInvoiceLayoutConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/CreateInvoiceLayoutConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceLayoutConfigRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceLayoutConfigResponse.FromString,
+                _registered_method=True)
+        self.UpdateInvoiceLayoutConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/UpdateInvoiceLayoutConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceLayoutConfigRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
+        self.ReadInvoiceLayoutConfig = channel.unary_stream(
+                '/blueapi.billing.v1.Billing/ReadInvoiceLayoutConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceLayoutConfigRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceLayoutConfigResponse.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1738,6 +1763,41 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetBillingGroupInvoiceLayoutConfig(self, request, context):
+        """WORK-IN-PROGRESS. Gets the billing group invoice layout configs, used for overriding MSP level configs.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetBillingGroupInvoiceLayoutConfig(self, request, context):
+        """WORK-IN-PROGRESS. Sets the billing group invoice layout configs.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateInvoiceLayoutConfig(self, request, context):
+        """WORK-IN-PROGRESS. Creates an invoice layout config.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateInvoiceLayoutConfig(self, request, context):
+        """WORK-IN-PROGRESS. Updates an invoice layout config.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadInvoiceLayoutConfig(self, request, context):
+        """WORK-IN-PROGRESS. Reads all invoice layout config under an msp.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2435,6 +2495,31 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.BulkTagBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.BulkTagBillingGroupRequest.FromString,
                     response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetBillingGroupInvoiceLayoutConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBillingGroupInvoiceLayoutConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceLayoutConfigRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceLayoutConfigResponse.SerializeToString,
+            ),
+            'SetBillingGroupInvoiceLayoutConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetBillingGroupInvoiceLayoutConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.SetBillingGroupInvoiceLayoutConfigRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'CreateInvoiceLayoutConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateInvoiceLayoutConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceLayoutConfigRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.CreateInvoiceLayoutConfigResponse.SerializeToString,
+            ),
+            'UpdateInvoiceLayoutConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateInvoiceLayoutConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpdateInvoiceLayoutConfigRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'ReadInvoiceLayoutConfig': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadInvoiceLayoutConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceLayoutConfigRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ReadInvoiceLayoutConfigResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -6191,6 +6276,141 @@ class Billing(object):
             '/blueapi.billing.v1.Billing/BulkTagBillingGroup',
             billing_dot_v1_dot_billing__pb2.BulkTagBillingGroupRequest.SerializeToString,
             protos_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupInvoiceLayoutConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/GetBillingGroupInvoiceLayoutConfig',
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceLayoutConfigRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.GetBillingGroupInvoiceLayoutConfigResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetBillingGroupInvoiceLayoutConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/SetBillingGroupInvoiceLayoutConfig',
+            billing_dot_v1_dot_billing__pb2.SetBillingGroupInvoiceLayoutConfigRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateInvoiceLayoutConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/CreateInvoiceLayoutConfig',
+            billing_dot_v1_dot_billing__pb2.CreateInvoiceLayoutConfigRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.CreateInvoiceLayoutConfigResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateInvoiceLayoutConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/UpdateInvoiceLayoutConfig',
+            billing_dot_v1_dot_billing__pb2.UpdateInvoiceLayoutConfigRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadInvoiceLayoutConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ReadInvoiceLayoutConfig',
+            billing_dot_v1_dot_billing__pb2.ReadInvoiceLayoutConfigRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ReadInvoiceLayoutConfigResponse.FromString,
             options,
             channel_credentials,
             insecure,
