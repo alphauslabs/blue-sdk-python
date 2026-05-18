@@ -771,6 +771,11 @@ class BillingStub(object):
                 request_serializer=billing_dot_v1_dot_billing__pb2.DeleteBillingGroupInvoiceLayoutConfigRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.DeleteInvoiceLayoutConfig = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/DeleteInvoiceLayoutConfig',
+                request_serializer=billing_dot_v1_dot_billing__pb2.DeleteInvoiceLayoutConfigRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
 
 
 class BillingServicer(object):
@@ -1810,6 +1815,13 @@ class BillingServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteInvoiceLayoutConfig(self, request, context):
+        """WORK-IN-PROGRESS. Delete an invoice layout config.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_BillingServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -2536,6 +2548,11 @@ def add_BillingServicer_to_server(servicer, server):
             'DeleteBillingGroupInvoiceLayoutConfig': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteBillingGroupInvoiceLayoutConfig,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteBillingGroupInvoiceLayoutConfigRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'DeleteInvoiceLayoutConfig': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteInvoiceLayoutConfig,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.DeleteInvoiceLayoutConfigRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
             ),
     }
@@ -6454,6 +6471,33 @@ class Billing(object):
             target,
             '/blueapi.billing.v1.Billing/DeleteBillingGroupInvoiceLayoutConfig',
             billing_dot_v1_dot_billing__pb2.DeleteBillingGroupInvoiceLayoutConfigRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteInvoiceLayoutConfig(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/DeleteInvoiceLayoutConfig',
+            billing_dot_v1_dot_billing__pb2.DeleteInvoiceLayoutConfigRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
