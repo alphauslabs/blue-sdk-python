@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.flow.v1 import flow_pb2 as flow_dot_v1_dot_flow__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class FlowStub(object):
+class FlowStub:
     """Flow service definition.
     """
 
@@ -127,7 +127,7 @@ class FlowStub(object):
                 _registered_method=True)
 
 
-class FlowServicer(object):
+class FlowServicer:
     """Flow service definition.
     """
 
@@ -358,7 +358,7 @@ def add_FlowServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class Flow(object):
+class Flow:
     """Flow service definition.
     """
 

@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.pricing.v1 import pricing_pb2 as pricing_dot_v1_dot_pricing__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class PricingStub(object):
+class PricingStub:
     """Pricing service definition.
     """
 
@@ -52,7 +52,7 @@ class PricingStub(object):
                 _registered_method=True)
 
 
-class PricingServicer(object):
+class PricingServicer:
     """Pricing service definition.
     """
 
@@ -103,7 +103,7 @@ def add_PricingServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class Pricing(object):
+class Pricing:
     """Pricing service definition.
     """
 

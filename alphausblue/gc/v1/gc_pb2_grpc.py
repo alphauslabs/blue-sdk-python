@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.gc.v1 import gc_pb2 as gc_dot_v1_dot_gc__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class GuaranteedCommitmentsStub(object):
+class GuaranteedCommitmentsStub:
     """GuaranteedCommitments service definition.
     """
 
@@ -237,7 +237,7 @@ class GuaranteedCommitmentsStub(object):
                 _registered_method=True)
 
 
-class GuaranteedCommitmentsServicer(object):
+class GuaranteedCommitmentsServicer:
     """GuaranteedCommitments service definition.
     """
 
@@ -790,7 +790,7 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class GuaranteedCommitments(object):
+class GuaranteedCommitments:
     """GuaranteedCommitments service definition.
     """
 

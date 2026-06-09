@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.preferences.v1 import preferences_pb2 as preferences_dot_v1_dot_preferences__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -25,7 +25,7 @@ if _version_not_supported:
     )
 
 
-class PreferencesStub(object):
+class PreferencesStub:
     """Preferences service definition.
     """
 
@@ -42,7 +42,7 @@ class PreferencesStub(object):
                 _registered_method=True)
 
 
-class PreferencesServicer(object):
+class PreferencesServicer:
     """Preferences service definition.
     """
 
@@ -69,7 +69,7 @@ def add_PreferencesServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class Preferences(object):
+class Preferences:
     """Preferences service definition.
     """
 

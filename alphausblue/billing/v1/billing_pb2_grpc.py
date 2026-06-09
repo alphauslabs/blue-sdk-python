@@ -16,7 +16,7 @@ from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -36,7 +36,7 @@ if _version_not_supported:
     )
 
 
-class BillingStub(object):
+class BillingStub:
     """Billing service definition.
     """
 
@@ -778,7 +778,7 @@ class BillingStub(object):
                 _registered_method=True)
 
 
-class BillingServicer(object):
+class BillingServicer:
     """Billing service definition.
     """
 
@@ -2563,7 +2563,7 @@ def add_BillingServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class Billing(object):
+class Billing:
     """Billing service definition.
     """
 

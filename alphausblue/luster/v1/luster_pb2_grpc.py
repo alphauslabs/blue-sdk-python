@@ -11,7 +11,7 @@ from alphausblue.api.luster import space_pb2 as api_dot_luster_dot_space__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.luster.v1 import luster_pb2 as luster_dot_v1_dot_luster__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -31,7 +31,7 @@ if _version_not_supported:
     )
 
 
-class LusterStub(object):
+class LusterStub:
     """Luster service definition.
     """
 
@@ -138,7 +138,7 @@ class LusterStub(object):
                 _registered_method=True)
 
 
-class LusterServicer(object):
+class LusterServicer:
     """Luster service definition.
     """
 
@@ -383,7 +383,7 @@ def add_LusterServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class Luster(object):
+class Luster:
     """Luster service definition.
     """
 

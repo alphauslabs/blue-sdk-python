@@ -7,7 +7,7 @@ from alphausblue.api.ripple import org_pb2 as api_dot_ripple_dot_org__pb2
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from alphausblue.org.v1 import org_pb2 as org_dot_v1_dot_org__pb2
 
-GRPC_GENERATED_VERSION = '1.80.0'
+GRPC_GENERATED_VERSION = '1.81.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -27,7 +27,7 @@ if _version_not_supported:
     )
 
 
-class OrganizationStub(object):
+class OrganizationStub:
     """Organization service definition.
     """
 
@@ -74,7 +74,7 @@ class OrganizationStub(object):
                 _registered_method=True)
 
 
-class OrganizationServicer(object):
+class OrganizationServicer:
     """Organization service definition.
     """
 
@@ -176,7 +176,7 @@ def add_OrganizationServicer_to_server(servicer, server):
 
 
  # This class is part of an EXPERIMENTAL API.
-class Organization(object):
+class Organization:
     """Organization service definition.
     """
 
