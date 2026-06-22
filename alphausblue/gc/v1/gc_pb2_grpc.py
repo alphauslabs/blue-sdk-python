@@ -190,6 +190,11 @@ class GuaranteedCommitmentsStub:
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetAwsPrivateOfferRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetAwsPrivateOfferResponse.FromString,
                 _registered_method=True)
+        self.AcceptBillingGroupTerms = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/AcceptBillingGroupTerms',
+                request_serializer=gc_dot_v1_dot_gc__pb2.AcceptBillingGroupTermsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.AcceptBillingGroupTermsResponse.FromString,
+                _registered_method=True)
         self.GetGuaranteedCommitmentTemplateUrl = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/GetGuaranteedCommitmentTemplateUrl',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetGuaranteedCommitmentTemplateUrlRequest.SerializeToString,
@@ -501,6 +506,12 @@ class GuaranteedCommitmentsServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def AcceptBillingGroupTerms(self, request, context):
+        """Missing associated documentation comment in .proto file."""
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetGuaranteedCommitmentTemplateUrl(self, request, context):
         """GetGuaranteedCommitmentTemplateUrl returns a CloudFormation launch URL for deploying
         both Alphaus (Ripple) and Archera IAM roles in a single stack.
@@ -736,6 +747,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetAwsPrivateOffer,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetAwsPrivateOfferRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetAwsPrivateOfferResponse.SerializeToString,
+            ),
+            'AcceptBillingGroupTerms': grpc.unary_unary_rpc_method_handler(
+                    servicer.AcceptBillingGroupTerms,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.AcceptBillingGroupTermsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.AcceptBillingGroupTermsResponse.SerializeToString,
             ),
             'GetGuaranteedCommitmentTemplateUrl': grpc.unary_unary_rpc_method_handler(
                     servicer.GetGuaranteedCommitmentTemplateUrl,
@@ -1621,6 +1637,33 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/GetAwsPrivateOffer',
             gc_dot_v1_dot_gc__pb2.GetAwsPrivateOfferRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetAwsPrivateOfferResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AcceptBillingGroupTerms(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/AcceptBillingGroupTerms',
+            gc_dot_v1_dot_gc__pb2.AcceptBillingGroupTermsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.AcceptBillingGroupTermsResponse.FromString,
             options,
             channel_credentials,
             insecure,
