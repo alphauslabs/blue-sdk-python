@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.gc.v1 import gc_pb2 as gc_dot_v1_dot_gc__pb2
 
-GRPC_GENERATED_VERSION = '1.81.1'
+GRPC_GENERATED_VERSION = '1.82.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -59,6 +59,16 @@ class GuaranteedCommitmentsStub:
                 '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsUtilization',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsUtilizationRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentsUtilizationResponse.FromString,
+                _registered_method=True)
+        self.ReadCommitmentReports = channel.unary_stream(
+                '/blueapi.gc.v1.GuaranteedCommitments/ReadCommitmentReports',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ReadCommitmentReportsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentReport.FromString,
+                _registered_method=True)
+        self.ReadCommitmentReportAccounts = channel.unary_stream(
+                '/blueapi.gc.v1.GuaranteedCommitments/ReadCommitmentReportAccounts',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ReadCommitmentReportAccountsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentReportAccount.FromString,
                 _registered_method=True)
         self.GetMetrics = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/GetMetrics',
@@ -280,6 +290,22 @@ class GuaranteedCommitmentsServicer:
 
     def GetCommitmentsUtilization(self, request, context):
         """WORK-IN-PROGRESS: Generates utilization data for commitment over the active period.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadCommitmentReports(self, request, context):
+        """####################### REPORTS #######################
+
+        Reads monthly commitment reports for the MSP. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ReadCommitmentReportAccounts(self, request, context):
+        """Reads per-account commitment report details for a specific month. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -618,6 +644,16 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetCommitmentsUtilizationRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentsUtilizationResponse.SerializeToString,
             ),
+            'ReadCommitmentReports': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadCommitmentReports,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ReadCommitmentReportsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentReport.SerializeToString,
+            ),
+            'ReadCommitmentReportAccounts': grpc.unary_stream_rpc_method_handler(
+                    servicer.ReadCommitmentReportAccounts,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ReadCommitmentReportAccountsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentReportAccount.SerializeToString,
+            ),
             'GetMetrics': grpc.unary_unary_rpc_method_handler(
                     servicer.GetMetrics,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetMetricsRequest.FromString,
@@ -935,6 +971,60 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/GetCommitmentsUtilization',
             gc_dot_v1_dot_gc__pb2.GetCommitmentsUtilizationRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentsUtilizationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadCommitmentReports(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ReadCommitmentReports',
+            gc_dot_v1_dot_gc__pb2.ReadCommitmentReportsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.CommitmentReport.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ReadCommitmentReportAccounts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_stream(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ReadCommitmentReportAccounts',
+            gc_dot_v1_dot_gc__pb2.ReadCommitmentReportAccountsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.CommitmentReportAccount.FromString,
             options,
             channel_credentials,
             insecure,
