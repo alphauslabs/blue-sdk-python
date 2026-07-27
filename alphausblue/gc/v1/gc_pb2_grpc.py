@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.gc.v1 import gc_pb2 as gc_dot_v1_dot_gc__pb2
 
-GRPC_GENERATED_VERSION = '1.82.1'
+GRPC_GENERATED_VERSION = '1.83.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -249,6 +249,21 @@ class GuaranteedCommitmentsStub:
                 '/blueapi.gc.v1.GuaranteedCommitments/ListAzureIntegrations',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
+                _registered_method=True)
+        self.GetTermsConsentStatus = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetTermsConsentStatus',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusResponse.FromString,
+                _registered_method=True)
+        self.GetTermsDocument = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetTermsDocument',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetTermsDocumentRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetTermsDocumentResponse.FromString,
+                _registered_method=True)
+        self.AcceptTerms = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/AcceptTerms',
+                request_serializer=gc_dot_v1_dot_gc__pb2.AcceptTermsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.AcceptTermsResponse.FromString,
                 _registered_method=True)
 
 
@@ -616,6 +631,43 @@ class GuaranteedCommitmentsServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetTermsConsentStatus(self, request, context):
+        """------------------------ TERMS OF SERVICE ------------------------
+
+        Returns the evaluated Terms of Service consent status for the authenticated
+        Ripple MSP or WavePro root customer.
+
+        The backend derives the product and consent scope from trusted authentication
+        context. The frontend does not provide product or consent-scope identifiers.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetTermsDocument(self, request, context):
+        """Returns temporary read access to the active Terms of Service PDF for the
+        authenticated Ripple or WavePro product.
+
+        The backend derives the product and active version from trusted
+        authentication context. The language path parameter selects the English
+        or Japanese document for that active version.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def AcceptTerms(self, request, context):
+        """Records explicit acceptance of the currently active Terms of Service version
+        for the authenticated Ripple MSP or WavePro root customer.
+
+        The frontend submits the version it displayed to the user. The backend
+        derives the product, consent scope, accepting user, and acceptance time from
+        trusted request context.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -833,6 +885,21 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.ListAzureIntegrations,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.SerializeToString,
+            ),
+            'GetTermsConsentStatus': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTermsConsentStatus,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusResponse.SerializeToString,
+            ),
+            'GetTermsDocument': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetTermsDocument,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetTermsDocumentRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetTermsDocumentResponse.SerializeToString,
+            ),
+            'AcceptTerms': grpc.unary_unary_rpc_method_handler(
+                    servicer.AcceptTerms,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.AcceptTermsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.AcceptTermsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -1997,6 +2064,87 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/ListAzureIntegrations',
             gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetTermsConsentStatus(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetTermsConsentStatus',
+            gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetTermsDocument(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetTermsDocument',
+            gc_dot_v1_dot_gc__pb2.GetTermsDocumentRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetTermsDocumentResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def AcceptTerms(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/AcceptTerms',
+            gc_dot_v1_dot_gc__pb2.AcceptTermsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.AcceptTermsResponse.FromString,
             options,
             channel_credentials,
             insecure,
