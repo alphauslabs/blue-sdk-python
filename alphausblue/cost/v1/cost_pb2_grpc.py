@@ -207,6 +207,11 @@ class CostStub:
                 request_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
                 response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ExportCostFiltersFileSync = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/ExportCostFiltersFileSync',
+                request_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.FromString,
+                _registered_method=True)
         self.ReadCostAttributes = channel.unary_stream(
                 '/blueapi.cost.v1.Cost/ReadCostAttributes',
                 request_serializer=cost_dot_v1_dot_cost__pb2.ReadCostAttributesRequest.SerializeToString,
@@ -652,6 +657,16 @@ class CostServicer:
 
     def ExportCostFiltersFile(self, request, context):
         """Exports the usage-based cost filter condition. Only available in Wave(Pro).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportCostFiltersFileSync(self, request, context):
+        """Exports the usage-based cost filter as a CSV and returns the download URL synchronously.
+        Intended for direct browser download with small datasets. For large datasets that may
+        exceed the request timeout, use ExportCostFiltersFile with a notification channel instead.
+        Only available in Wave(Pro).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -1122,6 +1137,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ExportCostFiltersFile,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.FromString,
                     response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'ExportCostFiltersFileSync': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportCostFiltersFileSync,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.SerializeToString,
             ),
             'ReadCostAttributes': grpc.unary_stream_rpc_method_handler(
                     servicer.ReadCostAttributes,
@@ -2206,6 +2226,33 @@ class Cost:
             '/blueapi.cost.v1.Cost/ExportCostFiltersFile',
             cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
             protos_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ExportCostFiltersFileSync(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/ExportCostFiltersFileSync',
+            cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.ExportCostFiltersFileResponse.FromString,
             options,
             channel_credentials,
             insecure,
