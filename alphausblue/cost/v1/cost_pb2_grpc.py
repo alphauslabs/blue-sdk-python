@@ -347,6 +347,11 @@ class CostStub:
                 request_serializer=cost_dot_v1_dot_cost__pb2.ExportReportRequest.SerializeToString,
                 response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
+        self.GetInvoiceReadiness = channel.unary_unary(
+                '/blueapi.cost.v1.Cost/GetInvoiceReadiness',
+                request_serializer=cost_dot_v1_dot_cost__pb2.GetInvoiceReadinessRequest.SerializeToString,
+                response_deserializer=cost_dot_v1_dot_cost__pb2.GetInvoiceReadinessResponse.FromString,
+                _registered_method=True)
         self.GetUtilization = channel.unary_unary(
                 '/blueapi.cost.v1.Cost/GetUtilization',
                 request_serializer=cost_dot_v1_dot_cost__pb2.GetUtilizationRequest.SerializeToString,
@@ -893,6 +898,13 @@ class CostServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetInvoiceReadiness(self, request, context):
+        """Synchronously checks billing readiness without triggering an export, email, or long-running operation.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetUtilization(self, request, context):
         """Get the utilization details for an organization (or MSP).
         """
@@ -1277,6 +1289,11 @@ def add_CostServicer_to_server(servicer, server):
                     servicer.ExportReport,
                     request_deserializer=cost_dot_v1_dot_cost__pb2.ExportReportRequest.FromString,
                     response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'GetInvoiceReadiness': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetInvoiceReadiness,
+                    request_deserializer=cost_dot_v1_dot_cost__pb2.GetInvoiceReadinessRequest.FromString,
+                    response_serializer=cost_dot_v1_dot_cost__pb2.GetInvoiceReadinessResponse.SerializeToString,
             ),
             'GetUtilization': grpc.unary_unary_rpc_method_handler(
                     servicer.GetUtilization,
@@ -2982,6 +2999,33 @@ class Cost:
             '/blueapi.cost.v1.Cost/ExportReport',
             cost_dot_v1_dot_cost__pb2.ExportReportRequest.SerializeToString,
             protos_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetInvoiceReadiness(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.cost.v1.Cost/GetInvoiceReadiness',
+            cost_dot_v1_dot_cost__pb2.GetInvoiceReadinessRequest.SerializeToString,
+            cost_dot_v1_dot_cost__pb2.GetInvoiceReadinessResponse.FromString,
             options,
             channel_credentials,
             insecure,
