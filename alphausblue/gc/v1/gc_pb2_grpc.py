@@ -250,6 +250,11 @@ class GuaranteedCommitmentsStub:
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
                 _registered_method=True)
+        self.DeleteAzureIntegration = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/DeleteAzureIntegration',
+                request_serializer=gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationResponse.FromString,
+                _registered_method=True)
         self.GetTermsConsentStatus = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/GetTermsConsentStatus',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetTermsConsentStatusRequest.SerializeToString,
@@ -631,6 +636,15 @@ class GuaranteedCommitmentsServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def DeleteAzureIntegration(self, request, context):
+        """USED FOR RIPPLE ONLY
+
+        WORK-IN-PROGRESS: Removes an Azure integration from Archera and clears the local record for the given onboardingId.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def GetTermsConsentStatus(self, request, context):
         """------------------------ TERMS OF SERVICE ------------------------
 
@@ -885,6 +899,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.ListAzureIntegrations,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.SerializeToString,
+            ),
+            'DeleteAzureIntegration': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAzureIntegration,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationResponse.SerializeToString,
             ),
             'GetTermsConsentStatus': grpc.unary_unary_rpc_method_handler(
                     servicer.GetTermsConsentStatus,
@@ -2064,6 +2083,33 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/ListAzureIntegrations',
             gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteAzureIntegration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/DeleteAzureIntegration',
+            gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationResponse.FromString,
             options,
             channel_credentials,
             insecure,
