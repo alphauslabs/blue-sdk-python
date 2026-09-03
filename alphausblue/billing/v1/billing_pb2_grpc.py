@@ -539,32 +539,12 @@ class BillingStub:
         self.BulkImportMonthlyMiscFees = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/BulkImportMonthlyMiscFees',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkImportMonthlyMiscFeesRequest.SerializeToString,
-                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFeeImportResult.FromString,
                 _registered_method=True)
         self.ListMonthlyMiscFees = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/ListMonthlyMiscFees',
                 request_serializer=billing_dot_v1_dot_billing__pb2.ListMonthlyMiscFeesRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ListMonthlyMiscFeesResponse.FromString,
-                _registered_method=True)
-        self.GetMonthlyMiscFee = channel.unary_unary(
-                '/blueapi.billing.v1.Billing/GetMonthlyMiscFee',
-                request_serializer=billing_dot_v1_dot_billing__pb2.GetMonthlyMiscFeeRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFee.FromString,
-                _registered_method=True)
-        self.ExportMonthlyMiscFees = channel.unary_unary(
-                '/blueapi.billing.v1.Billing/ExportMonthlyMiscFees',
-                request_serializer=billing_dot_v1_dot_billing__pb2.ExportMonthlyMiscFeesRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.ExportMonthlyMiscFeesResponse.FromString,
-                _registered_method=True)
-        self.GetMonthlyMiscFeeImport = channel.unary_unary(
-                '/blueapi.billing.v1.Billing/GetMonthlyMiscFeeImport',
-                request_serializer=billing_dot_v1_dot_billing__pb2.GetMonthlyMiscFeeImportRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFeeImportResult.FromString,
-                _registered_method=True)
-        self.UpsertMonthlyMiscFee = channel.unary_unary(
-                '/blueapi.billing.v1.Billing/UpsertMonthlyMiscFee',
-                request_serializer=billing_dot_v1_dot_billing__pb2.UpsertMonthlyMiscFeeRequest.SerializeToString,
-                response_deserializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFee.FromString,
                 _registered_method=True)
         self.DeleteMonthlyMiscFee = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/DeleteMonthlyMiscFee',
@@ -1530,49 +1510,21 @@ class BillingServicer:
         raise NotImplementedError('Method not implemented!')
 
     def BulkImportMonthlyMiscFees(self, request, context):
-        """Validates or imports monthly miscellaneous fees from CSV.
+        """Validates or imports monthly FreeFormItems from CSV through invoice settings.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def ListMonthlyMiscFees(self, request, context):
-        """Lists monthly miscellaneous fee rows.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetMonthlyMiscFee(self, request, context):
-        """Gets a monthly miscellaneous fee row.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def ExportMonthlyMiscFees(self, request, context):
-        """Exports monthly miscellaneous fee rows using the list filters.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def GetMonthlyMiscFeeImport(self, request, context):
-        """Gets a completed monthly miscellaneous fee import result.
-        """
-        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
-        context.set_details('Method not implemented!')
-        raise NotImplementedError('Method not implemented!')
-
-    def UpsertMonthlyMiscFee(self, request, context):
-        """Creates or updates a monthly miscellaneous fee row.
+        """Lists effective monthly FreeFormItems.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
     def DeleteMonthlyMiscFee(self, request, context):
-        """Deletes a monthly miscellaneous fee row.
+        """Deletes one monthly FreeFormItem through invoice settings.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2426,32 +2378,12 @@ def add_BillingServicer_to_server(servicer, server):
             'BulkImportMonthlyMiscFees': grpc.unary_unary_rpc_method_handler(
                     servicer.BulkImportMonthlyMiscFees,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.BulkImportMonthlyMiscFeesRequest.FromString,
-                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFeeImportResult.SerializeToString,
             ),
             'ListMonthlyMiscFees': grpc.unary_unary_rpc_method_handler(
                     servicer.ListMonthlyMiscFees,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ListMonthlyMiscFeesRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ListMonthlyMiscFeesResponse.SerializeToString,
-            ),
-            'GetMonthlyMiscFee': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetMonthlyMiscFee,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetMonthlyMiscFeeRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFee.SerializeToString,
-            ),
-            'ExportMonthlyMiscFees': grpc.unary_unary_rpc_method_handler(
-                    servicer.ExportMonthlyMiscFees,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportMonthlyMiscFeesRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.ExportMonthlyMiscFeesResponse.SerializeToString,
-            ),
-            'GetMonthlyMiscFeeImport': grpc.unary_unary_rpc_method_handler(
-                    servicer.GetMonthlyMiscFeeImport,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.GetMonthlyMiscFeeImportRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFeeImportResult.SerializeToString,
-            ),
-            'UpsertMonthlyMiscFee': grpc.unary_unary_rpc_method_handler(
-                    servicer.UpsertMonthlyMiscFee,
-                    request_deserializer=billing_dot_v1_dot_billing__pb2.UpsertMonthlyMiscFeeRequest.FromString,
-                    response_serializer=billing_dot_v1_dot_billing__pb2.MonthlyMiscFee.SerializeToString,
             ),
             'DeleteMonthlyMiscFee': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteMonthlyMiscFee,
@@ -5382,7 +5314,7 @@ class Billing:
             target,
             '/blueapi.billing.v1.Billing/BulkImportMonthlyMiscFees',
             billing_dot_v1_dot_billing__pb2.BulkImportMonthlyMiscFeesRequest.SerializeToString,
-            protos_dot_operation__pb2.Operation.FromString,
+            billing_dot_v1_dot_billing__pb2.MonthlyMiscFeeImportResult.FromString,
             options,
             channel_credentials,
             insecure,
@@ -5410,114 +5342,6 @@ class Billing:
             '/blueapi.billing.v1.Billing/ListMonthlyMiscFees',
             billing_dot_v1_dot_billing__pb2.ListMonthlyMiscFeesRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ListMonthlyMiscFeesResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetMonthlyMiscFee(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.billing.v1.Billing/GetMonthlyMiscFee',
-            billing_dot_v1_dot_billing__pb2.GetMonthlyMiscFeeRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.MonthlyMiscFee.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def ExportMonthlyMiscFees(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.billing.v1.Billing/ExportMonthlyMiscFees',
-            billing_dot_v1_dot_billing__pb2.ExportMonthlyMiscFeesRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.ExportMonthlyMiscFeesResponse.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def GetMonthlyMiscFeeImport(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.billing.v1.Billing/GetMonthlyMiscFeeImport',
-            billing_dot_v1_dot_billing__pb2.GetMonthlyMiscFeeImportRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.MonthlyMiscFeeImportResult.FromString,
-            options,
-            channel_credentials,
-            insecure,
-            call_credentials,
-            compression,
-            wait_for_ready,
-            timeout,
-            metadata,
-            _registered_method=True)
-
-    @staticmethod
-    def UpsertMonthlyMiscFee(request,
-            target,
-            options=(),
-            channel_credentials=None,
-            call_credentials=None,
-            insecure=False,
-            compression=None,
-            wait_for_ready=None,
-            timeout=None,
-            metadata=None):
-        return grpc.experimental.unary_unary(
-            request,
-            target,
-            '/blueapi.billing.v1.Billing/UpsertMonthlyMiscFee',
-            billing_dot_v1_dot_billing__pb2.UpsertMonthlyMiscFeeRequest.SerializeToString,
-            billing_dot_v1_dot_billing__pb2.MonthlyMiscFee.FromString,
             options,
             channel_credentials,
             insecure,
