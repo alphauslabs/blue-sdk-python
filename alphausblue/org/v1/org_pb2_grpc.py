@@ -72,6 +72,11 @@ class OrganizationStub:
                 request_serializer=org_dot_v1_dot_org__pb2.DeleteOrgRequest.SerializeToString,
                 response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
                 _registered_method=True)
+        self.SyncFeatureFlags = channel.unary_unary(
+                '/blueapi.org.v1.Organization/SyncFeatureFlags',
+                request_serializer=org_dot_v1_dot_org__pb2.SyncFeatureFlagsRequest.SerializeToString,
+                response_deserializer=org_dot_v1_dot_org__pb2.SyncFeatureFlagsResponse.FromString,
+                _registered_method=True)
 
 
 class OrganizationServicer:
@@ -130,6 +135,15 @@ class OrganizationServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def SyncFeatureFlags(self, request, context):
+        """Self-heals the caller's own Wave feature-flag state against the MSP's
+        root Ripple state, correcting any drift caused by a missed or delayed
+        sync, and returns the corrected state.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_OrganizationServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -167,6 +181,11 @@ def add_OrganizationServicer_to_server(servicer, server):
                     servicer.DeleteOrg,
                     request_deserializer=org_dot_v1_dot_org__pb2.DeleteOrgRequest.FromString,
                     response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
+            'SyncFeatureFlags': grpc.unary_unary_rpc_method_handler(
+                    servicer.SyncFeatureFlags,
+                    request_deserializer=org_dot_v1_dot_org__pb2.SyncFeatureFlagsRequest.FromString,
+                    response_serializer=org_dot_v1_dot_org__pb2.SyncFeatureFlagsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -359,6 +378,33 @@ class Organization:
             '/blueapi.org.v1.Organization/DeleteOrg',
             org_dot_v1_dot_org__pb2.DeleteOrgRequest.SerializeToString,
             google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SyncFeatureFlags(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.org.v1.Organization/SyncFeatureFlags',
+            org_dot_v1_dot_org__pb2.SyncFeatureFlagsRequest.SerializeToString,
+            org_dot_v1_dot_org__pb2.SyncFeatureFlagsResponse.FromString,
             options,
             channel_credentials,
             insecure,
