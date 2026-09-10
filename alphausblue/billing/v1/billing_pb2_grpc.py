@@ -1510,7 +1510,9 @@ class BillingServicer:
         raise NotImplementedError('Method not implemented!')
 
     def BulkImportMonthlyMiscFees(self, request, context):
-        """Validates or imports monthly FreeFormItems from CSV through invoice settings.
+        """Validates or imports monthly FreeFormItems from CSV through invoice settings. The CSV
+        supplies each row's own billing month, billing group, and vendor; there is no
+        request-level billing_month or vendor to scope the call.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
