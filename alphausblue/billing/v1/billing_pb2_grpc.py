@@ -16,7 +16,7 @@ from alphausblue.billing.v1 import billing_pb2 as billing_dot_v1_dot_billing__pb
 from google.protobuf import empty_pb2 as google_dot_protobuf_dot_empty__pb2
 from protos import operation_pb2 as protos_dot_operation__pb2
 
-GRPC_GENERATED_VERSION = '1.83.1'
+GRPC_GENERATED_VERSION = '1.84.0'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -724,6 +724,11 @@ class BillingStub:
         self.BulkCreateBillingGroup = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
                 request_serializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
+                response_deserializer=protos_dot_operation__pb2.Operation.FromString,
+                _registered_method=True)
+        self.BulkUpdateBillingGroup = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/BulkUpdateBillingGroup',
+                request_serializer=billing_dot_v1_dot_billing__pb2.BulkUpdateBillingGroupRequest.SerializeToString,
                 response_deserializer=protos_dot_operation__pb2.Operation.FromString,
                 _registered_method=True)
         self.CreateExcludeServiceEntry = channel.unary_unary(
@@ -1775,6 +1780,17 @@ class BillingServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def BulkUpdateBillingGroup(self, request, context):
+        """Update invoice settings on existing billing groups in bulk from a CSV file.
+        Unlike BulkCreateBillingGroup, a blank CSV cell preserves the billing group's existing
+        value for that setting rather than clearing it, and a row referencing a billing group
+        that does not exist fails only that row (no implicit create).
+        Returns a long-running operation. Poll status via the Operations service (GET /ops/v1/{name}).
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def CreateExcludeServiceEntry(self, request, context):
         """Create Exclude Service Entry
         """
@@ -2565,6 +2581,11 @@ def add_BillingServicer_to_server(servicer, server):
             'BulkCreateBillingGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.BulkCreateBillingGroup,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.FromString,
+                    response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
+            ),
+            'BulkUpdateBillingGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.BulkUpdateBillingGroup,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.BulkUpdateBillingGroupRequest.FromString,
                     response_serializer=protos_dot_operation__pb2.Operation.SerializeToString,
             ),
             'CreateExcludeServiceEntry': grpc.unary_unary_rpc_method_handler(
@@ -6315,6 +6336,33 @@ class Billing:
             target,
             '/blueapi.billing.v1.Billing/BulkCreateBillingGroup',
             billing_dot_v1_dot_billing__pb2.BulkCreateBillingGroupRequest.SerializeToString,
+            protos_dot_operation__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def BulkUpdateBillingGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/BulkUpdateBillingGroup',
+            billing_dot_v1_dot_billing__pb2.BulkUpdateBillingGroupRequest.SerializeToString,
             protos_dot_operation__pb2.Operation.FromString,
             options,
             channel_credentials,
