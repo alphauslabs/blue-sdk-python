@@ -471,6 +471,11 @@ class BillingStub:
                 request_serializer=billing_dot_v1_dot_billing__pb2.GetTagsRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.TagData.FromString,
                 _registered_method=True)
+        self.ListTagValues = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ListTagValues',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ListTagValuesRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ListTagValuesResponse.FromString,
+                _registered_method=True)
         self.CreateCustomField = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/CreateCustomField',
                 request_serializer=billing_dot_v1_dot_billing__pb2.CreateCustomFieldRequest.SerializeToString,
@@ -1416,8 +1421,16 @@ class BillingServicer:
         raise NotImplementedError('Method not implemented!')
 
     def GetTags(self, request, context):
-        """Returns the customer details and its tags. 
+        """Returns the customer details and its tags.
         Port for: m/ripple/tags/vendor/{vendor}?type={type}
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListTagValues(self, request, context):
+        """Returns one page of the distinct values for a single customer's tag key, for
+        drilling down into a key beyond GetTags' per-key cap (see Tags.truncated).
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -2327,6 +2340,11 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.GetTags,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.GetTagsRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.TagData.SerializeToString,
+            ),
+            'ListTagValues': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListTagValues,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ListTagValuesRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ListTagValuesResponse.SerializeToString,
             ),
             'CreateCustomField': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateCustomField,
@@ -4960,6 +4978,33 @@ class Billing:
             '/blueapi.billing.v1.Billing/GetTags',
             billing_dot_v1_dot_billing__pb2.GetTagsRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.TagData.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListTagValues(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ListTagValues',
+            billing_dot_v1_dot_billing__pb2.ListTagValuesRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ListTagValuesResponse.FromString,
             options,
             channel_credentials,
             insecure,
