@@ -250,6 +250,11 @@ class GuaranteedCommitmentsStub:
                 request_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
                 _registered_method=True)
+        self.ConfigureAzureEaOnboarding = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ConfigureAzureEaOnboarding',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ConfigureAzureEaOnboardingRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ConfigureAzureEaOnboardingResponse.FromString,
+                _registered_method=True)
         self.DeleteAzureIntegration = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/DeleteAzureIntegration',
                 request_serializer=gc_dot_v1_dot_gc__pb2.DeleteAzureIntegrationRequest.SerializeToString,
@@ -636,6 +641,14 @@ class GuaranteedCommitmentsServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ConfigureAzureEaOnboarding(self, request, context):
+        """------------------------ AZURE EA INTEGRATION ------------------------
+
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteAzureIntegration(self, request, context):
         """USED FOR RIPPLE ONLY
 
@@ -899,6 +912,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.ListAzureIntegrations,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.SerializeToString,
+            ),
+            'ConfigureAzureEaOnboarding': grpc.unary_unary_rpc_method_handler(
+                    servicer.ConfigureAzureEaOnboarding,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ConfigureAzureEaOnboardingRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ConfigureAzureEaOnboardingResponse.SerializeToString,
             ),
             'DeleteAzureIntegration': grpc.unary_unary_rpc_method_handler(
                     servicer.DeleteAzureIntegration,
@@ -2083,6 +2101,33 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/ListAzureIntegrations',
             gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.ListAzureIntegrationsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ConfigureAzureEaOnboarding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ConfigureAzureEaOnboarding',
+            gc_dot_v1_dot_gc__pb2.ConfigureAzureEaOnboardingRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ConfigureAzureEaOnboardingResponse.FromString,
             options,
             channel_credentials,
             insecure,
