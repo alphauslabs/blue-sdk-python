@@ -49,6 +49,21 @@ class AdminStub:
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.SerializeToString,
                 response_deserializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.FromString,
                 _registered_method=True)
+        self.CreateAccountGroup = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/CreateAccountGroup',
+                request_serializer=admin_dot_v1_dot_admin__pb2.CreateAccountGroupRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.CreateAccountGroupResponse.FromString,
+                _registered_method=True)
+        self.UpdateAccountGroup = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/UpdateAccountGroup',
+                request_serializer=admin_dot_v1_dot_admin__pb2.UpdateAccountGroupRequest.SerializeToString,
+                response_deserializer=admin_dot_v1_dot_admin__pb2.UpdateAccountGroupResponse.FromString,
+                _registered_method=True)
+        self.DeleteAccountGroup = channel.unary_unary(
+                '/blueapi.admin.v1.Admin/DeleteAccountGroup',
+                request_serializer=admin_dot_v1_dot_admin__pb2.DeleteAccountGroupRequest.SerializeToString,
+                response_deserializer=google_dot_protobuf_dot_empty__pb2.Empty.FromString,
+                _registered_method=True)
         self.GetDefaultCostAccessTemplateUrl = channel.unary_unary(
                 '/blueapi.admin.v1.Admin/GetDefaultCostAccessTemplateUrl',
                 request_serializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlRequest.SerializeToString,
@@ -199,6 +214,27 @@ class AdminServicer:
 
     def GetAccountGroup(self, request, context):
         """Gets an account group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CreateAccountGroup(self, request, context):
+        """Creates an account group.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateAccountGroup(self, request, context):
+        """Updates an account group. The account id list fully replaces the group's current membership.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteAccountGroup(self, request, context):
+        """Deletes an account group.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -406,6 +442,21 @@ def add_AdminServicer_to_server(servicer, server):
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.FromString,
                     response_serializer=admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.SerializeToString,
             ),
+            'CreateAccountGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateAccountGroup,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.CreateAccountGroupRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.CreateAccountGroupResponse.SerializeToString,
+            ),
+            'UpdateAccountGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateAccountGroup,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.UpdateAccountGroupRequest.FromString,
+                    response_serializer=admin_dot_v1_dot_admin__pb2.UpdateAccountGroupResponse.SerializeToString,
+            ),
+            'DeleteAccountGroup': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteAccountGroup,
+                    request_deserializer=admin_dot_v1_dot_admin__pb2.DeleteAccountGroupRequest.FromString,
+                    response_serializer=google_dot_protobuf_dot_empty__pb2.Empty.SerializeToString,
+            ),
             'GetDefaultCostAccessTemplateUrl': grpc.unary_unary_rpc_method_handler(
                     servicer.GetDefaultCostAccessTemplateUrl,
                     request_deserializer=admin_dot_v1_dot_admin__pb2.GetDefaultCostAccessTemplateUrlRequest.FromString,
@@ -597,6 +648,87 @@ class Admin:
             '/blueapi.admin.v1.Admin/GetAccountGroup',
             admin_dot_v1_dot_admin__pb2.GetAccountGroupRequest.SerializeToString,
             admin_dot_v1_dot_admin__pb2.GetAccountGroupResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateAccountGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.admin.v1.Admin/CreateAccountGroup',
+            admin_dot_v1_dot_admin__pb2.CreateAccountGroupRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.CreateAccountGroupResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateAccountGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.admin.v1.Admin/UpdateAccountGroup',
+            admin_dot_v1_dot_admin__pb2.UpdateAccountGroupRequest.SerializeToString,
+            admin_dot_v1_dot_admin__pb2.UpdateAccountGroupResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteAccountGroup(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.admin.v1.Admin/DeleteAccountGroup',
+            admin_dot_v1_dot_admin__pb2.DeleteAccountGroupRequest.SerializeToString,
+            google_dot_protobuf_dot_empty__pb2.Empty.FromString,
             options,
             channel_credentials,
             insecure,
