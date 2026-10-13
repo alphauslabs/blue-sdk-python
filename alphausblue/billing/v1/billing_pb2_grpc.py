@@ -576,6 +576,16 @@ class BillingStub:
                 request_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.SerializeToString,
                 response_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvResponse.FromString,
                 _registered_method=True)
+        self.PreviewBillingGroupCsvExport = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/PreviewBillingGroupCsvExport',
+                request_serializer=billing_dot_v1_dot_billing__pb2.PreviewBillingGroupCsvExportRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.PreviewBillingGroupCsvExportResponse.FromString,
+                _registered_method=True)
+        self.ExportPreviewedBillingGroupCsv = channel.unary_unary(
+                '/blueapi.billing.v1.Billing/ExportPreviewedBillingGroupCsv',
+                request_serializer=billing_dot_v1_dot_billing__pb2.ExportPreviewedBillingGroupCsvRequest.SerializeToString,
+                response_deserializer=billing_dot_v1_dot_billing__pb2.ExportPreviewedBillingGroupCsvResponse.FromString,
+                _registered_method=True)
         self.UpdateBillingGroupBasicInformation = channel.unary_unary(
                 '/blueapi.billing.v1.Billing/UpdateBillingGroupBasicInformation',
                 request_serializer=billing_dot_v1_dot_billing__pb2.UpdateBillingGroupBasicInformationRequest.SerializeToString,
@@ -1576,6 +1586,23 @@ class BillingServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def PreviewBillingGroupCsvExport(self, request, context):
+        """(BETA) Previews eligible billing group counts for a layer-scoped CSV export.
+        Stores a short-lived selection; does not generate CSVs or download links.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ExportPreviewedBillingGroupCsv(self, request, context):
+        """(BETA) Exports a previously previewed billing group selection.
+        Uses the saved root/child IDs and layer assignments without rediscovering
+        hierarchy membership. All export types return a signed CSV download link.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def UpdateBillingGroupBasicInformation(self, request, context):
         """Update billing group basic information
         """
@@ -2445,6 +2472,16 @@ def add_BillingServicer_to_server(servicer, server):
                     servicer.ExportInvoiceSettingCsv,
                     request_deserializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.FromString,
                     response_serializer=billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvResponse.SerializeToString,
+            ),
+            'PreviewBillingGroupCsvExport': grpc.unary_unary_rpc_method_handler(
+                    servicer.PreviewBillingGroupCsvExport,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.PreviewBillingGroupCsvExportRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.PreviewBillingGroupCsvExportResponse.SerializeToString,
+            ),
+            'ExportPreviewedBillingGroupCsv': grpc.unary_unary_rpc_method_handler(
+                    servicer.ExportPreviewedBillingGroupCsv,
+                    request_deserializer=billing_dot_v1_dot_billing__pb2.ExportPreviewedBillingGroupCsvRequest.FromString,
+                    response_serializer=billing_dot_v1_dot_billing__pb2.ExportPreviewedBillingGroupCsvResponse.SerializeToString,
             ),
             'UpdateBillingGroupBasicInformation': grpc.unary_unary_rpc_method_handler(
                     servicer.UpdateBillingGroupBasicInformation,
@@ -5545,6 +5582,60 @@ class Billing:
             '/blueapi.billing.v1.Billing/ExportInvoiceSettingCsv',
             billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvRequest.SerializeToString,
             billing_dot_v1_dot_billing__pb2.ExportInvoiceSettingCsvResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def PreviewBillingGroupCsvExport(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/PreviewBillingGroupCsvExport',
+            billing_dot_v1_dot_billing__pb2.PreviewBillingGroupCsvExportRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.PreviewBillingGroupCsvExportResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ExportPreviewedBillingGroupCsv(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.billing.v1.Billing/ExportPreviewedBillingGroupCsv',
+            billing_dot_v1_dot_billing__pb2.ExportPreviewedBillingGroupCsvRequest.SerializeToString,
+            billing_dot_v1_dot_billing__pb2.ExportPreviewedBillingGroupCsvResponse.FromString,
             options,
             channel_credentials,
             insecure,
