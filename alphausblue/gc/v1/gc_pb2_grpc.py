@@ -70,6 +70,36 @@ class GuaranteedCommitmentsStub:
                 request_serializer=gc_dot_v1_dot_gc__pb2.ReadCommitmentReportAccountsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.CommitmentReportAccount.FromString,
                 _registered_method=True)
+        self.GetBillingGroupRegistration = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupRegistration',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupRegistrationRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.BillingGroupRegistration.FromString,
+                _registered_method=True)
+        self.GetPerformanceSummary = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetPerformanceSummary',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetPerformanceSummaryRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.PerformanceSummary.FromString,
+                _registered_method=True)
+        self.GetSavingsOpportunities = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetSavingsOpportunities',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetSavingsOpportunitiesRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.SavingsOpportunities.FromString,
+                _registered_method=True)
+        self.ListExpiringCommitments = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ListExpiringCommitments',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ListExpiringCommitmentsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ListExpiringCommitmentsResponse.FromString,
+                _registered_method=True)
+        self.GetSimulatorInputs = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetSimulatorInputs',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetSimulatorInputsRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetSimulatorInputsResponse.FromString,
+                _registered_method=True)
+        self.CalculateProjectedRevenue = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/CalculateProjectedRevenue',
+                request_serializer=gc_dot_v1_dot_gc__pb2.CalculateProjectedRevenueRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.CalculateProjectedRevenueResponse.FromString,
+                _registered_method=True)
         self.GetMetrics = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/GetMetrics',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetMetricsRequest.SerializeToString,
@@ -331,6 +361,56 @@ class GuaranteedCommitmentsServicer:
 
     def ReadCommitmentReportAccounts(self, request, context):
         """Reads per-account commitment report details for a specific month. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetBillingGroupRegistration(self, request, context):
+        """####################### COMMITMENT DASHBOARD & SIMULATOR #######################
+
+        Gets the MSP's billing groups grouped into registration buckets (Registered, Partially Registered,
+        Unregistered), with each billing group's payer onboarding progress. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPerformanceSummary(self, request, context):
+        """Gets Archera performance totals (net savings, risk premium, rebates, revenue share) for a month range,
+        and for the equal-length range immediately before it. Covers every billing group with Archera activity
+        in the range. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSavingsOpportunities(self, request, context):
+        """Gets the savings opportunity summary for RIs/SPs expiring within 90 days in billing groups that are
+        not Registered. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListExpiringCommitments(self, request, context):
+        """Lists the MSP's expiring RIs/SPs, filtered, ordered and paginated server-side. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSimulatorInputs(self, request, context):
+        """Gets the pricing inputs the simulator needs for the selected expiring RIs/SPs. Only available in Ripple.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def CalculateProjectedRevenue(self, request, context):
+        """Calculates projected MSP revenue share from simulated risk premiums, applying the MSP's revenue-share
+        rate for each month (0.20 for months with no configured rate). Returns an error, rather than a figure
+        at the default rate, when the rate cannot be read. Only available in Ripple.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -733,6 +813,36 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     request_deserializer=gc_dot_v1_dot_gc__pb2.ReadCommitmentReportAccountsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.CommitmentReportAccount.SerializeToString,
             ),
+            'GetBillingGroupRegistration': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBillingGroupRegistration,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupRegistrationRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.BillingGroupRegistration.SerializeToString,
+            ),
+            'GetPerformanceSummary': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPerformanceSummary,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetPerformanceSummaryRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.PerformanceSummary.SerializeToString,
+            ),
+            'GetSavingsOpportunities': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSavingsOpportunities,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetSavingsOpportunitiesRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.SavingsOpportunities.SerializeToString,
+            ),
+            'ListExpiringCommitments': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListExpiringCommitments,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ListExpiringCommitmentsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ListExpiringCommitmentsResponse.SerializeToString,
+            ),
+            'GetSimulatorInputs': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSimulatorInputs,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetSimulatorInputsRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetSimulatorInputsResponse.SerializeToString,
+            ),
+            'CalculateProjectedRevenue': grpc.unary_unary_rpc_method_handler(
+                    servicer.CalculateProjectedRevenue,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.CalculateProjectedRevenueRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.CalculateProjectedRevenueResponse.SerializeToString,
+            ),
             'GetMetrics': grpc.unary_unary_rpc_method_handler(
                     servicer.GetMetrics,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetMetricsRequest.FromString,
@@ -1129,6 +1239,168 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/ReadCommitmentReportAccounts',
             gc_dot_v1_dot_gc__pb2.ReadCommitmentReportAccountsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.CommitmentReportAccount.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupRegistration(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupRegistration',
+            gc_dot_v1_dot_gc__pb2.GetBillingGroupRegistrationRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.BillingGroupRegistration.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPerformanceSummary(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetPerformanceSummary',
+            gc_dot_v1_dot_gc__pb2.GetPerformanceSummaryRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.PerformanceSummary.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSavingsOpportunities(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetSavingsOpportunities',
+            gc_dot_v1_dot_gc__pb2.GetSavingsOpportunitiesRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.SavingsOpportunities.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListExpiringCommitments(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ListExpiringCommitments',
+            gc_dot_v1_dot_gc__pb2.ListExpiringCommitmentsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ListExpiringCommitmentsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSimulatorInputs(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetSimulatorInputs',
+            gc_dot_v1_dot_gc__pb2.GetSimulatorInputsRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetSimulatorInputsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CalculateProjectedRevenue(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/CalculateProjectedRevenue',
+            gc_dot_v1_dot_gc__pb2.CalculateProjectedRevenueRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.CalculateProjectedRevenueResponse.FromString,
             options,
             channel_credentials,
             insecure,
