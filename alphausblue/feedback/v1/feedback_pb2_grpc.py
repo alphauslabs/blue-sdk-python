@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.feedback.v1 import feedback_pb2 as feedback_dot_v1_dot_feedback__pb2
 
-GRPC_GENERATED_VERSION = '1.84.0'
+GRPC_GENERATED_VERSION = '1.84.1'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
