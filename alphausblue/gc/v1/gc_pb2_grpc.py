@@ -305,6 +305,16 @@ class GuaranteedCommitmentsStub:
                 request_serializer=gc_dot_v1_dot_gc__pb2.AcceptTermsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.AcceptTermsResponse.FromString,
                 _registered_method=True)
+        self.ConfigureGCPOnboarding = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/ConfigureGCPOnboarding',
+                request_serializer=gc_dot_v1_dot_gc__pb2.ConfigureGCPOnboardingRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.ConfigureGCPOnboardingResponse.FromString,
+                _registered_method=True)
+        self.GetGCPDeploymentScript = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetGCPDeploymentScript',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetGCPDeploymentScriptRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetGCPDeploymentScriptResponse.FromString,
+                _registered_method=True)
 
 
 class GuaranteedCommitmentsServicer:
@@ -775,6 +785,22 @@ class GuaranteedCommitmentsServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ConfigureGCPOnboarding(self, request, context):
+        """------------------------ GCP INTEGRATION ------------------------
+
+        WORK-IN-PROGRESS: ConfigureGCPOnboarding configures the GCP onboarding process for the authenticated user.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetGCPDeploymentScript(self, request, context):
+        """WORK-IN-PROGRESS: GetGCPDeploymentScript retrieves the GCP deployment script for the given onboarding ID.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -1047,6 +1073,16 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.AcceptTerms,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.AcceptTermsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.AcceptTermsResponse.SerializeToString,
+            ),
+            'ConfigureGCPOnboarding': grpc.unary_unary_rpc_method_handler(
+                    servicer.ConfigureGCPOnboarding,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.ConfigureGCPOnboardingRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.ConfigureGCPOnboardingResponse.SerializeToString,
+            ),
+            'GetGCPDeploymentScript': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetGCPDeploymentScript,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetGCPDeploymentScriptRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetGCPDeploymentScriptResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -2508,6 +2544,60 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/AcceptTerms',
             gc_dot_v1_dot_gc__pb2.AcceptTermsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.AcceptTermsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ConfigureGCPOnboarding(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/ConfigureGCPOnboarding',
+            gc_dot_v1_dot_gc__pb2.ConfigureGCPOnboardingRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.ConfigureGCPOnboardingResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetGCPDeploymentScript(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetGCPDeploymentScript',
+            gc_dot_v1_dot_gc__pb2.GetGCPDeploymentScriptRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetGCPDeploymentScriptResponse.FromString,
             options,
             channel_credentials,
             insecure,
