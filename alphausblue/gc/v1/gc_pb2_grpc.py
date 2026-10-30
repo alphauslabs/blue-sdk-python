@@ -220,6 +220,16 @@ class GuaranteedCommitmentsStub:
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusResponse.FromString,
                 _registered_method=True)
+        self.GetBillingGroupPurchaseNotification = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupPurchaseNotification',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupPurchaseNotificationRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupPurchaseNotificationResponse.FromString,
+                _registered_method=True)
+        self.UpdateBillingGroupPurchaseNotification = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/UpdateBillingGroupPurchaseNotification',
+                request_serializer=gc_dot_v1_dot_gc__pb2.UpdateBillingGroupPurchaseNotificationRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.BillingGroupPurchaseNotification.FromString,
+                _registered_method=True)
         self.ValidateBillingGroup = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/ValidateBillingGroup',
                 request_serializer=gc_dot_v1_dot_gc__pb2.ValidateBillingGroupRequest.SerializeToString,
@@ -633,6 +643,26 @@ class GuaranteedCommitmentsServicer:
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetBillingGroupPurchaseNotification(self, request, context):
+        """Ripple only. Gets a billing group's GC purchase notification setting, together with
+        the MSP's Ripple notification channels to choose from. When none has been saved, the
+        setting is disabled with empty notificationChannelIds; availableChannels lists all of
+        the MSP's channels whether or not a setting was saved. Wave callers get PERMISSION_DENIED.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def UpdateBillingGroupPurchaseNotification(self, request, context):
+        """Ripple only. Replaces a billing group's GC purchase notification setting. Newly added
+        channel IDs must exist and belong to the caller's MSP; channels already saved are not
+        re-checked. When enabled, at least one channel must be enabled and have a destination.
+        Wave callers get PERMISSION_DENIED.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ValidateBillingGroup(self, request, context):
         """Missing associated documentation comment in .proto file."""
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
@@ -988,6 +1018,16 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetBillingGroupStatus,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusResponse.SerializeToString,
+            ),
+            'GetBillingGroupPurchaseNotification': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetBillingGroupPurchaseNotification,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupPurchaseNotificationRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetBillingGroupPurchaseNotificationResponse.SerializeToString,
+            ),
+            'UpdateBillingGroupPurchaseNotification': grpc.unary_unary_rpc_method_handler(
+                    servicer.UpdateBillingGroupPurchaseNotification,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.UpdateBillingGroupPurchaseNotificationRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.BillingGroupPurchaseNotification.SerializeToString,
             ),
             'ValidateBillingGroup': grpc.unary_unary_rpc_method_handler(
                     servicer.ValidateBillingGroup,
@@ -2085,6 +2125,60 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupStatus',
             gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetBillingGroupStatusResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetBillingGroupPurchaseNotification(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetBillingGroupPurchaseNotification',
+            gc_dot_v1_dot_gc__pb2.GetBillingGroupPurchaseNotificationRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetBillingGroupPurchaseNotificationResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def UpdateBillingGroupPurchaseNotification(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/UpdateBillingGroupPurchaseNotification',
+            gc_dot_v1_dot_gc__pb2.UpdateBillingGroupPurchaseNotificationRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.BillingGroupPurchaseNotification.FromString,
             options,
             channel_credentials,
             insecure,
