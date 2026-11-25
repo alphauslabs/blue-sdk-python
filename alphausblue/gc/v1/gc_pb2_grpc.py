@@ -5,7 +5,7 @@ import warnings
 
 from alphausblue.gc.v1 import gc_pb2 as gc_dot_v1_dot_gc__pb2
 
-GRPC_GENERATED_VERSION = '1.85.3'
+GRPC_GENERATED_VERSION = '1.85.4'
 GRPC_VERSION = grpc.__version__
 _version_not_supported = False
 
@@ -134,6 +134,11 @@ class GuaranteedCommitmentsStub:
                 '/blueapi.gc.v1.GuaranteedCommitments/GetPurchasePlansDetails',
                 request_serializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsRequest.SerializeToString,
                 response_deserializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsResponse.FromString,
+                _registered_method=True)
+        self.GetPurchasePlanHistory = channel.unary_unary(
+                '/blueapi.gc.v1.GuaranteedCommitments/GetPurchasePlanHistory',
+                request_serializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlanHistoryRequest.SerializeToString,
+                response_deserializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlanHistoryResponse.FromString,
                 _registered_method=True)
         self.SaveCommitmentsPlanAsDraft = channel.unary_unary(
                 '/blueapi.gc.v1.GuaranteedCommitments/SaveCommitmentsPlanAsDraft',
@@ -504,6 +509,14 @@ class GuaranteedCommitmentsServicer:
     def GetPurchasePlansDetails(self, request, context):
         """WORK-IN-PROGRESS: Retrieves full details of a specific purchase plan of a company.
         Includes the basic info, detailed metrics, commitment line items, covered infrastructure resource matches, and audit history.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPurchasePlanHistory(self, request, context):
+        """WORK-IN-PROGRESS: Retrieves the activity history of a specific purchase plan.
+        Returns only plan activity events (no comments), oldest first.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -933,6 +946,11 @@ def add_GuaranteedCommitmentsServicer_to_server(servicer, server):
                     servicer.GetPurchasePlansDetails,
                     request_deserializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsRequest.FromString,
                     response_serializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsResponse.SerializeToString,
+            ),
+            'GetPurchasePlanHistory': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPurchasePlanHistory,
+                    request_deserializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlanHistoryRequest.FromString,
+                    response_serializer=gc_dot_v1_dot_gc__pb2.GetPurchasePlanHistoryResponse.SerializeToString,
             ),
             'SaveCommitmentsPlanAsDraft': grpc.unary_unary_rpc_method_handler(
                     servicer.SaveCommitmentsPlanAsDraft,
@@ -1666,6 +1684,33 @@ class GuaranteedCommitments:
             '/blueapi.gc.v1.GuaranteedCommitments/GetPurchasePlansDetails',
             gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsRequest.SerializeToString,
             gc_dot_v1_dot_gc__pb2.GetPurchasePlansDetailsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPurchasePlanHistory(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/blueapi.gc.v1.GuaranteedCommitments/GetPurchasePlanHistory',
+            gc_dot_v1_dot_gc__pb2.GetPurchasePlanHistoryRequest.SerializeToString,
+            gc_dot_v1_dot_gc__pb2.GetPurchasePlanHistoryResponse.FromString,
             options,
             channel_credentials,
             insecure,
